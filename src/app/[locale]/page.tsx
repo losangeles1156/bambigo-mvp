@@ -11,6 +11,7 @@ import { TripGuardStatus } from '@/components/guard/TripGuardStatus';
 import { SubscriptionModal } from '@/components/guard/SubscriptionModal';
 import { useEffect, useState } from 'react';
 import { fetchNodeConfig, FacilityProfile as IFacilityProfile } from '@/lib/api/nodes';
+import { Cloud, Settings, Heart, Calendar, ArrowRight, MessageSquare, Map as MapIcon, ShieldCheck, User, LocateFixed, Layers, Plus, Minus } from 'lucide-react';
 
 // Leaflet must be dynamic import with no SSR
 const MapContainer = dynamic(
@@ -20,8 +21,8 @@ const MapContainer = dynamic(
 
 export default function Home() {
     const t = useTranslations('Home');
-    const { zone } = useZoneAwareness();
-    const { currentNodeId, isBottomSheetOpen } = useAppStore();
+    const { zone, userLocation, isTooFar, centerFallback } = useZoneAwareness();
+    const { currentNodeId, isBottomSheetOpen, activeTab, setActiveTab, setMapCenter } = useAppStore();
 
     const [nodeData, setNodeData] = useState<any>(null);
     const [profile, setProfile] = useState<IFacilityProfile | null>(null);
@@ -44,28 +45,109 @@ export default function Home() {
         <main className="flex min-h-screen flex-col items-center justify-between relative overflow-hidden">
 
             {/* 1. Map Layer */}
-            <div className="absolute inset-0 z-0">
+            <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${activeTab === 'explore' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <MapContainer />
             </div>
 
+            {/* 1.1 Other Tab Views */}
+            {activeTab === 'trips' && (
+                <div className="absolute inset-0 z-5 bg-gray-50 p-6 pt-24 overflow-y-auto pb-32">
+                    <h1 className="text-3xl font-black mb-6">行程守護</h1>
+                    <div className="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 mb-4">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600">
+                                <ShieldCheck size={24} />
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg">尚未訂閱任何行程</h3>
+                                <p className="text-sm text-gray-500">訂閱後，Bambi 會在異常發生時自動提醒你。</p>
+                            </div>
+                        </div>
+                        <button className="w-full bg-indigo-600 text-white font-bold py-4 rounded-2xl">開始探索景點</button>
+                    </div>
+                </div>
+            )}
+
+            {activeTab === 'me' && (
+                <div className="absolute inset-0 z-5 bg-gray-50 p-6 pt-24 overflow-y-auto">
+                    <h1 className="text-3xl font-black mb-6">個人設定</h1>
+                    <div className="space-y-4">
+                        <div className="bg-white p-4 rounded-3xl flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center text-rose-600">
+                                    <User size={20} />
+                                </div>
+                                <span className="font-bold text-gray-700">訪客模式</span>
+                            </div>
+                            <button className="text-indigo-600 font-bold text-sm">登入 / 註冊</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* 2. Top Bar (Status) */}
-            <div className="absolute top-0 left-0 right-0 z-10 p-4 pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 z-10 p-5 pointer-events-none">
                 <div className="flex justify-between items-start pointer-events-auto">
-                    {/* Weather / Status Pill Placeholder */}
-                    <div className="bg-white/90 backdrop-blur rounded-full px-3 py-1 shadow-sm text-sm font-medium flex gap-2 items-center">
-                        <span>🌧️ 24°C</span>
-                        {isCore && <span className="text-red-500">⚡ 銀座線延誤</span>}
+                    {/* Weather / Status Pill */}
+                    <div className="glass-effect rounded-full px-4 py-2 flex gap-3 items-center animate-in slide-in-from-top duration-500 shadow-xl shadow-black/5">
+                        <div className="flex items-center gap-1.5 text-indigo-600 font-bold">
+                            <Cloud size={18} className="animate-slow-pulse" />
+                            <span>24°C</span>
+                        </div>
+                        <div className="w-px h-4 bg-gray-200" />
+                        {isCore ? (
+                            <div className="flex items-center gap-1.5 text-red-500 text-sm font-black animate-pulse">
+                                <span className="w-2.5 h-2.5 bg-red-500 rounded-full" />
+                                <span>銀座線延誤</span>
+                            </div>
+                        ) : (
+                            <span className="text-gray-500 text-sm font-bold opacity-60 px-1">READY</span>
+                        )}
                     </div>
 
                     {/* Settings / Locale */}
                     <div className="flex gap-3">
                         <TripGuardStatus />
-                        <div className="bg-white/90 backdrop-blur rounded-full p-2 shadow-sm">
-                            ⚙️
-                        </div>
+                        <button className="glass-effect rounded-full p-3 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5">
+                            <Settings size={22} className="text-gray-600" />
+                        </button>
                     </div>
                 </div>
             </div>
+
+            {/* 2.1 Map Floating Action Buttons (FABs) */}
+            {activeTab === 'explore' && !isBottomSheetOpen && (
+                <div className="absolute right-5 bottom-32 z-10 flex flex-col gap-3 animate-in fade-in slide-in-from-right duration-500">
+                    <button
+                        onClick={() => {
+                            if (isTooFar) {
+                                // Explicitly center on fallback if too far
+                                setMapCenter(centerFallback);
+                                useAppStore.getState().addMessage({
+                                    role: 'assistant',
+                                    content: '📍 您目前距離感性導航區域較遠，地圖已自動回正至上野車站中心點。'
+                                });
+                            } else if (userLocation) {
+                                setMapCenter(userLocation);
+                            }
+                        }}
+                        className="glass-effect rounded-2xl p-4 shadow-2xl shadow-indigo-200 text-indigo-600 active:scale-90 transition-all"
+                    >
+                        <LocateFixed size={24} />
+                    </button>
+                    <div className="flex flex-col glass-effect rounded-2xl shadow-2xl shadow-black/5">
+                        <button className="p-4 border-b border-gray-100/50 text-gray-600 active:scale-90 transition-all">
+                            <Plus size={22} />
+                        </button>
+                        <button className="p-4 text-gray-600 active:scale-90 transition-all">
+                            <Minus size={22} />
+                        </button>
+                    </div>
+                    <button className="glass-effect rounded-2xl p-4 shadow-2xl shadow-black/5 text-gray-600 active:scale-90 transition-all">
+                        <Layers size={22} />
+                    </button>
+                </div>
+            )}
 
             {/* 3. Bottom Sheet */}
             {isBottomSheetOpen && nodeData && (
@@ -75,83 +157,119 @@ export default function Home() {
                         <div className="w-12 h-1.5 bg-gray-300 rounded-full" />
                     </div>
 
-                    <div className="p-4 space-y-4">
+                    <div className="p-6 space-y-6">
                         {/* Header */}
-                        <div>
-                            <h2 className="text-2xl font-bold text-gray-800">
-                                {nodeData.name?.['zh-TW'] || nodeData.name?.['en'] || 'Unknown'}
-                            </h2>
-                            <p className="text-sm text-gray-500">{nodeData.type}</p>
-                            {nodeData.vibe && (
-                                <span className="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full uppercase tracking-wide">
-                                    {nodeData.vibe}
-                                </span>
-                            )}
-                        </div>
-
-                        {/* Node Content Tabs (L1/L2/L3) */}
-                        <div className="mt-4">
-                            <NodeTabs
-                                nodeData={nodeData}
-                                profile={isCore ? profile : null}
-                            />
-                        </div>
-
-                        {/* Buffer Zone Message (Handled optionally inside tabs or here) */}
-                        {!isCore && (
-                            <div className="mt-2 p-3 bg-yellow-50 text-yellow-800 rounded-lg text-xs">
-                                ℹ️ 此區域僅提供基本導航 (This zone has limited AI features)
-                            </div>
-                        )}
-
-                        {/* Actions (Plan a Trip) */}
-                        <div className="flex gap-2">
+                        <div className="relative">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h2 className="text-3xl font-black text-gray-900 tracking-tight">
+                                        {nodeData.name?.['zh-TW'] || nodeData.name?.['en'] || 'Unknown'}
+                                    </h2>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <span className="text-sm font-medium text-gray-400">{nodeData.type}</span>
+                                        {nodeData.vibe && (
+                                            <>
+                                                <div className="w-1 h-1 bg-gray-300 rounded-full" />
+                                                <span className="text-xs font-bold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                                    {nodeData.vibe}
+                                                </span>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                                <Heart size={24} />
+                            </button>
                             <button
                                 onClick={() => {
-                                    useAppStore.getState().addMessage({
-                                        role: 'assistant',
-                                        content: `已將「${nodeData.name?.['zh-TW'] || nodeData.name?.['en']}」加入您的行程草稿！`
-                                    });
-                                    // Close sheet optional, or show success UI
-                                    useAppStore.getState().setChatOpen(true); // Helper: Open chat to show confirmation
+                                    useAppStore.getState().setBottomSheetOpen(false);
+                                    useAppStore.getState().setCurrentNode(null);
                                 }}
-                                className="flex-1 bg-indigo-600 text-white font-medium py-3 rounded-full hover:bg-indigo-700 transition active:scale-95 shadow-lg shadow-indigo-200"
+                                className="p-3 bg-gray-100 rounded-full text-gray-500 hover:bg-gray-200 transition-colors ml-2"
                             >
-                                📅 加入行程
+                                <Minus size={24} className="rotate-45" /> {/* Close Icon */}
                             </button>
-                            <button className="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200">
-                                ❤️
-                            </button>
-                        </div>
-
-                        {/* AI Input Placeholder */}
-                        <div className="mt-4">
-                            <input
-                                type="text"
-                                readOnly
-                                onClick={() => useAppStore.getState().setChatOpen(true)}
-                                placeholder={isCore ? t('aiPlaceholder') : "輸入目的地..."}
-                                className="w-full bg-gray-100 rounded-full px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer text-gray-600"
-                            />
                         </div>
                     </div>
-                </div>
-            )}
 
-            {/* Bottom Nav Placeholder (optional) */}
+                    {/* Node Content Tabs (L1/L2/L3) */}
+                    <div className="mt-2 bg-gray-50/50 p-1 rounded-2xl">
+                        <NodeTabs
+                            nodeData={nodeData}
+                            profile={profile}
+                        />
+                    </div>
 
-            {/* Bottom Floating Chat Trigger (Visible when sheet is closed) */}
-            {!isBottomSheetOpen && (
-                <div className="absolute bottom-6 left-4 right-4 z-10 flex justify-center">
+                    {/* Buffer Zone Message */}
+                    {!isCore && (
+                        <div className="flex items-center gap-3 p-4 bg-orange-50/50 border border-orange-100 rounded-2xl text-orange-800 text-sm">
+                            <div className="p-2 bg-white rounded-xl shadow-sm">ℹ️</div>
+                            <span>此區域目前僅提供基礎資訊，Bambi AI 的感性導航功能正在擴張中。</span>
+                        </div>
+                    )}
+
+                    {/* Actions (Plan a Trip) */}
+                    <div className="flex gap-3 pt-2">
+                        <button
+                            onClick={() => {
+                                useAppStore.getState().addMessage({
+                                    role: 'assistant',
+                                    content: `已將「${nodeData.name?.['zh-TW'] || nodeData.name?.['en']}」加入您的行程草稿！`
+                                });
+                                useAppStore.getState().setChatOpen(true);
+                            }}
+                            className="flex-[2] bg-indigo-600 text-white font-bold py-4 rounded-3xl hover:bg-indigo-700 transition active:scale-95 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2"
+                        >
+                            <Calendar size={20} />
+                            <span>加入我的行程</span>
+                            <ArrowRight size={18} className="opacity-50" />
+                        </button>
+                    </div>
+
+                    {/* AI Deep Dive Entry */}
                     <button
                         onClick={() => useAppStore.getState().setChatOpen(true)}
-                        className="w-full max-w-md bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-full px-6 py-4 flex items-center gap-3 text-left transition-transform active:scale-95 border border-indigo-50"
+                        className="w-full bg-gradient-to-r from-indigo-50 to-white border border-indigo-100 rounded-2xl p-4 flex items-center gap-4 group hover:shadow-md transition-all active:scale-95"
                     >
-                        <span className="text-xl">✨</span>
-                        <span className="text-gray-500 font-medium">問 BambiGO... (帶我去上野)</span>
+                        <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform">
+                            <MessageSquare size={24} />
+                        </div>
+                        <div className="flex-1 text-left">
+                            <div className="font-bold text-indigo-900">向 Bambi 詢問詳情</div>
+                            <div className="text-xs text-indigo-400">獲取關於 {nodeData.name?.['zh-TW']} 的更多建議...</div>
+                        </div>
+                        <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-400">
+                            <ArrowRight size={16} />
+                        </div>
                     </button>
                 </div>
             )}
+
+            {/* 4. Bottom Navigation Bar */}
+            <div className="absolute bottom-6 left-6 right-6 z-30">
+                <div className="glass-effect rounded-[32px] p-2 flex justify-between items-center shadow-[0_15px_40px_rgba(0,0,0,0.15)] bg-white/80 border border-white/50">
+                    <button
+                        onClick={() => setActiveTab('explore')}
+                        className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'explore' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
+                    >
+                        <MapIcon size={20} fill={activeTab === 'explore' ? "white" : "none"} />
+                        <span className="text-[10px] font-black uppercase tracking-tighter">探索</span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('trips')}
+                        className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'trips' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 -rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
+                    >
+                        <ShieldCheck size={20} fill={activeTab === 'trips' ? "white" : "none"} />
+                        <span className="text-[10px] font-black uppercase tracking-tighter">守護</span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('me')}
+                        className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'me' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
+                    >
+                        <User size={20} fill={activeTab === 'me' ? "white" : "none"} />
+                        <span className="text-[10px] font-black uppercase tracking-tighter">我的</span>
+                    </button>
+                </div>
+            </div>
 
             {/* Chat Interface */}
             <ChatOverlay />
@@ -161,3 +279,4 @@ export default function Home() {
         </main>
     );
 }
+

@@ -1,12 +1,15 @@
-import { MapPin, Info, CalendarPlus } from 'lucide-react';
+import { MapPin, Info, CalendarPlus, Train, Car, Navigation, Zap, Banknote } from 'lucide-react';
 
-export type ActionType = 'navigate' | 'details' | 'trip';
+export type ActionType = 'navigate' | 'details' | 'trip' | 'transit' | 'taxi' | 'discovery';
 
 export interface Action {
     type: ActionType;
     label: string;
-    target: string; // nodeId or location alias
-    metadata?: any; // Extra data like coords or full node object
+    target: string;
+    description?: string;
+    price?: string;
+    timeSaved?: string;
+    metadata?: any;
 }
 
 interface ActionCardProps {
@@ -14,7 +17,7 @@ interface ActionCardProps {
     onClick: (action: Action) => void;
 }
 
-const CONFIG = {
+const CONFIG: Record<string, any> = {
     navigate: {
         icon: MapPin,
         bgColor: 'bg-blue-50',
@@ -35,6 +38,27 @@ const CONFIG = {
         textColor: 'text-green-700',
         borderColor: 'border-green-100',
         hoverColor: 'hover:bg-green-100'
+    },
+    transit: {
+        icon: Train,
+        bgColor: 'bg-slate-50',
+        textColor: 'text-slate-700',
+        borderColor: 'border-slate-200',
+        hoverColor: 'hover:bg-slate-100'
+    },
+    taxi: {
+        icon: Car,
+        bgColor: 'bg-amber-50',
+        textColor: 'text-amber-800',
+        borderColor: 'border-amber-100',
+        hoverColor: 'hover:bg-amber-100'
+    },
+    discovery: {
+        icon: Navigation,
+        bgColor: 'bg-rose-50',
+        textColor: 'text-rose-700',
+        borderColor: 'border-rose-100',
+        hoverColor: 'hover:bg-rose-100'
     }
 };
 
@@ -45,23 +69,47 @@ export function ActionCard({ action, onClick }: ActionCardProps) {
     return (
         <button
             onClick={() => onClick(action)}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-200 active:scale-95 text-left group ${config.bgColor} ${config.borderColor} ${config.hoverColor}`}
+            className={`w-full group relative overflow-hidden flex flex-col p-4 rounded-2xl border transition-all duration-300 active:scale-95 text-left shadow-sm hover:shadow-md ${config.bgColor} ${config.borderColor} ${config.hoverColor}`}
         >
-            <div className={`p-2 bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow ${config.textColor}`}>
-                <Icon size={18} />
-            </div>
-            <div className="flex-1">
-                <div className={`font-semibold text-sm ${config.textColor}`}>
-                    {action.label}
+            <div className="flex items-start gap-4">
+                <div className={`p-2.5 bg-white rounded-xl shadow-sm group-hover:shadow transition-shadow ${config.textColor}`}>
+                    <Icon size={20} />
                 </div>
-                {action.type === 'navigate' && (
-                    <div className="text-xs text-gray-500 mt-0.5">
-                        點擊飛往地點
+
+                <div className="flex-1 min-w-0">
+                    <div className="flex justify-between items-start">
+                        <div className={`font-bold text-base ${config.textColor} truncate`}>
+                            {action.label}
+                        </div>
+                        {action.timeSaved && (
+                            <span className="flex items-center gap-1 text-[10px] font-black bg-white/80 px-2 py-0.5 rounded-full text-green-600 uppercase tracking-tighter shadow-sm whitespace-nowrap">
+                                <Zap size={10} fill="currentColor" />
+                                省下 {action.timeSaved}
+                            </span>
+                        )}
                     </div>
-                )}
-            </div>
-            <div className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                →
+
+                    {action.description && (
+                        <div className="text-xs text-black/50 mt-0.5 leading-relaxed font-medium">
+                            {action.description}
+                        </div>
+                    )}
+
+                    {(action.price) && (
+                        <div className="flex items-center gap-1.5 mt-2">
+                            {action.price && (
+                                <div className="flex items-center gap-1 text-[11px] font-bold text-black/60 bg-white/40 px-2.5 py-1 rounded-lg border border-white/50">
+                                    <Banknote size={12} className="opacity-50" />
+                                    {action.price}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+
+                <div className={`self-center text-lg ${config.textColor} opacity-10 group-hover:opacity-100 group-hover:translate-x-1 transition-all`}>
+                    →
+                </div>
             </div>
         </button>
     );

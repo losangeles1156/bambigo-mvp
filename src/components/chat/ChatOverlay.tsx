@@ -56,49 +56,80 @@ export function ChatOverlay() {
 
     const handleAction = (action: ChatAction) => {
         if (action.type === 'navigate') {
-            // Mock Coords for now
             const targets: Record<string, [number, number]> = {
                 'ueno': [35.7141, 139.7774],
                 'shibuya': [35.6580, 139.7016],
                 'shinjuku': [35.6896, 139.7006]
             };
-            // If action.metadata has coords, use them
             const coords = action.metadata?.coordinates || targets[action.target] || [35.6895, 139.6917];
-
             useAppStore.getState().setMapCenter({ lat: coords[0], lon: coords[1] });
-            useAppStore.getState().setChatOpen(false); // Close chat to see map
+            useAppStore.getState().setChatOpen(false);
         } else if (action.type === 'details') {
-            // Open Node Details
             if (action.target) {
                 setCurrentNode(action.target);
                 setBottomSheetOpen(true);
                 setChatOpen(false);
             }
         } else if (action.type === 'trip') {
-            // Add to Trip logic placeholder
             addMessage({ role: 'assistant', content: `✅ 已將 ${action.label} 加入行程！` });
+        } else if (action.type === 'taxi') {
+            window.open(`https://go.mo-t.com/`, '_blank');
+        } else if (action.type === 'discovery') {
+            window.open(`https://luup.sc/`, '_blank');
+        } else if (action.type === 'transit') {
+            addMessage({ role: 'assistant', content: `正在為您開啟 ${action.label} 的詳細時刻表...` });
         }
     };
 
     return (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col animate-in slide-in-from-bottom duration-300">
+        <div className="fixed inset-0 z-50 bg-white flex flex-col animate-in slide-in-from-bottom duration-500">
             {/* Header */}
-            <div className="p-4 border-b flex justify-between items-center bg-white/80 backdrop-blur">
-                <h2 className="font-bold text-lg">Bambi AI</h2>
+            <div className="p-6 border-b flex justify-between items-center bg-white/90 backdrop-blur-xl sticky top-0 z-10">
+                <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-indigo-200">
+                        🦌
+                    </div>
+                    <div>
+                        <h2 className="font-black text-xl tracking-tight text-gray-900">Bambi AI</h2>
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Online Guidance</span>
+                        </div>
+                    </div>
+                </div>
                 <button
                     onClick={() => setChatOpen(false)}
-                    className="p-2 rounded-full hover:bg-gray-100"
+                    className="p-3 rounded-2xl bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-gray-900 transition-all active:scale-90"
                 >
                     ✕
                 </button>
             </div>
 
             {/* Messages */}
-            <div className={`flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50`}>
+            <div className={`flex-1 overflow-y-auto p-6 space-y-6 bg-gray-50/50`}>
                 {messages.length === 0 && (
-                    <div className="text-center text-gray-400 mt-20">
-                        <p>問我關於東京的任何事...</p>
-                        <p className="text-sm mt-2">試試：「帶我去上野」、「找個吃飯的地方」</p>
+                    <div className="flex flex-col items-center justify-center h-full text-center space-y-6 px-10 animate-in fade-in zoom-in duration-700">
+                        <div className="w-24 h-24 bg-indigo-50 rounded-[40px] flex items-center justify-center text-4xl shadow-inner italic">
+                            ✨
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-black text-gray-900 mb-2">想去哪裡逛逛？</h3>
+                            <p className="text-gray-400 font-medium leading-relaxed">
+                                我可以幫你找置物櫃、避開擁擠路段，或是推薦最順路的轉乘方案。
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 gap-2 w-full max-w-xs">
+                            {['帶我去上野', '附近有置物櫃嗎？', '銀座線現在擠嗎？'].map((tip, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setInput(tip)}
+                                    className="px-4 py-3 bg-white border border-gray-100 rounded-2xl text-sm font-bold text-indigo-600 shadow-sm hover:border-indigo-200 hover:bg-indigo-50 transition-all text-left flex justify-between items-center group"
+                                >
+                                    {tip}
+                                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 )}
 

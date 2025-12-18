@@ -1,52 +1,90 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { useEffect, useState, useRef } from 'react';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useZoneAwareness } from '@/hooks/useZoneAwareness';
 import { useAppStore } from '@/stores/appStore';
-import { fetchNearbyNodes, fetchAllNodes, NodeDatum } from '@/lib/api/nodes';
+import { fetchAllNodes, NodeDatum } from '@/lib/api/nodes';
 import { NodeMarker } from './NodeMarker';
 
-// Fix leafet icon
-const icon = L.icon({
-    iconUrl: '/images/marker-icon.png',
-    shadowUrl: '/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41]
-});
-
 // Component to handle map center updates
-function MapController({ center }: { center: { lat: number, lon: number } | null }) {
+function MapController({ center, isTooFar, fallback }: {
+    center: { lat: number, lon: number } | null,
+    isTooFar: boolean,
+    fallback: { lat: number, lon: number }
+}) {
     const map = useMap();
     const mapCenter = useAppStore(state => state.mapCenter);
+    const setMapCenter = useAppStore(state => state.setMapCenter);
+    const lastTargetRef = useRef<{ lat: number, lon: number } | null>(null);
 
-    // Priority: Store MapCenter > Props (User Location)
-    const target = mapCenter || center;
+    // Priority: Store MapCenter > Props (User Location IF NOT TOO FAR)
+    const target = mapCenter || (isTooFar ? null : center);
 
     useEffect(() => {
-        if (target) {
-            map.flyTo([target.lat, target.lon], 15, {
-                animate: true,
-                duration: 1.5
-            });
+        if (!target && isTooFar && !mapCenter) {
+            // Default center if user is far and no manual center set
+            const fallbackTarget = fallback;
+            if (JSON.stringify(lastTargetRef.current) !== JSON.stringify(fallbackTarget)) {
+                map.flyTo([fallbackTarget.lat, fallbackTarget.lon], 15, { animate: true, duration: 1.5 });
+                lastTargetRef.current = fallbackTarget;
+            }
+            return;
         }
-    }, [target, map]);
-    return null;
+
+        if (target) {
+            // Only fly if target actually changed to prevent rubber-banding while panning
+            const targetChanged = JSON.stringify(lastTargetRef.current) !== JSON.stringify(target);
+            if (targetChanged) {
+                map.flyTo([target.lat, target.lon], 15, {
+                    animate: true,
+                    duration: 1.5
+                });
+                lastTargetRef.current = target;
+
+                // If it was a manual center-to-user action, we clear the manual mapCenter 
+                // after reaching it to allow free panning again if needed? 
+                // Actually, keeping mapCenter is better for consistency.
+            }
+        }
+    }, [target, map, isTooFar, fallback, mapCenter]);
+
+    // Clear mapCenter if user starts dragging to allow manual exploration
+    useEffect(() => {
+        const onMove = () => {
+            if (mapCenter) {
+                // We keep mapCenter for now as it represents "Active Target"
+                // But we could null it if we want "Free Pan" mode
+            }
+        };
+        map.on('movestart', onMove);
+        return () => { map.off('movestart', onMove); };
+    }, [map, mapCenter]);
+
+    return (
+        <>
+            {center && !isTooFar && (
+                <div className="user-marker">
+                    {/* Leaflet markers need to be inside MapContainer but outside MapController technically 
+                        if using standard components, but we can use useMap and add a manual marker or 
+                        just return it if this was a component. Actually, let's put it in AppMap. */}
+                </div>
+            )}
+        </>
+    );
 }
 
 export default function AppMap() {
-    const { zone, userLocation } = useZoneAwareness();
+    const { zone, userLocation, isTooFar, centerFallback } = useZoneAwareness();
     const [nodes, setNodes] = useState<NodeDatum[]>([]);
 
-    // Default Tokyo center
-    const defaultCenter = [35.6895, 139.6917];
+    // Default center is Ueno if user is far
+    const defaultCenter: [number, number] = [centerFallback.lat, centerFallback.lon];
 
     useEffect(() => {
-        // Always fetch ALL nodes for manual planning visibility
         fetchAllNodes().then(data => {
-            console.log('Loaded nodes:', data.length);
             setNodes(data);
         });
     }, []);
@@ -54,8 +92,8 @@ export default function AppMap() {
     return (
         <div className="w-full h-screen relative z-0">
             <MapContainer
-                center={defaultCenter as [number, number]}
-                zoom={13}
+                center={defaultCenter}
+                zoom={15}
                 scrollWheelZoom={true}
                 className="w-full h-full"
             >
@@ -64,29 +102,57 @@ export default function AppMap() {
                     url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                 />
 
-                {userLocation && <MapController center={userLocation} />}
+                <MapController
+                    center={userLocation}
+                    isTooFar={isTooFar}
+                    fallback={centerFallback}
+                />
 
-                {/* Render Real Nodes */}
+                {/* User Location Marker */}
+                {userLocation && !isTooFar && (
+                    <NodeMarker
+                        node={{
+                            id: 'user-location',
+                            city_id: 'user',
+                            name: { 'zh-TW': '您的位置', 'en': 'Your Location', 'ja': '現在地' },
+                            type: 'user',
+                            location: { coordinates: [userLocation.lon, userLocation.lat] },
+                            vibe: 'me',
+                            is_hub: false,
+                            geohash: '',
+                            parent_hub_id: null,
+                            zone: 'user'
+                        } as any}
+                        zone="core" // Highlight user always
+                    />
+                )}
+
+                {/* Render Nodes */}
                 {nodes.map(node => (
                     <NodeMarker
                         key={node.id}
                         node={node}
-                        // We can pass the zone logic down, or determine it per node if needed
-                        // For now, simple zone passed from global state or node's own zone
                         zone={zone}
                     />
                 ))}
             </MapContainer>
 
-            {/* Zone Indicator (Debug/MVP) */}
-            <div className="absolute top-4 left-4 z-[1000] bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-lg text-sm font-medium">
-                <span className={
-                    zone === 'core' ? 'text-green-600' :
-                        zone === 'buffer' ? 'text-yellow-600' : 'text-gray-600'
-                }>
-                    {zone === 'core' ? '🔴 Core Zone' :
-                        zone === 'buffer' ? '🟡 Buffer Zone' : '⚪ Outer Zone'}
-                </span>
+            {/* Zone & Distance Indicator */}
+            <div className="absolute top-4 left-4 z-[1000] flex flex-col gap-2">
+                <div className="bg-white/90 backdrop-blur px-3 py-1 rounded-full shadow-lg text-sm font-medium">
+                    <span className={
+                        zone === 'core' ? 'text-green-600' :
+                            zone === 'buffer' ? 'text-yellow-600' : 'text-gray-600'
+                    }>
+                        {zone === 'core' ? '🔴 Core Zone' :
+                            zone === 'buffer' ? '🟡 Buffer Zone' : '⚪ Outer Zone'}
+                    </span>
+                </div>
+                {isTooFar && (
+                    <div className="bg-rose-500/90 text-white backdrop-blur px-3 py-1 rounded-full shadow-lg text-[10px] font-black uppercase tracking-widest animate-pulse">
+                        📍 距離過遠已回正 (UENO)
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -14,6 +14,7 @@ interface AppState {
 
     locale: 'zh-TW' | 'ja' | 'en';
     accessibilityMode: boolean;
+    activeTab: 'explore' | 'trips' | 'me';
 
     setCurrentNode: (id: string | null) => void;
     setZone: (zone: 'core' | 'buffer' | 'outer') => void;
@@ -25,6 +26,7 @@ interface AppState {
     setSubscriptionModalOpen: (isOpen: boolean) => void;
     setLocale: (locale: 'zh-TW' | 'ja' | 'en') => void;
     toggleAccessibility: () => void;
+    setActiveTab: (tab: 'explore' | 'trips' | 'me') => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -40,6 +42,7 @@ export const useAppStore = create<AppState>()(
             isSubscriptionModalOpen: false,
             locale: 'zh-TW',
             accessibilityMode: false,
+            activeTab: 'explore',
 
             setCurrentNode: (id) => set({ currentNodeId: id }),
             setZone: (zone) => set({ currentZone: zone }),
@@ -51,6 +54,7 @@ export const useAppStore = create<AppState>()(
             setSubscriptionModalOpen: (isOpen) => set({ isSubscriptionModalOpen: isOpen }),
             setLocale: (locale) => set({ locale }),
             toggleAccessibility: () => set((state) => ({ accessibilityMode: !state.accessibilityMode })),
+            setActiveTab: (tab) => set({ activeTab: tab }),
         }),
         {
             name: 'bambigo-storage',

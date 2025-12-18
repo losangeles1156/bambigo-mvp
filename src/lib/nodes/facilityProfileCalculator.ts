@@ -6,6 +6,11 @@ export interface CategoryCounts {
     education: number;
     leisure: number;
     finance: number;
+    accommodation?: number;
+    workspace?: number;
+    housing?: number;
+    religion?: number;
+    nature?: number;
 }
 
 // Logic to calculate dominant category and total
@@ -17,7 +22,7 @@ export function calculateProfileStats(counts: CategoryCounts) {
     let max = 0;
 
     for (const [key, value] of Object.entries(counts)) {
-        if (value > max) {
+        if (['medical', 'shopping', 'dining', 'leisure', 'education', 'finance', 'accommodation', 'workspace', 'housing', 'religion', 'nature'].includes(key) && value > max) {
             max = value;
             dominant = key;
         }
