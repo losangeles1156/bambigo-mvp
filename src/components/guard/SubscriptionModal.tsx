@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { useAppStore } from '@/stores/appStore';
 
 export function SubscriptionModal() {
@@ -7,10 +9,33 @@ export function SubscriptionModal() {
 
     if (!isSubscriptionModalOpen) return null;
 
-    const handleActivate = () => {
-        // Mock Payment / Activation
-        setTripGuardActive(true);
-        setTimeout(() => setSubscriptionModalOpen(false), 500);
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    const handleActivate = async () => {
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/trip-guard/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    routeIds: ['odpt.Railway:TokyoMetro.Ginza'], // TODO: Get from store or selection
+                    startTime: '07:00',
+                    endTime: '23:30',
+                    notificationMethod: 'line'
+                })
+            });
+
+            if (!res.ok) throw new Error('Subscription failed');
+
+            // Success
+            setTripGuardActive(true);
+            setTimeout(() => setSubscriptionModalOpen(false), 800);
+        } catch (error) {
+            console.error(error);
+            alert('Failed to activate Trip Guard. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleDeactivate = () => {
@@ -55,9 +80,12 @@ export function SubscriptionModal() {
                     {!isTripGuardActive ? (
                         <button
                             onClick={handleActivate}
-                            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+                            disabled={isLoading}
+                            className={`w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all
+                                ${isLoading ? 'opacity-70 cursor-wait' : ''}
+                            `}
                         >
-                            立即啟用 (7日 / ¥500)
+                            {isLoading ? '啟用中...' : '立即啟用 (7日 / ¥500)'}
                         </button>
                     ) : (
                         <button
