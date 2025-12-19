@@ -1,0 +1,13 @@
+{
+    "Home": {
+        "title": "BambiGO",
+        "currentLocation": "現在地",
+        "askBambiGO": "BambiGOに聞く...",
+        "aiPlaceholder": "BambiGOに聞く..."
+    },
+    "status": {
+        "crowded": "混雑",
+        "normal": "正常",
+        "delayed": "{minutes}分遅延"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "Home": {
+        "title": "BambiGO",
+        "currentLocation": "Current Location",
+        "askBambiGO": "Ask BambiGO...",
+        "aiPlaceholder": "Ask BambiGO..."
+    },
+    "status": {
+        "crowded": "Crowded",
+        "normal": "Normal",
+        "delayed": "Delayed {minutes} min"
+    }
+}

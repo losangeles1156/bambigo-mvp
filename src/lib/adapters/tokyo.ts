@@ -21,16 +21,38 @@ export const tokyoCoreAdapter: CityAdapter = {
     },
     dataSources: {
         odptOperators: ['TokyoMetro', 'Toei', 'JR-East'],
-        gbfsSystems: ['docomo-cycle-tokyo', 'hellocycling'],
+        gbfsSystems: ['docomo-cycle-tokyo', 'luup'],
     },
     commercialPartners: {
         taxi: {
             provider: 'go_taxi',
-            deepLinkTemplate: 'https://go.mo-t.com/?...' // Placeholder
+            // GO Taxi - 使用 Web 頁面作為中介，用戶可從此處下載或開啟 App
+            deepLinkTemplate: 'https://go.mo-t.com/',
+            webFallback: 'https://go.mo-t.com/',
+            storeLinks: {
+                ios: 'https://apps.apple.com/jp/app/go-taxi/id1458398674',
+                android: 'https://play.google.com/store/apps/details?id=com.DeNAMobility.taxiapp'
+            }
         },
         locker: {
             provider: 'ecbo',
-            deepLinkTemplate: 'https://cloak.ecbo.io/?...' // Placeholder
+            // Ecbo Cloak - 行李寄存服務
+            deepLinkTemplate: 'https://cloak.ecbo.io/ja',
+            webFallback: 'https://cloak.ecbo.io/ja',
+            storeLinks: {
+                ios: 'https://apps.apple.com/jp/app/ecbo-cloak/id1272498364',
+                android: 'https://play.google.com/store/apps/details?id=io.ecbo.cloak'
+            }
         },
+        sharedMobility: {
+            provider: 'luup',
+            // LUUP - 電動滑板車/自行車共享服務
+            deepLinkTemplate: 'https://luup.sc/',
+            webFallback: 'https://luup.sc/',
+            storeLinks: {
+                ios: 'https://apps.apple.com/jp/app/luup/id1471138219',
+                android: 'https://play.google.com/store/apps/details?id=sc.luup.android'
+            }
+        }
     },
 };

@@ -192,26 +192,26 @@ BambiGO 的商業價值在於「焦慮解法的中介」：
 
 ## 10. 開發里程碑
 
-### Phase 1：骨幹建置（Current Focus）
-- [ ] 設定 Zeabur 環境變數 ODPT_API_KEY
-- [ ] 建立 Hub/Spoke 資料庫結構（含 parent_hub_id）
-- [ ] n8n 建立 ODPT 自動抓取 Workflow
-- [ ] City Adapter 介面實作
-- [ ] 地圖分層渲染 (Layering)
+### Phase 1：骨幹建置 ✅ 已完成
+- [x] 設定 Zeabur 環境變數 ODPT_API_KEY
+- [x] 建立 Hub/Spoke 資料庫結構（含 parent_hub_id）
+- [x] n8n 建立 ODPT 自動抓取 Workflow
+- [x] City Adapter 介面實作
+- [x] 地圖分層渲染 (Layering)
 
-### Phase 2：感知與細節
-- [ ] 定義 10 個核心 Hub 並撰寫 Persona Prompt
-- [ ] 實作 L3 供給/適用雙欄位結構
-- [ ] OSM 數據抓取，自動填入 Supply Tags
-- [ ] L2 即時狀態顯示
+### Phase 2：感知與細節 ✅ 已完成
+- [x] 定義 10 個核心 Hub 並撰寫 Persona Prompt
+- [x] 實作 L3 供給/適用雙欄位結構
+- [x] OSM 數據抓取，自動填入 Supply Tags
+- [x] L2 即時狀態顯示
 
-### Phase 3：決策與神經
-- [ ] 接入 GBFS 共享運具數據
-- [ ] Dify 知識庫對接
-- [ ] L4 AI 對話建議功能
-- [ ] Trip Guard 自動化流程
-- [ ] PWA Manifest 與 Action Cards UI
-- [ ] Deep Links 整合
+### Phase 3：決策與神經（進行中）
+- [x] 接入 GBFS 共享運具數據
+- [x] Dify 知識庫對接（透過 n8n）
+- [x] L4 AI 對話建議功能
+- [x] Trip Guard 自動化流程
+- [x] PWA Manifest 與 Action Cards UI
+- [ ] Deep Links 整合（待商業合作）
 
 ---
 
@@ -256,19 +256,23 @@ export const tokyoAdapter: CityAdapter = {
 ```env
 # ODPT API
 ODPT_API_KEY=your_odpt_api_key
+ODPT_CHALLENGE_KEY=your_odpt_challenge_key
 
 # Supabase
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+SUPABASE_SERVICE_KEY=your_service_key
 
-# Dify
-DIFY_API_KEY=your_dify_api_key
-DIFY_BASE_URL=https://api.dify.ai/v1
+# AI Backend (n8n - 取代直接 Dify 呼叫)
+N8N_WEBHOOK_URL=https://your-n8n-instance/webhook/bambigo-chat
+N8N_WEBHOOK_SECRET=optional_secret_token
 
 # LINE (Trip Guard)
 LINE_CHANNEL_ACCESS_TOKEN=your_line_token
 LINE_CHANNEL_SECRET=your_line_secret
+
+# Mapbox (Optional)
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token
 ```
 
 ---

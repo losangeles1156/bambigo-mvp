@@ -26,6 +26,12 @@ export interface DataSourceConfig {
 export interface CommercialPartnerConfig {
     provider: string;
     deepLinkTemplate: string;
+    webFallback?: string;        // Web URL fallback if app not installed
+    appScheme?: string;          // App URI scheme (e.g., 'go://', 'luup://')
+    storeLinks?: {
+        ios?: string;
+        android?: string;
+    };
 }
 
 export interface CityAdapter {
@@ -40,9 +46,10 @@ export interface CityAdapter {
     // Data Sources
     dataSources: DataSourceConfig;
 
-    // Commercial Intergrations
+    // Commercial Integrations
     commercialPartners: {
         taxi?: CommercialPartnerConfig;
         locker?: CommercialPartnerConfig;
+        sharedMobility?: CommercialPartnerConfig;
     };
 }
