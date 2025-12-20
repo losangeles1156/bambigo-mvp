@@ -173,8 +173,33 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 advice: '⚠️ 心理建設：轉乘通道長達 800 公尺，步行需 15-20 分鐘。請把它當作是「走到下一站」的距離感。',
                 severity: 'high'
             }
+        ],
+        hacks: [
+            '🎫 **丸之內南口紅磚站舍**：國家重要文化財，必拍照點！從丸之內地下廣場搭電梯上1F即可抵達。',
+            '🍱 **駅弁屋 祭**：中央通路有超過200種車站便當，建議發車前30分鐘來選購。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線 大手町方向驗票口外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '丸之內南口改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '八重洲北口改札外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'JR B1', operator: 'JR', location: '丸之內地下改札外', attributes: { count: 500, sizes: ['S', 'M', 'L', 'XL'], note: '最大置物櫃區' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            { type: 'locker', floor: 'JR B1', operator: 'JR', location: '八重洲地下街', attributes: { count: 800, sizes: ['S', 'M', 'L', 'XL', 'XXL'], note: '超大型行李可' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札外', attributes: { count: 100, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '丸之內線月台 → 驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '驗票口 → OAZO (1號出口)', attributes: { wheelchair: true, hours: '5:10-末班車' }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '驗票口 → 丸大樓方向專用出口', attributes: { wheelchair: true, hours: '首班車-24:00' }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
+            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '丸之內北口 → B1', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            { type: 'elevator', floor: 'JR B1-B5', operator: 'JR', location: '八重洲南口 → 京葉線月台', attributes: { wheelchair: true, note: '直達京葉線 (迪士尼方向)' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            // === WiFi & 充電 ===
+            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' } },
+            { type: 'charging', floor: 'JR 1F', operator: 'Private', location: 'KITTE 1F', attributes: { note: 'Type-A, Type-C, USB 免費' } }
         ]
     },
+
 
     // Toei Asakusa Line Wisdom
     'odpt:Station:Toei.Asakusa.Oshiage': {
@@ -189,6 +214,14 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '✈️ **直通成田**：此站直通京成線往成田機場，是個非常方便的轉運點。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'B1', operator: 'Toei', location: '改札內 (晴空塔方向)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html' },
+            { type: 'toilet', floor: 'B1', operator: 'Toei', location: '東京晴空塔城連通道', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: '東京晴空塔城入口', attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL'], note: '觀光客專用' } },
+            { type: 'elevator', floor: 'B1', operator: 'Toei', location: '改札 → 晴空塔城直結出口', attributes: { wheelchair: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html' },
+            { type: 'elevator', floor: 'B2', operator: 'Metro', location: '半藏門線月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'B1', operator: 'Toei', location: '改札內全區', attributes: { ssid: 'Toei_Free_Wi-Fi', note: '限時30分' } }
         ]
     },
     'odpt:Station:Toei.Asakusa.Asakusa': {
@@ -200,6 +233,20 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 advice: '⚠️ 行動建議：攜帶大型行李的旅客，請務必尋找「駒形橋方面」的 **A2b 出口**，这是唯一的直達電梯出口。',
                 severity: 'high'
             }
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 1號線月台終端', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/' },
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '都營淺草線 改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'B1', operator: 'Metro', location: '銀座線改札外 (雷門方向)', attributes: { count: 80, sizes: ['S', 'M', 'L'] } },
+            { type: 'locker', floor: '1F', operator: 'Private', location: '淺草文化觀光中心前', attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'], note: '大型行李推薦' } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '淺草寺・雷門方向驗票口 → 1號出口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/' },
+            { type: 'elevator', floor: 'Toei B2', operator: 'Toei', location: '都營淺草線 → A2b出口 (駒形橋方向)', attributes: { wheelchair: true, note: '唯一直達電梯' }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusa.html' },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '銀座線改札內', attributes: { ssid: 'ASAKUSA_FREE_WiFi', note: '淺草觀光WiFi' } },
+            { type: 'wifi', floor: 'Toei B2', operator: 'Toei', location: '都營淺草線改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     },
     'odpt:Station:Toei.Asakusa.Kuramae': {
@@ -218,6 +265,11 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 advice: '⚠️ 心理建設：這不是站內轉乘，請做好要走出戶外過馬路的準備。轉乘時間需抓 10-15 分鐘。',
                 severity: 'medium'
             }
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kuramae.html' },
+            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A2出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     },
     'odpt:Station:Toei.Asakusa.Asakusabashi': {
@@ -233,6 +285,12 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🧵 **手作天堂**：出站即是「江戶通」，滿街都是飾品材料、皮革、珠寶的批發店，價格甚至是市價的一半！',
             '🎎 **人形老舖**：此地也是著名的「久月」等人形娃娃專賣區。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: 'A3出口附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A3出口', attributes: { wheelchair: true, note: '唯一電梯' } },
+            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     },
     'odpt:Station:TokyoMetro.Tawaramachi': {
@@ -247,6 +305,11 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '🍞 **知名麵包店**：著名的「Pelican」麵包店就在附近，需預約才買得到！'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tawaramachi/accessibility/' },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '2號出口', attributes: { wheelchair: true, note: '合羽橋方向推薦' } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     },
     'odpt:Station:JR-East.Uguisudani': {
@@ -265,6 +328,12 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🐟 **阿美橫町尾端**：這裡是阿美橫町的另一端，相較於上野站的擁擠，從御徒町進入通常人潮稍少一點，且海鮮丼名店多集中在此側。',
             '💎 **珠寶批發**：車站周邊是日本最大的珠寶飾品批發區。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { wheelchair: true } },
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '北口改札外', attributes: { count: 100, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
         ]
     },
     'odpt:Station:TokyoMetro.Iriya': {
@@ -272,6 +341,11 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '👻 **鬼子母神**：每年七月的「朝顏市（牽牛花市）」非常熱鬧。',
             '🍲 **老舖天丼**：附近有許多百年老店，價格比淺草親民許多。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/iriya/accessibility/' },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '1號出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     },
     'odpt:Station:Toei.Asakusa.Ningyocho': {
@@ -331,6 +405,22 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🌧️ **地下通路王**：新宿三丁目到西口都廳，均有地下道相連。下雨天可從「Subnade」地下街一路逛到東口，完全不必淋雨。',
             '🆕 **新南口直達**：要去「Busta 新宿 (巴士轉運站)」請務必找「新南改札」，出來直達手扶梯上樓即是，千萬別走去東/西口。'
+        ],
+        l3Facilities: [
+            // === 廁所 ===
+            { type: 'toilet', floor: 'JR B1', operator: 'JR', location: '東口改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'toilet', floor: 'JR 2F', operator: 'JR', location: '新南改札內 (Busta方向)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 ===
+            { type: 'locker', floor: 'JR B1', operator: 'JR', location: '東口地下廣場', attributes: { count: 400, sizes: ['S', 'M', 'L', 'XL'], note: '最大量區域' } },
+            { type: 'locker', floor: 'JR 2F', operator: 'JR', location: '新南口改札外', attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL', 'XXL'], note: '超大型行李' } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: 'Subnade 地下街', attributes: { count: 150, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 ===
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '新南改札 → Busta新宿', attributes: { wheelchair: true, note: '高速巴士轉運站' } },
+            { type: 'elevator', floor: 'Metro B7', operator: 'Toei', location: '大江戶線月台 → 改札', attributes: { wheelchair: true, note: '地下7層' } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi' } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     },
 
@@ -355,6 +445,22 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🏙️ **Scramble Square 捷徑**：利用 Scramble Square 百貨的電梯，可以直接從 B2 地鐵層殺到 3F 的銀座線/JR 連通道，避開人擠人的手扶梯。',
             '🖼️ **神話明日壁畫**：在通往井之頭線的連通道上，有岡本太郎巨大的壁畫「明日的神話」，是免費且震撼的藝術景點。'
+        ],
+        l3Facilities: [
+            // === 廁所 ===
+            { type: 'toilet', floor: 'Metro 3F', operator: 'Metro', location: '銀座線改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'toilet', floor: 'Metro B5', operator: 'Metro', location: '副都心線改札內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            { type: 'toilet', floor: 'JR 2F', operator: 'JR', location: '八公改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 ===
+            { type: 'locker', floor: 'JR 2F', operator: 'JR', location: '八公改札外', attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'] } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: 'Scramble Square B1', attributes: { count: 100, sizes: ['S', 'M', 'L'], note: '百貨內' } },
+            // === 電梯 ===
+            { type: 'elevator', floor: 'Metro 3F', operator: 'Metro', location: '銀座線月台 → 地上', attributes: { wheelchair: true, note: '銀座線在3樓' } },
+            { type: 'elevator', floor: 'Metro B5', operator: 'Metro', location: '副都心線月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'B2-3F', operator: 'Private', location: 'Scramble Square 百貨', attributes: { wheelchair: true, note: '推薦捷徑' } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro 全層', operator: 'Metro', location: '改札內全區', attributes: { ssid: 'METRO_FREE_WiFi' } },
+            { type: 'wifi', floor: 'JR 2F', operator: 'JR', location: 'JR改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
         ]
     },
 
@@ -372,6 +478,21 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🦉 **貓頭鷹地標**：東口的「Ikefukurou (貓頭鷹石像)」是最佳會合點，比八公像難找一點但人也比較少。',
             '🍜 **拉麵激戰區**：東口往 SunShine City 的路上是拉麵一級戰區，無敵家、一蘭都在這附近。'
+        ],
+        l3Facilities: [
+            // === 廁所 ===
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '中央改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 ===
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '東口改札外', attributes: { count: 300, sizes: ['S', 'M', 'L', 'XL'], note: '西武百貨側' } },
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '西口改札外', attributes: { count: 250, sizes: ['S', 'M', 'L', 'XL'], note: '東武百貨側' } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: 'Sunshine City 地下通道', attributes: { count: 100, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 ===
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '中央改札 → 各月台', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '丸之內線月台 → 改札', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi' } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     }
 };
