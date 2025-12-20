@@ -105,6 +105,25 @@ export function ChatOverlay() {
                 </button>
             </div>
 
+            {/* Trip Guard Entry Point */}
+            <div className="px-5 py-3 bg-indigo-50/50 border-b border-indigo-100/50 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <div className="p-1 bg-indigo-600 rounded-lg text-white">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-indigo-900">行程守護模式 (Trip Guard)</span>
+                </div>
+                <button
+                    onClick={() => {
+                        useAppStore.getState().setTripGuardActive(true);
+                        setChatOpen(false);
+                    }}
+                    className="px-3 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-full hover:bg-indigo-700 transition-colors shadow-sm"
+                >
+                    立即啟動
+                </button>
+            </div>
+
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 scroll-smooth">
                 {messages.length === 0 && (

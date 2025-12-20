@@ -4,6 +4,8 @@ import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
+import { WeatherBanner } from '@/components/ui/WeatherBanner';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -34,6 +36,7 @@ export default async function RootLayout({
             </head>
             <body className={inter.className}>
                 <NextIntlClientProvider messages={messages}>
+                    <WeatherBanner />
                     {children}
                 </NextIntlClientProvider>
             </body>

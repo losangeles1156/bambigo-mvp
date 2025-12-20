@@ -19,23 +19,41 @@ export async function GET(req: NextRequest) {
         const wisdom = STATION_WISDOM[stationId] || null;
 
         // 2. Get Dynamic Node Data (Basic Info & Accessibility)
-        const { data: nodeData, error } = await supabase
+        const { data: nodeData, error: nodeError } = await supabase
             .from('nodes')
             .select('name, type, vibe, accessibility, metadata')
             .eq('id', stationId)
             .single();
 
-        if (error && error.code !== 'PGRST116') { // Ignore "Row not found" (PGRST116)
-            console.warn('Supabase Error fetching node:', error.message);
+        if (nodeError && nodeError.code !== 'PGRST116') { // Ignore "Row not found" (PGRST116)
+            console.warn('Supabase Error fetching node:', nodeError.message);
         }
 
-        // 3. Construct Context Object
+        // 3. Get Facility Profiles (L1 Tags)
+        const { data: profileData, error: profileError } = await supabase
+            .from('node_facility_profiles')
+            .select('category_counts, vibe_tags, dominant_category')
+            .eq('node_id', stationId)
+            .single();
+
+        if (profileError && profileError.code !== 'PGRST116') {
+            console.warn('Supabase Error fetching profile:', profileError.message);
+        }
+
+        // 4. Construct Context Object
         // This object is shaped to be easily consumable by an LLM
         const contextResponse = {
             stationId,
             name: nodeData?.name?.en || stationId,
             vibe: nodeData?.vibe || 'unknown',
             accessibility: nodeData?.accessibility || 'unknown',
+
+            // L1 Facility Tags
+            facilityProfile: profileData ? {
+                counts: profileData.category_counts,
+                vibeTags: profileData.vibe_tags,
+                dominant: profileData.dominant_category
+            } : null,
 
             // Wisdom is the key "Secret Sauce" for our agent
             wisdom: wisdom ? {

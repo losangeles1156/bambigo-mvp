@@ -1,30 +1,75 @@
 'use client';
 
+import { useState } from 'react';
 import { useAppStore } from '@/stores/appStore';
+import { LineBindingModal } from './LineBindingModal';
+import { Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 export function TripGuardStatus() {
-    const { isTripGuardActive, setSubscriptionModalOpen } = useAppStore();
+    const { isTripGuardActive, isLineBound, setLineBound } = useAppStore();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showPreview, setShowPreview] = useState(false);
+
+    const handleClick = () => {
+        if (!isLineBound) {
+            setIsModalOpen(true);
+        } else {
+            setShowPreview(!showPreview);
+        }
+    };
 
     return (
-        <button
-            onClick={() => setSubscriptionModalOpen(true)}
-            className={`
-                relative p-2 rounded-full shadow-sm backdrop-blur transition-all duration-300
-                ${isTripGuardActive ? 'bg-emerald-100 text-emerald-600' : 'bg-white/90 text-gray-400'}
-            `}
-        >
-            {/* Shield Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill={isTripGuardActive ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-
-            {/* Pulse Effect if Active */}
-            {isTripGuardActive && (
-                <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                </span>
+        <div className="flex flex-col items-end gap-3 pointer-events-auto">
+            {/* Notification Preview (Simulated Exception) */}
+            {isTripGuardActive && isLineBound && showPreview && (
+                <div className="bg-white/95 backdrop-blur-xl p-4 rounded-3xl shadow-2xl border border-rose-100 w-64 animate-in slide-in-from-right-4 duration-500">
+                    <div className="flex items-center gap-2 mb-2 text-rose-600">
+                        <ShieldAlert size={16} />
+                        <span className="text-[10px] font-black uppercase tracking-widest">異常通知 (Anomaly)</span>
+                    </div>
+                    <h4 className="font-bold text-sm text-gray-900 mb-1">銀座線：人潮擁擠警報</h4>
+                    <p className="text-[11px] text-gray-500 font-medium leading-relaxed mb-3">
+                        當前上野站正進入高峰，預計延誤 10 分鐘。
+                    </p>
+                    <div className="bg-rose-50 p-2 rounded-xl text-[10px] font-bold text-rose-700 border border-rose-100">
+                        🦌 Bambi 建議：改搭日比谷線至仲御徒町站轉乘，可避開擁擠區域。
+                    </div>
+                </div>
             )}
-        </button>
+
+            <button
+                onClick={handleClick}
+                className={`
+                    relative w-12 h-12 rounded-2xl shadow-xl backdrop-blur transition-all duration-500 flex items-center justify-center
+                    ${isTripGuardActive && isLineBound
+                        ? 'bg-indigo-600 text-white shadow-indigo-200'
+                        : isTripGuardActive
+                            ? 'bg-amber-100 text-amber-600'
+                            : 'bg-white/90 text-gray-400 hover:text-gray-600'}
+                `}
+            >
+                {isTripGuardActive && isLineBound ? <ShieldCheck size={24} /> : isTripGuardActive ? <ShieldAlert size={24} /> : <Shield size={24} />}
+
+                {/* Status Glow */}
+                {isTripGuardActive && (
+                    <span className="absolute -inset-1 rounded-2xl bg-indigo-500/20 animate-pulse -z-10" />
+                )}
+
+                {/* LINE Status Dot */}
+                {isTripGuardActive && (
+                    <span className={`absolute top-0 right-0 -mt-1 -mr-1 flex h-4 w-4 border-2 border-white rounded-full ${isLineBound ? 'bg-green-500' : 'bg-amber-500'}`}>
+                        {isLineBound && <span className="animate-ping absolute inset-0 rounded-full bg-green-400 opacity-75" />}
+                    </span>
+                )}
+            </button>
+
+            <LineBindingModal
+                isOpen={isModalOpen}
+                onClose={() => {
+                    setIsModalOpen(false);
+                    setLineBound(true);
+                }}
+            />
+        </div>
     );
 }

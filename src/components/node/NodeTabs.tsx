@@ -1,12 +1,57 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FacilityProfile } from '../ui/FacilityProfile';
 import { CategoryCounts } from '@/lib/nodes/facilityProfileCalculator';
 import { STATION_WISDOM, StationTrap } from '@/data/stationWisdom';
-import { Info, AlertTriangle, Lightbulb, Zap, Smile, MapPin as MapIcon, Star, ArrowRight, Map as MapIcon2 } from 'lucide-react';
 import { FacilityCarousel } from '../ui/FacilityCarousel';
 import { NodeProfile } from '@/lib/api/nodes';
+import { FacilityFingerprint } from './FacilityFingerprint';
+import { VibeTags } from './VibeTags';
+import {
+    AlertOctagon, Zap, Smile, MapPin as MapIcon, Star, ArrowRight,
+    Map as MapIcon2, AlertTriangle, Clock, Users, Navigation, Info,
+    Lightbulb, CloudRain, Sun, Cloud, Thermometer, Wind
+} from 'lucide-react';
+
+// Weather Alert Section Component (P1-2)
+function WeatherAlertSection() {
+    const [alerts, setAlerts] = useState<any[]>([]);
+
+    useEffect(() => {
+        const fetchAlerts = async () => {
+            try {
+                const res = await fetch('/api/weather');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.alerts) setAlerts(data.alerts);
+                }
+            } catch (error) { }
+        };
+        fetchAlerts();
+    }, []);
+
+    if (alerts.length === 0) return null;
+
+    const mainAlert = alerts[0];
+    const isCritical = mainAlert.severity === 'critical';
+
+    return (
+        <div className={`mt-1 mb-4 p-3 rounded-2xl border flex items-start gap-3 animate-in fade-in zoom-in duration-500 ${isCritical ? 'bg-rose-50 border-rose-100' : 'bg-amber-50 border-amber-100'}`}>
+            <div className={`p-2 rounded-xl shadow-sm ${isCritical ? 'bg-white text-rose-500 animate-pulse' : 'bg-white text-amber-500'}`}>
+                {isCritical ? <AlertOctagon size={16} /> : <AlertTriangle size={16} />}
+            </div>
+            <div className="flex-1 overflow-hidden">
+                <h4 className={`text-[10px] font-black uppercase tracking-tight truncate ${isCritical ? 'text-rose-900' : 'text-amber-900'}`}>
+                    【天候警告】{mainAlert.title}
+                </h4>
+                <p className={`text-[10px] font-medium leading-tight mt-0.5 line-clamp-2 ${isCritical ? 'text-rose-700' : 'text-amber-700'}`}>
+                    {mainAlert.summary}
+                </p>
+            </div>
+        </div>
+    );
+}
 
 interface NodeTabsProps {
     nodeData: any;
@@ -18,40 +63,40 @@ export function NodeTabs({ nodeData, profile }: NodeTabsProps) {
 
     return (
         <div className="flex flex-col gap-4">
-            {/* Tab Headers */}
-            <div className="flex border-b border-gray-100">
+            {/* Tab Headers - Premium Glassmorphism */}
+            <div className="flex p-1 bg-gray-100/50 backdrop-blur-sm rounded-xl border border-gray-200/50 relative overflow-hidden">
                 <button
                     onClick={() => setActiveTab('l1')}
-                    className={`flex-1 py-2 text-xs font-black transition-colors border-b-2 ${activeTab === 'l1'
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-transparent text-gray-400 hover:text-gray-600'
+                    className={`flex-1 py-2.5 text-[10px] font-black tracking-widest transition-all rounded-lg relative z-10 ${activeTab === 'l1'
+                        ? 'bg-white text-indigo-600 shadow-sm scale-100'
+                        : 'text-gray-400 hover:text-gray-600 hover:bg-white/50 scale-[0.98]'
                         }`}
                 >
                     DNA (L1)
                 </button>
                 <button
                     onClick={() => setActiveTab('l2')}
-                    className={`flex-1 py-2 text-xs font-black transition-colors border-b-2 ${activeTab === 'l2'
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-transparent text-gray-400 hover:text-gray-600'
+                    className={`flex-1 py-2.5 text-[10px] font-black tracking-widest transition-all rounded-lg relative z-10 ${activeTab === 'l2'
+                        ? 'bg-white text-indigo-600 shadow-sm scale-100'
+                        : 'text-gray-400 hover:text-gray-600 hover:bg-white/50 scale-[0.98]'
                         }`}
                 >
                     LIVE (L2)
                 </button>
                 <button
                     onClick={() => setActiveTab('l3')}
-                    className={`flex-1 py-2 text-xs font-black transition-colors border-b-2 ${activeTab === 'l3'
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-transparent text-gray-400 hover:text-gray-600'
+                    className={`flex-1 py-2.5 text-[10px] font-black tracking-widest transition-all rounded-lg relative z-10 ${activeTab === 'l3'
+                        ? 'bg-white text-indigo-600 shadow-sm scale-100'
+                        : 'text-gray-400 hover:text-gray-600 hover:bg-white/50 scale-[0.98]'
                         }`}
                 >
                     FACILITY (L3)
                 </button>
                 <button
                     onClick={() => setActiveTab('l4')}
-                    className={`flex-1 py-2 text-xs font-black transition-colors border-b-2 ${activeTab === 'l4'
-                        ? 'border-indigo-600 text-indigo-600'
-                        : 'border-transparent text-gray-400 hover:text-gray-600'
+                    className={`flex-1 py-2.5 text-[10px] font-black tracking-widest transition-all rounded-lg relative z-10 ${activeTab === 'l4'
+                        ? 'bg-white text-indigo-600 shadow-sm scale-100'
+                        : 'text-gray-400 hover:text-gray-600 hover:bg-white/50 scale-[0.98]'
                         }`}
                 >
                     BAMBI (L4)
@@ -72,10 +117,8 @@ export function NodeTabs({ nodeData, profile }: NodeTabsProps) {
                                         </div>
                                         <h3 className="font-black text-sm uppercase tracking-widest text-gray-900">地點基因 (Location DNA)</h3>
                                     </div>
-                                    <FacilityProfile
-                                        counts={profile.category_counts}
-                                        vibeTags={profile.vibe_tags}
-                                    />
+                                    <VibeTags tags={profile.vibe_tags} />
+                                    <FacilityFingerprint counts={profile.category_counts} />
                                 </div>
 
                                 {/* 2. Emotional Context Description */}
@@ -129,6 +172,19 @@ export function NodeTabs({ nodeData, profile }: NodeTabsProps) {
                                         <>「這裡不只是交通點，更是觀察東京生活縮影的最佳視窗。不論是尋找隱藏美食還是感受文化氣息，Bambi 都能為您導航那些難以言喻的城市魅力。」</>
                                     )}
                                 </div>
+
+                                {/* 3. Surrounding Facilities */}
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-2">
+                                        <div className="p-1.5 bg-indigo-100 rounded-lg text-indigo-600">
+                                            <MapIcon2 size={16} />
+                                        </div>
+                                        <h3 className="font-black text-sm uppercase tracking-widest text-gray-900">周邊設施 (Vicinity)</h3>
+                                    </div>
+                                    <div className="bg-white rounded-3xl p-4 border border-black/[0.03] shadow-sm">
+                                        <FacilityFingerprint counts={profile.category_counts} />
+                                    </div>
+                                </div>
                             </div>
                         ) : (
                             <div className="p-8 bg-gray-50 text-gray-400 rounded-[32px] text-sm text-center font-medium border-2 border-dashed border-gray-100 italic">
@@ -142,54 +198,130 @@ export function NodeTabs({ nodeData, profile }: NodeTabsProps) {
                     <div className="space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="grid grid-cols-2 gap-3">
                             <div className="p-4 bg-white rounded-2xl border border-black/[0.03] shadow-sm">
-                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">人流預測</h4>
-                                <div className="flex items-center gap-2">
-                                    <div className={`w-2 h-2 rounded-full animate-pulse ${(profile?.l2_status?.congestion || 1) >= 4 ? 'bg-orange-500' : 'bg-green-500'}`} />
-                                    <span className="text-sm font-bold text-gray-900">
-                                        {(profile?.l2_status?.congestion || 1) >= 4 ? '較為擁擠 (Busy)' : '舒適 (Comfortable)'}
-                                    </span>
+                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">人流預測 (Density)</h4>
+                                <div className="flex flex-col gap-2">
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-sm font-bold text-gray-900">
+                                            {(profile?.l2_status?.congestion || 1) >= 4 ? '較為擁擠' : (profile?.l2_status?.congestion || 1) >= 2 ? '普通' : '舒適'}
+                                        </span>
+                                        <span className="text-[10px] font-black text-indigo-500">{(profile?.l2_status?.congestion || 1) * 20}%</span>
+                                    </div>
+                                    <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                                        <div
+                                            className={`h-full transition-all duration-1000 ${(profile?.l2_status?.congestion || 1) >= 4 ? 'bg-rose-500' : (profile?.l2_status?.congestion || 1) >= 2 ? 'bg-amber-400' : 'bg-green-500'}`}
+                                            style={{ width: `${(profile?.l2_status?.congestion || 1) * 20}%` }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className="p-4 bg-white rounded-2xl border border-black/[0.03] shadow-sm">
-                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">預計候車</h4>
-                                <div className="text-sm font-bold text-gray-900 flex items-baseline gap-1">
-                                    <span>{profile?.l2_status?.congestion ? (profile.l2_status.congestion * 2) : 3}</span>
-                                    <span className="text-[10px] text-gray-400">min</span>
+                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">預計候車 (Wait)</h4>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center text-indigo-600">
+                                        <Zap size={16} fill="currentColor" />
+                                    </div>
+                                    <div className="text-sm font-bold text-gray-900 flex items-baseline gap-1">
+                                        <span>{profile?.l2_status?.congestion ? (profile.l2_status.congestion * 2) : 3}</span>
+                                        <span className="text-[10px] text-gray-400">min</span>
+                                    </div>
                                 </div>
                             </div>
+                            {/* Weather Alert Integration (P1-2) */}
+                            <WeatherAlertSection />
                         </div>
 
-                        {profile?.l2_status?.line_status?.map((ls: any, i: number) => (
-                            <div key={i} className={`p-4 rounded-2xl border flex items-center gap-3 ${ls.status !== 'normal' ? 'bg-rose-50 border-rose-100' : 'bg-green-50 border-green-100'}`}>
-                                <div className={`p-2 bg-white rounded-xl shadow-sm ${ls.status !== 'normal' ? 'text-rose-500' : 'text-green-500'}`}>
-                                    <Zap size={18} fill="currentColor" />
+                        {/* Line Status Section */}
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-2 mb-1">
+                                <div className="p-1.5 bg-rose-100 rounded-lg text-rose-600">
+                                    <Zap size={14} fill="currentColor" />
                                 </div>
-                                <div>
-                                    <h4 className={`text-xs font-black uppercase ${ls.status !== 'normal' ? 'text-rose-900' : 'text-green-900'}`}>{ls.line}</h4>
-                                    <p className={`text-xs font-medium ${ls.status !== 'normal' ? 'text-rose-700' : 'text-green-700'}`}>{ls.message || '正常運行'}</p>
-                                </div>
+                                <h3 className="font-black text-[10px] uppercase tracking-widest text-gray-900">運行情報 (Service)</h3>
                             </div>
-                        ))}
+
+                            {!profile?.l2_status?.line_status || profile.l2_status.line_status.length === 0 ? (
+                                <div className="p-4 bg-green-50 border border-green-100 rounded-2xl flex items-center gap-3">
+                                    <div className="p-2 bg-white rounded-xl shadow-sm text-green-500">
+                                        <Smile size={18} />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xs font-black uppercase text-green-900">所有路線</h4>
+                                        <p className="text-xs font-medium text-green-700">目前運作正常</p>
+                                    </div>
+                                </div>
+                            ) : (
+                                profile.l2_status.line_status.map((ls: any, i: number) => (
+                                    <div key={i} className={`p-4 rounded-2xl border flex items-center gap-3 animate-in fade-in slide-in-from-left duration-300`}
+                                        style={{ animationDelay: `${i * 100}ms`, backgroundColor: ls.status !== 'normal' ? '#FFF1F2' : '#F0FDF4', borderColor: ls.status !== 'normal' ? '#FFE4E6' : '#DCFCE7' }}>
+                                        <div className={`p-2 bg-white rounded-xl shadow-sm ${ls.status !== 'normal' ? 'text-rose-500 animate-pulse' : 'text-green-500'}`}>
+                                            <Zap size={18} fill="currentColor" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="flex justify-between items-center">
+                                                <h4 className={`text-xs font-black uppercase ${ls.status !== 'normal' ? 'text-rose-900' : 'text-green-900'}`}>{ls.line}</h4>
+                                                {ls.status !== 'normal' && <span className="text-[8px] font-black bg-rose-500 text-white px-1.5 py-0.5 rounded-full uppercase">Delay</span>}
+                                            </div>
+                                            <p className={`text-[11px] font-medium leading-tight mt-0.5 ${ls.status !== 'normal' ? 'text-rose-700' : 'text-green-700'}`}>
+                                                {ls.message || (ls.status === 'normal' ? '正常運行' : '發生延誤')}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
                     </div>
                 )}
 
                 {activeTab === 'l3' && (
                     <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
-                        {profile?.l3_facilities ? profile.l3_facilities.map((fac: any) => (
-                            <div key={fac.id} className="p-4 bg-white rounded-2xl border border-black/[0.03] shadow-sm flex justify-between items-center group">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
-                                        {fac.category === 'toilet' ? '🚻' : fac.category === 'locker' ? '🧳' : '⚡'}
-                                    </div>
-                                    <div>
-                                        <h4 className="text-sm font-bold text-gray-900">{fac.subCategory === 'station_toilet' ? '車站廁所' : fac.subCategory === 'coin_locker' ? '置物櫃' : fac.category}</h4>
-                                        <div className="flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-tight">
-                                            <MapIcon size={10} />
-                                            <span>{fac.location}</span>
+                        {profile?.l3_facilities ? profile.l3_facilities.map((fac: any, i: number) => (
+                            <div key={fac.id} className="p-4 bg-white rounded-2xl border border-black/[0.03] shadow-sm flex flex-col gap-3 group animate-in fade-in slide-in-from-bottom-2 duration-300" style={{ animationDelay: `${i * 50}ms` }}>
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition-transform">
+                                            {fac.category === 'toilet' ? '🚻' :
+                                                fac.category === 'locker' ? '🧳' :
+                                                    fac.category === 'charging' ? '⚡' :
+                                                        fac.category === 'accessibility' ? '♿' :
+                                                            fac.category === 'elevator' ? '🛗' : '📍'}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-black text-gray-900">
+                                                {fac.subCategory === 'station_toilet' ? '車站廁所' :
+                                                    fac.subCategory === 'coin_locker' ? '置物櫃' :
+                                                        fac.subCategory === 'elevator' ? '無障礙電梯' :
+                                                            fac.category}
+                                            </h4>
+                                            <div className="flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-tight">
+                                                <MapIcon size={10} />
+                                                <span>{fac.location}</span>
+                                            </div>
                                         </div>
                                     </div>
+                                    <ArrowRight size={14} className="text-gray-300 group-hover:text-indigo-600 transition-colors" />
                                 </div>
-                                <ArrowRight size={16} className="text-gray-300 group-hover:text-indigo-600 transition-colors" />
+
+                                {/* Attributes / Barrier-free Details */}
+                                {fac.attributes && Object.keys(fac.attributes).length > 0 && (
+                                    <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-50">
+                                        {fac.attributes.wheelchair_accessible && (
+                                            <span className="text-[9px] font-black bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-100 flex items-center gap-1">
+                                                <span className="text-[10px]">♿</span> 輪椅友善
+                                            </span>
+                                        )}
+                                        {fac.attributes.has_washlet && (
+                                            <span className="text-[9px] font-black bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full border border-indigo-100">WASHLET</span>
+                                        )}
+                                        {fac.attributes.sizes && fac.attributes.sizes.includes('L') && (
+                                            <span className="text-[9px] font-black bg-orange-50 text-orange-600 px-2 py-0.5 rounded-full border border-orange-100">大型行李可</span>
+                                        )}
+                                        {fac.attributes.note && (
+                                            <span className="text-[9px] font-bold text-gray-500 bg-gray-50 px-2 py-0.5 rounded-md italic">
+                                                &quot;{fac.attributes.note}&quot;
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         )) : (
                             <div className="p-8 text-center text-gray-400 italic text-xs">此區域暫無 L3 設施資訊</div>

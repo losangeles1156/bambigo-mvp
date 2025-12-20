@@ -11,6 +11,7 @@ interface AppState {
     mapCenter: { lat: number; lon: number } | null;
     isTripGuardActive: boolean;
     isSubscriptionModalOpen: boolean;
+    isLineBound: boolean;
 
     locale: 'zh-TW' | 'ja' | 'en';
     accessibilityMode: boolean;
@@ -24,6 +25,7 @@ interface AppState {
     setMapCenter: (center: { lat: number; lon: number } | null) => void;
     setTripGuardActive: (isActive: boolean) => void;
     setSubscriptionModalOpen: (isOpen: boolean) => void;
+    setLineBound: (isBound: boolean) => void;
     setLocale: (locale: 'zh-TW' | 'ja' | 'en') => void;
     toggleAccessibility: () => void;
     setActiveTab: (tab: 'explore' | 'trips' | 'me') => void;
@@ -40,6 +42,7 @@ export const useAppStore = create<AppState>()(
             mapCenter: null,
             isTripGuardActive: false,
             isSubscriptionModalOpen: false,
+            isLineBound: false,
             locale: 'zh-TW',
             accessibilityMode: false,
             activeTab: 'explore',
@@ -52,6 +55,7 @@ export const useAppStore = create<AppState>()(
             setMapCenter: (center) => set({ mapCenter: center }),
             setTripGuardActive: (isActive) => set({ isTripGuardActive: isActive }),
             setSubscriptionModalOpen: (isOpen) => set({ isSubscriptionModalOpen: isOpen }),
+            setLineBound: (isBound) => set({ isLineBound: isBound }),
             setLocale: (locale) => set({ locale }),
             toggleAccessibility: () => set((state) => ({ accessibilityMode: !state.accessibilityMode })),
             setActiveTab: (tab) => set({ activeTab: tab }),
