@@ -25,10 +25,27 @@ export interface StationFacility {
     source?: string;       // 資料來源 URL
 }
 
+// 無障礙步行路線 - 基於 MLIT 歩行空間ネットワークデータ
+export interface AccessibilityRoute {
+    name: string;                       // 路線名稱
+    from: string;                       // 起點
+    to: string;                         // 終點
+    rank: 'SAA' | 'SBA' | 'SBB' | 'AAA' | 'ABB'; // 無障礙等級 (S=最佳推薦)
+    distance?: number;                  // 距離 (公尺)
+    hasTactilePaving: boolean;          // 點字磚 (視障導引)
+    hasRoof: boolean;                   // 有遮蔽 (雨天適用)
+    hasElevator: boolean;               // 電梯可用
+    widthLevel: 1 | 2 | 3 | 4 | 5;      // 路徑寬度 (1=狹窄, 5=寬敞)
+    slopeLevel?: 1 | 2 | 3 | 4 | 5;     // 坡度 (1=平坦)
+    note?: string;
+    source: string;                     // 資料來源
+}
+
 export interface StationWisdomData {
     traps: StationTrap[];
     hacks?: string[];
-    l3Facilities?: StationFacility[];  // L3 設施資料 - AI 可參照
+    l3Facilities?: StationFacility[];           // L3 設施資料 - AI 可參照
+    accessibilityRoutes?: AccessibilityRoute[]; // 無障礙路線 - MLIT 資料
 }
 
 export const STATION_WISDOM: Record<string, StationWisdomData> = {
@@ -69,6 +86,79 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' } },
             // === 充電 (Charging) ===
             { type: 'charging', floor: 'JR 3F', operator: 'JR', location: 'ecute Ueno 咖啡廳', attributes: { note: 'Type-A, Type-C 插座' } }
+        ],
+        // 無障礙步行路線 - 基於 MLIT 歩行空間ネットワークデータ (台東区上野駅周辺)
+        accessibilityRoutes: [
+            {
+                name: 'JR中央口→不忍池 (推薦路線)',
+                from: 'JR上野站中央口',
+                to: '不忍池弁天堂',
+                rank: 'SAA',
+                distance: 350,
+                hasTactilePaving: true,
+                hasRoof: true,
+                hasElevator: true,
+                widthLevel: 4,
+                slopeLevel: 2,
+                note: '經不忍口地下道，全程有遮蔽，輪椅/嬰兒車友善',
+                source: 'https://ckan.hokonavi.go.jp/dataset/2df4cb39-8b2e-4692-97ea-3f6b4132c109'
+            },
+            {
+                name: '公園口→上野公園 (最短路線)',
+                from: 'JR上野站公園口',
+                to: '上野公園噴水廣場',
+                rank: 'SAA',
+                distance: 200,
+                hasTactilePaving: true,
+                hasRoof: false,
+                hasElevator: true,
+                widthLevel: 5,
+                slopeLevel: 1,
+                note: '出站即是公園入口，路面平坦寬敞，無遮蔽需注意天氣',
+                source: 'https://ckan.hokonavi.go.jp/dataset/2df4cb39-8b2e-4692-97ea-3f6b4132c109'
+            },
+            {
+                name: '不忍改札→阿美橫町',
+                from: 'Metro上野站不忍改札',
+                to: '阿美橫町北入口',
+                rank: 'SBA',
+                distance: 100,
+                hasTactilePaving: true,
+                hasRoof: false,
+                hasElevator: false,
+                widthLevel: 3,
+                slopeLevel: 2,
+                note: '過馬路後即抵達，但需走樓梯出站',
+                source: 'https://ckan.hokonavi.go.jp/dataset/2df4cb39-8b2e-4692-97ea-3f6b4132c109'
+            },
+            {
+                name: '廣小路口→松坂屋 (百貨購物)',
+                from: 'JR上野站廣小路口',
+                to: '松坂屋上野店',
+                rank: 'AAA',
+                distance: 150,
+                hasTactilePaving: true,
+                hasRoof: true,
+                hasElevator: true,
+                widthLevel: 4,
+                slopeLevel: 1,
+                note: '地下連通道直達，全程室內，雨天最佳',
+                source: 'https://ckan.hokonavi.go.jp/dataset/2df4cb39-8b2e-4692-97ea-3f6b4132c109'
+            },
+            {
+                name: '公園口→國立西洋美術館',
+                from: 'JR上野站公園口',
+                to: '國立西洋美術館',
+                rank: 'SAA',
+                distance: 300,
+                hasTactilePaving: true,
+                hasRoof: false,
+                hasElevator: true,
+                widthLevel: 5,
+                slopeLevel: 1,
+                note: '經上野公園主幹道，平坦寬敞，輪椅完全無障礙',
+                source: 'https://ckan.hokonavi.go.jp/dataset/2df4cb39-8b2e-4692-97ea-3f6b4132c109'
+            }
         ]
     },
 

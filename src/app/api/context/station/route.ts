@@ -85,7 +85,8 @@ export async function GET(req: NextRequest) {
             wisdom: wisdom ? {
                 traps: wisdom.traps.map(t => ({ title: t.title, advice: t.advice, severity: t.severity })), // Simplify for token usage
                 hacks: wisdom.hacks,
-                l3Facilities: wisdom.l3Facilities || [] // L3 設施資料 - AI 可參照
+                l3Facilities: wisdom.l3Facilities || [], // L3 設施資料 - AI 可參照
+                accessibilityRoutes: wisdom.accessibilityRoutes || [] // 無障礙路線 - MLIT 資料
             } : {
                 message: "No specific local secrets found for this station."
             },
