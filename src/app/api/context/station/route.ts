@@ -84,7 +84,8 @@ export async function GET(req: NextRequest) {
             // Wisdom is the key "Secret Sauce" for our agent
             wisdom: wisdom ? {
                 traps: wisdom.traps.map(t => ({ title: t.title, advice: t.advice, severity: t.severity })), // Simplify for token usage
-                hacks: wisdom.hacks
+                hacks: wisdom.hacks,
+                l3Facilities: wisdom.l3Facilities || [] // L3 設施資料 - AI 可參照
             } : {
                 message: "No specific local secrets found for this station."
             },

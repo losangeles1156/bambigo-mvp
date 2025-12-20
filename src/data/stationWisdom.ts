@@ -6,9 +6,29 @@ export interface StationTrap {
     severity: 'medium' | 'high' | 'critical';
 }
 
+// L3 設施資料結構 - 供 AI Agent 參照
+export interface StationFacility {
+    type: 'toilet' | 'locker' | 'elevator' | 'wifi' | 'charging' | 'nursing';
+    location: string;      // 精確位置描述
+    floor: string;         // 'JR 3F' | 'Metro B1' | 'Metro B2' | 'JR 1F'
+    operator: 'JR' | 'Metro' | 'Toei' | 'Private';
+    attributes?: {
+        count?: number;           // 置物櫃數量
+        sizes?: string[];         // 置物櫃尺寸
+        wheelchair?: boolean;     // 無障礙
+        hasWashlet?: boolean;     // 溫水洗淨
+        hasBabyRoom?: boolean;    // 育嬰室
+        hours?: string;           // 營業時間
+        ssid?: string;            // WiFi SSID
+        note?: string;            // 備註
+    };
+    source?: string;       // 資料來源 URL
+}
+
 export interface StationWisdomData {
     traps: StationTrap[];
     hacks?: string[];
+    l3Facilities?: StationFacility[];  // L3 設施資料 - AI 可參照
 }
 
 export const STATION_WISDOM: Record<string, StationWisdomData> = {
@@ -26,8 +46,32 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         hacks: [
             '🏛️ **文化天橋 (Panda Bridge)**：從公園口出站後，可直接走天橋（官方稱熊貓橋）通往國立科學博物館與上野大廳，避開 1F 的擁擠人潮。',
             '🛍️ **阿美橫町切入點**：想去阿美橫町？不要走「中央改札」，改走「不忍改札」過馬路就是入口，省下 5 分鐘迷路時間。'
+        ],
+        // L3 設施資料 - 基於 Tokyo Metro 及 JR East 官方資料
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 往JR方向驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '日比谷線 電梯專用出口驗票口外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            { type: 'toilet', floor: 'JR 3F', operator: 'JR', location: '大連絡橋通道', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            { type: 'toilet', floor: 'JR 3F', operator: 'JR', location: 'ecute Ueno 內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true, note: '含育嬰室' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '中央口改札外', attributes: { count: 300, sizes: ['S', 'M', 'L', 'XL'], note: '最大量置物櫃區' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '不忍口改札外', attributes: { count: 80, sizes: ['S', 'M', 'L'] } },
+            { type: 'locker', floor: 'JR 3F', operator: 'JR', location: '公園口改札內', attributes: { count: 100, sizes: ['S', 'M', 'L'] }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            { type: 'locker', floor: 'JR 3F', operator: 'JR', location: '入谷口改札內', attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'], note: 'ecute 方向通道' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            // === 電梯 (Elevators) - 無障礙設施 ===
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '銀座線月台 → JR方向驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '公園驗票口 → 5a出口', attributes: { wheelchair: true, note: '通往上野公園' }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            { type: 'elevator', floor: 'Metro B2', operator: 'Metro', location: '日比谷線1號月台 → 驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '正面廣場 → Metro驗票口層', attributes: { wheelchair: true, hours: '7:30-22:00', note: '僅限營業時間' }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro 全層', operator: 'Metro', location: '改札內全區', attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' } },
+            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' } },
+            // === 充電 (Charging) ===
+            { type: 'charging', floor: 'JR 3F', operator: 'JR', location: 'ecute Ueno 咖啡廳', attributes: { note: 'Type-A, Type-C 插座' } }
         ]
     },
+
 
     // Tokyo Station (Reference)
     'odpt:Station:TokyoMetro.Tokyo': {
