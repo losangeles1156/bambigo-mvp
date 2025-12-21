@@ -172,7 +172,11 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
                     ${node.is_hub ? '!opacity-100 !scale-90 !translate-y-0' : ''} 
                 `}>
                     <div className="flex items-center gap-1.5 text-xs">
-                        <span>{node.name?.[locale] || node.name?.['zh-TW'] || node.name?.['en']}</span>
+                        <span>
+                            {typeof node.name === 'string'
+                                ? node.name
+                                : (node.name?.[locale] || node.name?.['zh-TW'] || node.name?.['en'] || node.name?.['ja'] || 'Station')}
+                        </span>
                     </div>
                 </div>
             )}

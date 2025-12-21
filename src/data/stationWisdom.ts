@@ -49,6 +49,79 @@ export interface StationWisdomData {
 }
 
 export const STATION_WISDOM: Record<string, StationWisdomData> = {
+    'odpt:Station:TokyoMetro.Ginza': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🤝 銀座線與日比谷線轉乘 (Ginza to Hibiya)',
+                content: '雖然這兩條線路共享銀座站，但轉乘需要經過漫長的地下通道，特別是如果你在車廂兩端下車。',
+                advice: '⚠️ 建議：跟隨藍色（日比谷線）或橙色（銀座線）的地面指示箭頭，並注意不要誤出站。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '💎 **出口陷阱**：如果你要去銀座四丁目的三越百貨，請尋找 A7 或 A8 出口，這比走 A1 快得多。',
+            '🎨 **藝術地下道**：地下道內常有藝術展覽，轉乘時不妨放慢腳步欣賞。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座四丁目交差點方面驗票口附近', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ginza/accessibility/' },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: 'C8 出口附近改札外 (新設)', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '有樂町方面驗票口外 右側通路', attributes: { count: 30, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/ginza-station.php' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'C5/C6 出口之間通路', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A7 出口 (銀座三越)', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '銀座線/丸之內線月台 → 穿堂層', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro GF', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:Toei.Nihombashi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚧 東西線與銀座線轉乘 (Tozai to Ginza)',
+                content: '東西線日本橋站位置較深，轉乘銀座線需要經過數段樓梯或電梯。',
+                advice: '⚠️ 注意：轉乘約需 5-8 分鐘，趕時間時請特別留意。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🛍️ **高島屋直結**：B0 出口直通日本橋高島屋百貨，是逛街的最佳入口。',
+            '🌉 **日本橋本體**：從 B12 出口上來即是歷史悠久的日本橋古橋。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '吳服橋方面驗票口內 (東西線側)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/nihombashi/accessibility/' },
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '茅場町方面驗票口附近', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/nihombashi.html' },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'B0 出口向處 (高島屋方面)', attributes: { count: 40, sizes: ['S', 'M', 'L'] }, source: 'https://coin-locker.net/nihonbashi/' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外 茅場町方面出口通路', attributes: { count: 20, sizes: ['S', 'M'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'B0 出口電梯', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'D1 出口電梯', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Kayabacho': {
+        traps: [],
+        hacks: [
+            '📈 **金融街之胃**：車站周邊有無數平價且高品質的蕎麥麵店，服務於東京證券交易所的商務人士。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '中央驗票口內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/kayabacho/accessibility/' },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '東西線西改札外 (10 號出口附近)', attributes: { count: 25, sizes: ['S', 'M'] }, source: 'https://coin-locker.net/kayabacho/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '中央驗票口外 (5, 6 號出口通路)', attributes: { count: 30, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '4a 出口旁電梯', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
     // Ueno Station (Target for verification)
     'odpt:Station:TokyoMetro.Ueno': {
         traps: [
@@ -321,6 +394,115 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 advice: '💡 若要去東京國立博物館，請務必走 **南口**，北口走出來會讓你懷疑人生（或非常尷尬）。',
                 severity: 'high'
             }
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Yushima': {
+        traps: [
+            {
+                type: 'exit',
+                title: '⛩️ 湯島天滿宮捷徑 (Shrine Shortcut)',
+                content: '要去湯島天滿宮（求學問的神社）？最近的是 3 號出口。',
+                advice: '💡 若攜帶推車，3 號出口有電梯直達地面。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🎓 **合格祈願**：步行 2 分鐘即達湯島天滿宮，考生必看。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '天神下交差點方向驗票口外 (近1號出口)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/yushima/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '天神下交差點方向驗票口外 (售票機旁)', attributes: { sizes: ['S', 'M', 'L'] } },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '驗票口內 (近月台電梯)', attributes: { sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '3號出口', attributes: { wheelchair: true, note: '地面直達' } },
+            { type: 'elevator', floor: 'Metro B2', operator: 'Metro', location: '月台 → 驗票口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Minowa': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚋 都電荒川線轉乘 (Tram Transfer)',
+                content: '三之輪站可轉乘都電荒川線（三之輪橋站），但需步行約 5 分鐘。',
+                advice: '⚠️ 心理建設：這不是站內轉乘，需走出地面通過商店街。',
+                severity: 'medium'
+            }
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '三之輪交差點方向驗票口內', attributes: { wheelchair: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/minowa/accessibility/' },
+            { type: 'toilet', floor: 'GF', operator: 'Metro', location: '地面 Exit 3 附近 (入谷改札側)', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '三之輪交差點方向驗票口外 (近1b出口)', attributes: { sizes: ['S', 'M'] } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '1b出口', attributes: { wheelchair: true, note: '地面直達' } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '月台 → 驗票口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Inaricho': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '⛔ 兩側月台不互通 (Direction Trap)',
+                content: '稻荷町站的 1 號及 2 號月台在地下並不相通！',
+                advice: '⚠️ 絕對守則：進站前請確認方向。往澀谷請走 1 號出口，往淺草請走 2 號出口或電梯專用口。若走錯需出站過馬路。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '🍜 **美食巷弄**：附近有許多平價且高品質的拉麵與沾麵店，是避開上野人潮的好選擇。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '1號月台 (往澀谷) 中央區', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/inaricho/accessibility/' },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '2號月台 (往淺草) 驗票口附近', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'elevator', floor: 'GF', operator: 'Metro', location: '1號出口', attributes: { wheelchair: true, note: '1號月台直達' } },
+            { type: 'elevator', floor: 'GF', operator: 'Metro', location: '電梯專用出口', attributes: { wheelchair: true, note: '2號月台直達' } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:Toei.ShinOkachimachi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚀 TX 轉乘樞紐 (TX Transfer)',
+                content: '此站是都營大江戶線與 Tsukuba Express (TX) 的重要轉乘站，兩線共用 B1 穿堂層。',
+                advice: '💡 提示：雖然共用層，但轉乘仍需經過轉乘專用閘門，Suica/Pasmo 餘額請充足。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🛍️ **佐竹商店街**：日本第二古老的商店街，氛圍非常復古且有許多平價美食。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/shin-okachimachi.html' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外穿堂中央', attributes: { sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A1, A3, A4出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei B3', operator: 'Toei', location: '月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.UenoOkachimachi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚉 四線交會迷宮 (Quad-Line Maze)',
+                content: '此站地下連通上野廣小路 (銀座線)、仲御徒町 (日比谷線) 及 JR 御徒町站，範圍非常大。',
+                advice: '⚠️ 心理建設：轉乘雖然在地下，但移動距離可能超過 300 公尺，請預留 5-8 分鐘。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🌧️ **雨天捷徑**：利用這條超長地下走廊，可以從上野站一路走到御徒町站而不淋雨。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內 (大江戶線側)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ueno-okachimachi.html' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外 A6/A7出口附近及往銀座線連通道', attributes: { sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A6出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei B2', operator: 'Toei', location: '月台 → 改札', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     },
     'odpt:Station:JR-East.Okachimachi': {
@@ -346,6 +528,489 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/iriya/accessibility/' },
             { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '1號出口', attributes: { wheelchair: true } },
             { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Kasumigaseki': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🏛️ 政府機關迷宮 (Government Maze)',
+                content: '霞關站是日本政府機關的中心，出口眾多且複雜，容易迷失方向。',
+                advice: '⚠️ 絕對守則：請務必確認要前往的政府機關或目的地，並記住對應的出口編號。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍽️ **地下食堂探險**：部分政府機關大樓開放民眾進入使用地下食堂，價格實惠且份量十足，是午餐的好選擇。',
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '日比谷線 虎之門方向驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/kasumigaseki/accessibility/' },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線 驗票口內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '內幸町方面改札外 (出口C1-C4方向)', attributes: { count: 40, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/kasumigaseki-station.php' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '虎ノ門方面改札外', attributes: { count: 20, sizes: ['S', 'M', 'L'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A2a出口', attributes: { wheelchair: true, note: '近法務省' } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '日比谷線月台 → 驗票口', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Iidabashi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🎢 五線交匯長廊 (Five-Line Corridor)',
+                content: '飯田橋站匯集了東西線、有楽町線、南北線、大江戶線與 JR，轉乘路徑極長。',
+                advice: '⚠️ 注意：東西線與其他線路轉乘需步行 5-10 分鐘，請務必跟隨地面顏色指引指標。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '⛩️ **東京大神宮**：從西口出站步行約 5 分鐘，是東京最具代表性的戀愛結緣神社。',
+            '🚢 **Canal Cafe**：位於神田川邊的景觀咖啡廳，特別是櫻花季時美不勝收。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '有樂町線・南北線 驗票口內 (近中央改札)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/iidabashi/accessibility/' },
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '西口改札內', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/113.html' },
+            { type: 'toilet', floor: 'Toei B3', operator: 'Toei', location: '大江戶線月台層', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/iidabashi.html' },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '東口改札外', attributes: { count: 32, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/iidabashi-station.php' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '後樂方面改札外 (エレベーター横)', attributes: { count: 20, sizes: ['S', 'M'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '西口 → 各月台', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: 'B2b出口 (ラムラ直結)', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Mitsukoshimae': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🏙️ 百貨公司陷阱 (Department Store Maze)',
+                content: '三越前站與三越百貨、Coredo 室町等多家百貨直結，地下通道非常複雜。',
+                advice: '⚠️ 注意：去不同分館請看準出口標號（如 A1、A4），否則在地下很容易迷路。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🏮 **福德神社**：藏身於現代建築 Coredo 室町後方的歷史神社，以求中獎運聞名。',
+            '🖼️ **三井紀念美術館**：隱藏在三井本館內的優雅美術館。'
+        ],
+        l3Facilities: [
+            // === 廁所 (Toilets) ===
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '半藏門線 驗票口內 (近三越口)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/mitsukoshimae/accessibility/' },
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 驗票口內 (近日本橋方面改札)', attributes: { wheelchair: true, hasWashlet: true } },
+            // === 置物櫃 (Lockers) ===
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'A9出口手前', attributes: { count: 30, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/mitsukoshimae-station.php' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '銀座線室町三丁目方面改札外', attributes: { count: 25, sizes: ['S', 'M'] } },
+            // === 電梯 (Elevators) ===
+            { type: 'elevator', floor: 'Metro B3', operator: 'Metro', location: '半藏門線月台 → 穿堂層', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A1出口 (日本橋室町野村ビル)', attributes: { wheelchair: true } },
+            // === WiFi ===
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Shimbashi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚂 轉乘大迷宮 (Transfer Maze)',
+                content: '新橋站連結了 JR、銀座線、淺草線與百合海鷗號，且各站體相對獨立。',
+                advice: '⚠️ 建議：從淺草線轉乘銀座線需步行約 5-8 分鐘，請務必沿著黃色地面顏色標示前進。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '🍺 **SL 廣場**：西口站前的蒸汽火車頭是典型的集合點，周邊有全東京最密集的平價居酒屋。',
+            '🏙️ **汐留通路**：前往汐留方向可以走地下空調通道「Sio-Site」，夏天不怕熱。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 驗票口內 (近 JR 轉乘口)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/shimbashi/accessibility/' },
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '淺草線 A3 出口附近改札外', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/shimbashi.html' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '銀座線 1, 2 號出口方向通路', attributes: { count: 40, sizes: ['S', 'M', 'L'] } },
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '汐留改札外', attributes: { count: 60, sizes: ['S', 'M', 'L', 'XL'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '8 號出口 (近銀座側)', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Roppongi': {
+        traps: [
+            {
+                type: 'depth',
+                title: '🗻 全日本最深月台 (Japan\'s Deepest)',
+                content: '都營大江戶線月台高達地下 7 層（約 42 公尺），光是搭電扶梯就要 5 分鐘。',
+                advice: '⚠️ 注意：趕時間的人請儘量利用日比谷線，或預留充足的垂直移動時間。',
+                severity: 'critical'
+            }
+        ],
+        hacks: [
+            '🏢 **ヒルズ與ミッドタウン**：兩個大開發區分別位於不同出口，ヒルズ走 1c 出口，ミッドタウン走 8 號出口。',
+            '🖼️ **藝術三角**：車站周邊環繞著森美術館、國立新美術館與三得利美術館，文化氛圍濃厚。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '西麻布方面驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/roppongi/accessibility/' },
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '大江戶線 驗票口內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '1c 出口方向通路', attributes: { count: 30, sizes: ['S', 'M', 'L'] } },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '東京ミッドタウン連絡路附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '1c 出口 (六本木 Hills 直結)', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:Toei.Daimon': {
+        traps: [],
+        hacks: [
+            '🛬 **機場玄關**：轉乘單軌電車前往羽田機場非常方便，是大門/濱松町的核心角色。',
+            '🗼 **增上寺首選**：從 B1 出口步行 5 分鐘即可抵達東京塔腳下的壯觀佛寺。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '淺草線/大江戶線 轉乘口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/daimon.html' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: 'A2 出口手前通路', attributes: { count: 20, sizes: ['S', 'M'] } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A2 出口電梯', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:JR-East.Hamamatsucho': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚝 單軌轉乘提示 (Monorail Transfer)',
+                content: 'JR 與單軌電車轉乘時，南口與北口的功能不同。',
+                advice: '⚠️ 建議：大行李者請使用南口轉乘，有無障礙專屬動線。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🚶 **竹芝平臺**：從北口可以走步行平臺直達竹芝碼頭，欣賞海邊景色。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '南口改札內 廁所旁', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/1251.html' },
+            { type: 'locker', floor: 'JR 3F', operator: 'JR', location: '南口改札外正面', attributes: { count: 100, sizes: ['S', 'M', 'L', 'XL'] } },
+            { type: 'elevator', floor: 'JR GF', operator: 'JR', location: '北口出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'JR', operator: 'JR', location: '全站', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Omotesando': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🎨 跨月台便利轉乘 (Cross-platform Transfer)',
+                content: '銀座線與半藏門線在表參道站是共享月台的，轉乘非常簡單。',
+                advice: '⚠️ 撇步：如果你是這兩線互轉，直接在對面月台等車即可，不需要走任何樓梯。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🥨 **Echika 表參道**：改札內有著名的美食區與麵包店，是轉乘時補充能量的好地方。',
+            '🍎 **Apple Store 直結**：A2 出口上來就是標誌性的 Apple Store。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '神宮前・原宿方面改札內 (近 B2 出口)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/omotesando/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '青山通り方面改札外 右側', attributes: { count: 35, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'B3 出口旁 (與 A1 分離)', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Hiroo': {
+        traps: [],
+        hacks: [
+            '🌳 **有栖川宮紀念公園**：從 1 號出口步行 3 分鐘，這是一個極其安靜且充滿自然氛圍的公園。',
+            '🥖 **外國人超市**：National Azabu 位於 門前，可以買到許多稀有的進口商品。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '西麻布方面驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/hiroo/accessibility/' },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '4 號出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Akasakamitsuke': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚥 絕非直結的「永田町」轉乘 (Not Really Connected)',
+                content: '赤坂見附與永田町雖然在地圖上重疊，但實際轉乘某些線路（如半藏門線）需步行約 5-10 分鐘。',
+                advice: '⚠️ 注意：如果你在赤坂見附下車要轉乘南北線或半藏門線，請有步行超過 500m 的心理準備。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍛 **美食地下道**：車站連通道「ベルビー赤坂」內有無數高品質餐廳，適合商務晚餐。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '驗票口內 永田町方向通道', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/akasaka-mitsuke/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '改札外 永田町站方向地下通路', attributes: { count: 40, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A 出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    // === Taito Ward - Toei Asakusa Line ===
+    'odpt:Station:Toei.Asakusa': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚇 淺草站大迷宮 (Asakusa Station Maze)',
+                content: '淺草站有都營淺草線、東京Metro銀座線、東武線三條路線交會，但彼此並非直結。',
+                advice: '⚠️ 建議：從都營淺草線轉乘銀座線需要出站再入站，步行約 5-8 分鐘。記得先跟站務員確認最短路徑。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '⛩️ **雷門最近出口**：A4 出口步行 1 分鐘即可抵達著名的雷門。',
+            '🍡 **仲見世通り**：雷門到淺草寺之間的參道商店街，約 250 公尺長，可以邊吃邊逛。',
+            '🚤 **水上巴士**：從吾妻橋可以搭水上巴士到御台場和葛西臨海公園。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '淺草線改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusa.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A2b 出口（雷門方面）', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A4 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A5 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Kuramae': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '⚠️ 淺草線與大江戶線不直結！ (Lines NOT Connected)',
+                content: '藏前站的淺草線和大江戶線雖然同名，但兩者是完全分離的車站建築，需要步行地下通道約 5 分鐘。',
+                advice: '⚠️ 注意：如果你需要在藏前轉乘這兩條線，請務必預留至少 10 分鐘的轉乘時間。通道有明確標示但距離較長。',
+                severity: 'critical'
+            }
+        ],
+        hacks: [
+            '🎨 **藏前職人街**：這一帶有許多手工藝品店和咖啡廳，是東京的「布魯克林」。',
+            '🧵 **手芸材料**：浅草橋至蔵前一帶是日本最大的手工藝材料批發區。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1 (Asakusa)', operator: 'Toei', location: '淺草線改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kuramae.html' },
+            { type: 'toilet', floor: 'Toei B2 (Oedo)', operator: 'Toei', location: '大江戶線改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            { type: 'elevator', floor: 'Toei GF (Asakusa)', operator: 'Toei', location: 'A2 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF (Asakusa)', operator: 'Toei', location: 'A6 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF (Oedo)', operator: 'Toei', location: 'A7 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF (Oedo)', operator: 'Toei', location: 'A0 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站 (兩線皆有)', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Asakusabashi': {
+        traps: [],
+        hacks: [
+            '🎎 **人形批發街**：從 A3 出口出站，即可看到日本最大的人形（人偶）批發商店街。',
+            '🧶 **手工藝材料天堂**：這一帶是手工藝材料的集散地，從布料、珠子到縫紉用品應有盡有。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusabashi.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A4 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Tsukiji': {
+
+        traps: [
+            {
+                type: 'exit',
+                title: '🐟 築地場外市場出口 (Market Exit)',
+                content: '雖然築地市場已搬遷至豐洲，但「築地場外市場」仍在原處。最近的出口是 1 號或 2 號出口。',
+                advice: '⚠️ 注意：早晨 10 點後市場人潮極度擁擠，請照顧好隨身行李。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍙 **飯糰名店**：雖然握壽司很有名，但 1 號出口附近的飯糰專賣店也是在地人的首選。',
+            '🏯 **築地本願寺**：出站即可見到印度風格的外觀，建築內部非常精美，值得一遊。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '1 號出口方向改札外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tsukiji/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '1 號出口方向改札外', attributes: { count: 20, sizes: ['S', 'M'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '1, 2 號出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:JR-East.Hatchobori': {
+        traps: [
+            {
+                type: 'depth',
+                title: '🌊 京葉線深度 (Keiyo Line Depth)',
+                content: 'JR 京葉線月台非常深，從日比谷線轉乘需要走過漫長的地下扶梯與通道。',
+                advice: '⚠️ 建議：預留 10 分鐘轉乘時間，特別是如果你要搭乘迪士尼方向的列車。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍱 **商務午餐**：八丁堀是著名的商務區，周邊地下街有無數超值的中午定食。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'JR B2', operator: 'JR', location: '改札內 (近電梯)', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/1232.html' },
+            { type: 'locker', floor: 'JR B2', operator: 'JR', location: '改札內 廁所旁', attributes: { count: 30, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'JR GF', operator: 'JR', location: 'B1 出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'JR B2', operator: 'JR', location: '改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
+        ]
+    },
+    // === Chuo Ward - Toei Subway ===
+    'odpt:Station:Toei.Takaracho': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🚪 出口陷阱 (Exit Trap)',
+                content: '寶町站的改札口分為兩側，且改札內無法互通。',
+                advice: '⚠️ 注意：進站前請確認方向（押上方面或西馬込方面），以免進錯月台。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🖼️ **藝術街區**：周邊有許多畫廊和古董店，是銀座藝術圈的延伸。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/takaracho.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A7 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A8 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.HigashiNihombashi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚇 三角轉乘 (Triangle Transfer)',
+                content: '東日本橋站與馬喰橫山（新宿線）、馬喰町（JR總武快速）地下直結，但通道錯綜複雜。',
+                advice: '⚠️ 建議：轉乘新宿線請走橘色標示通道，轉乘JR請走藍色標示通道，步行約 3-5 分鐘。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '👕 **問屋街**：日本最大的纖維批發街就在地面上，零售店也不少。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/higashi-nihombashi.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'B4 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Kachidoki': {
+        traps: [
+            {
+                type: 'crowd',
+                title: '🏢 上班族大遷徙 (Commuter Rush)',
+                content: '勝鬨站周邊高樓林立，早晚高峰時段改札口極度擁擠。',
+                advice: '⚠️ 注意：早上 8:30-9:30 盡量避開此站，人流管制可能導致進出站需時 10 分鐘以上。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '🌉 **勝鬨橋**：步行可達著名的可開合勝鬨橋，夜景迷人。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kachidoki.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1, A4a, A4b, A2a 出口 (共4台)', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Tsukishima': {
+        traps: [],
+        hacks: [
+            '🥘 **文字燒街**：出站即是「西仲通り商店街」，聚集了數十家文字燒名店。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/tsukishima.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: '8a, 10 號出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Tsukijishijo': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🐟 新舊市場之別 (Market Location)',
+                content: '站名雖然是「築地市場」，但場內市場已搬遷。這裡主要靠近朝日新聞社與銀座南緣。',
+                advice: '⚠️ 建議：要去「築地場外市場」吃海鮮，這裡可以，但築地站（日比谷線）可能更近一側。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/tsukijishijo.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1, A2 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.BakuroYokoyama': {
+        traps: [],
+        hacks: [
+            '🧵 **批發區核心**：與東日本橋連通，是採購衣物雜貨的最佳起點。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/bakuro-yokoyama.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1, A3 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Hamacho': {
+        traps: [],
+        hacks: [
+            '🌳 **濱町公園**：A2 出口直結中央區立濱町公園，是市中心的綠洲。',
+            '🎭 **明治座**：著名的劇場「明治座」就在車站旁。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/hamacho.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1, A2 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Ningyocho': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🏮 人形町懷舊街道出口 (Old Town Exit)',
+                content: '人形町站有兩個不同線路的站體，出口分佈較廣。',
+                advice: '⚠️ 注意：去甘酒橫丁請走 A1 或 A2 出口。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍮 **人形燒元祖**：在 A2 出口附近有幾家創業百年的老店，味道非常道地。',
+            '🦊 **小網神社**：雖然不是直結，但從 A2 出口步行 5 分鐘即可抵達以洗錢、強運聞名的人氣神社。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '日本橋方向改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ningyocho.html' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: 'A3 出口通路', attributes: { count: 15, sizes: ['S', 'M'] } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A3 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:TokyoMetro.Kyobashi': {
+        traps: [],
+        hacks: [
+            '🏛️ **明治屋本館**：從 7 號出口可以直通具有歷史價值的明治屋超商。',
+            '🏢 **東京中城八重洲**：從 6 號出口出發步行 5 分鐘即可抵達最新的商業地標。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/kyobashi/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '7 號出口方向通路', attributes: { count: 20, sizes: ['S', 'M'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '2 號出口旁', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    'odpt:Station:Toei.HigashiGinza': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🎭 歌舞伎座直結 (Kabukiza Direct)',
+                content: 'Higashi-ginza 與歌舞伎座直結，演出結束後人潮會瞬間爆發。',
+                advice: '⚠️ 建議：避開演出散場時間進入車站。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍵 **木挽町廣場**：地下 2 樓的廣場即使不進場看戲也能買到歌舞伎主題的伴手禮。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '歌舞伎座方面改札外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/higashi-ginza.html' },
+            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外通路', attributes: { count: 30, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A2 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     },
     'odpt:Station:Toei.Asakusa.Ningyocho': {
@@ -493,6 +1158,134 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             // === WiFi ===
             { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi' } },
             { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
+    },
+    // === Chiyoda Ward - Toei Subway ===
+    'odpt:Station:Toei.Jimbocho': {
+        traps: [
+            {
+                type: 'exit',
+                title: '📚 古書店迷宮 (Book Town Maze)',
+                content: '神保町站出口眾多，且通往不同主題的書店區。',
+                advice: '⚠️ 建議：去三省堂書店請走 A7，去古書中心請走 A6。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🍛 **咖哩聖地**：神保町周邊有超過 400 家咖哩店，A7 出口附近的「Bondy」是排隊名店。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/jimbocho.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A9 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Ogawamachi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚇 站名混淆 (Station Name)',
+                content: '別將「小川町 (Ogawamachi)」與埼玉縣的同名車站搞混。這裡直結丸之內線「淡路町」站。',
+                advice: '⚠️ 轉乘提示：可經由地下連通道前往淡路町站（丸之內線）或新御茶之水站（千代田線）。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🎿 **體育用品街**：B5 出口直達靖國通，滿滿的滑雪、登山用品店。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ogawamachi.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'B7 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Kudanshita': {
+        traps: [
+            {
+                type: 'crowd',
+                title: '🥋 武道館活動 (Budokan Crowds)',
+                content: '當日本武道館有演唱會或活動時，車站會擠得水洩不通。',
+                advice: '⚠️ 逃生路線：活動結束後建議稍微走遠一點到飯田橋或神保町搭車。',
+                severity: 'high'
+            }
+        ],
+        hacks: [
+            '🌸 **千鳥之淵**：2 號出口出來就是著名的賞櫻勝地千鳥之淵。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B2', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kudanshita.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: '6 號出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Iwamotocho': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚶 秋葉原步行 (Akiba Walk)',
+                content: '雖然廣播會說可轉乘秋葉原站，但需要過橋步行約 5-8 分鐘。',
+                advice: '⚠️ 注意：轉乘日比谷線秋葉原站最近，JR 秋葉原站稍遠。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🌉 **神田川景色**：A4 出口出來的和泉橋上可以拍攝神田川與列車交錯的景色。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/iwamotocho.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A6 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Hibiya': {
+        traps: [],
+        hacks: [
+            '🦕 **哥吉拉雕像**：A4 出口附近的日比谷 Chanter 廣場有新的哥吉拉雕像。',
+            '🏞️ **日比谷公園**：A14 出口直結公園，是市中心的休憩場所。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/hibiya.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A9 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Uchisaiwaicho': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🚇 地下無限連廊 (Endless Tunnel)',
+                content: '這裡的地下通道與霞關、日比谷、銀座甚至東銀座都相連。',
+                advice: '💡 探索：下雨天可以一路走到銀座不用淋雨，但小心迷路。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🏨 **帝國飯店**：A13 出口最近帝國飯店。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/uchisaiwaicho.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A7 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+        ]
+    },
+    'odpt:Station:Toei.Ichigaya': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚇 路線分隔 (Line Separation)',
+                content: '都営新宿線的市谷站與有樂町線/南北線的市谷站改札口有一段距離。',
+                advice: '⚠️ 建議：轉乘預留 5-7 分鐘。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🎣 **釣魚堀**：車站月台就能看到護城河上的釣魚場，是市谷的招牌風景。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ichigaya.html' },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A2 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A3 出口', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     }
 };

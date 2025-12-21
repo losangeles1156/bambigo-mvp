@@ -69,88 +69,90 @@ export function CollapsibleFacilitySection({ facilities, onFacilityClick }: Coll
                             key={cat}
                             onClick={() => toggleCategory(cat)}
                             className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all ${expandedCategories.has(cat)
-                                    ? `${config.bgColor} ${config.color} ring-2 ring-offset-1 ring-current`
+                                    Visit the & quot;Station Vibe & quot; tab for local recommendations.color} ring - 2 ring - offset - 1 ring - current`
                                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                                 }`}
                         >
-                            <span>{config.icon}</span>
-                            <span>{count}</span>
-                        </button>
-                    );
+                <span>{config.icon}</span>
+                <span>{count}</span>
+            </button>
+            );
                 })}
-            </div>
-
-            {/* Collapsible Sections */}
-            {sortedCategories.map(cat => {
-                const config = CATEGORY_CONFIG[cat] || { icon: '📍', label: cat, color: 'text-gray-600', bgColor: 'bg-gray-50' };
-                const isExpanded = expandedCategories.has(cat);
-                const items = grouped[cat];
-
-                return (
-                    <div key={cat} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-                        {/* Category Header */}
-                        <button
-                            onClick={() => toggleCategory(cat)}
-                            className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className={`w-10 h-10 ${config.bgColor} rounded-xl flex items-center justify-center text-lg`}>
-                                    {config.icon}
-                                </div>
-                                <div className="text-left">
-                                    <h4 className="font-black text-sm text-gray-900">{config.label}</h4>
-                                    <p className="text-[10px] text-gray-400 font-medium">{items.length} 處設施</p>
-                                </div>
-                            </div>
-                            <div className={`p-1.5 rounded-lg ${isExpanded ? 'bg-indigo-100 text-indigo-600' : 'bg-gray-100 text-gray-400'} transition-colors`}>
-                                {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-                            </div>
-                        </button>
-
-                        {/* Facility Items */}
-                        {isExpanded && (
-                            <div className="border-t border-gray-100 divide-y divide-gray-50">
-                                {items.map((fac, idx) => (
-                                    <div
-                                        key={fac.id}
-                                        onClick={() => onFacilityClick?.(fac)}
-                                        className="px-4 py-3 flex items-start justify-between hover:bg-gray-50 cursor-pointer transition-colors animate-in fade-in slide-in-from-top-2 duration-200"
-                                        style={{ animationDelay: `${idx * 30}ms` }}
-                                    >
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 text-xs text-gray-700 font-medium">
-                                                <MapPin size={12} className="text-gray-400 flex-shrink-0" />
-                                                <span className="line-clamp-1">{fac.location}</span>
-                                            </div>
-                                            {/* Attribute Tags */}
-                                            {fac.attributes && Object.keys(fac.attributes).length > 0 && (
-                                                <div className="flex flex-wrap gap-1.5 mt-2">
-                                                    {fac.attributes.wheelchair_accessible && (
-                                                        <span className="text-[9px] font-bold bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded-full">♿ {tL3('wheelchairFriendly')}</span>
-                                                    )}
-                                                    {fac.attributes.has_washlet && (
-                                                        <span className="text-[9px] font-bold bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded-full">WASHLET</span>
-                                                    )}
-                                                    {fac.attributes.sizes?.includes('L') && (
-                                                        <span className="text-[9px] font-bold bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded-full">{tL3('largeLuggage')}</span>
-                                                    )}
-                                                    {fac.attributes.count && (
-                                                        <span className="text-[9px] font-bold bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded-full">{fac.attributes.count}個</span>
-                                                    )}
-                                                    {fac.attributes.note && (
-                                                        <span className="text-[9px] font-medium bg-gray-50 text-gray-500 px-1.5 py-0.5 rounded italic">"{fac.attributes.note}"</span>
-                                                    )}
-                                                </div>
-                                            )}
-                                        </div>
-                                        <ExternalLink size={14} className="text-gray-300 flex-shrink-0 ml-2" />
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                );
-            })}
         </div>
+
+            {/* Collapsible Sections */ }
+    {
+        sortedCategories.map(cat => {
+            const config = CATEGORY_CONFIG[cat] || { icon: '📍', label: cat, color: 'text-gray-600', bgColor: 'bg-gray-50' };
+            const isExpanded = expandedCategories.has(cat);
+            const items = grouped[cat];
+
+            return (
+                <div key={cat} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+                    {/* Category Header */}
+                    <button
+                        onClick={() => toggleCategory(cat)}
+                        className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className={`w-10 h-10 ${config.bgColor} rounded-xl flex items-center justify-center text-lg`}>
+                                {config.icon}
+                            </div>
+                            <div className="text-left">
+                                <h4 className="font-black text-sm text-gray-900">{config.label}</h4>
+                                <p className="text-[10px] text-gray-400 font-medium">{items.length} 處設施</p>
+                            </div>
+                        </div>
+                        <div className={`p-1.5 rounded-lg ${isExpanded ? 'bg-indigo-100 text-indigo-600' : 'bg-gray-100 text-gray-400'} transition-colors`}>
+                            {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                        </div>
+                    </button>
+
+                    {/* Facility Items */}
+                    {isExpanded && (
+                        <div className="border-t border-gray-100 divide-y divide-gray-50">
+                            {items.map((fac, idx) => (
+                                <div
+                                    key={fac.id}
+                                    onClick={() => onFacilityClick?.(fac)}
+                                    className="px-4 py-3 flex items-start justify-between hover:bg-gray-50 cursor-pointer transition-colors animate-in fade-in slide-in-from-top-2 duration-200"
+                                    style={{ animationDelay: `${idx * 30}ms` }}
+                                >
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 text-xs text-gray-700 font-medium">
+                                            <MapPin size={12} className="text-gray-400 flex-shrink-0" />
+                                            <span className="line-clamp-1">{fac.location}</span>
+                                        </div>
+                                        {/* Attribute Tags */}
+                                        {fac.attributes && Object.keys(fac.attributes).length > 0 && (
+                                            <div className="flex flex-wrap gap-1.5 mt-2">
+                                                {fac.attributes.wheelchair_accessible && (
+                                                    <span className="text-[9px] font-bold bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded-full">♿ {tL3('wheelchairFriendly')}</span>
+                                                )}
+                                                {fac.attributes.has_washlet && (
+                                                    <span className="text-[9px] font-bold bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded-full">WASHLET</span>
+                                                )}
+                                                {fac.attributes.sizes?.includes('L') && (
+                                                    <span className="text-[9px] font-bold bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded-full">{tL3('largeLuggage')}</span>
+                                                )}
+                                                {fac.attributes.count && (
+                                                    <span className="text-[9px] font-bold bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded-full">{fac.attributes.count}個</span>
+                                                )}
+                                                {fac.attributes.note && (
+                                                    <span className="text-[9px] font-medium bg-gray-50 text-gray-500 px-1.5 py-0.5 rounded italic">"{fac.attributes.note}"</span>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <ExternalLink size={14} className="text-gray-300 flex-shrink-0 ml-2" />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            );
+        })
+    }
+        </div >
     );
 }

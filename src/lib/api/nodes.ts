@@ -130,7 +130,16 @@ export async function fetchNearbyNodes(lat: number, lon: number, radiusMeters: n
         });
     }
 
-    return data as NodeDatum[];
+    // Enforce Multilingual Names from Seed
+    const effectiveNodes = (data || []).map((n: any) => {
+        const seed = SEED_NODES.find(s => s.id === n.id);
+        return {
+            ...n,
+            name: seed ? seed.name : n.name
+        };
+    });
+
+    return effectiveNodes as NodeDatum[];
 }
 
 import { SEED_NODES } from '../nodes/seedNodes';
@@ -873,8 +882,12 @@ export async function fetchAllNodes() {
         return CORE_STATIONS_FALLBACK.map(n => ({ ...n, location: parseLocation(n.location) })) as any[];
     }
 
-    return (data as any[]).map(n => ({
-        ...n,
-        location: parseLocation(n.location)
-    })) as NodeDatum[];
+    return (data as any[]).map(n => {
+        const seed = SEED_NODES.find(s => s.id === n.id);
+        return {
+            ...n,
+            name: seed ? seed.name : n.name,
+            location: parseLocation(n.location)
+        };
+    }) as NodeDatum[];
 }

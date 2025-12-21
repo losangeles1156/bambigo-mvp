@@ -11,7 +11,21 @@ export const SEED_NODES = [
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'culture'
+        vibe: 'culture',
+        address: { 'ja': '東京都台東区東上野三丁目19-6', 'zh-TW': '東京都台東區東上野三丁目19-6', 'en': '3-19-6 Higashi-Ueno, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Leisure - Culture & Park
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Ueno Park', distanceMeters: 50, direction: 'Park Exit' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Tokyo National Museum', distanceMeters: 400, direction: 'Park Exit' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'zoo', name: 'Ueno Zoo', distanceMeters: 300, direction: 'Park Exit' },
+
+            // Shopping - Ameyoko
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Ameya-Yokocho', distanceMeters: 100, direction: 'Shinobazu Exit', street: 'Ameyoko' },
+            { mainCategory: 'shopping', subCategory: 'specialty', detailCategory: 'souvenir', name: 'Yamashiroya', distanceMeters: 50, direction: 'Central Exit' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'cafe', name: 'Starbucks Ueno Park', distanceMeters: 200, direction: 'Park Exit' }
+        ]
     },
     {
         id: 'odpt:Station:JR-East.Akihabara',
@@ -48,7 +62,21 @@ export const SEED_NODES = [
         geohash: 'xn76u',
         is_hub: true,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区銀座四丁目1-2', 'zh-TW': '東京都中央區銀座四丁目1-2', 'en': '4-1-2 Ginza, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Luxury
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Ginza Mitsukoshi', distanceMeters: 50, direction: 'Exit A7', note: 'Landmark' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Wako', distanceMeters: 50, direction: 'Exit A10', note: 'Clock Tower' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'GINZA SIX', distanceMeters: 200, direction: 'Exit A3' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Matsuya Ginza', distanceMeters: 100, direction: 'Exit A12' },
+
+            // Shopping - Stationery
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Ginza Itoya', distanceMeters: 200, direction: 'Exit A12', note: 'Stationery' },
+
+            // Leisure
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'theater', name: 'Kabukiza Theatre', distanceMeters: 400, direction: 'Exit A7' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Kyobashi',
@@ -60,19 +88,77 @@ export const SEED_NODES = [
         geohash: 'xn76u',
         is_hub: false,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区京橋二丁目2-10', 'zh-TW': '東京都中央區京橋二丁目2-10', 'en': '2-2-10 Kyobashi, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Artizon Museum', distanceMeters: 300, direction: 'Exit 6' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'National Film Archive', distanceMeters: 100, direction: 'Exit 1' },
+
+            // Shopping & Dining
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Tokyo Square Garden', distanceMeters: 50, direction: 'Exit 3' },
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Kyobashi Edogrand', distanceMeters: 0, direction: 'Direct Access' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Mitsukoshimae',
         city_id: 'tokyo_core',
         name: { 'zh-TW': '三越前', 'ja': '三越前', 'en': 'Mitsukoshimae' },
         type: 'station',
-        location: 'POINT(139.7738 35.6856)',
-        vibe: 'shopping',
+        location: 'POINT(139.7746 35.6846)',
+        vibe: 'historic_commerce',
         geohash: 'xn76u',
         is_hub: false,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区日本橋室町一丁目8-1', 'zh-TW': '東京都中央區日本橋室町一丁目8-1', 'en': '1-8-1 Nihombashi-muromachi, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Department Store
+            { mainCategory: 'shopping', subCategory: 'department_store', name: 'Nihombashi Mitsukoshi Main Store', distanceMeters: 0, direction: 'Direct Access', note: 'Historic' },
+            { mainCategory: 'shopping', subCategory: 'department_store', name: 'COREDO Muromachi', distanceMeters: 100, direction: 'Exit A4', note: 'Modern Mix' },
+
+            // Culture - Museum
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Mitsui Memorial Museum', distanceMeters: 200, direction: 'Exit A7' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Currency Museum', distanceMeters: 300, direction: 'Exit B1' }
+        ]
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Kayabacho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '茅場町', 'ja': '茅場町', 'en': 'Kayabacho' },
+        type: 'station',
+        location: 'POINT(139.7801 35.6797)',
+        vibe: 'business',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区日本橋茅場町一丁目4-6', 'zh-TW': '東京都中央區日本橋茅場町一丁目4-6', 'en': '1-4-6 Nihombashi-kayabacho, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Business - Finance
+            { mainCategory: 'service', subCategory: 'office', name: 'Tokyo Stock Exchange', distanceMeters: 200, direction: 'Exit 11' },
+            { mainCategory: 'service', subCategory: 'office', name: 'Tokyo Shoken Kaikan', distanceMeters: 100, direction: 'Exit 8' }
+        ]
+    },
+    {
+        id: 'odpt:Station:JR-East.Hatchobori',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '八丁堀', 'ja': '八丁堀', 'en': 'Hatchobori' },
+        type: 'station',
+        location: 'POINT(139.7779 35.6749)',
+        vibe: 'residential_business',
+        geohash: 'xn76u',
+        is_hub: true, // Transfer to Keiyo Line
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区八丁堀三丁目25-10', 'zh-TW': '東京都中央區八丁堀三丁目25-10', 'en': '3-25-10 Hatchobori, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Leisure - River
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Sumida River Terrace', distanceMeters: 300, direction: 'Exit B4' },
+
+            // Accommodation
+            { mainCategory: 'service', subCategory: 'hotel', name: 'Hotel Sardonyx Tokyo', distanceMeters: 100, direction: 'Exit A3' }
+        ]
     },
     {
         id: 'odpt:Station:JR-East.Kanda',
@@ -84,7 +170,22 @@ export const SEED_NODES = [
         geohash: 'xn77k',
         is_hub: true,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都千代田区鍛冶町二丁目13-1', 'zh-TW': '東京都千代田區鍛冶町二丁目13-1', 'en': '2-13-1 Kajicho, Chiyoda-ku, Tokyo' },
+        facilityTags: [
+            // Dining - Curry
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Kanda Curry District', distanceMeters: 50, direction: 'Exit West', note: '400+ Shops' },
+            { mainCategory: 'dining', subCategory: 'izakaya', name: 'Isegen', distanceMeters: 200, direction: 'Exit North', note: 'Monkfish' },
+
+            // Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Kanda Myojin', distanceMeters: 400, direction: 'Exit North' },
+
+            // Shopping - Books
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Jimbocho Book Town', distanceMeters: 600, direction: 'Exit West', note: 'Bookstores' },
+
+            // Leisure - History
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Mitsui Memorial Museum', distanceMeters: 500, direction: 'Exit South' }
+        ]
     },
     // Asakusa Line - Chuo
     {
@@ -97,7 +198,16 @@ export const SEED_NODES = [
         geohash: 'xn76u',
         is_hub: false,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区銀座四丁目10-10', 'zh-TW': '東京都中央區銀座四丁目10-10', 'en': '4-10-10 Ginza, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Culture - Theater
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'theater', name: 'Kabukiza Theatre', distanceMeters: 0, direction: 'Direct Access', note: 'Kabuki' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'theater', name: 'Shinbashi Enbujo', distanceMeters: 300, direction: 'Exit 6' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Ginza Shochiku Square', distanceMeters: 200, direction: 'Exit 5' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.Nihombashi',
@@ -109,7 +219,17 @@ export const SEED_NODES = [
         geohash: 'xn76u',
         is_hub: true,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区日本橋一丁目13-1', 'zh-TW': '東京都中央區日本橋一丁目13-1', 'en': '1-13-1 Nihonbashi, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Department
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Nihombashi Takashimaya S.C.', distanceMeters: 50, direction: 'Exit B2', note: 'Important Cultural Property' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'COREDO Nihonbashi', distanceMeters: 0, direction: 'Direct Access' },
+
+            // Culture - History
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'historic_building', name: 'Nihonbashi Bridge', distanceMeters: 100, direction: 'Exit B12', note: 'Kilometer Zero' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'historic_building', name: 'Bank of Japan', distanceMeters: 400, direction: 'Exit B1' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.Ningyocho',
@@ -121,7 +241,16 @@ export const SEED_NODES = [
         geohash: 'xn77k',
         is_hub: false,
         zone: 'core',
-        source_dataset: 'odpt_seed'
+        source_dataset: 'odpt_seed',
+        address: { 'ja': '東京都中央区日本橋人形町三丁目7-13', 'zh-TW': '東京都中央區日本橋人形町三丁目7-13', 'en': '3-7-13 Nihonbashi-ningyocho, Chuo-ku, Tokyo' },
+        facilityTags: [
+            // Religion
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Suitengu Shrine', distanceMeters: 300, direction: 'Exit A2', note: 'Safe Childbirth' },
+
+            // Shopping & Dining - Shitamachi
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Amazake Yokocho', distanceMeters: 50, direction: 'Exit A1', note: 'Traditional Street' },
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Tamahide', distanceMeters: 100, direction: 'Exit A2', note: 'Famous Oyakodon' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.HigashiNihombashi',
@@ -142,11 +271,40 @@ export const SEED_NODES = [
         name: { 'zh-TW': '淺草', 'ja': '浅草', 'en': 'Asakusa' },
         type: 'station',
         location: 'POINT(139.7967 35.7106)',
+        address: { 'ja': '東京都台東区浅草一丁目1-3', 'zh-TW': '東京都台東區淺草一丁目1-3', 'en': '1-1-3 Asakusa, Taito-ku, Tokyo' },
         geohash: 'xn77k',
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'traditional'
+        vibe: 'traditional',
+        facilityTags: [
+            // Shopping - Souvenirs & Traditional
+            { mainCategory: 'shopping', subCategory: 'specialty', detailCategory: 'souvenir', name: '仲見世商店街', distanceMeters: 200, direction: 'Exit 1', street: 'Nakamise-dori' },
+            { mainCategory: 'shopping', subCategory: 'specialty', detailCategory: 'souvenir', name: '新仲見世商店街', distanceMeters: 150, direction: 'Exit 1', street: 'Shin-Nakamise' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Matsuya Asakusa', distanceMeters: 0, direction: 'Direct Connect', brand: 'Matsuya' },
+
+            // Shopping - Drugstores (High density)
+            { mainCategory: 'shopping', subCategory: 'drugstore', brand: 'Matsumoto Kiyoshi', distanceMeters: 50, direction: 'Exit 1' },
+            { mainCategory: 'shopping', subCategory: 'drugstore', brand: 'Sundrug', distanceMeters: 30, direction: 'Exit 3' },
+            { mainCategory: 'shopping', subCategory: 'drugstore', brand: 'Daikoku Drug', distanceMeters: 150, street: 'Shin-Nakamise' },
+
+            // Shopping - Lifestyle
+            { mainCategory: 'shopping', subCategory: 'variety_store', brand: 'Don Quijote', distanceMeters: 400, direction: 'Exit A1' },
+            { mainCategory: 'shopping', subCategory: 'shopping_mall', name: 'Asakusa ROX', distanceMeters: 500, direction: 'Exit A1' },
+
+            // Dining - Traditional
+            { mainCategory: 'dining', subCategory: 'japanese', detailCategory: 'tempura', name: 'Daikokuya', distanceMeters: 250 },
+            { mainCategory: 'dining', subCategory: 'japanese', detailCategory: 'unagi', distanceMeters: 200 },
+            { mainCategory: 'dining', subCategory: 'bar', detailCategory: 'izakaya', name: 'Hoppy Street', distanceMeters: 400, direction: 'West' },
+            { mainCategory: 'dining', subCategory: 'bar', name: 'Kamiya Bar', distanceMeters: 50, direction: 'Exit 3' },
+
+            // Leisure
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'temple', name: 'Senso-ji', distanceMeters: 350, direction: 'North' },
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'historic_building', name: 'Kaminarimon', distanceMeters: 100, direction: 'Exit 1' },
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'theme_park', name: 'Hanayashiki', distanceMeters: 500, direction: 'North West' },
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Sumida Park', distanceMeters: 150, direction: 'River Side' },
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'activity', name: 'Rickshaw Stands', distanceMeters: 80, direction: 'Kaminarimon' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.Kuramae',
@@ -170,7 +328,18 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'market'
+        vibe: 'market',
+        address: { 'ja': '東京都台東区上野五丁目23-12', 'zh-TW': '東京都台東區上野五丁目23-12', 'en': '5-23-12 Ueno, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Department
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Matsuzakaya Ueno', distanceMeters: 100, direction: 'South Exit', brand: 'Matsuzakaya' },
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Ameya-Yokocho', distanceMeters: 50, direction: 'North Exit', street: 'Ameyoko' },
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Takeya', distanceMeters: 300, direction: 'South Exit', note: 'Discount Store' },
+            { mainCategory: 'shopping', subCategory: 'specialty', name: '2k540 AKI-OKA ARTISAN', distanceMeters: 350, direction: 'South Exit', note: 'Artisan Shops under tracks' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Yoshiike Shokudo', distanceMeters: 50, direction: 'North Exit', note: 'Fresh Seafood' }
+        ]
     },
     {
         id: 'odpt:Station:JR-East.Uguisudani',
@@ -182,7 +351,16 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'retro'
+        vibe: 'retro',
+        address: { 'ja': '東京都台東区根岸一丁目4', 'zh-TW': '東京都台東區根岸一丁目4', 'en': '1-4 Negishi, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Leisure - Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Tokyo National Museum', distanceMeters: 600, direction: 'South Exit' },
+            { mainCategory: 'leisure', subCategory: 'entertainment', name: 'Tokyo Kinema Club', distanceMeters: 100, direction: 'South Exit', note: 'Live Venue' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Sasa-no-yuki', distanceMeters: 200, direction: 'North Exit', note: 'Traditional Tofu Cuisine' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.Asakusabashi',
@@ -206,7 +384,19 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'kitchen'
+        vibe: 'kitchen',
+        address: { 'ja': '東京都台東区西浅草一丁目1-18', 'zh-TW': '東京都台東區西淺草一丁目1-18', 'en': '1-1-18 Nishi-Asakusa, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Kitchen Town
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Kappabashi Kitchen Town', distanceMeters: 150, direction: 'Exit 3', street: 'Kappabashi-dori' },
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Niimi Kitchenware', distanceMeters: 200, direction: 'Exit 3', brand: 'Niimi' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'bakery', name: 'Pelican Bakery', distanceMeters: 100, direction: 'Exit 2' },
+
+            // Leisure
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'temple', name: 'Higashi-Honganji', distanceMeters: 250, direction: 'Exit 3' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Iriya',
@@ -218,7 +408,19 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'quiet'
+        vibe: 'quiet',
+        address: { 'ja': '東京都台東区下谷二丁目15-1', 'zh-TW': '東京都台東區下谷二丁目15-1', 'en': '2-15-1 Shitaya, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Leisure - Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'temple', name: 'Shingen-ji (Kishibojin)', distanceMeters: 100, direction: 'Exit 1', note: 'Morning Glory Fair in July' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Ootori Shrine', distanceMeters: 550, direction: 'Exit 3', note: 'Tori no Ichi' },
+
+            // Dining - Cafe
+            { mainCategory: 'dining', subCategory: 'cafe', name: 'Iriya Plus Cafe', distanceMeters: 300, direction: 'Exit 4', note: 'Kominka Cafe' },
+
+            // Shopping
+            { mainCategory: 'shopping', subCategory: 'supermarket', brand: 'My Basket', distanceMeters: 150, direction: 'Exit 1' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Inaricho',
@@ -230,7 +432,18 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'temple'
+        vibe: 'temple',
+        address: { 'ja': '東京都台東区東上野三丁目33-11', 'zh-TW': '東京都台東區東上野三丁目33-11', 'en': '3-33-11 Higashi-Ueno, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Religion
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Shitaya Shrine', distanceMeters: 100, direction: 'Exit 1' },
+
+            // Leisure - Sento
+            { mainCategory: 'leisure', subCategory: 'relaxation', detailCategory: 'sauna', name: 'Kotobukiyu', distanceMeters: 200, direction: 'Exit 1' },
+
+            // Shopping - Niche
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Butsudan-dori', distanceMeters: 50, direction: 'Exit 2', street: 'Asakusa-dori' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Minowa',
@@ -242,7 +455,18 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'tram'
+        vibe: 'tram',
+        address: { 'ja': '東京都台東区根岸五丁目19-6', 'zh-TW': '東京都台東區根岸五丁目19-6', 'en': '5-19-6 Negishi, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Transportation
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'activity', name: 'Toden Minowabashi Station', distanceMeters: 250, direction: 'Exit 3', note: 'Start of Toden Arakawa Line' },
+
+            // Shopping - Retro
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Joyful Minowa', distanceMeters: 300, direction: 'Exit 3', street: 'Joyful Minowa Shopping Street' },
+
+            // Leisure - History
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'temple', name: 'Jokan-ji', distanceMeters: 500, direction: 'Exit 3', note: 'Throw-Away Temple' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.ShinOkachimachi',
@@ -254,7 +478,15 @@ export const SEED_NODES = [
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'arcade'
+        vibe: 'arcade',
+        address: { 'ja': '東京都台東区小島二丁目21-18', 'zh-TW': '東京都台東區小島二丁目21-18', 'en': '2-21-18 Kojima, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Shopping - Retro
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Satake Shopping Arcade', distanceMeters: 50, direction: 'Exit A2', street: 'Satake Shotengai', note: '2nd Oldest in Tokyo' },
+
+            // Medical
+            { mainCategory: 'medical', subCategory: 'hospital', name: 'Eiju General Hospital', distanceMeters: 500, direction: 'Exit A1' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Yushima',
@@ -266,7 +498,15 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'scholar'
+        vibe: 'scholar',
+        address: { 'ja': '東京都文京区湯島三丁目47-10', 'zh-TW': '東京都文京區湯島三丁目47-10', 'en': '3-47-10 Yushima, Bunkyo-ku, Tokyo' },
+        facilityTags: [
+            // Religion
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Yushima Tenjin', distanceMeters: 150, direction: 'Exit 3', note: 'Scholar Shrine' },
+
+            // Leisure - Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'historic_building', name: 'Kyu-Iwasaki-tei Gardens', distanceMeters: 200, direction: 'Exit 1' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Tsukiji',
@@ -290,7 +530,21 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'academic'
+        vibe: 'academic',
+        address: { 'ja': '東京都文京区湯島一丁目5-8', 'zh-TW': '東京都文京區湯島一丁目5-8', 'en': '1-5-8 Yushima, Bunkyo-ku, Tokyo' },
+        facilityTags: [
+            // Academic & Medical
+            { mainCategory: 'service', subCategory: 'hospital', name: 'Juntendo University Hospital', distanceMeters: 200, direction: 'Exit 1' },
+            { mainCategory: 'service', subCategory: 'hospital', name: 'Tokyo Medical and Dental Univ. Hospital', distanceMeters: 50, direction: 'Exit 2' },
+
+            // Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Kanda Myojin', distanceMeters: 300, direction: 'Exit 1', note: 'IT God' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'historic_building', name: 'Yushima Seido', distanceMeters: 150, direction: 'Exit 1', note: 'Confucius' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'historic_building', name: 'Holy Resurrection Cathedral', distanceMeters: 200, direction: 'Exit 1' },
+
+            // Shopping - Instruments
+            { mainCategory: 'shopping', subCategory: 'specialty', name: 'Meidai-dori', distanceMeters: 100, direction: 'Exit 2', note: 'Instrument Shops' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Kasumigaseki',
@@ -302,7 +556,17 @@ export const SEED_NODES = [
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'government'
+        vibe: 'government',
+        address: { 'ja': '東京都千代田区霞が関二丁目1-2', 'zh-TW': '東京都千代田區霞關二丁目1-2', 'en': '2-1-2 Kasumigaseki, Chiyoda-ku, Tokyo' },
+        facilityTags: [
+            // Government
+            { mainCategory: 'service', subCategory: 'government', name: 'Ministry of Foreign Affairs', distanceMeters: 100, direction: 'Exit A4' },
+            { mainCategory: 'service', subCategory: 'government', name: 'Tokyo High Court', distanceMeters: 150, direction: 'Exit A1' },
+            { mainCategory: 'service', subCategory: 'government', name: 'Metropolitan Police Department', distanceMeters: 200, direction: 'Exit A2' },
+
+            // Leisure - Park
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Hibiya Park', distanceMeters: 100, direction: 'Exit B2' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Iidabashi',
@@ -314,7 +578,45 @@ export const SEED_NODES = [
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'hub'
+        vibe: 'hub',
+        address: { 'ja': '東京都新宿区神楽坂一丁目13', 'zh-TW': '東京都新宿區神楽坂一丁目13', 'en': '1-13 Kagurazaka, Shinjuku-ku, Tokyo' },
+        facilityTags: [
+            // Religion
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'shrine', name: 'Tokyo Daijingu', distanceMeters: 350, direction: 'Exit A4', note: 'Love Shrine' },
+
+            // Leisure - Garden
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'garden', name: 'Koishikawa Korakuen', distanceMeters: 400, direction: 'Exit C3' },
+
+            // Shopping & Dining
+            { mainCategory: 'shopping', subCategory: 'market', name: 'Kagurazaka', distanceMeters: 100, direction: 'Exit B3', note: 'Little Paris' },
+            { mainCategory: 'dining', subCategory: 'cafe', name: 'Canal Cafe', distanceMeters: 200, direction: 'Exit B2a', note: 'Riverside' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Iidabashi Ramla', distanceMeters: 50, direction: 'Exit B2b' }
+        ]
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Hibiya',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '日比谷', 'ja': '日比谷', 'en': 'Hibiya' },
+        type: 'station',
+        location: 'POINT(139.7599 35.6738)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'culture',
+        address: { 'ja': '東京都千代田区有楽町一丁目5-1', 'zh-TW': '東京都千代田區有樂町一丁目5-1', 'en': '1-5-1 Yurakucho, Chiyoda-ku, Tokyo' },
+        facilityTags: [
+            // Culture
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Tokyo Takarazuka Theater', distanceMeters: 100, direction: 'Exit A5' },
+            { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Nissay Theatre', distanceMeters: 50, direction: 'Exit A13' },
+
+            // Leisure - Park
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Hibiya Park', distanceMeters: 0, direction: 'Direct Access' },
+
+            // Shopping
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Tokyo Midtown Hibiya', distanceMeters: 50, direction: 'Exit A11' },
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Hibiya Chanter', distanceMeters: 100, direction: 'Exit A5' }
+        ]
     },
     {
         id: 'odpt:Station:TokyoMetro.Otemachi',
@@ -326,7 +628,20 @@ export const SEED_NODES = [
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'business'
+        vibe: 'business',
+        address: { 'ja': '東京都千代田区大手町一丁目6-1', 'zh-TW': '東京都千代田區大手町一丁目6-1', 'en': '1-6-1 Otemachi, Chiyoda-ku, Tokyo' },
+        facilityTags: [
+            // Business
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Otemachi Tower', distanceMeters: 50, direction: 'Exit B1', note: 'Aman Tokyo' },
+            { mainCategory: 'service', subCategory: 'office', name: 'Reading Room (The Otemachi Tower)', distanceMeters: 50, direction: 'Exit B1' },
+
+            // Leisure - Nature
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Imperial Palace East Gardens', distanceMeters: 200, direction: 'Exit C13a' },
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'garden', name: 'Wadakura Fountain Park', distanceMeters: 300, direction: 'Exit D2' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'restaurant', name: 'Otemachi Place', distanceMeters: 100, direction: 'Exit A5' }
+        ]
     },
     {
         id: 'odpt:Station:Toei.UenoOkachimachi',
@@ -338,19 +653,303 @@ export const SEED_NODES = [
         is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
-        vibe: 'market'
+        vibe: 'market',
+        address: { 'ja': '東京都台東区上野五丁目26-6', 'zh-TW': '東京都台東區上野五丁目26-6', 'en': '5-26-6 Ueno, Taito-ku, Tokyo' },
+        facilityTags: [
+            // Service
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'activity', name: 'Ueno-okachimachi Tourist Info', distanceMeters: 0, direction: 'Inside Station' },
+
+            // Shopping
+            { mainCategory: 'shopping', subCategory: 'department', name: 'Parco_ya Ueno', distanceMeters: 50, direction: 'Exit A1' }
+        ]
+    },
+
+    // Minato Ward
+    {
+        id: 'odpt:Station:TokyoMetro.Shimbashi',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '新橋', 'ja': '新橋', 'en': 'Shimbashi' },
+        type: 'station',
+        location: 'POINT(139.7582 35.6665)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'salaryman'
     },
     {
-        id: 'odpt:Station:TokyoMetro.Kayabacho',
+        id: 'odpt:Station:TokyoMetro.Roppongi',
         city_id: 'tokyo_core',
-        name: { 'zh-TW': '茅場町', 'ja': '茅場町', 'en': 'Kayabacho' },
+        name: { 'zh-TW': '六本木', 'ja': '六本木', 'en': 'Roppongi' },
         type: 'station',
-        location: 'POINT(139.7801 35.6797)',
+        location: 'POINT(139.7322 35.6633)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'nightlife'
+    },
+    {
+        id: 'odpt:Station:Toei.Daimon',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '大門', 'ja': '大門', 'en': 'Daimon' },
+        type: 'station',
+        location: 'POINT(139.7555 35.6567)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'business'
+    },
+    {
+        id: 'odpt:Station:JR-East.Hamamatsucho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '濱松町', 'ja': '浜松町', 'en': 'Hamamatsucho' },
+        type: 'station',
+        location: 'POINT(139.7571 35.6551)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'airport_gateway'
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Omotesando',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '表參道', 'ja': '表参道', 'en': 'Omotesando' },
+        type: 'station',
+        location: 'POINT(139.7126 35.6653)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'fashion'
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Hiroo',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '廣尾', 'ja': '広尾', 'en': 'Hiroo' },
+        type: 'station',
+        location: 'POINT(139.7219 35.6532)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'international'
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Akasakamitsuke',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '赤坂見附', 'ja': '赤坂見附', 'en': 'Akasaka-mitsuke' },
+        type: 'station',
+        location: 'POINT(139.7371 35.6770)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'gourmet'
+    },
+    // Taito Ward - Toei Asakusa Line
+    {
+        id: 'odpt:Station:Toei.Asakusa',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '淺草', 'ja': '浅草', 'en': 'Asakusa' },
+        type: 'station',
+        location: 'POINT(139.7963 35.7103)',
+        address: { 'ja': '東京都台東区駒形一丁目12-14', 'zh-TW': '東京都台東區駒形一丁目12-14', 'en': '1-12-14 Komagata, Taito-ku, Tokyo' },
+        geohash: 'xn77h',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'tourist',
+        facilityTags: [
+            // Similar to Metro but slightly adjusted for A2-A5 exits (Toei side)
+            // Leisure
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'historic_building', name: 'Kaminarimon', distanceMeters: 80, direction: 'Exit A4' },
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'river', name: 'Sumida River', distanceMeters: 50, direction: 'Exit A3' },
+            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'temple', name: 'Senso-ji', distanceMeters: 300, direction: 'Exit A4' },
+
+            // Shopping
+            { mainCategory: 'shopping', subCategory: 'specialty', detailCategory: 'souvenir', name: 'Nakamise-dori', distanceMeters: 150, direction: 'Exit A4' },
+            { mainCategory: 'shopping', subCategory: 'drugstore', brand: 'Matsumoto Kiyoshi', distanceMeters: 100, direction: 'Exit A4' },
+
+            // Dining
+            { mainCategory: 'dining', subCategory: 'japanese', name: 'Komagata Dozeu', distanceMeters: 200, direction: 'Exit A1' },
+            { mainCategory: 'dining', subCategory: 'bar', name: 'Kamiya Bar', distanceMeters: 100, direction: 'Exit A5' },
+
+            // Medical
+            { mainCategory: 'medical', subCategory: 'hospital', name: 'Asakusa Hospital', distanceMeters: 800, direction: 'North' } // A bit far but relevant
+        ]
+    },
+    // Chuo Ward - Toei Subway
+    {
+        id: 'odpt:Station:Toei.Takaracho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '寶町', 'ja': '宝町', 'en': 'Takaracho' },
+        type: 'station',
+        location: 'POINT(139.7719 35.6754)',
         geohash: 'xn76u',
         is_hub: false,
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'business'
+    },
+    {
+        id: 'odpt:Station:Toei.HigashiNihombashi',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '東日本橋', 'ja': '東日本橋', 'en': 'Higashi-nihombashi' },
+        type: 'station',
+        location: 'POINT(139.7820 35.6921)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'wholesale'
+    },
+    {
+        id: 'odpt:Station:Toei.Kachidoki',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '勝鬨', 'ja': '勝どき', 'en': 'Kachidoki' },
+        type: 'station',
+        location: 'POINT(139.7771 35.6590)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'residential'
+    },
+    {
+        id: 'odpt:Station:Toei.Tsukishima',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '月島', 'ja': '月島', 'en': 'Tsukishima' },
+        type: 'station',
+        location: 'POINT(139.7846 35.6645)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'monja'
+    },
+    {
+        id: 'odpt:Station:Toei.Tsukijishijo',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '築地市場', 'ja': '築地市場', 'en': 'Tsukijishijo' },
+        type: 'station',
+        location: 'POINT(139.7671 35.6649)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'market_history'
+    },
+    {
+        id: 'odpt:Station:Toei.BakuroYokoyama',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '馬喰橫山', 'ja': '馬喰横山', 'en': 'Bakuro-yokoyama' },
+        type: 'station',
+        location: 'POINT(139.7826 35.6922)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'wholesale'
+    },
+    {
+        id: 'odpt:Station:Toei.Hamacho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '濱町', 'ja': '浜町', 'en': 'Hamacho' },
+        type: 'station',
+        location: 'POINT(139.7891 35.6882)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'residential_park'
+    },
+    // Chiyoda Ward - Toei Subway
+    {
+        id: 'odpt:Station:Toei.Jimbocho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '神保町', 'ja': '神保町', 'en': 'Jimbocho' },
+        type: 'station',
+        location: 'POINT(139.7577 35.6959)',
+        geohash: 'xn77h',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'books'
+    },
+    {
+        id: 'odpt:Station:Toei.Ogawamachi',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '小川町', 'ja': '小川町', 'en': 'Ogawamachi' },
+        type: 'station',
+        location: 'POINT(139.7667 35.6951)',
+        geohash: 'xn77h',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'sports'
+    },
+    {
+        id: 'odpt:Station:Toei.Kudanshita',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '九段下', 'ja': '九段下', 'en': 'Kudanshita' },
+        type: 'station',
+        location: 'POINT(139.7514 35.6954)',
+        geohash: 'xn77h',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'budokan'
+    },
+    {
+        id: 'odpt:Station:Toei.Iwamotocho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '岩本町', 'ja': '岩本町', 'en': 'Iwamotocho' },
+        type: 'station',
+        location: 'POINT(139.7759 35.6955)',
+        geohash: 'xn77k',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'akiba_neighbor'
+    },
+    {
+        id: 'odpt:Station:Toei.Hibiya',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '日比谷', 'ja': '日比谷', 'en': 'Hibiya' },
+        type: 'station',
+        location: 'POINT(139.7593 35.6762)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'theater'
+    },
+    {
+        id: 'odpt:Station:Toei.Uchisaiwaicho',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '內幸町', 'ja': '内幸町', 'en': 'Uchisaiwaicho' },
+        type: 'station',
+        location: 'POINT(139.7555 35.6694)',
+        geohash: 'xn76u',
+        is_hub: false,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'business'
+    },
+    {
+        id: 'odpt:Station:Toei.Ichigaya',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '市谷', 'ja': '市ヶ谷', 'en': 'Ichigaya' },
+        type: 'station',
+        location: 'POINT(139.7377 35.6871)',
+        geohash: 'xn77h',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'moat'
     }
 ];
 
