@@ -25,18 +25,20 @@ export function ContextSelector() {
     const { userContext, setUserContext } = useAppStore();
 
     const toggleContext = (id: string) => {
-        // Toggle off if already selected, otherwise set to new id
-        if (userContext === id) {
-            setUserContext(null);
+        const current = userContext || [];
+        if (current.includes(id)) {
+            // Remove if exists
+            setUserContext(current.filter(c => c !== id));
         } else {
-            setUserContext(id as any);
+            // Add if not exists
+            setUserContext([...current, id]);
         }
     };
 
     return (
         <div className="flex gap-2.5 overflow-x-auto pb-2 px-1 scrollbar-hide mask-fade-right">
             {contexts.map((ctx) => {
-                const isActive = userContext === ctx.id;
+                const isActive = (userContext || []).includes(ctx.id);
                 const Icon = ctx.icon;
                 return (
                     <button
