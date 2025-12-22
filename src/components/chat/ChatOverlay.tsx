@@ -6,13 +6,30 @@ import { useZoneAwareness } from '@/hooks/useZoneAwareness';
 import { useTranslations } from 'next-intl';
 
 import { ActionCard, Action as ChatAction } from './ActionCard';
+import { ContextSelector } from './ContextSelector';
 
 export function ChatOverlay() {
     // const t = useTranslations('Chat');
     const { isChatOpen, setChatOpen, messages, addMessage, setCurrentNode, setBottomSheetOpen } = useAppStore();
     const { zone, userLocation } = useZoneAwareness();
     const [input, setInput] = useState('');
+    const [l2Status, setL2Status] = useState<any>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const fetchL2 = async () => {
+            try {
+                const res = await fetch('/api/l2/status');
+                if (res.ok) {
+                    const data = await res.json();
+                    setL2Status(data);
+                }
+            } catch (e) {
+                console.error('L2 Fetch Error', e);
+            }
+        };
+        if (isChatOpen) fetchL2();
+    }, [isChatOpen]);
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -82,73 +99,100 @@ export function ChatOverlay() {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex flex-col animate-in slide-in-from-bottom duration-500 bg-white/95 backdrop-blur-3xl sm:bg-white/80">
+        <div className="fixed inset-0 z-50 flex flex-col animate-in slide-in-from-bottom duration-700 bg-white/60 backdrop-blur-3xl sm:bg-white/40">
             {/* Header */}
-            <div className="p-5 border-b border-gray-100/50 flex justify-between items-center bg-white/50 backdrop-blur-md sticky top-0 z-10 shadow-sm">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-tr from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-indigo-200 text-white">
+            <div className="p-6 border-b border-black/[0.03] flex justify-between items-center glass-effect sticky top-0 z-10 shadow-sm rounded-b-3xl">
+                <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-tr from-indigo-500 via-indigo-600 to-indigo-700 rounded-2xl flex items-center justify-center text-2xl shadow-xl shadow-indigo-200 text-white transform hover:rotate-6 transition-transform">
                         🦌
                     </div>
                     <div>
-                        <h2 className="font-black text-lg tracking-tight text-gray-900 leading-none mb-1">Bambi AI</h2>
-                        <div className="flex items-center gap-1.5 opacity-60">
-                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-widest">Online</span>
+                        <h2 className="font-black text-xl tracking-tight text-gray-900 leading-none mb-1.5 text-gradient">Bambi AI</h2>
+                        <div className="flex items-center gap-2">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600/80">Active Strategy</span>
                         </div>
                     </div>
                 </div>
                 <button
                     onClick={() => setChatOpen(false)}
-                    className="w-10 h-10 rounded-full bg-gray-100/50 hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-all active:scale-90 backdrop-blur-sm"
+                    className="w-10 h-10 rounded-full bg-white/50 hover:bg-white flex items-center justify-center text-gray-400 hover:text-gray-900 transition-all active:scale-90 shadow-sm border border-black/[0.03]"
                 >
                     ✕
                 </button>
             </div>
 
             {/* Trip Guard Entry Point */}
-            <div className="px-5 py-3 bg-indigo-50/50 border-b border-indigo-100/50 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <div className="p-1 bg-indigo-600 rounded-lg text-white">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div className="mx-6 mt-4 p-4 bg-gradient-to-r from-indigo-600/90 to-indigo-800/90 rounded-2xl flex items-center justify-between shadow-lg shadow-indigo-100 border border-white/20 backdrop-blur-md">
+                <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white/20 rounded-xl text-white">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-indigo-900">行程守護模式 (Trip Guard)</span>
+                    <div className="flex flex-col">
+                        <span className="text-[10px] font-black uppercase tracking-wider text-indigo-100">行程守護模式 (Trip Guard)</span>
+                        <span className="text-[9px] text-white/60 font-medium">Bambi 將主動偵測路線異常</span>
+                    </div>
                 </div>
                 <button
                     onClick={() => {
                         useAppStore.getState().setTripGuardActive(true);
                         setChatOpen(false);
                     }}
-                    className="px-3 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-full hover:bg-indigo-700 transition-colors shadow-sm"
+                    className="px-4 py-2 bg-white text-indigo-600 text-[10px] font-black rounded-full hover:bg-indigo-50 transition-all active:scale-95 shadow-md"
                 >
                     立即啟動
                 </button>
             </div>
 
+            {/* L2 Live Status Alert */}
+            {l2Status && (
+                <div className="mx-6 mt-3 p-3 bg-rose-50/80 border border-rose-100 rounded-2xl flex items-start gap-3 animate-in fade-in slide-in-from-top-2 duration-500">
+                    <div className="p-2 bg-rose-100 text-rose-500 rounded-xl shrink-0">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <div className="flex flex-col gap-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                            <span className="text-[10px] font-black uppercase text-rose-600 tracking-wider">交通運行情報</span>
+                            <span className="text-[10px] font-bold text-gray-500 bg-white/50 px-2 py-0.5 rounded-full">{l2Status.weather_info?.temp}°C</span>
+                        </div>
+                        <p className="text-xs text-rose-900/80 font-bold leading-relaxed line-clamp-2">
+                            {l2Status.reason_zh_tw || l2Status.reason_ja}
+                        </p>
+                        <p className="text-[9px] text-rose-400 font-medium">
+                            更新於: {new Date(l2Status.updated_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                    </div>
+                </div>
+            )}
+
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 scroll-smooth">
+            <div className="flex-1 overflow-y-auto p-6 space-y-8 scroll-smooth scrollbar-hide">
                 {messages.length === 0 && (
-                    <div className="flex flex-col items-center justify-center h-full text-center space-y-8 px-8 animate-in fade-in zoom-in duration-700">
+                    <div className="flex flex-col items-center justify-center h-full text-center space-y-10 px-8 animate-in fade-in zoom-in-95 duration-1000">
                         <div className="relative">
-                            <div className="absolute inset-0 bg-indigo-500 blur-3xl opacity-10 rounded-full animate-pulse" />
-                            <div className="w-24 h-24 bg-gradient-to-br from-white to-indigo-50 rounded-[32px] flex items-center justify-center text-5xl shadow-xl shadow-indigo-100 border border-white relative z-10">
+                            <div className="absolute inset-0 bg-indigo-500 blur-[80px] opacity-20 rounded-full animate-pulse" />
+                            <div className="w-28 h-28 bg-white rounded-[40px] flex items-center justify-center text-6xl shadow-2xl shadow-indigo-100 border border-white/50 relative z-10 glass-effect">
                                 ✨
                             </div>
                         </div>
-                        <div>
-                            <h3 className="text-2xl font-black text-gray-900 mb-3 tracking-tight">想去哪裡逛逛？</h3>
-                            <p className="text-gray-500 font-medium leading-relaxed max-w-xs mx-auto">
-                                小鹿 Bambi 已準備好為您導航。<br />嘗試詢問轉乘、美食或置物櫃資訊。
+                        <div className="space-y-4">
+                            <h3 className="text-3xl font-black text-gray-900 tracking-tighter">想去哪裡逛逛？</h3>
+                            <p className="text-gray-500 font-bold leading-relaxed max-w-[240px] mx-auto text-sm opacity-60">
+                                小鹿 Bambi 已準備好為您導航。<br />嘗試詢問轉乘或置物櫃資訊。
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 gap-3 w-full max-w-sm">
+                        <div className="grid grid-cols-1 gap-4 w-full max-w-sm">
                             {['帶我去上野公園', '附近的置物櫃', '銀座線現在擠嗎？'].map((tip, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setInput(tip)}
-                                    className="px-5 py-3.5 bg-white/60 hover:bg-white border border-white/50 hover:border-indigo-100 rounded-2xl text-sm font-bold text-gray-700 hover:text-indigo-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-left flex justify-between items-center group backdrop-blur-sm"
+                                    className="px-6 py-4 bg-white/40 hover:bg-white border border-white/60 hover:border-indigo-100 rounded-3xl text-sm font-black text-gray-700 hover:text-indigo-600 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left flex justify-between items-center group backdrop-blur-sm"
                                 >
                                     {tip}
-                                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-400 group-hover:translate-x-1 duration-300">→</span>
+                                    <span className="opacity-0 group-hover:opacity-100 transition-all text-indigo-400 group-hover:translate-x-1 duration-500">→</span>
                                 </button>
                             ))}
                         </div>
@@ -156,18 +200,18 @@ export function ChatOverlay() {
                 )}
 
                 {messages.map((msg: { role: string, content: string, actions?: any[] }, idx: number) => (
-                    <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in slide-in-from-bottom-2 fade-in duration-500`}>
-                        <div className={`max-w-[85%] p-4 sm:p-5 rounded-2xl shadow-sm ${msg.role === 'user'
-                            ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 text-white rounded-br-[4px]'
-                            : 'bg-white/80 backdrop-blur-sm text-gray-800 rounded-bl-[4px] border border-white/40 shadow-sm'
+                    <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in slide-in-from-bottom-4 fade-in duration-700`}>
+                        <div className={`max-w-[88%] p-5 rounded-[28px] shadow-sm ${msg.role === 'user'
+                            ? 'bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-br-lg shadow-indigo-200'
+                            : 'bg-white text-gray-800 rounded-bl-lg border border-black/[0.03] shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
                             }`}>
-                            <div className="whitespace-pre-wrap leading-relaxed tracking-wide text-sm font-medium">
+                            <div className="whitespace-pre-wrap leading-relaxed tracking-wide text-sm font-bold opacity-90">
                                 {msg.content}
                             </div>
 
                             {/* Action Cards */}
                             {msg.actions && msg.actions.length > 0 && (
-                                <div className="mt-4 space-y-3">
+                                <div className="mt-5 space-y-3">
                                     {msg.actions.map((action: ChatAction, i: number) => (
                                         <ActionCard
                                             key={i}
@@ -183,22 +227,28 @@ export function ChatOverlay() {
                 <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
-            <div className="p-4 bg-white/80 backdrop-blur-xl border-t border-gray-100/50 pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.03)]">
+            {/* Input Overlay */}
+            <div className="p-6 bg-white/40 backdrop-blur-2xl border-t border-black/[0.03] pb-10 shadow-[0_-15px_40px_rgba(0,0,0,0.02)]">
+                {/* User Context Selector (Prompt 3) */}
+                <div className="mb-4 max-w-2xl mx-auto">
+                    <ContextSelector />
+                </div>
+
                 <form onSubmit={handleSubmit} className="flex gap-3 max-w-2xl mx-auto relative group">
+                    <div className="absolute inset-0 bg-indigo-500/5 blur-2xl rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity" />
                     <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="輸入訊息..."
-                        className="flex-1 px-6 py-4 rounded-full border border-gray-200/80 bg-gray-50/50 hover:bg-white focus:bg-white focus:border-indigo-500/30 focus:ring-4 focus:ring-indigo-500/10 transition-all outline-none font-medium placeholder:text-gray-400 text-gray-900 shadow-inner"
+                        className="flex-1 px-8 py-5 rounded-full border border-black/[0.05] bg-white/80 hover:bg-white focus:bg-white focus:border-indigo-500/30 focus:ring-[10px] focus:ring-indigo-500/5 transition-all outline-none font-bold placeholder:text-gray-300 text-gray-900 shadow-sm relative z-10"
                         autoFocus
                     />
                     <button
                         type="submit"
                         disabled={!input.trim()}
-                        className="absolute right-2 top-2 bottom-2 aspect-square rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 hover:scale-105 active:scale-95 transition-all disabled:opacity-0 disabled:scale-75 shadow-lg shadow-indigo-200"
+                        className="absolute right-2.5 top-2.5 bottom-2.5 aspect-square rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 text-white flex items-center justify-center hover:shadow-xl hover:scale-105 active:scale-90 transition-all disabled:opacity-0 disabled:scale-75 shadow-lg shadow-indigo-200 z-20"
                     >
-                        <span className="-mt-0.5">↑</span>
+                        <span className="text-xl -mt-1 font-black">↑</span>
                     </button>
                 </form>
             </div>

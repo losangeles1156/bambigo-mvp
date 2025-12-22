@@ -32,50 +32,141 @@
         "addToTrip": "加入我的行程",
         "addedToTrip": "已將「{name}」加入您的行程草稿！",
         "bufferZoneMessage": "此區域目前僅提供基礎資訊，Bambi AI 的感性導航功能正在擴張中。",
-        "locationDna": "地點基因 (Location DNA)",
-        "vicinity": "周邊設施 (Vicinity)",
+        "locationDna": "生活機能",
+        "vicinity": "周邊設施",
         "vibeTags": "氛圍標籤",
-        "analyzingL1": "正在分析 L1 基因數據...",
-        "noL3Facilities": "此區域暫無 L3 設施資訊"
+        "analyzingL1": "正在分析周邊數據...",
+        "noL3Facilities": "此區域暫無設施資訊"
     },
     "tabs": {
-        "dna": "DNA (L1)",
-        "live": "LIVE (L2)",
-        "facility": "FACILITY (L3)",
-        "bambi": "BAMBI (L4)"
+        "dna": "生活機能",
+        "live": "即時動態",
+        "facility": "服務設施",
+        "bambi": "智慧建議"
+    },
+    "tag": {
+        "shopping": "購物",
+        "dining": "餐飲",
+        "leisure": "休閒",
+        "culture": "文化",
+        "service": "服務",
+        "medical": "醫療",
+        "education": "教育",
+        "finance": "金融",
+        "accommodation": "住宿",
+        "nature": "自然",
+        "religion": "宗教",
+        "business": "商務",
+        "countSuffix": "處",
+        "sub": {
+            "convenience": "便利商店",
+            "department": "百貨公司",
+            "department_store": "百貨公司",
+            "drugstore": "藥妝店",
+            "market": "市場/商店街",
+            "specialty": "專賣店",
+            "variety_store": "雜貨店",
+            "shopping_mall": "購物中心",
+            "souvenir": "伴手禮",
+            "restaurant": "餐廳",
+            "cafe": "咖啡廳",
+            "izakaya": "居酒屋",
+            "bar": "酒吧",
+            "fast_food": "速食",
+            "japanese": "日式料理",
+            "tempura": "天婦羅",
+            "unagi": "鰻魚飯",
+            "ramen": "拉麵",
+            "sushi": "壽司",
+            "curry": "咖哩",
+            "park": "公園",
+            "museum": "博物館",
+            "shrine": "神社",
+            "temple": "寺廟",
+            "theater": "劇場",
+            "historic_building": "歷史建築",
+            "landmark": "地標",
+            "hospital": "醫院",
+            "clinic": "診所",
+            "pharmacy": "藥局",
+            "school": "學校",
+            "university": "大學",
+            "library": "圖書館",
+            "post_office": "郵局",
+            "bank": "銀行",
+            "atm": "ATM",
+            "locker": "置物櫃",
+            "office": "辦公大樓",
+            "hotel": "飯店",
+            "hostel": "青年旅舍",
+            "ryokan": "旅館",
+            "garden": "庭園",
+            "river": "河川"
+        }
+    },
+    "facility": {
+        "businessHours": "營業時間",
+        "closed": "休息中",
+        "open": "營業中",
+        "openNow": "營業中",
+        "closedNow": "休息中",
+        "navigateToMap": "導航至此",
+        "viewDetails": "查看詳情",
+        "distance": "距離",
+        "walkMin": "步行約 {min} 分"
     },
     "l2": {
-        "density": "人流預測 (Density)",
+        "density": "人流預測",
         "crowdedLevel": "較為擁擠",
         "normalLevel": "普通",
         "comfortLevel": "舒適",
-        "wait": "預計候車 (Wait)",
+        "wait": "預計候車",
         "min": "分",
-        "service": "運行情報 (Service)",
+        "service": "運行情報",
         "allLinesNormal": "所有路線",
         "runningNormal": "目前運作正常",
-        "delay": "Delay",
+        "delay": "延誤",
         "normalOperation": "正常運行",
         "delayOccurred": "發生延誤",
-        "weatherAlert": "【天候警告】"
+        "weatherAlert": "天候警報",
+        "experience": {
+            "rushHour": "通勤尖峰",
+            "crowded": "人潮眾多",
+            "moderate": "稍有擁擠",
+            "comfortable": "舒適順暢",
+            "empty": "空曠愜意"
+        }
     },
     "l3": {
         "stationToilet": "車站廁所",
         "coinLocker": "置物櫃",
         "elevator": "無障礙電梯",
         "wheelchairFriendly": "輪椅友善",
-        "largeLuggage": "大型行李可"
+        "wheelchair_accessible": "無障礙通道",
+        "largeLuggage": "大型行李可",
+        "has_washlet": "溫水洗淨",
+        "powder_room": "化妝室",
+        "nursing_room": "哺乳室",
+        "diaper_changing": "尿布台",
+        "ostomate": "人工肛門對應",
+        "baby_chair": "嬰兒椅",
+        "accessible": "無障礙設施"
     },
     "l4": {
-        "bambiStrategy": "Bambi's Strategy",
+        "bambiStrategy": "Bambi 建議",
         "suggestion": "建議",
-        "psychAlert": "心理建設警示"
+        "psychAlert": "心理建設提示",
+        "synthesisTitle": "智慧決策合成",
+        "demandCard": "您的需求",
+        "expertKnowledge": "專家邏輯",
+        "liveData": "即時狀態",
+        "actionLabel": "行動指令"
     },
     "weather": {
         "alert": "氣象警報",
         "details": "詳情",
         "collapse": "收起",
-        "jmaAlert": "JMA Weather Alert"
+        "jmaAlert": "氣象廳警報"
     },
     "map": {
         "yourLocation": "您的位置",
@@ -97,6 +188,8 @@
     },
     "common": {
         "viewAll": "查看全部",
-        "distance": "距離"
+        "distance": "距離",
+        "loading": "載入中...",
+        "error": "發生錯誤"
     }
 }

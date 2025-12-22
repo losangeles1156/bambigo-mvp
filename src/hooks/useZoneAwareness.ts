@@ -37,7 +37,7 @@ export function useZoneAwareness() {
                 if (dist > MAX_DISTANCE_KM) {
                     setIsTooFar(true);
                     setUserLocation(null); // Don't track real location if too far
-                    setZone('outer');
+                    setZone('core'); // Fallback to "Virtual Core"
                 } else {
                     setIsTooFar(false);
                     setUserLocation({ lat: latitude, lon: longitude });
@@ -53,7 +53,7 @@ export function useZoneAwareness() {
             },
             (error) => {
                 console.error('Geolocation error:', error);
-                setZone('outer'); // Fallback
+                setZone('core'); // Fallback to "Virtual Core"
                 setIsTooFar(true);
             },
             { enableHighAccuracy: true }

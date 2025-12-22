@@ -1,0 +1,209 @@
+{
+    "name": "BambiGO_L2_Data_Sync_Hybrid",
+    "nodes": [
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "minutes",
+                            "minutes": 5
+                        }
+                    ]
+                }
+            },
+            "id": "schedule_trigger",
+            "name": "BambiGO_每5分鐘檢查一次",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1,
+            "position": [
+                200,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current=temperature_2m,relative_humidity_2m,weather_code",
+                "options": {}
+            },
+            "id": "open_meteo_weather",
+            "name": "L2_天氣獲取",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                160
+            ]
+        },
+        {
+            "parameters": {
+                "url": "https://api-tokyochallenge.odpt.org/api/v4/odpt:TrainInformation?acl:consumerKey=YOUR_ODPT_KEY",
+                "options": {}
+            },
+            "id": "odpt_train_info",
+            "name": "L2_ODPT交通狀態",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "string": [
+                        {
+                            "value1": "={{ $json[\"odpt:trainInformationText\"][\"ja\"] }}",
+                            "operation": "notContains",
+                            "value2": "平常運行"
+                        }
+                    ]
+                }
+            },
+            "id": "delay_checker",
+            "name": "判斷是否延誤",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 1,
+            "position": [
+                680,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "https://transit.yahoo.co.jp/diainfo/area/2",
+                "options": {}
+            },
+            "id": "yahoo_scraper",
+            "name": "Yahoo詳細資訊爬取",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                900,
+                240
+            ]
+        },
+        {
+            "parameters": {
+                "extractionRules": {
+                    "values": [
+                        {
+                            "key": "trouble_text",
+                            "selector": "div.main.trouble",
+                            "returnValue": "text"
+                        }
+                    ]
+                }
+            },
+            "id": "html_extract",
+            "name": "提取異常文字",
+            "type": "n8n-nodes-base.html",
+            "typeVersion": 1,
+            "position": [
+                1100,
+                240
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "https://evubeqeaafdjnuocyhmb.supabase.co/rest/v1/transit_dynamic_snapshot",
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "apikey",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU2MDYzNTksImV4cCI6MjA4MTE4MjM1OX0.oAnpWIRrJG-AW_ADQ109PvvsCaoNmjcEWj9fh0zBULk"
+                        },
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU2MDYzNTksImV4cCI6MjA4MTE4MjM1OX0.oAnpWIRrJG-AW_ADQ109PvvsCaoNmjcEWj9fh0zBULk"
+                        },
+                        {
+                            "name": "Prefer",
+                            "value": "resolution=merge-duplicates"
+                        }
+                    ]
+                },
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={\n  \"station_id\": \"odpt:Station:TokyoMetro.Ueno\",\n  \"status_code\": \"{{ $node[\"delay_checker\"].json[\"Delay\"] ? 'DELAY' : 'NORMAL' }}\",\n  \"reason_ja\": \"{{ $node[\"html_extract\"].json[\"trouble_text\"] }}\",\n  \"reason_zh_tw\": null,\n  \"weather_info\": {\n    \"temp\": \"{{ $node[\"open_meteo_weather\"].json[\"current\"][\"temperature_2m\"] }}\",\n    \"update_time\": \"{{ $now }}\"\n  },\n  \"updated_at\": \"{{ $now }}\"\n}"
+            },
+            "id": "final_db_update",
+            "name": "更新動態快照 (Snapshot)",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                1300,
+                240
+            ]
+        }
+    ],
+    "connections": {
+        "schedule_trigger": {
+            "main": [
+                [
+                    {
+                        "node": "open_meteo_weather",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "odpt_train_info",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "odpt_train_info": {
+            "main": [
+                [
+                    {
+                        "node": "delay_checker",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "delay_checker": {
+            "main": [
+                [
+                    {
+                        "node": "yahoo_scraper",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "yahoo_scraper": {
+            "main": [
+                [
+                    {
+                        "node": "html_extract",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "html_extract": {
+            "main": [
+                [
+                    {
+                        "node": "final_db_update",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "open_meteo_weather": {
+            "main": [
+                []
+            ]
+        }
+    }
+}

@@ -50,32 +50,37 @@ export function LanguageSwitcher() {
     };
 
     const labels: Record<string, string> = {
-        'zh-TW': '繁體中文',
-        'en': 'English',
-        'ja': '日本語'
+        'zh-TW': '🇭🇰 繁體中文',
+        'en': '🇺🇸 English',
+        'ja': '🇯🇵 日本語'
     };
 
     return (
         <div className="relative" ref={containerRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="glass-effect rounded-full p-3 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5 flex items-center justify-center text-gray-600"
+                className="glass-effect rounded-2xl p-3.5 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5 flex items-center justify-center text-gray-500"
             >
-                <Globe size={22} />
+                <Globe size={22} className={isOpen ? 'rotate-12 text-indigo-600' : ''} />
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 top-full mt-2 w-32 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
-                    {['zh-TW', 'en', 'ja'].map((l) => (
-                        <button
-                            key={l}
-                            onClick={() => handleChange(l)}
-                            className={`w-full px-4 py-3 text-sm font-bold text-left hover:bg-gray-50 transition-colors ${locale === l ? 'text-indigo-600 bg-indigo-50' : 'text-gray-600'
-                                }`}
-                        >
-                            {labels[l]}
-                        </button>
-                    ))}
+                <div className="absolute right-0 top-full mt-3 w-40 bg-white/90 backdrop-blur-2xl rounded-[24px] shadow-2xl border border-black/[0.05] overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300 z-[300]">
+                    <div className="p-1">
+                        {['zh-TW', 'en', 'ja'].map((l) => (
+                            <button
+                                key={l}
+                                onClick={() => handleChange(l)}
+                                className={`w-full px-4 py-3 text-xs font-black text-left rounded-xl transition-all duration-300 flex items-center justify-between ${locale === l
+                                        ? 'text-indigo-600 bg-indigo-50 shadow-inner'
+                                        : 'text-gray-500 hover:bg-black/[0.03] hover:text-gray-900'
+                                    }`}
+                            >
+                                <span>{labels[l]}</span>
+                                {locale === l && <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full shadow-[0_0_8px_rgba(79,70,229,0.4)]" />}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>

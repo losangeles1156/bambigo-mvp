@@ -1,19 +1,27 @@
 create table facilities (
-  id text primary key, -- 'osm:123456'
-  city_id text references cities(id),
-  node_id text references nodes(id), -- Associated L1 node
-  type text not null, -- 'toilet', 'locker', 'atm'
-  name jsonb,
-  location geometry(Point, 4326) not null,
-  tags jsonb, -- { "wheelchair": "yes", "fee": "no" }
-  has_wheelchair_access boolean default false,
-  has_baby_care boolean default false,
-  is_free boolean default true,
-  is_24h boolean default false,
-  source_dataset text,
-  created_at timestamptz default now(),
-  updated_at timestamptz default now()
+  id text primary key,                     -- 'osm:toilet:123'
+  node_id text references nodes(id) not null,
+  
+  -- Facility Classification
+  facility_type text not null,             -- 'toilet' / 'locker' / 'elevator'
+  
+  -- Basic Info
+  name jsonb,                              -- {"zh-TW": "東口改札內廁所", ...}
+  location jsonb,                          -- {"zh-TW": "B1F 改札內", ...} or geometry
+  coordinates geometry(Point, 4326),       -- Optional precise location
+  
+  -- Attributes & Capabilities
+  is_accessible boolean default false,
+  attributes jsonb default '{}',           -- {"has_washlet": true, "sizes": ["L", "XL"]}
+  
+  -- Metadata
+  data_source text,
+  is_active boolean default true,
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now()
 );
 
-create index idx_facilities_location on facilities using gist(location);
-create index idx_facilities_node_id on facilities(node_id);
+-- Indexes
+create index idx_facilities_node on facilities(node_id);
+create index idx_facilities_type on facilities(facility_type);
+create index idx_facilities_coords on facilities using gist(coordinates);

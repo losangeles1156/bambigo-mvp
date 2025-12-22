@@ -1,26 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { StrategyEngine } from '@/lib/ai/strategyEngine';
 
 export const runtime = 'edge';
 
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { messages, userLocation, zone } = body;
+        const { messages, userLocation, zone, locale = 'zh-TW' } = body;
 
         // Use last message as query
         const lastMessage = messages[messages.length - 1]?.content || 'Hello';
-        const userId = 'bambigo-user-' + Math.random().toString(36).substring(7); // Anonymous session
+        const userId = 'bambigo-user-' + Math.random().toString(36).substring(7);
+
+        // 1. Get Strategy Synthesis (L4)
+        let strategyContext = null;
+        if (userLocation?.lat && userLocation?.lon) {
+            strategyContext = await StrategyEngine.getSynthesis(userLocation.lat, userLocation.lon, locale);
+        }
 
         // Check for API Keys
         if (!process.env.DIFY_API_KEY) {
             console.warn('Missing DIFY_API_KEY');
-            // Fallback to Mock if no key
             return NextResponse.json(mockResponse(lastMessage));
         }
 
         const difyUrl = process.env.DIFY_API_URL || 'https://api.dify.ai/v1';
 
-        // 1. Dify API Call (Chat Messages)
+        // 2. Dify API Call
         const response = await fetch(`${difyUrl}/chat-messages`, {
             method: 'POST',
             headers: {
@@ -32,9 +38,12 @@ export async function POST(req: NextRequest) {
                 user: userId,
                 inputs: {
                     current_zone: zone || 'core',
-                    user_location: userLocation ? `${userLocation.lat},${userLocation.lon}` : 'unknown'
+                    user_location: userLocation ? `${userLocation.lat},${userLocation.lon}` : 'unknown',
+                    persona_prompt: `${strategyContext?.personaPrompt || ''}\n\n[STATION EXPERT KNOWLEDGE]\n${strategyContext?.wisdomSummary || 'No specific warnings.'}`,
+                    nearest_hub: strategyContext?.nodeName || 'Unknown',
+                    l2_delay: strategyContext?.l2Status?.delay || 0
                 },
-                response_mode: 'blocking' // or 'streaming' if we implement it efficiently later
+                response_mode: 'blocking'
             })
         });
 
@@ -73,9 +82,18 @@ export async function POST(req: NextRequest) {
             }
         }
 
+        // Append Commercial Nudges if any
+        if (strategyContext?.commercialActions && strategyContext.commercialActions.length > 0) {
+            clientActions = [...clientActions, ...strategyContext.commercialActions];
+        }
+
         return NextResponse.json({
             answer: clientAnswer,
-            actions: clientActions
+            actions: clientActions,
+            context: {
+                hub: strategyContext?.nodeName,
+                delay: strategyContext?.l2Status?.delay
+            }
         });
 
     } catch (error) {

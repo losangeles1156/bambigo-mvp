@@ -1,4 +1,5 @@
 import { supabaseAdmin } from '../supabase';
+import { Translator } from '../utils/translator';
 
 export const SEED_NODES = [
     {
@@ -954,20 +955,54 @@ export const SEED_NODES = [
 ];
 
 export async function seedNodes() {
-    console.log('Seeding Nodes...');
+    console.log('Seeding Nodes (v3.0)...');
 
-    for (const node of SEED_NODES) {
+    for (const rawNode of SEED_NODES) {
+        // Transform legacy data to v3.0 schema
+        const node: any = {
+            id: rawNode.id,
+            city_id: rawNode.city_id,
+            name: rawNode.name,
+            node_type: rawNode.type,
+            coordinates: rawNode.location,
+            is_active: true,
+            parent_hub_id: null, // Hub/Spoke logic can be added here if needed
+            transit_lines: (rawNode as any).lines || [],
+            updated_at: new Date().toISOString()
+        };
+
+        // L4 Demonstrate: Hub specific content
+        if (node.id === 'odpt:Station:TokyoMetro.Ueno') {
+            node.persona_prompt = "你是一位上野站的資深嚮導。你對文化、藝術與平民美食瞭如指掌。說話語氣溫柔但專業，喜歡用『文化氣息』等詞彙。";
+            node.commercial_rules = [
+                {
+                    id: "ueno_taxi_push",
+                    trigger: { condition: "delay", threshold: 10 },
+                    action: { type: "taxi", provider: "go_taxi", label: "搭乘 GO 計程車", url: "https://go.mo-t.com/", priority: 10 }
+                }
+            ];
+        } else if (node.id === 'odpt:Station:JR-East.Akihabara') {
+            node.persona_prompt = "你是秋葉原電器街的熱血嚮導。你對電子產品、動漫文化充滿熱情。說話語氣充滿元氣，會使用一些次文化術語。";
+        }
+
+        // Map vibe to multi-lingual vibe_tags if available
+        if ('vibe' in rawNode && rawNode.vibe) {
+            const translated = Translator.vibe(rawNode.vibe);
+            node.vibe_tags = {
+                'zh-TW': [translated['zh-TW']],
+                'ja': [translated.ja],
+                'en': [translated.en]
+            };
+        }
+
         const { error } = await supabaseAdmin
             .from('nodes')
-            .upsert({
-                ...node,
-                updated_at: new Date().toISOString()
-            });
+            .upsert(node);
 
         if (error) {
             console.error(`Error seeding node ${node.id}:`, error);
         } else {
-            console.log(`Seeded node ${node.id}`);
+            console.log(`Seeded node ${node.id} (${node.node_type})`);
         }
     }
 }

@@ -17,7 +17,7 @@ export function VibeTags({ tags }: VibeTagsProps) {
             {tags.map((tag) => (
                 <span
                     key={tag}
-                    className="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100"
+                    className="text-[10px] font-black text-indigo-700 bg-indigo-50/80 px-2.5 py-0.5 rounded-full border border-indigo-100/50 backdrop-blur-sm shadow-sm transition-all hover:bg-white hover:shadow-md"
                 >
                     #{tag}
                 </span>

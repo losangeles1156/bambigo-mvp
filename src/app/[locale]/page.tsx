@@ -93,30 +93,30 @@ export default function Home() {
             )}
 
             {/* 2. Top Bar (Status) - z-[200] to stay above WeatherBanner */}
-            <div className="absolute top-0 left-0 right-0 z-[200] p-5 pt-16 pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 z-[200] p-6 pt-16 pointer-events-none">
                 <div className="flex justify-between items-start pointer-events-auto">
                     {/* Weather / Status Pill */}
-                    <div className="glass-effect rounded-full px-4 py-2 flex gap-3 items-center animate-in slide-in-from-top duration-500 shadow-xl shadow-black/5">
-                        <div className="flex items-center gap-1.5 text-indigo-600 font-bold">
-                            <Cloud size={18} className="animate-slow-pulse" />
-                            <span>24°C</span>
+                    <div className="glass-effect rounded-full px-5 py-2.5 flex gap-4 items-center animate-in slide-in-from-top duration-700 shadow-2xl shadow-black/5">
+                        <div className="flex items-center gap-2 text-indigo-600 font-black">
+                            <Cloud size={20} className="animate-slow-pulse" />
+                            <span className="text-sm tracking-tight">24°C</span>
                         </div>
-                        <div className="w-px h-4 bg-gray-200" />
+                        <div className="w-px h-5 bg-black/[0.05]" />
                         {isCore ? (
-                            <div className="flex items-center gap-1.5 text-red-500 text-sm font-black animate-pulse">
-                                <span className="w-2.5 h-2.5 bg-red-500 rounded-full" />
-                                <span>銀座線延誤</span>
+                            <div className="flex items-center gap-2 text-rose-500 text-xs font-black animate-pulse">
+                                <span className="w-2.5 h-2.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.5)]" />
+                                <span className="tracking-tight">銀座線延誤</span>
                             </div>
                         ) : (
-                            <span className="text-gray-500 text-sm font-bold opacity-60 px-1">{tStatus('ready')}</span>
+                            <span className="text-gray-400 text-xs font-black uppercase tracking-widest opacity-60 px-1">{tStatus('ready')}</span>
                         )}
                     </div>
 
                     {/* Settings / Locale */}
                     <div className="flex gap-3">
                         <TripGuardStatus />
-                        <button className="glass-effect rounded-full p-3 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5">
-                            <Settings size={22} className="text-gray-600" />
+                        <button className="glass-effect rounded-2xl p-3.5 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5 text-gray-500">
+                            <Settings size={22} />
                         </button>
                         <LanguageSwitcher />
                     </div>
@@ -126,11 +126,10 @@ export default function Home() {
             {/* 2.1 Map Floating Action Buttons (FABs) */}
             {
                 activeTab === 'explore' && !isBottomSheetOpen && (
-                    <div className="absolute right-5 bottom-32 z-10 flex flex-col gap-3 animate-in fade-in slide-in-from-right duration-500">
+                    <div className="absolute right-6 bottom-36 z-10 flex flex-col gap-4 animate-in fade-in slide-in-from-right duration-700">
                         <button
                             onClick={() => {
                                 if (isTooFar) {
-                                    // Explicitly center on fallback if too far
                                     setMapCenter(centerFallback);
                                     useAppStore.getState().addMessage({
                                         role: 'assistant',
@@ -140,19 +139,19 @@ export default function Home() {
                                     setMapCenter(userLocation);
                                 }
                             }}
-                            className="glass-effect rounded-2xl p-4 shadow-2xl shadow-indigo-200 text-indigo-600 active:scale-90 transition-all"
+                            className="glass-effect rounded-[22px] p-4 shadow-2xl shadow-indigo-100 text-indigo-600 active:scale-90 hover:scale-105 transition-all group"
                         >
-                            <LocateFixed size={24} />
+                            <LocateFixed size={26} className="group-hover:rotate-12 transition-transform" />
                         </button>
-                        <div className="flex flex-col glass-effect rounded-2xl shadow-2xl shadow-black/5">
-                            <button className="p-4 border-b border-gray-100/50 text-gray-600 active:scale-90 transition-all">
+                        <div className="flex flex-col glass-effect rounded-[22px] shadow-2xl shadow-black/5 overflow-hidden">
+                            <button className="p-4 border-b border-black/[0.03] text-gray-500 hover:bg-white active:scale-90 transition-all">
                                 <Plus size={22} />
                             </button>
-                            <button className="p-4 text-gray-600 active:scale-90 transition-all">
+                            <button className="p-4 text-gray-500 hover:bg-white active:scale-90 transition-all">
                                 <Minus size={22} />
                             </button>
                         </div>
-                        <button className="glass-effect rounded-2xl p-4 shadow-2xl shadow-black/5 text-gray-600 active:scale-90 transition-all">
+                        <button className="glass-effect rounded-[22px] p-4 shadow-2xl shadow-black/5 text-gray-500 hover:bg-white active:scale-90 transition-all">
                             <Layers size={22} />
                         </button>
                     </div>
@@ -161,10 +160,10 @@ export default function Home() {
 
             {/* 3. Bottom Sheet */}
             {isBottomSheetOpen && (
-                <div className="absolute bottom-0 left-0 right-0 z-20 bg-white rounded-t-3xl shadow-[0_-5px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-300">
+                <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/90 backdrop-blur-3xl rounded-t-[40px] shadow-[0_-20px_60px_rgba(0,0,0,0.1)] transition-transform duration-500 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-500 border-t border-white/50 scrollbar-hide">
                     {/* Handle */}
-                    <div className="w-full flex justify-center pt-3 pb-1">
-                        <div className="w-12 h-1.5 bg-gray-300 rounded-full" />
+                    <div className="w-full flex justify-center pt-4 pb-2 sticky top-0 bg-white/20 backdrop-blur-sm z-30">
+                        <div className="w-16 h-1.5 bg-black/[0.08] rounded-full" />
                     </div>
 
                     {!nodeData ? (

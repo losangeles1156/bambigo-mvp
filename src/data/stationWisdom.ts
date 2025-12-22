@@ -135,7 +135,9 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '🏛️ **文化天橋 (Panda Bridge)**：從公園口出站後，可直接走天橋（官方稱熊貓橋）通往國立科學博物館與上野大廳，避開 1F 的擁擠人潮。',
-            '🛍️ **阿美橫町切入點**：想去阿美橫町？不要走「中央改札」，改走「不忍改札」過馬路就是入口，省下 5 分鐘迷路時間。'
+            '🛍️ **阿美橫町切入點**：想去阿美橫町？不要走「中央改札」，改走「不忍改札」過馬路就是入口，省下 5 分鐘迷路時間。',
+            '🌧️ **雨天地下網**：上野站地下通道發達，可一路連通至京成上野站與地鐵站，下雨天完全不必淋雨。',
+            '🚶 **散步去淺草**：由此沿淺草通步行至淺草約 25-30 分，可省下地鐵票並欣賞下町風光。'
         ],
         // L3 設施資料 - 基於 Tokyo Metro 及 JR East 官方資料
         l3Facilities: [
@@ -249,7 +251,9 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '🎫 **丸之內南口紅磚站舍**：國家重要文化財，必拍照點！從丸之內地下廣場搭電梯上1F即可抵達。',
-            '🍱 **駅弁屋 祭**：中央通路有超過200種車站便當，建議發車前30分鐘來選購。'
+            '🍱 **駅弁屋 祭**：中央通路有超過200種車站便當，建議發車前30分鐘來選購。',
+            '🔄 **北自由通路**：想在「丸之內」與「八重洲」之間移動但不進站？請走「北自由通路」，這是免費的穿梭捷徑。',
+            '🎨 **顏色辨識法**：迷路時看地板顏色——紅色系往丸之內（西），藍/綠色系往八重洲（東）。'
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
@@ -303,8 +307,15 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 type: 'exit',
                 title: '🧳 電梯陷阱 (Elevator Trap)',
                 content: '淺草站出口雖多，但直通地面的電梯 **只有一座**！',
-                advice: '⚠️ 行動建議：攜帶大型行李的旅客，請務必尋找「駒形橋方面」的 **A2b 出口**，这是唯一的直達電梯出口。',
+                advice: '⚠️ 行動建議：攜帶大型行李的旅客，請務必尋找「駒形橋方面」的 **A2b 出口** 或 **1號出口** (雷門旁)，這是有電梯的出口。',
                 severity: 'high'
+            },
+            {
+                type: 'transfer',
+                title: '🚧 四個淺草站混淆 (The 4 Asakusas)',
+                content: '地鐵銀座線、都營淺草線、東武鐵道、筑波快線 (TX) 都有「淺草站」。',
+                advice: '⚠️ 絕對注意：筑波快線的淺草站距離其他三站約 600 公尺（步行10分），轉乘極不方便，請勿安排在此站轉乘 TX。',
+                severity: 'medium'
             }
         ],
         l3Facilities: [
@@ -797,16 +808,63 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
     'odpt:Station:Toei.Asakusabashi': {
         traps: [],
         hacks: [
-            '🎎 **人形批發街**：從 A3 出口出站，即可看到日本最大的人形（人偶）批發商店街。',
-            '🧶 **手工藝材料天堂**：這一帶是手工藝材料的集散地，從布料、珠子到縫紉用品應有盡有。'
+            '🎎 **人形批發街**：從 A3 出口出站，即可看到日本最大的人形（人偶）批發商店街。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusabashi.html' },
-            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A1 出口', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'A4 出口', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Toei', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true } },
+            { type: 'locker', floor: 'B1', operator: 'Private', location: 'A3出口附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A3出口', attributes: { wheelchair: true, note: '唯一電梯' } },
+            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
         ]
     },
+    // New Stations researched
+    'odpt:Station:JR-East.Akihabara': {
+        traps: [
+            {
+                type: 'exit',
+                title: '⚡ 電器街 vs 昭和通 (West vs East)',
+                content: '秋葉原站被 JR 線路切分為二，西側是「電器街/動漫區」，東側是「Yodobashi Camera/日比谷線」。',
+                advice: '⚠️ 注意：若走錯邊要繞一大圈。請記住：看動漫走「電器街口」，買家電走「中央改札」或「昭和通口」。',
+                severity: 'medium'
+            },
+            {
+                type: 'transfer',
+                title: '🚇 日比谷線轉乘地雷 (Hibiya Trap)',
+                content: '日比谷線月台位於車站極東側，距離電器街核心區較遠。',
+                advice: '⚠️ 建議：若搭日比谷線要去電器街，請走「3號出口」，或利用 JR 中央改札旁的「東西自由通路」穿越。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🌉 **東西自由通路**：這是唯一不需進站即可穿越車站東西兩側的捷徑，位於中央改札口旁。',
+            '🚶 **末廣町捷徑**：若要去電器街北側（女僕店、唐吉訶德），搭銀座線到「末廣町站」其實比秋葉原站更近。'
+        ],
+        l3Facilities: [
+            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '電器街改札內', attributes: { wheelchair: true } },
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '中央改札外', attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL'] } },
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '各月台 → 1F大廳', attributes: { wheelchair: true } }
+        ]
+    },
+    'odpt:Station:JR-East.Nippori': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '✈️ Skyliner 轉乘陷阱 (Airport Transfer)',
+                content: '要從 JR 轉乘京成 Skyliner 去機場？千萬別走「南口」！',
+                advice: '⚠️ 絕對守則：請務必走 **北改札口**，那裡才有 JR 直通京成的轉乘專用閘門。南口沒有轉乘機制，需出站重進，且只有樓梯。',
+                severity: 'critical'
+            }
+        ],
+        hacks: [
+            '🛍️ **ecute 日暮里**：北改札內有著名的 ecute 商場，是購買伴手禮和便當的最後一站。',
+            '🐈 **谷中銀座**：從西口步行 5 分鐘即達著名的「貓町」谷中銀座商店街。'
+        ],
+        l3Facilities: [
+            { type: 'elevator', floor: 'JR', operator: 'JR', location: '北改札 → 月台', attributes: { wheelchair: true } }
+        ]
+    },
+
+
     'odpt:Station:TokyoMetro.Tsukiji': {
 
         traps: [

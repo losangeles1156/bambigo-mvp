@@ -81,6 +81,68 @@ export function ActionCard({ action, onClick }: ActionCardProps) {
     const config = CONFIG[action.type] || CONFIG.details;
     const Icon = config.icon;
 
+    // Prompt 3: L4 Experience Advice Card
+    // If it has a title/content structure (from new AI response), use the new layout
+    if (action.title && action.content) {
+        return (
+            <button
+                onClick={() => onClick(action)}
+                className="w-full text-left group relative overflow-hidden bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 active:scale-95"
+            >
+                {/* (A) Decision Instruction */}
+                <div className={`p-5 flex items-start gap-4 ${config.bgColor}`}>
+                    <div className={`p-3 bg-white rounded-2xl shadow-sm ${config.textColor}`}>
+                        <Icon size={24} strokeWidth={2.5} />
+                    </div>
+                    <div className="flex-1">
+                        <div className="flex justify-between items-start mb-1">
+                            <span className={`text-[10px] font-black uppercase tracking-widest ${config.textColor} opacity-80`}>
+                                BAMBI DECISION
+                            </span>
+                            {action.timeSaved && (
+                                <span className="flex items-center gap-1 text-[10px] font-black bg-white/60 px-2 py-0.5 rounded-full text-green-700 uppercase tracking-tighter shadow-sm">
+                                    <Zap size={10} fill="currentColor" />
+                                    省下 {action.timeSaved}
+                                </span>
+                            )}
+                        </div>
+                        <h3 className="text-lg font-black text-gray-900 leading-tight">
+                            {action.title}
+                        </h3>
+                    </div>
+                </div>
+
+                {/* (B) Traffic Knowledge Tips (Expert Advice) */}
+                <div className="p-5 pt-4">
+                    <p className="text-sm font-bold text-gray-600 leading-relaxed mb-3">
+                        {action.content}
+                    </p>
+
+                    {/* Visual Separator */}
+                    <div className="w-full h-px bg-gray-100 mb-3" />
+
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            {action.price ? (
+                                <span className="text-xs font-bold text-gray-500 bg-gray-50 px-2 py-1 rounded-lg">
+                                    {action.price}
+                                </span>
+                            ) : (
+                                <span className="text-xs font-bold text-gray-400">
+                                    點擊查看詳情
+                                </span>
+                            )}
+                        </div>
+                        <div className={`text-sm font-black ${config.textColor} flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity`}>
+                            {action.label} <span className="text-lg">→</span>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        );
+    }
+
+    // Fallback to minimal card for simple actions
     return (
         <button
             onClick={() => onClick(action)}

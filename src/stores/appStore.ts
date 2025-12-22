@@ -29,6 +29,8 @@ interface AppState {
     setLocale: (locale: 'zh-TW' | 'ja' | 'en') => void;
     toggleAccessibility: () => void;
     setActiveTab: (tab: 'explore' | 'trips' | 'me') => void;
+    userContext: string[];
+    setUserContext: (context: string[]) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -46,6 +48,7 @@ export const useAppStore = create<AppState>()(
             locale: 'zh-TW',
             accessibilityMode: false,
             activeTab: 'explore',
+            userContext: [],
 
             setCurrentNode: (id) => set({ currentNodeId: id }),
             setZone: (zone) => set({ currentZone: zone }),
@@ -59,12 +62,14 @@ export const useAppStore = create<AppState>()(
             setLocale: (locale) => set({ locale }),
             toggleAccessibility: () => set((state) => ({ accessibilityMode: !state.accessibilityMode })),
             setActiveTab: (tab) => set({ activeTab: tab }),
+            setUserContext: (context) => set({ userContext: context }),
         }),
         {
             name: 'bambigo-storage',
             partialize: (state) => ({
                 locale: state.locale,
-                accessibilityMode: state.accessibilityMode
+                accessibilityMode: state.accessibilityMode,
+                userContext: state.userContext
             }),
         }
     )

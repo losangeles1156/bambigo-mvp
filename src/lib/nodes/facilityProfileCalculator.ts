@@ -1,4 +1,4 @@
-// Basic counts interface
+// Basic counts interface (Aligned with v3.0 L1 categories)
 export interface CategoryCounts {
     shopping: number;
     dining: number;
@@ -6,12 +6,17 @@ export interface CategoryCounts {
     education: number;
     leisure: number;
     finance: number;
-    accommodation?: number;
-    workspace?: number;
-    housing?: number;
-    religion?: number;
-    nature?: number;
+    accommodation: number;
+    nature: number;
+    religious: number;
+    business: number;
 }
+
+export type LocalizedVibeTags = {
+    'zh-TW': string[];
+    'ja': string[];
+    'en': string[];
+};
 
 // Logic to calculate dominant category and total
 export function calculateProfileStats(counts: CategoryCounts) {
@@ -22,7 +27,7 @@ export function calculateProfileStats(counts: CategoryCounts) {
     let max = 0;
 
     for (const [key, value] of Object.entries(counts)) {
-        if (['medical', 'shopping', 'dining', 'leisure', 'education', 'finance', 'accommodation', 'workspace', 'housing', 'religion', 'nature'].includes(key) && value > max) {
+        if (value > max) {
             max = value;
             dominant = key;
         }
@@ -31,37 +36,50 @@ export function calculateProfileStats(counts: CategoryCounts) {
     return { total, dominant };
 }
 
-// Logic to generate simple Vibe Tags based on counts
-export function generateVibeTags(counts: CategoryCounts): string[] {
-    const tags: string[] = [];
+import { Translator } from '../utils/translator';
+
+// Logic to generate multi-lingual Vibe Tags based on counts
+export function generateLocalizedVibeTags(counts: CategoryCounts): LocalizedVibeTags {
+    const zhTags: string[] = [];
+    const jaTags: string[] = [];
+    const enTags: string[] = [];
+
     const { total } = calculateProfileStats(counts);
 
-    if (total === 0) return ['寧靜區域'];
-
-    // Shopping dominant
-    if (counts.shopping >= 15 && counts.shopping / total > 0.3) {
-        tags.push('購物天堂');
+    if (total === 0) {
+        const t = Translator.vibe('quiet_area');
+        return {
+            'zh-TW': [t['zh-TW']],
+            'ja': [t.ja || ''],
+            'en': [t.en || '']
+        };
     }
 
-    // Dining dominant
-    if (counts.dining >= 10 && counts.dining / total > 0.25) {
-        tags.push('美食激戰區');
-    }
+    const addTags = (key: string) => {
+        const t = Translator.vibe(key);
+        zhTags.push(t['zh-TW']);
+        if (t.ja) jaTags.push(t.ja);
+        if (t.en) enTags.push(t.en);
+    };
 
-    // Leisure
-    if (counts.leisure >= 5) {
-        tags.push('休閒去處');
-    }
+    // Shopping
+    if (counts.shopping >= 15) addTags('shopping');
 
-    // Convenient
-    if (counts.shopping > 0 && counts.dining > 0 && counts.medical > 0) {
-        tags.push('生活便利');
-    }
+    // Dining
+    if (counts.dining >= 15) addTags('dining');
+
+    // Religious
+    if (counts.religious >= 3) addTags('religious');
+
+    // Nature
+    if (counts.nature >= 5) addTags('nature');
 
     // Business
-    if (counts.finance >= 5 && counts.shopping < 10) {
-        tags.push('商業區');
-    }
+    if (counts.business >= 10) addTags('business');
 
-    return tags.slice(0, 3);
+    return {
+        'zh-TW': zhTags.slice(0, 3),
+        'ja': jaTags.slice(0, 3),
+        'en': enTags.slice(0, 3)
+    };
 }

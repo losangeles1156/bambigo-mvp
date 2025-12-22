@@ -10,26 +10,22 @@ create table cities (
   name jsonb not null,                    -- {"zh-TW": "東京都心", ...}
   timezone text not null default 'Asia/Tokyo',
   
-  -- Geographic Bounds
-  bounds geography(polygon, 4326),
+  -- Geographic Bounds (Use geometry for PostGIS consistency)
+  bounds geometry(Polygon, 4326),
   
   -- Zone Logic
   zone_type text not null default 'core', -- 'core', 'buffer'
-  parent_city_id text references cities(id),  -- buffer points to core
+  parent_city_id text references cities(id),
   
   -- City Adapter Configuration
   config jsonb not null default '{}',
-  /*
-    {
-      "features": { "hasSubway": true, ... },
-      "dataSources": { ... },
-      "commercialPartners": { ... }
-    }
-  */
   
-  enabled boolean default true,
+  is_active boolean default true,
   created_at timestamptz default now()
 );
+
+-- Index for bounds
+create index idx_cities_bounds on cities using gist(bounds);
 
 -- Insert Tokyo Core Definition
 insert into cities (id, name, zone_type, config) values
