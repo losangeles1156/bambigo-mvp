@@ -7,7 +7,7 @@
     },
     "status": {
         "crowded": "混雑",
-        "normal": "正常",
+        "normal": "順暢",
         "delayed": "{minutes}分遅延",
         "ready": "スタンバイ",
         "ginzaDelay": "銀座線遅延"
@@ -44,42 +44,209 @@
         "facility": "FACILITY (L3)",
         "bambi": "BAMBI (L4)"
     },
+    "tag": {
+        "shopping": "買い物",
+        "dining": "グルメ",
+        "leisure": "レジャー",
+        "culture": "文化",
+        "service": "サービス",
+        "medical": "医療",
+        "education": "教育",
+        "finance": "金融",
+        "accommodation": "宿泊",
+        "nature": "自然",
+        "religion": "宗教",
+        "business": "ビジネス",
+        "countSuffix": "件",
+        "sub": {
+            "convenience": "コンビニ",
+            "department": "デパート",
+            "department_store": "デパート",
+            "drugstore": "ドラッグストア",
+            "market": "市場/商店街",
+            "specialty": "専門店",
+            "variety_store": "雑貨店",
+            "shopping_mall": "ショッピングモール",
+            "souvenir": "お土産",
+            "restaurant": "レストラン",
+            "cafe": "カフェ",
+            "izakaya": "居酒屋",
+            "bar": "バー",
+            "fast_food": "ファーストフード",
+            "japanese": "和食",
+            "tempura": "天ぷら",
+            "unagi": "うなぎ",
+            "ramen": "ラーメン",
+            "sushi": "寿司",
+            "curry": "カレー",
+            "park": "公園",
+            "museum": "博物館",
+            "shrine": "神社",
+            "temple": "お寺",
+            "theater": "劇場",
+            "historic_building": "歴史的建造物",
+            "landmark": "ランドマーク",
+            "hospital": "病院",
+            "clinic": "クリニック",
+            "pharmacy": "薬局",
+            "school": "学校",
+            "university": "大学",
+            "library": "図書館",
+            "post_office": "郵便局",
+            "bank": "銀行",
+            "atm": "ATM",
+            "locker": "ロッカー",
+            "office": "オフィス",
+            "hotel": "ホテル",
+            "hostel": "ホステル",
+            "ryokan": "旅館",
+            "garden": "庭園",
+            "river": "川"
+        }
+    },
+    "facility": {
+        "businessHours": "営業時間",
+        "closed": "休憩中",
+        "open": "営業中",
+        "openNow": "営業中",
+        "closedNow": "閉店中",
+        "navigateToMap": "ここへ行く",
+        "viewDetails": "詳細を見る",
+        "distance": "距離",
+        "walkMin": "徒歩約 {min} 分"
+    },
+    "l1": {
+        "dnaTitle": "生活機能",
+        "bambiInsight": "Bambi インサイト",
+        "nearbyHighlights": "周辺スポット (300m)",
+        "noHighlights": "周辺スポットなし",
+        "menuTitle": "カテゴリ詳細",
+        "navTo": "ナビ",
+        "categories": {
+            "shopping": "買い物",
+            "dining": "グルメ",
+            "culture": "文化",
+            "nature": "自然"
+        }
+    },
     "l2": {
+        "operationTitle": "運行情報",
+        "liveUpdates": "リアルタイム更新",
+        "weatherTitle": "天気と安全",
+        "windSpeed": "風速",
+        "crowdReport": "混雑状況を報告",
+        "crowdThanks": "報告ありがとうございます！",
+        "crowdClick": "タップして報告",
         "density": "混雑予測",
         "crowdedLevel": "混雑",
         "normalLevel": "普通",
-        "comfortLevel": "空いている",
+        "comfortLevel": "快適",
         "wait": "待ち時間",
         "min": "分",
-        "service": "運行情報",
+        "service": "運行状況",
         "allLinesNormal": "全路線",
-        "runningNormal": "現在正常運転中",
+        "runningNormal": "平常運転中",
         "delay": "遅延",
-        "normalOperation": "正常運行",
-        "delayOccurred": "遅延発生中",
-        "weatherAlert": "【気象警報】"
+        "normalOperation": "平常運転",
+        "delayOccurred": "遅延発生",
+        "weatherAlert": "気象警報",
+        "status": {
+            "normal": "平常運転",
+            "delay": "遅延発生",
+            "suspended": "運転見合わせ",
+            "check": "点検中"
+        },
+        "experience": {
+            "rushHour": "通勤ラッシュ",
+            "crowded": "混雑",
+            "moderate": "やや混雑",
+            "comfortable": "快適",
+            "empty": "ガラガラ"
+        },
+        "crowd": {
+            "empty": "ガラガラ",
+            "comfortable": "快適",
+            "normal": "普通",
+            "crowded": "混雑",
+            "full": "満員"
+        }
     },
     "l3": {
+        "servicesTitle": "サービス施設",
+        "facilitiesFound": "{count} 件の施設",
+        "noServices": "詳細な施設情報はありません",
+        "rent": "レンタル",
+        "available": "利用可",
+        "categories": {
+            "toilet": "トイレ",
+            "locker": "ロッカー",
+            "elevator": "エレベーター",
+            "atm": "ATM",
+            "wifi": "WiFi",
+            "charging": "充電",
+            "info": "案内所",
+            "nursing": "授乳室",
+            "smoking": "喫煙所",
+            "accessibility": "バリアフリー"
+        },
+        "attributes": {
+            "wheelchair": "車椅子",
+            "hasWashlet": "温水洗浄便座",
+            "hasBabyRoom": "授乳室",
+            "sizes": "サイズ",
+            "count": "個数",
+            "ssid": "WiFi SSID",
+            "floor": "階層",
+            "operator": "運営"
+        },
         "stationToilet": "駅トイレ",
         "coinLocker": "コインロッカー",
-        "elevator": "バリアフリーエレベーター",
+        "elevator": "エレベーター",
         "wheelchairFriendly": "車椅子対応",
-        "largeLuggage": "大型荷物可"
+        "wheelchair_accessible": "スロープ",
+        "largeLuggage": "大型荷物可",
+        "has_washlet": "温水洗浄便座",
+        "powder_room": "パウダールーム",
+        "nursing_room": "授乳室",
+        "diaper_changing": "おむつ交換台",
+        "ostomate": "オストメイト",
+        "baby_chair": "ベビーチェア",
+        "accessible": "バリアフリー"
     },
     "l4": {
-        "bambiStrategy": "Bambiの戦略",
+        "strategyTitle": "Bambi 戦略",
+        "subtitle": "リアルタイムデータに基づく提案",
+        "topPick": "おすすめ",
+        "alternatives": "その他の選択肢",
+        "thinking": "思考中...",
+        "disclaimer": "提案は現在の交通、天気、施設状況に基づいています。",
+        "bambiStrategy": "Bambi 提案",
         "suggestion": "提案",
-        "psychAlert": "心の準備アラート"
+        "psychAlert": "心構え",
+        "synthesisTitle": "意思決定サポート",
+        "demandCard": "あなたのニーズ",
+        "expertKnowledge": "専門家のロジック",
+        "liveData": "ライブデータ",
+        "actionLabel": "アクション",
+        "demands": {
+            "speed": "急ぎ",
+            "luggage": "荷物多め",
+            "budget": "安さ重視",
+            "comfort": "快適さ",
+            "family": "子連れ",
+            "accessibility": "バリアフリー",
+            "vibe": "雰囲気重視"
+        }
     },
     "weather": {
         "alert": "気象警報",
         "details": "詳細",
         "collapse": "閉じる",
-        "jmaAlert": "JMA Weather Alert"
+        "jmaAlert": "気象庁警報"
     },
     "map": {
         "yourLocation": "現在地",
-        "tooFarMessage": "感性ナビエリアから離れています。上野駅を中心に表示しました。"
+        "tooFarMessage": "ナビゲーションエリアから離れています。上野駅を中心に表示します。"
     },
     "facilityProfile": {
         "medical": "医療",
@@ -97,6 +264,12 @@
     },
     "common": {
         "viewAll": "すべて見る",
-        "distance": "距離"
+        "distance": "距離",
+        "loading": "読み込み中...",
+        "error": "エラーが発生しました",
+        "station": "駅"
+    },
+    "ui": {
+        "items": "項目"
     }
 }

@@ -1,186 +1,159 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { Lightbulb, Navigation, MapPin, ChevronRight, Clock, Star } from 'lucide-react';
-import { VibeTags } from './VibeTags';
+import { useTranslations, useLocale } from 'next-intl';
+import {
+    MapPin, Navigation, X, Star, Lightbulb,
+    Coffee, ShoppingBag, Landmark, Utensils, Bed, Building, TreePine,
+    Stethoscope, Briefcase, ConciergeBell, GraduationCap
+} from 'lucide-react';
+import { StationUIProfile } from '@/lib/types/stationStandard';
+import { getLocaleString } from '@/lib/utils/localeUtils';
 
-type Tag = {
-    mainCategory: string;
-    subCategory: string;
-    detailCategory?: string;
-    name: string;
-    distanceMeters?: number;
-    direction?: string;
-    brand?: string;
-    note?: string;
-    street?: string;
+// Icon Mapping
+const ICON_MAP: Record<string, any> = {
+    nature: TreePine,
+    shopping: ShoppingBag,
+    dining: Utensils,
+    leisure: Coffee,
+    culture: Landmark,
+    service: ConciergeBell,
+    medical: Stethoscope,
+    education: GraduationCap,
+    finance: Briefcase,
+    accommodation: Bed,
+    // Fallbacks
+    Cross: Stethoscope,
+    Building: Building
 };
-
-// Expanded L1 main categories per user requirement
-const MAIN_CAT_CONFIG: Record<string, { icon: string }> = {
-    shopping: { icon: '🛍️' },
-    dining: { icon: '🍽️' },
-    medical: { icon: '🏥' },
-    education: { icon: '🎓' },
-    leisure: { icon: '🎡' },
-    finance: { icon: '🏦' },
-    accommodation: { icon: '🏨' },
-    nature: { icon: '🌳' },
-    religion: { icon: '⛩️' },
-    business: { icon: '🏢' },
-    culture: { icon: '🏛️' },
-    service: { icon: '🛎️' }
-};
-
-const translatableCategories = ['shopping', 'dining', 'leisure', 'culture', 'service', 'medical', 'education', 'finance', 'accommodation', 'nature', 'religion', 'business'];
 
 interface L1_DNAProps {
-    nodeData: any;
-    profile: any;
+    data: StationUIProfile;
 }
 
-export function L1_DNA({ nodeData, profile }: L1_DNAProps) {
-    const tTag = useTranslations('tag');
-    const tFacility = useTranslations('facility');
-    const tNode = useTranslations('node');
+export function L1_DNA({ data }: L1_DNAProps) {
+    const tL1 = useTranslations('l1');
+    const locale = useLocale();
+    const { l1_categories = [], description = { ja: '', en: '', zh: '' } } = data || {};
 
-    // Group tags
-    const tags: Tag[] = nodeData?.facilityTags || [];
-    const grouped = tags.reduce((acc, tag) => {
-        const main = tag.mainCategory;
-        const sub = tag.subCategory;
-        if (!acc[main]) acc[main] = {};
-        if (!acc[main][sub]) acc[main][sub] = [];
-        acc[main][sub].push(tag);
-        return acc;
-    }, {} as Record<string, Record<string, Tag[]>>);
+    // State for expanded category
+    const [selectedCatId, setSelectedCatId] = useState<string | null>(null);
 
-    const [selectedMain, setSelectedMain] = useState<string | null>(Object.keys(grouped)[0] || null);
-    const [expandedSub, setExpandedSub] = useState<string | null>(null);
-
-    // Helper to get total count for a main category
-    const getMainCount = (main: string) => {
-        return Object.values(grouped[main] || {}).flat().length;
-    };
+    const selectedCategory = l1_categories.find(c => c.id === selectedCatId);
 
     return (
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500">
-            {/* 1. Header & AI Summary */}
+
+            {/* 1. Header & AI Vibe Check */}
             <div>
                 <div className="flex items-center gap-2 mb-4">
                     <div className="p-1.5 bg-indigo-600 rounded-lg text-white">
                         <Star size={16} fill="currentColor" />
                     </div>
-                    <h3 className="font-black text-sm uppercase tracking-widest text-gray-900">{tNode('locationDna')}</h3>
+                    <h3 className="font-black text-sm uppercase tracking-widest text-gray-900">{tL1('dnaTitle')}</h3>
                 </div>
 
-                {/* AI One-Liner */}
-                <div className="mb-6 p-5 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 rounded-2xl border border-indigo-100/50 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
-                    <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div className="p-5 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 rounded-2xl border border-indigo-100/50 shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-3 opacity-10">
                         <Lightbulb size={48} />
                     </div>
                     <div className="relative z-10">
-                        <h4 className="text-[10px] font-black uppercase text-indigo-500 tracking-widest mb-2">Bambi AI Insight</h4>
+                        <h4 className="text-[10px] font-black uppercase text-indigo-500 tracking-widest mb-2">{tL1('bambiInsight')}</h4>
                         <p className="text-sm font-bold text-gray-800 italic leading-relaxed font-serif">
-                            &quot;{nodeData?.vibe ? nodeData.vibe : 'Analyzing local atmosphere...'}&quot; : A unique blend of tradition and modernity.
+                            &quot;{getLocaleString(description, locale)}&quot;
                         </p>
                     </div>
                 </div>
-
-                <VibeTags tags={profile.vibe_tags} />
             </div>
 
-            {/* 2. Main Categories (Horizontal Scroll) */}
-            <div className="relative -mx-4 px-4 overflow-hidden">
-                <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar snap-x">
-                    {Object.keys(grouped).map((mainCat) => {
-                        const config = MAIN_CAT_CONFIG[mainCat] || { icon: '📍' };
-                        const label = translatableCategories.includes(mainCat) ? tTag(mainCat) : mainCat;
-                        const count = getMainCount(mainCat);
-                        const isSelected = selectedMain === mainCat;
+            {/* 2. Categories Grid (Strictly 10 items) */}
+            <div>
+                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-wider mb-3">{tL1('nearbyHighlights')}</h4>
 
-                        return (
-                            <button
-                                key={mainCat}
-                                onClick={() => {
-                                    setSelectedMain(mainCat);
-                                    setExpandedSub(null); // Reset sub selection
-                                }}
-                                className={`flex-shrink-0 snap-start flex flex-col items-center gap-2 p-3 min-w-[80px] rounded-2xl border transition-all duration-300 ${isSelected
-                                    ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-200 scale-105'
-                                    : 'bg-white border-gray-100 text-gray-500 hover:border-indigo-200 hover:bg-indigo-50'
-                                    }`}
-                            >
-                                <span className="text-2xl filter drop-shadow-sm">{config.icon}</span>
-                                <div className="text-center">
-                                    <span className={`text-[10px] font-black uppercase tracking-tight block ${isSelected ? 'text-white' : 'text-gray-900'}`}>{label}</span>
-                                    <span className={`text-[9px] font-medium block mt-0.5 ${isSelected ? 'text-indigo-200' : 'text-gray-400'}`}>{count}</span>
-                                </div>
-                            </button>
-                        );
-                    })}
-                </div>
-                {/* Fade effect */}
-                <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none" />
-            </div>
-
-            {/* 3. Sub Categories & Items */}
-            {selectedMain && grouped[selectedMain] && (
-                <div className="space-y-3 animate-in fade-in zoom-in duration-300">
-                    <div className="flex items-center gap-2 px-1">
-                        <span className="text-xs font-black text-gray-400 uppercase tracking-wider">Detailed List</span>
-                        <div className="h-px bg-gray-100 flex-1" />
+                {l1_categories.length === 0 ? (
+                    <div className="p-4 text-center text-xs text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                        {tL1('noHighlights')}
                     </div>
+                ) : (
+                    <div className="grid grid-cols-5 gap-y-4 gap-x-2">
+                        {l1_categories.slice(0, 10).map((cat) => {
+                            // Use ID for reliable icon mapping if the data's 'icon' string is loose
+                            const Icon = ICON_MAP[cat.id] || ICON_MAP[cat.icon] || MapPin;
+                            const isSelected = selectedCatId === cat.id;
 
-                    {Object.entries(grouped[selectedMain]).map(([subCat, items]) => {
-                        const isExpanded = expandedSub === subCat;
-                        const subLabel = tTag.has(`sub.${subCat}`) ? tTag(`sub.${subCat}`) : subCat;
-
-                        return (
-                            <div key={subCat} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
+                            return (
                                 <button
-                                    onClick={() => setExpandedSub(isExpanded ? null : subCat)}
-                                    className={`w-full flex items-center justify-between p-4 ${isExpanded ? 'bg-indigo-50/50' : 'hover:bg-gray-50'}`}
+                                    key={cat.id}
+                                    onClick={() => setSelectedCatId(isSelected ? null : cat.id)}
+                                    className={`flex flex-col items-center gap-1.5 p-1 rounded-xl transition-all duration-300 group ${isSelected
+                                        ? 'scale-105'
+                                        : 'hover:scale-105 opacity-80 hover:opacity-100'
+                                        }`}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className={`p-2 rounded-lg ${isExpanded ? 'bg-indigo-100/50 text-indigo-600' : 'bg-gray-100 text-gray-400'}`}>
-                                            <MapPin size={16} />
-                                        </div>
-                                        <div className="text-left">
-                                            <span className="text-sm font-bold text-gray-800 capitalize block">{subLabel}</span>
-                                        </div>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${isSelected
+                                        ? 'bg-indigo-600 border-indigo-600 text-white shadow-md'
+                                        : 'bg-white border-gray-200 text-gray-400 group-hover:border-indigo-200 group-hover:text-indigo-500'
+                                        }`}>
+                                        <Icon size={18} strokeWidth={2.5} />
                                     </div>
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-[10px] font-bold bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">{items.length}</span>
-                                        <ChevronRight size={16} className={`text-gray-400 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
-                                    </div>
+                                    <span className={`text-[9px] font-bold truncate max-w-full tracking-tight ${isSelected ? 'text-indigo-700' : 'text-gray-500'}`}>
+                                        {getLocaleString(cat.label, locale)}
+                                    </span>
                                 </button>
+                            );
+                        })}
+                    </div>
+                )}
+            </div>
 
-                                {/* Items List */}
-                                {isExpanded && (
-                                    <div className="divide-y divide-gray-50 border-t border-gray-50">
-                                        {items.map((item, idx) => (
-                                            <div key={idx} className="p-4 bg-white hover:bg-gray-50/50 transition-colors flex gap-4">
-                                                <div className="flex-1 min-w-0">
-                                                    <h5 className="text-sm font-bold text-gray-900 mb-1 truncate">{item.name || item.brand}</h5>
-                                                    <div className="text-[11px] text-gray-500 flex flex-col gap-0.5">
-                                                        <span className="font-medium text-indigo-500">{item.direction || 'In station'}</span>
-                                                        {item.distanceMeters && (
-                                                            <span>Approx. {Math.ceil(item.distanceMeters / 80)} min walk ({item.distanceMeters}m)</span>
-                                                        )}
-                                                    </div>
-                                                </div>
-                                                <button className="self-center p-2 bg-indigo-50 text-indigo-600 rounded-xl hover:bg-indigo-100 transition-colors shrink-0">
-                                                    <Navigation size={18} />
-                                                </button>
-                                            </div>
-                                        ))}
+            {/* 3. Detailed Sub-menu (Drawer-like) */}
+            {selectedCategory && (
+                <div className="animate-in fade-in zoom-in duration-300 origin-top pt-4">
+                    <div className="bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-100/50 overflow-hidden ring-1 ring-black/5">
+                        {/* Header */}
+                        <div className="bg-gray-50/80 backdrop-blur-sm p-3 flex items-center justify-between border-b border-gray-100">
+                            <h5 className="font-bold text-gray-900 flex items-center gap-2">
+                                {getLocaleString(selectedCategory.label, locale)}
+                                <span className="bg-gray-900 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full">
+                                    {selectedCategory.items.length}
+                                </span>
+                            </h5>
+                            <button
+                                onClick={() => setSelectedCatId(null)}
+                                className="p-1 hover:bg-gray-200 rounded-full text-gray-400"
+                            >
+                                <X size={16} />
+                            </button>
+                        </div>
+
+                        {/* Items List */}
+                        <div className="max-h-[300px] overflow-y-auto divide-y divide-gray-50 bg-white">
+                            {selectedCategory.items.map((item) => (
+                                <div key={item.id} className="p-4 hover:bg-gray-50 transition-colors flex items-start gap-3 group/item">
+                                    <div className="mt-1 p-1.5 bg-gray-100 text-gray-400 rounded-lg group-hover/item:bg-indigo-50 group-hover/item:text-indigo-600 transition-colors">
+                                        <MapPin size={14} />
                                     </div>
-                                )}
-                            </div>
-                        );
-                    })}
+                                    <div className="flex-1 min-w-0">
+                                        <h6 className="text-sm font-bold text-gray-900 leading-tight mb-0.5 truncate">
+                                            {getLocaleString(item.name, locale)}
+                                        </h6>
+                                        <p className="text-xs text-gray-500 font-medium">
+                                            {getLocaleString(item.location, locale)}
+                                        </p>
+                                    </div>
+                                    <a
+                                        href={item.googleMapLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-0.5 p-2 bg-gray-100 text-gray-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-all shadow-sm flex-shrink-0"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Navigation size={14} fill="currentColor" />
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

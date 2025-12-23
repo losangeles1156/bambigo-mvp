@@ -115,7 +115,28 @@
         "distance": "距離",
         "walkMin": "步行約 {min} 分"
     },
+    "l1": {
+        "dnaTitle": "生活機能",
+        "bambiInsight": "Bambi 洞察",
+        "nearbyHighlights": "周邊亮點 (300m)",
+        "noHighlights": "暫無周邊亮點",
+        "menuTitle": "類別詳情",
+        "navTo": "導航",
+        "categories": {
+            "shopping": "購物",
+            "dining": "餐飲",
+            "culture": "文化",
+            "nature": "自然"
+        }
+    },
     "l2": {
+        "operationTitle": "運行情報",
+        "liveUpdates": "即時更新",
+        "weatherTitle": "天氣與安全",
+        "windSpeed": "風速",
+        "crowdReport": "回饋人潮狀況",
+        "crowdThanks": "感謝回報！",
+        "crowdClick": "點擊回報",
         "density": "人流預測",
         "crowdedLevel": "較為擁擠",
         "normalLevel": "普通",
@@ -129,15 +150,62 @@
         "normalOperation": "正常運行",
         "delayOccurred": "發生延誤",
         "weatherAlert": "天候警報",
+        "status": {
+            "normal": "正常運行",
+            "delay": "發生延誤",
+            "suspended": "暫停服務",
+            "check": "檢查中"
+        },
         "experience": {
             "rushHour": "通勤尖峰",
             "crowded": "人潮眾多",
             "moderate": "稍有擁擠",
             "comfortable": "舒適順暢",
             "empty": "空曠愜意"
+        },
+        "crowd": {
+            "empty": "空曠",
+            "comfortable": "舒適",
+            "normal": "普通",
+            "crowded": "擁擠",
+            "full": "爆滿"
         }
     },
     "l3": {
+        "servicesTitle": "服務設施",
+        "facilitiesFound": "{count} 項設施",
+        "noServices": "尚無詳細服務資訊",
+        "rent": "租借",
+        "available": "可借用",
+        "categories": {
+            "toilet": "廁所",
+            "locker": "置物櫃",
+            "elevator": "電梯",
+            "atm": "ATM",
+            "wifi": "WiFi",
+            "charging": "充電站",
+            "info": "服務台",
+            "nursing": "哺乳室",
+            "smoking": "吸菸區",
+            "accessibility": "無障礙設施",
+            "shopping": "購物",
+            "dining": "餐飲",
+            "leisure": "休閒娛樂",
+            "transport": "交通轉乘",
+            "religion": "宗教設施",
+            "nature": "自然景觀",
+            "accommodation": "住宿設施"
+        },
+        "attributes": {
+            "wheelchair": "無障礙",
+            "hasWashlet": "溫水洗淨",
+            "hasBabyRoom": "育嬰室",
+            "sizes": "尺寸",
+            "count": "數量",
+            "ssid": "WiFi SSID",
+            "floor": "樓層",
+            "operator": "營運商"
+        },
         "stationToilet": "車站廁所",
         "coinLocker": "置物櫃",
         "elevator": "無障礙電梯",
@@ -153,6 +221,12 @@
         "accessible": "無障礙設施"
     },
     "l4": {
+        "strategyTitle": "Bambi 策略",
+        "subtitle": "基於即時數據的智慧建議",
+        "topPick": "首選推薦",
+        "alternatives": "替代方案",
+        "thinking": "思考中...",
+        "disclaimer": "建議是根據當前交通、天氣和設施狀態生成的。",
         "bambiStrategy": "Bambi 建議",
         "suggestion": "建議",
         "psychAlert": "心理建設提示",
@@ -160,7 +234,16 @@
         "demandCard": "您的需求",
         "expertKnowledge": "專家邏輯",
         "liveData": "即時狀態",
-        "actionLabel": "行動指令"
+        "actionLabel": "行動指令",
+        "demands": {
+            "speed": "趕時間",
+            "luggage": "大行李",
+            "budget": "省錢",
+            "comfort": "舒適",
+            "family": "親子同遊",
+            "accessibility": "行動不便",
+            "vibe": "探索體驗"
+        }
     },
     "weather": {
         "alert": "氣象警報",
@@ -190,6 +273,10 @@
         "viewAll": "查看全部",
         "distance": "距離",
         "loading": "載入中...",
-        "error": "發生錯誤"
+        "error": "發生錯誤",
+        "station": "車站"
+    },
+    "ui": {
+        "items": "項目"
     }
 }

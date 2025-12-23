@@ -1,263 +1,222 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import {
-    Briefcase, Baby, UserMinus, Clock, Backpack, Users, CloudRain,
-    MapPin, Search, ArrowDown, Zap, Lightbulb, ArrowRight, X, Sparkles
-} from 'lucide-react';
-import { useAppStore } from '@/stores/appStore';
-import { NodeProfile } from '@/lib/api/nodes';
+import { useTranslations, useLocale } from 'next-intl';
+import { StationUIProfile, ActionCard } from '@/lib/types/stationStandard';
+import { getLocaleString } from '@/lib/utils/localeUtils';
+import { Sparkles, ArrowRight, Clock, Briefcase, Wallet, Armchair, Baby, Accessibility, Compass, MapPin } from 'lucide-react';
 
 interface L4_BambiProps {
-    profile: NodeProfile | null;
+    data: StationUIProfile;
 }
 
-const CONTEXT_OPTIONS = [
-    { id: 'luggage', icon: <Briefcase size={20} />, label: '拖著行李', color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-200' },
-    { id: 'stroller', icon: <Baby size={20} />, label: '推嬰兒車', color: 'text-pink-600', bg: 'bg-pink-50', border: 'border-pink-200' },
-    { id: 'accessibility', icon: <UserMinus size={20} />, label: '行動不便', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-200' },
-    { id: 'rush', icon: <Clock size={20} />, label: '趕時間', color: 'text-rose-600', bg: 'bg-rose-50', border: 'border-rose-200' },
-    { id: 'light', icon: <Backpack size={20} />, label: '輕裝上陣', color: 'text-orange-600', bg: 'bg-orange-50', border: 'border-orange-200' },
-    { id: 'family', icon: <Users size={20} />, label: '家庭出遊', color: 'text-cyan-600', bg: 'bg-cyan-50', border: 'border-cyan-200' },
-    { id: 'rain', icon: <CloudRain size={20} />, label: '避雨優先', color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
-];
+export function L4_Bambi({ data }: L4_BambiProps) {
+    const tL4 = useTranslations('l4');
+    const locale = useLocale();
+    const { l4_cards } = data;
 
-export function L4_Bambi({ profile }: L4_BambiProps) {
-    const { userContext, setUserContext } = useAppStore();
-    const [origin, setOrigin] = useState('Current Location');
+    // User Demand State
+    const [selectedDemand, setSelectedDemand] = useState<string | null>(null);
     const [destination, setDestination] = useState('');
-    const [isGenerating, setIsGenerating] = useState(false);
+    const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [showResult, setShowResult] = useState(false);
-    const [strategyData, setStrategyData] = useState<any>(null);
 
-    const toggleContext = (id: string) => {
-        const current = userContext || [];
-        setUserContext(current.includes(id)
-            ? current.filter(c => c !== id)
-            : [...current, id]
-        );
+    // Sort logic (Primary First)
+    const sortedCards = [...(l4_cards || [])].sort((a, b) =>
+        (a.type === 'primary' ? -1 : 1)
+    );
+
+    const primaryCard = sortedCards.find(c => c.type === 'primary');
+    const secondaryCards = sortedCards.filter(c => c.type === 'secondary');
+
+    // Demand Options Configuration (7 Contexts)
+    const demandOptions = [
+        { id: 'speed', icon: Clock, label: tL4('demands.speed') },
+        { id: 'luggage', icon: Briefcase, label: tL4('demands.luggage') },
+        { id: 'budget', icon: Wallet, label: tL4('demands.budget') },
+        { id: 'comfort', icon: Armchair, label: tL4('demands.comfort') },
+        { id: 'family', icon: Baby, label: tL4('demands.family') },
+        { id: 'accessibility', icon: Accessibility, label: tL4('demands.accessibility') },
+        { id: 'vibe', icon: Compass, label: tL4('demands.vibe') },
+    ];
+
+    const handleGenerate = () => {
+        if (!selectedDemand && !destination) return; // Basic validation
+        setIsAnalyzing(true);
+        setShowResult(false);
+
+        // Simulate Analysis
+        setTimeout(() => {
+            setIsAnalyzing(false);
+            setShowResult(true);
+        }, 1500);
     };
 
-    const handleGenerate = async () => {
-        if (!destination) return;
-
-        setIsGenerating(true);
-        setStrategyData(null); // Reset previous data
-
-        try {
-            const res = await fetch('/api/strategy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    nodeId: profile?.node_id || 'unknown',
-                    destination: destination,
-                    context: userContext || []
-                })
-            });
-
-            if (res.ok) {
-                const json = await res.json();
-                if (json.success) {
-                    setStrategyData(json.data);
-                    setShowResult(true);
-                }
-            }
-        } catch (error) {
-            console.error('Strategy generation failed', error);
-        } finally {
-            setIsGenerating(false);
+    // Reset when inputs change
+    const onDemandSelect = (id: string) => {
+        if (selectedDemand === id) {
+            setSelectedDemand(null);
+        } else {
+            setSelectedDemand(id);
         }
-    };
+        setShowResult(false);
+    }
 
     return (
-        <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500">
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500 pb-20">
 
-            {/* 1. Status Selection (Horizontal Scroll) */}
-            <div className="space-y-3">
-                <div className="flex items-center justify-between px-1">
-                    <h3 className="text-sm font-black text-gray-900">Tell Bambi your status</h3>
-                    <span className="text-[10px] text-gray-400 font-medium">Multi-select available</span>
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-1">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+                    <Sparkles size={16} />
                 </div>
-
-                <div className="relative -mx-4 px-4 overflow-hidden">
-                    <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar snap-x px-1">
-                        {CONTEXT_OPTIONS.map((opt) => {
-                            const isSelected = (userContext || []).includes(opt.id);
-                            return (
-                                <button
-                                    key={opt.id}
-                                    onClick={() => toggleContext(opt.id)}
-                                    className={`relative flex-shrink-0 snap-start flex flex-col items-center gap-2 p-4 min-w-[90px] rounded-2xl border-2 transition-all duration-300 ${isSelected
-                                        ? `${opt.bg} ${opt.border} shadow-lg scale-105`
-                                        : 'bg-white border-gray-50 text-gray-300 hover:border-gray-100'
-                                        }`}
-                                >
-                                    {isSelected && (
-                                        <div className="absolute top-2 right-2 w-4 h-4 bg-black rounded-full text-white flex items-center justify-center text-[10px]">✓</div>
-                                    )}
-                                    <div className={`transition-colors ${isSelected ? opt.color : 'text-gray-300'}`}>
-                                        {opt.icon}
-                                    </div>
-                                    <span className={`text-[11px] font-bold ${isSelected ? 'text-gray-900' : 'text-gray-400'}`}>
-                                        {opt.label}
-                                    </span>
-                                </button>
-                            );
-                        })}
-                    </div>
+                <div>
+                    <h3 className="text-sm font-black text-gray-900">{tL4('strategyTitle')}</h3>
+                    <p className="text-[10px] text-gray-500 font-medium">{tL4('subtitle')}</p>
                 </div>
             </div>
 
-            {/* 2. OD Input Area */}
-            <div className="bg-white p-4 rounded-3xl border border-gray-100 shadow-sm space-y-4 relative overflow-hidden">
-                <div className="space-y-3 relative z-10">
-                    {/* Origin */}
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-2xl border border-transparent focus-within:border-indigo-300 focus-within:bg-white transition-colors">
-                        <div className="w-2 h-2 rounded-full bg-indigo-500 ring-4 ring-indigo-100" />
-                        <input
-                            type="text"
-                            value={origin}
-                            onChange={(e) => setOrigin(e.target.value)}
-                            className="bg-transparent border-none outline-none text-sm font-bold text-gray-800 w-full placeholder:text-gray-300"
-                            placeholder="Start from..."
-                        />
-                        <button onClick={() => setOrigin('Current Location')} className="text-gray-400 hover:text-indigo-500">
-                            <MapPin size={16} />
-                        </button>
-                    </div>
-
-                    {/* Connector */}
-                    <div className="absolute left-6 top-[3.25rem] w-0.5 h-6 bg-gray-200 border-l border-dashed border-gray-300" />
-
-                    {/* Destination */}
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-2xl border border-transparent focus-within:border-indigo-300 focus-within:bg-white transition-colors">
-                        <div className="w-2 h-2 rounded-full bg-rose-500 ring-4 ring-rose-100" />
-                        <input
-                            type="text"
-                            value={destination}
-                            onChange={(e) => setDestination(e.target.value)}
-                            className="bg-transparent border-none outline-none text-sm font-bold text-gray-800 w-full placeholder:text-gray-300"
-                            placeholder="Where to go?"
-                        />
-                        <button className="text-gray-400 hover:text-indigo-500">
-                            <Search size={16} />
-                        </button>
-                    </div>
+            {/* 1. Demand Menu (User Needs) - 7 Types */}
+            <div>
+                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-wider mb-2">{tL4('demandCard')}</h4>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {demandOptions.map((opt) => {
+                        const Icon = opt.icon;
+                        const isSelected = selectedDemand === opt.id;
+                        return (
+                            <button
+                                key={opt.id}
+                                onClick={() => onDemandSelect(opt.id)}
+                                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${isSelected
+                                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 scale-105'
+                                    : 'bg-white border border-gray-200 text-gray-500 hover:border-indigo-300 hover:text-indigo-600'
+                                    }`}
+                            >
+                                <Icon size={12} />
+                                {opt.label}
+                            </button>
+                        );
+                    })}
                 </div>
 
-                {/* Generate Button */}
-                <button
-                    onClick={handleGenerate}
-                    disabled={isGenerating || !destination}
-                    className={`w-full py-4 rounded-xl flex items-center justify-center gap-2 font-black text-white text-sm shadow-lg shadow-indigo-200 transition-all ${isGenerating || !destination ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 active:scale-95'
-                        }`}
-                >
-                    {isGenerating ? (
-                        <>
-                            <Sparkles size={16} className="animate-spin" />
-                            <span>Thinking...</span>
-                        </>
-                    ) : (
-                        <>
-                            <Zap size={16} fill="currentColor" />
-                            <span>Get Strategy</span>
-                        </>
-                    )}
-                </button>
-            </div>
-
-            {/* 3. Live Context Summary (New) */}
-            {(showResult && strategyData?.alerts) && (
-                <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
-                    {strategyData.alerts.map((alert: any, idx: number) => (
-                        <div key={idx} className={`flex-shrink-0 px-3 py-2 border rounded-xl flex items-center gap-2 ${alert.type === 'delay' ? 'bg-rose-50 border-rose-100 text-rose-700' : 'bg-blue-50 border-blue-100 text-blue-700'
-                            }`}>
-                            <span className="text-xs">{alert.icon}</span>
-                            <span className="text-[10px] font-bold">{alert.text}</span>
-                        </div>
-                    ))}
-                </div>
-            )}
-
-            {/* 4. Suggestion Card */}
-            {showResult && strategyData && (
-                <div className="animate-in fade-in slide-in-from-bottom duration-700 pb-20">
-                    <div className="p-1 rounded-[32px] bg-gradient-to-br from-indigo-500 via-purple-500 to-rose-500 shadow-xl shadow-indigo-200/50">
-                        <div className="bg-white rounded-[28px] p-6 relative overflow-hidden">
-                            {/* Watermark */}
-                            <div className="absolute top-[-20px] right-[-20px] opacity-[0.03] text-indigo-900 transform rotate-12 pointer-events-none">
-                                <Zap size={180} fill="currentColor" />
-                            </div>
-
-                            {/* Header */}
-                            <div className="flex justify-between items-start mb-6">
-                                <div>
-                                    <h2 className="text-xl font-black text-gray-900 leading-tight">Optimal<br />Strategy</h2>
-                                    <p className="text-[10px] text-gray-400 font-bold mt-1 uppercase tracking-wider">AI-POWERED • PERSONALIZED</p>
-                                </div>
-                                <div className="p-2 bg-black text-white rounded-full">
-                                    <ArrowDown size={20} className="-rotate-45" />
-                                </div>
-                            </div>
-
-                            <div className="space-y-6">
-                                {/* Route */}
-                                <div className="space-y-2">
-                                    <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest pl-1">Route</span>
-                                    <div className="p-4 bg-gray-50 rounded-2xl flex items-center justify-between border border-gray-100">
-                                        <div className="flex items-center gap-3">
-                                            <div className="text-sm font-bold text-gray-900 truncate max-w-[80px]">{strategyData.route?.origin || 'Start'}</div>
-                                            <div className="h-0.5 w-6 bg-gray-300" />
-                                            <div className="text-sm font-bold text-gray-900 truncate max-w-[80px]">{strategyData.route?.destination || 'End'}</div>
-                                        </div>
-                                        <div className="text-right">
-                                            <span className="block text-xs font-black text-indigo-600">{strategyData.route?.duration}</span>
-                                            <span className="block text-[9px] text-gray-400 font-medium">{strategyData.route?.transfers} transfer(s)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Expert Knowledge */}
-                                {strategyData.expertInsight && (
-                                    <div className="space-y-2">
-                                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest pl-1">Expert Insight</span>
-                                        <div className="flex gap-3 p-3 bg-amber-50 rounded-2xl border border-amber-100">
-                                            <Lightbulb size={18} className="text-amber-500 flex-shrink-0 mt-0.5" />
-                                            <p className="text-xs text-amber-900 font-medium leading-relaxed">
-                                                {strategyData.expertInsight}
-                                            </p>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Contextual Advice */}
-                                {(strategyData.contextAdvice || []).length > 0 && (
-                                    <div className="space-y-2">
-                                        <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest pl-1">For Your Status</span>
-                                        <div className="p-4 bg-indigo-50/50 rounded-2xl border border-indigo-100/50 space-y-3">
-                                            {strategyData.contextAdvice.map((advice: any, idx: number) => (
-                                                <div key={idx} className="flex items-start gap-2">
-                                                    <span className="text-xs">{advice.icon}</span>
-                                                    <p className="text-xs font-bold text-indigo-900 leading-tight pt-0.5">{advice.text}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
+                {/* Destination Input & Generate Action */}
+                <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm space-y-3">
+                    <div>
+                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
+                            目的地 / Destination
+                        </label>
+                        <div className="relative">
+                            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
+                            <input
+                                type="text"
+                                value={destination}
+                                onChange={(e) => {
+                                    setDestination(e.target.value);
+                                    setShowResult(false);
+                                }}
+                                placeholder="例如: 成田機場, 新宿..."
+                                className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400"
+                            />
                         </div>
                     </div>
 
                     <button
-                        onClick={() => { setShowResult(false); setDestination(''); setStrategyData(null); }}
-                        className="mt-4 mx-auto block text-[10px] text-gray-400 hover:text-gray-600 underline"
+                        onClick={handleGenerate}
+                        disabled={isAnalyzing || (!selectedDemand && !destination)}
+                        className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 font-bold transition-all ${isAnalyzing || (!selectedDemand && !destination)
+                            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-200 hover:scale-[1.02] active:scale-95'
+                            }`}
                     >
-                        Reset Search
+                        {isAnalyzing ? (
+                            <>
+                                <Sparkles className="animate-spin" size={16} />
+                                分析中...
+                            </>
+                        ) : (
+                            <>
+                                <Sparkles size={16} />
+                                生成最佳行動建議
+                            </>
+                        )}
                     </button>
                 </div>
+            </div>
+
+            {/* 2. Results Section (Conditional) */}
+            {showResult && (
+                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    {/* Primary Recommendation */}
+                    {primaryCard ? (
+                        <div className="relative group overflow-hidden rounded-3xl bg-gray-900 text-white shadow-xl shadow-indigo-200 transaction-all hover:scale-[1.01] duration-300">
+                            {/* Background Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-700 to-indigo-900 opacity-90" />
+
+                            {/* Content */}
+                            <div className="relative p-6 z-10">
+                                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-black uppercase tracking-widest text-indigo-100 mb-4 shadow-sm">
+                                    <Sparkles size={10} />
+                                    {tL4('topPick')}
+                                </div>
+
+                                <h2 className="text-xl font-black leading-tight mb-2 text-white">
+                                    {getLocaleString(primaryCard.title, locale)}
+                                </h2>
+                                <p className="text-sm font-medium text-indigo-100 leading-relaxed mb-6 opacity-90">
+                                    {getLocaleString(primaryCard.description, locale)}
+                                </p>
+
+                                <a
+                                    href={primaryCard.actionUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full bg-white text-indigo-900 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-indigo-50 active:scale-95 transition-all shadow-lg"
+                                >
+                                    {getLocaleString(primaryCard.actionLabel, locale)}
+                                    <ArrowRight size={18} />
+                                </a>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="p-6 bg-gray-50 rounded-2xl border border-dashed text-center text-gray-400 text-xs">
+                            {tL4('thinking')}
+                        </div>
+                    )}
+
+                    {/* 3. Secondary Options */}
+                    {secondaryCards.length > 0 && (
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-between px-1 pt-2">
+                                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{tL4('alternatives')}</h4>
+                            </div>
+
+                            {secondaryCards.map((card) => (
+                                <div key={card.id} className="bg-white p-5 rounded-2xl border border-gray-100 hover:border-indigo-200 hover:shadow-md transition-all">
+                                    <h5 className="font-bold text-gray-900 mb-1">{getLocaleString(card.title, locale)}</h5>
+                                    <p className="text-xs text-gray-500 mb-3 leading-relaxed">{getLocaleString(card.description, locale)}</p>
+
+                                    {card.actionUrl && (
+                                        <a
+                                            href={card.actionUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-700 hover:underline"
+                                        >
+                                            {getLocaleString(card.actionLabel, locale)}
+                                            <ArrowRight size={14} />
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             )}
-        </div>
+
+            {/* Disclaimer */}
+            <p className="text-[9px] text-gray-300 text-center px-6 leading-normal">
+                {tL4('disclaimer')}
+            </p>
+        </div >
     );
 }

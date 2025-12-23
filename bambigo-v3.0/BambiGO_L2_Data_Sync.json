@@ -1,5 +1,5 @@
 {
-    "name": "BambiGO_L2_Data_Sync_Hybrid",
+    "name": "BambiGO_L2_Weather_Sync_All_Nodes",
     "nodes": [
         {
             "parameters": {
@@ -7,13 +7,13 @@
                     "interval": [
                         {
                             "field": "minutes",
-                            "minutes": 5
+                            "minutes": 10
                         }
                     ]
                 }
             },
             "id": "schedule_trigger",
-            "name": "BambiGO_每5分鐘檢查一次",
+            "name": "排程觸發 (10min)",
             "type": "n8n-nodes-base.scheduleTrigger",
             "typeVersion": 1,
             "position": [
@@ -23,86 +23,29 @@
         },
         {
             "parameters": {
-                "url": "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current=temperature_2m,relative_humidity_2m,weather_code",
+                "url": "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m",
                 "options": {}
             },
             "id": "open_meteo_weather",
-            "name": "L2_天氣獲取",
+            "name": "Fetch Tokyo Weather",
             "type": "n8n-nodes-base.httpRequest",
             "typeVersion": 4.1,
             "position": [
-                450,
-                160
-            ]
-        },
-        {
-            "parameters": {
-                "url": "https://api-tokyochallenge.odpt.org/api/v4/odpt:TrainInformation?acl:consumerKey=YOUR_ODPT_KEY",
-                "options": {}
-            },
-            "id": "odpt_train_info",
-            "name": "L2_ODPT交通狀態",
-            "type": "n8n-nodes-base.httpRequest",
-            "typeVersion": 4.1,
-            "position": [
-                450,
+                400,
                 300
             ]
         },
         {
             "parameters": {
-                "conditions": {
-                    "string": [
-                        {
-                            "value1": "={{ $json[\"odpt:trainInformationText\"][\"ja\"] }}",
-                            "operation": "notContains",
-                            "value2": "平常運行"
-                        }
-                    ]
-                }
+                "jsCode": "const weather = $input.first().json.current;\nconst now = new Date().toISOString();\n\n// Target Stations (All MVP Nodes)\nconst stations = [\n  'odpt:Station:TokyoMetro.Ueno',\n  'odpt:Station:TokyoMetro.Asakusa',\n  'odpt:Station:JR-East.Akihabara',\n  'odpt:Station:JR-East.Tokyo',\n  'odpt:Station:TokyoMetro.Ginza',\n  'odpt:Station:Toei.Kuramae',\n  'odpt:Station:Toei.ShinOkachimachi',\n  'odpt:Station:Toei.Ningyocho',\n  'odpt:Station:JR-East.Kanda',\n  'odpt:Station:Toei.Nihombashi',\n  'odpt:Station:TokyoMetro.Mitsukoshimae',\n  'odpt:Station:Toei.HigashiGinza',\n  'odpt:Station:TokyoMetro.Tawaramachi',\n  'odpt:Station:TokyoMetro.Iriya',\n  'odpt:Station:JR-East.Uguisudani',\n  'odpt:Station:Toei.Asakusabashi',\n  'odpt:Station:TokyoMetro.Kayabacho',\n  'odpt:Station:TokyoMetro.Kasumigaseki',\n  'odpt:Station:TokyoMetro.Iidabashi',\n  'odpt:Station:TokyoMetro.Ochanomizu',\n  'odpt:Station:TokyoMetro.Minowa',\n  'odpt:Station:TokyoMetro.Kyobashi',\n  'odpt:Station:TokyoMetro.Otemachi',\n  'odpt:Station:JR-East.Okachimachi'\n];\n\n// Map weather code to Condition String\nfunction getWeatherCondition(code) {\n  if (code <= 3) return 'Clear';\n  if (code <= 48) return 'Cloudy';\n  if (code <= 67) return 'Rain';\n  if (code <= 77) return 'Snow';\n  return 'Unknown';\n}\n\nreturn stations.map(stationId => ({\n  json: {\n    station_id: stationId,\n    status_code: 'NORMAL', // Default for now\n    reason_ja: null,\n    weather_info: {\n      temp: weather.temperature_2m,\n      condition: getWeatherCondition(weather.weather_code),\n      wind: weather.wind_speed_10m,\n      update_time: now\n    },\n    updated_at: now\n  }\n}));"
             },
-            "id": "delay_checker",
-            "name": "判斷是否延誤",
-            "type": "n8n-nodes-base.if",
-            "typeVersion": 1,
+            "id": "prepare_bulk_data",
+            "name": "Prepare Bulk Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
             "position": [
-                680,
+                600,
                 300
-            ]
-        },
-        {
-            "parameters": {
-                "url": "https://transit.yahoo.co.jp/diainfo/area/2",
-                "options": {}
-            },
-            "id": "yahoo_scraper",
-            "name": "Yahoo詳細資訊爬取",
-            "type": "n8n-nodes-base.httpRequest",
-            "typeVersion": 4.1,
-            "position": [
-                900,
-                240
-            ]
-        },
-        {
-            "parameters": {
-                "extractionRules": {
-                    "values": [
-                        {
-                            "key": "trouble_text",
-                            "selector": "div.main.trouble",
-                            "returnValue": "text"
-                        }
-                    ]
-                }
-            },
-            "id": "html_extract",
-            "name": "提取異常文字",
-            "type": "n8n-nodes-base.html",
-            "typeVersion": 1,
-            "position": [
-                1100,
-                240
             ]
         },
         {
@@ -113,11 +56,11 @@
                     "parameters": [
                         {
                             "name": "apikey",
-                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU2MDYzNTksImV4cCI6MjA4MTE4MjM1OX0.oAnpWIRrJG-AW_ADQ109PvvsCaoNmjcEWj9fh0zBULk"
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTYwNjM1OSwiZXhwIjoyMDgxMTgyMzU5fQ.I1W0Y0tVr2J-aYbEMqwOiTlsGEnq1P6ZGCoBNnFRYQ0"
                         },
                         {
                             "name": "Authorization",
-                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU2MDYzNTksImV4cCI6MjA4MTE4MjM1OX0.oAnpWIRrJG-AW_ADQ109PvvsCaoNmjcEWj9fh0zBULk"
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dWJlcWVhYWZkam51b2N5aG1iIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTYwNjM1OSwiZXhwIjoyMDgxMTgyMzU5fQ.I1W0Y0tVr2J-aYbEMqwOiTlsGEnq1P6ZGCoBNnFRYQ0"
                         },
                         {
                             "name": "Prefer",
@@ -126,16 +69,17 @@
                     ]
                 },
                 "sendBody": true,
+                "contentType": "json",
                 "specifyBody": "json",
-                "jsonBody": "={\n  \"station_id\": \"odpt:Station:TokyoMetro.Ueno\",\n  \"status_code\": \"{{ $node[\"delay_checker\"].json[\"Delay\"] ? 'DELAY' : 'NORMAL' }}\",\n  \"reason_ja\": \"{{ $node[\"html_extract\"].json[\"trouble_text\"] }}\",\n  \"reason_zh_tw\": null,\n  \"weather_info\": {\n    \"temp\": \"{{ $node[\"open_meteo_weather\"].json[\"current\"][\"temperature_2m\"] }}\",\n    \"update_time\": \"{{ $now }}\"\n  },\n  \"updated_at\": \"{{ $now }}\"\n}"
+                "jsonBody": "={{ $json }}"
             },
-            "id": "final_db_update",
-            "name": "更新動態快照 (Snapshot)",
+            "id": "supabase_bulk_upsert",
+            "name": "Supabase Bulk Upsert",
             "type": "n8n-nodes-base.httpRequest",
             "typeVersion": 4.1,
             "position": [
-                1300,
-                240
+                800,
+                300
             ]
         }
     ],
@@ -147,62 +91,30 @@
                         "node": "open_meteo_weather",
                         "type": "main",
                         "index": 0
-                    },
-                    {
-                        "node": "odpt_train_info",
-                        "type": "main",
-                        "index": 0
-                    }
-                ]
-            ]
-        },
-        "odpt_train_info": {
-            "main": [
-                [
-                    {
-                        "node": "delay_checker",
-                        "type": "main",
-                        "index": 0
-                    }
-                ]
-            ]
-        },
-        "delay_checker": {
-            "main": [
-                [
-                    {
-                        "node": "yahoo_scraper",
-                        "type": "main",
-                        "index": 0
-                    }
-                ]
-            ]
-        },
-        "yahoo_scraper": {
-            "main": [
-                [
-                    {
-                        "node": "html_extract",
-                        "type": "main",
-                        "index": 0
-                    }
-                ]
-            ]
-        },
-        "html_extract": {
-            "main": [
-                [
-                    {
-                        "node": "final_db_update",
-                        "type": "main",
-                        "index": 0
                     }
                 ]
             ]
         },
         "open_meteo_weather": {
             "main": [
-                []
+                [
+                    {
+                        "node": "prepare_bulk_data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "prepare_bulk_data": {
+            "main": [
+                [
+                    {
+                        "node": "supabase_bulk_upsert",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
             ]
         }
     }

@@ -256,12 +256,12 @@ export const SEED_NODES = [
     {
         id: 'odpt:Station:Toei.HigashiNihombashi',
         city_id: 'tokyo_core',
-        name: { 'zh-TW': '東日本橋', 'ja': '東日本橋', 'en': 'Higashi-nihombashi' },
+        name: { 'zh-TW': '東日本橋・馬喰橫山', 'ja': '東日本橋・馬喰横山', 'en': 'Higashi-nihombashi / Bakuro-yokoyama' },
         type: 'station',
-        location: 'POINT(139.7853 35.6922)',
+        location: 'POINT(139.7840 35.6922)', // Midpoint of co-located stations
         vibe: 'wholesale',
         geohash: 'xn77k',
-        is_hub: false,
+        is_hub: true, // Transfer hub: Asakusa Line + Shinjuku Line
         zone: 'core',
         source_dataset: 'odpt_seed'
     },
@@ -750,38 +750,7 @@ export const SEED_NODES = [
         source_dataset: 'odpt_seed',
         vibe: 'gourmet'
     },
-    // Taito Ward - Toei Asakusa Line
-    {
-        id: 'odpt:Station:Toei.Asakusa',
-        city_id: 'tokyo_core',
-        name: { 'zh-TW': '淺草', 'ja': '浅草', 'en': 'Asakusa' },
-        type: 'station',
-        location: 'POINT(139.7963 35.7103)',
-        address: { 'ja': '東京都台東区駒形一丁目12-14', 'zh-TW': '東京都台東區駒形一丁目12-14', 'en': '1-12-14 Komagata, Taito-ku, Tokyo' },
-        geohash: 'xn77h',
-        is_hub: true,
-        zone: 'core',
-        source_dataset: 'odpt_seed',
-        vibe: 'tourist',
-        facilityTags: [
-            // Similar to Metro but slightly adjusted for A2-A5 exits (Toei side)
-            // Leisure
-            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'historic_building', name: 'Kaminarimon', distanceMeters: 80, direction: 'Exit A4' },
-            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'river', name: 'Sumida River', distanceMeters: 50, direction: 'Exit A3' },
-            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'temple', name: 'Senso-ji', distanceMeters: 300, direction: 'Exit A4' },
-
-            // Shopping
-            { mainCategory: 'shopping', subCategory: 'specialty', detailCategory: 'souvenir', name: 'Nakamise-dori', distanceMeters: 150, direction: 'Exit A4' },
-            { mainCategory: 'shopping', subCategory: 'drugstore', brand: 'Matsumoto Kiyoshi', distanceMeters: 100, direction: 'Exit A4' },
-
-            // Dining
-            { mainCategory: 'dining', subCategory: 'japanese', name: 'Komagata Dozeu', distanceMeters: 200, direction: 'Exit A1' },
-            { mainCategory: 'dining', subCategory: 'bar', name: 'Kamiya Bar', distanceMeters: 100, direction: 'Exit A5' },
-
-            // Medical
-            { mainCategory: 'medical', subCategory: 'hospital', name: 'Asakusa Hospital', distanceMeters: 800, direction: 'North' } // A bit far but relevant
-        ]
-    },
+    // NOTE: Toei Asakusa Line station merged into TokyoMetro.Asakusa per co-location principle
     // Chuo Ward - Toei Subway
     {
         id: 'odpt:Station:Toei.Takaracho',
@@ -795,18 +764,7 @@ export const SEED_NODES = [
         source_dataset: 'odpt_seed',
         vibe: 'business'
     },
-    {
-        id: 'odpt:Station:Toei.HigashiNihombashi',
-        city_id: 'tokyo_core',
-        name: { 'zh-TW': '東日本橋', 'ja': '東日本橋', 'en': 'Higashi-nihombashi' },
-        type: 'station',
-        location: 'POINT(139.7820 35.6921)',
-        geohash: 'xn76u',
-        is_hub: true,
-        zone: 'core',
-        source_dataset: 'odpt_seed',
-        vibe: 'wholesale'
-    },
+    // NOTE: (Toei.HigashiNihombashi duplicate removed - merged into earlier entry at line 256)
     {
         id: 'odpt:Station:Toei.Kachidoki',
         city_id: 'tokyo_core',
@@ -843,18 +801,7 @@ export const SEED_NODES = [
         source_dataset: 'odpt_seed',
         vibe: 'market_history'
     },
-    {
-        id: 'odpt:Station:Toei.BakuroYokoyama',
-        city_id: 'tokyo_core',
-        name: { 'zh-TW': '馬喰橫山', 'ja': '馬喰横山', 'en': 'Bakuro-yokoyama' },
-        type: 'station',
-        location: 'POINT(139.7826 35.6922)',
-        geohash: 'xn76u',
-        is_hub: true,
-        zone: 'core',
-        source_dataset: 'odpt_seed',
-        vibe: 'wholesale'
-    },
+    // NOTE: Toei.BakuroYokoyama merged into Toei.HigashiNihombashi - co-located stations (<100m)
     {
         id: 'odpt:Station:Toei.Hamacho',
         city_id: 'tokyo_core',

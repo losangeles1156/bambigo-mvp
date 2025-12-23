@@ -12,7 +12,7 @@ import { SubscriptionModal } from '@/components/guard/SubscriptionModal';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { useEffect, useState } from 'react';
 import { fetchNodeConfig, NodeProfile } from '@/lib/api/nodes';
-import { Cloud, Settings, Heart, Calendar, ArrowRight, MessageSquare, Map as MapIcon, ShieldCheck, User, LocateFixed, Layers, Plus, Minus } from 'lucide-react';
+import { Cloud, Settings, Heart, Calendar, ArrowRight, MessageSquare, Map as MapIcon, ShieldCheck, User, LocateFixed, Layers, Plus, Minus, X } from 'lucide-react';
 
 // Leaflet must be dynamic import with no SSR
 const MapContainer = dynamic(
@@ -29,7 +29,7 @@ export default function Home() {
     const tStatus = useTranslations('status');
     const tMap = useTranslations('map');
     const { zone, userLocation, isTooFar, centerFallback } = useZoneAwareness();
-    const { currentNodeId, isBottomSheetOpen, activeTab, setActiveTab, setMapCenter } = useAppStore();
+    const { currentNodeId, isBottomSheetOpen, activeTab, setActiveTab, setMapCenter, setBottomSheetOpen, setCurrentNode } = useAppStore();
 
     const [nodeData, setNodeData] = useState<any>(null);
     const [profile, setProfile] = useState<NodeProfile | null>(null);
@@ -96,21 +96,7 @@ export default function Home() {
             <div className="absolute top-0 left-0 right-0 z-[200] p-6 pt-16 pointer-events-none">
                 <div className="flex justify-between items-start pointer-events-auto">
                     {/* Weather / Status Pill */}
-                    <div className="glass-effect rounded-full px-5 py-2.5 flex gap-4 items-center animate-in slide-in-from-top duration-700 shadow-2xl shadow-black/5">
-                        <div className="flex items-center gap-2 text-indigo-600 font-black">
-                            <Cloud size={20} className="animate-slow-pulse" />
-                            <span className="text-sm tracking-tight">24°C</span>
-                        </div>
-                        <div className="w-px h-5 bg-black/[0.05]" />
-                        {isCore ? (
-                            <div className="flex items-center gap-2 text-rose-500 text-xs font-black animate-pulse">
-                                <span className="w-2.5 h-2.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.5)]" />
-                                <span className="tracking-tight">銀座線延誤</span>
-                            </div>
-                        ) : (
-                            <span className="text-gray-400 text-xs font-black uppercase tracking-widest opacity-60 px-1">{tStatus('ready')}</span>
-                        )}
-                    </div>
+
 
                     {/* Settings / Locale */}
                     <div className="flex gap-3">
@@ -160,133 +146,153 @@ export default function Home() {
 
             {/* 3. Bottom Sheet */}
             {isBottomSheetOpen && (
-                <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/90 backdrop-blur-3xl rounded-t-[40px] shadow-[0_-20px_60px_rgba(0,0,0,0.1)] transition-transform duration-500 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-500 border-t border-white/50 scrollbar-hide">
-                    {/* Handle */}
-                    <div className="w-full flex justify-center pt-4 pb-2 sticky top-0 bg-white/20 backdrop-blur-sm z-30">
-                        <div className="w-16 h-1.5 bg-black/[0.08] rounded-full" />
-                    </div>
-
-                    {!nodeData ? (
-                        // Skeleton Loader
-                        <div className="p-6 space-y-6">
-                            <div className="space-y-3">
-                                <div className="h-8 w-1/3 bg-gray-100 rounded-lg animate-pulse" />
-                                <div className="flex gap-2">
-                                    <div className="h-4 w-16 bg-gray-100 rounded-md animate-pulse" />
-                                    <div className="h-4 w-20 bg-gray-100 rounded-md animate-pulse" />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-4 gap-4 pt-4 border-b border-gray-50 pb-4">
-                                {[1, 2, 3, 4].map(i => (
-                                    <div key={i} className="h-8 bg-gray-100 rounded-lg animate-pulse" />
-                                ))}
-                            </div>
-                            <div className="h-40 bg-gray-50 rounded-3xl animate-pulse" />
+                <>
+                    {/* Click-outside overlay */}
+                    <div
+                        className="absolute inset-0 z-15 bg-black/5 backdrop-blur-[1px] transition-opacity duration-300"
+                        onClick={() => {
+                            setBottomSheetOpen(false);
+                            setCurrentNode(null);
+                        }}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/90 backdrop-blur-3xl rounded-t-[40px] shadow-[0_-20px_60px_rgba(0,0,0,0.1)] transition-transform duration-500 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-500 border-t border-white/50 scrollbar-hide">
+                        {/* Handle + Close Button */}
+                        <div className="w-full flex justify-center items-center pt-4 pb-2 sticky top-0 bg-white/80 backdrop-blur-xl z-30 relative">
+                            <div className="w-16 h-1.5 bg-black/[0.08] rounded-full" />
+                            <button
+                                onClick={() => {
+                                    setBottomSheetOpen(false);
+                                    setCurrentNode(null);
+                                }}
+                                className="absolute top-3 right-4 p-2 bg-gray-100 rounded-full text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors"
+                                aria-label="Close panel"
+                            >
+                                <X size={18} />
+                            </button>
                         </div>
-                    ) : (
-                        // Real Content
-                        <div className="p-6 space-y-6">
-                            {/* Header */}
-                            <div className="relative">
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h2 className="text-3xl font-black text-gray-900 tracking-tight">
-                                            {nodeData.name?.['zh-TW'] || nodeData.name?.['en'] || 'Unknown'}
-                                        </h2>
-                                        <div className="flex items-center gap-2 mt-1">
-                                            <span className="text-sm font-medium text-gray-400">{nodeData.type}</span>
-                                            {nodeData.vibe && (
-                                                <>
-                                                    <div className="w-1 h-1 bg-gray-300 rounded-full" />
-                                                    <span className="text-xs font-bold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                                                        {nodeData.vibe}
-                                                    </span>
-                                                </>
-                                            )}
-                                        </div>
+
+                        {!nodeData ? (
+                            // Skeleton Loader
+                            <div className="p-6 space-y-6">
+                                <div className="space-y-3">
+                                    <div className="h-8 w-1/3 bg-gray-100 rounded-lg animate-pulse" />
+                                    <div className="flex gap-2">
+                                        <div className="h-4 w-16 bg-gray-100 rounded-md animate-pulse" />
+                                        <div className="h-4 w-20 bg-gray-100 rounded-md animate-pulse" />
                                     </div>
                                 </div>
-                                <div className="absolute top-0 right-0 flex items-center">
-                                    <button className="p-3 bg-gray-100 rounded-full text-gray-500 hover:bg-rose-50 hover:text-rose-500 transition-colors">
-                                        <Heart size={24} />
-                                    </button>
-                                    <button
-                                        onClick={() => useAppStore.getState().setChatOpen(true)}
-                                        className="p-3 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors ml-2"
-                                    >
-                                        <MessageSquare size={24} />
-                                    </button>
+                                <div className="grid grid-cols-4 gap-4 pt-4 border-b border-gray-50 pb-4">
+                                    {[1, 2, 3, 4].map(i => (
+                                        <div key={i} className="h-8 bg-gray-100 rounded-lg animate-pulse" />
+                                    ))}
+                                </div>
+                                <div className="h-40 bg-gray-50 rounded-3xl animate-pulse" />
+                            </div>
+                        ) : (
+                            // Real Content
+                            <div className="p-6 space-y-6">
+                                {/* Header */}
+                                <div className="relative">
+                                    <div className="flex justify-between items-start">
+                                        <div>
+                                            <h2 className="text-3xl font-black text-gray-900 tracking-tight">
+                                                {nodeData.name?.['zh-TW'] || nodeData.name?.['en'] || 'Unknown'}
+                                            </h2>
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="text-sm font-medium text-gray-400">{nodeData.type}</span>
+                                                {nodeData.vibe && (
+                                                    <>
+                                                        <div className="w-1 h-1 bg-gray-300 rounded-full" />
+                                                        <span className="text-xs font-bold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                                            {nodeData.vibe}
+                                                        </span>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="absolute top-0 right-0 flex items-center">
+                                        <button className="p-3 bg-gray-100 rounded-full text-gray-500 hover:bg-rose-50 hover:text-rose-500 transition-colors">
+                                            <Heart size={24} />
+                                        </button>
+                                        <button
+                                            onClick={() => useAppStore.getState().setChatOpen(true)}
+                                            className="p-3 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors ml-2"
+                                        >
+                                            <MessageSquare size={24} />
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                useAppStore.getState().setBottomSheetOpen(false);
+                                                useAppStore.getState().setCurrentNode(null);
+                                            }}
+                                            className="p-3 bg-gray-100 rounded-full text-gray-500 hover:bg-gray-200 transition-colors ml-2"
+                                        >
+                                            <Minus size={24} className="rotate-45" /> {/* Close Icon */}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Node Content Tabs (L1/L2/L3) */}
+                                <div className="mt-2 bg-gray-50/50 p-1 rounded-2xl">
+                                    <NodeTabs
+                                        nodeData={nodeData}
+                                        profile={profile}
+                                    />
+                                </div>
+
+                                {/* Buffer Zone Message */}
+                                {!isCore && (
+                                    <div className="flex items-center gap-3 p-4 bg-orange-50/50 border border-orange-100 rounded-2xl text-orange-800 text-sm">
+                                        <div className="p-2 bg-white rounded-xl shadow-sm">ℹ️</div>
+                                        <span>{tNode('bufferZoneMessage')}</span>
+                                    </div>
+                                )}
+
+                                {/* Actions (Plan a Trip) */}
+                                <div className="flex gap-3 pt-2">
                                     <button
                                         onClick={() => {
-                                            useAppStore.getState().setBottomSheetOpen(false);
-                                            useAppStore.getState().setCurrentNode(null);
+                                            useAppStore.getState().addMessage({
+                                                role: 'assistant',
+                                                content: `已將「${nodeData.name?.['zh-TW'] || nodeData.name?.['en']}」加入您的行程草稿！`
+                                            });
+                                            useAppStore.getState().setChatOpen(true);
                                         }}
-                                        className="p-3 bg-gray-100 rounded-full text-gray-500 hover:bg-gray-200 transition-colors ml-2"
+                                        className="flex-[2] bg-indigo-600 text-white font-bold py-4 rounded-3xl hover:bg-indigo-700 transition active:scale-95 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2"
                                     >
-                                        <Minus size={24} className="rotate-45" /> {/* Close Icon */}
+                                        <Calendar size={20} />
+                                        <span>{tNode('addToTrip')}</span>
+                                        <ArrowRight size={18} className="opacity-50" />
                                     </button>
                                 </div>
+
+
                             </div>
-
-                            {/* Node Content Tabs (L1/L2/L3) */}
-                            <div className="mt-2 bg-gray-50/50 p-1 rounded-2xl">
-                                <NodeTabs
-                                    nodeData={nodeData}
-                                    profile={profile}
-                                />
-                            </div>
-
-                            {/* Buffer Zone Message */}
-                            {!isCore && (
-                                <div className="flex items-center gap-3 p-4 bg-orange-50/50 border border-orange-100 rounded-2xl text-orange-800 text-sm">
-                                    <div className="p-2 bg-white rounded-xl shadow-sm">ℹ️</div>
-                                    <span>{tNode('bufferZoneMessage')}</span>
-                                </div>
-                            )}
-
-                            {/* Actions (Plan a Trip) */}
-                            <div className="flex gap-3 pt-2">
-                                <button
-                                    onClick={() => {
-                                        useAppStore.getState().addMessage({
-                                            role: 'assistant',
-                                            content: `已將「${nodeData.name?.['zh-TW'] || nodeData.name?.['en']}」加入您的行程草稿！`
-                                        });
-                                        useAppStore.getState().setChatOpen(true);
-                                    }}
-                                    className="flex-[2] bg-indigo-600 text-white font-bold py-4 rounded-3xl hover:bg-indigo-700 transition active:scale-95 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2"
-                                >
-                                    <Calendar size={20} />
-                                    <span>{tNode('addToTrip')}</span>
-                                    <ArrowRight size={18} className="opacity-50" />
-                                </button>
-                            </div>
-
-
-                        </div>
-                    )}
-                </div>
+                        )}
+                    </div>
+                </>
             )}
 
             {/* 4. Bottom Navigation Bar */}
             <div className="absolute bottom-6 left-6 right-6 z-30">
                 <div className="glass-effect rounded-[32px] p-2 flex justify-between items-center shadow-[0_15px_40px_rgba(0,0,0,0.15)] bg-white/80 border border-white/50">
                     <button
-                        onClick={() => setActiveTab('explore')}
+                        onClick={() => { setActiveTab('explore'); if (activeTab !== 'explore') { setBottomSheetOpen(false); setCurrentNode(null); } }}
                         className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'explore' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
                     >
                         <MapIcon size={20} fill={activeTab === 'explore' ? "white" : "none"} />
                         <span className="text-[10px] font-black uppercase tracking-tighter">{tNav('explore')}</span>
                     </button>
                     <button
-                        onClick={() => setActiveTab('trips')}
+                        onClick={() => { setActiveTab('trips'); setBottomSheetOpen(false); setCurrentNode(null); }}
                         className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'trips' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 -rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
                     >
                         <ShieldCheck size={20} fill={activeTab === 'trips' ? "white" : "none"} />
                         <span className="text-[10px] font-black uppercase tracking-tighter">{tNav('guard')}</span>
                     </button>
                     <button
-                        onClick={() => setActiveTab('me')}
+                        onClick={() => { setActiveTab('me'); setBottomSheetOpen(false); setCurrentNode(null); }}
                         className={`flex-1 flex flex-col items-center gap-1 py-3 px-2 rounded-2xl transition-all ${activeTab === 'me' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 rotate-1' : 'text-gray-400 hover:text-gray-600'}`}
                     >
                         <User size={20} fill={activeTab === 'me' ? "white" : "none"} />

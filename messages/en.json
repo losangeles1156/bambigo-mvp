@@ -44,32 +44,198 @@
         "facility": "FACILITY (L3)",
         "bambi": "BAMBI (L4)"
     },
+    "tag": {
+        "shopping": "Shopping",
+        "dining": "Dining",
+        "leisure": "Leisure",
+        "culture": "Culture",
+        "service": "Service",
+        "medical": "Medical",
+        "education": "Education",
+        "finance": "Finance",
+        "accommodation": "Stay",
+        "nature": "Nature",
+        "religion": "Religion",
+        "business": "Business",
+        "countSuffix": " spots",
+        "sub": {
+            "convenience": "Convenience Store",
+            "department": "Dept Store",
+            "department_store": "Dept Store",
+            "drugstore": "Drugstore",
+            "market": "Market",
+            "specialty": "Specialty",
+            "variety_store": "Variety Store",
+            "shopping_mall": "Mall",
+            "souvenir": "Souvenir",
+            "restaurant": "Restaurant",
+            "cafe": "Cafe",
+            "izakaya": "Izakaya",
+            "bar": "Bar",
+            "fast_food": "Fast Food",
+            "japanese": "Japanese",
+            "tempura": "Tempura",
+            "unagi": "Eel",
+            "ramen": "Ramen",
+            "sushi": "Sushi",
+            "curry": "Curry",
+            "park": "Park",
+            "museum": "Museum",
+            "shrine": "Shrine",
+            "temple": "Temple",
+            "theater": "Theater",
+            "historic_building": "Historic Site",
+            "landmark": "Landmark",
+            "hospital": "Hospital",
+            "clinic": "Clinic",
+            "pharmacy": "Pharmacy",
+            "school": "School",
+            "university": "University",
+            "library": "Library",
+            "post_office": "Post Office",
+            "bank": "Bank",
+            "atm": "ATM",
+            "locker": "Locker",
+            "office": "Office",
+            "hotel": "Hotel",
+            "hostel": "Hostel",
+            "ryokan": "Ryokan",
+            "garden": "Garden",
+            "river": "River"
+        }
+    },
+    "facility": {
+        "businessHours": "Hours",
+        "closed": "Closed",
+        "open": "Open",
+        "openNow": "Open Now",
+        "closedNow": "Closed Now",
+        "navigateToMap": "Go Here",
+        "viewDetails": "View Details",
+        "distance": "Distance",
+        "walkMin": "{min} min walk"
+    },
+    "l1": {
+        "dnaTitle": "Location DNA",
+        "bambiInsight": "Bambi Insight",
+        "nearbyHighlights": "Highlights (300m)",
+        "menuTitle": "Category Details",
+        "navTo": "Nav",
+        "categories": {
+            "shopping": "Shopping",
+            "dining": "Dining",
+            "culture": "Culture",
+            "nature": "Nature"
+        }
+    },
     "l2": {
-        "density": "Density",
+        "operationTitle": "Train Status",
+        "liveUpdates": "Live Updates",
+        "weatherTitle": "Weather & Safety",
+        "windSpeed": "Wind",
+        "crowdReport": "Crowd Report",
+        "crowdThanks": "Thanks!",
+        "crowdClick": "Tap to Report",
+        "density": "Crowd Density",
         "crowdedLevel": "Crowded",
         "normalLevel": "Normal",
         "comfortLevel": "Comfortable",
         "wait": "Wait Time",
         "min": "min",
-        "service": "Service Status",
+        "service": "Status",
         "allLinesNormal": "All Lines",
-        "runningNormal": "Currently operating normally",
-        "delay": "Delay",
+        "runningNormal": "Normal Operation",
+        "delay": "Delayed",
         "normalOperation": "Normal",
-        "delayOccurred": "Delay occurred",
-        "weatherAlert": "Weather Alert: "
+        "delayOccurred": "Delays Reported",
+        "weatherAlert": "Weather Alert",
+        "status": {
+            "normal": "Normal",
+            "delay": "Delayed",
+            "suspended": "Suspended",
+            "check": "Inspection"
+        },
+        "experience": {
+            "rushHour": "Rush Hour",
+            "crowded": "Crowded",
+            "moderate": "Moderate",
+            "comfortable": "Comfortable",
+            "empty": "Empty"
+        },
+        "crowd": {
+            "empty": "Empty",
+            "comfortable": "Comfy",
+            "normal": "Avg",
+            "crowded": "Busy",
+            "full": "Full"
+        }
     },
     "l3": {
-        "stationToilet": "Station Toilet",
-        "coinLocker": "Coin Locker",
-        "elevator": "Accessible Elevator",
+        "servicesTitle": "Station Services",
+        "facilitiesFound": "{count} Facilities",
+        "noServices": "No service details available",
+        "rent": "Rent",
+        "available": "Available",
+        "categories": {
+            "toilet": "Restroom",
+            "locker": "Lockers",
+            "elevator": "Elevator",
+            "atm": "ATM",
+            "wifi": "WiFi",
+            "charging": "Power",
+            "info": "Info",
+            "nursing": "Nursing",
+            "smoking": "Smoking",
+            "accessibility": "Accessible"
+        },
+        "attributes": {
+            "wheelchair": "Wheelchair",
+            "hasWashlet": "Washlet",
+            "hasBabyRoom": "Baby Room",
+            "sizes": "Sizes",
+            "count": "Count",
+            "ssid": "WiFi SSID",
+            "floor": "Floor",
+            "operator": "Operator"
+        },
+        "stationToilet": "Restroom",
+        "coinLocker": "Lockers",
+        "elevator": "Elevator",
         "wheelchairFriendly": "Wheelchair Accessible",
-        "largeLuggage": "Large Luggage OK"
+        "wheelchair_accessible": "Accessible Path",
+        "largeLuggage": "Large Luggage OK",
+        "has_washlet": "Washlet",
+        "powder_room": "Powder Room",
+        "nursing_room": "Nursing Room",
+        "diaper_changing": "Diaper Station",
+        "ostomate": "Ostomate",
+        "baby_chair": "Baby Chair",
+        "accessible": "Accessible"
     },
     "l4": {
-        "bambiStrategy": "Bambi's Strategy",
+        "strategyTitle": "Bambi Strategy",
+        "subtitle": "AI Suggestions based on live data",
+        "topPick": "Top Pick",
+        "alternatives": "Alternatives",
+        "thinking": "Thinking...",
+        "disclaimer": "Suggestions generated based on current traffic, weather, and facility status.",
+        "bambiStrategy": "Bambi Suggestion",
         "suggestion": "Suggestion",
-        "psychAlert": "Psychological Preparation"
+        "psychAlert": "Heads Up",
+        "synthesisTitle": "Decision Support",
+        "demandCard": "Your Needs",
+        "expertKnowledge": "Expert Logic",
+        "liveData": "Live Data",
+        "actionLabel": "Action",
+        "demands": {
+            "speed": "Speed",
+            "luggage": "Luggage",
+            "budget": "Budget",
+            "comfort": "Comfort",
+            "family": "Family",
+            "accessibility": "Access",
+            "vibe": "Vibe"
+        }
     },
     "weather": {
         "alert": "Weather Alert",
@@ -79,7 +245,7 @@
     },
     "map": {
         "yourLocation": "Your Location",
-        "tooFarMessage": "You are currently far from the empathetic navigation zone. Map has been centered on Ueno Station."
+        "tooFarMessage": "You are far from the navigation zone. Map centered on Ueno Station."
     },
     "facilityProfile": {
         "medical": "Medical",
@@ -93,10 +259,16 @@
         "housing": "Living",
         "religion": "Religion",
         "nature": "Nature",
-        "countSuffix": "spots"
+        "countSuffix": " spots"
     },
     "common": {
         "viewAll": "View All",
-        "distance": "Distance"
+        "distance": "Distance",
+        "loading": "Loading...",
+        "error": "Error occurred",
+        "station": "Station"
+    },
+    "ui": {
+        "items": "Items"
     }
 }
