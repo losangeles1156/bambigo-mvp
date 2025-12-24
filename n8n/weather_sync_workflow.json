@@ -1,0 +1,144 @@
+{
+    "name": "BambiGO Weather Data Sync",
+    "nodes": [
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "hours",
+                            "hoursInterval": 6
+                        }
+                    ]
+                }
+            },
+            "id": "schedule-trigger",
+            "name": "Every 6 Hours",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.2,
+            "position": [
+                180,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "url": "https://api.open-meteo.com/v1/forecast",
+                "options": {
+                    "queryParameters": {
+                        "parameters": [
+                            {
+                                "name": "latitude",
+                                "value": "35.6895"
+                            },
+                            {
+                                "name": "longitude",
+                                "value": "139.6917"
+                            },
+                            {
+                                "name": "current",
+                                "value": "temperature_2m,weather_code,wind_speed_10m"
+                            }
+                        ]
+                    }
+                }
+            },
+            "id": "fetch-weather",
+            "name": "Fetch Open-Meteo",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.2,
+            "position": [
+                420,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Parse weather data and create station updates\nconst weatherData = $input.first().json;\nconst current = weatherData.current;\n\n// Convert weather code to condition\nlet condition = 'Unknown';\nif (current.weather_code <= 3) condition = 'Clear';\nelse if (current.weather_code <= 60) condition = 'Cloudy';\nelse condition = 'Rain';\n\n// Station list (MVP Core Stations)\nconst stations = [\n  'odpt:Station:TokyoMetro.Ueno',\n  'odpt:Station:TokyoMetro.Asakusa',\n  'odpt:Station:JR-East.Akihabara',\n  'odpt:Station:JR-East.Tokyo',\n  'odpt:Station:TokyoMetro.Ginza',\n  'odpt:Station:Toei.Kuramae',\n  'odpt:Station:Toei.ShinOkachimachi',\n  'odpt:Station:Toei.Ningyocho',\n  'odpt:Station:JR-East.Kanda',\n  'odpt:Station:Toei.Nihombashi',\n  'odpt:Station:TokyoMetro.Mitsukoshimae',\n  'odpt:Station:Toei.HigashiGinza',\n  'odpt:Station:TokyoMetro.Tawaramachi',\n  'odpt:Station:TokyoMetro.Iriya',\n  'odpt:Station:JR-East.Uguisudani',\n  'odpt:Station:Toei.Asakusabashi',\n  'odpt:Station:TokyoMetro.Kayabacho',\n  'odpt:Station:TokyoMetro.Kasumigaseki',\n  'odpt:Station:TokyoMetro.Iidabashi',\n  'odpt:Station:TokyoMetro.Ochanomizu',\n  'odpt:Station:TokyoMetro.Minowa',\n  'odpt:Station:TokyoMetro.Kyobashi',\n  'odpt:Station:TokyoMetro.Otemachi',\n  'odpt:Station:JR-East.Okachimachi',\n  'odpt:Station:Toei.HigashiNihombashi'\n];\n\nconst now = new Date().toISOString();\n\n// Create payload for Supabase\nconst updates = stations.map(stationId => ({\n  station_id: stationId,\n  status_code: 'NORMAL',\n  reason_ja: null,\n  weather_info: {\n    temp: current.temperature_2m,\n    condition: condition,\n    wind: current.wind_speed_10m,\n    update_time: now\n  },\n  updated_at: now\n}));\n\nreturn { json: { updates } };"
+            },
+            "id": "transform-data",
+            "name": "Transform Data",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                660,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot",
+                "authentication": "genericCredentialType",
+                "genericAuthType": "httpHeaderAuth",
+                "sendBody": true,
+                "specifyBody": "json",
+                "jsonBody": "={{ $json.updates }}",
+                "options": {
+                    "headers": {
+                        "parameters": [
+                            {
+                                "name": "apikey",
+                                "value": "={{ $env.SUPABASE_SERVICE_KEY }}"
+                            },
+                            {
+                                "name": "Prefer",
+                                "value": "resolution=merge-duplicates"
+                            }
+                        ]
+                    }
+                }
+            },
+            "id": "upsert-supabase",
+            "name": "Upsert to Supabase",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.2,
+            "position": [
+                900,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Every 6 Hours": {
+            "main": [
+                [
+                    {
+                        "node": "Fetch Open-Meteo",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Fetch Open-Meteo": {
+            "main": [
+                [
+                    {
+                        "node": "Transform Data",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Transform Data": {
+            "main": [
+                [
+                    {
+                        "node": "Upsert to Supabase",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "meta": {
+        "templateId": "bambigo-weather-sync"
+    }
+}

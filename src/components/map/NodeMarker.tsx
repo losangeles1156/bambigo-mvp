@@ -32,6 +32,14 @@ const CATEGORY_STYLE: Record<string, { icon: any; color: string; gradient: strin
     default: { icon: '📍', color: 'bg-slate-600', gradient: 'from-gray-500 to-gray-700' }
 };
 
+// Design Configuration Mapping
+const DESIGN_CONFIG: Record<string, { icon: any; fallbackColor: string }> = {
+    park: { icon: TreeDeciduous, fallbackColor: '#F39700' },     // Ueno
+    red_brick: { icon: Landmark, fallbackColor: '#E25822' },     // Tokyo
+    electric: { icon: Zap, fallbackColor: '#FFE600' },           // Akihabara
+    lantern: { icon: Tent, fallbackColor: '#D32F2F' },           // Asakusa
+};
+
 export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
     const { setCurrentNode, setBottomSheetOpen, currentNodeId } = useAppStore();
 
@@ -48,24 +56,25 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
     const isSelected = currentNodeId === node.id;
     const isMajor = node.tier === 'major' || node.is_hub;
 
-    // Style Determination
+    // Custom Design Override
+    const customIconId = node.mapDesign?.icon;
+    const customColor = node.mapDesign?.color;
+
+    // Resolve Icon & Color
+    const designConfig = customIconId ? DESIGN_CONFIG[customIconId] : null;
+    const DisplayIcon = designConfig?.icon || MapPin;
+    // Prefer passed customColor, fallback to config color, then default gradient logic relies on this not being null?
+    // Actually, distinct handling:
+
+    // Gradient Logic
     const profile = node.facility_profile || {};
     const dominant = profile.dominant_category || 'default';
     const defaultStyle = CATEGORY_STYLE[dominant] || CATEGORY_STYLE.default;
 
-    // Custom Design Override (The user request)
-    const customIconId = node.mapDesign?.icon;
-    const customColor = node.mapDesign?.color;
+    const finalColor = customColor || designConfig?.fallbackColor;
 
-    // Icon Selection logic (Lucide Icons for professional look)
-    let DisplayIcon = MapPin; // Default
-    if (customIconId === 'park') DisplayIcon = TreeDeciduous; // Ueno (Park)
-    if (customIconId === 'red_brick') DisplayIcon = Landmark; // Tokyo (Station)
-    if (customIconId === 'electric') DisplayIcon = Zap; // Akihabara
-    if (customIconId === 'lantern') DisplayIcon = Tent; // Asakusa (Proxy)
-
-    const displayGradient = customColor
-        ? `from-[${customColor}] to-[${customColor}]` // Custom solid
+    const displayGradient = finalColor
+        ? `from-[${finalColor}] to-[${finalColor}]` // Custom solid overrides gradient
         : defaultStyle.gradient;
 
     const handleClick = () => {

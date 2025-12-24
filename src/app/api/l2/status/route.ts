@@ -20,7 +20,7 @@ export async function GET(request: Request) {
                 )
             `)
             .eq('station_id', stationId)
-            .gt('updated_at', new Date(Date.now() - 15 * 60 * 1000).toISOString()) // 15 mins expiry
+            .gt('updated_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()) // Relaxed to 24 hours to handle irregular n8n updates
             .order('updated_at', { ascending: false })
             .limit(1)
             .maybeSingle();

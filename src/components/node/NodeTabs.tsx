@@ -13,6 +13,7 @@ import { L1_DNA } from '@/components/node/L1_DNA';
 import { L2_Live } from '@/components/node/L2_Live';
 import { L3_Facilities } from '@/components/node/L3_Facilities';
 import { L4_Bambi } from '@/components/node/L4_Bambi';
+import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 
 // Tab Configuration
 const TABS = [
@@ -181,7 +182,13 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <L3_Facilities data={standardData} />
+                            <ErrorBoundary fallback={
+                                <div className="p-8 text-center text-gray-400 text-xs bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                                    Services temporarily unavailable
+                                </div>
+                            }>
+                                <L3_Facilities data={standardData} />
+                            </ErrorBoundary>
                         </motion.div>
                     )}
 
@@ -193,7 +200,9 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <L4_Bambi data={standardData} />
+                            <ErrorBoundary>
+                                <L4_Bambi data={standardData} />
+                            </ErrorBoundary>
                         </motion.div>
                     )}
 

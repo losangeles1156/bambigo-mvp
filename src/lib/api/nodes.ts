@@ -110,7 +110,7 @@ export interface NodeProfile {
     vibe_tags: string[];
     l2_status?: LiveStatus;
     l3_facilities?: ServiceFacility[];
-    l4_nudges?: ActionNudge[];
+    l4_cards?: any[];
 }
 
 // Fetch nearby nodes
@@ -280,30 +280,144 @@ export async function fetchNodeConfig(nodeId: string) {
         enrichedProfile.l1_categories = staticData || [];
     }
 
-    // [New] Merge Real Facility Data from STATION_WISDOM (L3 Population)
+    // [New] L3 Data Strategy: DB (stations_static) > Wisdom File
     const odptId = NODE_TO_ODPT[nodeId];
-    const wisdom = STATION_WISDOM[wisdomId];
 
-    if (wisdom && wisdom.l3Facilities) {
-        // Map StationFacility to ServiceFacility format
-        const wisdomFacilities = wisdom.l3Facilities.map((f: any, idx: number) => ({
-            id: `${nodeId}-wis-${idx}`,
-            category: f.type,
-            subCategory: 'standard',
-            location: f.location, // Logic: UI uses this for redundancy fallback
-            // [UI Optimization] Split Name and Description to avoid duplication
-            name: { 'zh-TW': f.location, 'en': f.location },
-            direction: { 'zh-TW': `${f.operator || ''} ${f.floor || ''}`, 'en': `${f.operator || ''} ${f.floor || ''}` },
-            attributes: {
-                ...f.attributes,
-                floor: f.floor,
-                operator: f.operator,
-                source: f.source
+    // 1. Try Fetching from DB (stations_static)
+    let dbL3Facilities = null;
+    if (odptId) {
+        const { data: staticDbData } = await supabase
+            .from('stations_static')
+            .select('l3_services')
+            .eq('station_id', odptId) // Try ODPT ID first (Migration used this)
+            .maybeSingle();
+
+        if (staticDbData && Array.isArray(staticDbData.l3_services) && staticDbData.l3_services.length > 0) {
+            dbL3Facilities = staticDbData.l3_services;
+        } else {
+            // Fallback: Try Node ID if ODPT failed (Robustness)
+            const { data: staticDbDataNode } = await supabase
+                .from('stations_static')
+                .select('l3_services')
+                .eq('station_id', nodeId)
+                .maybeSingle();
+
+            if (staticDbDataNode && Array.isArray(staticDbDataNode.l3_services)) {
+                dbL3Facilities = staticDbDataNode.l3_services;
             }
-        }));
+        }
+    }
+
+    // 2. Resolve Wisdom Source (File)
+    // STATION_WISDOM uses internal Node IDs (e.g. 'odpt:Station:TokyoMetro.Ueno')
+    // But wisdomId might be mapped to ODPT ID (e.g. 'odpt.Station:TokyoMetro.Ginza.Ueno')
+    // We check both to be safe.
+    const wisdom = STATION_WISDOM[wisdomId] || STATION_WISDOM[nodeId];
+
+    // 3. Determine Final L3 Data
+    let finalL3 = dbL3Facilities || (wisdom ? wisdom.l3Facilities : []);
+
+    if (finalL3 && finalL3.length > 0) {
+        // Map StationFacility to ServiceFacility format
+        const wisdomFacilities = finalL3.map((f: any, idx: number) => {
+            // [Localization] Handle both string (legacy) and object (multilingual) formats
+            const rawLoc = f.location;
+            const locObj = (typeof rawLoc === 'string')
+                ? { 'zh-TW': rawLoc, 'en': rawLoc, 'ja': rawLoc, 'zh': rawLoc }
+                : { 'zh-TW': rawLoc.zh, 'en': rawLoc.en, 'ja': rawLoc.ja, 'zh': rawLoc.zh }; // Map 'zh' to 'zh-TW' for next-intl or keeps compatible keys
+
+            return {
+                id: `${nodeId}-l3-${idx}`,
+                type: f.type, // Map to correct property for UI Icons
+                category: f.type, // Keep for legacy if needed
+                subCategory: 'standard',
+                location: f.location, // Keep raw for reference if needed, or rely on 'name' below which is used for display
+                // [UI Optimization] Split Name and Description to avoid duplication
+                name: locObj, // Use the localized object for the name/location display
+                direction: { 'zh-TW': `${f.operator || ''} ${f.floor || ''}`, 'en': `${f.operator || ''} ${f.floor || ''}`, 'ja': `${f.operator || ''} ${f.floor || ''}` },
+                attributes: {
+                    ...f.attributes,
+                    floor: f.floor,
+                    operator: f.operator,
+                    source: f.source
+                }
+            };
+        });
 
         enrichedProfile.l3_facilities = wisdomFacilities;
     }
+
+    // --- L4: BAMBI STRATEGY GENERATION (Real Data) ---
+    const l4_cards: any[] = [];
+
+    if (wisdom) {
+        // 1. Map TRAPS to Primary Cards
+        if (wisdom.traps) {
+            wisdom.traps.forEach((trap, idx) => {
+                const cardId = `trap-${idx}`;
+                l4_cards.push({
+                    id: cardId,
+                    type: 'primary',
+                    title: { ja: trap.title, en: trap.title, zh: trap.title }, // Fallback to same string
+                    description: {
+                        ja: `${trap.content}\n\n${trap.advice}`,
+                        en: `${trap.content}\n\n${trap.advice}`,
+                        zh: `${trap.content}\n\n${trap.advice}`
+                    },
+                    actionLabel: { ja: '確認', en: 'Got it', zh: '了解' },
+                    actionUrl: null,
+                    icon: 'alert-triangle'
+                });
+            });
+        }
+
+        // 2. Map HACKS to Secondary Cards
+        if (wisdom.hacks) {
+            wisdom.hacks.forEach((hack, idx) => {
+                // Extract emoji if present
+                const emojiMatch = hack.match(/^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
+                const icon = emojiMatch ? emojiMatch[0] : 'lightbulb';
+
+                // Clean content (remove bold markdown for plain text preview if needed, but UI might support md)
+                // For now keep as is.
+
+                l4_cards.push({
+                    id: `hack-${idx}`,
+                    type: 'secondary',
+                    title: { ja: 'Tips', en: 'Tips', zh: '小撇步' },
+                    description: { ja: hack, en: hack, zh: hack },
+                    actionLabel: { ja: '詳細', en: 'More', zh: '查看' },
+                    actionUrl: null,
+                    icon: 'star'
+                });
+            });
+        }
+    }
+
+    // 3. Fallback: Accessibility Card if no specific wisdom but facility exists
+    if (l4_cards.length === 0) {
+        // Check if we have elevator info in L3 (which we just populated or merged)
+        const hasElevator = enrichedProfile.l3_facilities?.some((f: any) => f.category === 'elevator' || f.category === 'accessibility');
+
+        if (hasElevator) {
+            l4_cards.push({
+                id: 'fallback-access',
+                type: 'secondary',
+                title: { ja: 'バリアフリー情報', en: 'Accessibility', zh: '無障礙情報' },
+                description: {
+                    ja: 'この駅はエレベーターが設置されています。詳細は施設タブを確認してください。',
+                    en: 'Elevator available. Check Facility tab for details.',
+                    zh: '此車站設有電梯。詳情請查看設施頁籤。'
+                },
+                actionLabel: { ja: '確認', en: 'Check', zh: '確認' },
+                actionUrl: null,
+                icon: 'accessibility'
+            });
+        }
+    }
+
+    // Inject L4 Cards
+    enrichedProfile.l4_cards = l4_cards;
 
     // --- REAL-TIME STATUS INJECTION (Database First) ---
     // Try to get L2 data from our internal API (which queries transit_dynamic_snapshot)

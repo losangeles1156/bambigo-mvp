@@ -135,14 +135,27 @@ export function L2_Live({ data }: L2_LiveProps) {
                                 <span className="text-[10px] font-medium opacity-80">TOKYO</span>
                                 {weather.condition === 'Rain' ? <Cloud size={16} /> : <Sun size={16} />}
                             </div>
-                            <div className="mt-2 mb-1">
-                                <span className="text-3xl font-black">{weather.temp}°</span>
-                                <span className="text-sm font-medium opacity-80 pl-1">{weather.condition}</span>
-                            </div>
-                            {/* Wind Speed Addition */}
-                            <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-white/20">
-                                <Wind size={12} className="opacity-80" />
-                                <span className="text-xs font-bold opacity-90">{weather.windSpeed} m/s</span>
+                            {/* Check for valid weather data (temp > 0 indicates real data) */}
+                            {weather.temp > 0 ? (
+                                <>
+                                    <div className="mt-2 mb-1">
+                                        <span className="text-3xl font-black">{weather.temp}°</span>
+                                        <span className="text-sm font-medium opacity-80 pl-1">{weather.condition}</span>
+                                    </div>
+                                    {/* Wind Speed */}
+                                    <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-white/20">
+                                        <Wind size={12} className="opacity-80" />
+                                        <span className="text-xs font-bold opacity-90">{weather.windSpeed} m/s</span>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="mt-3 mb-2">
+                                    <span className="text-xs font-medium opacity-80">{tL2('dataLoading')}</span>
+                                </div>
+                            )}
+                            {/* Data Source Attribution */}
+                            <div className="mt-2 pt-2 border-t border-white/20">
+                                <span className="text-[8px] font-bold opacity-60 uppercase">{tL2('dataSource')}: {tL2('jmaSource')}</span>
                             </div>
                         </div>
                     </div>

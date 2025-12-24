@@ -9,7 +9,7 @@ export interface StationTrap {
 // L3 設施資料結構 - 供 AI Agent 參照
 export interface StationFacility {
     type: 'toilet' | 'locker' | 'elevator' | 'wifi' | 'charging' | 'nursing';
-    location: string;      // 精確位置描述
+    location: string | { ja: string; en: string; zh: string };      // 精確位置描述 (Multilingual)
     floor: string;         // 'JR 3F' | 'Metro B1' | 'Metro B2' | 'JR 1F'
     operator: 'JR' | 'Metro' | 'Toei' | 'Private';
     attributes?: {
@@ -65,16 +65,88 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座四丁目交差點方面驗票口附近', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ginza/accessibility/' },
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: 'C8 出口附近改札外 (新設)', attributes: { wheelchair: true, hasWashlet: true } },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座四丁目交差點方面驗票口附近',
+                    en: 'Near Ginza 4-chome Intersection Ticket Gate',
+                    ja: '銀座四丁目交差点方面改札付近'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ginza/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: 'C8 出口附近改札外 (新設)',
+                    en: 'Outside Gate near Exit C8 (New)',
+                    ja: 'C8出口付近改札外（新設）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '有樂町方面驗票口外 右側通路', attributes: { count: 30, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/ginza-station.php' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'C5/C6 出口之間通路', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '有樂町方面驗票口外 右側通路',
+                    en: 'Right Passage Outside Yurakucho Gate',
+                    ja: '有楽町方面改札外 右側通路'
+                },
+                attributes: { count: 30, sizes: ['S', 'M', 'L'] },
+                source: 'https://coinlocker.click/ginza-station.php'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: 'C5/C6 出口之間通路',
+                    en: 'Passage between Exit C5/C6',
+                    ja: 'C5/C6出口間通路'
+                },
+                attributes: { count: 50, sizes: ['S', 'M', 'L'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A7 出口 (銀座三越)', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '銀座線/丸之內線月台 → 穿堂層', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: 'A7 出口 (銀座三越)',
+                    en: 'Exit A7 (Ginza Mitsukoshi)',
+                    ja: 'A7出口（銀座三越）'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線/丸之內線月台 → 穿堂層',
+                    en: 'Ginza/Marunouchi Line Platform → Concourse',
+                    ja: '銀座線/丸ノ内線ホーム → コンコース'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro GF', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gates',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:Toei.Nihombashi': {
@@ -93,16 +165,89 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '吳服橋方面驗票口內 (東西線側)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/nihombashi/accessibility/' },
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '茅場町方面驗票口附近', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/nihombashi.html' },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '吳服橋方面驗票口內 (東西線側)',
+                    en: 'Inside Gofukubashi Gate (Tozai Line Side)',
+                    ja: '呉服橋方面改札内（東西線側）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/nihombashi/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '茅場町方面驗票口附近',
+                    en: 'Near Kayabacho Direction Gate',
+                    ja: '茅場町方面改札付近'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/nihombashi.html'
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'B0 出口向處 (高島屋方面)', attributes: { count: 40, sizes: ['S', 'M', 'L'] }, source: 'https://coin-locker.net/nihonbashi/' },
-            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外 茅場町方面出口通路', attributes: { count: 20, sizes: ['S', 'M'] } },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: 'B0 出口向處 (高島屋方面)',
+                    en: 'Near Exit B0 (Takashimaya Direction)',
+                    ja: 'B0出口方向（高島屋方面）'
+                },
+                attributes: { count: 40, sizes: ['S', 'M', 'L'] },
+                source: 'https://coin-locker.net/nihonbashi/'
+            },
+            {
+                type: 'locker',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札外 茅場町方面出口通路',
+                    en: 'Outside Gate, Kayabacho Exit Passage',
+                    ja: '改札外 茅場町方面出口通路'
+                },
+                attributes: { count: 20, sizes: ['S', 'M'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'B0 出口電梯', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Toei GF', operator: 'Toei', location: 'D1 出口電梯', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: 'B0 出口電梯',
+                    en: 'Exit B0 Elevator',
+                    ja: 'B0出口エレベーター'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei GF',
+                operator: 'Toei',
+                location: {
+                    zh: 'D1 出口電梯',
+                    en: 'Exit D1 Elevator',
+                    ja: 'D1出口エレベーター'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro/Toei',
+                operator: 'Metro',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Kayabacho': {
@@ -112,14 +257,66 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '中央驗票口內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/kayabacho/accessibility/' },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '中央驗票口內',
+                    en: 'Inside Central Gate',
+                    ja: '中央改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/kayabacho/accessibility/'
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '東西線西改札外 (10 號出口附近)', attributes: { count: 25, sizes: ['S', 'M'] }, source: 'https://coin-locker.net/kayabacho/' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '中央驗票口外 (5, 6 號出口通路)', attributes: { count: 30, sizes: ['S', 'M', 'L'] } },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '東西線西改札外 (10 號出口附近)',
+                    en: 'Outside Tozai Line West Gate (near Exit 10)',
+                    ja: '東西線西改札外（10番出口付近）'
+                },
+                attributes: { count: 25, sizes: ['S', 'M'] },
+                source: 'https://coin-locker.net/kayabacho/'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '中央驗票口外 (5, 6 號出口通路)',
+                    en: 'Outside Central Gate (Exit 5, 6 Passage)',
+                    ja: '中央改札外（5・6番出口通路）'
+                },
+                attributes: { count: 30, sizes: ['S', 'M', 'L'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '4a 出口旁電梯', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: '4a 出口旁電梯',
+                    en: 'Elevator near Exit 4a',
+                    ja: '4a出口横エレベーター'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gates',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     // Ueno Station (Target for verification)
@@ -142,25 +339,114 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         // L3 設施資料 - 基於 Tokyo Metro 及 JR East 官方資料
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 往JR方向驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '日比谷線 電梯專用出口驗票口外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
-            { type: 'toilet', floor: 'JR 3F', operator: 'JR', location: '大連絡橋通道', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
-            { type: 'toilet', floor: 'JR 3F', operator: 'JR', location: 'ecute Ueno 內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true, note: '含育嬰室' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 往JR方向驗票口內',
+                    en: 'Inside Ginza Line Ticket Gate (towards JR)',
+                    ja: '銀座線 JR方面改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線 電梯專用出口驗票口外',
+                    en: 'Outside Hibiya Line Elevator Exit Ticket Gate',
+                    ja: '日比谷線 エレベーター専用改札外'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'JR 3F',
+                operator: 'JR',
+                location: {
+                    zh: '大連絡橋通道',
+                    en: 'Grand Concourse Walkway',
+                    ja: '大連絡橋通路'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.jreast.co.jp/estation/stations/204.html'
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '中央口改札外', attributes: { count: 300, sizes: ['S', 'M', 'L', 'XL'], note: '最大量置物櫃區' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '不忍口改札外', attributes: { count: 80, sizes: ['S', 'M', 'L'] } },
-            { type: 'locker', floor: 'JR 3F', operator: 'JR', location: '公園口改札內', attributes: { count: 100, sizes: ['S', 'M', 'L'] }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
-            { type: 'locker', floor: 'JR 3F', operator: 'JR', location: '入谷口改札內', attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'], note: 'ecute 方向通道' }, source: 'https://www.jreast.co.jp/estation/stations/204.html' },
+            {
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '中央口改札外',
+                    en: 'Outside Central Gate',
+                    ja: '中央改札外'
+                },
+                attributes: { count: 300, sizes: ['S', 'M', 'L', 'XL'], note: '最大量置物櫃區' },
+                source: 'https://www.jreast.co.jp/estation/stations/204.html'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '不忍口改札外',
+                    en: 'Outside Shinobazu Gate',
+                    ja: '不忍改札外'
+                },
+                attributes: { count: 80, sizes: ['S', 'M', 'L'] }
+            },
             // === 電梯 (Elevators) - 無障礙設施 ===
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '銀座線月台 → JR方向驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '公園驗票口 → 5a出口', attributes: { wheelchair: true, note: '通往上野公園' }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
-            { type: 'elevator', floor: 'Metro B2', operator: 'Metro', location: '日比谷線1號月台 → 驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
-            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '正面廣場 → Metro驗票口層', attributes: { wheelchair: true, hours: '7:30-22:00', note: '僅限營業時間' }, source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/' },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線月台 → JR方向驗票口',
+                    en: 'Ginza Line Platform → JR Ticket Gate',
+                    ja: '銀座線ホーム → JR方面改札'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '公園驗票口 → 5a出口',
+                    en: 'Park Gate → Exit 5a',
+                    ja: '公園改札 → 5a出口'
+                },
+                attributes: { wheelchair: true, note: '通往上野公園' },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro 全層', operator: 'Metro', location: '改札內全區', attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' } },
-            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' } },
-            // === 充電 (Charging) ===
-            { type: 'charging', floor: 'JR 3F', operator: 'JR', location: 'ecute Ueno 咖啡廳', attributes: { note: 'Type-A, Type-C 插座' } }
+            {
+                type: 'wifi',
+                floor: 'Metro 全層',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內全區',
+                    en: 'Inside Ticket Gates',
+                    ja: '改札内エリア'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' }
+            },
+            {
+                type: 'wifi',
+                floor: 'JR 全層',
+                operator: 'JR',
+                location: {
+                    zh: '改札內外全站',
+                    en: 'Inside/Outside Ticket Gates',
+                    ja: '改札内外全域'
+                },
+                attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' }
+            }
         ],
         // 無障礙步行路線 - 基於 MLIT 歩行空間ネットワークデータ (台東区上野駅周辺)
         accessibilityRoutes: [
@@ -257,23 +543,173 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線 大手町方向驗票口外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
-            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '丸之內南口改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
-            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '八重洲北口改札外', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '丸之內線 大手町方向驗票口外',
+                    en: 'Outside Marunouchi Line Otemachi Gate',
+                    ja: '丸ノ内線 大手町方面改札外'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '丸之內南口改札內',
+                    en: 'Inside Marunouchi South Gate',
+                    ja: '丸の内南口改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '八重洲北口改札外',
+                    en: 'Outside Yaesu North Gate',
+                    ja: '八重洲北口改札外'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'JR B1', operator: 'JR', location: '丸之內地下改札外', attributes: { count: 500, sizes: ['S', 'M', 'L', 'XL'], note: '最大置物櫃區' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
-            { type: 'locker', floor: 'JR B1', operator: 'JR', location: '八重洲地下街', attributes: { count: 800, sizes: ['S', 'M', 'L', 'XL', 'XXL'], note: '超大型行李可' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札外', attributes: { count: 100, sizes: ['S', 'M', 'L'] } },
+            {
+                type: 'locker',
+                floor: 'JR B1',
+                operator: 'JR',
+                location: {
+                    zh: '丸之內地下改札外',
+                    en: 'Outside Marunouchi Underground Gate',
+                    ja: '丸の内地下改札外'
+                },
+                attributes: { count: 500, sizes: ['S', 'M', 'L', 'XL'], note: '最大置物櫃區' },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
+            {
+                type: 'locker',
+                floor: 'JR B1',
+                operator: 'JR',
+                location: {
+                    zh: '八重洲地下街',
+                    en: 'Yaesu Underground Mall',
+                    ja: '八重洲地下街'
+                },
+                attributes: { count: 800, sizes: ['S', 'M', 'L', 'XL', 'XXL'], note: '超大型行李可' },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '丸之內線改札外',
+                    en: 'Outside Marunouchi Line Gate',
+                    ja: '丸ノ内線改札外'
+                },
+                attributes: { count: 100, sizes: ['S', 'M', 'L'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '丸之內線月台 → 驗票口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '驗票口 → OAZO (1號出口)', attributes: { wheelchair: true, hours: '5:10-末班車' }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '驗票口 → 丸大樓方向專用出口', attributes: { wheelchair: true, hours: '首班車-24:00' }, source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/' },
-            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '丸之內北口 → B1', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
-            { type: 'elevator', floor: 'JR B1-B5', operator: 'JR', location: '八重洲南口 → 京葉線月台', attributes: { wheelchair: true, note: '直達京葉線 (迪士尼方向)' }, source: 'https://www.jreast.co.jp/estation/stations/1039.html' },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '丸之內線月台 → 驗票口',
+                    en: 'Marunouchi Line Platform → Gate',
+                    ja: '丸ノ内線ホーム → 改札'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '驗票口 → OAZO (1號出口)',
+                    en: 'Gate → OAZO (Exit 1)',
+                    ja: '改札 → OAZO（1番出口）'
+                },
+                attributes: { wheelchair: true, hours: '5:10-末班車' },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '驗票口 → 丸大樓方向專用出口',
+                    en: 'Gate → Marunouchi Building Exit',
+                    ja: '改札 → 丸ビル方面専用出口'
+                },
+                attributes: { wheelchair: true, hours: '首班車-24:00' },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/tokyo/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '丸之內北口 → B1',
+                    en: 'Marunouchi North Gate → B1',
+                    ja: '丸の内北口 → B1'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
+            {
+                type: 'elevator',
+                floor: 'JR B1-B5',
+                operator: 'JR',
+                location: {
+                    zh: '八重洲南口 → 京葉線月台',
+                    en: 'Yaesu South Gate → Keiyo Line Platform',
+                    ja: '八重洲南口 → 京葉線ホーム'
+                },
+                attributes: { wheelchair: true, note: '直達京葉線 (迪士尼方向)' },
+                source: 'https://www.jreast.co.jp/estation/stations/1039.html'
+            },
             // === WiFi & 充電 ===
-            { type: 'wifi', floor: 'JR 全層', operator: 'JR', location: '改札內外全站', attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '丸之內線改札內', attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' } },
-            { type: 'charging', floor: 'JR 1F', operator: 'Private', location: 'KITTE 1F', attributes: { note: 'Type-A, Type-C, USB 免費' } }
+            {
+                type: 'wifi',
+                floor: 'JR 全層',
+                operator: 'JR',
+                location: {
+                    zh: '改札內外全站',
+                    en: 'Entire Station (Inside/Outside Gates)',
+                    ja: '改札内外全駅'
+                },
+                attributes: { ssid: 'JR-EAST_FREE_WiFi', note: '需登錄' }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '丸之內線改札內',
+                    en: 'Inside Marunouchi Line Gate',
+                    ja: '丸ノ内線改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' }
+            },
+            {
+                type: 'charging',
+                floor: 'JR 1F',
+                operator: 'Private',
+                location: {
+                    zh: 'KITTE 1F',
+                    en: 'KITTE 1F',
+                    ja: 'KITTE 1F'
+                },
+                attributes: { note: 'Type-A, Type-C, USB 免費' }
+            }
         ]
     },
 
@@ -293,12 +729,74 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '✈️ **直通成田**：此站直通京成線往成田機場，是個非常方便的轉運點。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'B1', operator: 'Toei', location: '改札內 (晴空塔方向)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html' },
-            { type: 'toilet', floor: 'B1', operator: 'Toei', location: '東京晴空塔城連通道', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
-            { type: 'locker', floor: 'B1', operator: 'Private', location: '東京晴空塔城入口', attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL'], note: '觀光客專用' } },
-            { type: 'elevator', floor: 'B1', operator: 'Toei', location: '改札 → 晴空塔城直結出口', attributes: { wheelchair: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html' },
-            { type: 'elevator', floor: 'B2', operator: 'Metro', location: '半藏門線月台 → 改札', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'B1', operator: 'Toei', location: '改札內全區', attributes: { ssid: 'Toei_Free_Wi-Fi', note: '限時30分' } }
+            {
+                type: 'toilet',
+                floor: 'B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內 (晴空塔方向)',
+                    en: 'Inside Gate (Skytree Direction)',
+                    ja: '改札内（スカイツリー方面）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html'
+            },
+            {
+                type: 'toilet',
+                floor: 'B1',
+                operator: 'Toei',
+                location: {
+                    zh: '東京晴空塔城連通道',
+                    en: 'Tokyo Skytree Town Passage',
+                    ja: '東京スカイツリータウン連絡通路'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }
+            },
+            {
+                type: 'locker',
+                floor: 'B1',
+                operator: 'Private',
+                location: {
+                    zh: '東京晴空塔城入口',
+                    en: 'Tokyo Skytree Town Entrance',
+                    ja: '東京スカイツリータウン入口'
+                },
+                attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL'], note: '觀光客專用' }
+            },
+            {
+                type: 'elevator',
+                floor: 'B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札 → 晴空塔城直結出口',
+                    en: 'Gate → Skytree Town Direct Exit',
+                    ja: '改札 → スカイツリータウン直結出口'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/oshiage.html'
+            },
+            {
+                type: 'elevator',
+                floor: 'B2',
+                operator: 'Metro',
+                location: {
+                    zh: '半藏門線月台 → 改札',
+                    en: 'Hanzomon Line Platform → Gate',
+                    ja: '半蔵門線ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內全區',
+                    en: 'Inside Gate Area',
+                    ja: '改札内全域'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi', note: '限時30分' }
+            }
         ]
     },
     'odpt:Station:Toei.Asakusa.Asakusa': {
@@ -320,17 +818,100 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 1號線月台終端', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/' },
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '都營淺草線 改札內', attributes: { wheelchair: true, hasWashlet: true } },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 1號線月台終端',
+                    en: 'Ginza Line Platform 1 End',
+                    ja: '銀座線 1番線ホーム終端'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '都營淺草線 改札內',
+                    en: 'Inside Toei Asakusa Line Gate',
+                    ja: '都営浅草線 改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'B1', operator: 'Metro', location: '銀座線改札外 (雷門方向)', attributes: { count: 80, sizes: ['S', 'M', 'L'] } },
-            { type: 'locker', floor: '1F', operator: 'Private', location: '淺草文化觀光中心前', attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'], note: '大型行李推薦' } },
+            {
+                type: 'locker',
+                floor: 'B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線改札外 (雷門方向)',
+                    en: 'Outside Ginza Line Gate (Kaminarimon Direction)',
+                    ja: '銀座線改札外（雷門方面）'
+                },
+                attributes: { count: 80, sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'locker',
+                floor: '1F',
+                operator: 'Private',
+                location: {
+                    zh: '淺草文化觀光中心前',
+                    en: 'In front of Asakusa Culture Tourist Info Center',
+                    ja: '浅草文化観光センター前'
+                },
+                attributes: { count: 150, sizes: ['S', 'M', 'L', 'XL'], note: '大型行李推薦' }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '淺草寺・雷門方向驗票口 → 1號出口', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/' },
-            { type: 'elevator', floor: 'Toei B2', operator: 'Toei', location: '都營淺草線 → A2b出口 (駒形橋方向)', attributes: { wheelchair: true, note: '唯一直達電梯' }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusa.html' },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '淺草寺・雷門方向驗票口 → 1號出口',
+                    en: 'Sensoji/Kaminarimon Gate → Exit 1',
+                    ja: '浅草寺・雷門方面改札 → 1番出口'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/asakusa/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B2',
+                operator: 'Toei',
+                location: {
+                    zh: '都營淺草線 → A2b出口 (駒形橋方向)',
+                    en: 'Toei Asakusa Line → Exit A2b (Komagata Bridge)',
+                    ja: '都営浅草線 → A2b出口（駒形橋方面）'
+                },
+                attributes: { wheelchair: true, note: '唯一直達電梯' },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/asakusa.html'
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '銀座線改札內', attributes: { ssid: 'ASAKUSA_FREE_WiFi', note: '淺草觀光WiFi' } },
-            { type: 'wifi', floor: 'Toei B2', operator: 'Toei', location: '都營淺草線改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線改札內',
+                    en: 'Inside Ginza Line Gate',
+                    ja: '銀座線改札内'
+                },
+                attributes: { ssid: 'ASAKUSA_FREE_WiFi', note: '淺草觀光WiFi' }
+            },
+            {
+                type: 'wifi',
+                floor: 'Toei B2',
+                operator: 'Toei',
+                location: {
+                    zh: '都營淺草線改札內',
+                    en: 'Inside Toei Asakusa Line Gate',
+                    ja: '都営浅草線改札内'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi' }
+            }
         ]
     },
     'odpt:Station:Toei.Asakusa.Kuramae': {
@@ -351,9 +932,40 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kuramae.html' },
-            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A2出口', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/kuramae.html'
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: 'A2出口',
+                    en: 'Exit A2',
+                    ja: 'A2出口'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi' }
+            }
         ]
     },
     'odpt:Station:Toei.Asakusa.Asakusabashi': {
@@ -371,10 +983,50 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🎎 **人形老舖**：此地也是著名的「久月」等人形娃娃專賣區。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true } },
-            { type: 'locker', floor: 'B1', operator: 'Private', location: 'A3出口附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A3出口', attributes: { wheelchair: true, note: '唯一電梯' } },
-            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'locker',
+                floor: 'B1',
+                operator: 'Private',
+                location: {
+                    zh: 'A3出口附近',
+                    en: 'Near Exit A3',
+                    ja: 'A3出口付近'
+                },
+                attributes: { count: 50, sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: 'A3出口',
+                    en: 'Exit A3',
+                    ja: 'A3出口'
+                },
+                attributes: { wheelchair: true, note: '唯一電梯' }
+            },
+            {
+                type: 'wifi',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Tawaramachi': {
@@ -391,9 +1043,40 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🍞 **知名麵包店**：著名的「Pelican」麵包店就在附近，需預約才買得到！'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tawaramachi/accessibility/' },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '2號出口', attributes: { wheelchair: true, note: '合羽橋方向推薦' } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/tawaramachi/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '2號出口',
+                    en: 'Exit 2',
+                    ja: '2番出口'
+                },
+                attributes: { wheelchair: true, note: '合羽橋方向推薦' }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:JR-East.Uguisudani': {
@@ -407,9 +1090,39 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'JR', operator: 'JR', location: '月台 → 改札', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'JR',
+                operator: 'JR',
+                location: {
+                    zh: '月台 → 改札',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'JR-EAST_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Yushima': {
@@ -426,12 +1139,73 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🎓 **合格祈願**：步行 2 分鐘即達湯島天滿宮，考生必看。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '天神下交差點方向驗票口外 (近1號出口)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/yushima/accessibility/' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '天神下交差點方向驗票口外 (售票機旁)', attributes: { sizes: ['S', 'M', 'L'] } },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '驗票口內 (近月台電梯)', attributes: { sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '3號出口', attributes: { wheelchair: true, note: '地面直達' } },
-            { type: 'elevator', floor: 'Metro B2', operator: 'Metro', location: '月台 → 驗票口', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '天神下交差點方向驗票口外 (近1號出口)',
+                    en: 'Outside Tenjinshita Intersection Gate (near Exit 1)',
+                    ja: '天神下交差点方面改札外（1番出口付近）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/yushima/accessibility/'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '天神下交差點方向驗票口外 (售票機旁)',
+                    en: 'Outside Tenjinshita Gate (near ticket machines)',
+                    ja: '天神下交差点方面改札外（券売機横）'
+                },
+                attributes: { sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '驗票口內 (近月台電梯)',
+                    en: 'Inside Gate (near platform elevator)',
+                    ja: '改札内（ホームエレベーター付近）'
+                },
+                attributes: { sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '3號出口',
+                    en: 'Exit 3',
+                    ja: '3番出口'
+                },
+                attributes: { wheelchair: true, note: '地面直達' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B2',
+                operator: 'Metro',
+                location: {
+                    zh: '月台 → 驗票口',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Minowa': {
@@ -445,12 +1219,73 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '三之輪交差點方向驗票口內', attributes: { wheelchair: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/minowa/accessibility/' },
-            { type: 'toilet', floor: 'GF', operator: 'Metro', location: '地面 Exit 3 附近 (入谷改札側)', attributes: { wheelchair: true, hasWashlet: true } },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '三之輪交差點方向驗票口外 (近1b出口)', attributes: { sizes: ['S', 'M'] } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '1b出口', attributes: { wheelchair: true, note: '地面直達' } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '月台 → 驗票口', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '三之輪交差點方向驗票口內',
+                    en: 'Inside Minowa Intersection Gate',
+                    ja: '三ノ輪交差点方面改札内'
+                },
+                attributes: { wheelchair: true, hasBabyRoom: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/minowa/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'GF',
+                operator: 'Metro',
+                location: {
+                    zh: '地面 Exit 3 附近 (入谷改札側)',
+                    en: 'Near Ground Exit 3 (Iriya Gate Side)',
+                    ja: '地上3番出口付近（入谷改札側）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '三之輪交差點方向驗票口外 (近1b出口)',
+                    en: 'Outside Minowa Gate (near Exit 1b)',
+                    ja: '三ノ輪交差点方面改札外（1b出口付近）'
+                },
+                attributes: { sizes: ['S', 'M'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '1b出口',
+                    en: 'Exit 1b',
+                    ja: '1b出口'
+                },
+                attributes: { wheelchair: true, note: '地面直達' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '月台 → 驗票口',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Inaricho': {
@@ -467,11 +1302,62 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🍜 **美食巷弄**：附近有許多平價且高品質的拉麵與沾麵店，是避開上野人潮的好選擇。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '1號月台 (往澀谷) 中央區', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/inaricho/accessibility/' },
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '2號月台 (往淺草) 驗票口附近', attributes: { wheelchair: true, hasWashlet: true } },
-            { type: 'elevator', floor: 'GF', operator: 'Metro', location: '1號出口', attributes: { wheelchair: true, note: '1號月台直達' } },
-            { type: 'elevator', floor: 'GF', operator: 'Metro', location: '電梯專用出口', attributes: { wheelchair: true, note: '2號月台直達' } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '全站', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '1號月台 (往澀谷) 中央區',
+                    en: 'Platform 1 (to Shibuya) Central Area',
+                    ja: '1番線ホーム（渋谷方面）中央'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/inaricho/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '2號月台 (往淺草) 驗票口附近',
+                    en: 'Platform 2 (to Asakusa) Near Gate',
+                    ja: '2番線ホーム（浅草方面）改札付近'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'GF',
+                operator: 'Metro',
+                location: {
+                    zh: '1號出口',
+                    en: 'Exit 1',
+                    ja: '1番出口'
+                },
+                attributes: { wheelchair: true, note: '1號月台直達' }
+            },
+            {
+                type: 'elevator',
+                floor: 'GF',
+                operator: 'Metro',
+                location: {
+                    zh: '電梯專用出口',
+                    en: 'Elevator-Only Exit',
+                    ja: 'エレベーター専用出口'
+                },
+                attributes: { wheelchair: true, note: '2號月台直達' }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:Toei.ShinOkachimachi': {
@@ -488,11 +1374,62 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🛍️ **佐竹商店街**：日本第二古老的商店街，氛圍非常復古且有許多平價美食。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/shin-okachimachi.html' },
-            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外穿堂中央', attributes: { sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A1, A3, A4出口', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Toei B3', operator: 'Toei', location: '月台 → 改札', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/shin-okachimachi.html'
+            },
+            {
+                type: 'locker',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札外穿堂中央',
+                    en: 'Central Concourse Outside Gate',
+                    ja: '改札外コンコース中央'
+                },
+                attributes: { sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: 'A1, A3, A4出口',
+                    en: 'Exits A1, A3, A4',
+                    ja: 'A1・A3・A4出口'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B3',
+                operator: 'Toei',
+                location: {
+                    zh: '月台 → 改札',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi' }
+            }
         ]
     },
     'odpt:Station:Toei.UenoOkachimachi': {
@@ -509,11 +1446,62 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🌧️ **雨天捷徑**：利用這條超長地下走廊，可以從上野站一路走到御徒町站而不淋雨。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Toei B1', operator: 'Toei', location: '改札內 (大江戶線側)', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ueno-okachimachi.html' },
-            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '改札外 A6/A7出口附近及往銀座線連通道', attributes: { sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Toei B1', operator: 'Toei', location: 'A6出口', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Toei B2', operator: 'Toei', location: '月台 → 改札', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Toei B1', operator: 'Toei', location: '全站', attributes: { ssid: 'Toei_Free_Wi-Fi' } }
+            {
+                type: 'toilet',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札內 (大江戶線側)',
+                    en: 'Inside Gate (Oedo Line Side)',
+                    ja: '改札内（大江戸線側）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/ueno-okachimachi.html'
+            },
+            {
+                type: 'locker',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '改札外 A6/A7出口附近及往銀座線連通道',
+                    en: 'Outside Gate near A6/A7 Exits & Ginza Line Passage',
+                    ja: '改札外 A6・A7出口付近・銀座線連絡通路'
+                },
+                attributes: { sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: 'A6出口',
+                    en: 'Exit A6',
+                    ja: 'A6出口'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Toei B2',
+                operator: 'Toei',
+                location: {
+                    zh: '月台 → 改札',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '全站',
+                    en: 'Entire Station',
+                    ja: '全駅'
+                },
+                attributes: { ssid: 'Toei_Free_Wi-Fi' }
+            }
         ]
     },
     'odpt:Station:JR-East.Okachimachi': {
@@ -523,10 +1511,50 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '💎 **珠寶批發**：車站周邊是日本最大的珠寶飾品批發區。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { wheelchair: true } },
-            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '北口改札外', attributes: { count: 100, sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'JR', operator: 'JR', location: '月台 → 改札', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'JR 1F', operator: 'JR', location: '改札內', attributes: { ssid: 'JR-EAST_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '北口改札外',
+                    en: 'Outside North Gate',
+                    ja: '北口改札外'
+                },
+                attributes: { count: 100, sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'elevator',
+                floor: 'JR',
+                operator: 'JR',
+                location: {
+                    zh: '月台 → 改札',
+                    en: 'Platform → Gate',
+                    ja: 'ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'JR-EAST_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Iriya': {
@@ -536,9 +1564,40 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🍲 **老舖天丼**：附近有許多百年老店，價格比淺草親民許多。'
         ],
         l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/iriya/accessibility/' },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '1號出口', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/iriya/accessibility/'
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '1號出口',
+                    en: 'Exit 1',
+                    ja: '1番出口'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Kasumigaseki': {
@@ -556,16 +1615,88 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '日比谷線 虎之門方向驗票口內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/kasumigaseki/accessibility/' },
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '丸之內線 驗票口內', attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true } },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線 虎之門方向驗票口內',
+                    en: 'Inside Hibiya Line Toranomon Gate',
+                    ja: '日比谷線 虎ノ門方面改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/kasumigaseki/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '丸之內線 驗票口內',
+                    en: 'Inside Marunouchi Line Gate',
+                    ja: '丸ノ内線 改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true }
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '內幸町方面改札外 (出口C1-C4方向)', attributes: { count: 40, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/kasumigaseki-station.php' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '虎ノ門方面改札外', attributes: { count: 20, sizes: ['S', 'M', 'L'] } },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '內幸町方面改札外 (出口C1-C4方向)',
+                    en: 'Outside Uchisaiwaicho Gate (Exits C1-C4)',
+                    ja: '内幸町方面改札外（C1-C4出口方面）'
+                },
+                attributes: { count: 40, sizes: ['S', 'M', 'L'] },
+                source: 'https://coinlocker.click/kasumigaseki-station.php'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '虎ノ門方面改札外',
+                    en: 'Outside Toranomon Gate',
+                    ja: '虎ノ門方面改札外'
+                },
+                attributes: { count: 20, sizes: ['S', 'M', 'L'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A2a出口', attributes: { wheelchair: true, note: '近法務省' } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: '日比谷線月台 → 驗票口', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: 'A2a出口',
+                    en: 'Exit A2a',
+                    ja: 'A2a出口'
+                },
+                attributes: { wheelchair: true, note: '近法務省' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線月台 → 驗票口',
+                    en: 'Hibiya Line Platform → Gate',
+                    ja: '日比谷線ホーム → 改札'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Iidabashi': {
@@ -584,17 +1715,101 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '有樂町線・南北線 驗票口內 (近中央改札)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/iidabashi/accessibility/' },
-            { type: 'toilet', floor: 'JR 1F', operator: 'JR', location: '西口改札內', attributes: { wheelchair: true }, source: 'https://www.jreast.co.jp/estation/stations/113.html' },
-            { type: 'toilet', floor: 'Toei B3', operator: 'Toei', location: '大江戶線月台層', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/iidabashi.html' },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '有樂町線・南北線 驗票口內 (近中央改札)',
+                    en: 'Inside Yurakucho/Namboku Line Gate (near Central)',
+                    ja: '有楽町線・南北線 改札内（中央改札付近）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/iidabashi/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '西口改札內',
+                    en: 'Inside West Gate',
+                    ja: '西口改札内'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.jreast.co.jp/estation/stations/113.html'
+            },
+            {
+                type: 'toilet',
+                floor: 'Toei B3',
+                operator: 'Toei',
+                location: {
+                    zh: '大江戶線月台層',
+                    en: 'Oedo Line Platform Level',
+                    ja: '大江戸線ホーム階'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.kotsu.metro.tokyo.jp/subway/stations/iidabashi.html'
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: '東口改札外', attributes: { count: 32, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/iidabashi-station.php' },
-            { type: 'locker', floor: 'Toei B1', operator: 'Toei', location: '後樂方面改札外 (エレベーター横)', attributes: { count: 20, sizes: ['S', 'M'] } },
+            {
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '東口改札外',
+                    en: 'Outside East Gate',
+                    ja: '東口改札外'
+                },
+                attributes: { count: 32, sizes: ['S', 'M', 'L'] },
+                source: 'https://coinlocker.click/iidabashi-station.php'
+            },
+            {
+                type: 'locker',
+                floor: 'Toei B1',
+                operator: 'Toei',
+                location: {
+                    zh: '後樂方面改札外 (電梯旁)',
+                    en: 'Outside Korakuen Gate (near elevator)',
+                    ja: '後楽園方面改札外（エレベーター横）'
+                },
+                attributes: { count: 20, sizes: ['S', 'M'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'JR 1F', operator: 'JR', location: '西口 → 各月台', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Metro B1', operator: 'Metro', location: 'B2b出口 (ラムラ直結)', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '西口 → 各月台',
+                    en: 'West Gate → All Platforms',
+                    ja: '西口 → 各ホーム'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: 'B2b出口 (RAMLA直結)',
+                    en: 'Exit B2b (Direct to RAMLA)',
+                    ja: 'B2b出口（ラムラ直結）'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro/Toei', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro/Toei',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     'odpt:Station:TokyoMetro.Mitsukoshimae': {
@@ -613,16 +1828,88 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         l3Facilities: [
             // === 廁所 (Toilets) ===
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '半藏門線 驗票口內 (近三越口)', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/mitsukoshimae/accessibility/' },
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '銀座線 驗票口內 (近日本橋方面改札)', attributes: { wheelchair: true, hasWashlet: true } },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '半藏門線 驗票口內 (近三越口)',
+                    en: 'Inside Hanzomon Line Gate (near Mitsukoshi)',
+                    ja: '半蔵門線 改札内（三越口付近）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/mitsukoshimae/accessibility/'
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 驗票口內 (近日本橋方面改札)',
+                    en: 'Inside Ginza Line Gate (near Nihonbashi)',
+                    ja: '銀座線 改札内（日本橋方面改札付近）'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
             // === 置物櫃 (Lockers) ===
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: 'A9出口手前', attributes: { count: 30, sizes: ['S', 'M', 'L'] }, source: 'https://coinlocker.click/mitsukoshimae-station.php' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '銀座線室町三丁目方面改札外', attributes: { count: 25, sizes: ['S', 'M'] } },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: 'A9出口手前',
+                    en: 'Before Exit A9',
+                    ja: 'A9出口手前'
+                },
+                attributes: { count: 30, sizes: ['S', 'M', 'L'] },
+                source: 'https://coinlocker.click/mitsukoshimae-station.php'
+            },
+            {
+                type: 'locker',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線室町三丁目方面改札外',
+                    en: 'Outside Ginza Line Muromachi 3-chome Gate',
+                    ja: '銀座線室町三丁目方面改札外'
+                },
+                attributes: { count: 25, sizes: ['S', 'M'] }
+            },
             // === 電梯 (Elevators) ===
-            { type: 'elevator', floor: 'Metro B3', operator: 'Metro', location: '半藏門線月台 → 穿堂層', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A1出口 (日本橋室町野村ビル)', attributes: { wheelchair: true } },
+            {
+                type: 'elevator',
+                floor: 'Metro B3',
+                operator: 'Metro',
+                location: {
+                    zh: '半藏門線月台 → 穿堂層',
+                    en: 'Hanzomon Line Platform → Concourse',
+                    ja: '半蔵門線ホーム → コンコース'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: 'A1出口 (日本橋室町野村大樓)',
+                    en: 'Exit A1 (Nihonbashi Muromachi Nomura Bldg)',
+                    ja: 'A1出口（日本橋室町野村ビル）'
+                },
+                attributes: { wheelchair: true }
+            },
             // === WiFi ===
-            { type: 'wifi', floor: 'Metro B1', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+            {
+                type: 'wifi',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '改札內',
+                    en: 'Inside Ticket Gate',
+                    ja: '改札内'
+                },
+                attributes: { ssid: 'METRO_FREE_WiFi' }
+            }
         ]
     },
     // === New Taito Stations ===

@@ -13,16 +13,22 @@ interface L4_BambiProps {
 export function L4_Bambi({ data }: L4_BambiProps) {
     const tL4 = useTranslations('l4');
     const locale = useLocale();
-    const { l4_cards } = data;
+    const { l4_cards: staticL4Cards, id: stationId } = data; // Use static L4 cards as fallback or initial state
 
     // User Demand State
     const [selectedDemand, setSelectedDemand] = useState<string | null>(null);
     const [destination, setDestination] = useState('');
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const [dynamicCards, setDynamicCards] = useState<ActionCard[]>([]);
+
+    // If we have dynamic result, use it. Otherwise fall back to static data if no interaction yet.
+    // BUT user complaint says static data is boring. 
+    // Let's prioritization: Dynamic > Static (Initial)
+    const displayCards = dynamicCards.length > 0 ? dynamicCards : (showResult ? [] : (staticL4Cards || []));
 
     // Sort logic (Primary First)
-    const sortedCards = [...(l4_cards || [])].sort((a, b) =>
+    const sortedCards = [...displayCards].sort((a, b) =>
         (a.type === 'primary' ? -1 : 1)
     );
 
@@ -40,16 +46,35 @@ export function L4_Bambi({ data }: L4_BambiProps) {
         { id: 'vibe', icon: Compass, label: tL4('demands.vibe') },
     ];
 
-    const handleGenerate = () => {
+    const handleGenerate = async () => {
         if (!selectedDemand && !destination) return; // Basic validation
         setIsAnalyzing(true);
         setShowResult(false);
 
-        // Simulate Analysis
-        setTimeout(() => {
-            setIsAnalyzing(false);
+        try {
+            const res = await fetch('/api/strategy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    stationId, // Need to ensure stationId is passed correctly from props
+                    demand: selectedDemand,
+                    destination,
+                    locale: locale
+                })
+            });
+
+            if (!res.ok) throw new Error('Failed to fetch strategy');
+
+            const result = await res.json();
+            setDynamicCards(result.cards || []);
             setShowResult(true);
-        }, 1500);
+
+        } catch (error) {
+            console.error('L4 Generation Error:', error);
+            // Fallback?
+        } finally {
+            setIsAnalyzing(false);
+        }
     };
 
     // Reset when inputs change
@@ -60,6 +85,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
             setSelectedDemand(id);
         }
         setShowResult(false);
+        setDynamicCards([]); // Clear previous results
     }
 
     return (
@@ -113,6 +139,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                                 onChange={(e) => {
                                     setDestination(e.target.value);
                                     setShowResult(false);
+                                    setDynamicCards([]);
                                 }}
                                 placeholder="例如: 成田機場, 新宿..."
                                 className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400"
@@ -162,7 +189,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                                 <h2 className="text-xl font-black leading-tight mb-2 text-white">
                                     {getLocaleString(primaryCard.title, locale)}
                                 </h2>
-                                <p className="text-sm font-medium text-indigo-100 leading-relaxed mb-6 opacity-90">
+                                <p className="text-sm font-medium text-indigo-100 leading-relaxed mb-6 opacity-90 whitespace-pre-line">
                                     {getLocaleString(primaryCard.description, locale)}
                                 </p>
 
@@ -193,7 +220,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                             {secondaryCards.map((card) => (
                                 <div key={card.id} className="bg-white p-5 rounded-2xl border border-gray-100 hover:border-indigo-200 hover:shadow-md transition-all">
                                     <h5 className="font-bold text-gray-900 mb-1">{getLocaleString(card.title, locale)}</h5>
-                                    <p className="text-xs text-gray-500 mb-3 leading-relaxed">{getLocaleString(card.description, locale)}</p>
+                                    <p className="text-xs text-gray-500 mb-3 leading-relaxed whitespace-pre-line">{getLocaleString(card.description, locale)}</p>
 
                                     {card.actionUrl && (
                                         <a

@@ -25,8 +25,25 @@ export function WeatherBanner() {
                 if (res.ok) {
                     const data = await res.json();
                     if (data.alerts && data.alerts.length > 0) {
-                        setAlerts(data.alerts);
-                        setIsVisible(true);
+                        // [Filter] Only show relevant alerts for Tokyo core
+                        const filteredAlerts = data.alerts.filter((alert: WeatherAlert) => {
+                            const text = (alert.title + alert.summary).replace(/\s/g, '');
+
+                            // Emergency is always relevant
+                            if (alert.severity === 'critical' || text.includes('特別警報')) return true;
+
+                            // Filter out remote islands if "Tokyo" or "23 Wards" is NOT mentioned
+                            const isIslandOnly = (text.includes('伊豆諸島') || text.includes('小笠原諸島'))
+                                && !text.includes('東京地方')
+                                && !text.includes('23区');
+
+                            return !isIslandOnly;
+                        });
+
+                        if (filteredAlerts.length > 0) {
+                            setAlerts(filteredAlerts);
+                            setIsVisible(true);
+                        }
                     }
                 }
             } catch (error) {
@@ -95,8 +112,9 @@ export function WeatherBanner() {
                     <p className="text-[11px] leading-relaxed font-medium whitespace-pre-wrap">
                         {mainAlert.summary}
                     </p>
-                    <div className="mt-2 text-[8px] font-bold opacity-60 uppercase text-right">
-                        Last Updated: {new Date(mainAlert.updated).toLocaleTimeString()}
+                    <div className="mt-2 flex justify-between items-center text-[8px] font-bold opacity-60 uppercase">
+                        <span>Source: Japan Meteorological Agency (JMA)</span>
+                        <span>Updated: {new Date(mainAlert.updated).toLocaleTimeString()}</span>
                     </div>
                 </div>
             )}
