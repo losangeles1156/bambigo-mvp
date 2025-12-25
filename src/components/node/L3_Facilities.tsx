@@ -1,13 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { StationUIProfile, L3Facility, FacilityType } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 import {
     User, Briefcase, Zap, ArrowUpDown, CircleDollarSign, Baby, Bike, Wifi, Info,
-    Cigarette, Boxes, ShoppingBag, Utensils, Ticket, TrainFront, Landmark, Trees, Bed, Loader2
+    Cigarette, Boxes, ShoppingBag, Utensils, Ticket, TrainFront, Landmark, Trees, Bed, Loader2, ExternalLink,
+    ChevronDown, ChevronRight, MapPin, Clock
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Icon Mapping
 const FACILITY_ICONS: Record<FacilityType | string, any> = {
@@ -46,43 +48,52 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
     const locale = useLocale();
     const [facilities, setFacilities] = useState<L3Facility[]>(data.l3_facilities || []);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+
+    // Group facilities by type
+    const groupedFacilities = useMemo(() => {
+        const groups: Record<string, L3Facility[]> = {};
+        facilities.forEach(fac => {
+            if (!groups[fac.type]) groups[fac.type] = [];
+            groups[fac.type].push(fac);
+        });
+        return groups;
+    }, [facilities]);
+
+    // Set initial expanded category (first one)
+    useEffect(() => {
+        if (!expandedCategory && Object.keys(groupedFacilities).length > 0) {
+            setExpandedCategory(Object.keys(groupedFacilities)[0]);
+        }
+    }, [groupedFacilities, expandedCategory]);
 
     useEffect(() => {
         let isMounted = true;
 
+        // Prioritize Props Data
+        if (data.l3_facilities && data.l3_facilities.length > 0) {
+            setFacilities(data.l3_facilities);
+            setLoading(false);
+            return;
+        }
+
         async function fetchFacilities() {
             setLoading(true);
             try {
-                // Strict Verification: Use data.id (e.g. odpt:Station:TokyoMetro.Ueno)
                 const res = await fetch(`/api/station/${encodeURIComponent(data.id)}/facilities`);
                 if (!res.ok) throw new Error('API Error');
-
                 const json = await res.json();
-
-                // Strict ID Matching Verification
-                if (json.stationId && json.stationId !== data.id) {
-                    console.error(`[L3] Data Mismatch! Req: ${data.id}, Res: ${json.stationId}`);
-                    // Should strict mode fail entire render? 
-                    // Let's fallback to prop data if mismatch occurs to be safe, or just throw.
-                    // Assuming API returns correct data if ID matches.
-                }
 
                 if (isMounted && json.facilities) {
                     // Adapt Backend Data (StationFacility) to UI Data (L3Facility)
                     const adapted: L3Facility[] = json.facilities.map((f: any, idx: number) => {
-                        // Normalize multilingual strings
                         const nameObj = typeof f.location === 'object' ? f.location : { ja: f.location, en: f.location, zh: f.location };
-                        // Usually Name isn't provided in raw L3 scraper data, it's just location + type.
-                        // We construct a display name like "Toilet (Inside Gate)"
-
                         return {
                             id: `${data.id}-l3-${idx}-${Date.now()}`,
                             type: f.type,
-                            name: nameObj, // Use location as name for now, or synthesize one
+                            name: nameObj,
                             location: nameObj,
                             details: f.attributes ? Object.entries(f.attributes).map(([k, v]) => {
-                                // Simple string conversion for attributes
                                 return { ja: `${k}: ${v}`, en: `${k}: ${v}`, zh: `${k}: ${v}` };
                             }) : []
                         };
@@ -91,21 +102,16 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                 }
             } catch (err) {
                 console.error('[L3] Fetch failed', err);
-                // Keep initial data (fallback) on error
-                setError('Failed to load fresh data');
             } finally {
                 if (isMounted) setLoading(false);
             }
         }
 
-        if (data.id) {
-            fetchFacilities();
-        } else {
-            setLoading(false);
-        }
+        if (data.id) fetchFacilities();
+        else setLoading(false);
 
         return () => { isMounted = false; };
-    }, [data.id]);
+    }, [data.id, data.l3_facilities]);
 
     if (loading) {
         return (
@@ -123,63 +129,111 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
         );
     }
 
+    const toggleCategory = (type: string) => {
+        setExpandedCategory(expandedCategory === type ? null : type);
+    };
+
     return (
-        <div className="space-y-4 animate-in fade-in slide-in-from-bottom duration-500">
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500 pb-20">
 
-            {/* Header */}
-            <div className="flex items-center justify-between px-1">
-                <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL3('servicesTitle')}</h3>
-                <span className="text-[10px] font-bold text-gray-400">{tL3('facilitiesFound', { count: facilities.length })}</span>
-            </div>
+            {/* Quick Links / Actions (e.g. Toilet Vacancy) */}
+            {data.external_links && data.external_links.length > 0 && (
+                <div className="space-y-2">
+                    <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Quick Links</h3>
+                    {data.external_links.map((link, idx) => (
+                        <a
+                            key={idx}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center justify-between p-4 rounded-2xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] ${link.bg || 'bg-blue-600'} text-white`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="p-2 bg-white/20 rounded-xl">
+                                    {link.icon === 'toilet' ? <User size={20} /> : <ExternalLink size={20} />}
+                                </div>
+                                <span className="font-bold text-sm">{link.title}</span>
+                            </div>
+                            <ExternalLink size={16} className="opacity-80" />
+                        </a>
+                    ))}
+                </div>
+            )}
 
-            {/* Stacked List */}
+            {/* Grouped Facilities List */}
             <div className="space-y-3">
-                {facilities.map((fac) => {
-                    const Icon = FACILITY_ICONS[fac.type] || Boxes;
-                    const colorClass = FACILITY_COLORS[fac.type] || 'bg-gray-100 text-gray-600';
+                <div className="flex items-center justify-between px-1 mb-2">
+                    <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL3('servicesTitle')}</h3>
+                    <span className="text-[10px] font-bold text-gray-400">{tL3('facilitiesFound', { count: facilities.length })}</span>
+                </div>
+
+                {Object.entries(groupedFacilities).map(([type, items]) => {
+                    const isExpanded = expandedCategory === type;
+                    const Icon = FACILITY_ICONS[type] || Boxes;
+                    const colorClass = FACILITY_COLORS[type] || 'bg-gray-100 text-gray-600';
+                    const label = tL3(`categories.${type}`) !== `l3.categories.${type}` ? tL3(`categories.${type}`) : type;
 
                     return (
-                        <div key={fac.id} className="group relative bg-white p-4 rounded-2xl border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all duration-300">
-                            <div className="flex items-start gap-4">
-                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${colorClass}`}>
-                                    <Icon size={20} />
-                                </div>
+                        <div key={type} className="bg-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 shadow-sm">
 
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex justify-between items-start mb-1">
-                                        <h4 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
-                                            {/* Use utility to handle locale object or string */}
-                                            {getLocaleString(fac.name, locale)}
-                                        </h4>
-                                        <span className="text-[10px] font-bold uppercase tracking-tight text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full">
-                                            {tL3(`categories.${fac.type}`) !== `l3.categories.${fac.type}` ? tL3(`categories.${fac.type}`) : fac.type}
-                                        </span>
+                            {/* Category Header */}
+                            <button
+                                onClick={() => toggleCategory(type)}
+                                className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${colorClass}`}>
+                                        <Icon size={20} />
                                     </div>
+                                    <div className="text-left">
+                                        <h4 className="text-sm font-bold text-gray-900 capitalize">{label}</h4>
+                                        <span className="text-[10px] text-gray-400 font-medium">{items.length} spots</span>
+                                    </div>
+                                </div>
+                                <div className={`p-2 rounded-full bg-gray-50 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                                    <ChevronDown size={16} />
+                                </div>
+                            </button>
 
-                                    <p className="text-xs text-gray-600 font-medium mb-2">
-                                        {getLocaleString(fac.location, locale)}
-                                    </p>
-
-                                    {/* Details Tags */}
-                                    {fac.details && fac.details.length > 0 && (
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {fac.details.map((detail, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium bg-gray-50 text-gray-500 border border-gray-100"
-                                                >
-                                                    {getLocaleString(detail, locale)}
-                                                </span>
+                            {/* Expanded Content */}
+                            <AnimatePresence>
+                                {isExpanded && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: 'auto', opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                    >
+                                        <div className="px-4 pb-4 space-y-3 border-t border-gray-50 bg-gray-50/30 pt-3">
+                                            {items.map((fac) => (
+                                                <div key={fac.id} className="bg-white p-3 rounded-xl border border-gray-100 flex items-start gap-3">
+                                                    <div className="mt-1 text-gray-300">
+                                                        <MapPin size={14} />
+                                                    </div>
+                                                    <div className="flex-1 min-w-0">
+                                                        <p className="text-sm font-medium text-gray-900">
+                                                            {getLocaleString(fac.name, locale)}
+                                                        </p>
+                                                        {fac.details && fac.details.length > 0 && (
+                                                            <div className="flex flex-wrap gap-1 mt-2">
+                                                                {fac.details.map((detail, idx) => (
+                                                                    <span key={idx} className="text-[10px] px-2 py-0.5 bg-gray-100 text-gray-500 rounded-md">
+                                                                        {getLocaleString(detail, locale)}
+                                                                    </span>
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
                                             ))}
                                         </div>
-                                    )}
-                                </div>
-                            </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     );
                 })}
             </div>
-            {error && <div className="text-[10px] text-red-400 text-center mt-2">Error updating data. Showing cached.</div>}
         </div>
     );
 }

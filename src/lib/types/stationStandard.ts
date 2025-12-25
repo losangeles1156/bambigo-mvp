@@ -99,6 +99,9 @@ export interface StationUIProfile {
     // L3: Services (Stacked)
     l3_facilities: L3Facility[];
 
+    // Quick Links (e.g. Toilet Vacancy)
+    external_links?: { title: string; url: string; icon?: string; bg?: string }[];
+
     // L4: Strategy
     l4_cards: ActionCard[];
 }

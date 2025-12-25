@@ -56,8 +56,39 @@ interface L2_LiveProps {
 export function L2_Live({ data }: L2_LiveProps) {
     const tL2 = useTranslations('l2');
     const locale = useLocale();
-    const { lines, weather, crowd } = data.l2;
+    const { lines, weather: initialWeather, crowd } = data.l2;
+    const [weather, setWeather] = useState(initialWeather);
     const [clickedCrowd, setClickedCrowd] = useState<number | null>(null);
+
+    // [New] Fetch Live Weather from Open Meteo
+    useEffect(() => {
+        async function fetchLiveWeather() {
+            try {
+                const res = await fetch('/api/weather/live');
+                if (res.ok) {
+                    const liveData = await res.json();
+
+                    // Simple WMO Code Mapping
+                    // 0-1: Clear, 2-3: Cloud, 51+: Rain
+                    let condition = 'Cloud';
+                    const code = liveData.code;
+                    if (code <= 1) condition = 'Clear';
+                    else if (code <= 3) condition = 'Cloud';
+                    else if (code >= 51) condition = 'Rain';
+
+                    setWeather({
+                        temp: liveData.temp,
+                        condition: condition,
+                        windSpeed: liveData.wind,
+                        iconCode: String(code)
+                    });
+                }
+            } catch (e) {
+                console.warn('Live weather fetch failed', e);
+            }
+        }
+        fetchLiveWeather();
+    }, []);
 
     const maxVoteIdx = crowd.userVotes.distribution.indexOf(Math.max(...crowd.userVotes.distribution));
 
@@ -135,8 +166,8 @@ export function L2_Live({ data }: L2_LiveProps) {
                                 <span className="text-[10px] font-medium opacity-80">TOKYO</span>
                                 {weather.condition === 'Rain' ? <Cloud size={16} /> : <Sun size={16} />}
                             </div>
-                            {/* Check for valid weather data (temp > 0 indicates real data) */}
-                            {weather.temp > 0 ? (
+                            {/* Check for valid weather data */}
+                            {weather.temp !== undefined ? (
                                 <>
                                     <div className="mt-2 mb-1">
                                         <span className="text-3xl font-black">{weather.temp}°</span>
@@ -155,7 +186,7 @@ export function L2_Live({ data }: L2_LiveProps) {
                             )}
                             {/* Data Source Attribution */}
                             <div className="mt-2 pt-2 border-t border-white/20">
-                                <span className="text-[8px] font-bold opacity-60 uppercase">{tL2('dataSource')}: {tL2('jmaSource')}</span>
+                                <span className="text-[8px] font-bold opacity-60 uppercase">{tL2('dataSource')}: Open Meteo</span>
                             </div>
                         </div>
                     </div>

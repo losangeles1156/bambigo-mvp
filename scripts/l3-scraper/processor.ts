@@ -35,15 +35,15 @@ export class DataProcessor {
     }
 
     private mapToStationId(name: string, operator: string): string | null {
-        // Production Mapping for Taito Ward
+        // Production Mapping
         const n = name.replace('駅', '').trim();
 
+        // --- TAITO WARD ---
         // Ueno
         if (n.includes('上野') && !n.includes('広小路') && !n.includes('御徒町')) {
             if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Ueno';
             if (operator === 'JR') return 'odpt:Station:JR-East.Ueno';
         }
-
         // Ueno-hirokoji / Ueno-okachimachi
         if (n.includes('上野広小路')) return 'odpt:Station:TokyoMetro.UenoHirokoji';
         if (n.includes('上野御徒町')) return 'odpt:Station:Toei.UenoOkachimachi';
@@ -54,17 +54,16 @@ export class DataProcessor {
         if (n.includes('新御徒町')) return 'odpt:Station:Toei.ShinOkachimachi';
 
         // Asakusa
-        if (n.includes('浅草') && !n.includes('橋')) { // Avoid Asakusabashi
+        if (n.includes('浅草') && !n.includes('橋')) {
             if (operator === 'Toei') return 'odpt:Station:Toei.Asakusa';
             if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Asakusa';
         }
-
         if (n.includes('浅草橋')) {
             if (operator === 'Toei') return 'odpt:Station:Toei.Asakusabashi';
             if (operator === 'JR') return 'odpt:Station:JR-East.Asakusabashi';
         }
 
-        // Others
+        // Taito Others
         if (n.includes('稲荷町')) return 'odpt:Station:TokyoMetro.Inaricho';
         if (n.includes('田原町')) return 'odpt:Station:TokyoMetro.Tawaramachi';
         if (n.includes('蔵前')) return 'odpt:Station:Toei.Kuramae';
@@ -72,8 +71,66 @@ export class DataProcessor {
         if (n.includes('三ノ輪')) return 'odpt:Station:TokyoMetro.Minowa';
         if (n.includes('鶯谷')) return 'odpt:Station:JR-East.Uguisudani';
 
-        // Fallback for previous manual tests
-        if (n.includes('日本橋')) return 'odpt:Station:TokyoMetro.Nihombashi';
+
+        // --- CHIYODA WARD ---
+        // Tokyo
+        if (n === '東京' || n.includes('東京駅')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Tokyo'; // Marunouchi
+            if (operator === 'JR') return 'odpt:Station:JR-East.Tokyo';
+        }
+
+        // Otemachi
+        if (n.includes('大手町')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Otemachi';
+            if (operator === 'Toei') return 'odpt:Station:Toei.Otemachi';
+        }
+
+        // Akihabara
+        if (n.includes('秋葉原')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Akihabara'; // Hibiya
+            if (operator === 'JR') return 'odpt:Station:JR-East.Akihabara';
+            if (operator === 'Toei') return 'odpt:Station:Toei.Iwamotocho'; // Close enough/Fallback? No, let's keep strict.
+        }
+
+        // Hibiya / Yurakucho
+        if (n.includes('日比谷')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Hibiya';
+            if (operator === 'Toei') return 'odpt:Station:Toei.Hibiya';
+        }
+        if (n.includes('有楽町')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Yurakucho';
+            if (operator === 'JR') return 'odpt:Station:JR-East.Yurakucho';
+        }
+
+        // Kanda
+        if (n.includes('神田')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Kanda'; // Ginza
+            if (operator === 'JR') return 'odpt:Station:JR-East.Kanda';
+        }
+
+        // --- CHUO WARD ---
+        if (n.includes('銀座') && !n.includes('一丁目') && !n.includes('東')) return 'odpt:Station:TokyoMetro.Ginza';
+        if (n.includes('東銀座')) {
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.HigashiGinza';
+            if (operator === 'Toei') return 'odpt:Station:Toei.HigashiGinza';
+        }
+        if (n.includes('京橋')) return 'odpt:Station:TokyoMetro.Kyobashi';
+        if (n.includes('日本橋')) {
+            if (operator === 'Toei') return 'odpt:Station:Toei.Nihombashi';
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Nihombashi';
+        }
+        if (n.includes('三越前')) return 'odpt:Station:TokyoMetro.Mitsukoshimae';
+        if (n.includes('茅場町')) return 'odpt:Station:TokyoMetro.Kayabacho';
+        if (n.includes('八丁堀')) {
+            if (operator === 'JR') return 'odpt:Station:JR-East.Hatchobori';
+            if (operator === 'Metro') return 'odpt:Station:TokyoMetro.Hatchobori';
+        }
+        if (n.includes('築地') && !n.includes('市場')) return 'odpt:Station:TokyoMetro.Tsukiji';
+        if (n.includes('築地市場')) return 'odpt:Station:Toei.Tsukijishijo';
+        if (n.includes('銀座一丁目')) return 'odpt:Station:TokyoMetro.GinzaItchome';
+
+        // Others
+        if (n.includes('二重橋前')) return 'odpt:Station:TokyoMetro.Nijubashimae';
 
         return null; // Mapping failed
     }

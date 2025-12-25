@@ -41,6 +41,18 @@ export const SEED_NODES = [
         vibe: 'geek'
     },
     {
+        id: 'odpt:Station:TsukubaExpress.Akihabara',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '秋葉原', 'ja': '秋葉原', 'en': 'Akihabara' },
+        type: 'station',
+        location: 'POINT(139.7742 35.6986)',
+        geohash: 'xn77k',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'tech_gateway'
+    },
+    {
         id: 'odpt:Station:JR-East.Tokyo',
         city_id: 'tokyo_core',
         name: { 'zh-TW': '東京', 'ja': '東京', 'en': 'Tokyo' },

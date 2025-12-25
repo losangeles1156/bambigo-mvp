@@ -8,7 +8,7 @@ export interface StationTrap {
 
 // L3 設施資料結構 - 供 AI Agent 參照
 export interface StationFacility {
-    type: 'toilet' | 'locker' | 'elevator' | 'wifi' | 'charging' | 'nursing';
+    type: 'toilet' | 'locker' | 'elevator' | 'escalator' | 'wifi' | 'charging' | 'nursing' | 'atm' | 'info' | 'shopping' | 'dining' | 'leisure';
     location: string | { ja: string; en: string; zh: string };      // 精確位置描述 (Multilingual)
     floor: string;         // 'JR 3F' | 'Metro B1' | 'Metro B2' | 'JR 1F'
     operator: 'JR' | 'Metro' | 'Toei' | 'Private';
@@ -42,6 +42,7 @@ export interface AccessibilityRoute {
 }
 
 export interface StationWisdomData {
+    links?: { title: string; url: string; icon?: string; bg?: string }[];
     traps: StationTrap[];
     hacks?: string[];
     l3Facilities?: StationFacility[];           // L3 設施資料 - AI 可參照
@@ -250,6 +251,59 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ]
     },
+
+    // Nihombashi (Metro) - Distinct from Toei
+    'odpt:Station:TokyoMetro.Nihombashi': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🪜 東西線深層陷阱 (Tozai Depth)',
+                content: '東西線月臺位於地下深處，轉乘銀座線需上下多層樓梯。',
+                advice: '⚠️ 建議：尋找「Coredo 日本橋」方向的電梯，避開繁忙的中央樓梯。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🏢 **Coredo 直結**：B12 出口直通 Coredo 日本橋，享用美食非常方便。',
+            '💴 **金融歷史散步**：從 B1 出口出來，即是著名的日本銀行舊館與貨幣博物館。'
+        ],
+        l3Facilities: [] // Auto-populated by Scraper
+    },
+    // Mitsukoshimae (Metro)
+    'odpt:Station:TokyoMetro.Mitsukoshimae': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚇 半藏門線轉乘距離 (Long Transfer)',
+                content: '雖然站名相同，但銀座線與半藏門線月臺相距甚遠，轉乘需步行約 5-8 分鐘。',
+                advice: '⚠️ 心理建設：請預留轉乘時間，通道設有自動步道可減輕負擔。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🏛️ **三越本館直達**：A5 出口直接通往日本最古老的三越百貨本店 B1 美食街。',
+            '🏦 **金庫街氛圍**：周邊是日本銀行總部，街道建築充滿明治時代的厚重感，適合散步拍照。',
+            '🎬 **Coredo 室町**：A6 出口直通 Coredo 室町，有電影院與深夜營業的餐飲店。'
+        ],
+        l3Facilities: [] // Auto-populated by Scraper
+    },
+    // Tsukiji (Metro)
+    'odpt:Station:TokyoMetro.Tsukiji': {
+        traps: [
+            {
+                type: 'exit',
+                title: '🐟 場外市場出口 (Exit Confusion)',
+                content: '要去築地場外市場吃海鮮？請務必走 **1號出口 (本願寺方面)**。',
+                advice: '⚠️ 注意：若走錯到 3/4 號出口，需要過大馬路才能抵達市場。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🙏 **本願寺巡禮**：1號出口出來即是風格獨特的「築地本願寺」，建築風格融合印度與佛教元素。',
+            '🍣 **晨間壽司**：場外市場許多名店清晨 5:00 就開門，建議早起避開觀光人潮。'
+        ],
+        l3Facilities: [] // Auto-populated by Scraper
+    },
     'odpt:Station:TokyoMetro.Kayabacho': {
         traps: [],
         hacks: [
@@ -319,6 +373,40 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ]
     },
+    // Higashi-Ginza (Metro/Toei)
+    'odpt:Station:TokyoMetro.HigashiGinza': {
+        traps: [
+            {
+                type: 'crowd',
+                title: '🎭 歌舞伎散場人潮 (Kabukiza Crowd)',
+                content: '歌舞伎座就在車站上方，演出結束時（通常是下午 4:00 或晚上 8:00）車站會瞬間爆滿。',
+                advice: '⚠️ 建議：避開演出散場時間，或改走地下道至銀座站搭車（步行僅 5 分鐘）。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🎭 **歌舞伎座直結**：3號出口直接連通歌舞伎座地下廣場，那裡有許多特色伴手禮與便當店（不用買票也能逛）。',
+            '🚶 **銀座地下連通**：從這裡可以沿著地下道一路走到銀座站甚至有樂町，雨天完全不用淋雨。'
+        ],
+        l3Facilities: [] // Auto-populated by Scraper
+    },
+    // Hatchobori (Metro/JR)
+    'odpt:Station:TokyoMetro.Hatchobori': {
+        traps: [
+            {
+                type: 'transfer',
+                title: '🚂 京葉線轉乘距離 (Keiyo Transfer)',
+                content: '日比谷線與 JR 京葉線的轉乘雖然比東京站近，但仍需步行約 5-7 分鐘。',
+                advice: '⚠️ 注意：早晚尖峰時段轉乘通道非常擁擠，請預留充裕時間。',
+                severity: 'medium'
+            }
+        ],
+        hacks: [
+            '🌉 **隅田川露台**：從 B4 出口步行 3 分鐘即可抵達隅田川河岸，是欣賞東京天際線的隱藏景點。',
+            '🐢 **去迪士尼的捷徑**：比起在東京站轉乘京葉線，許多內行人喜歡搭日比谷線到八丁堀轉車，距離更短更輕鬆。'
+        ],
+        l3Facilities: [] // Auto-populated by Scraper
+    },
     // Ueno Station (Target for verification)
     'odpt:Station:TokyoMetro.Ueno': {
         traps: [
@@ -338,68 +426,268 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         // L3 設施資料 - 基於 Tokyo Metro 及 JR East 官方資料
         l3Facilities: [
-            // === 廁所 (Toilets) ===
+            // ==========================================
+            // JR 上野駅 (JR Ueno Station)
+            // ==========================================
+            // --- Lockers (JR) ---
             {
-                type: 'toilet',
-                floor: 'Metro B1',
-                operator: 'Metro',
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
                 location: {
-                    zh: '銀座線 往JR方向驗票口內',
-                    en: 'Inside Ginza Line Ticket Gate (towards JR)',
-                    ja: '銀座線 JR方面改札内'
+                    zh: '淺草口大型置物櫃區',
+                    en: 'Asakusa Exit Locker Room',
+                    ja: '浅草口コインロッカー'
                 },
-                attributes: { wheelchair: true, hasWashlet: true },
-                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+                attributes: { count: 350, sizes: ['S', 'M', 'L', 'XL', 'XXL'], note: '全站最大，大型行李推薦' },
+                source: 'https://www.jreast.co.jp/estation/stations/204.html'
             },
             {
-                type: 'toilet',
-                floor: 'Metro B1',
-                operator: 'Metro',
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
                 location: {
-                    zh: '日比谷線 電梯專用出口驗票口外',
-                    en: 'Outside Hibiya Line Elevator Exit Ticket Gate',
-                    ja: '日比谷線 エレベーター専用改札外'
+                    zh: '中央改札外 (正面玄關)',
+                    en: 'Outside Central Gate',
+                    ja: '中央改札外 (正面玄関)'
                 },
-                attributes: { wheelchair: true, hasWashlet: true },
-                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+                attributes: { count: 120, sizes: ['S', 'M', 'L'] }
+            },
+            {
+                type: 'locker',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '中央改札內 (17號月台旁)',
+                    en: 'Inside Central Gate (near Platform 17)',
+                    ja: '中央改札内 (17番線脇)'
+                },
+                attributes: { count: 80, sizes: ['S', 'M'] }
+            },
+            {
+                type: 'locker',
+                floor: 'JR 3F',
+                operator: 'JR',
+                location: {
+                    zh: '公園改札內 (熊貓橋口)',
+                    en: 'Inside Park Gate',
+                    ja: '公園改札内'
+                },
+                attributes: { count: 60, sizes: ['S', 'M'], note: '靠近上野公園' }
+            },
+            {
+                type: 'locker',
+                floor: 'JR 2F',
+                operator: 'JR',
+                location: {
+                    zh: '不忍改札外通路',
+                    en: 'Outside Shinobazu Gate Passage',
+                    ja: '不忍改札外通路'
+                },
+                attributes: { count: 50, sizes: ['S', 'M', 'L'] }
+            },
+            // --- Toilets (JR) ---
+            {
+                type: 'toilet',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: '中央改札內包含大型洗手間)',
+                    en: 'Inside Central Gate (Main)',
+                    ja: '中央改札内 (大型トイレ)'
+                },
+                attributes: { wheelchair: true, hasWashlet: true, hasBabyRoom: true },
+                source: 'https://www.jreast.co.jp/estation/stations/204.html'
             },
             {
                 type: 'toilet',
                 floor: 'JR 3F',
                 operator: 'JR',
                 location: {
-                    zh: '大連絡橋通道',
-                    en: 'Grand Concourse Walkway',
-                    ja: '大連絡橋通路'
+                    zh: '公園改札內 (Ecute 旁)',
+                    en: 'Inside Park Gate (near Ecute)',
+                    ja: '公園改札内 (エキュート脇)'
                 },
-                attributes: { wheelchair: true, hasWashlet: true },
-                source: 'https://www.jreast.co.jp/estation/stations/204.html'
+                attributes: { wheelchair: true, hasWashlet: true }
             },
-            // === 置物櫃 (Lockers) ===
             {
-                type: 'locker',
-                floor: 'JR 1F',
+                type: 'toilet',
+                floor: 'JR B4',
                 operator: 'JR',
                 location: {
-                    zh: '中央口改札外',
-                    en: 'Outside Central Gate',
-                    ja: '中央改札外'
+                    zh: '新幹線改札內 (地下4層)',
+                    en: 'Inside Shinkansen Gate (B4)',
+                    ja: '新幹線改札内 (地下4階)'
                 },
-                attributes: { count: 300, sizes: ['S', 'M', 'L', 'XL'], note: '最大量置物櫃區' },
-                source: 'https://www.jreast.co.jp/estation/stations/204.html'
+                attributes: { wheelchair: true, note: '僅限新幹線旅客' }
             },
+            // ==========================================
+            // 京成上野駅 (Keisei Ueno Station)
+            // ==========================================
+            {
+                type: 'locker',
+                floor: 'Keisei 1F',
+                operator: 'Private',
+                location: {
+                    zh: '京成上野 改札外 (計程車乘車處旁)',
+                    en: 'Keisei Ueno Outside Gate (Taxi Rank)',
+                    ja: '京成上野 改札外 (タクシー乗り場横)'
+                },
+                attributes: { count: 200, sizes: ['S', 'M', 'L', 'XL'], note: 'Skyliner 旅客推薦' },
+                source: 'https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/jp/101.pdf'
+            },
+            {
+                type: 'toilet',
+                floor: 'Keisei B1',
+                operator: 'Private',
+                location: {
+                    zh: '京成上野 改札外大廳',
+                    en: 'Keisei Ueno Concourse',
+                    ja: '京成上野 改札外コンコース'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
+            // ==========================================
+            // Tokyo Metro (Ginza/Hibiya Lines)
+            // ==========================================
             {
                 type: 'locker',
                 floor: 'Metro B1',
                 operator: 'Metro',
                 location: {
-                    zh: '不忍口改札外',
-                    en: 'Outside Shinobazu Gate',
-                    ja: '不忍改札外'
+                    zh: '銀座線 JR方向改札外',
+                    en: 'Ginza Line Outside Gate (towards JR)',
+                    ja: '銀座線 JR方面改札外'
                 },
-                attributes: { count: 80, sizes: ['S', 'M', 'L'] }
+                attributes: { count: 80, sizes: ['S', 'M'] }
             },
-            // === 電梯 (Elevators) - 無障礙設施 ===
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 改札內',
+                    en: 'Inside Ginza Line Gate',
+                    ja: '銀座線 改札内'
+                },
+                attributes: { wheelchair: true, hasWashlet: true }
+            },
+            {
+                type: 'toilet',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線 改札外 (靠近昭和通)',
+                    en: 'Outside Hibiya Line Gate (Showa-dori)',
+                    ja: '日比谷線 改札外 (昭和通り側)'
+                },
+                attributes: { wheelchair: true }
+            },
+            // ==========================================
+            // 基礎服務 (Basic Services)
+            // ==========================================
+            {
+                type: 'atm',
+                floor: 'JR 1F',
+                operator: 'Private',
+                location: {
+                    zh: '中央改札外 (Seven Bank)',
+                    en: 'Outside Central Gate (Seven Bank)',
+                    ja: '中央改札外 (セブン銀行)'
+                },
+                attributes: { note: '24H' }
+            },
+            {
+                type: 'info',
+                floor: 'JR 1F',
+                operator: 'JR',
+                location: {
+                    zh: 'JR東日本旅遊服務中心',
+                    en: 'JR East Travel Service Center',
+                    ja: 'JR東日本訪日旅行センター'
+                },
+                attributes: { note: 'JR Pass 兌換點 / 8:00-20:00' }
+            },
+            // ==========================================
+            // 電梯 & 電扶梯 (Vertical Transport)
+            // ==========================================
+            {
+                type: 'elevator',
+                floor: 'JR 1F/3F',
+                operator: 'JR',
+                location: {
+                    zh: '中央改札內 (直通月台)',
+                    en: 'Inside Central Gate (to Platforms)',
+                    ja: '中央改札内 (ホーム直結)'
+                },
+                attributes: { wheelchair: true, note: '優先電梯' }
+            },
+            {
+                type: 'elevator',
+                floor: 'JR 3F',
+                operator: 'JR',
+                location: {
+                    zh: '公園改札內 (熊貓橋口)',
+                    en: 'Inside Park Gate',
+                    ja: '公園改札内'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'JR 1F-3F',
+                operator: 'JR',
+                location: {
+                    zh: '大連絡橋 (中央改札 ↔ 月台)',
+                    en: 'Grand Concourse (Gate ↔ Platforms)',
+                    ja: '大連絡橋 (改札 ↔ ホーム)'
+                },
+                attributes: { note: '雙向運行' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Keisei 1F',
+                operator: 'Private',
+                location: {
+                    zh: '京成上野 正面口 (往計程車/地鐵)',
+                    en: 'Keisei Ueno Main Exit (to Taxi/Metro)',
+                    ja: '京成上野 正面口 (タクシー/地下鉄方面)'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'Keisei B1',
+                operator: 'Private',
+                location: {
+                    zh: 'Skyliner 月台',
+                    en: 'Skyliner Platform',
+                    ja: 'スカイライナーホーム'
+                },
+                attributes: { note: '直達改札層' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線 地上電梯 (昭和通側)',
+                    en: 'Hibiya Line Street Elevator (Showa-dori)',
+                    ja: '日比谷線 地上行き (昭和通り)'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 ↔ JR 連通道',
+                    en: 'Ginza Line ↔ JR Passage',
+                    ja: '銀座線 ↔ JR 連絡通路'
+                },
+                attributes: { note: '轉乘推薦' }
+            },
             {
                 type: 'elevator',
                 floor: 'Metro B1',
@@ -411,30 +699,6 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 },
                 attributes: { wheelchair: true },
                 source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
-            },
-            {
-                type: 'elevator',
-                floor: 'Metro B1',
-                operator: 'Metro',
-                location: {
-                    zh: '公園驗票口 → 5a出口',
-                    en: 'Park Gate → Exit 5a',
-                    ja: '公園改札 → 5a出口'
-                },
-                attributes: { wheelchair: true, note: '通往上野公園' },
-                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
-            },
-            // === WiFi ===
-            {
-                type: 'wifi',
-                floor: 'Metro 全層',
-                operator: 'Metro',
-                location: {
-                    zh: '改札內全區',
-                    en: 'Inside Ticket Gates',
-                    ja: '改札内エリア'
-                },
-                attributes: { ssid: 'METRO_FREE_WiFi', note: '限時30分' }
             },
             {
                 type: 'wifi',
@@ -525,7 +789,16 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
 
 
     // Tokyo Station (Reference)
-    'odpt:Station:TokyoMetro.Tokyo': {
+    // NOTE: Primary ID in Seed is JR-East.Tokyo, so we match that here.
+    'odpt:Station:JR-East.Tokyo': {
+        links: [
+            {
+                title: '東京車站廁所空席情報',
+                url: 'https://tokyo-station-toilet.pages.vacan.com/marunouchi-area',
+                icon: 'toilet',
+                bg: 'bg-blue-600'
+            }
+        ],
         traps: [
             {
                 type: 'transfer',
@@ -615,7 +888,96 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
                 },
                 attributes: { count: 100, sizes: ['S', 'M', 'L'] }
             },
-            // === 電梯 (Elevators) ===
+            // === 電梯 & 電扶梯 (Vertical Transport) ===
+            {
+                type: 'elevator',
+                floor: 'JR 1F/3F',
+                operator: 'JR',
+                location: {
+                    zh: '中央改札內 (直通月台)',
+                    en: 'Inside Central Gate (to Platforms)',
+                    ja: '中央改札内 (ホーム直結)'
+                },
+                attributes: { wheelchair: true, note: '優先電梯' }
+            },
+            {
+                type: 'elevator',
+                floor: 'JR 3F',
+                operator: 'JR',
+                location: {
+                    zh: '公園改札內 (熊貓橋口)',
+                    en: 'Inside Park Gate',
+                    ja: '公園改札内'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'JR 1F-3F',
+                operator: 'JR',
+                location: {
+                    zh: '大連絡橋 (中央改札 ↔ 月台)',
+                    en: 'Grand Concourse (Gate ↔ Platforms)',
+                    ja: '大連絡橋 (改札 ↔ ホーム)'
+                },
+                attributes: { note: '雙向運行' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Keisei 1F',
+                operator: 'Private',
+                location: {
+                    zh: '京成上野 正面口 (往計程車/地鐵)',
+                    en: 'Keisei Ueno Main Exit (to Taxi/Metro)',
+                    ja: '京成上野 正面口 (タクシー/地下鉄方面)'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'Keisei B1',
+                operator: 'Private',
+                location: {
+                    zh: 'Skyliner 月台',
+                    en: 'Skyliner Platform',
+                    ja: 'スカイライナーホーム'
+                },
+                attributes: { note: '直達改札層' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro GF',
+                operator: 'Metro',
+                location: {
+                    zh: '日比谷線 地上電梯 (昭和通側)',
+                    en: 'Hibiya Line Street Elevator (Showa-dori)',
+                    ja: '日比谷線 地上行き (昭和通り)'
+                },
+                attributes: { wheelchair: true }
+            },
+            {
+                type: 'escalator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線 ↔ JR 連通道',
+                    en: 'Ginza Line ↔ JR Passage',
+                    ja: '銀座線 ↔ JR 連絡通路'
+                },
+                attributes: { note: '轉乘推薦' }
+            },
+            {
+                type: 'elevator',
+                floor: 'Metro B1',
+                operator: 'Metro',
+                location: {
+                    zh: '銀座線月台 → JR方向驗票口',
+                    en: 'Ginza Line Platform → JR Ticket Gate',
+                    ja: '銀座線ホーム → JR方面改札'
+                },
+                attributes: { wheelchair: true },
+                source: 'https://www.tokyometro.jp/lang_tcn/station/ueno/accessibility/'
+            },
             {
                 type: 'elevator',
                 floor: 'Metro B1',

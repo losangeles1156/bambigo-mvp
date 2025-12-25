@@ -79,9 +79,9 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
         return {
             lines: (source.line_status || []).map((l: any, idx: number) => ({
                 id: `line-${idx}`,
-                name: { ja: l.line, en: l.line, zh: l.line },
-                operator: 'Metro', // Default, logic can be improved if needed
-                color: l.line === 'Ginza' ? '#FF9500' : '#999999', // Simple heuristic
+                name: l.name || { ja: l.line, en: l.line, zh: l.line }, // Support both legacy string and new object
+                operator: l.operator || 'Metro',
+                color: l.color || '#999999',
                 status: l.status || 'normal',
                 message: l.message ? { ja: l.message, en: l.message, zh: l.message } : undefined
             })),
