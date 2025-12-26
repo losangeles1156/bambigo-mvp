@@ -380,9 +380,15 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '🙏 **本願寺巡禮**：1號出口出來即是風格獨特的「築地本願寺」，建築風格融合印度與佛教元素。',
-            '🍣 **晨間壽司**：場外市場許多名店清晨 5:00 就開門，建議早起避開觀光人潮。'
+            '🍣 **晨間壽司**：場外市場許多名店清晨 5:00 就開門，建議早起避開觀光人潮。',
+            '🍙 **飯糰名店**：雖然握壽司很有名，但 1 號出口附近的飯糰專賣店也是在地人的首選。'
         ],
-        l3Facilities: [] // Auto-populated by Scraper
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro GF', operator: 'Metro', location: '本願寺改札外', attributes: { wheelchair: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tsukiji/accessibility/' },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '1, 2 號出口', attributes: { wheelchair: true } },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '站務室旁', attributes: { count: 20, sizes: ['S', 'M'] } },
+            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
     },
     'odpt:Station:TokyoMetro.Kayabacho': {
         traps: [],
@@ -468,7 +474,12 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             '🎭 **歌舞伎座直結**：3號出口直接連通歌舞伎座地下廣場，那裡有許多特色伴手禮與便當店（不用買票也能逛）。',
             '🚶 **銀座地下連通**：從這裡可以沿著地下道一路走到銀座站甚至有樂町，雨天完全不用淋雨。'
         ],
-        l3Facilities: [] // Auto-populated by Scraper
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B2', operator: 'Metro', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/higashi-ginza/accessibility/' },
+            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '剪票口外', attributes: { count: 60, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '歌舞伎座直通電梯', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
     },
     // Hatchobori (Metro/JR)
     'odpt:Station:TokyoMetro.Hatchobori': {
@@ -483,9 +494,16 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         ],
         hacks: [
             '🌉 **隅田川露台**：從 B4 出口步行 3 分鐘即可抵達隅田川河岸，是欣賞東京天際線的隱藏景點。',
-            '🐢 **去迪士尼的捷徑**：比起在東京站轉乘京葉線，許多內行人喜歡搭日比谷線到八丁堀轉車，距離更短更輕鬆。'
+            '🐢 **去迪士尼的捷徑**：比起在東京站轉乘京葉線，許多內行人喜歡搭日比谷線到八丁堀轉車，距離更短更輕鬆。',
+            '🍱 **商務午餐**：八丁堀是著名的商務區，周邊地下街有無數超值的中午定食。'
         ],
-        l3Facilities: [] // Auto-populated by Scraper
+        l3Facilities: [
+            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '八丁堀交差點方面改札外', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/hatchobori/accessibility/' },
+            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: 'JR 改札口附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
+            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A2 出口', attributes: { wheelchair: true } },
+            { type: 'elevator', floor: 'JR/Metro', operator: 'Metro', location: '轉乘連通道', attributes: { wheelchair: true } },
+            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
+        ]
     },
     // Ueno Station (Target for verification)
     'odpt:Station:TokyoMetro.Ueno': {
@@ -889,6 +907,7 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             }
         ],
         hacks: [
+            '⚡️ **京葉線隱藏捷徑 (Yurakucho Shortcut)**：要去迪士尼？與其在站內走 20 分鐘，不如**在「JR 有樂町站」下車**！\n1. 從「京橋口」出站，往「東京國際論壇 (Tokyo International Forum)」走。\n2. 看到「Side Square」下樓梯（或搭後方電梯），直接抵達京葉線丸之內口。\n3. 嬰兒車友善，且避開站內人潮。',
             '🎫 **丸之內南口紅磚站舍**：國家重要文化財，必拍照點！從丸之內地下廣場搭電梯上1F即可抵達。',
             '🍱 **駅弁屋 祭**：中央通路有超過200種車站便當，建議發車前30分鐘來選購。',
             '🔄 **北自由通路**：想在「丸之內」與「八重洲」之間移動但不進站？請走「北自由通路」，這是免費的穿梭捷徑。',
@@ -2587,60 +2606,6 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
             { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '改札外 D2 出口附近', attributes: { wheelchair: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/yurakucho/accessibility/' },
             { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'D7 出口', attributes: { wheelchair: true } },
             { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '改札外及通道', attributes: { count: 80, sizes: ['S', 'M', 'L'] } },
-            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
-        ]
-    },
-    'odpt:Station:TokyoMetro.HigashiGinza': {
-        traps: [],
-        hacks: [
-            '🎭 **歌舞伎座直結**：3 號出口直接連通歌舞伎座地下廣場，有許多特色伴手禮。'
-        ],
-        l3Facilities: [
-            { type: 'toilet', floor: 'Metro B2', operator: 'Metro', location: '改札內', attributes: { wheelchair: true, hasWashlet: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/higashi-ginza/accessibility/' },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '剪票口外', attributes: { count: 60, sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '歌舞伎座直通電梯', attributes: { wheelchair: true } },
-            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
-        ]
-    },
-    'odpt:Station:TokyoMetro.Tsukiji': {
-        traps: [
-            {
-                type: 'exit',
-                title: '🐟 築地場外市場出口 (Market Exit)',
-                content: '雖然築地市場已搬遷至豐洲，但「築地場外市場」仍在原處。最近的出口是 1 號或 2 號出口。',
-                advice: '⚠️ 注意：早晨 10 點後市場人潮極度擁擠，請照顧好隨身行李。',
-                severity: 'medium'
-            }
-        ],
-        hacks: [
-            '🍙 **飯糰名店**：雖然握壽司很有名，但 1 號出口附近的飯糰專賣店也是在地人的首選。',
-            '🏯 **築地本願寺**：出站即可見到印度風格的外觀，建築內部非常精美，值得一遊。'
-        ],
-        l3Facilities: [
-            { type: 'toilet', floor: 'Metro GF', operator: 'Metro', location: '本願寺改札外', attributes: { wheelchair: true, hasBabyRoom: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/tsukiji/accessibility/' },
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: '1, 2 號出口', attributes: { wheelchair: true } },
-            { type: 'locker', floor: 'Metro B1', operator: 'Metro', location: '站務室旁', attributes: { count: 20, sizes: ['S', 'M'] } },
-            { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
-        ]
-    },
-    'odpt:Station:TokyoMetro.Hatchobori': {
-        traps: [
-            {
-                type: 'transfer',
-                title: '🚄 京葉線轉乘攻略 (Keiyo Transfer)',
-                content: '八丁堀站轉乘 JR 京葉線比東京站快很多，但月台非常深。',
-                advice: '⚠️ 建議：預留 10 分鐘轉乘時間，利用 B1/B2 連絡通道電梯。',
-                severity: 'medium'
-            }
-        ],
-        hacks: [
-            '🍱 **商務午餐**：八丁堀是著名的商務區，周邊地下街有無數超值的中午定食。'
-        ],
-        l3Facilities: [
-            { type: 'toilet', floor: 'Metro B1', operator: 'Metro', location: '八丁堀交差點方面改札外', attributes: { wheelchair: true }, source: 'https://www.tokyometro.jp/lang_tcn/station/hatchobori/accessibility/' },
-            { type: 'locker', floor: 'JR 1F', operator: 'JR', location: 'JR 改札口附近', attributes: { count: 50, sizes: ['S', 'M', 'L'] } },
-            { type: 'elevator', floor: 'Metro GF', operator: 'Metro', location: 'A2 出口', attributes: { wheelchair: true } },
-            { type: 'elevator', floor: 'JR/Metro', operator: 'Metro', location: '轉乘連通道', attributes: { wheelchair: true } },
             { type: 'wifi', floor: 'Metro', operator: 'Metro', location: '改札內', attributes: { ssid: 'METRO_FREE_WiFi' } }
         ]
     },
