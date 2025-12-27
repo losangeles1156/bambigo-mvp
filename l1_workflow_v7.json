@@ -66,8 +66,10 @@
                 "requestMethod": "POST",
                 "url": "https://overpass-api.de/api/interpreter",
                 "options": {},
-                "bodyParametersUi": {
-                    "parameter": [
+                "sendBody": true,
+                "contentType": "form-urlencoded",
+                "bodyParameters": {
+                    "parameters": [
                         {
                             "name": "data",
                             "value": "={{$json[\"query\"]}}"
