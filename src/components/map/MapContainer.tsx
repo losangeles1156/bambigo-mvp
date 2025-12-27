@@ -9,6 +9,7 @@ import { useAppStore } from '@/stores/appStore';
 import { fetchAllNodes, NodeDatum } from '@/lib/api/nodes';
 import { NodeMarker } from './NodeMarker';
 import { TrainLayer } from './TrainLayer';
+import { L1Layer } from './L1Layer';
 import { useLocale } from 'next-intl';
 
 // Component to handle map center updates
