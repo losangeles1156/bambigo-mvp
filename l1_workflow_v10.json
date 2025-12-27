@@ -50,20 +50,17 @@
         },
         {
             "parameters": {
-                "requestMethod": "POST",
+                "requestMethod": "GET",
                 "url": "https://overpass-api.de/api/interpreter",
-                "sendBody": true,
-                "contentType": "form-urlencoded",
-                "bodyParameters": {
-                    "parameters": [
+                "jsonParameters": true,
+                "options": {},
+                "queryParametersUi": {
+                    "parameter": [
                         {
                             "name": "data",
                             "value": "={{$json.query}}"
                         }
                     ]
-                },
-                "options": {
-                    "responseInProperty": "osm_raw"
                 }
             },
             "name": "OSM API",
@@ -88,7 +85,7 @@
         },
         {
             "parameters": {
-                "functionCode": "// Format data for Ingest\nconst item = items[0].json;\nconst elements = item.osm_raw?.elements || [];\n\nconst processed = elements.map(el => {\n  const tags = el.tags || {};\n  if (!tags.name) return null;\n  return {\n    osm_id: el.id,\n    name: tags.name,\n    category: item.category,\n    location: { lat: el.lat || el.center?.lat, lon: el.lon || el.center?.lon },\n    tags\n  };\n}).filter(Boolean);\n\nreturn [{\n  json: {\n    stationId: item.stationId,\n    category: item.category,\n    count: processed.length,\n    items: processed\n  }\n}];"
+                "functionCode": "// Format data for Ingest\nconst item = items[0].json;\n// Standard GET replaces json with response, so elements are at top level\nconst elements = item.elements || [];\n\nconst processed = elements.map(el => {\n  const tags = el.tags || {};\n  if (!tags.name) return null;\n  return {\n    osm_id: el.id,\n    name: tags.name,\n    category: item.category,\n    location: { lat: el.lat || el.center?.lat, lon: el.lon || el.center?.lon },\n    tags\n  };\n}).filter(Boolean);\n\nreturn [{\n  json: {\n    stationId: item.stationId,\n    category: item.category,\n    count: processed.length,\n    items: processed\n  }\n}];"
             },
             "name": "Format Ingest",
             "type": "n8n-nodes-base.function",
