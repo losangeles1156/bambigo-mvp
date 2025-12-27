@@ -35,63 +35,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
     const rawData = profile || nodeData || {};
     const operator = rawData.id ? guessOperator(rawData.id) : '';
 
-    // [Adapter] Transform Backend L1 Counts to UI L1 Structure
-    const l1Adapter = (() => {
-        // If the new format already exists, use it
-        if (rawData.l1_dna) return rawData.l1_dna;
 
-        // If the OLD array format exists (legacy support/transition), convert it
-        // (Skipping for now as we assume cold data or mock counts)
-
-        const counts = rawData.category_counts || {};
-
-        // Helper for labels
-        const labels: Record<string, { ja: string, en: string, zh: string }> = {
-            shopping: { ja: '買い物', en: 'Shopping', zh: '購物' },
-            dining: { ja: 'グルメ', en: 'Dining', zh: '餐飲' },
-            leisure: { ja: 'レジャー', en: 'Leisure', zh: '休閒' },
-            culture: { ja: '文化', en: 'Culture', zh: '文化' },
-            service: { ja: 'サービス', en: 'Service', zh: '服務' },
-            medical: { ja: '医療', en: 'Medical', zh: '醫療' },
-            education: { ja: '教育', en: 'Education', zh: '教育' },
-            finance: { ja: '金融', en: 'Finance', zh: '金融' },
-            accommodation: { ja: '宿泊', en: 'Accommodation', zh: '住宿' },
-            nature: { ja: '自然', en: 'Nature', zh: '自然' }
-        };
-
-        const categories: Record<string, any> = {};
-
-        Object.entries(counts).forEach(([key, count]) => {
-            if (typeof count !== 'number' || count <= 0) return;
-            if (!labels[key]) return;
-
-            categories[key] = {
-                id: key,
-                count: count,
-                label: labels[key],
-                subcategories: {},
-                representative_spots: [
-                    {
-                        name: { ja: `${labels[key].ja}スポット`, en: `${labels[key].en} Spot`, zh: `${labels[key].zh}地點` },
-                        osm_id: 'mock-1'
-                    },
-                    {
-                        name: { ja: `人気の${labels[key].ja}`, en: `Popular ${labels[key].en}`, zh: `熱門${labels[key].zh}` },
-                        osm_id: 'mock-2'
-                    }
-                ]
-            };
-        });
-
-        return {
-            categories,
-            vibe_tags: [
-                { id: 'vibe1', label: { en: 'Bustling', ja: '賑やか', zh: '熱鬧' }, score: 5 },
-                { id: 'vibe2', label: { en: 'Convenient', ja: '便利', zh: '便利' }, score: 4 }
-            ],
-            last_updated: new Date().toISOString()
-        };
-    })();
 
     // [Adapter] Transform Backend L2 Status to UI L2 Structure
     const l2Adapter = (() => {
@@ -132,7 +76,6 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
         },
         id: rawData.id || rawData.node_id, // Normalize ID
         l3_facilities: rawData.l3_facilities || [], // Default to array
-        l1_dna: l1Adapter,
         l2: l2Adapter
     };
 
@@ -187,7 +130,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <L1_DNA data={standardData} />
+                            <L1_DNA />
                         </motion.div>
                     )}
 

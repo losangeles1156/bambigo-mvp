@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import {
-    MapPin, Navigation, X, Star, Lightbulb,
+    MapPin, X, Star, Lightbulb, ChevronRight,
     Coffee, ShoppingBag, Landmark, Utensils, Bed, Building, TreePine,
     Stethoscope, Briefcase, ConciergeBell, GraduationCap
 } from 'lucide-react';
-import { StationUIProfile } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
+import { useStationDNA, L1CategorySummary, VibeTag } from '@/hooks/useStationDNA';
+import { PlaceCard } from './PlaceCard';
+import { L1Place } from '@/hooks/useL1Places';
 
 // Icon Mapping
 const ICON_MAP: Record<string, any> = {
@@ -22,58 +24,73 @@ const ICON_MAP: Record<string, any> = {
     education: GraduationCap,
     finance: Briefcase,
     accommodation: Bed,
-    // Fallbacks
-    Cross: Stethoscope,
-    Building: Building
+    building: Building
 };
 
-interface L1_DNAProps {
-    data: StationUIProfile;
-}
-
-export function L1_DNA({ data }: L1_DNAProps) {
+export function L1_DNA() {
     const tL1 = useTranslations('l1');
     const locale = useLocale();
-    // Destructure new l1_dna object, fallback to empty structure
-    const { l1_dna, description = { ja: '', en: '', zh: '' } } = data || {};
-    const { categories = {}, vibe_tags = [] } = l1_dna || {};
 
-    // Get categories as array for mapping
-    const categoryList = Object.values(categories);
+    // Fetch Aggregated Data
+    const { title, tagline, categories, vibe_tags, loading } = useStationDNA();
 
-    // State for expanded category
-    const [selectedCatId, setSelectedCatId] = useState<string | null>(null);
+    // Drawer State
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerTitle, setDrawerTitle] = useState('');
+    const [drawerItems, setDrawerItems] = useState<L1Place[]>([]);
 
-    const selectedCategory = selectedCatId ? categories[selectedCatId] : null;
+    // Simple Drawer Hander
+    const openDrawer = (title: string, items: L1Place[]) => {
+        setDrawerTitle(title);
+        setDrawerItems(items);
+        setDrawerOpen(true);
+    };
+
+    const categoryList = Object.values(categories).sort((a, b) => b.count - a.count);
 
     return (
-        <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500">
+        <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500 relative">
 
-            {/* 1. Header & AI Vibe Check */}
+            {/* 1. Vibe Dashboard (Hero) */}
             <div>
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3">
                     <div className="p-1.5 bg-indigo-600 rounded-lg text-white">
                         <Star size={16} fill="currentColor" />
                     </div>
-                    <h3 className="font-black text-sm uppercase tracking-widest text-gray-900">{tL1('dnaTitle')}</h3>
+                    <h3 className="font-black text-xs uppercase tracking-widest text-gray-500">{tL1('dnaTitle')}</h3>
                 </div>
 
-                <div className="p-5 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 rounded-2xl border border-indigo-100/50 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-3 opacity-10">
-                        <Lightbulb size={48} />
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white shadow-lg p-5">
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 p-8 opacity-10">
+                        <Lightbulb size={120} />
                     </div>
+
                     <div className="relative z-10">
-                        <h4 className="text-[10px] font-black uppercase text-indigo-500 tracking-widest mb-2">{tL1('bambiInsight')}</h4>
-                        <p className="text-sm font-bold text-gray-800 italic leading-relaxed font-serif">
-                            &quot;{getLocaleString(description, locale)}&quot;
+                        <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[9px] font-black uppercase tracking-wider mb-2 border border-white/30">
+                            {tL1('bambiInsight')}
+                        </span>
+                        <h2 className="text-xl font-black mb-1 leading-tight">
+                            {getLocaleString(title, locale)}
+                        </h2>
+                        <p className="text-xs font-medium opacity-90 mb-4">
+                            {getLocaleString(tagline, locale)}
                         </p>
-                        {/* Vibe Tags Display */}
+
+                        {/* Vibe Chips */}
                         {vibe_tags.length > 0 && (
-                            <div className="flex flex-wrap gap-2 mt-3">
-                                {vibe_tags.map(tag => (
-                                    <span key={tag.id} className="text-[10px] bg-white/80 border border-indigo-100 px-2 py-1 rounded-full text-indigo-600 font-bold shadow-sm">
-                                        #{getLocaleString(tag.label, locale)}
-                                    </span>
+                            <div className="flex flex-wrap gap-2">
+                                {vibe_tags.map((tag: VibeTag) => (
+                                    <button
+                                        key={tag.id}
+                                        onClick={() => openDrawer(`#${getLocaleString(tag.label, locale)}`, tag.spots || [])}
+                                        className="flex items-center gap-1.5 pl-2 pr-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-all active:scale-95"
+                                    >
+                                        <span className="text-[10px] font-bold">#{getLocaleString(tag.label, locale)}</span>
+                                        <span className="text-[9px] bg-white text-indigo-600 px-1.5 rounded-full font-black">
+                                            {tag.count}
+                                        </span>
+                                    </button>
                                 ))}
                             </div>
                         )}
@@ -81,41 +98,33 @@ export function L1_DNA({ data }: L1_DNAProps) {
                 </div>
             </div>
 
-            {/* 2. Categories Grid (Strictly 10 items) */}
+            {/* 2. Categories Grid (Drawer Trigger) */}
             <div>
                 <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-wider mb-3">{tL1('nearbyHighlights')}</h4>
 
                 {categoryList.length === 0 ? (
                     <div className="p-4 text-center text-xs text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-                        {tL1('noHighlights')}
+                        {loading ? 'Loading...' : tL1('noHighlights')}
                     </div>
                 ) : (
                     <div className="grid grid-cols-5 gap-y-4 gap-x-2">
-                        {categoryList.slice(0, 10).map((cat) => {
-                            // Use ID for reliable icon mapping
+                        {categoryList.map((cat: L1CategorySummary) => {
                             const Icon = ICON_MAP[cat.id] || MapPin;
-                            const isSelected = selectedCatId === cat.id;
-
                             return (
                                 <button
                                     key={cat.id}
-                                    onClick={() => setSelectedCatId(isSelected ? null : cat.id)}
-                                    className={`flex flex-col items-center gap-1.5 p-1 rounded-xl transition-all duration-300 group ${isSelected
-                                        ? 'scale-105'
-                                        : 'hover:scale-105 opacity-80 hover:opacity-100'
-                                        }`}
+                                    onClick={() => openDrawer(getLocaleString(cat.label, locale), cat.representative_spots || [])}
+                                    className="flex flex-col items-center gap-1.5 p-1 group transition-transform active:scale-95"
                                 >
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${isSelected
-                                        ? 'bg-indigo-600 border-indigo-600 text-white shadow-md'
-                                        : 'bg-white border-gray-200 text-gray-400 group-hover:border-indigo-200 group-hover:text-indigo-500 relative'
-                                        }`}>
-                                        <Icon size={18} strokeWidth={2.5} />
-                                        {/* Count Badge */}
-                                        <div className="absolute -top-1 -right-1 bg-gray-900 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
-                                            {cat.count > 99 ? '99+' : cat.count}
-                                        </div>
+                                    <div className="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-400 group-hover:border-indigo-200 group-hover:text-indigo-500 group-hover:shadow-indigo-100 transition-all relative">
+                                        <Icon size={18} />
+                                        {cat.count > 0 && (
+                                            <div className="absolute -top-1 -right-1 bg-gray-900 text-white text-[8px] min-w-[16px] h-4 px-1 rounded-full flex items-center justify-center font-bold shadow-sm">
+                                                {cat.count > 99 ? '99+' : cat.count}
+                                            </div>
+                                        )}
                                     </div>
-                                    <span className={`text-[9px] font-bold truncate max-w-full tracking-tight ${isSelected ? 'text-indigo-700' : 'text-gray-500'}`}>
+                                    <span className="text-[9px] font-bold text-gray-500 group-hover:text-indigo-600 truncate max-w-full">
                                         {getLocaleString(cat.label, locale)}
                                     </span>
                                 </button>
@@ -125,58 +134,50 @@ export function L1_DNA({ data }: L1_DNAProps) {
                 )}
             </div>
 
-            {/* 3. Detailed Sub-menu (Drawer-like) */}
-            {selectedCategory && (
-                <div className="animate-in fade-in zoom-in duration-300 origin-top pt-4">
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-100/50 overflow-hidden ring-1 ring-black/5">
+            {/* 3. The Drawer (Overlay) */}
+            {drawerOpen && (
+                <div className="fixed inset-x-0 bottom-0 z-50 flex flex-col pointer-events-none">
+                    {/* Backdrop */}
+                    <div
+                        className="fixed inset-0 bg-black/20 backdrop-blur-sm pointer-events-auto animate-in fade-in duration-300"
+                        onClick={() => setDrawerOpen(false)}
+                    />
+
+                    {/* Sheet Content */}
+                    <div className="bg-white w-full max-h-[70vh] rounded-t-3xl shadow-2xl flex flex-col pointer-events-auto animate-in slide-in-from-bottom duration-300 relative mx-auto max-w-md">
+                        {/* Handle */}
+                        <div className="flex justify-center pt-3 pb-1" onClick={() => setDrawerOpen(false)}>
+                            <div className="w-10 h-1 rounded-full bg-gray-200" />
+                        </div>
+
                         {/* Header */}
-                        <div className="bg-gray-50/80 backdrop-blur-sm p-3 flex items-center justify-between border-b border-gray-100">
-                            <h5 className="font-bold text-gray-900 flex items-center gap-2">
-                                {getLocaleString(selectedCategory.label, locale)}
-                                <span className="bg-gray-900 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full">
-                                    {selectedCategory.representative_spots?.length || 0}
+                        <div className="px-5 py-3 flex items-center justify-between border-b border-gray-100">
+                            <h3 className="text-lg font-black text-gray-900 flex items-center gap-2">
+                                {drawerTitle}
+                                <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">
+                                    {drawerItems.length}
                                 </span>
-                            </h5>
+                            </h3>
                             <button
-                                onClick={() => setSelectedCatId(null)}
-                                className="p-1 hover:bg-gray-200 rounded-full text-gray-400"
+                                onClick={() => setDrawerOpen(false)}
+                                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-500"
                             >
-                                <X size={16} />
+                                <X size={18} />
                             </button>
                         </div>
 
-                        {/* Items List (Representative Spots) */}
-                        <div className="max-h-[300px] overflow-y-auto divide-y divide-gray-50 bg-white">
-                            {(selectedCategory.representative_spots || []).map((item, idx) => (
-                                <div key={item.osm_id || idx} className="p-4 hover:bg-gray-50 transition-colors flex items-start gap-3 group/item">
-                                    <div className="mt-1 p-1.5 bg-gray-100 text-gray-400 rounded-lg group-hover/item:bg-indigo-50 group-hover/item:text-indigo-600 transition-colors">
-                                        <MapPin size={14} />
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h6 className="text-sm font-bold text-gray-900 leading-tight mb-0.5 truncate">
-                                            {getLocaleString(item.name, locale)}
-                                        </h6>
-                                        {/* Since location is removed, we show a generic text or subcategory if available */}
-                                        <p className="text-xs text-gray-500 font-medium">
-                                            Nearby Spot
-                                        </p>
-                                    </div>
-                                    <a
-                                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(getLocaleString(item.name, locale))}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="mt-0.5 p-2 bg-gray-100 text-gray-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-all shadow-sm flex-shrink-0"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        <Navigation size={14} fill="currentColor" />
-                                    </a>
+                        {/* List */}
+                        <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 safe-bottom">
+                            {drawerItems.length === 0 ? (
+                                <div className="text-center py-10 text-gray-400 text-sm">
+                                    No spots found.
                                 </div>
-                            ))}
-                            {(!selectedCategory.representative_spots || selectedCategory.representative_spots.length === 0) && (
-                                <div className="p-4 text-center text-xs text-gray-400">
-                                    {tL1('noSpots')}
-                                </div>
+                            ) : (
+                                drawerItems.map((item, idx) => (
+                                    <PlaceCard key={item.osm_id || idx} place={item} />
+                                ))
                             )}
+                            <div className="h-8" /> {/* Pad bottom */}
                         </div>
                     </div>
                 </div>
