@@ -1,0 +1,200 @@
+{
+    "name": "BambiGO L1: V20 (Stable Ueno Sequential)",
+    "nodes": [
+        {
+            "id": "node-start",
+            "parameters": {},
+            "name": "Start",
+            "type": "n8n-nodes-base.manualTrigger",
+            "typeVersion": 1,
+            "position": [
+                100,
+                300
+            ]
+        },
+        {
+            "id": "node-get-stations",
+            "parameters": {
+                "url": "https://bambigo-mvp.vercel.app/api/context/list",
+                "options": {}
+            },
+            "name": "Get Station List",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 1,
+            "position": [
+                300,
+                300
+            ]
+        },
+        {
+            "id": "node-explode-ueno",
+            "parameters": {
+                "jsCode": "const response = items[0].json;\nconst nodes = response.nodes || [];\n\n// STRICTLY Target Ueno Only for Stability Validation\nconst ueno = nodes.find(n => n.id === 'tokyo.jr.ueno');\nif (!ueno) return [{ json: { error: 'Ueno station not found' } }];\n\nconst categories = [\n  { category: 'shopping', query_key: 'shop' },\n  { category: 'convenience', query_key: 'shop', query_val: 'convenience' },\n  { category: 'dining', query_key: 'amenity', query_val: 'restaurant|cafe|fast_food' },\n  { category: 'medical', query_key: 'amenity', query_val: 'pharmacy|clinic|hospital' },\n  { category: 'leisure', query_key: 'leisure' },\n  { category: 'finance', query_key: 'amenity', query_val: 'bank|atm' },\n  { category: 'accommodation', query_key: 'tourism', query_val: 'hotel|hostel' },\n  { category: 'culture', query_key: 'tourism', query_val: 'museum|art_gallery' },\n  { category: 'service', query_key: 'amenity', query_val: 'post_office|police' },\n  { category: 'nature', query_key: 'leisure', query_val: 'park|garden' }\n];\n\n// Generate 10 tasks just for Ueno\nreturn categories.map(cat => ({\n  json: {\n    stationId: ueno.id,\n    stationName: ueno.name?.en || 'Ueno',\n    lat: ueno.location?.lat,\n    lon: ueno.location?.lng,\n    category: cat.category,\n    query_key: cat.query_key,\n    query_val: cat.query_val || ''\n  }\n}));"
+            },
+            "name": "Explode Ueno Categories",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                500,
+                300
+            ]
+        },
+        {
+            "id": "node-build-query",
+            "parameters": {
+                "jsCode": "// Radius 300m\nconst item = items[0].json;\nconst radius = 300;\nlet selector = `[\"${item.query_key}\"]`;\nif (item.query_val) {\n  selector = `[\"${item.query_key}\"~\"${item.query_val}\"]`;\n}\n// Timeout 25s (Generous for single category)\nconst rawQuery = `[out:json][timeout:25];(node${selector}(around:${radius},${item.lat},${item.lon});way${selector}(around:${radius},${item.lat},${item.lon}););out center body;`;\nconst queryEncoded = encodeURIComponent(rawQuery);\nreturn [{ json: { ...item, query: rawQuery, query_encoded: queryEncoded } }];"
+            },
+            "name": "Build Query",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                700,
+                300
+            ]
+        },
+        {
+            "id": "node-wait",
+            "parameters": {
+                "amount": 5,
+                "unit": "seconds"
+            },
+            "name": "Wait (5s)",
+            "type": "n8n-nodes-base.wait",
+            "typeVersion": 1,
+            "position": [
+                900,
+                300
+            ]
+        },
+        {
+            "id": "node-osm-api",
+            "parameters": {
+                "method": "GET",
+                "url": "=https://overpass-api.de/api/interpreter?data={{$json.query_encoded}}",
+                "options": {}
+            },
+            "name": "OSM API",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4,
+            "position": [
+                1100,
+                300
+            ],
+            "onError": "continueErrorOutput"
+        },
+        {
+            "id": "node-format",
+            "parameters": {
+                "jsCode": "// Context Lookup from 'Build Query'\nconst contextItems = $('Build Query').all();\n\nreturn items.map((item, index) => {\n  if (item.error) return null;\n\n  const context = contextItems[index] ? contextItems[index].json : {};\n  if (!context.stationId) return null;\n\n  const elements = item.json.elements || [];\n  \n  const processed = elements.map(el => {\n    const tags = el.tags || {};\n    if (!tags.name) return null;\n    return {\n      osm_id: el.id,\n      name: tags.name,\n      category: context.category,\n      location: { lat: el.lat || el.center?.lat, lon: el.lon || el.center?.lon },\n      tags\n    };\n  }).filter(Boolean);\n\n  return {\n    json: {\n      stationId: context.stationId,\n      category: context.category,\n      count: processed.length,\n      items: processed\n    }\n  };\n}).filter(Boolean);"
+            },
+            "name": "Format Ingest",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                1300,
+                300
+            ]
+        },
+        {
+            "id": "node-backend",
+            "parameters": {
+                "method": "POST",
+                "url": "https://bambigo-mvp.vercel.app/api/l1/ingest",
+                "sendBody": true,
+                "bodyParameters": {
+                    "parameters": []
+                },
+                "specifyBody": "json",
+                "jsonBody": "={{JSON.stringify($json)}}",
+                "options": {}
+            },
+            "name": "Backend Ingest",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4,
+            "position": [
+                1500,
+                300
+            ],
+            "onError": "continueErrorOutput"
+        }
+    ],
+    "connections": {
+        "Start": {
+            "main": [
+                [
+                    {
+                        "node": "Get Station List",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Get Station List": {
+            "main": [
+                [
+                    {
+                        "node": "Explode Ueno Categories",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Explode Ueno Categories": {
+            "main": [
+                [
+                    {
+                        "node": "Build Query",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Build Query": {
+            "main": [
+                [
+                    {
+                        "node": "Wait (5s)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Wait (5s)": {
+            "main": [
+                [
+                    {
+                        "node": "OSM API",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "OSM API": {
+            "main": [
+                [
+                    {
+                        "node": "Format Ingest",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Format Ingest": {
+            "main": [
+                [
+                    {
+                        "node": "Backend Ingest",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
