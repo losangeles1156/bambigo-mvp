@@ -72,17 +72,23 @@ export async function POST(request: Request) {
             let minDist = Infinity;
 
             for (const node of nodes) {
-                // Parse Node GeoJSON POINT(lng lat)
+                // Parse Node GeoJSON Point: { type: 'Point', coordinates: [lng, lat] }
                 let nLat = 0, nLng = 0;
-                if (typeof node.coordinates === 'string' && node.coordinates.startsWith('POINT')) {
+
+                const coords = node.coordinates as any;
+                if (coords && coords.type === 'Point' && Array.isArray(coords.coordinates)) {
+                    nLng = coords.coordinates[0];
+                    nLat = coords.coordinates[1];
+                } else if (typeof node.coordinates === 'string' && node.coordinates.startsWith('POINT')) {
+                    // Fallback for WKT string
                     const match = node.coordinates.match(/POINT\(([-0-9.]+) ([-0-9.]+)\)/);
                     if (match) {
                         nLng = parseFloat(match[1]);
                         nLat = parseFloat(match[2]);
                     }
-                } else {
-                    continue; // Skip invalid node coords
                 }
+
+                if (nLat === 0 || nLng === 0) continue;
 
                 const dist = getDistanceFromLatLonInM(bike.lat, bike.lon, nLat, nLng);
                 if (dist < RADIUS_METERS && dist < minDist) {
