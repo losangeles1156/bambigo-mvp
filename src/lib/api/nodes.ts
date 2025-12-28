@@ -1,6 +1,7 @@
 import { supabase } from '../supabase';
 import { STATION_WISDOM } from '../../data/stationWisdom';
 import { STATIC_L1_DATA } from '../../data/staticL1Data';
+import { STATION_LINES } from '@/lib/constants/stationLines';
 
 // Types aligning with DB schema
 export interface NodeDatum {
@@ -85,6 +86,7 @@ export interface LiveStatus {
         condition: string;
         wind?: number;
     };
+    updated_at?: string;
 }
 
 // L3: Service Facilities
@@ -193,40 +195,7 @@ const CORE_STATIONS_FALLBACK = SEED_NODES.map(node => {
 });
 
 // Mapping of Node IDs to their served lines (MVP Hardcoded for robustness)
-const STATION_LINES: Record<string, { name: { ja: string, en: string, zh: string }, operator: 'Metro' | 'JR' | 'Toei' | 'Private', color: string }[]> = {
-    // Ueno (Aggregated)
-    'odpt:Station:TokyoMetro.Ueno': [
-        { name: { ja: '銀座線', en: 'Ginza Line', zh: '銀座線' }, operator: 'Metro', color: '#FF9500' },
-        { name: { ja: '日比谷線', en: 'Hibiya Line', zh: '日比谷線' }, operator: 'Metro', color: '#B5B5AC' },
-        { name: { ja: '山手線', en: 'Yamanote Line', zh: '山手線' }, operator: 'JR', color: '#9ACD32' },
-        { name: { ja: '京浜東北線', en: 'Keihin-Tohoku Line', zh: '京濱東北線' }, operator: 'JR', color: '#00BFFF' }
-    ],
-    // Tokyo
-    'odpt:Station:JR-East.Tokyo': [
-        { name: { ja: '山手線', en: 'Yamanote Line', zh: '山手線' }, operator: 'JR', color: '#9ACD32' },
-        { name: { ja: '中央線', en: 'Chuo Line', zh: '中央線' }, operator: 'JR', color: '#FF4500' },
-        { name: { ja: '丸ノ内線', en: 'Marunouchi Line', zh: '丸之內線' }, operator: 'Metro', color: '#F62E36' },
-        { name: { ja: '東海道新幹線', en: 'Tokaido Shinkansen', zh: '東海道新幹線' }, operator: 'JR', color: '#1E90FF' }
-    ],
-    // Akihabara
-    'odpt:Station:JR-East.Akihabara': [
-        { name: { ja: '山手線', en: 'Yamanote Line', zh: '山手線' }, operator: 'JR', color: '#9ACD32' },
-        { name: { ja: '総武線', en: 'Sobu Line', zh: '總武線' }, operator: 'JR', color: '#FFD700' },
-        { name: { ja: '日比谷線', en: 'Hibiya Line', zh: '日比谷線' }, operator: 'Metro', color: '#B5B5AC' }
-    ],
-    // Ginza
-    'odpt:Station:TokyoMetro.Ginza': [
-        { name: { ja: '銀座線', en: 'Ginza Line', zh: '銀座線' }, operator: 'Metro', color: '#FF9500' },
-        { name: { ja: '丸ノ内線', en: 'Marunouchi Line', zh: '丸之內線' }, operator: 'Metro', color: '#F62E36' },
-        { name: { ja: '日比谷線', en: 'Hibiya Line', zh: '日比谷線' }, operator: 'Metro', color: '#B5B5AC' }
-    ],
-    // Asakusa
-    'odpt:Station:TokyoMetro.Asakusa': [
-        { name: { ja: '銀座線', en: 'Ginza Line', zh: '銀座線' }, operator: 'Metro', color: '#FF9500' },
-        { name: { ja: '浅草線', en: 'Asakusa Line', zh: '淺草線' }, operator: 'Toei', color: '#E85298' },
-        { name: { ja: 'スカイツリーライン', en: 'Skytree Line', zh: '晴空塔線' }, operator: 'Private', color: '#0F2350' }
-    ]
-};
+// Internal Node ID to ODPT Station ID Mapping
 
 // Internal Node ID to ODPT Station ID Mapping
 const NODE_TO_ODPT: Record<string, string> = {
@@ -525,7 +494,8 @@ export async function fetchNodeConfig(nodeId: string) {
                     weather: {
                         temp: l2Data.weather_info?.temp || 0,
                         condition: l2Data.weather_info?.condition || 'Unknown'
-                    }
+                    },
+                    updated_at: l2Data.updated_at
                 };
             } else if (odptId) {
                 // Try Physical ID if Logical failed

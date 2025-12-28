@@ -1,0 +1,698 @@
+{
+  "name": "L2_Train_Disruption_Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 3
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Every 3 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.odpt.org/api/v4/gtfs/realtime/toei_odpt_train_alert",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "acl:consumerKey",
+              "value": "={{ $credentials.odptApi.apiKey }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "http-toei-alert",
+      "name": "Toei Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        140
+      ],
+      "notesInFlow": true,
+      "notes": "都營地下鐵 Alert"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.odpt.org/api/v4/gtfs/realtime/tokyometro_odpt_train_alert",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "acl:consumerKey",
+              "value": "={{ $credentials.odptApi.apiKey }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "http-metro-alert",
+      "name": "Metro Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "東京Metro Alert"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api-challenge.odpt.org/api/v4/gtfs/realtime/jreast_odpt_train_trip_update",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "acl:consumerKey",
+              "value": "={{ $credentials.odptChallengeApi.apiKey }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "http-jre-trip",
+      "name": "JR East TripUpdate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        460
+      ],
+      "notesInFlow": true,
+      "notes": "JR東日本 TripUpdate (延誤資訊)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 為每個 HTTP 回應添加來源標記\nconst items = $input.all();\n\n// 根據節點名稱判斷來源\nconst nodeName = $prevNode.name;\nlet source = 'unknown';\n\nif (nodeName.includes('Toei')) source = 'toei_alert';\nelse if (nodeName.includes('Metro')) source = 'metro_alert';\nelse if (nodeName.includes('JR')) source = 'jre_trip';\n\nreturn items.map(item => ({\n  json: { source },\n  binary: item.binary\n}));"
+      },
+      "id": "set-source-toei",
+      "name": "Set Source Toei",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst nodeName = $prevNode.name;\nlet source = 'metro_alert';\n\nreturn items.map(item => ({\n  json: { source },\n  binary: item.binary\n}));"
+      },
+      "id": "set-source-metro",
+      "name": "Set Source Metro",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst nodeName = $prevNode.name;\nlet source = 'jre_trip';\n\nreturn items.map(item => ({\n  json: { source },\n  binary: item.binary\n}));"
+      },
+      "id": "set-source-jre",
+      "name": "Set Source JRE",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "append"
+      },
+      "id": "merge-all",
+      "name": "Merge All Feeds",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===== BambiGO L2 Protobuf 解碼器 =====\n// 解碼 GTFS-RT Alert 和 TripUpdate\n\n// ===== 極簡 Protobuf 解碼器 =====\nclass PB {\n  constructor(buf) {\n    if (Buffer.isBuffer(buf)) {\n      this.b = buf;\n    } else if (typeof buf === 'string') {\n      this.b = Buffer.from(buf, 'base64');\n    } else if (buf instanceof Uint8Array) {\n      this.b = Buffer.from(buf);\n    } else {\n      this.b = Buffer.alloc(0);\n    }\n    this.p = 0;\n  }\n  \n  v() { // readVarint\n    let r = 0, s = 0, byte;\n    do { \n      if (this.p >= this.b.length) return 0;\n      byte = this.b[this.p++]; \n      r |= (byte & 0x7f) << s; \n      s += 7; \n    } while (byte >= 0x80 && s < 35);\n    return r >>> 0;\n  }\n  \n  sv() { // readSignedVarint (ZigZag)\n    const raw = this.v();\n    return (raw >>> 1) ^ -(raw & 1);\n  }\n  \n  s(n) { // readString\n    if (this.p + n > this.b.length) n = this.b.length - this.p;\n    const str = this.b.slice(this.p, this.p + n).toString('utf8');\n    this.p += n;\n    return str;\n  }\n  \n  r(n) { // readBytes as new PB\n    if (this.p + n > this.b.length) n = this.b.length - this.p;\n    const bytes = this.b.slice(this.p, this.p + n);\n    this.p += n;\n    return new PB(bytes);\n  }\n  \n  skip(w) { // skipField by wireType\n    switch (w) {\n      case 0: this.v(); break;           // Varint\n      case 1: this.p += 8; break;         // 64-bit\n      case 2: this.p += this.v(); break;  // Length-delimited\n      case 5: this.p += 4; break;         // 32-bit\n    }\n  }\n  \n  has() { return this.p < this.b.length; }\n}\n\n// ===== Alert 解碼 =====\nfunction decodeAlerts(buffer, source) {\n  try {\n    const pb = new PB(buffer);\n    const alerts = [];\n    let timestamp = 0;\n    \n    while (pb.has()) {\n      const tag = pb.v();\n      const field = tag >> 3, wire = tag & 7;\n      \n      if (field === 1 && wire === 2) { // FeedHeader\n        const headerPb = pb.r(pb.v());\n        while (headerPb.has()) {\n          const ht = headerPb.v();\n          if ((ht >> 3) === 3 && (ht & 7) === 0) {\n            timestamp = headerPb.v();\n          } else {\n            headerPb.skip(ht & 7);\n          }\n        }\n      } else if (field === 2 && wire === 2) { // FeedEntity\n        const entityPb = pb.r(pb.v());\n        const alert = parseAlertEntity(entityPb);\n        if (alert) alerts.push({ ...alert, source });\n      } else {\n        pb.skip(wire);\n      }\n    }\n    \n    return { timestamp, alerts, error: null };\n  } catch (e) {\n    return { timestamp: 0, alerts: [], error: e.message };\n  }\n}\n\nfunction parseAlertEntity(pb) {\n  let id = '', alert = null;\n  \n  while (pb.has()) {\n    const tag = pb.v();\n    const field = tag >> 3, wire = tag & 7;\n    \n    if (field === 1 && wire === 2) {\n      id = pb.s(pb.v());\n    } else if (field === 5 && wire === 2) {\n      alert = parseAlertContent(pb.r(pb.v()));\n    } else {\n      pb.skip(wire);\n    }\n  }\n  \n  return alert ? { id, ...alert } : null;\n}\n\nfunction parseAlertContent(pb) {\n  const result = { \n    routes: [], \n    effect: 0, \n    cause: 0, \n    header: {}, \n    description: {},\n    active_period: []\n  };\n  \n  while (pb.has()) {\n    const tag = pb.v();\n    const field = tag >> 3, wire = tag & 7;\n    \n    switch (field) {\n      case 1: // active_period\n        if (wire === 2) {\n          const periodPb = pb.r(pb.v());\n          const period = parseTimePeriod(periodPb);\n          if (period) result.active_period.push(period);\n        }\n        break;\n      case 5: // informed_entity\n        if (wire === 2) {\n          const selPb = pb.r(pb.v());\n          const route = parseEntitySelector(selPb);\n          if (route) result.routes.push(route);\n        }\n        break;\n      case 6: // cause\n        if (wire === 0) result.cause = pb.v();\n        break;\n      case 7: // effect\n        if (wire === 0) result.effect = pb.v();\n        break;\n      case 10: // header_text\n        if (wire === 2) result.header = parseTranslatedString(pb.r(pb.v()));\n        break;\n      case 11: // description_text\n        if (wire === 2) result.description = parseTranslatedString(pb.r(pb.v()));\n        break;\n      default:\n        pb.skip(wire);\n    }\n  }\n  \n  return result;\n}\n\nfunction parseTimePeriod(pb) {\n  let start = 0, end = 0;\n  while (pb.has()) {\n    const tag = pb.v();\n    const field = tag >> 3, wire = tag & 7;\n    if (field === 1 && wire === 0) start = pb.v();\n    else if (field === 2 && wire === 0) end = pb.v();\n    else pb.skip(wire);\n  }\n  return { start, end };\n}\n\nfunction parseEntitySelector(pb) {\n  let routeId = null, stopId = null, agencyId = null;\n  \n  while (pb.has()) {\n    const tag = pb.v();\n    const field = tag >> 3, wire = tag & 7;\n    \n    if (field === 1 && wire === 2) agencyId = pb.s(pb.v());\n    else if (field === 2 && wire === 2) routeId = pb.s(pb.v());\n    else if (field === 5 && wire === 2) stopId = pb.s(pb.v());\n    else pb.skip(wire);\n  }\n  \n  return routeId || agencyId;\n}\n\nfunction parseTranslatedString(pb) {\n  const result = {};\n  \n  while (pb.has()) {\n    const tag = pb.v();\n    if ((tag >> 3) === 1 && (tag & 7) === 2) {\n      const transPb = pb.r(pb.v());\n      let text = '', lang = 'ja';\n      \n      while (transPb.has()) {\n        const tt = transPb.v();\n        const tf = tt >> 3, tw = tt & 7;\n        \n        if (tf === 1 && tw === 2) text = transPb.s(transPb.v());\n        else if (tf === 2 && tw === 2) lang = transPb.s(transPb.v());\n        else transPb.skip(tw);\n      }\n      \n      result[lang || 'ja'] = text;\n    } else {\n      pb.skip(tag & 7);\n    }\n  }\n  \n  return result;\n}\n\n// ===== TripUpdate 解碼（只提取 delay）=====\nfunction decodeDelays(buffer, source) {\n  try {\n    const pb = new PB(buffer);\n    const delays = {}; // route_id -> { maxDelay, count }\n    let timestamp = 0;\n    \n    while (pb.has()) {\n      const tag = pb.v();\n      const field = tag >> 3, wire = tag & 7;\n      \n      if (field === 1 && wire === 2) { // FeedHeader\n        const headerPb = pb.r(pb.v());\n        while (headerPb.has()) {\n          const ht = headerPb.v();\n          if ((ht >> 3) === 3 && (ht & 7) === 0) {\n            timestamp = headerPb.v();\n          } else {\n            headerPb.skip(ht & 7);\n          }\n        }\n      } else if (field === 2 && wire === 2) { // FeedEntity\n        const entityPb = pb.r(pb.v());\n        const { routeId, delay } = parseTripUpdateEntity(entityPb);\n        \n        if (routeId && delay > 0) {\n          if (!delays[routeId]) {\n            delays[routeId] = { maxDelay: 0, totalDelay: 0, count: 0 };\n          }\n          delays[routeId].maxDelay = Math.max(delays[routeId].maxDelay, delay);\n          delays[routeId].totalDelay += delay;\n          delays[routeId].count++;\n        }\n      } else {\n        pb.skip(wire);\n      }\n    }\n    \n    return { timestamp, delays, error: null };\n  } catch (e) {\n    return { timestamp: 0, delays: {}, error: e.message };\n  }\n}\n\nfunction parseTripUpdateEntity(pb) {\n  let routeId = null, delay = 0;\n  \n  while (pb.has()) {\n    const tag = pb.v();\n    const field = tag >> 3, wire = tag & 7;\n    \n    if (field === 3 && wire === 2) { // trip_update\n      const tuPb = pb.r(pb.v());\n      \n      while (tuPb.has()) {\n        const tt = tuPb.v();\n        const tf = tt >> 3, tw = tt & 7;\n        \n        if (tf === 1 && tw === 2) { // trip descriptor\n          const tripPb = tuPb.r(tuPb.v());\n          while (tripPb.has()) {\n            const trt = tripPb.v();\n            if ((trt >> 3) === 5 && (trt & 7) === 2) {\n              routeId = tripPb.s(tripPb.v());\n            } else {\n              tripPb.skip(trt & 7);\n            }\n          }\n        } else if (tf === 5 && tw === 0) { // delay (sint32)\n          delay = tuPb.sv(); // ZigZag decode\n        } else if (tf === 2 && tw === 2) { // stop_time_update\n          // 從 stop_time_update 中提取 delay\n          const stuPb = tuPb.r(tuPb.v());\n          while (stuPb.has()) {\n            const st = stuPb.v();\n            const sf = st >> 3, sw = st & 7;\n            \n            if ((sf === 2 || sf === 3) && sw === 2) { // arrival or departure\n              const eventPb = stuPb.r(stuPb.v());\n              while (eventPb.has()) {\n                const et = eventPb.v();\n                if ((et >> 3) === 1 && (et & 7) === 0) {\n                  const stopDelay = eventPb.sv();\n                  if (Math.abs(stopDelay) > Math.abs(delay)) {\n                    delay = stopDelay;\n                  }\n                } else {\n                  eventPb.skip(et & 7);\n                }\n              }\n            } else {\n              stuPb.skip(sw);\n            }\n          }\n        } else {\n          tuPb.skip(tw);\n        }\n      }\n    } else {\n      pb.skip(wire);\n    }\n  }\n  \n  // 轉換為分鐘\n  return { routeId, delay: Math.floor(delay / 60) };\n}\n\n// ===== 主邏輯 =====\nconst allItems = $input.all();\nconst results = [];\nconst debugInfo = [];\n\nfor (const item of allItems) {\n  const source = item.json.source;\n  \n  if (!item.binary || !item.binary.data) {\n    debugInfo.push({ source, status: 'no_binary_data' });\n    continue;\n  }\n  \n  try {\n    // 從 n8n binary 格式提取數據\n    let buffer;\n    if (typeof item.binary.data.data === 'string') {\n      buffer = Buffer.from(item.binary.data.data, 'base64');\n    } else {\n      buffer = Buffer.from(item.binary.data);\n    }\n    \n    debugInfo.push({ source, buffer_length: buffer.length });\n    \n    if (source === 'jre_trip') {\n      // JR 東日本 TripUpdate\n      const { timestamp, delays, error } = decodeDelays(buffer, source);\n      \n      if (error) {\n        debugInfo.push({ source, decode_error: error });\n        continue;\n      }\n      \n      // 轉換為 Alert-like 結構\n      for (const [routeId, data] of Object.entries(delays)) {\n        const avgDelay = Math.round(data.totalDelay / data.count);\n        const maxDelay = data.maxDelay;\n        \n        // 只記錄 3 分鐘以上的延誤\n        if (maxDelay >= 3) {\n          results.push({\n            source: 'jre',\n            id: `jre_delay_${routeId}_${timestamp}`,\n            routes: [routeId],\n            effect: maxDelay >= 15 ? 3 : 7, // 15分以上算嚴重延誤\n            cause: 0,\n            delay_minutes: maxDelay,\n            avg_delay_minutes: avgDelay,\n            affected_trips: data.count,\n            header: { ja: `約${maxDelay}分の遅れ` },\n            description: { \n              ja: `${routeId}で約${maxDelay}分（平均${avgDelay}分）の遅れが発生しています`,\n              en: `${routeId} delayed approximately ${maxDelay} min (avg ${avgDelay} min)`\n            }\n          });\n        }\n      }\n      \n      debugInfo.push({ source, delays_found: Object.keys(delays).length });\n      \n    } else {\n      // 都營 / Metro Alert\n      const { timestamp, alerts, error } = decodeAlerts(buffer, source);\n      \n      if (error) {\n        debugInfo.push({ source, decode_error: error });\n        continue;\n      }\n      \n      results.push(...alerts);\n      debugInfo.push({ source, alerts_found: alerts.length });\n    }\n    \n  } catch (e) {\n    debugInfo.push({ source, exception: e.message });\n  }\n}\n\nreturn [{\n  json: {\n    disruptions: results,\n    fetched_at: new Date().toISOString(),\n    debug: debugInfo\n  }\n}];"
+      },
+      "id": "decode-protobuf",
+      "name": "Decode Protobuf",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "解碼所有 GTFS-RT Protobuf 數據"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===== BambiGO L2 轉換為 L4 決策結構 (Line-Centric Optimized) =====\n\nconst { disruptions, fetched_at, debug } = $input.first().json;\n\n// ===== 路線與節點對照表 (Concentric Circles Strategy) =====\n// Core: MVP Stations (High Fidelity)\n// Periphery: Line Awareness (All stations on line need status)\nconst LINE_INFO = {\n    // --- Toei ---\n    'Toei.Asakusa': {\n        ja: '都営浅草線', 'zh-TW': '都營淺草線', en: 'Toei Asakusa Line',\n        color: '#E85298', nodes: ['asakusa', 'nihombashi', 'shinbashi', 'gotanda']\n    },\n    'Toei.Mita': {\n        ja: '都営三田線', 'zh-TW': '都營三田線', en: 'Toei Mita Line',\n        color: '#0079C2', nodes: ['meguro', 'otemachi', 'sugamo']\n    },\n    'Toei.Shinjuku': {\n        ja: '都営新宿線', 'zh-TW': '都營新宿線', en: 'Toei Shinjuku Line',\n        color: '#6CBB5A', nodes: ['shinjuku', 'kudanshita']\n    },\n    'Toei.Oedo': {\n        ja: '都営大江戸線', 'zh-TW': '都營大江戶線', en: 'Toei Oedo Line',\n        color: '#B6007A', nodes: ['shinjuku', 'roppongi', 'ueno', 'ryogoku']\n    },\n    // --- Tokyo Metro ---\n    'TokyoMetro.Ginza': {\n        ja: '銀座線', 'zh-TW': '銀座線', en: 'Ginza Line',\n        color: '#FF9500', nodes: ['asakusa', 'ueno', 'ginza', 'shibuya', 'nihombashi']\n    },\n    'TokyoMetro.Marunouchi': {\n        ja: '丸ノ内線', 'zh-TW': '丸之內線', en: 'Marunouchi Line',\n        color: '#F62E36', nodes: ['tokyo', 'shinjuku', 'ikebukuro', 'ginza']\n    },\n    'TokyoMetro.Hibiya': {\n        ja: '日比谷線', 'zh-TW': '日比谷線', en: 'Hibiya Line',\n        color: '#B5B5AC', nodes: ['ueno', 'ginza', 'roppongi', 'nakameguro']\n    },\n    'TokyoMetro.Tozai': {\n        ja: '東西線', 'zh-TW': '東西線', en: 'Tozai Line',\n        color: '#009BBF', nodes: ['nihombashi', 'otemachi']\n    },\n    'TokyoMetro.Chiyoda': {\n        ja: '千代田線', 'zh-TW': '千代田線', en: 'Chiyoda Line',\n        color: '#00A95F', nodes: ['otemachi', 'omotesando', 'yoyogiuehara']\n    },\n    'TokyoMetro.Yurakucho': {\n        ja: '有楽町線', 'zh-TW': '有樂町線', en: 'Yurakucho Line',\n        color: '#C1A470', nodes: ['ikebukuro', 'yurakucho']\n    },\n    'TokyoMetro.Hanzomon': {\n        ja: '半蔵門線', 'zh-TW': '半藏門線', en: 'Hanzomon Line',\n        color: '#8F76D6', nodes: ['shibuya', 'otemachi']\n    },\n    'TokyoMetro.Namboku': {\n        ja: '南北線', 'zh-TW': '南北線', en: 'Namboku Line',\n        color: '#00AC9B', nodes: ['meguro', 'komagome']\n    },\n    'TokyoMetro.Fukutoshin': {\n        ja: '副都心線', 'zh-TW': '副都心線', en: 'Fukutoshin Line',\n        color: '#9C5E31', nodes: ['shibuya', 'shinjuku', 'ikebukuro']\n    },\n    // --- JR East ---\n    'JR-East.Yamanote': {\n        ja: '山手線', 'zh-TW': '山手線', en: 'Yamanote Line',\n        color: '#9ACD32', nodes: ['tokyo', 'ueno', 'ikebukuro', 'shinjuku', 'shibuya', 'shinagawa', 'yurakucho', 'akihabara']\n    },\n    'JR-East.ChuoRapid': {\n        ja: '中央線快速', 'zh-TW': '中央線快速', en: 'Chuo Rapid Line',\n        color: '#FF4500', nodes: ['tokyo', 'shinjuku']\n    },\n    'JR-East.ChuoSobu': {\n        ja: '中央・総武線各停', 'zh-TW': '中央・總武線各停', en: 'Chuo-Sobu Local',\n        color: '#FFD700', nodes: ['shinjuku', 'akihabara']\n    },\n    'JR-East.KeihinTohoku': {\n        ja: '京浜東北線', 'zh-TW': '京濱東北線', en: 'Keihin-Tohoku Line',\n        color: '#00BFFF', nodes: ['tokyo', 'ueno', 'shinagawa', 'akihabara']\n    },\n    'JR-East.Takasaki': {\n        ja: '高崎線', 'zh-TW': '高崎線', en: 'Takasaki Line',\n        color: '#FF8C00', nodes: ['ueno', 'tokyo']\n    },\n    'JR-East.Utsunomiya': {\n        ja: '宇都宮線', 'zh-TW': '宇都宮線', en: 'Utsunomiya Line',\n        color: '#FF8C00', nodes: ['ueno', 'tokyo']\n    },\n    'JR-East.ShonanShinjuku': {\n        ja: '湘南新宿ライン', 'zh-TW': '湘南新宿線', en: 'Shonan-Shinjuku Line',\n        color: '#E21F26', nodes: ['shinjuku', 'shibuya', 'ikebukuro']\n    },\n    'JR-East.SaikyoKawagoe': {\n        ja: '埼京・川越線', 'zh-TW': '埼京・川越線', en: 'Saikyo-Kawagoe Line',\n        color: '#00AC9A', nodes: ['shinjuku', 'shibuya', 'ikebukuro']\n    }\n};\n\nconst ROUTE_ALIASES = {\n    'odpt.Railway:Toei.Asakusa': 'Toei.Asakusa',\n    'odpt.Railway:Toei.Mita': 'Toei.Mita',\n    'odpt.Railway:Toei.Shinjuku': 'Toei.Shinjuku',\n    'odpt.Railway:Toei.Oedo': 'Toei.Oedo',\n    'odpt.Railway:TokyoMetro.Ginza': 'TokyoMetro.Ginza',\n    'odpt.Railway:TokyoMetro.Marunouchi': 'TokyoMetro.Marunouchi',\n    'odpt.Railway:TokyoMetro.Hibiya': 'TokyoMetro.Hibiya',\n    'odpt.Railway:TokyoMetro.Tozai': 'TokyoMetro.Tozai',\n    'odpt.Railway:TokyoMetro.Chiyoda': 'TokyoMetro.Chiyoda',\n    'odpt.Railway:TokyoMetro.Yurakucho': 'TokyoMetro.Yurakucho',\n    'odpt.Railway:TokyoMetro.Hanzomon': 'TokyoMetro.Hanzomon',\n    'odpt.Railway:TokyoMetro.Namboku': 'TokyoMetro.Namboku',\n    'odpt.Railway:TokyoMetro.Fukutoshin': 'TokyoMetro.Fukutoshin',\n    'JR-East_Yamanote': 'JR-East.Yamanote',\n    'JR-East_ChuoRapid': 'JR-East.ChuoRapid',\n    'JR-East_KeihinTohoku': 'JR-East.KeihinTohoku'\n};\n\nconst EFFECT_MAP = {\n    1: { severity: 'critical', label: { ja: '運転見合わせ', 'zh-TW': '停駛', en: 'Suspended' } },\n    2: { severity: 'major', label: { ja: '運転本数減少', 'zh-TW': '減班運行', en: 'Reduced Service' } },\n    3: { severity: 'major', label: { ja: '大幅な遅延', 'zh-TW': '嚴重延誤', en: 'Major Delays' } },\n    4: { severity: 'minor', label: { ja: '迂回運転', 'zh-TW': '繞道運行', en: 'Detour' } },\n    5: { severity: 'minor', label: { ja: '直通運転中止', 'zh-TW': '直通運轉中止', en: 'Through Service Suspended' } },\n    6: { severity: 'minor', label: { ja: '運転変更', 'zh-TW': '變更運行', en: 'Modified Service' } },\n    7: { severity: 'minor', label: { ja: '遅延', 'zh-TW': '延誤', en: 'Delays' } },\n    8: { severity: 'none', label: { ja: '不明', 'zh-TW': '不明', en: 'Unknown' } }\n};\n\nconst CAUSE_MAP = {\n    1: { ja: '不明', 'zh-TW': '不明', en: 'Unknown' },\n    2: { ja: 'その他', 'zh-TW': '其他', en: 'Other' },\n    3: { ja: '車両点検', 'zh-TW': '車輛檢查', en: 'Technical Problem' },\n    4: { ja: 'ストライキ', 'zh-TW': '罷工', en: 'Strike' },\n    5: { ja: 'デモ', 'zh-TW': '示威', en: 'Demonstration' },\n    6: { ja: '事故', 'zh-TW': '事故', en: 'Accident' },\n    7: { ja: '祝日ダイヤ', 'zh-TW': '假日時刻', en: 'Holiday Schedule' },\n    8: { ja: '天候', 'zh-TW': '天氣', en: 'Weather' },\n    9: { ja: '工事', 'zh-TW': '施工', en: 'Maintenance' },\n    10: { ja: '工事', 'zh-TW': '施工', en: 'Construction' },\n    11: { ja: '警察活動', 'zh-TW': '警察活動', en: 'Police Activity' },\n    12: { ja: '急病人対応', 'zh-TW': '乘客身體不適', en: 'Medical Emergency' }\n};\n\nfunction normalizeRouteId(routeId) {\n    if (!routeId) return null;\n    if (ROUTE_ALIASES[routeId]) return ROUTE_ALIASES[routeId];\n    const gtfsMatch = routeId.match(/^([A-Za-z-]+)_(.+)$/);\n    if (gtfsMatch) {\n        const normalized = `${gtfsMatch[1]}.${gtfsMatch[2]}`;\n        if (LINE_INFO[normalized]) return normalized;\n    }\n    const odptMatch = routeId.match(/odpt\\.Railway:(.+)/);\n    if (odptMatch && LINE_INFO[odptMatch[1]]) return odptMatch[1];\n    if (LINE_INFO[routeId]) return routeId;\n    return routeId;\n}\n\n// ===== PROCESS DISRUPTIONS =====\n\n// Map to hold consolidated status\n// Keys: node_id (e.g. 'ueno') OR line_id (e.g. 'transit:TokyoMetro.Ginza')\nconst statusMap = {};\n\n// Function to ensure status entry exists\nconst getStatusEntry = (id) => {\n    if (!statusMap[id]) {\n        statusMap[id] = {\n            node_id: id,\n            updated_at: fetched_at,\n            has_issues: false,\n            overall_severity: 'none',\n            affected_lines: [],\n            disruptions: []\n        };\n    }\n    return statusMap[id];\n};\n\n// 1. Process Raw Disruptions -> Create Line Disruption Objects\nfor (const d of disruptions) {\n    for (const rawRouteId of d.routes) {\n        const routeId = normalizeRouteId(rawRouteId);\n        const lineInfo = LINE_INFO[routeId];\n        if (!lineInfo) continue;\n\n        const effectInfo = EFFECT_MAP[d.effect] || EFFECT_MAP[8];\n        const causeInfo = CAUSE_MAP[d.cause] || CAUSE_MAP[1];\n\n        let delayMinutes = d.delay_minutes || 0;\n        if (!delayMinutes && d.description?.ja) {\n            const match = d.description.ja.match(/(\\d+)分/);\n            if (match) delayMinutes = parseInt(match[1]);\n        }\n\n        const disruptionObj = {\n            line_id: routeId,\n            line_name: { ja: lineInfo.ja, 'zh-TW': lineInfo['zh-TW'], en: lineInfo.en },\n            line_color: lineInfo.color,\n            severity: effectInfo.severity,\n            status_label: effectInfo.label,\n            cause: causeInfo,\n            delay_minutes: delayMinutes,\n            message: d.description || d.header || {},\n            source: d.source\n        };\n\n        // A. Update LINE-LEVEL Status (The 'Concentric Circle' Outer Ring)\n        // We store this as a special node ID: \"transit:<RouteID>\"\n        const lineNodeId = `transit:${routeId}`;\n        const lineEntry = getStatusEntry(lineNodeId);\n\n        // Merge logic (keep worst severity)\n        const existingIdx = lineEntry.disruptions.findIndex(x => x.line_id === routeId);\n        if (existingIdx >= 0) {\n            const existing = lineEntry.disruptions[existingIdx];\n            const sevOrder = ['none', 'minor', 'major', 'critical'];\n            if (sevOrder.indexOf(disruptionObj.severity) > sevOrder.indexOf(existing.severity)) {\n                lineEntry.disruptions[existingIdx] = disruptionObj;\n            }\n        } else {\n            lineEntry.disruptions.push(disruptionObj);\n        }\n\n        lineEntry.has_issues = true;\n        if (!lineEntry.affected_lines.includes(lineInfo.ja)) lineEntry.affected_lines.push(lineInfo.ja);\n\n        const sevOrder = ['none', 'minor', 'major', 'critical'];\n        if (sevOrder.indexOf(effectInfo.severity) > sevOrder.indexOf(lineEntry.overall_severity)) {\n            lineEntry.overall_severity = effectInfo.severity;\n        }\n\n        // B. Update MVP STATION Status (The 'Concentric Circle' Core)\n        // This ensures backward compatibility for specific node queries in the frontend\n        if (lineInfo.nodes && Array.isArray(lineInfo.nodes)) {\n            for (const nodeId of lineInfo.nodes) {\n                const nodeEntry = getStatusEntry(nodeId);\n\n                // Reuse same logic... (Should refactor but keeping inline for n8n code block)\n                const existingNodeIdx = nodeEntry.disruptions.findIndex(x => x.line_id === routeId);\n                if (existingNodeIdx >= 0) {\n                    const existing = nodeEntry.disruptions[existingNodeIdx];\n                    if (sevOrder.indexOf(disruptionObj.severity) > sevOrder.indexOf(existing.severity)) {\n                        nodeEntry.disruptions[existingNodeIdx] = disruptionObj;\n                    }\n                } else {\n                    nodeEntry.disruptions.push(disruptionObj);\n                }\n\n                nodeEntry.has_issues = true;\n                if (!nodeEntry.affected_lines.includes(lineInfo.ja)) nodeEntry.affected_lines.push(lineInfo.ja);\n                if (sevOrder.indexOf(effectInfo.severity) > sevOrder.indexOf(nodeEntry.overall_severity)) {\n                    nodeEntry.overall_severity = effectInfo.severity;\n                }\n            }\n        }\n    }\n}\n\n// ===== GENERATE L4 HINTS =====\nfunction generateL4Hint(entry) {\n    if (!entry.has_issues) {\n        return {\n            action: 'proceed', severity: 'none',\n            message: { ja: '運行は正常です', 'zh-TW': '目前運行正常', en: 'Normal Service' },\n            affected_lines: [], alternatives_needed: false\n        };\n    }\n\n    const critical = entry.disruptions.filter(d => d.severity === 'critical');\n    const major = entry.disruptions.filter(d => d.severity === 'major');\n    const minor = entry.disruptions.filter(d => d.severity === 'minor');\n\n    if (critical.length > 0) {\n        const linesZh = critical.map(d => d.line_name['zh-TW']).join('、');\n        const linesJa = critical.map(d => d.line_name.ja).join('、');\n        return {\n            action: 'avoid', severity: 'critical',\n            message: {\n                ja: `${linesJa}で運転見合わせが発生しています。`,\n                'zh-TW': `${linesZh}目前停駛中，請改道。`,\n                en: 'Service suspended on affected lines.'\n            },\n            affected_lines: critical.map(d => d.line_id), alternatives_needed: true\n        };\n    }\n\n    if (major.length > 0) {\n        const maxDelay = Math.max(...major.map(d => d.delay_minutes || 15));\n        const linesZh = major.map(d => d.line_name['zh-TW']).join('、');\n        const linesJa = major.map(d => d.line_name.ja).join('、');\n        return {\n            action: 'consider_alternatives', severity: 'major',\n            message: {\n                ja: `${linesJa}で約${maxDelay}分の遅れが出ています。`,\n                'zh-TW': `${linesZh}有約${maxDelay}分鐘的嚴重延誤。`,\n                en: `Major delays (~${maxDelay} min) reported.`\n            },\n            estimated_delay: maxDelay, affected_lines: major.map(d => d.line_id), alternatives_needed: true\n        };\n    }\n\n    const maxDelay = Math.max(...minor.map(d => d.delay_minutes || 5), 5);\n    return {\n        action: 'minor_delay', severity: 'minor',\n        message: {\n            ja: `一部列車に約${maxDelay}分の遅れがあります。`,\n            'zh-TW': `部分列車有約${maxDelay}分鐘的輕微延誤。`,\n            en: `Minor delays (~${maxDelay} min) reported.`\n        },\n        estimated_delay: maxDelay, affected_lines: minor.map(d => d.line_id), alternatives_needed: false\n    };\n}\n\n// Generate Hints for ALL entries (Lines + Nodes)\nfor (const entry of Object.values(statusMap)) {\n    entry.l4_hint = generateL4Hint(entry);\n}\n\n// ===== OUTPUT PREPARATION =====\n// Ensure we output data for all Core MVP nodes even if 'normal'\n// (Line nodes are only output if they have issues or are explicitly tracked)\nconst CORE_NODES = [\n    'ueno', 'tokyo', 'asakusa', 'shibuya', 'shinjuku',\n    'ikebukuro', 'ginza', 'shinagawa', 'roppongi',\n    'nihombashi', 'otemachi', 'meguro', 'akihabara',\n    'yurakucho', 'gotanda', 'nakameguro'\n];\n\nconst output = [];\n\n// 1. Push all StatusMap entries (Lines with issues + Affected Nodes)\nfor (const entry of Object.values(statusMap)) {\n    output.push({ json: entry });\n}\n\n// 2. Push Normal Core Nodes if missing\nfor (const nodeId of CORE_NODES) {\n    if (!statusMap[nodeId]) {\n        output.push({\n            json: {\n                node_id: nodeId,\n                updated_at: fetched_at,\n                has_issues: false,\n                overall_severity: 'none',\n                affected_lines: [],\n                disruptions: [],\n                l4_hint: generateL4Hint({ has_issues: false })\n            }\n        });\n    }\n}\n\n// Add debug info to last item\nif (output.length > 0) {\n    output[output.length - 1].json._debug = {\n        total_disruptions: disruptions.length,\n        entries_generated: output.length,\n        decode_info: debug\n    };\n}\n\nreturn output;\n"
+      },
+      "id": "transform-l4",
+      "name": "Transform to L4 Structure",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        300
+      ],
+      "notesInFlow": true,
+      "notes": "轉換為 L4 決策結構"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-has-issues",
+              "leftValue": "={{ $json.has_issues }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-has-issues",
+      "name": "Has Disruptions?",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        180
+      ],
+      "notesInFlow": true,
+      "notes": "篩選有異常的節點"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $env.SUPABASE_SERVICE_KEY }}"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.SUPABASE_SERVICE_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Prefer",
+              "value": "resolution=merge-duplicates"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ station_id: $json.node_id, status_code: $json.overall_severity === 'none' ? 'NORMAL' : ($json.overall_severity === 'critical' ? 'SUSPENDED' : 'DELAY'), reason_ja: $json.l4_hint?.message?.ja || '', disruption_data: $json, updated_at: $json.updated_at }) }}",
+        "options": {}
+      },
+      "id": "redis-cache",
+      "name": "Supabase Upsert (Disruption)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        180
+      ],
+      "notesInFlow": true,
+      "notes": "寫入 transit_dynamic_snapshot"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-critical",
+              "leftValue": "={{ $json.overall_severity }}",
+              "rightValue": "critical",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "check-critical",
+      "name": "Is Critical?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "tableId": "l2_disruption_history",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldName": "node_id",
+              "fieldValue": "={{ $json.node_id }}"
+            },
+            {
+              "fieldName": "severity",
+              "fieldValue": "={{ $json.overall_severity }}"
+            },
+            {
+              "fieldName": "affected_lines",
+              "fieldValue": "={{ $json.affected_lines }}"
+            },
+            {
+              "fieldName": "disruption_data",
+              "fieldValue": "={{ $json }}"
+            },
+            {
+              "fieldName": "created_at",
+              "fieldValue": "={{ $json.updated_at }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "supabase-history",
+      "name": "Save to Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        80
+      ],
+      "notesInFlow": true,
+      "notes": "記錄重大異常歷史"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $credentials.webhookUrl }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "type",
+              "value": "critical_disruption"
+            },
+            {
+              "name": "node_id",
+              "value": "={{ $json.node_id }}"
+            },
+            {
+              "name": "severity",
+              "value": "={{ $json.overall_severity }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.l4_hint.message.ja }}"
+            },
+            {
+              "name": "affected_lines",
+              "value": "={{ $json.affected_lines.join(', ') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "webhook-alert",
+      "name": "Send Alert Webhook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        240
+      ],
+      "notesInFlow": true,
+      "notes": "發送重大異常通知（可選）",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "noop-minor",
+      "name": "No Action (Minor)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $env.SUPABASE_SERVICE_KEY }}"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.SUPABASE_SERVICE_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Prefer",
+              "value": "resolution=merge-duplicates"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ station_id: $json.node_id, status_code: 'NORMAL', reason_ja: '運行正常', disruption_data: $json, updated_at: $json.updated_at }) }}",
+        "options": {}
+      },
+      "id": "redis-normal",
+      "name": "Supabase Upsert (Normal)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        420
+      ],
+      "notesInFlow": true,
+      "notes": "正常狀態也寫入"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-no-issues",
+              "leftValue": "={{ $json.has_issues }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-normal",
+      "name": "Is Normal?",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        420
+      ],
+      "notesInFlow": true,
+      "notes": "正常運行的節點"
+    }
+  ],
+  "connections": {
+    "Every 3 Minutes": {
+      "main": [
+        {
+          "0": {
+            "node": "Toei Alert",
+            "type": "main",
+            "index": 0
+          },
+          "1": {
+            "node": "Metro Alert",
+            "type": "main",
+            "index": 0
+          },
+          "2": {
+            "node": "JR East TripUpdate",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Toei Alert": {
+      "main": [
+        {
+          "0": {
+            "node": "Set Source Toei",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Metro Alert": {
+      "main": [
+        {
+          "0": {
+            "node": "Set Source Metro",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "JR East TripUpdate": {
+      "main": [
+        {
+          "0": {
+            "node": "Set Source JRE",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Set Source Toei": {
+      "main": [
+        {
+          "0": {
+            "node": "Merge All Feeds",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Set Source Metro": {
+      "main": [
+        {
+          "0": {
+            "node": "Merge All Feeds",
+            "type": "main",
+            "index": 1
+          }
+        }
+      ]
+    },
+    "Set Source JRE": {
+      "main": [
+        {
+          "0": {
+            "node": "Merge All Feeds",
+            "type": "main",
+            "index": 2
+          }
+        }
+      ]
+    },
+    "Merge All Feeds": {
+      "main": [
+        {
+          "0": {
+            "node": "Decode Protobuf",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Decode Protobuf": {
+      "main": [
+        {
+          "0": {
+            "node": "Transform to L4 Structure",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Transform to L4 Structure": {
+      "main": [
+        {
+          "0": {
+            "node": "Has Disruptions?",
+            "type": "main",
+            "index": 0
+          },
+          "1": {
+            "node": "Is Normal?",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Has Disruptions?": {
+      "main": [
+        {
+          "0": {
+            "node": "Redis Cache",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Supabase Upsert (Disruption)": {
+      "main": [
+        {
+          "0": {
+            "node": "Is Critical?",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Is Critical?": {
+      "main": [
+        {
+          "0": {
+            "node": "Save to Supabase",
+            "type": "main",
+            "index": 0
+          },
+          "1": {
+            "node": "Send Alert Webhook",
+            "type": "main",
+            "index": 0
+          }
+        },
+        {
+          "0": {
+            "node": "No Action (Minor)",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Is Normal?": {
+      "main": [
+        {
+          "0": {
+            "node": "Redis Cache (Normal)",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bambigo-l2-disruption"
+  },
+  "pinData": {},
+  "versionId": "1.0.0",
+  "triggerCount": 0,
+  "tags": [
+    {
+      "name": "BambiGO",
+      "createdAt": "2025-12-26T00:00:00.000Z",
+      "updatedAt": "2025-12-26T00:00:00.000Z"
+    },
+    {
+      "name": "L2",
+      "createdAt": "2025-12-26T00:00:00.000Z",
+      "updatedAt": "2025-12-26T00:00:00.000Z"
+    },
+    {
+      "name": "GTFS-RT",
+      "createdAt": "2025-12-26T00:00:00.000Z",
+      "updatedAt": "2025-12-26T00:00:00.000Z"
+    }
+  ]
+}

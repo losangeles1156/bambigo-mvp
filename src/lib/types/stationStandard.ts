@@ -111,6 +111,7 @@ export interface StationUIProfile {
         lines: StationLine[];
         weather: WeatherInfo;
         crowd: CrowdInfo;
+        updatedAt?: string;
     };
 
     // L3: Services (Stacked)

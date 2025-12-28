@@ -33,36 +33,58 @@ async function monitorProgress() {
 
     console.log(`\n🎯 Target Context: ${targetNodes.length} Stations`);
 
-    // 2. Get Ingested Stations (Status)
-    // We count distinct station_ids in l1_places
-    // Supabase JS doesn't support .distinct() easily on select count, so we use RPC or raw query if possible across all rows.
-    // Or we fetch all distinct station_ids. Since it's only ~128 stations max, fetching the list of IDs is fine.
-
-    // Efficient way:
-    const { data: places, error: placesError } = await supabase
+    // 2. Get Total POI Count
+    const { count: totalItems, error: countError } = await supabase
         .from('l1_places')
-        .select('station_id');
+        .select('*', { count: 'exact', head: true });
 
-    if (placesError) {
-        console.error('Error fetching places:', placesError);
+    if (countError) {
+        console.error('Error counting places:', countError);
         return;
     }
 
-    // Count unique station IDs
-    // Also track count per station
+    // 3. Get Ingested Stations (Status)
+    // We fetch ALL station_id values to count per station.
+    // To overcome 1000 limit, we need to paginate or use a better strategy.
+    // Since we only expect a few thousand rows for now, we can paginate.
+    let allStationIds: string[] = [];
+    let from = 0;
+    const pageSize = 1000;
+    let hasMore = true;
+
+    while (hasMore) {
+        const { data, error } = await supabase
+            .from('l1_places')
+            .select('station_id')
+            .range(from, from + pageSize - 1);
+
+        if (error) {
+            console.error('Error fetching station_ids:', error);
+            break;
+        }
+
+        if (data && data.length > 0) {
+            allStationIds = allStationIds.concat(data.map((p: any) => p.station_id));
+            from += pageSize;
+            if (data.length < pageSize) hasMore = false;
+        } else {
+            hasMore = false;
+        }
+    }
+
     const stationsWithData = new Set<string>();
     const countsPerStation: Record<string, number> = {};
 
-    places.forEach((p: any) => {
-        stationsWithData.add(p.station_id);
-        countsPerStation[p.station_id] = (countsPerStation[p.station_id] || 0) + 1;
+    allStationIds.forEach((id) => {
+        stationsWithData.add(id);
+        countsPerStation[id] = (countsPerStation[id] || 0) + 1;
     });
 
     const ingestedCount = stationsWithData.size;
     const progress = Math.round((ingestedCount / targetNodes.length) * 100);
 
     console.log(`📊 Progress: ${ingestedCount} / ${targetNodes.length} (${progress}%) Stations have data.`);
-    console.log(`📦 Total Items: ${places.length} POIs stored.`);
+    console.log(`📦 Total Items: ${totalItems} POIs stored.`);
 
     // 3. Status Breakdown
     const missing = targetNodes.filter((n: any) => !stationsWithData.has(n.id));

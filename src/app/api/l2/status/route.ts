@@ -40,15 +40,22 @@ export async function GET(request: Request) {
 
         // Transform Flat DB columns (from n8n) to Frontend Interface
 
-        // 1. Get lines for this station (Static Mapping)
-        const lines = STATION_LINES[stationId] || ['Transit'];
+        // 1. Get lines for this station (Now returns Rich Objects from upgraded stationLines.ts)
+        const lines = STATION_LINES[stationId] || [];
 
-        // 2. Map single DB status to all lines (until DB supports per-line status)
-        const lineStatusArray = lines.map(lineName => ({
-            line: lineName,
-            status: data.status_code?.toLowerCase() || 'normal',
-            message: data.reason_ja || 'Operating normally'
-        }));
+        // 2. Map single DB status to all lines
+        const lineStatusArray = lines.map(lineDef => {
+            return {
+                line: lineDef.name.en, // Keep English name as ID/Key for now
+                name: lineDef.name, // Rich Object
+                operator: lineDef.operator,
+                color: lineDef.color,
+                status: data.status_code?.toLowerCase() || 'normal',
+                message: (data.status_code === 'DELAY' || data.status_code === 'SUSPENDED')
+                    ? (data.reason_ja || data.message || 'Delay')
+                    : undefined
+            };
+        });
 
         const l2Status = {
             congestion: data.status_code === 'DELAY' ? 4 : (data.status_code === 'SUSPENDED' ? 5 : 2),

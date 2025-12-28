@@ -97,8 +97,9 @@ interface L2_LiveProps {
 export function L2_Live({ data }: L2_LiveProps) {
     const tL2 = useTranslations('l2');
     const locale = useLocale();
-    const { lines, weather: initialWeather, crowd } = data.l2;
+    const { lines, weather: initialWeather, crowd, updatedAt } = data.l2;
     const [weather, setWeather] = useState(initialWeather);
+    const [weatherAdvice, setWeatherAdvice] = useState<string | null>(null);
     const [clickedCrowd, setClickedCrowd] = useState<number | null>(null);
 
     // [New] Fetch Live Weather from Open Meteo
@@ -117,19 +118,33 @@ export function L2_Live({ data }: L2_LiveProps) {
                     else if (code <= 3) condition = 'Cloud';
                     else if (code >= 51) condition = 'Rain';
 
-                    setWeather({
+                    const newWeather = {
                         temp: liveData.temp,
                         condition: condition,
                         windSpeed: liveData.wind,
                         iconCode: String(code)
-                    });
+                    };
+                    setWeather(newWeather);
+
+                    // [New] Fetch AI Advice based on live weather
+                    try {
+                        const adviceRes = await fetch(
+                            `/api/weather/advice?temp=${liveData.temp}&condition=${condition}&wind=${liveData.wind}&locale=${locale}`
+                        );
+                        if (adviceRes.ok) {
+                            const adviceData = await adviceRes.json();
+                            setWeatherAdvice(adviceData.advice);
+                        }
+                    } catch (adviceErr) {
+                        console.warn('Weather advice fetch failed', adviceErr);
+                    }
                 }
             } catch (e) {
                 console.warn('Live weather fetch failed', e);
             }
         }
         fetchLiveWeather();
-    }, []);
+    }, [locale]);
 
     const maxVoteIdx = crowd.userVotes.distribution.indexOf(Math.max(...crowd.userVotes.distribution));
 
@@ -141,7 +156,12 @@ export function L2_Live({ data }: L2_LiveProps) {
                     <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL2('operationTitle')}</h3>
                     <div className="flex items-center gap-2">
                         <span className="text-[8px] font-bold text-gray-300 uppercase tracking-tight">Source: ODPT</span>
-                        <span className="text-[10px] font-medium text-gray-400">{tL2('liveUpdates')}</span>
+                        <span className="text-[10px] font-medium text-gray-400">
+                            {tL2('liveUpdates')}
+                            {updatedAt && <span className="ml-1 text-xs font-mono text-indigo-400">
+                                {new Date(updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            </span>}
+                        </span>
                     </div>
                 </div>
 
@@ -196,6 +216,14 @@ export function L2_Live({ data }: L2_LiveProps) {
                                         <Wind size={12} className="opacity-80" />
                                         <span className="text-xs font-bold opacity-90">{weather.windSpeed} m/s</span>
                                     </div>
+                                    {/* AI Weather Advice */}
+                                    {weatherAdvice && (
+                                        <div className="mt-2 pt-2 border-t border-white/20">
+                                            <p className="text-[10px] font-medium leading-tight opacity-90 italic">
+                                                💡 {weatherAdvice}
+                                            </p>
+                                        </div>
+                                    )}
                                 </>
                             ) : (
                                 <div className="mt-3 mb-2">

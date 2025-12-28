@@ -62,7 +62,8 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                     total: 0,
                     distribution: [0, 0, 0, 0, 0]
                 }
-            }
+            },
+            updatedAt: source.updated_at
         };
     })();
 

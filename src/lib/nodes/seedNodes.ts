@@ -29,6 +29,22 @@ export const SEED_NODES = [
         ]
     },
     {
+        id: 'odpt:Station:JR-East.Ueno',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '上野', 'ja': '上野', 'en': 'Ueno' },
+        type: 'station',
+        location: 'POINT(139.7774 35.7141)', // Same loc as Metro for now, or slight offset?
+        geohash: 'xn77k',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'culture',
+        facilityTags: [
+            // JR specific tags if any, but copying shared ones is fine for seed logic
+            { mainCategory: 'leisure', subCategory: 'nature', detailCategory: 'park', name: 'Ueno Park', distanceMeters: 50, direction: 'Park Exit' }
+        ]
+    },
+    {
         id: 'odpt:Station:JR-East.Akihabara',
         city_id: 'tokyo_core',
         name: { 'zh-TW': '秋葉原', 'ja': '秋葉原', 'en': 'Akihabara' },
