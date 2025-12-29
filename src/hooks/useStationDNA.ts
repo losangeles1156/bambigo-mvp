@@ -26,15 +26,15 @@ export interface StationDNA {
 }
 
 const CATEGORY_LABELS: Record<string, { ja: string; en: string; zh: string }> = {
-    shopping: { ja: '買い物', en: 'Shopping', zh: '購物' },
-    dining: { ja: '食事', en: 'Dining', zh: '美食' },
-    convenience: { ja: '便利', en: 'Convenience', zh: '便利' },
+    shopping: { ja: 'ショッピング', en: 'Shopping', zh: '購物' },
+    dining: { ja: 'グルメ', en: 'Dining', zh: '美食' },
+    business: { ja: 'ビジネス', en: 'Business', zh: '商務' },
     medical: { ja: '医療', en: 'Medical', zh: '醫療' },
     leisure: { ja: 'レジャー', en: 'Leisure', zh: '休閒' },
     finance: { ja: '金融', en: 'Finance', zh: '金融' },
     accommodation: { ja: '宿泊', en: 'Hotel', zh: '住宿' },
     culture: { ja: '文化', en: 'Culture', zh: '文化' },
-    service: { ja: 'サービス', en: 'Service', zh: '服務' },
+    service: { ja: '公共サービス', en: 'Public Services', zh: '公共服務' },
     nature: { ja: '自然', en: 'Nature', zh: '自然' }
 };
 
@@ -62,13 +62,19 @@ const VIBE_RULES = [
         id: 'market',
         keywords: ['market', 'ameyoko', 'street_vendor', 'marketplace'],
         label: { ja: '市場の活気', en: 'Market Vibes', zh: '熱鬧市場' },
-        desc: { ja: 'アメ横のような活気', en: 'Bustling local markets', zh: '充滿活力的商店街' }
+        desc: { ja: 'アメ横のような活氣', en: 'Bustling local markets', zh: '充滿活力的商店街' }
     },
     {
         id: 'museum',
         keywords: ['museum', 'gallery', 'art'],
         label: { ja: '芸術と文化', en: 'Art & Culture', zh: '藝文特區' },
         desc: { ja: '美術館やギャラリー', en: 'Museums & Galleries', zh: '美術館與藝廊' }
+    },
+    {
+        id: 'park',
+        keywords: ['park', 'garden', 'nature'],
+        label: { ja: '都會の綠地', en: 'Urban Green', zh: '城市綠意' },
+        desc: { ja: '散策に最適な公園', en: 'Perfect for a walk', zh: '適合漫步的大型公園' }
     }
 ];
 
@@ -76,7 +82,7 @@ export function useStationDNA() {
     const { places, loading } = useL1Places();
 
     const dna = useMemo(() => {
-        if (loading) return null;
+        if (loading || places.length === 0) return null;
 
         // 1. Group by Category
         const groups: Record<string, L1Place[]> = {};
@@ -93,7 +99,7 @@ export function useStationDNA() {
                 id: cat,
                 label: CATEGORY_LABELS[cat] || { ja: cat, en: cat, zh: cat },
                 count: items.length,
-                representative_spots: items.slice(0, 30) // Keep more for drawer
+                representative_spots: items // Keep all for full list in drawer
             };
         });
 
@@ -102,13 +108,14 @@ export function useStationDNA() {
         const vibeMatches: Record<string, L1Place[]> = {};
 
         places.forEach(p => {
-            const rawTags = JSON.stringify(p.tags).toLowerCase() + ' ' + (p.name || '').toLowerCase();
+            const rawTags = JSON.stringify(p.tags).toLowerCase() + ' ' + (p.name || '').toLowerCase() + ' ' + (p.subcategory || '');
 
             VIBE_RULES.forEach(rule => {
                 if (rule.keywords.some(k => rawTags.includes(k))) {
                     vibeCounts[rule.id] = (vibeCounts[rule.id] || 0) + 1;
                     if (!vibeMatches[rule.id]) vibeMatches[rule.id] = [];
-                    vibeMatches[rule.id].push(p);
+                    // Avoid too many duplicates in vibe spots, but keep some diversity
+                    if (vibeMatches[rule.id].length < 20) vibeMatches[rule.id].push(p);
                 }
             });
         });
@@ -120,10 +127,10 @@ export function useStationDNA() {
                 label: r.label,
                 count: vibeCounts[r.id],
                 description: r.desc,
-                spots: vibeMatches[r.id] // Attach matched spots for Drawer
+                spots: vibeMatches[r.id]
             }))
             .sort((a, b) => b.count - a.count)
-            .slice(0, 4); // Top 4 Vibes
+            .slice(0, 4);
 
         // 4. Generate Station Title/Tagline (Heuristics)
         let title = { ja: '都市の拠点', en: 'Urban Hub', zh: '城市樞紐' };
@@ -131,30 +138,32 @@ export function useStationDNA() {
 
         const cCounts = (id: string) => categories[id]?.count || 0;
 
-        // Ueno-like signature
-        if (cCounts('culture') >= 3 || vibeCounts['museum'] > 0 || vibeCounts['market'] > 0) {
-            title = { ja: '文化と市場の融合', en: 'Culture & Market', zh: '文化與市集的交匯' };
-            tagline = { ja: '下町の活気と芸術が同居する街', en: 'Where heritage meets bustling streets', zh: '下町活力與藝術氣息共存' };
-        } else if (cCounts('dining') > 30) {
-            title = { ja: 'グルメ天国', en: 'Foodie Paradise', zh: '美食天堂' };
-            tagline = { ja: '美味しいお店が見つかる街', en: 'Endless dining options await', zh: '轉角就能遇見美味' };
-        } else if (cCounts('nature') > 5) {
-            title = { ja: '緑豊かな憩いの場', en: 'Green Oasis', zh: '城市綠洲' };
-            tagline = { ja: '都会の喧騒を忘れる場所', en: 'Relax in nature', zh: '忘卻都市喧囂的角落' };
+        if (cCounts('culture') >= 3 || vibeCounts['museum'] > 0) {
+            title = { ja: '文化と歴史の交差點', en: 'Heritage & Culture', zh: '文化與歷史的交會' };
+            tagline = { ja: '博物館や歴史的建造物が多い街', en: 'Rich in history and arts', zh: '博物館與古蹟環繞的藝文特區' };
+        } else if (cCounts('nature') > 3 || vibeCounts['park'] > 0) {
+            title = { ja: '都会のオアシス', en: 'Urban Oasis', zh: '城市綠洲' };
+            tagline = { ja: '豊かな緑と静寂が広がるエリア', en: 'Serene green spaces', zh: '坐擁廣闊綠地與寧靜氛圍' };
+        } else if (cCounts('dining') > 40) {
+            title = { ja: '美食の迷宮', en: 'Gourmet Labyrinth', zh: '美食迷宮' };
+            tagline = { ja: 'あらゆる料理が楽しめる激戦区', en: 'Culinary adventures await', zh: '各式料理雲集的味蕾挑戰區' };
+        } else if (cCounts('business') > 10) {
+            title = { ja: 'ビジネスの心臓部', en: 'Business Core', zh: '商務核心區' };
+            tagline = { ja: 'オフィスビルが立ち並ぶ活気ある街', en: 'A dynamic office district', zh: '商辦大樓林立的活力街區' };
         }
 
         return {
-            loading,
+            loading: false,
             title,
             tagline,
             categories,
             vibe_tags,
-            signature_spots: places.slice(0, 3) // Placeholder for signature spots
+            signature_spots: places.slice(0, 3)
         };
     }, [places, loading]);
 
     return dna || {
-        loading: true,
+        loading,
         title: { ja: '', en: '', zh: '' },
         tagline: { ja: '', en: '', zh: '' },
         categories: {},

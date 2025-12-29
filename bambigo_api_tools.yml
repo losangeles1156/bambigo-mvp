@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: BambiGO Backend Tools
+  description: Real-time data APIs for BambiGO Dify Agent
+  version: 1.0.0
+servers:
+  - url: https://bambigo-mvp.vercel.app
+paths:
+  /api/weather/live:
+    get:
+      operationId: get_weather
+      summary: Get Tokyo Real-time Weather
+      description: Returns current weather condition and temperature in Tokyo.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  weather: 
+                    type: string
+                  temp:
+                    type: number
+  /api/odpt/train-status:
+    get:
+      operationId: get_train_status
+      summary: Get Train Operation Status
+      description: Returns delay and suspension information for major Tokyo train lines.
+      responses:
+        '200':
+          description: Successful response
+  /api/station/accessibility:
+    get:
+      operationId: get_accessibility
+      summary: Get Station Accessibility Stats
+      description: Returns barrier-free facility coverage (elevators, S-rank paths) for a specific station.
+      parameters:
+        - name: station_id
+          in: query
+          required: true
+          description: The ODPT Station ID (e.g., odpt:Station:TokyoMetro.Ginza.Ueno)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  elevator_coverage_percent:
+                    type: integer
+                  s_rank_paths:
+                    type: integer

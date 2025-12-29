@@ -5,14 +5,19 @@ import { useLocale } from 'next-intl';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 
 export interface L1Place {
-    id: string; // The UUID from DB
+    id: string;
     osm_id: number;
     name: string;
     name_i18n: Record<string, string>;
     category: string;
+    subcategory?: string;
+    distance_meters?: number;
+    navigation_url?: string;
     location: {
         coordinates: [number, number]; // [lon, lat]
     };
+    lat?: number;
+    lng?: number;
     tags: Record<string, any>;
 }
 
@@ -34,19 +39,10 @@ export function useL1Places() {
                 const { data, error } = await supabase
                     .from('l1_places')
                     .select('*')
-                    .eq('station_id', currentNodeId);
+                    .eq('station_id', currentNodeId)
+                    .order('distance_meters', { ascending: true }); // Prefer closer ones by default
 
                 if (error) throw error;
-
-                // Parse PostGIS point string "POINT(lon lat)" to array
-                // Or if we use .geojson() helper in RPC... 
-                // But simple select returns raw string or object depending on driver
-                // Supabase JS usually returns GeoJSON if configured, but default is WKT "POINT(x y)"
-
-                // Note: Standard Supabase select on Geography column usually requires conversion or returns object.
-                // Optimally we'd use an RPC for GeoJSON, but let's try client-side parsing for MVP.
-                // Actually PostgREST returns GeoJSON by default for headers, but JS client might not.
-                // Let's assume it returns GeoJSON object or we parse WKT.
 
                 const parsed = (data || []).map((row: any) => {
                     let coords = [0, 0];
@@ -65,7 +61,12 @@ export function useL1Places() {
                         name: getLocaleString(row.name_i18n || { en: row.name }, locale),
                         name_i18n: row.name_i18n,
                         category: row.category,
+                        subcategory: row.subcategory,
+                        distance_meters: row.distance_meters,
+                        navigation_url: row.navigation_url,
                         location: { coordinates: coords },
+                        lat: row.lat,
+                        lng: row.lng,
                         tags: row.tags
                     } as L1Place;
                 });

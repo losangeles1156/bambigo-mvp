@@ -173,7 +173,9 @@
             "normal": "普通",
             "crowded": "擁擠",
             "full": "爆滿"
-        }
+        },
+        "emergencyAlert": "緊急警報",
+        "viewJmaDetails": "查看 JMA 詳情"
     },
     "l3": {
         "servicesTitle": "服務設施",

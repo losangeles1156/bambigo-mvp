@@ -43,30 +43,103 @@ const LINES = {
     UenoTokyo: { name: { ja: '上野東京ライン', en: 'Ueno-Tokyo Line', zh: '上野東京線' }, operator: 'JR', color: '#800080' } as StationLineDef, // Purple
     Saikyo: { name: { ja: '埼京線', en: 'Saikyo Line', zh: '埼京線' }, operator: 'JR', color: '#00AC9B' } as StationLineDef, // Greenish
     ShonanShinjuku: { name: { ja: '湘南新宿ライン', en: 'Shonan-Shinjuku Line', zh: '湘南新宿線' }, operator: 'JR', color: '#E21F26' } as StationLineDef, // Red
+
+    // Private / Other
+    Tsukuba: { name: { ja: 'つくばエクスプレス', en: 'Tsukuba Express', zh: '筑波快線' }, operator: 'Private', color: '#DD1320' } as StationLineDef, // Red
+    Yurikamome: { name: { ja: 'ゆりかもめ', en: 'Yurikamome', zh: '百合海鷗號' }, operator: 'Private', color: '#1B94C2' } as StationLineDef, // Cyan
+    Monorail: { name: { ja: '東京モノレール', en: 'Tokyo Monorail', zh: '東京單軌電車' }, operator: 'Private', color: '#10529F' } as StationLineDef, // Blue
+    Keisei: { name: { ja: '京成線', en: 'Keisei Line', zh: '京成線' }, operator: 'Private', color: '#00539B' } as StationLineDef,
 };
 
+// Operator Colors for Map Icons
+export const OPERATOR_COLORS: Record<string, string> = {
+    'JR': '#008A3C',      // JR East - Green
+    'Metro': '#00A7DB',   // Tokyo Metro - Blue  
+    'Toei': '#E73387',    // Toei - Magenta
+    'Private': '#6B7280', // Others - Gray
+};
+
+// Hub Primary Operator Override (when auto-detection isn't accurate)
+const HUB_PRIMARY_OPERATOR: Record<string, string> = {
+    'odpt:Station:JR-East.Tokyo': 'JR',
+    'odpt:Station:JR-East.Ueno': 'JR',
+    'odpt:Station:JR-East.Akihabara': 'JR',
+    'odpt:Station:TokyoMetro.Otemachi': 'Metro',
+    'odpt:Station:TokyoMetro.Ginza': 'Metro',
+    'odpt:Station:TokyoMetro.Asakusa': 'Metro',
+    'odpt:Station:JR-East.Hamamatsucho': 'JR',
+    'odpt:Station:JR-East.Okachimachi': 'JR',
+    'odpt:Station:TokyoMetro.Shimbashi': 'JR', // Primarily JR hub
+    'odpt:Station:TokyoMetro.Hibiya': 'Metro',
+    'odpt:Station:TokyoMetro.Iidabashi': 'Metro',
+};
+
+// Get Primary Operator for a node
+export function getPrimaryOperator(nodeId: string): string {
+    // 1. Check explicit override first
+    if (HUB_PRIMARY_OPERATOR[nodeId]) {
+        return HUB_PRIMARY_OPERATOR[nodeId];
+    }
+    // 2. Auto-detect from node ID prefix
+    if (nodeId.includes('JR-East')) return 'JR';
+    if (nodeId.includes('TokyoMetro')) return 'Metro';
+    if (nodeId.includes('Toei')) return 'Toei';
+    if (nodeId.includes('TsukubaExpress')) return 'Private';
+    return 'Metro'; // Default fallback
+}
+
 export const STATION_LINES: Record<string, StationLineDef[]> = {
-    // Tokyo Metro - Ginza Line
-    'odpt:Station:TokyoMetro.Ueno': [LINES.Ginza, LINES.Hibiya],
-    'odpt:Station:TokyoMetro.Asakusa': [LINES.Ginza, LINES.Asakusa],
+    // --- MAJOR HUBS (Multi-Operator Aggregates) ---
+
+    // Ueno (JR + Metro + Keisei)
+    'odpt:Station:JR-East.Ueno': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Joban, LINES.UenoTokyo, LINES.Ginza, LINES.Hibiya, LINES.Keisei],
+    'odpt:Station:TokyoMetro.Ueno': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Joban, LINES.UenoTokyo, LINES.Ginza, LINES.Hibiya, LINES.Keisei], // Alias (seedNodes uses this)
+    'odpt.Station:TokyoMetro.Ginza.Ueno': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Joban, LINES.UenoTokyo, LINES.Ginza, LINES.Hibiya, LINES.Keisei], // Alias
+
+    // Akihabara (JR + Metro + Tsukuba)
+    'odpt:Station:JR-East.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu, LINES.Hibiya, LINES.Tsukuba],
+    'odpt:Station:TsukubaExpress.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu, LINES.Hibiya, LINES.Tsukuba], // Alias (seedNodes uses this)
+    'odpt.Station:TokyoMetro.Hibiya.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu, LINES.Hibiya, LINES.Tsukuba], // Alias
+
+    // Tokyo (JR + Metro) - Added UenoTokyo
+    'odpt:Station:JR-East.Tokyo': [LINES.Yamanote, LINES.Chuo, LINES.Keiyo, LINES.KeihinTohoku, LINES.Tokaido, LINES.SobuRapid, LINES.UenoTokyo, LINES.Marunouchi],
+    'odpt.Station:TokyoMetro.Marunouchi.Tokyo': [LINES.Yamanote, LINES.Chuo, LINES.Keiyo, LINES.KeihinTohoku, LINES.Tokaido, LINES.SobuRapid, LINES.UenoTokyo, LINES.Marunouchi], // Alias
+
+
+    // Shimbashi (JR + Metro + Toei + Yurikamome)
+    'odpt:Station:JR-East.Shimbashi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Tokaido, LINES.Yokosuka, LINES.Ginza, LINES.Asakusa, LINES.Yurikamome],
+    'odpt:Station:TokyoMetro.Shimbashi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Tokaido, LINES.Yokosuka, LINES.Ginza, LINES.Asakusa, LINES.Yurikamome], // Alias
+    'odpt:Station:Toei.Shimbashi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Tokaido, LINES.Yokosuka, LINES.Ginza, LINES.Asakusa, LINES.Yurikamome], // Alias
+
+    // Hamamatsucho (JR + Monorail + Toei(Daimon))
+    'odpt:Station:JR-East.Hamamatsucho': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Monorail, LINES.Asakusa, LINES.Oedo], // Daimon is adjacent
+    'odpt:Station:Toei.Daimon': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Monorail, LINES.Asakusa, LINES.Oedo], // Alias
+
+    // Asakusa (Metro + Toei + Tobu(implicit))
+    'odpt:Station:TokyoMetro.Asakusa': [LINES.Ginza, LINES.Asakusa], // Tobu Skytree Line optional?
+    'odpt.Station:TokyoMetro.Ginza.Asakusa': [LINES.Ginza, LINES.Asakusa], // Alias
+    'odpt:Station:Toei.Asakusa': [LINES.Ginza, LINES.Asakusa], // Alias
+
+    // --- OTHER STATIONS (Usually Single or Dual Operator) ---
+
+    // Metro
     'odpt:Station:TokyoMetro.Ginza': [LINES.Ginza, LINES.Marunouchi, LINES.Hibiya],
     'odpt:Station:TokyoMetro.Tawaramachi': [LINES.Ginza],
     'odpt:Station:TokyoMetro.Inaricho': [LINES.Ginza],
     'odpt:Station:TokyoMetro.Mitsukoshimae': [LINES.Ginza, LINES.Hanzomon],
-    'odpt:Station:TokyoMetro.Kanda': [LINES.Ginza],
+    'odpt:Station:TokyoMetro.Kanda': [LINES.Ginza, LINES.Yamanote, LINES.KeihinTohoku, LINES.Chuo], // JR Kanda is adjacent
     'odpt:Station:TokyoMetro.Kyobashi': [LINES.Ginza],
     'odpt:Station:TokyoMetro.Nihombashi': [LINES.Ginza, LINES.Tozai, LINES.Asakusa],
-    'odpt:Station:TokyoMetro.Shimbashi': [LINES.Ginza],
     'odpt:Station:TokyoMetro.Toranomon': [LINES.Ginza],
     'odpt:Station:TokyoMetro.AoyamaItchome': [LINES.Ginza, LINES.Hanzomon, LINES.Oedo],
     'odpt:Station:TokyoMetro.Omotesando': [LINES.Ginza, LINES.Chiyoda, LINES.Hanzomon],
-    'odpt:Station:TokyoMetro.Shibuya': [LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin], // JR Shibuya is separate key
+    'odpt:Station:TokyoMetro.Shibuya': [LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin, LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku], // Massive hub
 
-    // Tokyo Metro - Hibiya Line
+    // Hibiya Line
     'odpt:Station:TokyoMetro.Iriya': [LINES.Hibiya],
     'odpt:Station:TokyoMetro.Minowa': [LINES.Hibiya],
     'odpt:Station:TokyoMetro.Kayabacho': [LINES.Hibiya, LINES.Tozai],
-    'odpt:Station:TokyoMetro.Hatchobori': [LINES.Hibiya], // JR Keiyo separate
+    'odpt:Station:TokyoMetro.Hatchobori': [LINES.Hibiya, LINES.Keiyo], // JR Keiyo
     'odpt:Station:TokyoMetro.Tsukiji': [LINES.Hibiya],
     'odpt:Station:TokyoMetro.HigashiGinza': [LINES.Hibiya, LINES.Asakusa],
     'odpt:Station:TokyoMetro.Hibiya': [LINES.Hibiya, LINES.Chiyoda, LINES.Mita],
@@ -74,41 +147,31 @@ export const STATION_LINES: Record<string, StationLineDef[]> = {
     'odpt:Station:TokyoMetro.Kamiyacho': [LINES.Hibiya],
     'odpt:Station:TokyoMetro.Roppongi': [LINES.Hibiya, LINES.Oedo],
     'odpt:Station:TokyoMetro.Hiroo': [LINES.Hibiya],
-    'odpt:Station:TokyoMetro.NakaMeguro': [LINES.Hibiya], // Tokyu Toyoko separate?
+    'odpt:Station:TokyoMetro.NakaMeguro': [LINES.Hibiya],
 
-    // JR East (Core) - STRICTLY VERIFIED
-    'odpt:Station:JR-East.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu],
-    'odpt:Station:JR-East.Tokyo': [LINES.Yamanote, LINES.Chuo, LINES.Keiyo, LINES.KeihinTohoku, LINES.Tokaido, LINES.SobuRapid], // NO Shinkansen
-    'odpt:Station:JR-East.Ueno': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Joban, LINES.UenoTokyo], // NO Shinkansen
-    'odpt:Station:JR-East.Okachimachi': [LINES.Yamanote, LINES.KeihinTohoku],
-    'odpt:Station:JR-East.Kanda': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Chuo],
-    'odpt:Station:JR-East.Yurakucho': [LINES.Yamanote, LINES.KeihinTohoku],
-    'odpt:Station:JR-East.Shimbashi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Tokaido, LINES.Yokosuka], // NO Yurikamome (Private)
-    'odpt:Station:JR-East.Hamamatsucho': [LINES.Yamanote, LINES.KeihinTohoku], // NO Monorail (Private)
+    // JR East (Others) - Merged Okachimachi includes Oedo Line from UenoOkachimachi
+    'odpt:Station:JR-East.Okachimachi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Oedo],
+    'odpt:Station:JR-East.Kanda': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Chuo, LINES.Ginza], // Shared with Metro
+    'odpt:Station:JR-East.Yurakucho': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Yurakucho],
     'odpt:Station:JR-East.Uguisudani': [LINES.Yamanote, LINES.KeihinTohoku],
 
-    // Toei Subway
-    'odpt:Station:Toei.Asakusa': [LINES.Asakusa],
+    // Toei
     'odpt:Station:Toei.Kuramae': [LINES.Asakusa, LINES.Oedo],
-    'odpt:Station:Toei.Asakusabashi': [LINES.Asakusa], // JR separate
+    'odpt:Station:Toei.Asakusabashi': [LINES.Asakusa, LINES.Sobu], // JR Sobu
     'odpt:Station:Toei.HigashiNihombashi': [LINES.Asakusa, LINES.Shinjuku],
-    'odpt:Station:Toei.Nihombashi': [LINES.Asakusa],
+    'odpt:Station:Toei.Nihombashi': [LINES.Asakusa, LINES.Ginza, LINES.Tozai],
     'odpt:Station:Toei.Takaracho': [LINES.Asakusa],
-    'odpt:Station:Toei.HigashiGinza': [LINES.Asakusa],
-    'odpt:Station:Toei.Shimbashi': [LINES.Asakusa],
-    'odpt:Station:Toei.Daimon': [LINES.Asakusa, LINES.Oedo],
-
-    // Toei Oedo
-    'odpt:Station:Toei.UenoOkachimachi': [LINES.Oedo],
-    'odpt:Station:Toei.ShinOkachimachi': [LINES.Oedo], // REMOVED Tsukuba Express (Private)
+    'odpt:Station:Toei.HigashiGinza': [LINES.Asakusa, LINES.Hibiya],
+    'odpt:Station:Toei.UenoOkachimachi': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Oedo], // Alias for merged JR-East.Okachimachi
+    'odpt:Station:Toei.ShinOkachimachi': [LINES.Oedo, LINES.Tsukuba], // Connects to TX
     'odpt:Station:Toei.Kachidoki': [LINES.Oedo],
     'odpt:Station:Toei.Tsukishima': [LINES.Oedo, LINES.Yurakucho],
     'odpt:Station:Toei.Tsukijishijo': [LINES.Oedo],
 
     // Others
-    'odpt:Station:TokyoMetro.Ochanomizu': [LINES.Marunouchi], // JR separate
+    'odpt:Station:TokyoMetro.Ochanomizu': [LINES.Marunouchi, LINES.Chuo, LINES.Sobu],
     'odpt:Station:TokyoMetro.Otemachi': [LINES.Marunouchi, LINES.Tozai, LINES.Chiyoda, LINES.Hanzomon, LINES.Mita],
-    'odpt:Station:TokyoMetro.Iidabashi': [LINES.Tozai, LINES.Yurakucho, LINES.Namboku, LINES.Oedo],
+    'odpt:Station:TokyoMetro.Iidabashi': [LINES.Tozai, LINES.Yurakucho, LINES.Namboku, LINES.Oedo, LINES.Chuo, LINES.Sobu],
     'odpt:Station:TokyoMetro.Kudanshita': [LINES.Tozai, LINES.Hanzomon, LINES.Shinjuku],
     'odpt:Station:TokyoMetro.Yushima': [LINES.Chiyoda],
 };

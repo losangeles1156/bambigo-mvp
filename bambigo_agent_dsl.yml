@@ -1,0 +1,113 @@
+app:
+  description: BambiGO 專用的東京交通助手，整合即時數據與無障礙資訊。
+  icon: 🤖
+  icon_background: '#FFFFFF'
+  mode: agent-chat
+  name: BambiGO Agent (L4)
+  use_icon_as_answer_icon: false
+kind: app
+model_config:
+  agent_mode:
+    enabled: true
+    max_iteration: 5
+    strategy: function_call
+    tools:
+      - enabled: true
+        name: get_weather
+        provider_id: http
+        provider_type: api
+        tool_label: Get Tokyo Weather
+        tool_name: get_weather
+        tool_parameters:
+          url: https://bambigo-mvp.vercel.app/api/weather/live
+          method: GET
+      - enabled: true
+        name: get_train_status
+        provider_id: http
+        provider_type: api
+        tool_label: Get Train Operation Status
+        tool_name: get_train_status
+        tool_parameters:
+          url: https://bambigo-mvp.vercel.app/api/odpt/train-status
+          method: GET
+      - enabled: true
+        name: get_station_accessibility
+        provider_id: http
+        provider_type: api
+        tool_label: Get Station Accessibility Stats
+        tool_name: get_accessibility
+        tool_parameters:
+          url: https://bambigo-mvp.vercel.app/api/station/accessibility
+          method: GET
+          parameters:
+            - name: station_id
+              type: string
+              required: true
+              description: The ID of the station (e.g., odpt:Station:TokyoMetro.Ginza.Ueno)
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    image:
+      detail: high
+      enabled: true
+      number_limit: 3
+      transfer_methods:
+        - remote_url
+        - local_file
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4o
+    provider: openai
+  more_like_this:
+    enabled: false
+  opening_statement: ''
+  pre_prompt: |
+    你是一位專精於東京交通的 AI 助手「BambiGO Agent」。你的任務是協助旅客解決在東京移動時遇到的問題，特別是針對需要無障礙設施（輪椅、嬰兒車）的旅客。
+
+    ## 核心原則
+    1. **使用正體中文 (Traditional Chinese)** 回答。
+    2. **簡潔精準 (Concise)**：直接回答使用者的問題，不要長篇大論。除非使用者追問，否則不要列出所有背景知識。
+    3. **數據驅動 (Data-Driven)**：回答前，優先使用工具 (Tools) 查詢即時數據。
+       - 天氣問題 -> `get_weather`
+       - 運行狀況 -> `get_train_status`
+       - 無障礙/電梯 -> `get_accessibility`
+    4. **結合知識庫 (Knowledge Base)**：如果工具無法回答（例如轉乘技巧、景點介紹），請查詢知識庫中的專家建議。
+
+    ## 回答範例
+    User: "上野站有無障礙設施嗎？"
+    Agent: (調用 `get_accessibility`) "有的，根據數據，上野站周邊 97% 的路徑都有電梯覆蓋，且包含多條 S 級無障礙通道，非常適合輪椅使用者。"
+
+    User: "現在電車有延誤嗎？"
+    Agent: (調用 `get_train_status`) "目前銀座線有微幅延遲，其他路線運行正常。"
+
+    ## 禁止事項
+    - ❌ 不要說「根據我的數據庫...」，直接給出答案。
+    - ❌ 不要沒問天氣就主動報氣象。
+    - ❌ 如果查不到數據，誠實說「目前無法取得即時資訊」，不要瞎編。
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.0

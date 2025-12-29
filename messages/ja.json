@@ -172,7 +172,9 @@
             "normal": "普通",
             "crowded": "混雑",
             "full": "満員"
-        }
+        },
+        "emergencyAlert": "緊急警報",
+        "viewJmaDetails": "気象庁の詳細を見る"
     },
     "l3": {
         "servicesTitle": "サービス施設",

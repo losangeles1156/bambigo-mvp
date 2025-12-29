@@ -4,7 +4,8 @@ import { Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { useAppStore } from '@/stores/appStore';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { MapPin, Cloud, Sun, Wind, Crown, TreeDeciduous, Landmark, Zap, Tent } from 'lucide-react';
+import { MapPin, Cloud, Sun, Wind, Crown, TreeDeciduous, Landmark, Zap, Tent, Train } from 'lucide-react';
+import { OPERATOR_COLORS, getPrimaryOperator } from '@/lib/constants/stationLines';
 
 interface NodeMarkerProps {
     node: {
@@ -22,23 +23,23 @@ interface NodeMarkerProps {
     locale?: string;
 }
 
-// Category to Icon mapping for dynamic styles
+// Category to Icon mapping for dynamic styles (fallback)
 const CATEGORY_STYLE: Record<string, { icon: any; color: string; gradient: string }> = {
     shopping: { icon: '🛍️', color: 'bg-pink-500', gradient: 'from-pink-500 to-rose-600' },
     dining: { icon: '🍽️', color: 'bg-red-500', gradient: 'from-orange-500 to-red-600' },
     medical: { icon: '🏥', color: 'bg-emerald-500', gradient: 'from-emerald-400 to-teal-600' },
     transit: { icon: '🚉', color: 'bg-blue-600', gradient: 'from-blue-500 to-indigo-700' },
-    // Defaults for others...
     default: { icon: '📍', color: 'bg-slate-600', gradient: 'from-gray-500 to-gray-700' }
 };
 
-// Design Configuration Mapping
+// Design Configuration Mapping (legacy, kept for compatibility)
 const DESIGN_CONFIG: Record<string, { icon: any; fallbackColor: string }> = {
-    park: { icon: TreeDeciduous, fallbackColor: '#F39700' },     // Ueno
-    red_brick: { icon: Landmark, fallbackColor: '#E25822' },     // Tokyo
-    electric: { icon: Zap, fallbackColor: '#FFE600' },           // Akihabara
-    lantern: { icon: Tent, fallbackColor: '#D32F2F' },           // Asakusa
+    park: { icon: TreeDeciduous, fallbackColor: '#F39700' },
+    red_brick: { icon: Landmark, fallbackColor: '#E25822' },
+    electric: { icon: Zap, fallbackColor: '#FFE600' },
+    lantern: { icon: Tent, fallbackColor: '#D32F2F' },
 };
+
 
 export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
     const { setCurrentNode, setBottomSheetOpen, currentNodeId } = useAppStore();
@@ -56,26 +57,15 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
     const isSelected = currentNodeId === node.id;
     const isMajor = node.tier === 'major' || node.is_hub;
 
-    // Custom Design Override
-    const customIconId = node.mapDesign?.icon;
-    const customColor = node.mapDesign?.color;
+    // [NEW] Operator-Based Color System
+    const primaryOperator = getPrimaryOperator(node.id);
+    const operatorColor = OPERATOR_COLORS[primaryOperator] || OPERATOR_COLORS['Metro'];
 
-    // Resolve Icon & Color
-    const designConfig = customIconId ? DESIGN_CONFIG[customIconId] : null;
-    const DisplayIcon = designConfig?.icon || MapPin;
-    // Prefer passed customColor, fallback to config color, then default gradient logic relies on this not being null?
-    // Actually, distinct handling:
+    // Icon: Hub stations use Train, others use MapPin
+    const DisplayIcon = isMajor ? Train : MapPin;
 
-    // Gradient Logic
-    const profile = node.facility_profile || {};
-    const dominant = profile.dominant_category || 'default';
-    const defaultStyle = CATEGORY_STYLE[dominant] || CATEGORY_STYLE.default;
-
-    const finalColor = customColor || designConfig?.fallbackColor;
-
-    const displayGradient = finalColor
-        ? `from-[${finalColor}] to-[${finalColor}]` // Custom solid overrides gradient
-        : defaultStyle.gradient;
+    // Final color is operator-based (overriding old mapDesign system)
+    const finalColor = operatorColor;
 
     const handleClick = () => {
         setCurrentNode(node.id);
@@ -95,9 +85,9 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
                 <div className={`w-14 h-14 rounded-full flex items-center justify-center border-[3px] shadow-lg
                     ${isSelected
                         ? 'bg-gray-900 border-white text-white'
-                        : `bg-gradient-to-br ${displayGradient} border-white text-white`
+                        : 'border-white text-white'
                     }
-                `} style={{ backgroundColor: customColor }}>
+                `} style={{ backgroundColor: isSelected ? '#111827' : finalColor }}>
                     <div className="filter drop-shadow-md transform transition-transform group-hover:scale-110">
                         {/* Render Lucide Icon */}
                         <DisplayIcon size={24} strokeWidth={2.5} />
@@ -112,8 +102,8 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
                 )}
 
                 {/* Pointer */}
-                <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 border-r-[3px] border-b-[3px] border-white rounded-br-sm -z-10 -mt-2 bg-indigo-700`}
-                    style={{ backgroundColor: customColor || '#4338ca' }}>
+                <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 border-r-[3px] border-b-[3px] border-white rounded-br-sm -z-10 -mt-2`}
+                    style={{ backgroundColor: finalColor }}>
                 </div>
             </div>
 

@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Icon Mapping
 const FACILITY_ICONS: Record<FacilityType | string, any> = {
     toilet: User, locker: Briefcase, charging: Zap, elevator: ArrowUpDown,
-    atm: CircleDollarSign, nursery: Baby, bike: Bike, wifi: Wifi, info: Info,
+    atm: CircleDollarSign, nursery: Baby, bike: Bike, bikeshare: Bike, wifi: Wifi, info: Info,
     smoking: Cigarette, shopping: ShoppingBag, dining: Utensils, leisure: Ticket,
     transport: TrainFront, religion: Landmark, nature: Trees, accommodation: Bed
 };
@@ -27,6 +27,7 @@ const FACILITY_COLORS: Record<FacilityType | string, string> = {
     atm: 'bg-indigo-100 text-indigo-600',
     nursery: 'bg-pink-100 text-pink-600',
     bike: 'bg-lime-100 text-lime-600',
+    bikeshare: 'bg-lime-100 text-lime-600',
     wifi: 'bg-violet-100 text-violet-600',
     info: 'bg-gray-100 text-gray-600',
     smoking: 'bg-slate-100 text-slate-600',

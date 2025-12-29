@@ -171,7 +171,9 @@
             "normal": "Avg",
             "crowded": "Busy",
             "full": "Full"
-        }
+        },
+        "emergencyAlert": "Emergency Alert",
+        "viewJmaDetails": "View JMA Details"
     },
     "l3": {
         "servicesTitle": "Station Services",

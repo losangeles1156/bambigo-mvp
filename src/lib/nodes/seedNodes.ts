@@ -350,11 +350,11 @@ export const SEED_NODES = [
     {
         id: 'odpt:Station:JR-East.Okachimachi',
         city_id: 'tokyo_core',
-        name: { 'zh-TW': '御徒町', 'ja': '御徒町', 'en': 'Okachimachi' },
+        name: { 'zh-TW': '御徒町・上野御徒町', 'ja': '御徒町・上野御徒町', 'en': 'Okachimachi / Ueno-Okachimachi' },
         type: 'station',
         location: 'POINT(139.7752 35.7075)',
         geohash: 'xn77k',
-        is_hub: false,
+        is_hub: true,
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'market',
@@ -672,26 +672,7 @@ export const SEED_NODES = [
             { mainCategory: 'dining', subCategory: 'restaurant', name: 'Otemachi Place', distanceMeters: 100, direction: 'Exit A5' }
         ]
     },
-    {
-        id: 'odpt:Station:Toei.UenoOkachimachi',
-        city_id: 'tokyo_core',
-        name: { 'zh-TW': '上野御徒町', 'ja': '上野御徒町', 'en': 'UenoOkachimachi' },
-        type: 'station',
-        location: 'POINT(139.7749 35.7077)',
-        geohash: 'xn77k',
-        is_hub: true,
-        zone: 'core',
-        source_dataset: 'odpt_seed',
-        vibe: 'market',
-        address: { 'ja': '東京都台東区上野五丁目26-6', 'zh-TW': '東京都台東區上野五丁目26-6', 'en': '5-26-6 Ueno, Taito-ku, Tokyo' },
-        facilityTags: [
-            // Service
-            { mainCategory: 'leisure', subCategory: 'tourist', detailCategory: 'activity', name: 'Ueno-okachimachi Tourist Info', distanceMeters: 0, direction: 'Inside Station' },
-
-            // Shopping
-            { mainCategory: 'shopping', subCategory: 'department', name: 'Parco_ya Ueno', distanceMeters: 50, direction: 'Exit A1' }
-        ]
-    },
+    // NOTE: Toei.UenoOkachimachi merged into JR-East.Okachimachi per co-location principle
 
     // Minato Ward
     {
@@ -718,22 +699,12 @@ export const SEED_NODES = [
         source_dataset: 'odpt_seed',
         vibe: 'nightlife'
     },
-    {
-        id: 'odpt:Station:Toei.Daimon',
-        city_id: 'tokyo_core',
-        name: { 'zh-TW': '大門', 'ja': '大門', 'en': 'Daimon' },
-        type: 'station',
-        location: 'POINT(139.7555 35.6567)',
-        geohash: 'xn76u',
-        is_hub: true,
-        zone: 'core',
-        source_dataset: 'odpt_seed',
-        vibe: 'business'
-    },
+    // NOTE: Toei.Daimon merged into JR-East.Hamamatsucho per co-location principle
+
     {
         id: 'odpt:Station:JR-East.Hamamatsucho',
         city_id: 'tokyo_core',
-        name: { 'zh-TW': '濱松町', 'ja': '浜松町', 'en': 'Hamamatsucho' },
+        name: { 'zh-TW': '濱松町・大門', 'ja': '浜松町・大門', 'en': 'Hamamatsucho / Daimon' },
         type: 'station',
         location: 'POINT(139.7571 35.6551)',
         geohash: 'xn76u',

@@ -288,30 +288,78 @@ export async function fetchNodeConfig(nodeId: string) {
     // [New] L3 Data Strategy: DB (stations_static) > Wisdom File
     const odptId = NODE_TO_ODPT[nodeId];
 
-    // 1. Try Fetching from DB (stations_static)
-    let dbL3Facilities = null;
-    if (odptId) {
+    // L3 Station ID Mapping: Comprehensive multi-operator support
+    // Ensures we fetch facilities for ALL operators at a hub
+    const L3_STATION_MAPPING: Record<string, string[]> = {
+        // Ueno (JR, Metro Ginza, Metro Hibiya, Keisei)
+        'odpt.Station:TokyoMetro.Ginza.Ueno': [
+            'odpt:Station:JR-East.Ueno',
+            'odpt.Station:TokyoMetro.Ginza.Ueno',
+            'odpt.Station:TokyoMetro.Hibiya.Ueno',
+            'odpt.Station:Keisei.KeiseiUeno'
+        ],
+        // Akihabara (JR, Metro Hibiya, Tsukuba Express)
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara': [
+            'odpt:Station:JR-East.Akihabara',
+            'odpt.Station:TokyoMetro.Hibiya.Akihabara',
+            'odpt:Station:TsukubaExpress.Akihabara'
+        ],
+        // Tokyo (JR, Metro Marunouchi)
+        'odpt.Station:TokyoMetro.Marunouchi.Tokyo': [
+            'odpt:Station:JR-East.Tokyo',
+            'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
+        ],
+        // Asakusa (Metro Ginza, Toei Asakusa, Tobu)
+        'odpt.Station:TokyoMetro.Ginza.Asakusa': [
+            'odpt.Station:TokyoMetro.Ginza.Asakusa',
+            'odpt.Station:Toei.Asakusa.Asakusa',
+            'odpt:Station:Tobu.Skytree.Asakusa'
+        ],
+        // Shimbashi (JR, Metro Ginza, Toei Asakusa, Yurikamome)
+        'odpt:Station:JR-East.Shimbashi': [
+            'odpt:Station:JR-East.Shimbashi',
+            'odpt.Station:TokyoMetro.Ginza.Shimbashi',
+            'odpt.Station:Toei.Asakusa.Shimbashi',
+            'odpt:Station:Yurikamome.Shimbashi'
+        ],
+        // Hamamatsucho (JR, Monorail, Toei Daimon)
+        'odpt:Station:JR-East.Hamamatsucho': [
+            'odpt:Station:JR-East.Hamamatsucho',
+            'odpt:Station:TokyoMonorail.Haneda.MonorailHamamatsucho',
+            'odpt.Station:Toei.Asakusa.Daimon',
+            'odpt.Station:Toei.Oedo.Daimon'
+        ]
+    };
+
+    // 1. Try Fetching from DB (stations_static) with multiple station_id formats
+    // [Mechanism Update] Aggregate data from ALL matched stations, not just the first one.
+    let dbL3Facilities: any[] | null = [];
+    const l3StationIds = L3_STATION_MAPPING[nodeId] || L3_STATION_MAPPING[odptId || ''] || [odptId, nodeId].filter(Boolean);
+
+    // console.log(`[L3] Fetching aggregated facilities for ${nodeId} from:`, l3StationIds);
+
+    for (const stationId of l3StationIds) {
+        if (!stationId) continue;
         const { data: staticDbData } = await supabase
             .from('stations_static')
             .select('l3_services')
-            .eq('station_id', odptId) // Try ODPT ID first (Migration used this)
+            .eq('station_id', stationId)
             .maybeSingle();
 
         if (staticDbData && Array.isArray(staticDbData.l3_services) && staticDbData.l3_services.length > 0) {
-            dbL3Facilities = staticDbData.l3_services;
-        } else {
-            // Fallback: Try Node ID if ODPT failed (Robustness)
-            const { data: staticDbDataNode } = await supabase
-                .from('stations_static')
-                .select('l3_services')
-                .eq('station_id', nodeId)
-                .maybeSingle();
-
-            if (staticDbDataNode && Array.isArray(staticDbDataNode.l3_services)) {
-                dbL3Facilities = staticDbDataNode.l3_services;
-            }
+            // Merge results
+            if (!dbL3Facilities) dbL3Facilities = [];
+            dbL3Facilities = [...dbL3Facilities, ...staticDbData.l3_services];
+            // console.log(`[L3] Found ${staticDbData.l3_services.length} items for ${stationId}`);
         }
     }
+
+    // Fallback if aggregation turned up nothing (ensure null if truly empty so fallback logic works if applicable)
+    if (dbL3Facilities && dbL3Facilities.length === 0) {
+        dbL3Facilities = null;
+    }
+
+
 
     // 2. Resolve Wisdom Source (File)
     // STATION_WISDOM uses internal Node IDs (e.g. 'odpt:Station:TokyoMetro.Ueno')

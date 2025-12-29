@@ -1,81 +1,82 @@
-import { Navigation, MapPin, Utensils, ShoppingBag, Landmark, Coffee, TreePine } from 'lucide-react';
+import { Navigation, MapPin, Utensils, ShoppingBag, Landmark, Coffee, TreePine, Hospital, Building2, Landmark as CultureIcon, Briefcase, Bed, Info } from 'lucide-react';
 import { L1Place } from '@/hooks/useL1Places';
 
 interface PlaceCardProps {
     place: L1Place;
-    isFeatured?: boolean; // For B2B future
+    isFeatured?: boolean;
 }
 
-// Simple Icon Map (reuse or import if optimized)
-const ICON_MAP: Record<string, any> = {
-    dining: Utensils,
-    shopping: ShoppingBag,
-    culture: Landmark,
-    leisure: Coffee,
-    nature: TreePine,
-    default: MapPin
+// Enhanced Icon Map with Colors
+const CATEGORY_STYLE: Record<string, { icon: any; color: string; bgColor: string }> = {
+    dining: { icon: Utensils, color: 'text-orange-600', bgColor: 'bg-orange-50' },
+    shopping: { icon: ShoppingBag, color: 'text-pink-600', bgColor: 'bg-pink-50' },
+    culture: { icon: CultureIcon, color: 'text-blue-700', bgColor: 'bg-blue-50' },
+    leisure: { icon: Coffee, color: 'text-emerald-600', bgColor: 'bg-emerald-50' },
+    nature: { icon: TreePine, color: 'text-green-700', bgColor: 'bg-green-50' },
+    medical: { icon: Hospital, color: 'text-red-600', bgColor: 'bg-red-50' },
+    business: { icon: Building2, color: 'text-indigo-600', bgColor: 'bg-indigo-50' },
+    service: { icon: Landmark, color: 'text-slate-600', bgColor: 'bg-slate-50' },
+    finance: { icon: Briefcase, color: 'text-cyan-700', bgColor: 'bg-cyan-50' },
+    accommodation: { icon: Bed, color: 'text-purple-600', bgColor: 'bg-purple-50' },
+    default: { icon: MapPin, color: 'text-gray-500', bgColor: 'bg-gray-100' }
 };
 
 export function PlaceCard({ place, isFeatured = false }: PlaceCardProps) {
-    const Icon = ICON_MAP[place.category] || ICON_MAP.default;
+    const style = CATEGORY_STYLE[place.category] || CATEGORY_STYLE.default;
+    const Icon = style.icon;
     const name = place.name;
 
-    // Google Maps Deep Link
-    // Strategy: Search by Name first. Precision is better for UX.
-    // If we wanted coordinate pin: query=${place.location.coordinates[1]},${place.location.coordinates[0]}
+    // Walking time calculation (Standard: 80m/min)
+    const walkMinutes = place.distance_meters ? Math.ceil(place.distance_meters / 80) : null;
+
     const handleNavClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-        const lat = place.location.coordinates[1];
-        const lon = place.location.coordinates[0];
-        // Hybrid: Name + Coordinator hint? No, standard Maps API takes Query.
-        // Let's use coordinates for 100% accuracy of the pin location
-        // User can see the label on the map once opened.
-        // Actually, searching by Name is better for "Place Info" (Review, Photos).
-        // Let's try Name.
-        const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
+        if (place.navigation_url) {
+            window.open(place.navigation_url, '_blank', 'noopener,noreferrer');
+        } else {
+            // Fallback
+            const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
     };
 
     return (
-        <div className={`p-3 rounded-xl border transition-all hover:bg-gray-50 flex items-start gap-3 group bg-white ${isFeatured ? 'border-amber-200 bg-amber-50/30' : 'border-gray-100'}`}>
+        <div className={`p-4 rounded-2xl border transition-all hover:shadow-md flex items-center gap-4 group bg-white ${isFeatured ? 'border-amber-200 bg-amber-50/20' : 'border-gray-100'}`}>
             {/* Icon Box */}
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${isFeatured ? 'bg-amber-100 text-amber-600' : 'bg-gray-100 text-gray-400 group-hover:bg-indigo-100 group-hover:text-indigo-600'} transition-colors`}>
-                <Icon size={18} />
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${style.bgColor} ${style.color} transition-transform group-hover:scale-105`}>
+                <Icon size={24} strokeWidth={2.5} />
             </div>
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                    <h4 className="font-bold text-sm text-gray-900 truncate leading-tight">
+                <div className="flex items-center gap-2 mb-0.5">
+                    <h4 className="font-extrabold text-[15px] text-gray-900 truncate tracking-tight">
                         {name}
                     </h4>
-                    {isFeatured && (
-                        <span className="text-[9px] font-black uppercase px-1 py-0.5 bg-amber-100 text-amber-600 rounded">
-                            Ad
+                </div>
+
+                <div className="flex items-center gap-1.5 flex-wrap">
+                    {/* Subcategory Badge */}
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md ${style.bgColor} ${style.color} uppercase tracking-wider`}>
+                        {place.subcategory || place.category}
+                    </span>
+
+                    {/* Distance/Time */}
+                    {walkMinutes !== null && (
+                        <span className="text-[11px] font-semibold text-gray-500 flex items-center gap-1">
+                            • {walkMinutes} min ({place.distance_meters}m)
                         </span>
                     )}
                 </div>
-
-                <p className="text-xs text-gray-500 font-medium mt-0.5 truncate">
-                    {place.category}
-                    {place.tags?.cuisine && ` • ${place.tags.cuisine}`}
-                </p>
-
-                {/* Vibe Tags Pills (if relevant) */}
-                {(place.tags?.ramen || place.tags?.amenity === 'cafe') && (
-                    <div className="flex gap-1 mt-1.5">
-                        {place.tags?.ramen && <span className="text-[9px] px-1.5 py-0.5 bg-gray-100 text-gray-500 rounded">#Ramen</span>}
-                    </div>
-                )}
             </div>
 
-            {/* Nav Button */}
+            {/* Navigation Action */}
             <button
                 onClick={handleNavClick}
-                className="flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all shadow-sm active:scale-95"
-                title="Open in Google Maps"
+                className="w-10 h-10 rounded-full bg-gray-50 text-gray-400 hover:bg-indigo-600 hover:text-white transition-all flex items-center justify-center active:scale-90 border border-gray-100"
+                title="Navigate"
             >
-                <Navigation size={18} fill="currentColor" className="opacity-100" />
+                <Navigation size={18} fill="currentColor" />
             </button>
         </div>
     );
