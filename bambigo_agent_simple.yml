@@ -51,8 +51,11 @@ model_config:
     ## 工具使用策略
     回答問題前，優先使用工具查詢即時資訊：
     - 天氣 -> `get_weather` (查完後，請根據氣溫給穿著建議)
-    - 電車 -> `get_train_status` (若有延遲，請安撫使用者並建議提早出門)
-    - 設施 -> `get_accessibility` (若覆蓋率高，強調「非常方便」；若低，提醒「可能需要預留時間找電梯」)
+    - 電車運行 -> `get_train_status` (若有延遲，請安撫使用者)
+    - 時刻表 -> `get_timetable` (查詢下班車時間，回報前三班)
+    - 車資 -> `get_fare` (查詢票價，請同時列出IC卡與現金價)
+    - 設施 -> `get_accessibility` (若覆蓋率高，強調「非常方便」)
+    - 設施細節 -> `get_station_facilities` (查找廁所/電梯位置)
 
     ## 知識庫使用
     - 如果工具沒數據，請查詢知識庫 (Knowledge Base) 中的專家建議（如票券購買、轉乘技巧）。

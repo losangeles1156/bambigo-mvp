@@ -111,3 +111,76 @@ paths:
                     description: Context (morning_rush, evening_rush, day, late_night)
                   day_of_week:
                     type: string
+  /api/odpt/fare:
+    get:
+      operationId: get_fare
+      summary: Get Train Fare (Ticket & IC)
+      description: Returns the fare (Ticket and IC card) between two stations using structured ODPT data. Use this when user asks about price or cost.
+      parameters:
+        - name: from
+          in: query
+          required: true
+          description: Origin Station ID (e.g., odpt:Station:TokyoMetro.Ginza.Ueno)
+          schema:
+            type: string
+        - name: to
+          in: query
+          required: true
+          description: Destination Station ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  found:
+                    type: boolean
+                  fares:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ticket:
+                          type: integer
+                        ic:
+                          type: integer
+                        operator:
+                          type: string
+
+  /api/odpt/timetable:
+    get:
+      operationId: get_timetable
+      summary: Get Next Train Departures
+      description: Returns the next 3 departures for each direction from the station. Use this when user asks "When is the next train?".
+      parameters:
+        - name: station
+          in: query
+          required: true
+          description: Station ID (e.g., odpt:Station:TokyoMetro.Ginza.Ueno)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  station:
+                    type: string
+                  directions:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          time:
+                            type: string
+                          dest:
+                            type: string
