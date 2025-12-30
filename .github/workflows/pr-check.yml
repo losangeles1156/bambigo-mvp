@@ -6,7 +6,7 @@ on:
       - main
       - 'release/**'
     paths:
-      - 'bambigo-web/**'
+      - '**'
 
 concurrency:
   group: pr-checks-${{ github.event.pull_request.head.sha }}
@@ -29,30 +29,32 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'bambigo-web/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Install dependencies
-        working-directory: bambigo-web
         run: npm ci
 
-      - name: Lint (no warnings)
-        working-directory: bambigo-web
-        run: npm run lint:ci
+      - name: Lint
+        run: npm run lint
 
       - name: Typecheck
-        working-directory: bambigo-web
         run: npm run typecheck
 
-      - name: Test with coverage
-        working-directory: bambigo-web
-        run: npm run test:ci
+      - name: Test
+        run: npm run test
+
+      - name: Security scan
+        run: npm run security:scan
+
+      - name: Build
+        run: npm run build
 
       - name: Upload coverage artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vitest-coverage
+          name: node-test-coverage
           path: |
-            bambigo-web/coverage
-            bambigo-web/coverage/lcov.info
-          if-no-files-found: warn
+            coverage
+            coverage/lcov.info
+          if-no-files-found: ignore

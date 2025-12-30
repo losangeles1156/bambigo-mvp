@@ -81,7 +81,12 @@ interface L2_LiveProps {
 export function L2_Live({ data }: L2_LiveProps) {
     const tL2 = useTranslations('l2');
     const locale = useLocale();
-    const { lines, weather: initialWeather, crowd, updatedAt } = data.l2;
+    const { lines, weather: initialWeather, crowd, updatedAt } = (data.l2 || {
+        lines: [],
+        weather: { temp: 0, condition: 'Clear', windSpeed: 0 },
+        crowd: { level: 1, trend: 'stable', userVotes: { total: 0, distribution: [0, 0, 0, 0, 0] } },
+        updatedAt: undefined
+    });
     const [weather, setWeather] = useState(initialWeather);
     const [weatherAdvice, setWeatherAdvice] = useState<string | null>(null);
     const [clickedCrowd, setClickedCrowd] = useState<number | null>(null);
@@ -147,6 +152,9 @@ export function L2_Live({ data }: L2_LiveProps) {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL2('operationTitle')}</h3>
+                        <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-700 text-[9px] font-black uppercase tracking-widest border border-green-100">
+                            L2
+                        </span>
                         {/* Summary Badge */}
                         {lines.length > 0 && (
                             delayedLines.length > 0 ? (
@@ -174,7 +182,11 @@ export function L2_Live({ data }: L2_LiveProps) {
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden p-1">
                     {lines.length === 0 ? (
                         <div className="p-8 text-center text-gray-400 text-xs">
-                            No Live Line Data Available
+                            {locale.startsWith('ja')
+                                ? '運行情報がありません'
+                                : locale.startsWith('en')
+                                    ? 'No live line data available'
+                                    : '目前沒有即時列車資訊'}
                         </div>
                     ) : (
                         <div className="flex flex-col gap-1">

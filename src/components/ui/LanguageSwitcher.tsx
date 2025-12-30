@@ -1,12 +1,18 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+    className?: string;
+}
+
+export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     const locale = useLocale();
+    const tCommon = useTranslations('common');
     const router = useRouter();
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +35,7 @@ export function LanguageSwitcher() {
         // Simple regex replace for standard next-intl setup
         const segments = pathname.split('/');
         // Assuming segments[1] is the locale if it matches known locales
-        if (['zh-TW', 'en', 'ja'].includes(segments[1])) {
+        if (['zh', 'en', 'ja'].includes(segments[1])) {
             segments[1] = newLocale;
         } else {
             // If strictly using prefix-always strategy:
@@ -50,7 +56,7 @@ export function LanguageSwitcher() {
     };
 
     const labels: Record<string, string> = {
-        'zh-TW': '繁體中文',
+        'zh': '繁體中文',
         'en': 'English',
         'ja': '日本語'
     };
@@ -59,15 +65,19 @@ export function LanguageSwitcher() {
         <div className="relative" ref={containerRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="glass-effect rounded-2xl p-3.5 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5 flex items-center justify-center text-gray-500"
+                className={cn(
+                    "glass-effect rounded-2xl p-3.5 hover:bg-white transition-all active:scale-90 shadow-xl shadow-black/5 flex items-center justify-center text-gray-500",
+                    className
+                )}
+                aria-label={tCommon('languageSwitcherLabel')}
             >
-                <Globe size={22} className={isOpen ? 'rotate-12 text-indigo-600' : ''} />
+                <Globe size={22} className={isOpen ? 'rotate-12 text-indigo-600' : ''} aria-hidden="true" />
             </button>
 
             {isOpen && (
                 <div className="absolute right-0 top-full mt-3 w-40 bg-white/90 backdrop-blur-2xl rounded-[24px] shadow-2xl border border-black/[0.05] overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300 z-[300]">
                     <div className="p-1">
-                        {['zh-TW', 'en', 'ja'].map((l) => (
+                        {['zh', 'en', 'ja'].map((l) => (
                             <button
                                 key={l}
                                 onClick={() => handleChange(l)}

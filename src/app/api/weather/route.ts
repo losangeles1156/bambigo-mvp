@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
+import { writeAuditLog } from '@/lib/security/audit';
 
-export async function GET() {
+export async function GET(request: Request) {
     try {
         const response = await fetch('https://www.data.jma.go.jp/developer/xml/feed/extra.xml', {
             next: { revalidate: 300 } // Cache for 5 minutes
@@ -88,6 +89,18 @@ export async function GET() {
         });
 
     } catch (error: any) {
+        void writeAuditLog(request, {
+            actorUserId: null,
+            action: 'create',
+            resourceType: 'weather_alerts',
+            resourceId: 'tokyo',
+            before: null,
+            after: {
+                ok: false,
+                upstream: 'jma_rss',
+                error: String(error?.message || error || '')
+            }
+        });
         console.error('Weather API Error:', error.message);
         return NextResponse.json({ alerts: [], error: 'Failed to fetch weather data' }, { status: 500 });
     }

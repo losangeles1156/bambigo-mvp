@@ -1,9 +1,9 @@
 {
     "Home": {
-        "title": "BambiGO",
+        "title": "LUTAGU",
         "currentLocation": "現在地",
-        "askBambiGO": "BambiGOに聞く...",
-        "aiPlaceholder": "BambiGOに聞く..."
+        "askBambiGO": "ルタグに聞く...",
+        "aiPlaceholder": "ルタグに聞く..."
     },
     "status": {
         "crowded": "混雑",
@@ -14,35 +14,95 @@
     },
     "nav": {
         "explore": "探索",
+        "trips": "旅程",
         "guard": "見守り",
         "me": "マイ"
+    },
+    "views": {
+        "trips": {
+            "kicker": "旅程",
+            "title": "あなたの旅程",
+            "description": "保存したルートや通知がここに表示されます。",
+            "cta": "LUTAGUで計画する",
+            "seed": "計画：上野駅 → 成田空港（荷物多め）"
+        },
+        "me": {
+            "kicker": "マイ",
+            "title": "マイ",
+            "description": "好み設定とバリアフリー設定をここにまとめます。",
+            "cta": "チャットを開く"
+        }
+    },
+    "onboarding": {
+        "tagline": "移動の意思決定をもっと簡単に",
+        "skip": "オンボーディングをスキップ",
+        "askTitle": "例えば：",
+        "askSubtitle": "ワンタップで送信して提案を取得",
+        "tips": {
+            "airport": "上野駅にいて荷物が多いです。空港までどう行けばいい？",
+            "locker": "近くのコインロッカーはどこ？",
+            "crowd": "銀座線はいま混んでる？"
+        },
+        "hubTitle": "人気のハブから探索：",
+        "hubs": {
+            "ueno": "上野",
+            "asakusa": "浅草",
+            "akihabara": "秋葉原",
+            "tokyo": "東京"
+        },
+        "enableLocation": "位置情報を有効化",
+        "browseFirst": "まずは見る"
     },
     "tripGuard": {
         "title": "旅の見守り",
         "noSubscription": "登録中の路線なし",
-        "subscriptionHint": "路線を登録すると、遅延発生時にBambiが自動でお知らせします。",
-        "startExploring": "スポットを探す"
+        "subscriptionHint": "路線を登録すると、遅延発生時にLUTAGUが自動でお知らせします。",
+        "startExploring": "スポットを探す",
+        "activate": "見守りを開始",
+        "sampleSubscriptionLabel": "銀座線 通勤ルート",
+        "sampleSubscriptionWindow": "平日 07:00–09:30",
+        "sampleSubscriptionStatus": "異常をリアルタイム監視中",
+        "bindTitle": "LINE 見守りを連携",
+        "bindDescription": "LINE アカウントを連携すると、交通異常が発生した際にLUTAGUが代替ルートや回避提案を自動でお知らせします。",
+        "bindBenefitRealtime": "遅延のリアルタイム通知",
+        "bindBenefitMonitor": "24時間ルートモニタリング",
+        "bindCta": "LINE アカウントで連携",
+        "bindCtaLoading": "LINE 権限をリクエスト中...",
+        "bindSuccessTitle": "連携完了",
+        "bindSuccessBody": "あなたの旅程は LUTAGU によって見守られています。",
+        "anomalyBadge": "異常通知",
+        "anomalyTitleSample": "銀座線：混雑アラート",
+        "anomalyBodySample": "現在、上野駅はラッシュ時間帯に入り、約10分の遅延が見込まれます。",
+        "anomalyAdviceSample": "LUTAGUの提案：日比谷線で仲御徒町駅まで移動し、混雑エリアを回避しましょう。",
+        "statusActiveBound": "Trip Guard はON（LINE連携済み）",
+        "statusActiveUnbound": "Trip Guard はON（LINE未連携）",
+        "statusInactive": "Trip Guard はOFF"
     },
     "profile": {
         "title": "設定",
         "guestMode": "ゲストモード",
-        "loginRegister": "ログイン / 登録"
+        "loginRegister": "ログイン / 登録",
+        "logout": "ログアウト",
+        "loginWithGoogle": "Googleでログインして会員機能を利用"
     },
     "node": {
         "addToTrip": "旅程に追加",
         "addedToTrip": "「{name}」を旅程に追加しました！",
-        "bufferZoneMessage": "このエリアは現在基本情報のみ提供しています。Bambi AIの感性ナビは拡張中です。",
+        "bufferZoneMessage": "このエリアは現在基本情報のみ提供しています。LUTAGU AIの感性ナビは拡張中です。",
         "locationDna": "ロケーションDNA",
         "vicinity": "周辺施設",
         "vibeTags": "雰囲気タグ",
         "analyzingL1": "L1 DNAデータを分析中...",
-        "noL3Facilities": "このエリアにはL3施設がありません"
+        "noL3Facilities": "このエリアにはL3施設がありません",
+        "details": "詳細",
+        "favorite": "お気に入りに追加",
+        "unfavorite": "お気に入りを解除"
     },
     "tabs": {
         "dna": "DNA (L1)",
         "live": "LIVE (L2)",
         "facility": "FACILITY (L3)",
-        "bambi": "BAMBI (L4)"
+        "bambi": "LUTAGU (L4)"
     },
     "tag": {
         "shopping": "買い物",
@@ -117,7 +177,7 @@
     },
     "l1": {
         "dnaTitle": "生活機能",
-        "bambiInsight": "Bambi インサイト",
+        "bambiInsight": "ルタグ インサイト",
         "nearbyHighlights": "周辺スポット (300m)",
         "noHighlights": "周辺スポットなし",
         "menuTitle": "カテゴリ詳細",
@@ -126,7 +186,14 @@
             "shopping": "買い物",
             "dining": "グルメ",
             "culture": "文化",
-            "nature": "自然"
+            "nature": "自然",
+            "convenience": "コンビニ",
+            "medical": "医療",
+            "leisure": "レジャー",
+            "finance": "金融",
+            "accommodation": "宿泊",
+            "service": "公共サービス",
+            "business": "ビジネス"
         }
     },
     "l2": {
@@ -182,6 +249,7 @@
         "noServices": "詳細な施設情報はありません",
         "rent": "レンタル",
         "available": "利用可",
+        "quickLinks": "クイックリンク",
         "categories": {
             "toilet": "トイレ",
             "locker": "ロッカー",
@@ -192,7 +260,14 @@
             "info": "案内所",
             "nursing": "授乳室",
             "smoking": "喫煙所",
-            "accessibility": "バリアフリー"
+            "accessibility": "バリアフリー",
+            "shopping": "買い物",
+            "dining": "食事",
+            "leisure": "レジャー",
+            "transport": "乗換",
+            "religion": "宗教",
+            "nature": "自然",
+            "accommodation": "宿泊"
         },
         "attributes": {
             "wheelchair": "車椅子",
@@ -216,16 +291,25 @@
         "diaper_changing": "おむつ交換台",
         "ostomate": "オストメイト",
         "baby_chair": "ベビーチェア",
-        "accessible": "バリアフリー"
+        "accessible": "バリアフリー",
+        "modal": {
+            "close": "閉じる",
+            "location": "場所",
+            "attributes": "設備属性",
+            "sizes": "サイズ: {sizes}",
+            "count": "個数: {count}",
+            "hours": "営業時間: {hours}",
+            "askBambi": "この施設について LUTAGU に聞く"
+        }
     },
     "l4": {
-        "strategyTitle": "Bambi 戦略",
+        "initialMessage": "こんにちは！ここは {station} です。どこへ行きたいですか？ルート、運賃、時刻表を調べられます。",
+        "strategyTitle": "LUTAGU 戦略",
         "subtitle": "リアルタイムデータに基づく提案",
         "topPick": "おすすめ",
         "alternatives": "その他の選択肢",
-        "thinking": "思考中...",
         "disclaimer": "提案は現在の交通、天気、施設状況に基づいています。",
-        "bambiStrategy": "Bambi 提案",
+        "bambiStrategy": "LUTAGU 提案",
         "suggestion": "提案",
         "psychAlert": "心構え",
         "synthesisTitle": "意思決定サポート",
@@ -241,6 +325,28 @@
             "family": "子連れ",
             "accessibility": "バリアフリー",
             "vibe": "雰囲気重視"
+        },
+        "chips": {
+            "synthesize": "合成",
+            "route": "ルート相談",
+            "nearby": "周辺"
+        },
+        "inputPlaceholder": "ルートを相談（質問・雑談...）",
+        "chatError": "通信エラーが発生しました。",
+        "userLabel": "あなた",
+        "bambiLabel": "LUTAGU",
+        "thinking": {
+            "initializing": "認知エンジンを起動中...",
+            "l2": "L2の運行・天気を分析中...",
+            "l3": "L3施設とODPT時刻表を確認中...",
+            "kb": "知識ベース（Tips & Hacks）を参照中...",
+            "synthesizing": "ニーズに合わせて最適戦略を合成中..."
+        },
+        "card": {
+            "title": "最適戦略を合成しました",
+            "reasoning": "根拠",
+            "l2Verified": "ライブ状況を確認",
+            "odptVerified": "ODPT時刻表を確認"
         }
     },
     "weather": {
@@ -269,10 +375,22 @@
     },
     "common": {
         "viewAll": "すべて見る",
+        "view": "見る",
+        "openChat": "チャットを開く",
+        "temporarilyUnavailable": "現在サービスをご利用いただけません",
         "distance": "距離",
         "loading": "読み込み中...",
         "error": "エラーが発生しました",
-        "station": "駅"
+        "station": "駅",
+        "close": "閉じる",
+        "languageSwitcherLabel": "言語を切り替える"
+    },
+    "chat": {
+        "connectionError": "通信エラーが発生しました。時間をおいて再試行してください。",
+        "offlineBadge": "オフライン",
+        "tripAdded": "「{label}」を旅程に追加しました！",
+        "openingTimetable": "「{label}」の時刻表詳細を開いています...",
+        "activeBadge": "アクティブモード"
     },
     "ui": {
         "items": "項目"

@@ -1,4 +1,4 @@
-# BambiGO L2 列車異常監控 Workflow 設定指南
+# LUTAGU L2 列車異常監控 Workflow 設定指南
 
 ## 📋 概覽
 

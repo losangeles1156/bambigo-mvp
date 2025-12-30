@@ -5,6 +5,8 @@ import { Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
 import { ShoppingBag, Utensils, Coffee, MapPin, Stethoscope } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useCategoryTranslation } from '@/hooks/useCategoryTranslation';
 
 const CATEGORY_COLOR = {
     shopping: '#F472B6', // Pink
@@ -18,6 +20,7 @@ export function L1Layer() {
     const { places } = useL1Places();
     const map = useMap();
     const [visible, setVisible] = useState(false);
+    const { getCategoryLabel } = useCategoryTranslation();
 
     // Only show when zoomed in
     useEffect(() => {
@@ -57,7 +60,9 @@ export function L1Layer() {
                     >
                         <Popup className="l1-popup">
                             <div className="text-xs font-bold">{place.name}</div>
-                            <div className="text-[10px] text-gray-500 capitalize">{place.category}</div>
+                            <div className="text-[10px] text-gray-500 capitalize">
+                                {getCategoryLabel(place.category)}
+                            </div>
                         </Popup>
                     </Marker>
                 );

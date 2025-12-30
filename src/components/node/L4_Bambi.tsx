@@ -1,12 +1,16 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useMemo, useState, useRef, useEffect, useCallback } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { StationUIProfile } from '@/lib/types/stationStandard';
+import { getLocaleString } from '@/lib/utils/localeUtils';
 import { Sparkles, Send, User, Bot, Loader2, Clock, Briefcase, Wallet, Armchair, Baby, Compass, MapPin, CheckCircle2 } from 'lucide-react';
 
 interface L4_BambiProps {
     data: StationUIProfile;
+    seedQuestion?: string;
+    seedUserProfile?: string;
+    onSeedConsumed?: () => void;
 }
 
 interface Message {
@@ -15,22 +19,32 @@ interface Message {
     isStrategy?: boolean; // New flag for structured response
 }
 
-export function L4_Bambi({ data }: L4_BambiProps) {
+export function L4_Bambi({ data, seedQuestion, seedUserProfile, onSeedConsumed }: L4_BambiProps) {
     const tL4 = useTranslations('l4');
+    const tCommon = useTranslations('common');
+    const locale = useLocale();
     const { id: stationId, name } = data || {};
 
     // Robust Name Resolution
     const displayName = (name?.zh && name?.zh !== '車站' && name?.zh !== 'Station')
         ? name.zh
-        : (name?.en || name?.ja || (stationId?.split(':').pop()?.split('.').pop()) || '車站');
-
-    useEffect(() => {
-        console.log('[L4_Bambi] Data:', data);
-        console.log('[L4_Bambi] DisplayName:', displayName);
-    }, [data, displayName]);
+        : (name?.en || name?.ja || (stationId?.split(':').pop()?.split('.').pop()) || tCommon('station'));
 
     // Chat State
     const [messages, setMessages] = useState<Message[]>([]);
+
+    const bestCard = useMemo(() => {
+        const cards = data?.l4_cards || [];
+        return cards.find(c => c.type === 'primary') || cards[0] || null;
+    }, [data?.l4_cards]);
+
+    const otherCards = useMemo(() => {
+        const cards = data?.l4_cards || [];
+        if (!bestCard) return [];
+        return cards.filter(c => c.id !== bestCard.id);
+    }, [data?.l4_cards, bestCard]);
+
+    const [isOtherOpen, setIsOtherOpen] = useState(false);
 
     // Initialize greeting ONLY once when displayName becomes available
     const [hasGreeted, setHasGreeted] = useState(false);
@@ -43,11 +57,13 @@ export function L4_Bambi({ data }: L4_BambiProps) {
 
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isOffline, setIsOffline] = useState(false);
 
     // Cognitive State Visualization
     const [thinkingStep, setThinkingStep] = useState<string>('');
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const lastSeedQuestionRef = useRef<string>('');
 
     // Hybrid UI State
     const [destination, setDestination] = useState('');
@@ -59,13 +75,14 @@ export function L4_Bambi({ data }: L4_BambiProps) {
     }, [messages, thinkingStep]);
 
     // Send Message Logic
-    const handleSend = async (text: string, userProfile: string = 'general') => {
+    const handleSend = useCallback(async (text: string, userProfile: string = 'general') => {
         if (!text.trim() || isLoading) return;
 
         const userMsg = { role: 'user' as const, content: text };
         setMessages(prev => [...prev, userMsg]);
         setInput('');
         setIsLoading(true);
+        setIsOffline(false);
         setThinkingStep(tL4('thinking.initializing'));
 
         // Fake "Thinking Steps" to visualize the 4 Dimensions
@@ -92,7 +109,8 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                     messages: [...messages, userMsg],
                     nodeId: stationId,
                     inputs: {
-                        user_profile: userProfile
+                        user_profile: userProfile,
+                        locale
                     }
                 })
             });
@@ -120,6 +138,9 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                     if (line.startsWith('data: ')) {
                         try {
                             const data = JSON.parse(line.slice(6));
+                            if (data.event === 'meta' && data.mode === 'offline') {
+                                setIsOffline(true);
+                            }
                             if (data.event === 'message') {
                                 accumulatedResponse += data.answer;
                                 setMessages(prev => {
@@ -137,13 +158,25 @@ export function L4_Bambi({ data }: L4_BambiProps) {
 
         } catch (error) {
             console.error('Chat Error:', error);
-            setMessages(prev => [...prev, { role: 'assistant', content: '抱歉，連線發生錯誤。' }]);
+            setMessages(prev => [...prev, { role: 'assistant', content: tL4('chatError') }]);
             clearInterval(stepInterval);
         } finally {
             setIsLoading(false);
             setThinkingStep('');
         }
-    };
+    }, [isLoading, locale, messages, stationId, tL4]);
+
+    useEffect(() => {
+        const text = String(seedQuestion || '').trim();
+        if (!text) return;
+        if (!hasGreeted) return;
+        if (isLoading) return;
+        if (lastSeedQuestionRef.current === text) return;
+
+        lastSeedQuestionRef.current = text;
+        handleSend(text, seedUserProfile || 'general');
+        onSeedConsumed?.();
+    }, [seedQuestion, seedUserProfile, hasGreeted, isLoading, handleSend, onSeedConsumed]);
 
     const demands = [
         { id: 'speed', icon: Clock, label: tL4('demands.speed') },
@@ -164,13 +197,87 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                     </div>
                     <div>
                         <h3 className="font-black text-slate-800 tracking-tight">{tL4('bambiStrategy')}</h3>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{tL4('subtitle')}</p>
+                        <div className="flex items-center gap-2">
+                            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{tL4('subtitle')}</p>
+                            {isOffline && (
+                                <span className="text-[10px] font-black uppercase tracking-[0.18em] text-amber-700/90 bg-amber-100/70 px-2 py-0.5 rounded-full border border-amber-200/70">
+                                    {locale.startsWith('en') ? 'Offline' : locale.startsWith('ja') ? 'オフライン' : '離線'}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/* Message Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
+                {bestCard && (
+                    <div className="rounded-[28px] p-5 text-white bg-gradient-to-br from-indigo-600 to-indigo-800 shadow-[0_18px_50px_rgba(79,70,229,0.28)] border border-white/15">
+                        <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-white/70">{tL4('topPick')}</div>
+                                <div className="mt-2 text-lg font-black leading-tight tracking-tight break-words">
+                                    {getLocaleString(bestCard.title, locale)}
+                                </div>
+                            </div>
+                            <div className="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center shrink-0">
+                                <MapPin size={18} className="text-white" />
+                            </div>
+                        </div>
+                        <div className="mt-3 text-sm font-bold text-white/90 whitespace-pre-wrap leading-relaxed line-clamp-4">
+                            {getLocaleString(bestCard.description, locale)}
+                        </div>
+
+                        <div className="mt-4 flex gap-2">
+                            <button
+                                onClick={() => {
+                                    if (bestCard.actionUrl) {
+                                        window.open(bestCard.actionUrl, '_blank', 'noopener,noreferrer');
+                                        return;
+                                    }
+                                    if (otherCards.length > 0) setIsOtherOpen(true);
+                                }}
+                                className="flex-1 py-3 rounded-2xl bg-white text-indigo-700 font-black text-xs tracking-widest hover:bg-indigo-50 transition-colors active:scale-[0.99]"
+                                >
+                                    {getLocaleString(bestCard.actionLabel, locale) || tCommon('view')}
+                                </button>
+
+                            {otherCards.length > 0 && (
+                                <button
+                                    onClick={() => setIsOtherOpen(v => !v)}
+                                    className="px-4 py-3 rounded-2xl bg-white/10 border border-white/15 text-white font-black text-xs tracking-widest hover:bg-white/15 transition-colors active:scale-[0.99]"
+                                >
+                                    {tL4('alternatives')}
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {isOtherOpen && otherCards.length > 0 && (
+                    <div className="space-y-3">
+                        {otherCards.map((card) => (
+                            <div key={card.id} className="bg-white rounded-[22px] border border-slate-100 shadow-sm p-4">
+                                <div className="text-sm font-black text-slate-900 leading-snug">
+                                    {getLocaleString(card.title, locale)}
+                                </div>
+                                <div className="mt-2 text-xs font-bold text-slate-600 whitespace-pre-wrap leading-relaxed">
+                                    {getLocaleString(card.description, locale)}
+                                </div>
+                                <button
+                                    onClick={() => {
+                                        if (card.actionUrl) window.open(card.actionUrl, '_blank', 'noopener,noreferrer');
+                                    }}
+                                    disabled={!card.actionUrl}
+                                    className={`mt-3 w-full py-3 rounded-2xl font-black text-xs tracking-widest transition-colors active:scale-[0.99] ${card.actionUrl ? 'bg-slate-900 text-white hover:bg-slate-800' : 'bg-slate-100 text-slate-300'}`}
+                                >
+                                    {getLocaleString(card.actionLabel, locale) || tCommon('view')}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
                 {messages.map((msg, idx) => (
                     <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                         <div className={`max-w-[85%] rounded-2xl p-4 shadow-sm ${msg.role === 'user'
@@ -180,7 +287,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                             <div className="flex items-center gap-2 mb-1 opacity-50">
                                 {msg.role === 'user' ? <User size={12} /> : <Bot size={12} />}
                                 <span className="text-[10px] font-black uppercase tracking-tighter">
-                                    {msg.role === 'user' ? 'User' : 'BAMBI'}
+                                    {msg.role === 'user' ? tL4('userLabel') : tL4('bambiLabel')}
                                 </span>
                             </div>
                             <div className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</div>
@@ -211,21 +318,25 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                             </div>
                             <input
                                 type="text"
-                                placeholder={tL4('chips.route') + ' (問路、聊天...)'}
+                                placeholder={tL4('inputPlaceholder')}
                                 value={input || destination}
+                                disabled={isLoading}
                                 onChange={(e) => {
                                     setDestination(e.target.value);
                                     setInput(e.target.value);
                                 }}
                                 onKeyDown={(e) => {
+                                    if ((e.nativeEvent as any)?.isComposing) return;
                                     if (e.key === 'Enter') {
+                                        e.preventDefault();
                                         let profile = 'general';
                                         if (selectedDemands.includes('accessibility')) profile = 'wheelchair';
                                         else if (selectedDemands.includes('family')) profile = 'stroller';
                                         handleSend(input || destination, profile);
                                     }
                                 }}
-                                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-none rounded-2xl text-sm font-bold text-slate-700 focus:ring-2 focus:ring-indigo-600 transition-all"
+                                aria-label={tL4('inputPlaceholder')}
+                                className="w-full pl-12 pr-4 py-4 bg-slate-50 border-none rounded-2xl text-sm font-bold text-slate-700 focus:ring-2 focus:ring-indigo-600 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                             />
                         </div>
                     </div>
@@ -244,6 +355,7 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                                             setSelectedDemands(prev => [...prev, demand.id]);
                                         }
                                     }}
+                                    disabled={isLoading}
                                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-black whitespace-nowrap transition-all ${isSelected
                                         ? 'bg-indigo-600 border-indigo-600 text-white shadow-md scale-105'
                                         : 'bg-white border-slate-100 text-slate-500 hover:border-indigo-200'
@@ -273,8 +385,8 @@ export function L4_Bambi({ data }: L4_BambiProps) {
                             : 'bg-indigo-600 text-white shadow-[0_8px_20px_rgba(79,70,229,0.3)] hover:scale-[1.02] active:scale-95'
                             }`}
                     >
-                        <Sparkles size={18} />
-                        {tL4('chips.synthesize')}
+                        {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Sparkles size={18} />}
+                        {isLoading ? tCommon('loading') : tL4('chips.synthesize')}
                     </button>
                 </div>
             </div>

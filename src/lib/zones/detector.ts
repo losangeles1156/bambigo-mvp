@@ -48,8 +48,8 @@ export class ZoneDetector {
             // Optimized query: just check existence of ONE node within radius.
             const { data, error } = await supabase
                 .rpc('nearby_nodes', {
-                    user_lat: lat,
-                    user_lon: lon,
+                    center_lat: lat,
+                    center_lon: lon,
                     radius_meters: radiusMeters
                 })
                 .limit(1);

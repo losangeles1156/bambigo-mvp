@@ -29,7 +29,7 @@ export interface StrategyContext {
 }
 
 /**
- * BambiGO v3.0 Strategy Engine (L4)
+ * LUTAGU v3.0 Strategy Engine (L4)
  * Orchestrates L1 (DNA), L2 (Live), and Commercial Reality
  */
 export const StrategyEngine = {

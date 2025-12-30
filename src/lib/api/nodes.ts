@@ -1,7 +1,7 @@
 import { supabase } from '../supabase';
 import { STATION_WISDOM } from '../../data/stationWisdom';
 import { STATIC_L1_DATA } from '../../data/staticL1Data';
-import { STATION_LINES } from '@/lib/constants/stationLines';
+import { STATION_LINES, getStationIdVariants, guessPhysicalOdptStationIds, resolveHubStationMembers } from '@/lib/constants/stationLines';
 
 // Types aligning with DB schema
 export interface NodeDatum {
@@ -117,60 +117,68 @@ export interface NodeProfile {
 
 // Fetch nearby nodes
 export async function fetchNearbyNodes(lat: number, lon: number, radiusMeters: number = 2000) {
-    const { data, error } = await supabase
-        .rpc('nearby_nodes', {
-            user_lat: lat,
-            user_lon: lon,
-            radius_meters: radiusMeters
-        });
+    try {
+        const { data, error } = await supabase
+            .rpc('nearby_nodes', {
+                center_lat: lat,
+                center_lon: lon,
+                radius_meters: radiusMeters
+            });
 
-    if (error) {
-        console.error('Error fetching nearby nodes:', error);
-        // Fallback to core stations if RPC fails
-        return CORE_STATIONS_FALLBACK.filter(node => {
-            const nodeLat = node.location.coordinates[1];
-            const nodeLon = node.location.coordinates[0];
-            // Simple rough distance check for fallback (approx 0.01 deg ~= 1km)
-            return Math.abs(nodeLat - lat) < 0.05 && Math.abs(nodeLon - lon) < 0.05;
-        });
-    }
-
-    // Enforce Multilingual Names & Polyfill is_hub
-    const effectiveNodes = (data || []).map((n: any) => {
-        const seed = SEED_NODES.find(s => s.id === n.id);
-        const name = n.name || (seed ? seed.name : 'Station');
-
-        // V3.0 Logic: ID parent_hub_id is null, it is a Hub.
-        const isHub = !n.parent_hub_id;
-
-        // Custom Map Design Overrides (Hardcoded for UI Consistency)
-        let mapDesign = undefined;
-        let tier = undefined;
-
-        if (n.id.includes('Ueno')) {
-            tier = 'major';
-            mapDesign = { icon: 'park', color: '#F39700' };
-        } else if (n.id.includes('Tokyo')) {
-            tier = 'major';
-            mapDesign = { icon: 'red_brick', color: '#E25822' }; // Marunouchi Red
-        } else if (n.id.includes('Akihabara')) {
-            tier = 'major';
-            mapDesign = { icon: 'electric', color: '#FFE600' }; // Electric Yellow
-        } else if (n.id.includes('Asakusa') && !n.id.includes('bashi')) { // Exclude Asakusabashi
-            tier = 'major';
-            mapDesign = { icon: 'lantern', color: '#D32F2F' }; // Lantern Red
+        if (error) {
+            console.error('Error fetching nearby nodes:', error);
+            return getFallbackNearbyNodes(lat, lon);
         }
 
-        return {
-            ...n,
-            name,
-            is_hub: isHub,
-            tier,
-            mapDesign
-        };
-    });
+        // Enforce Multilingual Names & Polyfill is_hub
+        return (data || []).map((n: any) => enrichNodeData(n));
+    } catch (err) {
+        console.warn('[fetchNearbyNodes] Using fallback due to error:', err);
+        return getFallbackNearbyNodes(lat, lon);
+    }
+}
 
-    return effectiveNodes as NodeDatum[];
+function getFallbackNearbyNodes(lat: number, lon: number) {
+    return CORE_STATIONS_FALLBACK.filter(node => {
+        const nodeLat = node.location.coordinates[1];
+        const nodeLon = node.location.coordinates[0];
+        // Simple rough distance check for fallback (approx 0.01 deg ~= 1km)
+        return Math.abs(nodeLat - lat) < 0.05 && Math.abs(nodeLon - lon) < 0.05;
+    }).map(n => enrichNodeData(n));
+}
+
+function enrichNodeData(n: any) {
+    const seed = SEED_NODES.find(s => s.id === n.id);
+    const name = n.name || (seed ? seed.name : 'Station');
+
+    // V3.0 Logic: ID parent_hub_id is null, it is a Hub.
+    const isHub = !n.parent_hub_id;
+
+    // Custom Map Design Overrides
+    let mapDesign = undefined;
+    let tier = undefined;
+
+    if (n.id.includes('Ueno')) {
+        tier = 'major';
+        mapDesign = { icon: 'park', color: '#F39700' };
+    } else if (n.id.includes('Tokyo')) {
+        tier = 'major';
+        mapDesign = { icon: 'red_brick', color: '#E25822' };
+    } else if (n.id.includes('Akihabara')) {
+        tier = 'major';
+        mapDesign = { icon: 'electric', color: '#FFE600' };
+    } else if (n.id.includes('Asakusa') && !n.id.includes('bashi')) {
+        tier = 'major';
+        mapDesign = { icon: 'lantern', color: '#D32F2F' };
+    }
+
+    return {
+        ...n,
+        name,
+        is_hub: isHub,
+        tier,
+        mapDesign
+    };
 }
 
 import { SEED_NODES } from '../nodes/seedNodes';
@@ -213,6 +221,67 @@ const NODE_TO_ODPT: Record<string, string> = {
     'odpt:Station:Toei.HigashiGinza': 'odpt.Station:TokyoMetro.Hibiya.HigashiGinza'
 };
 
+export function resolveRepresentativeOdptStationId(stationId: string): string | null {
+    if (!stationId) return null;
+
+    const isLineQualified = (id: string) => {
+        if (!id.startsWith('odpt.Station:')) return false;
+        const rest = id.replace(/^odpt\.Station:/, '');
+        return rest.split('.').length >= 3;
+    };
+
+    if (stationId.startsWith('odpt.Station:')) {
+        if (isLineQualified(stationId)) return stationId;
+
+        const guessed = guessPhysicalOdptStationIds(stationId.replace(/^odpt\.Station:/, 'odpt:Station:'));
+        if (guessed.length > 0) return guessed[0];
+
+        const members = resolveHubStationMembers(stationId);
+        for (const id of members) {
+            if (typeof id === 'string' && isLineQualified(id)) return id;
+        }
+        return stationId;
+    }
+
+    const mapped = NODE_TO_ODPT[stationId];
+    if (mapped) return mapped;
+
+    const members = resolveHubStationMembers(stationId);
+    for (const id of members) {
+        if (typeof id === 'string' && isLineQualified(id)) return id;
+    }
+
+    const guessed = guessPhysicalOdptStationIds(stationId);
+    if (guessed.length > 0) return guessed[0];
+
+    return null;
+}
+
+export function buildStationIdSearchCandidates(stationId: string): string[] {
+    const ids = new Set<string>();
+    const add = (id: string | null | undefined) => {
+        if (!id) return;
+        for (const v of getStationIdVariants(id)) ids.add(v);
+    };
+
+    add(stationId);
+
+    for (const id of resolveHubStationMembers(stationId)) add(id);
+
+    for (const physical of guessPhysicalOdptStationIds(stationId)) {
+        add(physical);
+        for (const member of resolveHubStationMembers(physical)) add(member);
+    }
+
+    const rep = resolveRepresentativeOdptStationId(stationId);
+    add(rep);
+    if (rep) {
+        for (const member of resolveHubStationMembers(rep)) add(member);
+    }
+
+    return Array.from(ids);
+}
+
 // Mapping of ODPT Station IDs to Coordinates (MVP Core 14 Stations + Key Hubs)
 export const STATION_MAP: Record<string, { lat: number; lon: number }> = {
     'odpt.Station:TokyoMetro.Ginza.Ueno': { lat: 35.7141, lon: 139.7774 },
@@ -228,7 +297,13 @@ export const STATION_MAP: Record<string, { lat: number; lon: number }> = {
     'odpt.Station:Toei.Asakusa.Kuramae': { lat: 35.7019, lon: 139.7867 },
     'odpt.Station:Toei.Oedo.ShinOkachimachi': { lat: 35.7073, lon: 139.7793 },
     'odpt.Station:TokyoMetro.Ginza.Kanda': { lat: 35.6918, lon: 139.7709 },
-    'odpt.Station:TokyoMetro.Marunouchi.Otemachi': { lat: 35.6867, lon: 139.7639 }
+    'odpt.Station:TokyoMetro.Marunouchi.Otemachi': { lat: 35.6867, lon: 139.7639 },
+    'odpt.Station:Toei.Asakusa.Oshiage': { lat: 35.7107, lon: 139.8127 },
+    'odpt.Station:TokyoMetro.Hanzomon.Oshiage': { lat: 35.7107, lon: 139.8127 },
+    'odpt.Station:TokyoMetro.Hibiya.Ningyocho': { lat: 35.6861, lon: 139.7822 },
+    'odpt.Station:Toei.Asakusa.Ningyocho': { lat: 35.6861, lon: 139.7822 },
+    'odpt.Station:TokyoMetro.Ginza.Nihombashi': { lat: 35.6817, lon: 139.7745 },
+    'odpt.Station:Toei.Asakusa.Nihombashi': { lat: 35.6817, lon: 139.7745 }
 };
 
 // Helper to determine operator from ID
@@ -239,21 +314,46 @@ function getOperatorFromId(nodeId: string): string | null {
     return null;
 }
 
+function extractStationSlug(id: string): string {
+    if (!id) return '';
+    const lastDot = id.split('.').pop() || '';
+    if (lastDot && !lastDot.includes(':')) return lastDot;
+    return id.split(':').pop() || '';
+}
+
+export function findFallbackNodeForId(nodeId: string) {
+    const slug = extractStationSlug(nodeId);
+    if (!slug) return null;
+
+    const operator = getOperatorFromId(nodeId);
+    const candidates = CORE_STATIONS_FALLBACK.filter(n => extractStationSlug(n.id) === slug);
+    if (candidates.length === 0) return null;
+
+    if (operator) {
+        const sameOperator = candidates.find(n => n.id.includes(operator));
+        if (sameOperator) return sameOperator;
+    }
+
+    return candidates[0];
+}
+
 // Fetch single node with profile (Enhanced with Real-time)
 export async function fetchNodeConfig(nodeId: string) {
-    const { data: node, error: nodeError } = await supabase
-        .from('nodes')
-        .select('*')
-        .eq('id', nodeId)
-        .single();
+    let finalNode: any = null;
+    let finalProfile: any = null;
 
-    let finalNode = node;
-    let finalProfile = null;
+    try {
+        const { data: node, error: nodeError } = await supabase
+            .from('nodes')
+            .select('*')
+            .eq('id', nodeId)
+            .single();
 
-    if (nodeError) {
-        console.warn(`Node fetch failed for ${nodeId}, checking fallbacks...`);
-        // Try to find in CORE_STATIONS_FALLBACK
-        const fallbackNode = CORE_STATIONS_FALLBACK.find(n => n.id === nodeId || nodeId.includes(n.name.en));
+        if (nodeError) throw nodeError;
+        finalNode = node;
+    } catch (err) {
+        console.warn(`[fetchNodeConfig] Node fetch failed for ${nodeId}, using fallback:`, err);
+        const fallbackNode = findFallbackNodeForId(nodeId);
         if (fallbackNode) {
             finalNode = {
                 ...fallbackNode,
@@ -262,13 +362,18 @@ export async function fetchNodeConfig(nodeId: string) {
         }
     }
 
-    const { data: profile, error: profileError } = await supabase
-        .from('node_facility_profiles')
-        .select('*')
-        .eq('node_id', nodeId)
-        .single();
+    try {
+        const { data: profile, error: profileError } = await supabase
+            .from('node_facility_profiles')
+            .select('*')
+            .eq('node_id', nodeId)
+            .single();
 
-    finalProfile = profile;
+        if (profileError) throw profileError;
+        finalProfile = profile;
+    } catch (err) {
+        console.warn(`[fetchNodeConfig] Profile fetch failed for ${nodeId}, using empty profile`);
+    }
 
     // Use profile directly, no mock merging
     let enrichedProfile = finalProfile
@@ -286,72 +391,24 @@ export async function fetchNodeConfig(nodeId: string) {
     }
 
     // [New] L3 Data Strategy: DB (stations_static) > Wisdom File
-    const odptId = NODE_TO_ODPT[nodeId];
-
-    // L3 Station ID Mapping: Comprehensive multi-operator support
-    // Ensures we fetch facilities for ALL operators at a hub
-    const L3_STATION_MAPPING: Record<string, string[]> = {
-        // Ueno (JR, Metro Ginza, Metro Hibiya, Keisei)
-        'odpt.Station:TokyoMetro.Ginza.Ueno': [
-            'odpt:Station:JR-East.Ueno',
-            'odpt.Station:TokyoMetro.Ginza.Ueno',
-            'odpt.Station:TokyoMetro.Hibiya.Ueno',
-            'odpt.Station:Keisei.KeiseiUeno'
-        ],
-        // Akihabara (JR, Metro Hibiya, Tsukuba Express)
-        'odpt.Station:TokyoMetro.Hibiya.Akihabara': [
-            'odpt:Station:JR-East.Akihabara',
-            'odpt.Station:TokyoMetro.Hibiya.Akihabara',
-            'odpt:Station:TsukubaExpress.Akihabara'
-        ],
-        // Tokyo (JR, Metro Marunouchi)
-        'odpt.Station:TokyoMetro.Marunouchi.Tokyo': [
-            'odpt:Station:JR-East.Tokyo',
-            'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
-        ],
-        // Asakusa (Metro Ginza, Toei Asakusa, Tobu)
-        'odpt.Station:TokyoMetro.Ginza.Asakusa': [
-            'odpt.Station:TokyoMetro.Ginza.Asakusa',
-            'odpt.Station:Toei.Asakusa.Asakusa',
-            'odpt:Station:Tobu.Skytree.Asakusa'
-        ],
-        // Shimbashi (JR, Metro Ginza, Toei Asakusa, Yurikamome)
-        'odpt:Station:JR-East.Shimbashi': [
-            'odpt:Station:JR-East.Shimbashi',
-            'odpt.Station:TokyoMetro.Ginza.Shimbashi',
-            'odpt.Station:Toei.Asakusa.Shimbashi',
-            'odpt:Station:Yurikamome.Shimbashi'
-        ],
-        // Hamamatsucho (JR, Monorail, Toei Daimon)
-        'odpt:Station:JR-East.Hamamatsucho': [
-            'odpt:Station:JR-East.Hamamatsucho',
-            'odpt:Station:TokyoMonorail.Haneda.MonorailHamamatsucho',
-            'odpt.Station:Toei.Asakusa.Daimon',
-            'odpt.Station:Toei.Oedo.Daimon'
-        ]
-    };
-
-    // 1. Try Fetching from DB (stations_static) with multiple station_id formats
-    // [Mechanism Update] Aggregate data from ALL matched stations, not just the first one.
     let dbL3Facilities: any[] | null = [];
-    const l3StationIds = L3_STATION_MAPPING[nodeId] || L3_STATION_MAPPING[odptId || ''] || [odptId, nodeId].filter(Boolean);
+    const l3StationIds = buildStationIdSearchCandidates(nodeId);
 
-    // console.log(`[L3] Fetching aggregated facilities for ${nodeId} from:`, l3StationIds);
+    try {
+        for (const stationId of l3StationIds) {
+            const { data: staticDbData } = await supabase
+                .from('stations_static')
+                .select('l3_services')
+                .eq('station_id', stationId)
+                .maybeSingle();
 
-    for (const stationId of l3StationIds) {
-        if (!stationId) continue;
-        const { data: staticDbData } = await supabase
-            .from('stations_static')
-            .select('l3_services')
-            .eq('station_id', stationId)
-            .maybeSingle();
-
-        if (staticDbData && Array.isArray(staticDbData.l3_services) && staticDbData.l3_services.length > 0) {
-            // Merge results
-            if (!dbL3Facilities) dbL3Facilities = [];
-            dbL3Facilities = [...dbL3Facilities, ...staticDbData.l3_services];
-            // console.log(`[L3] Found ${staticDbData.l3_services.length} items for ${stationId}`);
+            if (staticDbData && Array.isArray(staticDbData.l3_services) && staticDbData.l3_services.length > 0) {
+                if (!dbL3Facilities) dbL3Facilities = [];
+                dbL3Facilities = [...dbL3Facilities, ...staticDbData.l3_services];
+            }
         }
+    } catch (err) {
+        console.warn(`[fetchNodeConfig] L3 DB fetch failed for ${nodeId}`);
     }
 
     // Fallback if aggregation turned up nothing (ensure null if truly empty so fallback logic works if applicable)
@@ -503,6 +560,9 @@ export async function fetchNodeConfig(nodeId: string) {
 
     // Try to get L2 data from our internal API (which queries transit_dynamic_snapshot)
     try {
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
         if (typeof window !== 'undefined') {
             const l2Res = await fetch(`/api/l2/status?station_id=${nodeId}`);
             if (l2Res.ok) {
@@ -512,12 +572,8 @@ export async function fetchNodeConfig(nodeId: string) {
                     console.log(`[L2] Applied real-time data for ${nodeId}`, l2Data);
                 }
             }
-        } else {
+        } else if (supabaseUrl && supabaseKey) {
             // Server-side fetch (Direct DB or internal call if needed, but for now we rely on client or pre-fetch)
-            // Ideally, this function should be async and do direct DB if server-side.
-            // But let's keep consistent with existing pattern. 
-            // Correction: fetchNodeConfig is likely server-side.
-            // Let's implement direct DB lookup here for server-side robustness.
             const { data: l2Data } = await supabase
                 .from('transit_dynamic_snapshot')
                 .select('*')
@@ -545,7 +601,9 @@ export async function fetchNodeConfig(nodeId: string) {
                     },
                     updated_at: l2Data.updated_at
                 };
-            } else if (odptId) {
+            } else {
+                const odptId = NODE_TO_ODPT[nodeId];
+                if (odptId) {
                 // Try Physical ID if Logical failed
                 const { data: l2DataPhy } = await supabase
                     .from('transit_dynamic_snapshot')
@@ -571,6 +629,7 @@ export async function fetchNodeConfig(nodeId: string) {
                         }
                     };
                 }
+            }
             }
         }
     } catch (e) {
@@ -612,8 +671,8 @@ export async function fetchAllNodes() {
     // 50000 meters = 50km radius covers all of Tokyo + suburbs
     const { data, error } = await supabase
         .rpc('nearby_nodes', {
-            user_lat: 35.6895,
-            user_lon: 139.6917,
+            center_lat: 35.6895,
+            center_lon: 139.6917,
             radius_meters: 50000
         });
 
@@ -722,4 +781,58 @@ export async function fetchAllNodes() {
             }
         };
     }) as NodeDatum[];
+}
+
+export interface ViewportNodesQuery {
+    swLat: number;
+    swLon: number;
+    neLat: number;
+    neLon: number;
+    zoom: number;
+    page?: number;
+    pageSize?: number;
+    hubsOnly?: boolean;
+}
+
+export interface ViewportNodesResult {
+    nodes: NodeDatum[];
+    page: number;
+    page_size: number;
+    next_page: number | null;
+    hubs_only: boolean;
+    zoom: number;
+    stats?: {
+        candidates: number;
+        after_filter: number;
+        returned: number;
+    };
+}
+
+export async function fetchNodesByViewport(query: ViewportNodesQuery, opts?: { signal?: AbortSignal }) {
+    const url = new URL('/api/nodes/viewport', typeof window !== 'undefined' ? window.location.origin : 'http://localhost');
+    url.searchParams.set('swLat', String(query.swLat));
+    url.searchParams.set('swLon', String(query.swLon));
+    url.searchParams.set('neLat', String(query.neLat));
+    url.searchParams.set('neLon', String(query.neLon));
+    url.searchParams.set('zoom', String(query.zoom));
+    if (typeof query.page === 'number') url.searchParams.set('page', String(query.page));
+    if (typeof query.pageSize === 'number') url.searchParams.set('page_size', String(query.pageSize));
+    if (typeof query.hubsOnly === 'boolean') url.searchParams.set('hubs_only', query.hubsOnly ? '1' : '0');
+
+    const res = await fetch(url.toString(), {
+        method: 'GET',
+        signal: opts?.signal,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (!res.ok) {
+        throw new Error(`Failed to load viewport nodes (${res.status})`);
+    }
+
+    const json = (await res.json()) as ViewportNodesResult | { error: string };
+    if ((json as any).error) {
+        throw new Error((json as any).error);
+    }
+
+    return json as ViewportNodesResult;
 }

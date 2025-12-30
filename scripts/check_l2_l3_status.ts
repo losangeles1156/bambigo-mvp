@@ -33,11 +33,11 @@ async function main() {
     // L3 Check (Breakdown by source)
     const { data: osmData, error: osmError } = await supabase
         .from('l3_facilities')
-        .select('source')
-        .eq('source', 'OpenStreetMap');
+        .select('id')
+        .contains('attributes', { _source: 'OSM' });
 
     if (osmError) console.error('OSM Error:', osmError.message);
-    else console.log(`   └─ OSM Quick Fill: ${osmData?.length || 0}`);
+    else console.log(`   └─ OSM Ingested: ${osmData?.length || 0}`);
 
 }
 

@@ -4,22 +4,14 @@ import { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import {
     MapPin, X, Star, Lightbulb, ChevronRight,
-    Coffee, ShoppingBag, Landmark, Utensils, Bed, Building, TreePine,
-    Hospital, Building2, Briefcase, Info, Navigation, Search
+    Coffee, ShoppingBag, Landmark, Utensils, Bed, TreePine,
+    Hospital, Building2, Briefcase, Search
 } from 'lucide-react';
-import { getLocaleString } from '@/lib/utils/localeUtils';
+import { getLocaleString, normalizeVibeTagsForDisplay } from '@/lib/utils/localeUtils';
 import { useStationDNA, L1CategorySummary, VibeTag } from '@/hooks/useStationDNA';
 import { PlaceCard } from './PlaceCard';
 import { L1Place } from '@/hooks/useL1Places';
-
-// Subcategory Translation Helper
-const getSubcategoryLabel = (sub: string, tTag: any): string => {
-    // Try to get translation from tag.sub namespace
-    const key = `sub.${sub}`;
-    const translated = tTag(key);
-    // If translation returns the key itself, fallback to capitalized raw value
-    return translated === key ? sub.charAt(0).toUpperCase() + sub.slice(1).replace(/_/g, ' ') : translated;
-};
+import { useCategoryTranslation } from '@/hooks/useCategoryTranslation';
 
 // Enhanced Icon Map with Colors
 const CATEGORY_STYLE: Record<string, { icon: any; color: string; bgColor: string; borderColor: string }> = {
@@ -36,13 +28,21 @@ const CATEGORY_STYLE: Record<string, { icon: any; color: string; bgColor: string
     default: { icon: MapPin, color: 'text-gray-500', bgColor: 'bg-gray-50', borderColor: 'border-gray-200' }
 };
 
-export function L1_DNA() {
+export function L1_DNA({ data }: { data?: any }) {
     const tL1 = useTranslations('l1');
     const tTag = useTranslations('tag');
+    const { getCategoryLabel, getSubcategoryLabel } = useCategoryTranslation();
     const locale = useLocale();
 
-    // Fetch Aggregated Data
     const { title, tagline, categories, vibe_tags, loading } = useStationDNA();
+
+    const displayVibeTags = useMemo(() => {
+        if (vibe_tags && vibe_tags.length > 0) {
+            return vibe_tags.map((t: VibeTag) => ({ id: t.id, label: t.label, count: t.count }));
+        }
+
+        return normalizeVibeTagsForDisplay(data?.l1_dna?.vibe_tags ?? data?.vibe_tags);
+    }, [vibe_tags, data]);
 
     // Drawer State
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -103,6 +103,9 @@ export function L1_DNA() {
                                 <Lightbulb size={12} className="text-yellow-300" />
                                 {tL1('bambiInsight')}
                             </span>
+                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
+                                L1
+                            </span>
                         </div>
 
                         <h2 className="text-3xl font-black text-white mb-2 leading-[1.1] tracking-tight">
@@ -113,18 +116,22 @@ export function L1_DNA() {
                         </p>
 
                         {/* Personality Vibe Chips */}
-                        {vibe_tags.length > 0 && (
+                        {displayVibeTags.length > 0 && (
                             <div className="flex flex-wrap gap-2.5">
-                                {vibe_tags.map((tag: VibeTag) => (
+                                {displayVibeTags.map((tag) => (
                                     <button
                                         key={tag.id}
                                         className="group/chip flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-xl transition-all active:scale-95"
                                     >
                                         <span className="text-xs font-bold text-white tracking-wide">#{getLocaleString(tag.label, locale)}</span>
-                                        <div className="h-4 w-[1px] bg-white/20" />
-                                        <span className="text-[10px] font-black text-indigo-200">
-                                            {tag.count}
-                                        </span>
+                                        {typeof tag.count === 'number' && (
+                                            <>
+                                                <div className="h-4 w-[1px] bg-white/20" />
+                                                <span className="text-[10px] font-black text-indigo-200">
+                                                    {tag.count}
+                                                </span>
+                                            </>
+                                        )}
                                     </button>
                                 ))}
                             </div>
@@ -173,7 +180,7 @@ export function L1_DNA() {
 
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-sm font-black text-gray-900">
-                                            {getLocaleString(cat.label, locale)}
+                                            {getCategoryLabel(cat.id)}
                                         </span>
                                         <span className={`text-[10px] font-black ${style.color}`}>
                                             {cat.count}
@@ -217,7 +224,7 @@ export function L1_DNA() {
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-black text-gray-900 leading-tight">
-                                            {getLocaleString(activeCategory.label, locale)}
+                                            {getCategoryLabel(activeCategory.id)}
                                         </h3>
                                         <p className="text-xs font-bold text-gray-400 mt-0.5">
                                             {tL1('nearbyHighlights').replace('(300m)', '')} {activeCategory.count} {tTag('countSuffix')}
@@ -247,7 +254,7 @@ export function L1_DNA() {
                                             onClick={() => setActiveSubcategory(sub)}
                                             className={`shrink-0 px-4 py-2 rounded-xl text-xs font-black transition-all ${activeSubcategory === sub ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-100' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'}`}
                                         >
-                                            {getSubcategoryLabel(sub, tTag)}
+                                            {getSubcategoryLabel(sub)}
                                         </button>
                                     ))}
                                 </div>

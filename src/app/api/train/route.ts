@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const ODPT_API_KEY = process.env.ODPT_API_KEY;
+const ODPT_API_KEY = process.env.ODPT_API_KEY || process.env.ODPT_API_TOKEN || process.env.ODPT_API_TOKEN_BACKUP;
 const BASE_URL = 'https://api.odpt.org/api/v4';
 
 // Mock data for graceful degradation when API is unavailable
@@ -19,6 +19,7 @@ const MOCK_FACILITIES = [
 ];
 
 export async function GET(req: NextRequest) {
+    console.log('[api/train] Request received:', req.url);
     const { searchParams } = new URL(req.url);
     const mode = searchParams.get('mode') || 'position'; // 'position' or 'status'
     const railway = searchParams.get('railway'); // e.g., 'odpt.Railway:TokyoMetro.Ginza'
@@ -41,7 +42,7 @@ export async function GET(req: NextRequest) {
             // Fetch Train Positions
             let url = `${BASE_URL}/odpt:Train?acl:consumerKey=${ODPT_API_KEY}`;
             if (railway) {
-                url += `&odpt:railway=${railway}`;
+                url += `&odpt:railway=${encodeURIComponent(railway)}`;
             }
 
             const res = await fetch(url, { next: { revalidate: 30 } }); // Cache for 30s
@@ -65,7 +66,7 @@ export async function GET(req: NextRequest) {
             // ... (existing status logic)
             let url = `${BASE_URL}/odpt:TrainInformation?acl:consumerKey=${ODPT_API_KEY}`;
             if (railway) {
-                url += `&odpt:railway=${railway}`;
+                url += `&odpt:railway=${encodeURIComponent(railway)}`;
             }
 
             const res = await fetch(url, { next: { revalidate: 60 } }); // Cache for 1m
@@ -85,7 +86,7 @@ export async function GET(req: NextRequest) {
             const station = searchParams.get('station'); // e.g., 'odpt.Station:TokyoMetro.Ginza.Ueno'
             if (!station) return NextResponse.json({ error: 'Station ID required' }, { status: 400 });
 
-            const url = `${BASE_URL}/odpt:StationFacility?odpt:station=${station}&acl:consumerKey=${ODPT_API_KEY}`;
+            const url = `${BASE_URL}/odpt:StationFacility?odpt:station=${encodeURIComponent(station)}&acl:consumerKey=${ODPT_API_KEY}`;
             const res = await fetch(url, { next: { revalidate: 3600 } }); // Cache for 1h (static data)
             const data = await res.json();
 

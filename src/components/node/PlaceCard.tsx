@@ -1,5 +1,7 @@
 import { Navigation, MapPin, Utensils, ShoppingBag, Landmark, Coffee, TreePine, Hospital, Building2, Landmark as CultureIcon, Briefcase, Bed, Info } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { L1Place } from '@/hooks/useL1Places';
+import { useCategoryTranslation } from '@/hooks/useCategoryTranslation';
 
 interface PlaceCardProps {
     place: L1Place;
@@ -22,6 +24,7 @@ const CATEGORY_STYLE: Record<string, { icon: any; color: string; bgColor: string
 };
 
 export function PlaceCard({ place, isFeatured = false }: PlaceCardProps) {
+    const { getCategoryLabel, getSubcategoryLabel } = useCategoryTranslation();
     const style = CATEGORY_STYLE[place.category] || CATEGORY_STYLE.default;
     const Icon = style.icon;
     const name = place.name;
@@ -58,7 +61,9 @@ export function PlaceCard({ place, isFeatured = false }: PlaceCardProps) {
                 <div className="flex items-center gap-1.5 flex-wrap">
                     {/* Subcategory Badge */}
                     <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md ${style.bgColor} ${style.color} uppercase tracking-wider`}>
-                        {place.subcategory || place.category}
+                        {place.subcategory 
+                            ? getSubcategoryLabel(place.subcategory)
+                            : getCategoryLabel(place.category)}
                     </span>
 
                     {/* Distance/Time */}

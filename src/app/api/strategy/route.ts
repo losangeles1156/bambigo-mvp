@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { STATION_WISDOM } from '@/data/stationWisdom';
 import { ActionCard } from '@/lib/types/stationStandard';
+import { logUserActivity } from '@/lib/activityLogger';
 
 // Define the request body structure
 interface StrategyRequest {
@@ -14,6 +15,13 @@ export async function POST(request: Request) {
     try {
         const body: StrategyRequest = await request.json();
         const { stationId, demand, destination, locale = 'en' } = body;
+
+        await logUserActivity({
+            request,
+            activityType: 'strategy_request',
+            queryContent: { stationId, demand, destination, locale },
+            metadata: { feature: 'l4_strategy' }
+        });
 
         // 1. Get Wisdom for the station
         const wisdom = STATION_WISDOM[stationId];

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const ODPT_API_KEY = process.env.ODPT_API_KEY;
+const ODPT_API_KEY = process.env.ODPT_API_KEY || process.env.ODPT_API_TOKEN || process.env.ODPT_API_TOKEN_BACKUP;
 const BASE_URL = 'https://api.odpt.org/api/v4/odpt:StationTimetable';
 
 // Helper to get JST Time and Day
@@ -28,7 +28,11 @@ export async function GET(req: NextRequest) {
     const { currentMinutes, calendarSelector } = getJSTContext();
 
     // Fetch Timetables for this station
-    const apiUrl = `${BASE_URL}?odpt:station=${station}&acl:consumerKey=${ODPT_API_KEY}`;
+    const odptSearchParams = new URLSearchParams({
+        'odpt:station': station,
+        'acl:consumerKey': ODPT_API_KEY
+    });
+    const apiUrl = `${BASE_URL}?${odptSearchParams.toString()}`;
 
     try {
         const res = await fetch(apiUrl, { next: { revalidate: 3600 } });
@@ -69,7 +73,11 @@ export async function GET(req: NextRequest) {
             }
         });
 
-        return NextResponse.json({ station, directions });
+        return NextResponse.json({ station, directions }, {
+            headers: {
+                'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=600'
+            }
+        });
 
     } catch (error) {
         console.error('Timetable API Error:', error);

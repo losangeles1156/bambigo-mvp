@@ -1,39 +1,109 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAppStore } from '@/stores/appStore';
 import { useZoneAwareness } from '@/hooks/useZoneAwareness';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { ActionCard, Action as ChatAction } from './ActionCard';
 import { ContextSelector } from './ContextSelector';
 
 export function ChatOverlay() {
-    // const t = useTranslations('Chat');
-    const { isChatOpen, setChatOpen, messages, addMessage, setCurrentNode, setBottomSheetOpen } = useAppStore();
+    const locale = useLocale();
+    const tChat = useTranslations('chat');
+    const tHome = useTranslations('Home');
+    const tOnboarding = useTranslations('onboarding');
+    const tTripGuard = useTranslations('tripGuard');
+    const tL2 = useTranslations('l2');
+    const {
+        isChatOpen,
+        setChatOpen,
+        messages,
+        addMessage,
+        currentNodeId,
+        setCurrentNode,
+        setBottomSheetOpen,
+        pendingChatInput,
+        pendingChatAutoSend,
+        setPendingChat
+    } = useAppStore();
     const { zone, userLocation } = useZoneAwareness();
     const [input, setInput] = useState('');
     const [l2Status, setL2Status] = useState<any>(null);
+    const [isOffline, setIsOffline] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const sendMessage = useCallback(async (text: string) => {
+        if (!text.trim()) return;
+
+        const existingMessages = useAppStore.getState().messages;
+        addMessage({ role: 'user', content: text });
+
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: [...existingMessages, { role: 'user', content: text }],
+                    zone: zone || 'core',
+                    userLocation,
+                    locale
+                })
+            });
+
+            if (!response.ok) throw new Error('API Error');
+
+            const data = await response.json();
+            setIsOffline(data?.mode === 'offline');
+            addMessage({
+                role: 'assistant',
+                content: data.answer,
+                actions: data.actions
+            });
+        } catch (error) {
+            addMessage({ role: 'assistant', content: `⚠️ ${tChat('connectionError')}` });
+        }
+    }, [addMessage, locale, tChat, userLocation, zone]);
 
     useEffect(() => {
         const fetchL2 = async () => {
+            if (!currentNodeId) return;
             try {
-                const res = await fetch('/api/l2/status');
+                const res = await fetch(`/api/l2/status?station_id=${currentNodeId}`);
                 if (res.ok) {
                     const data = await res.json();
-                    setL2Status(data);
+                    if (data) {
+                        setL2Status(data);
+                    }
+                } else {
+                    console.error('[ChatOverlay] L2 Fetch Failed', res.status, res.statusText);
                 }
             } catch (e) {
                 console.error('L2 Fetch Error', e);
             }
         };
         if (isChatOpen) fetchL2();
-    }, [isChatOpen]);
+    }, [isChatOpen, currentNodeId]);
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
+
+    useEffect(() => {
+        if (!isChatOpen) return;
+        if (!pendingChatInput) return;
+
+        const text = pendingChatInput;
+        setPendingChat({ input: null, autoSend: false });
+
+        if (pendingChatAutoSend) {
+            setInput('');
+            sendMessage(text);
+            return;
+        }
+
+        setInput(text);
+    }, [isChatOpen, pendingChatInput, pendingChatAutoSend, sendMessage, setPendingChat]);
 
     if (!isChatOpen) return null;
 
@@ -41,34 +111,9 @@ export function ChatOverlay() {
         e.preventDefault();
         if (!input.trim()) return;
 
-        // User Message
-        addMessage({ role: 'user', content: input });
+        const text = input;
         setInput('');
-
-        // API Call
-        try {
-            const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    messages: [...messages, { role: 'user', content: input }],
-                    zone: zone || 'core',
-                    userLocation
-                })
-            });
-
-            if (!response.ok) throw new Error('API Error');
-
-            const data = await response.json();
-            addMessage({
-                role: 'assistant',
-                content: data.answer,
-                actions: data.actions
-            });
-
-        } catch (error) {
-            addMessage({ role: 'assistant', content: '⚠️ 連線錯誤，請稍後再試。' });
-        }
+        await sendMessage(text);
     };
 
     const handleAction = (action: ChatAction) => {
@@ -88,13 +133,13 @@ export function ChatOverlay() {
                 setChatOpen(false);
             }
         } else if (action.type === 'trip') {
-            addMessage({ role: 'assistant', content: `✅ 已將 ${action.label} 加入行程！` });
+            addMessage({ role: 'assistant', content: `✅ ${tChat('tripAdded', { label: action.label })}` });
         } else if (action.type === 'taxi') {
             window.open(`https://go.mo-t.com/`, '_blank');
         } else if (action.type === 'discovery') {
             window.open(`https://luup.sc/`, '_blank');
         } else if (action.type === 'transit') {
-            addMessage({ role: 'assistant', content: `正在為您開啟 ${action.label} 的詳細時刻表...` });
+            addMessage({ role: 'assistant', content: tChat('openingTimetable', { label: action.label }) });
         }
     };
 
@@ -107,19 +152,28 @@ export function ChatOverlay() {
                         🦌
                     </div>
                     <div>
-                        <h2 className="font-black text-xl tracking-tight text-gray-900 leading-none mb-1.5 text-gradient">Bambi AI</h2>
+                        <h2 className="font-black text-xl tracking-tight text-gray-900 leading-none mb-1.5 text-gradient">LUTAGU AI</h2>
                         <div className="flex items-center gap-2">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                            </span>
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600/80">Active Strategy</span>
+                            {isOffline ? (
+                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-700/80 bg-amber-100/60 px-2 py-1 rounded-full border border-amber-200/60">
+                                    {tChat('offlineBadge')}
+                                </span>
+                            ) : (
+                                <>
+                                    <span className="relative flex h-2 w-2" aria-hidden="true">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                    </span>
+                                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600/80">{tChat('activeBadge')}</span>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
                 <button
                     onClick={() => setChatOpen(false)}
                     className="w-10 h-10 rounded-full bg-white/50 hover:bg-white flex items-center justify-center text-gray-400 hover:text-gray-900 transition-all active:scale-90 shadow-sm border border-black/[0.03]"
+                    aria-label={tChat('close')}
                 >
                     ✕
                 </button>
@@ -132,8 +186,8 @@ export function ChatOverlay() {
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[10px] font-black uppercase tracking-wider text-indigo-100">行程守護模式 (Trip Guard)</span>
-                        <span className="text-[9px] text-white/60 font-medium">Bambi 將主動偵測路線異常</span>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-indigo-100">{tTripGuard('title')}</span>
+                        <span className="text-[9px] text-white/60 font-medium">{tTripGuard('subscriptionHint')}</span>
                     </div>
                 </div>
                 <button
@@ -143,7 +197,7 @@ export function ChatOverlay() {
                     }}
                     className="px-4 py-2 bg-white text-indigo-600 text-[10px] font-black rounded-full hover:bg-indigo-50 transition-all active:scale-95 shadow-md"
                 >
-                    立即啟動
+                    {tTripGuard('activate')}
                 </button>
             </div>
 
@@ -155,14 +209,14 @@ export function ChatOverlay() {
                     </div>
                     <div className="flex flex-col gap-1 min-w-0">
                         <div className="flex items-center justify-between gap-2">
-                            <span className="text-[10px] font-black uppercase text-rose-600 tracking-wider">交通運行情報</span>
+                            <span className="text-[10px] font-black uppercase text-rose-600 tracking-wider">{tL2('operationTitle')}</span>
                             <span className="text-[10px] font-bold text-gray-500 bg-white/50 px-2 py-0.5 rounded-full">{l2Status.weather_info?.temp}°C</span>
                         </div>
                         <p className="text-xs text-rose-900/80 font-bold leading-relaxed line-clamp-2">
                             {l2Status.reason_zh_tw || l2Status.reason_ja}
                         </p>
                         <p className="text-[9px] text-rose-400 font-medium">
-                            更新於: {new Date(l2Status.updated_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            {tL2('updatedAtPrefix')}: {new Date(l2Status.updated_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </p>
                     </div>
                 </div>
@@ -179,13 +233,13 @@ export function ChatOverlay() {
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <h3 className="text-3xl font-black text-gray-900 tracking-tighter">想去哪裡逛逛？</h3>
+                            <h3 className="text-3xl font-black text-gray-900 tracking-tighter">{tOnboarding('tagline')}</h3>
                             <p className="text-gray-500 font-bold leading-relaxed max-w-[240px] mx-auto text-sm opacity-60">
-                                小鹿 Bambi 已準備好為您導航。<br />嘗試詢問轉乘或置物櫃資訊。
+                                {tOnboarding('askTitle')}
                             </p>
                         </div>
                         <div className="grid grid-cols-1 gap-4 w-full max-w-sm">
-                            {['帶我去上野公園', '附近的置物櫃', '銀座線現在擠嗎？'].map((tip, i) => (
+                            {[tOnboarding('tips.airport'), tOnboarding('tips.locker'), tOnboarding('tips.crowd')].map((tip, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setInput(tip)}
@@ -239,7 +293,7 @@ export function ChatOverlay() {
                     <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        placeholder="輸入訊息..."
+                        placeholder={tHome('aiPlaceholder')}
                         className="flex-1 px-8 py-5 rounded-full border border-black/[0.05] bg-white/80 hover:bg-white focus:bg-white focus:border-indigo-500/30 focus:ring-[10px] focus:ring-indigo-500/5 transition-all outline-none font-bold placeholder:text-gray-300 text-gray-900 shadow-sm relative z-10"
                         autoFocus
                     />

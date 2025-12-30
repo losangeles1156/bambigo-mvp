@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "node -e \"require('node:fs').rmSync('.next/types',{ recursive:true, force:true });\" && tsc --noEmit",
+    "test": "node -e \"const { spawnSync } = require('node:child_process'); const fs = require('node:fs'); const path = require('node:path'); const root = path.join(process.cwd(), 'src'); const files = []; const walk = (dir) => { if (!fs.existsSync(dir)) return; for (const entry of fs.readdirSync(dir, { withFileTypes: true })) { const full = path.join(dir, entry.name); if (entry.isDirectory()) walk(full); else if (/\\.(test|spec)\\.ts$/.test(entry.name) && !/\\.ui\\.(test|spec)\\.ts$/.test(entry.name)) files.push(full); } }; walk(root); const args = ['--import','tsx','--test','--test-concurrency=1', ...files]; const res = spawnSync(process.execPath, args, { stdio: 'inherit' }); process.exit(typeof res.status === 'number' ? res.status : 1);\"",
+    "test:ui": "node --test --test-concurrency=1 --import tsx src/ui/tags.ui.test.ts",
+    "security:scan": "npm audit --audit-level=high"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -19,7 +23,7 @@
     "framer-motion": "^12.23.26",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.561.0",
-    "next": "14.1.0",
+    "next": "14.2.35",
     "next-intl": "^3.5.0",
     "next-pwa": "^5.6.0",
     "pg": "^8.16.3",
@@ -39,12 +43,17 @@
     "autoprefixer": "^10.0.1",
     "dotenv": "^17.2.3",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "puppeteer": "^24.34.0",
     "tailwindcss": "^3.3.0",
     "tsx": "^4.21.0",
     "typescript": "^5",
     "zod": "^4.2.1"
+  },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "glob": "10.5.0"
+    }
   }
 }

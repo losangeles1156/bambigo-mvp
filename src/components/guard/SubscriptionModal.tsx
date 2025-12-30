@@ -8,8 +8,6 @@ export function SubscriptionModal() {
     const { isSubscriptionModalOpen, setSubscriptionModalOpen, isTripGuardActive, setTripGuardActive } = useAppStore();
     const [isLoading, setIsLoading] = React.useState(false);
 
-    if (!isSubscriptionModalOpen) return null;
-
     const handleActivate = async () => {
         setIsLoading(true);
         try {
@@ -26,6 +24,15 @@ export function SubscriptionModal() {
 
             if (!res.ok) throw new Error('Subscription failed');
 
+            const data = await res.json();
+
+            if (data?.requiresLogin) {
+                alert('此功能需要會員登入後才能啟用。');
+                return;
+            }
+
+            if (!data?.success) throw new Error('Subscription failed');
+
             // Success
             setTripGuardActive(true);
             setTimeout(() => setSubscriptionModalOpen(false), 800);
@@ -41,6 +48,8 @@ export function SubscriptionModal() {
         setTripGuardActive(false);
         setSubscriptionModalOpen(false);
     }
+
+    if (!isSubscriptionModalOpen) return null;
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">

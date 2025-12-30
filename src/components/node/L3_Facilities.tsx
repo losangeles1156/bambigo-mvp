@@ -50,6 +50,8 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
     const [facilities, setFacilities] = useState<L3Facility[]>(data.l3_facilities || []);
     const [loading, setLoading] = useState(true);
     const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [retryKey, setRetryKey] = useState(0);
 
     // Group facilities by type
     const groupedFacilities = useMemo(() => {
@@ -80,6 +82,7 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
 
         async function fetchFacilities() {
             setLoading(true);
+            setError(null);
             try {
                 const res = await fetch(`/api/station/${encodeURIComponent(data.id)}/facilities`);
                 if (!res.ok) throw new Error('API Error');
@@ -102,7 +105,12 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                     setFacilities(adapted);
                 }
             } catch (err) {
-                console.error('[L3] Fetch failed', err);
+                const msg = locale.startsWith('ja')
+                    ? '設施情報を取得できませんでした。時間をおいて再試行してください。'
+                    : locale.startsWith('en')
+                        ? 'Unable to load facilities right now. Please try again later.'
+                        : '暫時無法取得設施資料，請稍後再試。';
+                if (isMounted) setError(msg);
             } finally {
                 if (isMounted) setLoading(false);
             }
@@ -112,12 +120,27 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
         else setLoading(false);
 
         return () => { isMounted = false; };
-    }, [data.id, data.l3_facilities]);
+    }, [data.id, data.l3_facilities, locale, retryKey]);
 
     if (loading) {
         return (
             <div className="flex justify-center items-center py-12">
                 <Loader2 className="animate-spin text-gray-300" />
+            </div>
+        );
+    }
+
+    if (error && (!facilities || facilities.length === 0)) {
+        return (
+            <div className="p-8 text-center text-gray-500 text-xs bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                <div className="mb-4">{error}</div>
+                <button
+                    type="button"
+                    onClick={() => setRetryKey(v => v + 1)}
+                    className="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-700 text-xs font-bold hover:bg-gray-100 active:scale-[0.98] transition-all"
+                >
+                    {locale.startsWith('ja') ? '再試行' : locale.startsWith('en') ? 'Retry' : '重試'}
+                </button>
             </div>
         );
     }
@@ -140,7 +163,7 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
             {/* Quick Links / Actions (e.g. Toilet Vacancy) */}
             {data.external_links && data.external_links.length > 0 && (
                 <div className="space-y-2">
-                    <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Quick Links</h3>
+                    <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">{tL3('quickLinks')}</h3>
                     {data.external_links.map((link, idx) => (
                         <a
                             key={idx}
@@ -151,11 +174,11 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                         >
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-white/20 rounded-xl">
-                                    {link.icon === 'toilet' ? <User size={20} /> : <ExternalLink size={20} />}
+                                    {link.icon === 'toilet' ? <User size={20} aria-hidden="true" /> : <ExternalLink size={20} aria-hidden="true" />}
                                 </div>
                                 <span className="font-bold text-sm">{link.title}</span>
                             </div>
-                            <ExternalLink size={16} className="opacity-80" />
+                            <ExternalLink size={16} className="opacity-80" aria-hidden="true" />
                         </a>
                     ))}
                 </div>
@@ -164,7 +187,12 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
             {/* Grouped Facilities List */}
             <div className="space-y-3">
                 <div className="flex items-center justify-between px-1 mb-2">
-                    <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL3('servicesTitle')}</h3>
+                    <div className="flex items-center gap-2">
+                        <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL3('servicesTitle')}</h3>
+                        <span className="px-2 py-0.5 rounded-full bg-orange-50 text-orange-700 text-[9px] font-black uppercase tracking-widest border border-orange-100">
+                            L3
+                        </span>
+                    </div>
                     <span className="text-[10px] font-bold text-gray-400">{tL3('facilitiesFound', { count: facilities.length })}</span>
                 </div>
 
@@ -184,15 +212,15 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                             >
                                 <div className="flex items-center gap-3">
                                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${colorClass}`}>
-                                        <Icon size={20} />
+                                        <Icon size={20} aria-hidden="true" />
                                     </div>
                                     <div className="text-left">
                                         <h4 className="text-sm font-bold text-gray-900 capitalize">{label}</h4>
-                                        <span className="text-[10px] text-gray-400 font-medium">{items.length} spots</span>
+                                        <span className="text-[10px] text-gray-400 font-medium">{tL3('facilitiesFound', { count: items.length })}</span>
                                     </div>
                                 </div>
                                 <div className={`p-2 rounded-full bg-gray-50 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
-                                    <ChevronDown size={16} />
+                                    <ChevronDown size={16} aria-hidden="true" />
                                 </div>
                             </button>
 
@@ -209,7 +237,7 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                                             {items.map((fac) => (
                                                 <div key={fac.id} className="bg-white p-3 rounded-xl border border-gray-100 flex items-start gap-3">
                                                     <div className="mt-1 text-gray-300">
-                                                        <MapPin size={14} />
+                                                        <MapPin size={14} aria-hidden="true" />
                                                     </div>
                                                     <div className="flex-1 min-w-0">
                                                         <p className="text-sm font-medium text-gray-900">

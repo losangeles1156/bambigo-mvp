@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { useAppStore } from '@/stores/appStore';
 import { LineBindingModal } from './LineBindingModal';
 import { Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function TripGuardStatus() {
+    const tTripGuard = useTranslations('tripGuard');
     const { isTripGuardActive, isLineBound, setLineBound } = useAppStore();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showPreview, setShowPreview] = useState(false);
@@ -20,19 +22,18 @@ export function TripGuardStatus() {
 
     return (
         <div className="flex flex-col items-end gap-3 pointer-events-auto">
-            {/* Notification Preview (Simulated Exception) */}
             {isTripGuardActive && isLineBound && showPreview && (
                 <div className="bg-white/95 backdrop-blur-xl p-4 rounded-3xl shadow-2xl border border-rose-100 w-64 animate-in slide-in-from-right-4 duration-500">
                     <div className="flex items-center gap-2 mb-2 text-rose-600">
-                        <ShieldAlert size={16} />
-                        <span className="text-[10px] font-black uppercase tracking-widest">異常通知 (Anomaly)</span>
+                        <ShieldAlert size={16} aria-hidden="true" />
+                        <span className="text-[10px] font-black uppercase tracking-widest">{tTripGuard('anomalyBadge')}</span>
                     </div>
-                    <h4 className="font-bold text-sm text-gray-900 mb-1">銀座線：人潮擁擠警報</h4>
+                    <h4 className="font-bold text-sm text-gray-900 mb-1">{tTripGuard('anomalyTitleSample')}</h4>
                     <p className="text-[11px] text-gray-500 font-medium leading-relaxed mb-3">
-                        當前上野站正進入高峰，預計延誤 10 分鐘。
+                        {tTripGuard('anomalyBodySample')}
                     </p>
                     <div className="bg-rose-50 p-2 rounded-xl text-[10px] font-bold text-rose-700 border border-rose-100">
-                        🦌 Bambi 建議：改搭日比谷線至仲御徒町站轉乘，可避開擁擠區域。
+                        🦌 {tTripGuard('anomalyAdviceSample')}
                     </div>
                 </div>
             )}
@@ -47,8 +48,15 @@ export function TripGuardStatus() {
                             ? 'bg-amber-100 text-amber-600'
                             : 'bg-white/90 text-gray-400 hover:text-gray-600'}
                 `}
+                aria-label={
+                    isTripGuardActive
+                        ? isLineBound
+                            ? tTripGuard('statusActiveBound')
+                            : tTripGuard('statusActiveUnbound')
+                        : tTripGuard('statusInactive')
+                }
             >
-                {isTripGuardActive && isLineBound ? <ShieldCheck size={24} /> : isTripGuardActive ? <ShieldAlert size={24} /> : <Shield size={24} />}
+                {isTripGuardActive && isLineBound ? <ShieldCheck size={24} aria-hidden="true" /> : isTripGuardActive ? <ShieldAlert size={24} aria-hidden="true" /> : <Shield size={24} aria-hidden="true" />}
 
                 {/* Status Glow */}
                 {isTripGuardActive && (

@@ -1,2 +1,0 @@
--- Legacy seed file emptied in favor of TypeScript seeding (run_seed.ts)
--- This avoids schema conflicts with v3.0 column renames.

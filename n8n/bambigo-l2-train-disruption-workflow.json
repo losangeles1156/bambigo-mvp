@@ -201,6 +201,19 @@
     },
     {
       "parameters": {
+        "jsCode": "const MAP = {\n  ueno: 'odpt:Station:TokyoMetro.Ueno',\n  tokyo: 'odpt:Station:JR-East.Tokyo',\n  asakusa: 'odpt:Station:TokyoMetro.Asakusa',\n  akihabara: 'odpt:Station:JR-East.Akihabara',\n  ginza: 'odpt:Station:TokyoMetro.Ginza',\n  otemachi: 'odpt:Station:TokyoMetro.Otemachi',\n  roppongi: 'odpt:Station:TokyoMetro.Roppongi'\n};\n\nreturn $input.all().flatMap(item => {\n  const nodeId = String(item.json?.node_id || '');\n  if (!nodeId) return [];\n  if (nodeId.startsWith('transit:')) return [];\n\n  const mapped = MAP[nodeId] || nodeId;\n  if (!mapped.startsWith('odpt:Station:')) return [];\n\n  return [{ json: { ...item.json, node_id: mapped } }];\n});"
+      },
+      "id": "normalize-station-ids",
+      "name": "Normalize Station IDs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        300
+      ]
+    },
+    {
+      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -236,7 +249,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot?on_conflict=station_id",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
@@ -315,12 +328,16 @@
         "fieldsUi": {
           "fieldValues": [
             {
-              "fieldName": "node_id",
+              "fieldName": "station_id",
               "fieldValue": "={{ $json.node_id }}"
             },
             {
               "fieldName": "severity",
               "fieldValue": "={{ $json.overall_severity }}"
+            },
+            {
+              "fieldName": "has_issues",
+              "fieldValue": "={{ $json.has_issues }}"
             },
             {
               "fieldName": "affected_lines",
@@ -406,7 +423,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/transit_dynamic_snapshot?on_conflict=station_id",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
@@ -595,6 +612,17 @@
       "main": [
         {
           "0": {
+            "node": "Normalize Station IDs",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Normalize Station IDs": {
+      "main": [
+        {
+          "0": {
             "node": "Has Disruptions?",
             "type": "main",
             "index": 0
@@ -611,7 +639,7 @@
       "main": [
         {
           "0": {
-            "node": "Redis Cache",
+            "node": "Supabase Upsert (Disruption)",
             "type": "main",
             "index": 0
           }
@@ -619,6 +647,17 @@
       ]
     },
     "Supabase Upsert (Disruption)": {
+      "main": [
+        {
+          "0": {
+            "node": "Save to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        }
+      ]
+    },
+    "Save to Supabase": {
       "main": [
         {
           "0": {
@@ -633,11 +672,6 @@
       "main": [
         {
           "0": {
-            "node": "Save to Supabase",
-            "type": "main",
-            "index": 0
-          },
-          "1": {
             "node": "Send Alert Webhook",
             "type": "main",
             "index": 0
@@ -656,7 +690,7 @@
       "main": [
         {
           "0": {
-            "node": "Redis Cache (Normal)",
+            "node": "Supabase Upsert (Normal)",
             "type": "main",
             "index": 0
           }

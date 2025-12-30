@@ -54,6 +54,8 @@ export function TrainLayer() {
         <>
             {trains.map((train) => {
                 const fromCoords = STATION_MAP[train.fromStation];
+                if (!fromCoords) return null; // Defensive check
+
                 const toCoords = train.toStation ? STATION_MAP[train.toStation] : null;
 
                 // If we don't have toCoords, just show at fromCoords

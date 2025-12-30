@@ -45,7 +45,7 @@ graph TD
     Validate --> |Failure| ErrorLog[Error Logs]
     
     Snapshot --> API[API Endpoint]
-    API --> Client[BambiGO Frontend]
+    API --> Client[LUTAGU Frontend]
 ```
 
 ## 4. 詳細流程設計 (Workflow Details)

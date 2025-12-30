@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { logUserActivity } from '@/lib/activityLogger';
 
 // Initialize Supabase Client (Service Role needed if bypassing RLS, or Anon if RLS allows INSERT)
 // Ideally for "subscribing", we should use the authenticated user's client if we had auth.
@@ -30,31 +31,22 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Missing routeIds' }, { status: 400 });
         }
 
-        // --- USER ID HANDLING (MVP HACK) ---
-        // In a real app, we get this from the session (req.cookies).
-        // For this MVP, we will try to find a 'guest' user or creating one if needed is too complex.
-        // Let's assume we use a hardcoded 'demo-user-id' UUID if not provided.
-        // But the DB references `users(id)`. We need a real ID that exists in `users` table.
-        // Let's query for ANY user to attach this to, or use a specific one.
+        await logUserActivity({
+            request: req,
+            activityType: 'trip_guard_subscribe_attempt',
+            queryContent: { routeIdsCount: routeIds.length, activeDays, startTime, endTime, notificationMethod },
+            metadata: { feature: 'trip_guard' }
+        });
 
-        let userId = mockUserId;
+        const userId = mockUserId || null;
 
         if (!userId) {
-            // Fallback: lookup a user with email 'guest@bambigo.com' or similar, 
-            // OR just pick the first user found.
-            const { data: users, error: userError } = await supabase
-                .from('users')
-                .select('id')
-                .limit(1);
-
-            if (userError || !users || users.length === 0) {
-                // Create a dummy user if none exists (unlikely in dev but good for safety)
-                console.warn('No users found. Creating temp user not supported in this route yet.');
-                return NextResponse.json({ error: 'No valid user found to attach subscription to.' }, { status: 500 });
-            }
-            userId = users[0].id;
+            return NextResponse.json({
+                success: false,
+                requiresLogin: true,
+                message: 'Trip Guard requires a member session.'
+            });
         }
-        // -----------------------------------
 
         const { data, error } = await supabase
             .from('trip_subscriptions')

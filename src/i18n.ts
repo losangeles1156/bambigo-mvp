@@ -2,13 +2,29 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 // Can be imported from a shared config
-const locales = ['zh-TW', 'en', 'ja'];
+const locales = ['zh', 'en', 'ja'];
 
-export default getRequestConfig(async ({ locale }) => {
+export default getRequestConfig(async (params) => {
     // Validate that the incoming `locale` parameter is valid
+    const locale = await params.requestLocale;
     if (!locales.includes(locale as any)) notFound();
 
+    let messages;
+    try {
+        if (locale === 'zh') {
+            messages = (await import('../messages/zh.json')).default;
+        } else if (locale === 'ja') {
+            messages = (await import('../messages/ja.json')).default;
+        } else {
+            messages = (await import('../messages/en.json')).default;
+        }
+    } catch (error) {
+        console.error(`Failed to load messages for locale ${locale}:`, error);
+        messages = (await import('../messages/en.json')).default;
+    }
+
     return {
-        messages: (await import(`../messages/${locale}.json`)).default
+        locale,
+        messages
     };
 });

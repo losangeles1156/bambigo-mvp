@@ -1,9 +1,9 @@
 {
     "Home": {
-        "title": "BambiGO",
+        "title": "LUTAGU",
         "currentLocation": "Current Location",
-        "askBambiGO": "Ask BambiGO...",
-        "aiPlaceholder": "Ask BambiGO..."
+        "askBambiGO": "Ask LUTAGU...",
+        "aiPlaceholder": "Ask LUTAGU..."
     },
     "status": {
         "crowded": "Crowded",
@@ -14,35 +14,95 @@
     },
     "nav": {
         "explore": "Explore",
+        "trips": "Trips",
         "guard": "Guard",
         "me": "Me"
+    },
+    "views": {
+        "trips": {
+            "kicker": "Trips",
+            "title": "Your trips",
+            "description": "Saved routes and alerts will show up here.",
+            "cta": "Plan with LUTAGU",
+            "seed": "Plan: Ueno Station → Narita Airport (lots of luggage)"
+        },
+        "me": {
+            "kicker": "Me",
+            "title": "Me",
+            "description": "Preferences and accessibility settings will live here.",
+            "cta": "Open chat"
+        }
+    },
+    "onboarding": {
+        "tagline": "Make transit decisions easier",
+        "skip": "Skip onboarding",
+        "askTitle": "Try asking:",
+        "askSubtitle": "Send instantly for suggestions",
+        "tips": {
+            "airport": "I'm at Ueno Station with lots of luggage. How do I get to the airport?",
+            "locker": "Where are the nearby lockers?",
+            "crowd": "Is the Ginza Line crowded right now?"
+        },
+        "hubTitle": "Or start with a popular hub:",
+        "hubs": {
+            "ueno": "Ueno",
+            "asakusa": "Asakusa",
+            "akihabara": "Akihabara",
+            "tokyo": "Tokyo"
+        },
+        "enableLocation": "Enable location",
+        "browseFirst": "Browse first"
     },
     "tripGuard": {
         "title": "Trip Guard",
         "noSubscription": "No active subscriptions",
-        "subscriptionHint": "Subscribe to routes, Bambi will alert you automatically when disruptions occur.",
-        "startExploring": "Start Exploring"
+        "subscriptionHint": "Subscribe to routes, LUTAGU will alert you automatically when disruptions occur.",
+        "startExploring": "Start Exploring",
+        "activate": "Activate Guard",
+        "sampleSubscriptionLabel": "Ginza Line commute",
+        "sampleSubscriptionWindow": "Weekdays 07:00–09:30",
+        "sampleSubscriptionStatus": "Live anomaly monitoring",
+        "bindTitle": "Connect LINE Trip Guard",
+        "bindDescription": "Connect your LINE account so LUTAGU can proactively send alternatives when disruptions happen.",
+        "bindBenefitRealtime": "Realtime delay alerts",
+        "bindBenefitMonitor": "24/7 route monitoring",
+        "bindCta": "Connect with LINE",
+        "bindCtaLoading": "Requesting LINE permission...",
+        "bindSuccessTitle": "LINE connected",
+        "bindSuccessBody": "Your trips are now protected by LUTAGU.",
+        "anomalyBadge": "Anomaly Alert",
+        "anomalyTitleSample": "Ginza Line: Crowd Alert",
+        "anomalyBodySample": "Ueno Station is entering rush hour, expect about 10 minutes delay.",
+        "anomalyAdviceSample": "LUTAGU suggests switching to the Hibiya Line via Naka-Okachimachi to avoid the crowd.",
+        "statusActiveBound": "Trip Guard is ON and bound to LINE",
+        "statusActiveUnbound": "Trip Guard is ON, LINE not bound yet",
+        "statusInactive": "Trip Guard is OFF"
     },
     "profile": {
         "title": "Settings",
         "guestMode": "Guest Mode",
-        "loginRegister": "Login / Register"
+        "loginRegister": "Login / Register",
+        "logout": "Sign out",
+        "loginWithGoogle": "Sign in with Google to unlock member features"
     },
     "node": {
         "addToTrip": "Add to My Trip",
         "addedToTrip": "Added \"{name}\" to your trip draft!",
-        "bufferZoneMessage": "This area currently provides basic info only. Bambi AI's empathetic navigation is expanding.",
+        "bufferZoneMessage": "This area currently provides basic info only. LUTAGU AI's empathetic navigation is expanding.",
         "locationDna": "Location DNA",
         "vicinity": "Vicinity",
         "vibeTags": "Vibe Tags",
         "analyzingL1": "Analyzing L1 DNA data...",
-        "noL3Facilities": "No L3 facilities available in this area"
+        "noL3Facilities": "No L3 facilities available in this area",
+        "details": "Details",
+        "favorite": "Add to favorites",
+        "unfavorite": "Remove from favorites"
     },
     "tabs": {
         "dna": "DNA (L1)",
         "live": "LIVE (L2)",
         "facility": "FACILITY (L3)",
-        "bambi": "BAMBI (L4)"
+        "bambi": "LUTAGU (L4)"
     },
     "tag": {
         "shopping": "Shopping",
@@ -117,7 +177,7 @@
     },
     "l1": {
         "dnaTitle": "Location DNA",
-        "bambiInsight": "Bambi Insight",
+        "bambiInsight": "LUTAGU Insight",
         "nearbyHighlights": "Highlights (300m)",
         "menuTitle": "Category Details",
         "navTo": "Nav",
@@ -125,7 +185,14 @@
             "shopping": "Shopping",
             "dining": "Dining",
             "culture": "Culture",
-            "nature": "Nature"
+            "nature": "Nature",
+            "convenience": "Convenience Store",
+            "medical": "Medical",
+            "leisure": "Leisure",
+            "finance": "Finance",
+            "accommodation": "Accommodation",
+            "service": "Service",
+            "business": "Business"
         }
     },
     "l2": {
@@ -181,6 +248,7 @@
         "noServices": "No service details available",
         "rent": "Rent",
         "available": "Available",
+        "quickLinks": "Quick Links",
         "categories": {
             "toilet": "Restroom",
             "locker": "Lockers",
@@ -191,7 +259,14 @@
             "info": "Info",
             "nursing": "Nursing",
             "smoking": "Smoking",
-            "accessibility": "Accessible"
+            "accessibility": "Accessible",
+            "shopping": "Shopping",
+            "dining": "Dining",
+            "leisure": "Leisure",
+            "transport": "Transport",
+            "religion": "Religion",
+            "nature": "Nature",
+            "accommodation": "Lodging"
         },
         "attributes": {
             "wheelchair": "Wheelchair",
@@ -215,16 +290,25 @@
         "diaper_changing": "Diaper Station",
         "ostomate": "Ostomate",
         "baby_chair": "Baby Chair",
-        "accessible": "Accessible"
+        "accessible": "Accessible",
+        "modal": {
+            "close": "Close",
+            "location": "Location",
+            "attributes": "Attributes",
+            "sizes": "Sizes: {sizes}",
+            "count": "Count: {count}",
+            "hours": "Hours: {hours}",
+            "askBambi": "Ask LUTAGU about this facility"
+        }
     },
     "l4": {
-        "strategyTitle": "Bambi Strategy",
+        "initialMessage": "Hi! I'm at {station}. Where do you want to go? I can help with routes, fares, and schedules.",
+        "strategyTitle": "LUTAGU Strategy",
         "subtitle": "AI Suggestions based on live data",
         "topPick": "Top Pick",
         "alternatives": "Alternatives",
-        "thinking": "Thinking...",
         "disclaimer": "Suggestions generated based on current traffic, weather, and facility status.",
-        "bambiStrategy": "Bambi Suggestion",
+        "bambiStrategy": "LUTAGU Suggestion",
         "suggestion": "Suggestion",
         "psychAlert": "Heads Up",
         "synthesisTitle": "Decision Support",
@@ -240,6 +324,28 @@
             "family": "Family",
             "accessibility": "Access",
             "vibe": "Vibe"
+        },
+        "chips": {
+            "synthesize": "SYNTHESIZE",
+            "route": "Plan route",
+            "nearby": "Nearby"
+        },
+        "inputPlaceholder": "Plan a route (ask, chat...)",
+        "chatError": "Sorry, a connection error occurred.",
+        "userLabel": "You",
+        "bambiLabel": "LUTAGU",
+        "thinking": {
+            "initializing": "Starting cognitive engine...",
+            "l2": "Analyzing L2 live traffic & weather...",
+            "l3": "Checking L3 facilities & ODPT schedules...",
+            "kb": "Reading expert knowledge base (Tips & Hacks)...",
+            "synthesizing": "Synthesizing the best strategy for your needs..."
+        },
+        "card": {
+            "title": "Best strategy synthesized",
+            "reasoning": "Reasoning",
+            "l2Verified": "Live status verified",
+            "odptVerified": "ODPT schedule verified"
         }
     },
     "weather": {
@@ -268,10 +374,22 @@
     },
     "common": {
         "viewAll": "View All",
+        "view": "View",
+        "openChat": "Open chat",
+        "temporarilyUnavailable": "Services temporarily unavailable",
         "distance": "Distance",
         "loading": "Loading...",
         "error": "Error occurred",
-        "station": "Station"
+        "station": "Station",
+        "close": "Close",
+        "languageSwitcherLabel": "Change language"
+    },
+    "chat": {
+        "connectionError": "Connection error. Please try again.",
+        "offlineBadge": "OFFLINE",
+        "tripAdded": "Added \"{label}\" to your trip!",
+        "openingTimetable": "Opening detailed timetable for \"{label}\"...",
+        "activeBadge": "Active Strategy"
     },
     "ui": {
         "items": "Items"

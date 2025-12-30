@@ -26,6 +26,7 @@ export const Translator = {
             theater: { 'zh-TW': '劇場文化', ja: '劇場', en: 'Theater' },
             art: { 'zh-TW': '藝術氣息', ja: 'アート', en: 'Art' },
             shopping: { 'zh-TW': '購物天堂', ja: 'ショッピング', en: 'Shopping' },
+            dining: { 'zh-TW': '美食聚落', ja: 'グルメ', en: 'Dining' },
             religious: { 'zh-TW': '結緣聖地', ja: '縁結びの聖地', en: 'Spiritual Spot' },
             nature: { 'zh-TW': '自然秘境', ja: '自然の秘境', en: 'Nature Escape' },
             quiet_area: { 'zh-TW': '寧靜區域', ja: '閑静なエリア', en: 'Quiet Area' }

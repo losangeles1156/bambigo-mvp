@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { supabaseAdmin } from '@/lib/supabase';
+import { writeAuditLog, writeSecurityEvent } from '@/lib/security/audit';
 
 // WMO Weather Code Mapping
 const WMO_CODES: Record<number, { condition: string; label: string; emoji: string }> = {
@@ -28,21 +30,32 @@ const WMO_CODES: Record<number, { condition: string; label: string; emoji: strin
     99: { condition: 'Thunderstorm', label: '強雷雨', emoji: '⛈️' }
 };
 
-export async function GET() {
+export async function GET(request: Request) {
+    const startedAt = Date.now();
     try {
-        // Tokyo Coordinates
         const lat = 35.6895;
         const lon = 139.6917;
-
-        // Extended query with humidity and precipitation probability
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&hourly=precipitation_probability&timezone=Asia%2FTokyo&forecast_days=1`;
 
-        const response = await fetch(url, {
-            next: { revalidate: 300 } // Cache for 5 minutes
-        });
+        let response: Response | null = null;
+        let lastErr: any = null;
+        for (let i = 0; i < 2; i++) {
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 4000);
+                response = await fetch(url, {
+                    next: { revalidate: 300 },
+                    signal: controller.signal
+                }).finally(() => clearTimeout(timeout));
+                if (response.ok) break;
+                lastErr = new Error('Failed to fetch from Open Meteo');
+            } catch (e: any) {
+                lastErr = e;
+            }
+        }
 
-        if (!response.ok) {
-            throw new Error('Failed to fetch from Open Meteo');
+        if (!response || !response.ok) {
+            throw lastErr || new Error('Failed to fetch from Open Meteo');
         }
 
         const data = await response.json();
@@ -66,7 +79,91 @@ export async function GET() {
         });
 
     } catch (error: any) {
-        console.error('Open Meteo API Error:', error.message);
-        return NextResponse.json({ error: 'Failed to fetch live weather' }, { status: 500 });
+        try {
+            const { data: row } = await supabaseAdmin
+                .from('transit_dynamic_snapshot')
+                .select('station_id, weather_info, updated_at')
+                .not('weather_info', 'is', null)
+                .order('updated_at', { ascending: false })
+                .limit(1)
+                .maybeSingle();
+
+            const w: any = row?.weather_info || {};
+            const condition = String(w?.condition || 'Unknown');
+
+            const mapping = (() => {
+                const key = condition.toLowerCase();
+                if (key.includes('snow')) return { code: 71, condition: 'Snow', label: '雪', emoji: '🌨️' };
+                if (key.includes('rain') || key.includes('shower') || key.includes('drizzle')) return { code: 61, condition: 'Rain', label: '雨', emoji: '🌧️' };
+                if (key.includes('cloud')) return { code: 3, condition: 'Cloudy', label: '陰', emoji: '☁️' };
+                if (key.includes('clear') || key.includes('sun')) return { code: 0, condition: 'Clear', label: '晴', emoji: '☀️' };
+                return { code: 3, condition: 'Unknown', label: '不明', emoji: '❓' };
+            })();
+
+            const temp = typeof w?.temp === 'number' ? w.temp : Number(w?.temp);
+            const wind = typeof w?.wind === 'number' ? w.wind : Number(w?.wind);
+
+            void writeAuditLog(request, {
+                actorUserId: null,
+                action: 'create',
+                resourceType: 'weather_live',
+                resourceId: 'tokyo',
+                before: null,
+                after: {
+                    ok: true,
+                    degraded: true,
+                    upstream: 'open-meteo',
+                    fallback: 'supabase',
+                    duration_ms: Date.now() - startedAt,
+                    upstream_error: String(error?.message || error || ''),
+                    cached_at: row?.updated_at || null,
+                    station_id: row?.station_id || null
+                }
+            });
+
+            return NextResponse.json({
+                temp: Number.isFinite(temp) ? temp : 0,
+                code: mapping.code,
+                condition: mapping.condition,
+                label: mapping.label,
+                emoji: mapping.emoji,
+                wind: Number.isFinite(wind) ? wind : 0,
+                humidity: null,
+                precipitationProbability: null,
+                source: 'Supabase',
+                stale: true,
+                cachedAt: row?.updated_at || null,
+                station_id: row?.station_id || null
+            });
+        } catch {
+            void writeAuditLog(request, {
+                actorUserId: null,
+                action: 'create',
+                resourceType: 'weather_live',
+                resourceId: 'tokyo',
+                before: null,
+                after: {
+                    ok: false,
+                    degraded: false,
+                    upstream: 'open-meteo',
+                    fallback: 'none',
+                    duration_ms: Date.now() - startedAt,
+                    error: String(error?.message || error || '')
+                }
+            });
+
+            void writeSecurityEvent(request, {
+                type: 'weather_live_unavailable',
+                severity: 'high',
+                actorUserId: null,
+                metadata: {
+                    duration_ms: Date.now() - startedAt,
+                    upstream: 'open-meteo',
+                    error: String(error?.message || error || '')
+                }
+            });
+
+            return NextResponse.json({ error: 'Failed to fetch live weather' }, { status: 500 });
+        }
     }
 }

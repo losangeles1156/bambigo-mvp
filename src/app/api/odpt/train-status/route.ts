@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const ODPT_API_KEY = process.env.ODPT_API_KEY;
+const TOKEN_STANDARD = process.env.ODPT_API_KEY || process.env.ODPT_API_TOKEN;
+const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP || process.env.ODPT_API_KEY;
 
 // Base URLs
 // ... imports unchanged
@@ -15,7 +16,13 @@ const OPERATOR_MAP: Record<string, string> = {
 
 async function fetchForOperator(key: string, id: string) {
     const baseUrl = key === 'JR-East' ? BASE_URL_CHALLENGE : BASE_URL_STANDARD;
-    const apiUrl = `${baseUrl}/odpt:TrainInformation?odpt:operator=${id}&acl:consumerKey=${ODPT_API_KEY}`;
+    const token = key === 'JR-East' ? TOKEN_CHALLENGE : TOKEN_STANDARD;
+    if (!token) return [];
+    const odptSearchParams = new URLSearchParams({
+        'odpt:operator': id,
+        'acl:consumerKey': token
+    });
+    const apiUrl = `${baseUrl}/odpt:TrainInformation?${odptSearchParams.toString()}`;
 
     try {
         const res = await fetch(apiUrl, { next: { revalidate: 60 } }); // Cache 60s
@@ -28,7 +35,7 @@ async function fetchForOperator(key: string, id: string) {
 }
 
 export async function GET(req: NextRequest) {
-    if (!ODPT_API_KEY) return NextResponse.json({ error: 'Missing API Key' }, { status: 500 });
+    if (!TOKEN_STANDARD && !TOKEN_CHALLENGE) return NextResponse.json({ error: 'Missing API Key' }, { status: 500 });
 
     const { searchParams } = new URL(req.url);
     const operatorParam = searchParams.get('operator');
@@ -45,5 +52,9 @@ export async function GET(req: NextRequest) {
         results = allData.flat();
     }
 
-    return NextResponse.json(results);
+    return NextResponse.json(results, {
+        headers: {
+            'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+        }
+    });
 }

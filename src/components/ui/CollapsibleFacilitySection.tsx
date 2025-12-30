@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, MapPin, ExternalLink, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useCategoryTranslation } from '@/hooks/useCategoryTranslation';
 
 interface FacilityItem {
     id: string;
@@ -45,6 +46,7 @@ export function CollapsibleFacilitySection({ facilities, onFacilityClick, locale
 
     const t = useTranslations('ui');
     const tL3 = useTranslations('l3');
+    const { getCategoryLabel } = useCategoryTranslation();
 
     return (
         <div className="space-y-4">
@@ -66,7 +68,7 @@ export function CollapsibleFacilitySection({ facilities, onFacilityClick, locale
                         >
                             <span className="text-2xl mb-1 filter drop-shadow-sm">{style.icon}</span>
                             <span className={`text-[10px] font-black uppercase tracking-tight ${isSelected ? style.color : 'text-gray-500'}`}>
-                                {tL3(`categories.${cat}`) || cat}
+                                {getCategoryLabel(cat)}
                             </span>
                             <span className={`text-[9px] font-bold mt-0.5 px-1.5 py-0.5 rounded-full ${isSelected ? 'bg-white/50 text-gray-700' : 'bg-gray-100 text-gray-400'}`}>
                                 x{items.length}
@@ -88,7 +90,7 @@ export function CollapsibleFacilitySection({ facilities, onFacilityClick, locale
                         <div className="p-4 border-b border-gray-50 flex items-center justify-between bg-gray-50/30">
                             <h4 className="font-black text-sm text-gray-900 flex items-center gap-2">
                                 <span>{CATEGORY_STYLE[selectedCategory]?.icon}</span>
-                                <span>{tL3(`categories.${selectedCategory}`)}</span>
+                                <span>{getCategoryLabel(selectedCategory)}</span>
                                 <span className="text-gray-400 font-medium text-xs">列表</span>
                             </h4>
                             <span className="text-[10px] bg-gray-200 text-gray-500 px-2 py-1 rounded-lg font-bold">

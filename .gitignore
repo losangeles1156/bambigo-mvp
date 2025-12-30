@@ -52,3 +52,10 @@ bambigo-web/
 bambigo-v2.1/
 bambigo-v3.0/
 bambigo-tokyo/
+
+# Supabase local metadata
+supabase/.temp/
+
+# next-pwa generated files
+public/sw*.js
+public/workbox-*.js

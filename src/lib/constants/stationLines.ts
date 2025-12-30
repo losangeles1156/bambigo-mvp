@@ -35,7 +35,8 @@ const LINES = {
     KeihinTohoku: { name: { ja: '京浜東北線', en: 'Keihin-Tohoku Line', zh: '京濱東北線' }, operator: 'JR', color: '#00BFFF' } as StationLineDef,
     Chuo: { name: { ja: '中央線', en: 'Chuo Line', zh: '中央線' }, operator: 'JR', color: '#FF4500' } as StationLineDef,
     Sobu: { name: { ja: '総武線', en: 'Sobu Line', zh: '總武線' }, operator: 'JR', color: '#FFD700' } as StationLineDef,
-    SobuRapid: { name: { ja: '総武快速線', en: 'Sobu Rapid Line', zh: '總武快速線' }, operator: 'JR', color: '#0072BC' } as StationLineDef, // Blue? Or Navy.
+    SobuRapid: { name: { ja: '総武快速線', en: 'Sobu Rapid Line', zh: '總武快速線' }, operator: 'JR', color: '#0072BC' } as StationLineDef, // Blue
+    ChuoSobu: { name: { ja: '中央・総武線', en: 'Chuo-Sobu Line', zh: '中央・總武線' }, operator: 'JR', color: '#FFD700' } as StationLineDef, // Yellow
     Joban: { name: { ja: '常磐線', en: 'Joban Line', zh: '常磐線' }, operator: 'JR', color: '#00B261' } as StationLineDef,
     Keiyo: { name: { ja: '京葉線', en: 'Keiyo Line', zh: '京葉線' }, operator: 'JR', color: '#C9242F' } as StationLineDef,
     Tokaido: { name: { ja: '東海道線', en: 'Tokaido Line', zh: '東海道線' }, operator: 'JR', color: '#F68B1E' } as StationLineDef,
@@ -101,6 +102,19 @@ export const STATION_LINES: Record<string, StationLineDef[]> = {
     'odpt:Station:TsukubaExpress.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu, LINES.Hibiya, LINES.Tsukuba], // Alias (seedNodes uses this)
     'odpt.Station:TokyoMetro.Hibiya.Akihabara': [LINES.Yamanote, LINES.KeihinTohoku, LINES.Sobu, LINES.Hibiya, LINES.Tsukuba], // Alias
 
+    // Shinjuku (JR + Metro + Toei)
+    'odpt:Station:JR-East.Shinjuku': [LINES.Yamanote, LINES.Chuo, LINES.Sobu, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Marunouchi, LINES.Shinjuku, LINES.Oedo],
+    'odpt:Station:TokyoMetro.Shinjuku': [LINES.Yamanote, LINES.Chuo, LINES.Sobu, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Marunouchi, LINES.Shinjuku, LINES.Oedo],
+    'odpt:Station:Toei.Shinjuku': [LINES.Yamanote, LINES.Chuo, LINES.Sobu, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Marunouchi, LINES.Shinjuku, LINES.Oedo],
+
+    // Shibuya (JR + Metro)
+    'odpt:Station:JR-East.Shibuya': [LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin],
+    'odpt:Station:TokyoMetro.Shibuya': [LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin],
+
+    // Ikebukuro (JR + Metro)
+    'odpt:Station:JR-East.Ikebukuro': [LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Marunouchi, LINES.Yurakucho, LINES.Fukutoshin],
+    'odpt:Station:TokyoMetro.Ikebukuro': [LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku, LINES.Marunouchi, LINES.Yurakucho, LINES.Fukutoshin],
+
     // Tokyo (JR + Metro) - Added UenoTokyo
     'odpt:Station:JR-East.Tokyo': [LINES.Yamanote, LINES.Chuo, LINES.Keiyo, LINES.KeihinTohoku, LINES.Tokaido, LINES.SobuRapid, LINES.UenoTokyo, LINES.Marunouchi],
     'odpt.Station:TokyoMetro.Marunouchi.Tokyo': [LINES.Yamanote, LINES.Chuo, LINES.Keiyo, LINES.KeihinTohoku, LINES.Tokaido, LINES.SobuRapid, LINES.UenoTokyo, LINES.Marunouchi], // Alias
@@ -133,7 +147,7 @@ export const STATION_LINES: Record<string, StationLineDef[]> = {
     'odpt:Station:TokyoMetro.Toranomon': [LINES.Ginza],
     'odpt:Station:TokyoMetro.AoyamaItchome': [LINES.Ginza, LINES.Hanzomon, LINES.Oedo],
     'odpt:Station:TokyoMetro.Omotesando': [LINES.Ginza, LINES.Chiyoda, LINES.Hanzomon],
-    'odpt:Station:TokyoMetro.Shibuya': [LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin, LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku], // Massive hub
+    // 'odpt:Station:TokyoMetro.Shibuya': [LINES.Ginza, LINES.Hanzomon, LINES.Fukutoshin, LINES.Yamanote, LINES.Saikyo, LINES.ShonanShinjuku], // Massive hub (Moved to top)
 
     // Hibiya Line
     'odpt:Station:TokyoMetro.Iriya': [LINES.Hibiya],
@@ -175,3 +189,208 @@ export const STATION_LINES: Record<string, StationLineDef[]> = {
     'odpt:Station:TokyoMetro.Kudanshita': [LINES.Tozai, LINES.Hanzomon, LINES.Shinjuku],
     'odpt:Station:TokyoMetro.Yushima': [LINES.Chiyoda],
 };
+
+export const HUB_STATION_MEMBERS: Record<string, string[]> = {
+    'odpt:Station:JR-East.Ueno': [
+        'odpt:Station:JR-East.Ueno',
+        'odpt.Station:TokyoMetro.Ginza.Ueno',
+        'odpt.Station:TokyoMetro.Hibiya.Ueno',
+        'odpt.Station:Keisei.KeiseiUeno'
+    ],
+    'odpt:Station:TokyoMetro.Ueno': [
+        'odpt:Station:JR-East.Ueno',
+        'odpt.Station:TokyoMetro.Ginza.Ueno',
+        'odpt.Station:TokyoMetro.Hibiya.Ueno',
+        'odpt.Station:Keisei.KeiseiUeno'
+    ],
+    'odpt.Station:TokyoMetro.Ginza.Ueno': [
+        'odpt:Station:JR-East.Ueno',
+        'odpt.Station:TokyoMetro.Ginza.Ueno',
+        'odpt.Station:TokyoMetro.Hibiya.Ueno',
+        'odpt.Station:Keisei.KeiseiUeno'
+    ],
+
+    'odpt:Station:JR-East.Akihabara': [
+        'odpt:Station:JR-East.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
+        'odpt:Station:TsukubaExpress.Akihabara'
+    ],
+    'odpt:Station:TsukubaExpress.Akihabara': [
+        'odpt:Station:JR-East.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
+        'odpt:Station:TsukubaExpress.Akihabara'
+    ],
+    'odpt.Station:TokyoMetro.Hibiya.Akihabara': [
+        'odpt:Station:JR-East.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
+        'odpt:Station:TsukubaExpress.Akihabara'
+    ],
+
+    'odpt:Station:JR-East.Tokyo': [
+        'odpt:Station:JR-East.Tokyo',
+        'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
+    ],
+    'odpt.Station:TokyoMetro.Marunouchi.Tokyo': [
+        'odpt:Station:JR-East.Tokyo',
+        'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
+    ],
+
+    // Shinjuku Group
+    'odpt:Station:JR-East.Shinjuku': [
+        'odpt:Station:JR-East.Shinjuku',
+        'odpt.Station:TokyoMetro.Marunouchi.Shinjuku',
+        'odpt.Station:Toei.Shinjuku.Shinjuku',
+        'odpt.Station:Toei.Oedo.Shinjuku'
+    ],
+    'odpt:Station:TokyoMetro.Shinjuku': [
+        'odpt:Station:JR-East.Shinjuku',
+        'odpt.Station:TokyoMetro.Marunouchi.Shinjuku',
+        'odpt.Station:Toei.Shinjuku.Shinjuku',
+        'odpt.Station:Toei.Oedo.Shinjuku'
+    ],
+    'odpt:Station:Toei.Shinjuku': [
+        'odpt:Station:JR-East.Shinjuku',
+        'odpt.Station:TokyoMetro.Marunouchi.Shinjuku',
+        'odpt.Station:Toei.Shinjuku.Shinjuku',
+        'odpt.Station:Toei.Oedo.Shinjuku'
+    ],
+
+    // Shibuya Group
+    'odpt:Station:JR-East.Shibuya': [
+        'odpt:Station:JR-East.Shibuya',
+        'odpt.Station:TokyoMetro.Ginza.Shibuya',
+        'odpt.Station:TokyoMetro.Hanzomon.Shibuya',
+        'odpt.Station:TokyoMetro.Fukutoshin.Shibuya'
+    ],
+    'odpt:Station:TokyoMetro.Shibuya': [
+        'odpt:Station:JR-East.Shibuya',
+        'odpt.Station:TokyoMetro.Ginza.Shibuya',
+        'odpt.Station:TokyoMetro.Hanzomon.Shibuya',
+        'odpt.Station:TokyoMetro.Fukutoshin.Shibuya'
+    ],
+
+    // Ikebukuro Group
+    'odpt:Station:JR-East.Ikebukuro': [
+        'odpt:Station:JR-East.Ikebukuro',
+        'odpt.Station:TokyoMetro.Marunouchi.Ikebukuro',
+        'odpt.Station:TokyoMetro.Yurakucho.Ikebukuro',
+        'odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro'
+    ],
+    'odpt:Station:TokyoMetro.Ikebukuro': [
+        'odpt:Station:JR-East.Ikebukuro',
+        'odpt.Station:TokyoMetro.Marunouchi.Ikebukuro',
+        'odpt.Station:TokyoMetro.Yurakucho.Ikebukuro',
+        'odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro'
+    ],
+
+    'odpt:Station:TokyoMetro.Asakusa': [
+        'odpt.Station:TokyoMetro.Ginza.Asakusa',
+        'odpt.Station:Toei.Asakusa.Asakusa',
+        'odpt:Station:Tobu.Skytree.Asakusa'
+    ],
+    'odpt.Station:TokyoMetro.Ginza.Asakusa': [
+        'odpt.Station:TokyoMetro.Ginza.Asakusa',
+        'odpt.Station:Toei.Asakusa.Asakusa',
+        'odpt:Station:Tobu.Skytree.Asakusa'
+    ],
+    'odpt:Station:Toei.Asakusa': [
+        'odpt.Station:TokyoMetro.Ginza.Asakusa',
+        'odpt.Station:Toei.Asakusa.Asakusa',
+        'odpt:Station:Tobu.Skytree.Asakusa'
+    ],
+
+    'odpt:Station:JR-East.Shimbashi': [
+        'odpt:Station:JR-East.Shimbashi',
+        'odpt.Station:TokyoMetro.Ginza.Shimbashi',
+        'odpt.Station:Toei.Asakusa.Shimbashi',
+        'odpt:Station:Yurikamome.Shimbashi'
+    ],
+
+    'odpt:Station:JR-East.Hamamatsucho': [
+        'odpt:Station:JR-East.Hamamatsucho',
+        'odpt:Station:TokyoMonorail.Haneda.MonorailHamamatsucho',
+        'odpt.Station:Toei.Asakusa.Daimon',
+        'odpt.Station:Toei.Oedo.Daimon'
+    ]
+};
+
+export function getStationIdVariants(id: string) {
+    const variants = new Set<string>();
+    variants.add(id);
+    if (id.startsWith('odpt.Station:')) variants.add(id.replace(/^odpt\.Station:/, 'odpt:Station:'));
+    if (id.startsWith('odpt:Station:')) variants.add(id.replace(/^odpt:Station:/, 'odpt.Station:'));
+    return Array.from(variants);
+}
+
+const ODPT_LINE_SEGMENT_BY_NAME_EN: Record<string, string> = {
+    'Ginza Line': 'Ginza',
+    'Marunouchi Line': 'Marunouchi',
+    'Hibiya Line': 'Hibiya',
+    'Tozai Line': 'Tozai',
+    'Chiyoda Line': 'Chiyoda',
+    'Yurakucho Line': 'Yurakucho',
+    'Hanzomon Line': 'Hanzomon',
+    'Namboku Line': 'Namboku',
+    'Fukutoshin Line': 'Fukutoshin',
+    'Asakusa Line': 'Asakusa',
+    'Mita Line': 'Mita',
+    'Shinjuku Line': 'Shinjuku',
+    'Oedo Line': 'Oedo',
+    'Yamanote Line': 'Yamanote',
+    'Keihin-Tohoku Line': 'KeihinTohoku',
+    'Chuo Line': 'Chuo',
+    'Sobu Line': 'Sobu',
+    'Sobu Rapid Line': 'SobuRapid',
+    'Chuo-Sobu Line': 'ChuoSobu',
+    'Joban Line': 'Joban',
+    'Keiyo Line': 'Keiyo',
+    'Tokaido Line': 'Tokaido',
+    'Yokosuka Line': 'Yokosuka',
+    'Ueno-Tokyo Line': 'UenoTokyo',
+    'Saikyo Line': 'Saikyo',
+    'Shonan-Shinjuku Line': 'ShonanShinjuku'
+};
+
+export function guessPhysicalOdptStationIds(nodeId: string) {
+    if (!nodeId) return [];
+    if (nodeId.startsWith('odpt.Station:')) return [nodeId];
+
+    const stationSlug = (nodeId.split(':').pop() || '').split('.').pop() || '';
+    if (!stationSlug) return [];
+
+    const operatorToken = nodeId.includes('TokyoMetro')
+        ? 'TokyoMetro'
+        : nodeId.includes('Toei')
+            ? 'Toei'
+            : nodeId.includes('JR-East')
+                ? 'JR-East'
+                : null;
+
+    if (!operatorToken) return [];
+
+    const targetOperator: StationLineDef['operator'] = operatorToken === 'TokyoMetro'
+        ? 'Metro'
+        : operatorToken === 'Toei'
+            ? 'Toei'
+            : 'JR';
+
+    const lineDefs = STATION_LINES[nodeId] || [];
+    const ids = new Set<string>();
+
+    for (const line of lineDefs) {
+        if (line.operator !== targetOperator) continue;
+        const segment = ODPT_LINE_SEGMENT_BY_NAME_EN[line.name.en];
+        if (!segment) continue;
+        ids.add(`odpt.Station:${operatorToken}.${segment}.${stationSlug}`);
+    }
+
+    return Array.from(ids);
+}
+
+export function resolveHubStationMembers(stationId: string) {
+    for (const v of getStationIdVariants(stationId)) {
+        const hit = HUB_STATION_MEMBERS[v];
+        if (hit && hit.length > 0) return hit;
+    }
+    return [stationId];
+}

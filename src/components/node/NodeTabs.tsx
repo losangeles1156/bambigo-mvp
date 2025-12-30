@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Dna,
@@ -14,10 +14,12 @@ import { L1_DNA } from '@/components/node/L1_DNA';
 import { L2_Live } from '@/components/node/L2_Live';
 import { L3_Facilities } from '@/components/node/L3_Facilities';
 import { L4_Bambi } from '@/components/node/L4_Bambi';
+import { FacilityFingerprint } from '@/components/node/FacilityFingerprint';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { TimetableBoard } from '@/components/odpt/TimetableBoard';
 import { FareTable } from '@/components/odpt/FareTable';
 import { guessOperator } from '@/hooks/useOdptData';
+import { getLocaleString } from '@/lib/utils/localeUtils';
 
 // Tab Configuration
 const TABS = [
@@ -29,11 +31,16 @@ const TABS = [
 
 export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any }) {
     const [activeTab, setActiveTab] = useState('l4'); // Default to L4 for Bambi strategy
+    const [seedQuestion, setSeedQuestion] = useState<string>('');
     const tTabs = useTranslations('tabs');
+    const tCommon = useTranslations('common');
+    const locale = useLocale();
 
     // Use real profile data or fallback to basic node structure
     const rawData = profile || nodeData || {};
     const operator = rawData.id ? guessOperator(rawData.id) : '';
+
+    const categoryCounts = rawData?.category_counts || rawData?.facility_profile?.category_counts;
 
 
 
@@ -41,14 +48,32 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
     const l2Adapter = (() => {
         const source = rawData.l2_status || {};
 
+        const toLocaleString = (value: any) => {
+            if (!value) return undefined;
+            if (typeof value === 'string') return { ja: value, en: value, zh: value };
+            if (typeof value === 'object') {
+                const ja = value.ja ?? value['ja-JP'] ?? value.jp ?? value.japanese;
+                const en = value.en ?? value.english;
+                const zh = value.zh ?? value['zh-TW'] ?? value['zh-Hant'] ?? value.chinese;
+                const anyText = ja || en || zh;
+                if (!anyText) return undefined;
+                return {
+                    ja: ja || en || zh,
+                    en: en || ja || zh,
+                    zh: zh || ja || en
+                };
+            }
+            return undefined;
+        };
+
         return {
             lines: (source.line_status || []).map((l: any, idx: number) => ({
                 id: `line-${idx}`,
-                name: l.name || { ja: l.line, en: l.line, zh: l.line }, // Support both legacy string and new object
+                name: toLocaleString(l.name) || { ja: l.line, en: l.line, zh: l.line },
                 operator: l.operator || 'Metro',
                 color: l.color || '#999999',
                 status: l.status || 'normal',
-                message: l.message ? { ja: l.message, en: l.message, zh: l.message } : undefined
+                message: toLocaleString(l.message)
             })),
             weather: {
                 temp: source.weather?.temp || 0,
@@ -80,6 +105,50 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
         l2: l2Adapter
     };
 
+    const stationName = getLocaleString(standardData.name, locale) || tCommon('station');
+
+    const buildSeedQuestion = (category: string) => {
+        if (locale.startsWith('ja')) {
+            if (category === 'convenience_count') return `${stationName}の近くでコンビニが多い方向は？おすすめを3つ、行き方つきで。`;
+            if (category === 'drugstore_count') return `${stationName}周辺でドラッグストアに行くなら？おすすめを3つ、行き方つきで。`;
+            if (category === 'restaurant_count') return `${stationName}から行ける飲食店を、予算や雰囲気が違う3案で提案して。行き方も。`;
+            if (category === 'cafe_count') return `${stationName}近くで1時間作業しやすいカフェを3つ。理由と行き方も。`;
+            if (category === 'shrine_count') return `${stationName}を起点に、60分の神社散歩ルートを提案して。注意点も。`;
+            if (category === 'temple_count') return `${stationName}を起点に、60分の寺院めぐりルートを提案して。注意点も。`;
+            if (category === 'museum_count') return `${stationName}から行ける博物館・美術館を2つおすすめして。アクセスも教えて。`;
+            return `${stationName}周辺の「${category}」について、行き方とおすすめを教えて。`;
+        }
+
+        if (locale.startsWith('en')) {
+            if (category === 'convenience_count') return `From ${stationName}, where are the nearest convenience stores? Give 3 options with directions.`;
+            if (category === 'drugstore_count') return `Near ${stationName}, where should I go for drugstores? Give 3 options with directions.`;
+            if (category === 'restaurant_count') return `From ${stationName}, recommend 3 restaurants with different budgets/styles and how to get there.`;
+            if (category === 'cafe_count') return `Near ${stationName}, recommend 3 cafes good for working for an hour, with reasons and directions.`;
+            if (category === 'shrine_count') return `Starting from ${stationName}, plan a 60-minute shrine walk with key tips.`;
+            if (category === 'temple_count') return `Starting from ${stationName}, plan a 60-minute temple walk with key tips.`;
+            if (category === 'museum_count') return `From ${stationName}, recommend 2 museums and how to reach them.`;
+            return `Around ${stationName}, tell me where to go for “${category}” with directions.`;
+        }
+
+        if (locale.startsWith('zh')) {
+            if (category === 'convenience_count') return `從${stationName}出站後，往哪個方向比較容易找到便利店？給我 3 個建議與理由。`;
+            if (category === 'drugstore_count') return `在${stationName}周邊想買藥妝，推薦去哪裡逛？給我 3 個選項與走法。`;
+            if (category === 'restaurant_count') return `從${stationName}出站想找餐廳，請推薦 3 種不同預算／風格，並附上步行路線。`;
+            if (category === 'cafe_count') return `在${stationName}附近想找適合工作 1 小時的咖啡店，推薦 3 間並說明原因與走法。`;
+            if (category === 'shrine_count') return `以${stationName}為起點，規劃 60 分鐘神社散步路線（含注意事項）。`;
+            if (category === 'temple_count') return `以${stationName}為起點，規劃 60 分鐘寺廟巡禮路線（含注意事項）。`;
+            if (category === 'museum_count') return `從${stationName}出發，推薦附近 2 個博物館／美術館並提供交通建議。`;
+            return `在${stationName}周邊，關於「${category}」有哪些推薦？請附上走法。`;
+        }
+
+        return '';
+    };
+
+    const handleFingerprintSelect = (category: string) => {
+        setSeedQuestion(buildSeedQuestion(category));
+        setActiveTab('l4');
+    };
+
     return (
         <div className="w-full h-full bg-white flex flex-col">
 
@@ -99,7 +168,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             >
                                 <div className={`p-2 rounded-xl transition-all ${isActive ? `${tab.color} text-white shadow-md scale-110` : 'bg-transparent'
                                     }`}>
-                                    <Icon size={20} className="transition-transform" />
+                                    <Icon size={20} className="transition-transform" aria-hidden="true" />
                                 </div>
                                 <span className={`text-[9px] font-black uppercase tracking-widest ${isActive ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
                                     }`}>
@@ -121,6 +190,11 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
 
             {/* Content Area */}
             <div className="flex-1 p-4 pb-24 overflow-y-auto">
+                {categoryCounts && (
+                    <div className="mb-4 rounded-3xl border border-slate-100 bg-slate-50/60 px-4">
+                        <FacilityFingerprint counts={categoryCounts} locale={locale} onSelectCategory={handleFingerprintSelect} />
+                    </div>
+                )}
                 <AnimatePresence mode="wait">
 
                     {activeTab === 'dna' && (
@@ -131,7 +205,13 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <L1_DNA />
+                            <div className="flex items-center gap-2 mb-4 px-1">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 uppercase tracking-wider">Level 1</span>
+                                <span className="text-xs text-gray-500 font-medium">Location DNA</span>
+                            </div>
+                            <ErrorBoundary>
+                                <L1_DNA data={standardData} />
+                            </ErrorBoundary>
                         </motion.div>
                     )}
 
@@ -143,7 +223,13 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <L2_Live data={standardData} />
+                            <div className="flex items-center gap-2 mb-4 px-1">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-wider">Level 2</span>
+                                <span className="text-xs text-gray-500 font-medium">Live Status</span>
+                            </div>
+                            <ErrorBoundary>
+                                <L2_Live data={standardData} />
+                            </ErrorBoundary>
                         </motion.div>
                     )}
 
@@ -155,12 +241,24 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <ErrorBoundary fallback={
-                                <div className="p-8 text-center text-gray-400 text-xs bg-gray-50 rounded-2xl border border-dashed border-gray-200">
-                                    Services temporarily unavailable
+                            <div className="flex items-center gap-2 mb-4 px-1">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-orange-700 uppercase tracking-wider">Level 3</span>
+                                <span className="text-xs text-gray-500 font-medium">Station Facilities</span>
+                            </div>
+                            <ErrorBoundary>
+                                <div className="space-y-6">
+                                    <L3_Facilities data={standardData} />
+                                    {standardData.id && (
+                                        <div className="pt-6 border-t border-gray-100 space-y-6">
+                                            <div className="flex items-center gap-2 px-1">
+                                                <TrainFront size={16} className="text-orange-600" />
+                                                <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">Timetable & Fares</span>
+                                            </div>
+                                            <TimetableBoard stationId={standardData.id} operator={operator} />
+                                            <FareTable stationId={standardData.id} operator={operator} />
+                                        </div>
+                                    )}
                                 </div>
-                            }>
-                                <L3_Facilities data={standardData} />
                             </ErrorBoundary>
                         </motion.div>
                     )}
@@ -173,8 +271,16 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
+                            <div className="flex items-center gap-2 mb-4 px-1">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 uppercase tracking-wider">Level 4</span>
+                                <span className="text-xs text-gray-500 font-medium">Bambi Strategy</span>
+                            </div>
                             <ErrorBoundary>
-                                <L4_Bambi data={standardData} />
+                                <L4_Bambi
+                                    data={standardData}
+                                    seedQuestion={seedQuestion}
+                                    onSeedConsumed={() => setSeedQuestion('')}
+                                />
                             </ErrorBoundary>
                         </motion.div>
                     )}
