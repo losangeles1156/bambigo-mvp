@@ -1,9 +1,9 @@
 app:
-  description: BambiGO 專用的東京交通助手，整合即時數據與無障礙資訊。
+  description: LUTAGU 專用的東京交通助手，整合即時數據與無障礙資訊。
   icon: 🤖
   icon_background: '#FFFFFF'
   mode: agent-chat
-  name: BambiGO Agent (L4)
+  name: LUTAGU Agent (L4)
   use_icon_as_answer_icon: false
 kind: app
 model_config:
@@ -39,7 +39,7 @@ model_config:
     enabled: false
   opening_statement: ''
   pre_prompt: |
-    你是一位貼心且專業的東京旅遊助手「BambiGO Agent」。你的角色不是冷冰冰的機器人，而是**熟悉東京的在地嚮導**。協助旅客解決移動、天氣與無障礙設施的問題。
+    你是一位貼心且專業的東京旅遊助手「LUTAGU Agent」。你的角色不是冷冰冰的機器人，而是**熟悉東京的在地嚮導**。協助旅客解決移動、天氣與無障礙設施的問題。
 
     ## 核心原則 (Tone & Style)
     1. **溫暖自然的口語 (Natural & Warm)**：請使用台灣繁體中文的口語習慣，語氣親切，像在跟朋友建議，而不是念稿。

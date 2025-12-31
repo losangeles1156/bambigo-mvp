@@ -9,7 +9,8 @@ export const SEED_NODES = [
         type: 'station',
         location: 'POINT(139.7774 35.7141)', // Lon Lat
         geohash: 'xn77k', // Dummy or approx
-        is_hub: true,
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Ueno',
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'culture',
@@ -63,7 +64,8 @@ export const SEED_NODES = [
         type: 'station',
         location: 'POINT(139.7742 35.6986)',
         geohash: 'xn77k',
-        is_hub: true,
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Akihabara',
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'tech_gateway'
@@ -216,6 +218,19 @@ export const SEED_NODES = [
             { mainCategory: 'leisure', subCategory: 'culture', detailCategory: 'museum', name: 'Mitsui Memorial Museum', distanceMeters: 500, direction: 'Exit South' }
         ]
     },
+    {
+        id: 'odpt:Station:TokyoMetro.Kanda',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '神田', 'ja': '神田', 'en': 'Kanda' },
+        type: 'station',
+        location: 'POINT(139.7707 35.6917)',
+        vibe: 'curry',
+        geohash: 'xn77k',
+        is_hub: false,
+        zone: 'core',
+        parent_hub_id: 'odpt:Station:JR-East.Kanda',
+        source_dataset: 'odpt_seed'
+    },
     // Asakusa Line - Chuo
     {
         id: 'odpt:Station:Toei.HigashiGinza',
@@ -237,6 +252,19 @@ export const SEED_NODES = [
             // Dining
             { mainCategory: 'dining', subCategory: 'restaurant', name: 'Ginza Shochiku Square', distanceMeters: 200, direction: 'Exit 5' }
         ]
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Nihombashi',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '日本橋', 'ja': '日本橋', 'en': 'Nihombashi' },
+        type: 'station',
+        location: 'POINT(139.7745 35.6812)',
+        vibe: 'tradition',
+        geohash: 'xn76u',
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:Toei.Nihombashi',
+        zone: 'core',
+        source_dataset: 'odpt_seed'
     },
     {
         id: 'odpt:Station:Toei.Nihombashi',
@@ -280,6 +308,93 @@ export const SEED_NODES = [
             { mainCategory: 'shopping', subCategory: 'market', name: 'Amazake Yokocho', distanceMeters: 50, direction: 'Exit A1', note: 'Traditional Street' },
             { mainCategory: 'dining', subCategory: 'restaurant', name: 'Tamahide', distanceMeters: 100, direction: 'Exit A2', note: 'Famous Oyakodon' }
         ]
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Shinjuku',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '新宿', 'ja': '新宿', 'en': 'Shinjuku' },
+        type: 'station',
+        location: 'POINT(139.7006 35.6896)',
+        geohash: 'xn77h',
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Shinjuku',
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'metropolis'
+    },
+    {
+        id: 'odpt:Station:JR-East.Shinjuku',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '新宿', 'ja': '新宿', 'en': 'Shinjuku' },
+        type: 'station',
+        location: 'POINT(139.7006 35.6896)',
+        geohash: 'xn77h',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'metropolis'
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Shibuya',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '澀谷', 'ja': '渋谷', 'en': 'Shibuya' },
+        type: 'station',
+        location: 'POINT(139.7016 35.6580)',
+        geohash: 'xn76u',
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Shibuya',
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'youth_culture'
+    },
+    {
+        id: 'odpt:Station:JR-East.Shibuya',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '澀谷', 'ja': '渋谷', 'en': 'Shibuya' },
+        type: 'station',
+        location: 'POINT(139.7016 35.6580)',
+        geohash: 'xn76u',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'youth_culture'
+    },
+    {
+        id: 'odpt:Station:TokyoMetro.Ikebukuro',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '池袋', 'ja': '池袋', 'en': 'Ikebukuro' },
+        type: 'station',
+        location: 'POINT(139.7109 35.7289)',
+        geohash: 'xn77k',
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Ikebukuro',
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'entertainment'
+    },
+    {
+        id: 'odpt:Station:JR-East.Ikebukuro',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '池袋', 'ja': '池袋', 'en': 'Ikebukuro' },
+        type: 'station',
+        location: 'POINT(139.7109 35.7289)',
+        geohash: 'xn77k',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'entertainment'
+    },
+    {
+        id: 'odpt:Station:Toei.BakuroYokoyama',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '馬喰橫山', 'ja': '馬喰横山', 'en': 'Bakuro-yokoyama' },
+        type: 'station',
+        location: 'POINT(139.7840 35.6922)',
+        geohash: 'xn77k',
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:Toei.HigashiNihombashi',
+        zone: 'core',
+        source_dataset: 'odpt_seed'
     },
     {
         id: 'odpt:Station:Toei.HigashiNihombashi',
@@ -604,7 +719,8 @@ export const SEED_NODES = [
         type: 'station',
         location: 'POINT(139.7450 35.7021)',
         geohash: 'xn77k',
-        is_hub: true,
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Iidabashi',
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'hub',
@@ -621,6 +737,18 @@ export const SEED_NODES = [
             { mainCategory: 'dining', subCategory: 'cafe', name: 'Canal Cafe', distanceMeters: 200, direction: 'Exit B2a', note: 'Riverside' },
             { mainCategory: 'shopping', subCategory: 'department', name: 'Iidabashi Ramla', distanceMeters: 50, direction: 'Exit B2b' }
         ]
+    },
+    {
+        id: 'odpt:Station:JR-East.Iidabashi',
+        city_id: 'tokyo_core',
+        name: { 'zh-TW': '飯田橋', 'ja': '飯田橋', 'en': 'Iidabashi' },
+        type: 'station',
+        location: 'POINT(139.7450 35.7021)',
+        geohash: 'xn77k',
+        is_hub: true,
+        zone: 'core',
+        source_dataset: 'odpt_seed',
+        vibe: 'hub'
     },
     {
         id: 'odpt:Station:TokyoMetro.Hibiya',
@@ -654,7 +782,8 @@ export const SEED_NODES = [
         type: 'station',
         location: 'POINT(139.7639 35.6867)',
         geohash: 'xn76u',
-        is_hub: true,
+        is_hub: false,
+        parent_hub_id: 'odpt:Station:JR-East.Tokyo',
         zone: 'core',
         source_dataset: 'odpt_seed',
         vibe: 'business',

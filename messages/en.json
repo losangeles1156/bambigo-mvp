@@ -2,7 +2,7 @@
     "Home": {
         "title": "LUTAGU",
         "currentLocation": "Current Location",
-        "askBambiGO": "Ask LUTAGU...",
+        "askLutagu": "Ask LUTAGU...",
         "aiPlaceholder": "Ask LUTAGU..."
     },
     "status": {
@@ -102,7 +102,7 @@
         "dna": "DNA (L1)",
         "live": "LIVE (L2)",
         "facility": "FACILITY (L3)",
-        "bambi": "LUTAGU (L4)"
+        "lutagu": "LUTAGU (L4)"
     },
     "tag": {
         "shopping": "Shopping",
@@ -177,7 +177,7 @@
     },
     "l1": {
         "dnaTitle": "Location DNA",
-        "bambiInsight": "LUTAGU Insight",
+        "lutaguInsight": "LUTAGU Insight",
         "nearbyHighlights": "Highlights (300m)",
         "menuTitle": "Category Details",
         "navTo": "Nav",
@@ -298,7 +298,7 @@
             "sizes": "Sizes: {sizes}",
             "count": "Count: {count}",
             "hours": "Hours: {hours}",
-            "askBambi": "Ask LUTAGU about this facility"
+            "askLutagu": "Ask LUTAGU about this facility"
         }
     },
     "l4": {
@@ -308,7 +308,7 @@
         "topPick": "Top Pick",
         "alternatives": "Alternatives",
         "disclaimer": "Suggestions generated based on current traffic, weather, and facility status.",
-        "bambiStrategy": "LUTAGU Suggestion",
+        "lutaguStrategy": "LUTAGU Suggestion",
         "suggestion": "Suggestion",
         "psychAlert": "Heads Up",
         "synthesisTitle": "Decision Support",
@@ -333,7 +333,7 @@
         "inputPlaceholder": "Plan a route (ask, chat...)",
         "chatError": "Sorry, a connection error occurred.",
         "userLabel": "You",
-        "bambiLabel": "LUTAGU",
+        "lutaguLabel": "LUTAGU",
         "thinking": {
             "initializing": "Starting cognitive engine...",
             "l2": "Analyzing L2 live traffic & weather...",

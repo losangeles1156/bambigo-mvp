@@ -208,7 +208,7 @@ export function FacilityDetailModal({ facility, onClose }: FacilityDetailModalPr
 
                         {/* AI Chat Prompt */}
                         <button className="w-full p-4 bg-indigo-600 text-white rounded-2xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2">
-                            🦌 {tL3('modal.askBambi')}
+                            ✨ {tL3('modal.askLutagu')}
                         </button>
                     </div>
                 </div>

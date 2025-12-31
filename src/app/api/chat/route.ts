@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
         // Use last message as query
         const lastMessage = messages[messages.length - 1]?.content || 'Hello';
         const visitorId = getVisitorIdFromRequest(req);
-        const userId = visitorId || ('bambigo-user-' + Math.random().toString(36).substring(7));
+        const userId = visitorId || ('lutagu-user-' + Math.random().toString(36).substring(7));
 
         await logUserActivity({
             request: req,
@@ -55,236 +55,43 @@ export async function POST(req: NextRequest) {
             strategyContext = await StrategyEngine.getSynthesis(userLocation.lat, userLocation.lon, locale);
         }
 
-        // Check for API Keys
-        if (!process.env.DIFY_API_KEY) {
-            console.warn('Missing DIFY_API_KEY');
-
+        const mistralText = await generateMistralAnswer({ query: lastMessage, locale, strategyContext, zone, userLocation });
+        if (mistralText) {
             void writeSecurityEvent(req, {
-                type: 'ai_config_missing',
-                severity: 'high',
-                actorUserId: null,
-                metadata: { endpoint: 'POST /api/chat', missingKey: true }
-            });
-
-            const mistralText = await generateMistralAnswer({ query: lastMessage, locale, strategyContext, zone, userLocation });
-            if (mistralText) {
-                void writeSecurityEvent(req, {
-                    type: 'ai_fallback_mistral',
-                    severity: 'low',
-                    actorUserId: null,
-                    metadata: { endpoint: 'POST /api/chat', reason: 'dify_missing' }
-                });
-                return NextResponse.json({ answer: mistralText, actions: strategyContext?.commercialActions || [], mode: 'mistral' });
-            }
-            return NextResponse.json(mockResponse({ query: lastMessage, locale }));
-        }
-
-        const difyUrl = process.env.DIFY_API_URL || 'https://api.dify.ai/v1';
-
-        // 2. Dify API Call
-        let response: Response;
-        try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 15000);
-
-            try {
-                response = await fetch(`${difyUrl}/chat-messages`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${process.env.DIFY_API_KEY}`
-                    },
-                    body: JSON.stringify({
-                        query: lastMessage,
-                        user: userId,
-                        inputs: {
-                            current_zone: zone || 'core',
-                            user_location: userLocation ? `${userLocation.lat},${userLocation.lon}` : 'unknown',
-                            persona_prompt: `${strategyContext?.personaPrompt || ''}\n\n[STATION EXPERT KNOWLEDGE]\n${strategyContext?.wisdomSummary || 'No specific warnings.'}`,
-                            nearest_hub: strategyContext?.nodeName || 'Unknown',
-                            l2_delay: strategyContext?.l2Status?.delay || 0
-                        },
-                        response_mode: 'streaming'
-                    }),
-                    signal: controller.signal
-                });
-            } finally {
-                clearTimeout(timeoutId);
-            }
-        } catch {
-            void writeSecurityEvent(req, {
-                type: 'ai_network_error',
-                severity: 'medium',
+                type: 'ai_provider_mistral',
+                severity: 'low',
                 actorUserId: null,
                 metadata: { endpoint: 'POST /api/chat' }
             });
 
-            const mistralText = await generateMistralAnswer({ query: lastMessage, locale, strategyContext, zone, userLocation });
-            if (mistralText) {
-                void writeSecurityEvent(req, {
-                    type: 'ai_fallback_mistral',
-                    severity: 'low',
-                    actorUserId: null,
-                    metadata: { endpoint: 'POST /api/chat', reason: 'network_error' }
-                });
-                return NextResponse.json({ answer: mistralText, actions: strategyContext?.commercialActions || [], mode: 'mistral' });
-            }
-            return NextResponse.json(mockResponse({ query: lastMessage, locale }));
-        }
-
-        if (!response.ok) {
-            console.error('Dify API Error:', response.status, await response.text());
-
-            void writeSecurityEvent(req, {
-                type: 'ai_upstream_error',
-                severity: 'medium',
-                actorUserId: null,
-                metadata: { endpoint: 'POST /api/chat', status: response.status }
+            return NextResponse.json({
+                answer: mistralText,
+                actions: strategyContext?.commercialActions || [],
+                context: {
+                    hub: strategyContext?.nodeName,
+                    delay: strategyContext?.l2Status?.delay
+                },
+                mode: 'mistral'
             });
-
-            const mistralText = await generateMistralAnswer({ query: lastMessage, locale, strategyContext, zone, userLocation });
-            if (mistralText) {
-                void writeSecurityEvent(req, {
-                    type: 'ai_fallback_mistral',
-                    severity: 'low',
-                    actorUserId: null,
-                    metadata: { endpoint: 'POST /api/chat', reason: 'upstream_error', status: response.status }
-                });
-                return NextResponse.json({ answer: mistralText, actions: strategyContext?.commercialActions || [], mode: 'mistral' });
-            }
-            return NextResponse.json(mockResponse({ query: lastMessage, locale }));
         }
 
-        const difyAnswer = await readDifyStreamingAnswer(response);
-        if (!difyAnswer) {
-            void writeSecurityEvent(req, {
-                type: 'ai_stream_error_event',
-                severity: 'medium',
-                actorUserId: null,
-                metadata: { endpoint: 'POST /api/chat' }
-            });
-
-            const mistralText = await generateMistralAnswer({ query: lastMessage, locale, strategyContext, zone, userLocation });
-            if (mistralText) {
-                void writeSecurityEvent(req, {
-                    type: 'ai_fallback_mistral',
-                    severity: 'low',
-                    actorUserId: null,
-                    metadata: { endpoint: 'POST /api/chat', reason: 'dify_stream_error' }
-                });
-                return NextResponse.json({ answer: mistralText, actions: strategyContext?.commercialActions || [], mode: 'mistral' });
-            }
-            return NextResponse.json(mockResponse({ query: lastMessage, locale }));
-        }
-
-        // 2. Parse Dify Response
-        // Dify returns text in `data.answer`.
-        // We expect Dify to potentially return formatted JSON or text + actions.
-        // For this MVP, we will try to parse JSON from the text if possible, or just return text.
-
-        let clientAnswer = difyAnswer;
-        let clientActions: any[] = [];
-
-        // Try to find actions in the response or structured part
-        // IMPORTANT: In Dify Prompt, we should instruct it to output explicit actions if needed.
-        // For now, we'll strip any "JSON" blocks if the AI puts them there primarily for app logic.
-
-        // Simple heuristic: If the answer contains a special block like ```json ... ```, extract it.
-        const jsonMatch = clientAnswer.match(/```json\n([\s\S]*?)\n```/);
-        if (jsonMatch) {
-            try {
-                const extracted = JSON.parse(jsonMatch[1]);
-                if (extracted.actions) {
-                    clientActions = extracted.actions;
-                }
-                if (extracted.answer) {
-                    clientAnswer = extracted.answer; // Update answer to clean text
-                }
-            } catch (e) {
-                // Failed to parse, keep original
-            }
-        }
-
-        // Append Commercial Nudges if any
-        if (strategyContext?.commercialActions && strategyContext.commercialActions.length > 0) {
-            clientActions = [...clientActions, ...strategyContext.commercialActions];
-        }
-
-        return NextResponse.json({
-            answer: clientAnswer,
-            actions: clientActions,
-            context: {
-                hub: strategyContext?.nodeName,
-                delay: strategyContext?.l2Status?.delay
-            },
-            mode: 'dify'
+        void writeSecurityEvent(req, {
+            type: 'ai_fallback_offline',
+            severity: 'medium',
+            actorUserId: null,
+            metadata: { endpoint: 'POST /api/chat' }
         });
+
+        const offline = mockResponse({ query: lastMessage, locale });
+        if (strategyContext?.commercialActions && strategyContext.commercialActions.length > 0) {
+            offline.actions = [...offline.actions, ...strategyContext.commercialActions];
+        }
+        return NextResponse.json(offline);
 
     } catch (error) {
         console.error('Chat API Error:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
-}
-
-async function readDifyStreamingAnswer(response: Response) {
-    const stream = response.body;
-    if (!stream) return null;
-
-    const reader = stream.getReader();
-    const decoder = new TextDecoder();
-
-    let buffer = '';
-    let answer = '';
-
-    const parseDataLine = (line: string) => {
-        const raw = line.slice('data:'.length).trim();
-        if (!raw) return;
-        if (raw === '[DONE]') return;
-
-        let obj: any;
-        try {
-            obj = JSON.parse(raw);
-        } catch {
-            return;
-        }
-
-        const event = String(obj?.event || '');
-        if (event === 'error') {
-            throw new Error('Dify streaming error');
-        }
-
-        const chunk = typeof obj?.answer === 'string' ? obj.answer : '';
-        if (chunk) answer += chunk;
-    };
-
-    try {
-        while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-
-            buffer += decoder.decode(value, { stream: true });
-            const frames = buffer.split('\n\n');
-            buffer = frames.pop() || '';
-
-            for (const frame of frames) {
-                const lines = frame.split('\n');
-                for (const line of lines) {
-                    if (!line.startsWith('data:')) continue;
-                    parseDataLine(line);
-                }
-            }
-        }
-    } catch {
-        return null;
-    } finally {
-        try {
-            await reader.cancel();
-        } catch {
-        }
-    }
-
-    const trimmed = String(answer || '').trim();
-    return trimmed || null;
 }
 
 async function generateMistralAnswer(params: { query: string; locale: SupportedLocale; strategyContext: any; zone?: string; userLocation?: any }) {
@@ -296,10 +103,10 @@ async function generateMistralAnswer(params: { query: string; locale: SupportedL
 
     const system =
         locale === 'en'
-            ? 'You are a Tokyo transit & station guide. Be accurate, concise, and actionable. If unsure, say you cannot confirm.'
+            ? 'You are LUTAGU, a gentle guide. Like a guardian deer, you provide the most thoughtful travel advice based on real-time data (L2). Be accurate, concise, and actionable. If unsure, say you cannot confirm.'
             : locale === 'ja'
-                ? 'あなたは東京の駅・乗換案内の専門ガイドです。正確・簡潔・実用的に答えてください。不確かな場合は推測しないでください。'
-                : '你是東京車站/轉乘/旅遊的專業嚮導。回答要正確、簡潔、可執行；不確定就直說無法確認，避免臆測。';
+                ? 'あなたはLUTAGUという名の優しい案内人です。守護霊鹿のように、リアルタイムデータ（L2）に基づいてユーザーに最も思いやりのある行動提案を行います。正確・簡潔・実用的に答えてください。不確かな場合は推測しないでください。'
+                : '你是一個名為 LUTAGU 的溫柔指引者，像守護靈鹿一樣，根據即時數據 (L2) 為用戶提供最貼心的行動建議。回答要正確、簡潔、可執行；不確定就直說無法確認，避免臆測。';
 
     const context =
         `zone: ${zone || 'core'}\n` +

@@ -85,3 +85,17 @@ export interface OdptStationTimetable {
         "odpt:trainNumber": string;
     }[];
 }
+
+export interface OdptTrainInformation {
+    "@id": string;
+    "@type": "odpt:TrainInformation";
+    "dc:date"?: string;
+    "odpt:trainInformationText": {
+        en?: string;
+        ja?: string;
+    };
+    "odpt:railway": string;
+    "odpt:operator": string;
+    "odpt:timeOfOrigin"?: string;
+    "odpt:trainInformationStatus"?: string;
+}

@@ -1,4 +1,4 @@
-# BambiGO Tokyo MVP - Project Rules
+# LUTAGU Tokyo MVP - Project Rules
 # 版本：v4.0 (對應技術架構規格書)
 # 用途：Trae SOLO 開發指引
 
@@ -6,7 +6,7 @@
 
 ## 1. 產品定義
 
-BambiGO 是一個基於 PWA 的**城市感性導航服務**。
+LUTAGU 是一個基於 PWA 的**城市感性導航服務**。
 
 核心價值：將冷冰冰的開放數據（ODPT, GTFS, OSM）轉譯為具備同理心的行動建議 (Nudge)，解決交通空白與過度旅遊等社會課題。
 
@@ -178,14 +178,14 @@ name jsonb not null, -- {"zh-TW": "上野站", "ja": "上野駅", "en": "Ueno St
 
 ## 9. 商業變現邏輯
 
-BambiGO 的商業價值在於「焦慮解法的中介」：
+LUTAGU 的商業價值在於「焦慮解法的中介」：
 
 1. **移動導流**
-   - 情境：電車延誤（焦慮）→ BambiGO 建議 → 點擊叫車
+   - 情境：電車延誤（焦慮）→ LUTAGU 建議 → 點擊叫車
    - 價值：CPA 分潤
 
 2. **空手觀光導流**
-   - 情境：找不到置物櫃（焦慮）→ BambiGO 建議 → 預約 Ecbo Cloak
+   - 情境：找不到置物櫃（焦慮）→ LUTAGU 建議 → 預約 Ecbo Cloak
    - 價值：服務手續費分潤
 
 ---
@@ -264,7 +264,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_KEY=your_service_key
 
 # AI Backend (n8n - 取代直接 Dify 呼叫)
-N8N_WEBHOOK_URL=https://your-n8n-instance/webhook/bambigo-chat
+N8N_WEBHOOK_URL=https://your-n8n-instance/webhook/lutagu-chat
 N8N_WEBHOOK_SECRET=optional_secret_token
 
 # LINE (Trip Guard)

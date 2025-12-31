@@ -6,7 +6,7 @@
 - `DATABASE_URL`：Supabase Postgres 連線字串（我們的 ETL 使用此直連來 upsert）。
 - `NEXT_PUBLIC_MAPBOX_TOKEN`：Mapbox token（用於地圖展示；可稍後提供）。
 
-## `.env.local` 範例（請填入 bambigo-web/.env.local）
+## `.env.local` 範例（請填入專案根目錄的 `.env.local`）
 ```
 NEXT_PUBLIC_SUPABASE_URL=... 
 NEXT_PUBLIC_SUPABASE_ANON_KEY=... 
@@ -18,7 +18,7 @@ DATABASE_URL=postgresql://postgres:<DB_PASSWORD>@db.<project-ref>.supabase.co:54
 - `DATABASE_URL` 可在 Supabase Dashboard 的 Database 設定頁取得；若有 PgBouncer，常見是 `...:6543`，否則預設 `5432`。
 
 ## 我將執行的步驟
-1. 寫入你提供的環境變數到 `bambigo-web/.env.local`（不曝光任何秘密）。
+1. 寫入你提供的環境變數到 `.env.local`（不曝光任何秘密）。
 2. 先跑 `npm run init:schema` 確保 `nodes` 表與索引存在。
 3. 跑 `npm run fetch:odpt`：
    - 只抓取運營商 `JR-East`、`TokyoMetro`、`Toei` 的 `Station` 與 `BusstopPole`。

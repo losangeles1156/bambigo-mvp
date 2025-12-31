@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { SEED_NODES } from '@/lib/nodes/seedNodes';
+import { resolveHubStationMembers } from '@/lib/constants/stationLines';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,6 +29,12 @@ function haversineMeters(a: { lat: number; lon: number }, b: { lat: number; lon:
 
 function parseLocation(loc: any): { coordinates: [number, number] } {
     if (!loc) return { coordinates: [0, 0] };
+    if (Array.isArray(loc) && loc.length >= 2) {
+        return { coordinates: [Number(loc[0]), Number(loc[1])] };
+    }
+    if (loc.coordinates?.coordinates && Array.isArray(loc.coordinates.coordinates)) {
+        return { coordinates: [loc.coordinates.coordinates[0], loc.coordinates.coordinates[1]] };
+    }
     if (loc.coordinates && Array.isArray(loc.coordinates)) {
         return { coordinates: [loc.coordinates[0], loc.coordinates[1]] };
     }
@@ -119,11 +126,23 @@ export async function GET(req: Request) {
     } else {
         try {
             const supabase = createClient(supabaseUrl, supabaseKey);
-            const { data, error } = await supabase.rpc('nearby_nodes', {
+            let data: any = null;
+            let error: any = null;
+
+            ({ data, error } = await supabase.rpc('nearby_nodes_v2', {
                 center_lat: center.lat,
                 center_lon: center.lon,
-                radius_meters: Math.round(radiusMeters)
-            });
+                radius_meters: Math.round(radiusMeters),
+                max_results: 8000
+            }));
+
+            if (error) {
+                ({ data, error } = await supabase.rpc('nearby_nodes', {
+                    center_lat: center.lat,
+                    center_lon: center.lon,
+                    radius_meters: Math.round(radiusMeters)
+                }));
+            }
 
             if (error) {
                 degraded = true;
@@ -153,7 +172,7 @@ export async function GET(req: Request) {
                 id: String((n as any).id ?? ''),
                 city_id: String((n as any).city_id ?? ''),
                 name: (n as any).name ?? { 'zh-TW': '車站', ja: '駅', en: 'Station' },
-                type: String((n as any).type ?? 'station'),
+                type: String((n as any).type ?? (n as any).node_type ?? 'station'),
                 location,
                 geohash: String((n as any).geohash ?? ''),
                 vibe: (n as any).vibe ?? null,
@@ -165,6 +184,7 @@ export async function GET(req: Request) {
         .filter(n => {
             const [lon, lat] = n.location.coordinates;
             if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
+            if (lat === 0 && lon === 0) return false;
             if (lat < minLat || lat > maxLat || lon < minLon || lon > maxLon) return false;
             if (hubsOnly && !n.is_hub) return false;
             return true;
@@ -175,19 +195,39 @@ export async function GET(req: Request) {
             return da - db;
         });
 
+    // Deduplicate based on Hub Membership to prevent overlapping nodes
+    const seenHubs = new Set<string>();
+    const deduplicated = [];
+
+    for (const node of filtered) {
+        const members = resolveHubStationMembers(node.id);
+        // Use the first member of the hub as the unique key for this group
+        const hubKey = (members && members.length > 0) ? members[0] : node.id;
+
+        if (seenHubs.has(hubKey)) {
+            continue;
+        }
+
+        seenHubs.add(hubKey);
+        deduplicated.push(node);
+    }
+
     // Implement truncation to respect maxDataSizeKb
     // A rough estimation: each node is about 0.4KB to 0.6KB in JSON
     const estimatedNodeSizeKb = 0.5;
     const maxNodesAllowed = Math.floor(maxDataSizeKb / estimatedNodeSizeKb);
     
-    const limitedNodes = filtered.slice(0, Math.min(filtered.length, pageSize, maxNodesAllowed));
-    const hasMore = filtered.length > limitedNodes.length;
+    const start = page * pageSize;
+    const end = start + pageSize;
+    const limitedNodes = deduplicated.slice(start, Math.min(deduplicated.length, end, start + maxNodesAllowed));
+    const hasMore = deduplicated.length > end;
 
     return NextResponse.json({
         nodes: limitedNodes,
         page,
+        next_page: hasMore ? page + 1 : null,
         page_size: pageSize,
-        total_in_viewport: filtered.length,
+        total_in_viewport: deduplicated.length,
         has_more: hasMore,
         degraded,
         source

@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const workflowPath = path.resolve(process.cwd(), 'n8n/bambigo-l2-train-disruption-workflow.json');
+const workflowPath = path.resolve(process.cwd(), 'n8n/lutagu-l2-train-disruption-workflow.json');
 const jsCodePath = path.resolve(process.cwd(), 'scripts/temp_l2_transform.js');
 
 try {

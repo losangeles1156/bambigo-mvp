@@ -2,7 +2,7 @@
     "Home": {
         "title": "LUTAGU",
         "currentLocation": "現在地",
-        "askBambiGO": "ルタグに聞く...",
+        "askLutagu": "ルタグに聞く...",
         "aiPlaceholder": "ルタグに聞く..."
     },
     "status": {
@@ -102,7 +102,7 @@
         "dna": "DNA (L1)",
         "live": "LIVE (L2)",
         "facility": "FACILITY (L3)",
-        "bambi": "LUTAGU (L4)"
+        "lutagu": "LUTAGU (L4)"
     },
     "tag": {
         "shopping": "買い物",
@@ -177,7 +177,7 @@
     },
     "l1": {
         "dnaTitle": "生活機能",
-        "bambiInsight": "ルタグ インサイト",
+        "lutaguInsight": "ルタグ インサイト",
         "nearbyHighlights": "周辺スポット (300m)",
         "noHighlights": "周辺スポットなし",
         "menuTitle": "カテゴリ詳細",
@@ -299,17 +299,17 @@
             "sizes": "サイズ: {sizes}",
             "count": "個数: {count}",
             "hours": "営業時間: {hours}",
-            "askBambi": "この施設について LUTAGU に聞く"
+            "askLutagu": "この施設について ルタグ に聞く"
         }
     },
     "l4": {
         "initialMessage": "こんにちは！ここは {station} です。どこへ行きたいですか？ルート、運賃、時刻表を調べられます。",
-        "strategyTitle": "LUTAGU 戦略",
+        "strategyTitle": "ルタグ 戦略",
         "subtitle": "リアルタイムデータに基づく提案",
         "topPick": "おすすめ",
         "alternatives": "その他の選択肢",
         "disclaimer": "提案は現在の交通、天気、施設状況に基づいています。",
-        "bambiStrategy": "LUTAGU 提案",
+        "lutaguStrategy": "ルタグ 提案",
         "suggestion": "提案",
         "psychAlert": "心構え",
         "synthesisTitle": "意思決定サポート",
@@ -334,7 +334,7 @@
         "inputPlaceholder": "ルートを相談（質問・雑談...）",
         "chatError": "通信エラーが発生しました。",
         "userLabel": "あなた",
-        "bambiLabel": "LUTAGU",
+        "lutaguLabel": "ルタグ",
         "thinking": {
             "initializing": "認知エンジンを起動中...",
             "l2": "L2の運行・天気を分析中...",

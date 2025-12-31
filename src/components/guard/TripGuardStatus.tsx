@@ -33,7 +33,7 @@ export function TripGuardStatus() {
                         {tTripGuard('anomalyBodySample')}
                     </p>
                     <div className="bg-rose-50 p-2 rounded-xl text-[10px] font-bold text-rose-700 border border-rose-100">
-                        🦌 {tTripGuard('anomalyAdviceSample')}
+                        ✨ {tTripGuard('anomalyAdviceSample')}
                     </div>
                 </div>
             )}

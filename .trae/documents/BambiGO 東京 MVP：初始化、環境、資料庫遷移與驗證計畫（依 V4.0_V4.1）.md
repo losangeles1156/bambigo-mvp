@@ -1,14 +1,14 @@
 ## 現況檢查
-- 專案：`bambigo-web` 為 Next.js 16（App Router）已就緒。
+- 專案：`lutagu-pwa` 為 Next.js（App Router）已就緒。
 - 依賴：`mapbox-gl`, `react-map-gl`, `@supabase/supabase-js`, `lucide-react`, `next-intl`, `clsx`, `tailwind-merge` 已安裝。
-- 架構文件：根目錄含 `BambiGO 技術架構規格書V4.0.pdf` 與 `BambiGO_Database_Schema_v4.1.md.pdf`；未找到 `.trae/context.md`，將以現有 PDF 為依據。
+- 架構文件：根目錄含技術架構規格書與 Database Schema PDF；未找到 `.trae/context.md`，將以現有 PDF 為依據。
 
 ## 專案初始化（核對）
 - 保留現有 Next.js 設定與依賴（均符合要求）。
 - 若其他工作區警告（turbopack root）已修正，不需變更。
 
 ## 環境變數與客戶端
-- 讀取 `bambigo-web/.env.local`（內含 `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `ODPT_API_TOKEN`, `NEXT_PUBLIC_MAPBOX_TOKEN`, `DATABASE_URL`）。
+- 讀取 `.env.local`（內含 `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `ODPT_API_TOKEN`, `NEXT_PUBLIC_MAPBOX_TOKEN`, `DATABASE_URL`）。
 - 新增或核對：
   - `lib/supabase.ts`（前端用）：`createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)`
   - `lib/utils.ts`：提供 `cn(...inputs)` 使用 `clsx` + `tailwind-merge`。

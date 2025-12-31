@@ -1,5 +1,5 @@
 {
-    "name": "BambiGO Weather Data Sync",
+    "name": "LUTAGU Weather Data Sync",
     "nodes": [
         {
             "parameters": {
@@ -219,6 +219,6 @@
     },
     "staticData": null,
     "meta": {
-        "templateId": "bambigo-weather-sync"
+        "templateId": "lutagu-weather-sync"
     }
 }

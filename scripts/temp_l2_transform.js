@@ -1,4 +1,4 @@
-// ===== BambiGO L2 轉換為 L4 決策結構 (Line-Centric Optimized) =====
+// ===== LUTAGU L2 轉換為 L4 決策結構 (Line-Centric Optimized) =====
 
 const { disruptions, fetched_at, debug } = $input.first().json;
 

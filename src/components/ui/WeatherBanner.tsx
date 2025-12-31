@@ -25,25 +25,10 @@ export function WeatherBanner() {
                 if (res.ok) {
                     const data = await res.json();
                     if (data.alerts && data.alerts.length > 0) {
-                        // [Filter] Only show relevant alerts for Tokyo core
-                        const filteredAlerts = data.alerts.filter((alert: WeatherAlert) => {
-                            const text = (alert.title + alert.summary).replace(/\s/g, '');
-
-                            // Emergency is always relevant
-                            if (alert.severity === 'critical' || text.includes('特別警報')) return true;
-
-                            // Filter out remote islands if "Tokyo" or "23 Wards" is NOT mentioned
-                            const isIslandOnly = (text.includes('伊豆諸島') || text.includes('小笠原諸島'))
-                                && !text.includes('東京地方')
-                                && !text.includes('23区');
-
-                            return !isIslandOnly;
-                        });
-
-                        if (filteredAlerts.length > 0) {
-                            setAlerts(filteredAlerts);
-                            setIsVisible(true);
-                        }
+                        // The backend already performs strict filtering for Tokyo, Kanagawa, and Chiba.
+                        // We trust the backend data and display it directly.
+                        setAlerts(data.alerts);
+                        setIsVisible(true);
                     }
                 }
             } catch (error) {

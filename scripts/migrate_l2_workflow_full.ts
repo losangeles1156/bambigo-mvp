@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const workflowPath = path.resolve(process.cwd(), 'n8n/bambigo-l2-train-disruption-workflow.json');
+const workflowPath = path.resolve(process.cwd(), 'n8n/lutagu-l2-train-disruption-workflow.json');
 const jsCodePath = path.resolve(process.cwd(), 'scripts/temp_l2_transform.js');
 
 try {
@@ -14,7 +14,7 @@ try {
     const workflow = JSON.parse(workflowContent);
 
     // 2. Update Transform Node Code
-    const transformNode = workflow.nodes.find(n => n.name === 'Transform to L4 Structure');
+    const transformNode = workflow.nodes.find((n: any) => n.name === 'Transform to L4 Structure');
     if (transformNode) {
         console.log('✅ Updating Transform logic...');
         transformNode.parameters.jsCode = jsCode;
@@ -23,7 +23,7 @@ try {
     }
 
     // 3. Migrate Redis Nodes to Supabase HTTP
-    workflow.nodes = workflow.nodes.map(node => {
+    workflow.nodes = workflow.nodes.map((node: any) => {
         // Replace "Redis Cache" -> "Supabase Upsert (Disruption)"
         if (node.name === 'Redis Cache') {
             console.log('✅ Migrating Redis Cache node...');
@@ -91,20 +91,20 @@ try {
 
     // 4. Update Connections (Rename keys/targets)
     // We need to update the connection map because node names changed
-    const newConnections = {};
+    const newConnections: Record<string, any> = {};
 
-    for (const [sourceName, targets] of Object.entries(workflow.connections)) {
+    for (const [sourceName, targets] of Object.entries(workflow.connections as Record<string, any>)) {
         // Map output target names
         const newSourceName =
             sourceName === 'Redis Cache' ? 'Supabase Upsert (Disruption)' :
                 sourceName === 'Redis Cache (Normal)' ? 'Supabase Upsert (Normal)' :
                     sourceName;
 
-        const newTargets = { ...targets };
+        const newTargets: Record<string, any> = { ...targets };
 
         // Iterate main/main...
-        for (const [outputName, connections] of Object.entries(targets)) {
-            newTargets[outputName] = connections.map(conn => {
+        for (const [outputName, connections] of Object.entries(targets as Record<string, any>)) {
+            newTargets[outputName] = (connections as any[]).map((conn: any) => {
                 let newNodeName = conn.node;
                 if (conn.node === 'Redis Cache') newNodeName = 'Supabase Upsert (Disruption)';
                 if (conn.node === 'Redis Cache (Normal)') newNodeName = 'Supabase Upsert (Normal)';

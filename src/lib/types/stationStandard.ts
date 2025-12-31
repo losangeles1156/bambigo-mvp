@@ -76,9 +76,15 @@ export interface L3Facility {
     location: LocaleString; // "Inside Ticket Gate, Central Concourse"
     isAvailable?: boolean; // Real-time availability if possible
     details?: LocaleString[]; // ["Large size available", "Suica accepted"]
+    attributes?: Record<string, any>; // Arbitrary additional properties (hours, notes, etc.)
 }
 
-// --- L4: Bambi (Strategy) ---
+/**
+ * @deprecated Use L3Facility instead. This alias exists for backward compatibility during migration.
+ */
+export type ServiceFacility = L3Facility;
+
+// --- L4: Strategy (LUTAGU) ---
 export interface ActionCard {
     id: string;
     type: 'primary' | 'secondary';
@@ -118,7 +124,7 @@ export interface StationUIProfile {
     l3_facilities: L3Facility[];
 
     // Quick Links (e.g. Toilet Vacancy)
-    external_links?: { title: string; url: string; icon?: string; bg?: string }[];
+    external_links?: { title: LocaleString; url: string; icon?: string; bg?: string; tracking_id?: string; type?: string }[];
 
     // L4: Strategy
     l4_cards: ActionCard[];

@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
-  title: BambiGO Backend Tools
-  description: Real-time data APIs for BambiGO Dify Agent
+  title: LUTAGU Backend Tools
+  description: Real-time data APIs for LUTAGU Dify Agent
   version: 1.0.0
 servers:
-  - url: https://bambigo-mvp.vercel.app
+  - url: https://lutagu-mvp.vercel.app
 paths:
   /api/weather/live:
     get:

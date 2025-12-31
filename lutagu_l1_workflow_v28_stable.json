@@ -1,5 +1,5 @@
 {
-    "name": "BambiGO L1: V28 (Production Stable)",
+    "name": "LUTAGU L1: V28 (Production Stable)",
     "nodes": [
         {
             "id": "node-schedule",
@@ -24,7 +24,7 @@
         {
             "id": "node-get-todo",
             "parameters": {
-                "url": "https://bambigo-mvp.vercel.app/api/l1/todo",
+                "url": "https://lutagu-mvp.vercel.app/api/l1/todo",
                 "options": {
                     "timeout": 30000
                 }
@@ -172,7 +172,7 @@
             "id": "node-backend",
             "parameters": {
                 "method": "POST",
-                "url": "https://bambigo-mvp.vercel.app/api/l1/ingest",
+                "url": "https://lutagu-mvp.vercel.app/api/l1/ingest",
                 "sendBody": true,
                 "specifyBody": "json",
                 "jsonBody": "={{JSON.stringify($json)}}",

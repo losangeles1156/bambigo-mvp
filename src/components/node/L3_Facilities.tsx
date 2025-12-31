@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { StationUIProfile, L3Facility, FacilityType } from '@/lib/types/stationStandard';
+import { StationUIProfile, L3Facility, FacilityType, LocaleString } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 import {
     User, Briefcase, Zap, ArrowUpDown, CircleDollarSign, Baby, Bike, Wifi, Info,
@@ -40,6 +40,8 @@ const FACILITY_COLORS: Record<FacilityType | string, string> = {
     accommodation: 'bg-rose-100 text-rose-600'
 };
 
+import { FacilityDetailModal } from '@/components/ui/FacilityDetailModal';
+
 interface L3_FacilitiesProps {
     data: StationUIProfile;
 }
@@ -52,6 +54,36 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
     const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [retryKey, setRetryKey] = useState(0);
+    const [selectedFacility, setSelectedFacility] = useState<L3Facility | null>(null);
+
+    const trackEvent = (payload: {
+        activityType: 'external_link_click' | 'facility_open';
+        nodeId: string;
+        trackingId?: string | null;
+        url?: string | null;
+        title?: string | null;
+        facilityType?: string | null;
+        facilityId?: string | null;
+    }) => {
+        try {
+            void fetch('/api/activity', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    activityType: payload.activityType,
+                    nodeId: payload.nodeId,
+                    trackingId: payload.trackingId ?? null,
+                    url: payload.url ?? null,
+                    title: payload.title ?? null,
+                    facilityType: payload.facilityType ?? null,
+                    facilityId: payload.facilityId ?? null
+                }),
+                keepalive: true
+            });
+        } catch {
+            return;
+        }
+    };
 
     // Group facilities by type
     const groupedFacilities = useMemo(() => {
@@ -91,15 +123,42 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                 if (isMounted && json.facilities) {
                     // Adapt Backend Data (StationFacility) to UI Data (L3Facility)
                     const adapted: L3Facility[] = json.facilities.map((f: any, idx: number) => {
-                        const nameObj = typeof f.location === 'object' ? f.location : { ja: f.location, en: f.location, zh: f.location };
+                        // Resolve Name/Location with priority: location object > name_i18n > raw location string
+                        let nameObj: LocaleString;
+                        const rawName = f.name_i18n || f.location || f.name || 'Unknown';
+                        
+                        if (typeof rawName === 'object' && rawName !== null) {
+                             nameObj = {
+                                ja: rawName.ja || rawName.en || rawName.zh,
+                                en: rawName.en || rawName.ja || rawName.zh,
+                                zh: rawName.zh || rawName['zh-TW'] || rawName.ja
+                            };
+                        } else {
+                            nameObj = { ja: rawName, en: rawName, zh: rawName };
+                        }
+                        
+                        let locObj: LocaleString;
+                        const rawLoc = f.location || nameObj;
+                         if (typeof rawLoc === 'object' && rawLoc !== null) {
+                             locObj = {
+                                ja: rawLoc.ja || rawLoc.en || rawLoc.zh,
+                                en: rawLoc.en || rawLoc.ja || rawLoc.zh,
+                                zh: rawLoc.zh || rawLoc['zh-TW'] || rawLoc.ja
+                            };
+                        } else {
+                            locObj = { ja: rawLoc, en: rawLoc, zh: rawLoc };
+                        }
+
                         return {
                             id: `${data.id}-l3-${idx}-${Date.now()}`,
                             type: f.type,
                             name: nameObj,
-                            location: nameObj,
+                            location: locObj,
                             details: f.attributes ? Object.entries(f.attributes).map(([k, v]) => {
-                                return { ja: `${k}: ${v}`, en: `${k}: ${v}`, zh: `${k}: ${v}` };
-                            }) : []
+                                const val = `${k}: ${v}`;
+                                return { ja: val, en: val, zh: val };
+                            }) : [],
+                            attributes: f.attributes
                         };
                     });
                     setFacilities(adapted);
@@ -170,13 +229,22 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                                trackEvent({
+                                    activityType: 'external_link_click',
+                                    nodeId: data.id,
+                                    trackingId: (link as any)?.tracking_id ?? null,
+                                    url: link.url,
+                                    title: getLocaleString(link.title, locale)
+                                })
+                            }
                             className={`flex items-center justify-between p-4 rounded-2xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] ${link.bg || 'bg-blue-600'} text-white`}
                         >
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-white/20 rounded-xl">
                                     {link.icon === 'toilet' ? <User size={20} aria-hidden="true" /> : <ExternalLink size={20} aria-hidden="true" />}
                                 </div>
-                                <span className="font-bold text-sm">{link.title}</span>
+                                <span className="font-bold text-sm">{getLocaleString(link.title, locale)}</span>
                             </div>
                             <ExternalLink size={16} className="opacity-80" aria-hidden="true" />
                         </a>
@@ -208,19 +276,23 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                             {/* Category Header */}
                             <button
                                 onClick={() => toggleCategory(type)}
-                                className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                                className="w-full flex items-center justify-between p-4 hover:bg-gray-50/80 transition-colors group"
                             >
-                                <div className="flex items-center gap-3">
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${colorClass}`}>
-                                        <Icon size={20} aria-hidden="true" />
+                                <div className="flex items-center gap-4">
+                                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${colorClass} shadow-sm group-hover:scale-105 transition-transform`}>
+                                        <Icon size={24} aria-hidden="true" strokeWidth={2.5} />
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="text-sm font-bold text-gray-900 capitalize">{label}</h4>
-                                        <span className="text-[10px] text-gray-400 font-medium">{tL3('facilitiesFound', { count: items.length })}</span>
+                                        <h4 className="text-sm font-extrabold text-gray-900 capitalize tracking-tight">{label}</h4>
+                                        <div className="flex items-center gap-2 mt-0.5">
+                                            <span className="text-[10px] text-gray-500 font-bold bg-white px-1.5 py-0.5 rounded-md border border-gray-100 shadow-sm">
+                                                {items.length} {tL3('items', { defaultValue: 'Items' })}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className={`p-2 rounded-full bg-gray-50 text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
-                                    <ChevronDown size={16} aria-hidden="true" />
+                                <div className={`w-8 h-8 flex items-center justify-center rounded-full bg-white border border-gray-100 text-gray-400 shadow-sm transition-all duration-300 ${isExpanded ? 'rotate-180 bg-gray-50' : 'group-hover:border-gray-200'}`}>
+                                    <ChevronDown size={16} aria-hidden="true" strokeWidth={2.5} />
                                 </div>
                             </button>
 
@@ -235,7 +307,19 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                                     >
                                         <div className="px-4 pb-4 space-y-3 border-t border-gray-50 bg-gray-50/30 pt-3">
                                             {items.map((fac) => (
-                                                <div key={fac.id} className="bg-white p-3 rounded-xl border border-gray-100 flex items-start gap-3">
+                                                <div 
+                                                    key={fac.id} 
+                                                    className="bg-white p-3 rounded-xl border border-gray-100 flex items-start gap-3 cursor-pointer hover:border-indigo-200 hover:shadow-sm transition-all active:scale-[0.99]"
+                                                    onClick={() => {
+                                                        trackEvent({
+                                                            activityType: 'facility_open',
+                                                            nodeId: data.id,
+                                                            facilityType: fac.type,
+                                                            facilityId: fac.id
+                                                        });
+                                                        setSelectedFacility(fac);
+                                                    }}
+                                                >
                                                     <div className="mt-1 text-gray-300">
                                                         <MapPin size={14} aria-hidden="true" />
                                                     </div>
@@ -263,6 +347,23 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                     );
                 })}
             </div>
+
+            {/* Detail Modal */}
+            {selectedFacility && (
+                <FacilityDetailModal
+                    facility={{
+                        id: selectedFacility.id,
+                        category: selectedFacility.type,
+                        subCategory: selectedFacility.type,
+                        location: getLocaleString(selectedFacility.location, locale),
+                        attributes: {
+                            ...selectedFacility.attributes,
+                            name: getLocaleString(selectedFacility.name, locale)
+                        }
+                    }}
+                    onClose={() => setSelectedFacility(null)}
+                />
+            )}
         </div>
     );
 }

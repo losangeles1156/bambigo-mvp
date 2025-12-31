@@ -1,4 +1,4 @@
-# 🦌 LUTAGU - 城市感性導航服務 (Urban Empathy Navigation)
+# ✨ LUTAGU - 城市感性導航服務 (Urban Empathy Navigation)
 
 > **LUTAGU 是一個「AI 移動導引助手」——在你於日本旅行「卡住的時刻(不知道如何選擇)」，主動告訴你下一步應該怎麼做。**
 
@@ -6,10 +6,10 @@
 
 ---
 
-## 🦌 名稱由來
+## ✨ 名稱由來
 **LUTAGU (ルタグ)**
 
-LUTAGU 是一位溫柔的指引者，像守護靈鹿一樣，根據即時數據為用戶提供最貼心的行動建議。它為城市中的每個節點貼上感性標籤 (Tag)，指引旅人前行。
+LUTAGU 是一位溫柔的指引者，像守護靈一樣，根據即時數據為用戶提供最貼心的行動建議。它為城市中的每個節點貼上感性標籤 (Tag)，指引旅人前行。
 
 ## ❓ 想解決什麼問題？
 
@@ -110,8 +110,8 @@ LUTAGU 的建議不是憑空生成，而是透過獨家的「LUTAGU Tagging Engi
 
 ### 1. 下載專案
 ```bash
-git clone https://github.com/losangeles1156/bambigo-mvp.git
-cd bambigo-mvp
+git clone https://github.com/losangeles1156/lutagu-mvp.git
+cd lutagu-mvp
 ```
 
 ### 2. 安裝套件
@@ -139,11 +139,10 @@ npm run dev
 
 ## 📚 開發者文件
 
-如果您是開發團隊成員或希望深入了解系統設計，請參閱 [bambigo-v2.1](./bambigo-v2.1/README.md) 目錄下的詳細規格書：
+如果您希望深入了解系統設計，請參閱 `rules/` 目錄下的規格：
 
-*   **專案規範**: `bambigo-v2.1/.trae/rules/project_rules.md`
-*   **資料庫結構**: `bambigo-v2.1/.trae/rules/db_schema.md`
-*   **AI 架構**: `bambigo-v2.1/.trae/rules/AI_ARCHITECTURE.md`
+*   **專案規範**: `rules/lutagu_project_rules.md`
+*   **開發規範**: `rules/project_rules.md`
 
 ---
 

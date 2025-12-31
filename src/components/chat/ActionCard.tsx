@@ -97,7 +97,7 @@ export function ActionCard({ action, onClick }: ActionCardProps) {
                     <div className="flex-1">
                         <div className="flex justify-between items-start mb-1">
                             <span className={`text-[10px] font-black uppercase tracking-widest ${config.textColor} opacity-80`}>
-                                BAMBI DECISION
+                                LUTAGU DECISION
                             </span>
                             {action.timeSaved && (
                                 <span className="flex items-center gap-1 text-[10px] font-black bg-white/60 px-2 py-0.5 rounded-full text-green-700 uppercase tracking-tighter shadow-sm">

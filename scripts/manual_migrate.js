@@ -3,10 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const { Client } = require('pg');
 
-const connectionString = "postgresql://postgres.evubeqeaafdjnuocyhmb:K521128lalK@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres";
+const dotenv = require('dotenv');
+dotenv.config({ path: path.join(__dirname, '../.env.local') });
+
+const connectionString = process.env.SUPABASE_DB_URL || process.env.DATABASE_URL;
 const migrationsDir = path.join(__dirname, '../supabase', 'migrations');
 
 async function applyMigrations() {
+    if (!connectionString) {
+        throw new Error('Missing SUPABASE_DB_URL or DATABASE_URL');
+    }
     const client = new Client({
         connectionString,
         ssl: { rejectUnauthorized: false }

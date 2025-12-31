@@ -1,15 +1,20 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter, useSearchParams } from 'next/navigation';
-import type { SupabaseClient } from '@supabase/supabase-js';
+import type { Session, SupabaseClient } from '@supabase/supabase-js';
 
 import { getSupabase } from '@/lib/supabase';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 function normalizeNextPath(nextPath: string | null, locale: string) {
     if (!nextPath) return `/${locale}`;
     if (!nextPath.startsWith('/')) return `/${locale}`;
+    if (nextPath.startsWith('//')) return `/${locale}`;
+    if (nextPath.includes('://')) return `/${locale}`;
+    if (nextPath.includes('\\')) return `/${locale}`;
+    if (nextPath === `/${locale}/login` || nextPath.startsWith(`/${locale}/login?`)) return `/${locale}`;
     return nextPath;
 }
 
@@ -31,9 +36,11 @@ export default function LoginPage() {
 
     const [email, setEmail] = useState('');
     const [busy, setBusy] = useState(false);
-    const [sessionEmail, setSessionEmail] = useState<string | null>(null);
+    const [session, setSession] = useState<Session | null>(null);
     const [sentMagicLink, setSentMagicLink] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const ensuredProfileUserIdRef = useRef<string | null>(null);
 
     useEffect(() => {
         if (!supabase) return;
@@ -43,13 +50,13 @@ export default function LoginPage() {
         async function load() {
             const { data } = await client.auth.getSession();
             if (cancelled) return;
-            setSessionEmail(data.session?.user?.email || null);
+            setSession(data.session || null);
         }
 
         void load();
 
         const { data } = client.auth.onAuthStateChange((_event, session) => {
-            setSessionEmail(session?.user?.email || null);
+            setSession(session || null);
         });
 
         return () => {
@@ -59,9 +66,55 @@ export default function LoginPage() {
     }, [supabase]);
 
     useEffect(() => {
-        if (!sessionEmail) return;
-        router.replace(nextPath);
-    }, [nextPath, router, sessionEmail]);
+        if (!session) return;
+        if (!supabase) return;
+        if (!session.access_token) return;
+
+        const userId = session.user.id;
+        const accessToken = session.access_token;
+        if (ensuredProfileUserIdRef.current === userId) return;
+
+        ensuredProfileUserIdRef.current = userId;
+        let cancelled = false;
+
+        async function ensureProfileAndRedirect() {
+            setBusy(true);
+            setError(null);
+            try {
+                const res = await fetch('/api/me', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                });
+
+                if (!res.ok) {
+                    let details = '';
+                    try {
+                        details = await res.text();
+                    } catch {
+                        details = '';
+                    }
+                    throw new Error(`登入後初始化失敗（${res.status}）${details ? `：${details}` : ''}`);
+                }
+
+                if (cancelled) return;
+                router.replace(nextPath);
+            } catch (e: any) {
+                if (cancelled) return;
+                ensuredProfileUserIdRef.current = null;
+                setError(e?.message || '登入後初始化失敗');
+            } finally {
+                if (cancelled) return;
+                setBusy(false);
+            }
+        }
+
+        void ensureProfileAndRedirect();
+        return () => {
+            cancelled = true;
+        };
+    }, [nextPath, router, session, supabase]);
 
     async function signInWithGoogle() {
         setError(null);
@@ -132,18 +185,21 @@ export default function LoginPage() {
                 setError(res.error.message);
                 return;
             }
-            setSessionEmail(null);
+            setSession(null);
         } finally {
             setBusy(false);
         }
     }
 
     return (
-        <main className="min-h-screen bg-slate-50">
+        <main className="min-h-screen bg-slate-50 relative">
+            <div className="absolute top-4 right-4 z-10">
+                <LanguageSwitcher />
+            </div>
             <div className="max-w-md mx-auto px-6 py-10">
                 <div className="text-xl font-black tracking-tight text-slate-900">會員登入</div>
                 <div className="mt-1 text-xs font-bold text-slate-500">
-                    {sessionEmail ? `目前登入：${sessionEmail}` : '匿名使用中（可先試用地圖）'}
+                    {session?.user?.email ? `目前登入：${session.user.email}` : '匿名使用中（可先試用地圖）'}
                 </div>
 
                 <div className="mt-6 bg-white rounded-[24px] border border-slate-100 shadow-sm p-6">
@@ -202,7 +258,7 @@ export default function LoginPage() {
                             </button>
                             <button
                                 onClick={signOut}
-                                disabled={busy || !sessionEmail}
+                                disabled={busy || !session}
                                 className="flex-1 py-3 rounded-2xl bg-slate-100 text-slate-800 font-black text-sm hover:bg-slate-200 disabled:opacity-60"
                             >
                                 登出

@@ -1,5 +1,5 @@
 {
-    "name": "BambiGO L3: Bike Share Import",
+    "name": "LUTAGU L3: Bike Share Import",
     "nodes": [
         {
             "parameters": {
@@ -109,7 +109,7 @@
         {
             "parameters": {
                 "method": "POST",
-                "url": "https://bambigo-mvp.vercel.app/api/l3/ingest-bikes",
+                "url": "https://lutagu-mvp.vercel.app/api/l3/ingest-bikes",
                 "sendBody": true,
                 "specifyBody": "json",
                 "jsonBody": "={\n  \"provider\": \"docomo\",\n  \"stations\": {{$json.items}}\n}",
@@ -127,7 +127,7 @@
         {
             "parameters": {
                 "method": "POST",
-                "url": "https://bambigo-mvp.vercel.app/api/l3/ingest-bikes",
+                "url": "https://lutagu-mvp.vercel.app/api/l3/ingest-bikes",
                 "sendBody": true,
                 "specifyBody": "json",
                 "jsonBody": "={\n  \"provider\": \"hellocycling\",\n  \"stations\": {{$json.items}}\n}",

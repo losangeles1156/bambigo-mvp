@@ -13,12 +13,13 @@ import {
 import { L1_DNA } from '@/components/node/L1_DNA';
 import { L2_Live } from '@/components/node/L2_Live';
 import { L3_Facilities } from '@/components/node/L3_Facilities';
-import { L4_Bambi } from '@/components/node/L4_Bambi';
+import L4_Dashboard from '@/components/node/L4_Dashboard';
 import { FacilityFingerprint } from '@/components/node/FacilityFingerprint';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { TimetableBoard } from '@/components/odpt/TimetableBoard';
 import { FareTable } from '@/components/odpt/FareTable';
 import { guessOperator } from '@/hooks/useOdptData';
+import { StationUIProfile } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 
 // Tab Configuration
@@ -26,14 +27,15 @@ const TABS = [
     { id: 'dna', label: 'DNA', icon: Dna, color: 'bg-blue-500' },
     { id: 'live', label: 'LIVE', icon: Activity, color: 'bg-green-500' },
     { id: 'l3', label: 'FACILITY', icon: Grid, color: 'bg-orange-500' },
-    { id: 'l4', label: 'BAMBI', icon: Sparkles, color: 'bg-purple-600' },
+    { id: 'l4', label: 'STRATEGY', icon: Sparkles, color: 'bg-purple-600' },
 ];
 
 export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any }) {
-    const [activeTab, setActiveTab] = useState('l4'); // Default to L4 for Bambi strategy
+    const [activeTab, setActiveTab] = useState('l4'); // Default to L4 for LUTAGU strategy
     const [seedQuestion, setSeedQuestion] = useState<string>('');
     const tTabs = useTranslations('tabs');
     const tCommon = useTranslations('common');
+    const tL4 = useTranslations('l4');
     const locale = useLocale();
 
     // Use real profile data or fallback to basic node structure
@@ -48,32 +50,14 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
     const l2Adapter = (() => {
         const source = rawData.l2_status || {};
 
-        const toLocaleString = (value: any) => {
-            if (!value) return undefined;
-            if (typeof value === 'string') return { ja: value, en: value, zh: value };
-            if (typeof value === 'object') {
-                const ja = value.ja ?? value['ja-JP'] ?? value.jp ?? value.japanese;
-                const en = value.en ?? value.english;
-                const zh = value.zh ?? value['zh-TW'] ?? value['zh-Hant'] ?? value.chinese;
-                const anyText = ja || en || zh;
-                if (!anyText) return undefined;
-                return {
-                    ja: ja || en || zh,
-                    en: en || ja || zh,
-                    zh: zh || ja || en
-                };
-            }
-            return undefined;
-        };
-
         return {
             lines: (source.line_status || []).map((l: any, idx: number) => ({
                 id: `line-${idx}`,
-                name: toLocaleString(l.name) || { ja: l.line, en: l.line, zh: l.line },
+                name: getLocaleString(l.name, locale) || l.line || l.name,
                 operator: l.operator || 'Metro',
                 color: l.color || '#999999',
                 status: l.status || 'normal',
-                message: toLocaleString(l.message)
+                message: getLocaleString(l.message, locale)
             })),
             weather: {
                 temp: source.weather?.temp || 0,
@@ -82,7 +66,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
             },
             crowd: {
                 level: source.congestion || 1,
-                trend: 'stable',
+                trend: 'stable' as const,
                 userVotes: {
                     total: 0,
                     distribution: [0, 0, 0, 0, 0]
@@ -92,17 +76,25 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
         };
     })();
 
-    const standardData = {
-        ...rawData,
-        // Ensure name is a proper LocaleString even if rawData is messy
+    const standardData: StationUIProfile = {
+        id: rawData.id || rawData.node_id || 'unknown',
+        tier: rawData.tier || 'minor',
         name: {
             ja: rawData.name?.ja || rawData.title || 'Station',
             en: rawData.name?.en || rawData.title || 'Station',
             zh: rawData.name?.zh || rawData.name?.['zh-TW'] || rawData.title || '車站'
         },
-        id: rawData.id || rawData.node_id, // Normalize ID
-        l3_facilities: rawData.l3_facilities || [], // Default to array
-        l2: l2Adapter
+        description: { ja: '', en: '', zh: '' }, // Default description
+        mapDesign: rawData.mapDesign,
+        l1_dna: rawData.l1_dna || {
+            categories: {}, // Populate if possible from category_counts
+            vibe_tags: rawData.vibe_tags || [],
+            last_updated: new Date().toISOString()
+        },
+        l2: l2Adapter,
+        l3_facilities: rawData.l3_facilities || [],
+        l4_cards: rawData.l4_cards || [],
+        external_links: rawData.external_links
     };
 
     const stationName = getLocaleString(standardData.name, locale) || tCommon('station');
@@ -144,8 +136,10 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
         return '';
     };
 
+    // Keep legacy seed builder logic for fingerprint clicks, 
+    // but redirect to specific L4 actions if we can. 
+    // For now, we just switch tab to L4.
     const handleFingerprintSelect = (category: string) => {
-        setSeedQuestion(buildSeedQuestion(category));
         setActiveTab('l4');
     };
 
@@ -172,7 +166,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                                 </div>
                                 <span className={`text-[9px] font-black uppercase tracking-widest ${isActive ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
                                     }`}>
-                                    {tTabs(tab.id === 'l3' ? 'facility' : tab.id === 'l4' ? 'bambi' : tab.id)}
+                                    {tTabs(tab.id === 'l3' ? 'facility' : tab.id === 'l4' ? 'lutagu' : tab.id)}
                                 </span>
 
                                 {/* Active Indicator Dot */}
@@ -270,16 +264,16 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
+                            className="h-full"
                         >
                             <div className="flex items-center gap-2 mb-4 px-1">
                                 <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 uppercase tracking-wider">Level 4</span>
-                                <span className="text-xs text-gray-500 font-medium">Bambi Strategy</span>
+                                <span className="text-xs text-gray-500 font-medium">{tL4('strategyTitle')}</span>
                             </div>
                             <ErrorBoundary>
-                                <L4_Bambi
-                                    data={standardData}
-                                    seedQuestion={seedQuestion}
-                                    onSeedConsumed={() => setSeedQuestion('')}
+                                <L4_Dashboard
+                                    currentNodeId={standardData.id}
+                                    locale={locale as any}
                                 />
                             </ErrorBoundary>
                         </motion.div>

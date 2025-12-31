@@ -1,7 +1,6 @@
 import { supabaseAdmin } from '../supabase';
-import { Translator } from '../utils/translator';
-
 import { STATION_WISDOM, StationWisdomData } from '@/data/stationWisdom';
+import { resolveNodeInheritance } from '../nodes/inheritance';
 
 export interface CommercialRule {
     id: string;
@@ -48,20 +47,23 @@ export const StrategyEngine = {
         if (nodeError || !nodes || nodes.length === 0) return null;
 
         const nearestNode = nodes[0];
+        const resolved = await resolveNodeInheritance({ nodeId: String(nearestNode.id || ''), client: supabaseAdmin });
+        const identityNode: any = resolved?.hub || resolved?.leaf || nearestNode;
+        const effectiveNode: any = resolved?.effective || nearestNode;
 
         // 2. Fetch L2 Status (In a real app, this would check Redis/L2_Cache)
         // For MVP, we'll try to get it from the l2_cache table or fallback
         const { data: l2Cache } = await supabaseAdmin
             .from('l2_cache')
             .select('*')
-            .eq('key', `l2:${nearestNode.id}`)
+            .eq('key', `l2:${identityNode.id}`)
             .maybeSingle();
 
         const l2Status = l2Cache?.value || { delay: 0, congestion: 1 };
 
         // 3. Process Commercial Rules
         const commercialActions: any[] = [];
-        const rules: CommercialRule[] = nearestNode.commercial_rules || [];
+        const rules: CommercialRule[] = Array.isArray(effectiveNode.commercial_rules) ? effectiveNode.commercial_rules : [];
 
         for (const rule of rules) {
             let triggered = false;
@@ -83,7 +85,7 @@ export const StrategyEngine = {
         }
 
         // 4. Fetch Expert Wisdom (L4)
-        const wisdom = STATION_WISDOM[nearestNode.id];
+        const wisdom = STATION_WISDOM[identityNode.id] || STATION_WISDOM[nearestNode.id];
         let wisdomSummary = '';
 
         if (wisdom) {
@@ -97,9 +99,9 @@ export const StrategyEngine = {
         }
 
         return {
-            nodeId: nearestNode.id,
-            nodeName: nearestNode.name[locale] || nearestNode.name['zh-TW'],
-            personaPrompt: nearestNode.persona_prompt,
+            nodeId: identityNode.id,
+            nodeName: identityNode.name?.[locale] || identityNode.name?.['zh-TW'] || identityNode.name?.en || identityNode.name?.ja || '',
+            personaPrompt: effectiveNode.persona_prompt,
             l2Status,
             commercialActions: commercialActions.sort((a, b) => b.priority - a.priority),
             wisdomSummary,

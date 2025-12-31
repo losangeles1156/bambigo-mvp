@@ -83,7 +83,7 @@ export const useAppStore = create<AppState>()(
                 }),
         }),
         {
-            name: 'bambigo-storage',
+            name: 'lutagu-storage',
             partialize: (state) => ({
                 locale: state.locale,
                 accessibilityMode: state.accessibilityMode,

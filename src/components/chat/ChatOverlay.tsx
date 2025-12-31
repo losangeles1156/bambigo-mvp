@@ -149,7 +149,7 @@ export function ChatOverlay() {
             <div className="p-6 border-b border-black/[0.03] flex justify-between items-center glass-effect sticky top-0 z-10 shadow-sm rounded-b-3xl">
                 <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gradient-to-tr from-indigo-500 via-indigo-600 to-indigo-700 rounded-2xl flex items-center justify-center text-2xl shadow-xl shadow-indigo-200 text-white transform hover:rotate-6 transition-transform">
-                        🦌
+                        ✨
                     </div>
                     <div>
                         <h2 className="font-black text-xl tracking-tight text-gray-900 leading-none mb-1.5 text-gradient">LUTAGU AI</h2>

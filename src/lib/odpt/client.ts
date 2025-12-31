@@ -91,5 +91,12 @@ export const odptClient = {
         };
         if (operator) params['odpt:operator'] = operator;
         return fetchOdpt<OdptRailwayFare>('odpt:RailwayFare', params);
+    },
+
+    getTrainInformation: (operator?: string, railway?: string) => {
+        const params: Record<string, string> = {};
+        if (operator) params['odpt:operator'] = operator;
+        if (railway) params['odpt:railway'] = railway;
+        return fetchOdpt<import('./types').OdptTrainInformation>('odpt:TrainInformation', params);
     }
 };

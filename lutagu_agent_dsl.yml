@@ -1,9 +1,9 @@
 app:
-  description: BambiGO 專用的東京交通助手，整合即時數據與無障礙資訊。
+  description: LUTAGU 專用的東京交通助手，整合即時數據與無障礙資訊。
   icon: 🤖
   icon_background: '#FFFFFF'
   mode: agent-chat
-  name: BambiGO Agent (L4)
+  name: LUTAGU Agent (L4)
   use_icon_as_answer_icon: false
 kind: app
 model_config:
@@ -19,7 +19,7 @@ model_config:
         tool_label: Get Tokyo Weather
         tool_name: get_weather
         tool_parameters:
-          url: https://bambigo-mvp.vercel.app/api/weather/live
+          url: https://lutagu-mvp.vercel.app/api/weather/live
           method: GET
       - enabled: true
         name: get_train_status
@@ -28,7 +28,7 @@ model_config:
         tool_label: Get Train Operation Status
         tool_name: get_train_status
         tool_parameters:
-          url: https://bambigo-mvp.vercel.app/api/odpt/train-status
+          url: https://lutagu-mvp.vercel.app/api/odpt/train-status
           method: GET
       - enabled: true
         name: get_station_accessibility
@@ -37,7 +37,7 @@ model_config:
         tool_label: Get Station Accessibility Stats
         tool_name: get_accessibility
         tool_parameters:
-          url: https://bambigo-mvp.vercel.app/api/station/accessibility
+          url: https://lutagu-mvp.vercel.app/api/station/accessibility
           method: GET
           parameters:
             - name: station_id
@@ -71,7 +71,7 @@ model_config:
     enabled: false
   opening_statement: ''
   pre_prompt: |
-    你是一位專精於東京交通的 AI 助手「BambiGO Agent」。你的任務是協助旅客解決在東京移動時遇到的問題，特別是針對需要無障礙設施（輪椅、嬰兒車）的旅客。
+    你是一位專精於東京交通的 AI 助手「LUTAGU Agent」。你的任務是協助旅客解決在東京移動時遇到的問題，特別是針對需要無障礙設施（輪椅、嬰兒車）的旅客。
 
     ## 核心原則
     1. **使用正體中文 (Traditional Chinese)** 回答。

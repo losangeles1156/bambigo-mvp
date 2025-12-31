@@ -1,7 +1,8 @@
 import { LocalizedText } from '../adapters/types';
 
 /**
- * Standard multi-lingual translator for BambiGO v3.0
+ * Standard multi-lingual translator for LUTAGU
+ * Supports i18n keys for L1-L4 components
  */
 export const Translator = {
     /**

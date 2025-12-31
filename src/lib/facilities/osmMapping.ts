@@ -1,4 +1,4 @@
-// Mappings from OSM tags to BambiGO Main Categories
+// Mappings from OSM tags to LUTAGU Main Categories
 export const OSM_TO_MAIN_CATEGORY: Record<string, string> = {
     // Shopping
     'shop': 'shopping',

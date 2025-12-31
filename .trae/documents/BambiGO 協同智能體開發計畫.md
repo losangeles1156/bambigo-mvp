@@ -4,13 +4,13 @@
 
 2
 
-* 首頁整合地圖、底部工作表與 AI 助理：`bambigo-web/src/app/page.tsx:10-16,54-105`。
+* 首頁整合地圖、底部工作表與 AI 助理：`src/app/page.tsx:10-16,54-105`。
 
-* 地圖互動與容錯完善：資料正規化、樣式載入重試、深色模式動態切換，參考 `bambigo-web/components/map/MapCanvas.tsx:53-76,93-101,101-122,123-171,208-225,231-250`。
+* 地圖互動與容錯完善：資料正規化、樣式載入重試、深色模式動態切換。
 
-* 節點資料 API 已提供速率限制與參數驗證：`bambigo-web/src/app/api/nodes/route.ts:8-43,45-79,95-118,169-189`。
+* 節點資料 API 已提供速率限制與參數驗證：`src/app/api/nodes/route.ts:8-43,45-79,95-118,169-189`。
 
-* AI 助理目前為示範版，尚未串接 RAG/串流：`bambigo-web/src/components/assistant/FullScreenAssistant.tsx:6-8,23-44,25-38`。
+* AI 助理目前為示範版，尚未串接 RAG/串流：`src/components/assistant/FullScreenAssistant.tsx:6-8,23-44,25-38`。
 
 ## 目標
 
@@ -28,7 +28,7 @@
 
 * 助理介面升級：在 `FullScreenAssistant` 加入串流訊息渲染、錯誤回退、離線與速率限制提示。維持簡潔 UI 與按鈕快速意圖。
 
-* 後備 UI 一致性：沿用首頁離線提示 `bambigo-web/src/app/page.tsx:56-60`，把錯誤/空結果以「友善卡片」呈現（不白屏）。
+* 後備 UI 一致性：沿用首頁離線提示 `src/app/page.tsx:56-60`，把錯誤/空結果以「友善卡片」呈現（不白屏）。
 
 ## 後端與 API
 

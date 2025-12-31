@@ -1,7 +1,7 @@
 ## 當前進度
 - 已完成 Bottom Sheet 三態（收合/半展開/全展開）與地圖高度聯動（src/app/page.tsx, src/components/sheets/BottomSheet.tsx, components/map/MapCanvas.tsx）。
 - 已實作語意標籤卡、設施列表、行動卡片輪播與 AI 全螢幕對話（src/components/cards/*, src/components/lists/FacilityList.tsx, src/components/assistant/FullScreenAssistant.tsx）。
-- API 節點查詢嚴格化與限流（bambigo-web/src/app/api/nodes/route.ts）。
+- API 節點查詢嚴格化與限流（src/app/api/nodes/route.ts）。
 
 ## 待完成需求
 - 多語系一致性：UI 使用 zh/ja/en，資料庫規範為 zh-TW/ja/en；需建立映射並接入 next-intl。

@@ -11,7 +11,7 @@ git add .
 2. Commit changes
 // turbo
 ```bash
-git commit -m "chore: auto-save via bambigo agent"
+git commit -m "chore: auto-save via lutagu agent"
 ```
 
 3. Push to remote

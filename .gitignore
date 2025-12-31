@@ -33,7 +33,7 @@ ts-debug.log*
 next-env.d.ts
 
 # Data Sync Files
-bambigo-v3.0/*.json
+lutagu-v3.0/*.json
 l1_workflow.json
 
 
@@ -48,10 +48,10 @@ dump.sql
 .env.local
 
 # Legacy Folders (Ignored after removal)
-bambigo-web/
-bambigo-v2.1/
-bambigo-v3.0/
-bambigo-tokyo/
+lutagu-web/
+lutagu-v2.1/
+lutagu-v3.0/
+lutagu-tokyo/
 
 # Supabase local metadata
 supabase/.temp/

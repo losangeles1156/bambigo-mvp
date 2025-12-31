@@ -2,7 +2,7 @@
     "Home": {
         "title": "LUTAGU",
         "currentLocation": "目前位置",
-        "askBambiGO": "問 LUTAGU...",
+        "askLutagu": "問 LUTAGU...",
         "aiPlaceholder": "問 LUTAGU..."
     },
     "status": {
@@ -102,7 +102,7 @@
         "dna": "生活機能",
         "live": "即時動態",
         "facility": "服務設施",
-        "bambi": "ルタグ建議",
+        "lutagu": "LUTAGU 建議",
         "transit": "交通時刻"
     },
     "tag": {
@@ -178,7 +178,7 @@
     },
     "l1": {
         "dnaTitle": "生活機能",
-        "bambiInsight": "ルタグ洞察",
+        "lutaguInsight": "LUTAGU 洞察",
         "nearbyHighlights": "周邊亮點 (300m)",
         "noHighlights": "暫無周邊亮點",
         "menuTitle": "類別詳情",
@@ -300,7 +300,7 @@
             "sizes": "尺寸: {sizes}",
             "count": "數量: {count} 個",
             "hours": "營業時間: {hours}",
-            "askBambi": "詢問 ルタグ 關於此設施"
+            "askLutagu": "詢問 LUTAGU 關於此設施"
         }
     },
     "l4": {
@@ -310,7 +310,7 @@
         "topPick": "首選推薦",
         "alternatives": "替代方案",
         "disclaimer": "建議是根據當前交通、天氣和設施狀態生成的。",
-        "bambiStrategy": "ルタグ策略",
+        "lutaguStrategy": "LUTAGU 策略",
         "suggestion": "建議",
         "psychAlert": "心理建設提示",
         "synthesisTitle": "智慧決策合成",
@@ -335,7 +335,7 @@
         "inputPlaceholder": "規劃路線（問路、聊天...）",
         "chatError": "抱歉，連線發生錯誤。",
         "userLabel": "使用者",
-        "bambiLabel": "ルタグ",
+        "lutaguLabel": "LUTAGU",
         "thinking": {
             "initializing": "正在啟動認知引擎...",
             "l2": "分析 L2 即時路況與天氣...",

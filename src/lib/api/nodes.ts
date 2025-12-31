@@ -2,6 +2,7 @@ import { supabase } from '../supabase';
 import { STATION_WISDOM } from '../../data/stationWisdom';
 import { STATIC_L1_DATA } from '../../data/staticL1Data';
 import { STATION_LINES, getStationIdVariants, guessPhysicalOdptStationIds, resolveHubStationMembers } from '@/lib/constants/stationLines';
+import { L1_DNA_Data, L3Facility, StationUIProfile, LocaleString, ActionCard } from '@/lib/types/stationStandard';
 
 // Types aligning with DB schema
 export interface NodeDatum {
@@ -24,6 +25,14 @@ export interface NodeDatum {
 export function parseLocation(loc: any): { coordinates: [number, number] } {
     if (!loc) return { coordinates: [0, 0] };
 
+    if (Array.isArray(loc) && loc.length >= 2) {
+        return { coordinates: [Number(loc[0]), Number(loc[1])] };
+    }
+
+    if (loc.coordinates?.coordinates && Array.isArray(loc.coordinates.coordinates)) {
+        return { coordinates: [loc.coordinates.coordinates[0], loc.coordinates.coordinates[1]] };
+    }
+
     // Case 1: Already correct object
     if (loc.coordinates && Array.isArray(loc.coordinates)) {
         return { coordinates: [loc.coordinates[0], loc.coordinates[1]] };
@@ -44,6 +53,21 @@ export function parseLocation(loc: any): { coordinates: [number, number] } {
     }
 
     return { coordinates: [0, 0] };
+}
+
+function normalizeNodeRow(n: any) {
+    const type = String(n?.type ?? n?.node_type ?? 'station');
+    const location = parseLocation(n?.location ?? n?.coordinates);
+    const isHub = typeof n?.is_hub === 'boolean' ? n.is_hub : !n?.parent_hub_id;
+    return {
+        ...n,
+        type,
+        location,
+        is_hub: isHub,
+        geohash: typeof n?.geohash === 'string' ? n.geohash : String(n?.geohash ?? ''),
+        city_id: typeof n?.city_id === 'string' ? n.city_id : String(n?.city_id ?? ''),
+        zone: typeof n?.zone === 'string' ? n.zone : String(n?.zone ?? 'core')
+    };
 }
 
 // L1: Location DNA
@@ -89,14 +113,8 @@ export interface LiveStatus {
     updated_at?: string;
 }
 
-// L3: Service Facilities
-export interface ServiceFacility {
-    id: string;
-    category: 'toilet' | 'charging' | 'locker' | 'wifi' | 'accessibility' | 'dining' | 'shopping' | 'leisure' | 'transport' | 'religion' | 'nature' | 'accommodation';
-    subCategory: string;
-    location: string; // e.g., "B1 North Exit"
-    attributes: Record<string, any>;
-}
+// L3: Service Facilities - Deprecated in favor of L3Facility
+// export interface ServiceFacility { ... }
 
 // L4: Mobility Strategy
 export interface ActionNudge {
@@ -109,21 +127,36 @@ export interface ActionNudge {
 export interface NodeProfile {
     node_id: string;
     category_counts: CategoryCounts;
-    vibe_tags: string[];
+    vibe_tags: string[] | Record<string, any>; // Allow raw JSONB or string[]
     l2_status?: LiveStatus;
-    l3_facilities?: ServiceFacility[];
-    l4_cards?: any[];
+    l3_facilities?: L3Facility[];
+    l4_cards?: ActionCard[];
+    l1_dna?: L1_DNA_Data;
+    external_links?: { title: LocaleString; url: string; icon?: string; bg?: string; tracking_id?: string; type?: string }[];
 }
 
 // Fetch nearby nodes
 export async function fetchNearbyNodes(lat: number, lon: number, radiusMeters: number = 2000) {
     try {
-        const { data, error } = await supabase
-            .rpc('nearby_nodes', {
+        let data: any = null;
+        let error: any = null;
+
+        ({ data, error } = await supabase
+            .rpc('nearby_nodes_v2', {
                 center_lat: lat,
                 center_lon: lon,
-                radius_meters: radiusMeters
-            });
+                radius_meters: radiusMeters,
+                max_results: 25
+            }));
+
+        if (error) {
+            ({ data, error } = await supabase
+                .rpc('nearby_nodes', {
+                    center_lat: lat,
+                    center_lon: lon,
+                    radius_meters: radiusMeters
+                }));
+        }
 
         if (error) {
             console.error('Error fetching nearby nodes:', error);
@@ -131,7 +164,7 @@ export async function fetchNearbyNodes(lat: number, lon: number, radiusMeters: n
         }
 
         // Enforce Multilingual Names & Polyfill is_hub
-        return (data || []).map((n: any) => enrichNodeData(n));
+        return (data || []).map((n: any) => enrichNodeData(normalizeNodeRow(n)));
     } catch (err) {
         console.warn('[fetchNearbyNodes] Using fallback due to error:', err);
         return getFallbackNearbyNodes(lat, lon);
@@ -342,6 +375,9 @@ export async function fetchNodeConfig(nodeId: string) {
     let finalNode: any = null;
     let finalProfile: any = null;
 
+    let hubNode: any = null;
+    let hubId: string | null = null;
+
     try {
         const { data: node, error: nodeError } = await supabase
             .from('nodes')
@@ -362,53 +398,144 @@ export async function fetchNodeConfig(nodeId: string) {
         }
     }
 
-    try {
-        const { data: profile, error: profileError } = await supabase
-            .from('node_facility_profiles')
-            .select('*')
-            .eq('node_id', nodeId)
-            .single();
+    hubId = finalNode?.parent_hub_id || null;
+    if (hubId) {
+        try {
+            const { data: parent } = await supabase
+                .from('nodes')
+                .select('*')
+                .eq('id', hubId)
+                .maybeSingle();
 
-        if (profileError) throw profileError;
-        finalProfile = profile;
-    } catch (err) {
-        console.warn(`[fetchNodeConfig] Profile fetch failed for ${nodeId}, using empty profile`);
+            if (parent) hubNode = parent;
+        } catch {
+            hubNode = null;
+        }
     }
 
-    // Use profile directly, no mock merging
-    let enrichedProfile = finalProfile
-        ? { ...finalProfile, node_id: nodeId }
-        : { node_id: nodeId, l1_categories: [] };
+    // Initialize enriched profile structure
+    let enrichedProfile: NodeProfile = {
+        node_id: nodeId,
+        category_counts: {
+            medical: 0, shopping: 0, dining: 0, leisure: 0, education: 0, finance: 0
+        },
+        vibe_tags: [],
+        l3_facilities: [],
+        l4_cards: []
+    };
+
+    // 1. Populate L1 Data from Node (JSONB columns)
+    if (hubNode?.facility_profile?.category_counts) {
+        enrichedProfile.category_counts = {
+            ...enrichedProfile.category_counts,
+            ...hubNode.facility_profile.category_counts
+        };
+    }
+
+    if (finalNode?.facility_profile?.category_counts) {
+        enrichedProfile.category_counts = {
+            ...enrichedProfile.category_counts,
+            ...finalNode.facility_profile.category_counts
+        };
+    }
+
+    const vibeTags = finalNode?.vibe_tags ?? hubNode?.vibe_tags;
+    if (vibeTags) {
+        enrichedProfile.vibe_tags = vibeTags;
+    }
+
+    // 2. Fetch L3 Facilities from `l3_facilities` table
+    try {
+        const stationIds = Array.from(new Set([nodeId, hubId].filter(Boolean))) as string[];
+        const { data: facilities, error: facilityError } = await supabase
+            .from('l3_facilities')
+            .select('*')
+            .in('station_id', stationIds);
+
+        if (facilityError) {
+            console.warn('[fetchNodeConfig] L3 fetch failed:', facilityError);
+        } else if (facilities) {
+            enrichedProfile.l3_facilities = facilities.map((f: any) => {
+                // Parse location if it's JSON, otherwise treat as string
+                const locVal = typeof f.name_i18n === 'object' ? f.name_i18n : (f.location || 'Station');
+                const locObj: LocaleString = (typeof locVal === 'string') 
+                    ? { ja: locVal, en: locVal, zh: locVal }
+                    : { ja: locVal.ja || locVal.en, en: locVal.en || locVal.ja, zh: locVal.zh || locVal.ja };
+
+                return {
+                    id: f.id,
+                    type: f.type,
+                    name: locObj,
+                    location: locObj, // Use same for now, or fetch distinct location field
+                    attributes: {
+                        ...f.attributes,
+                        subCategory: f.attributes?.sub_category || f.type
+                    }
+                } as L3Facility;
+            });
+        }
+    } catch (err) {
+        console.warn('[fetchNodeConfig] L3 fetch error:', err);
+    }
+
 
     // [New] Merge Static L1 Data if DB is empty
-    const wisdomId = NODE_TO_ODPT[nodeId] || nodeId;
+    const wisdomKeys: string[] = [];
+    const baseKey = NODE_TO_ODPT[nodeId] || nodeId;
+    wisdomKeys.push(baseKey);
+    wisdomKeys.push(nodeId);
 
-    // Ensure l1_categories exists
-    if (!enrichedProfile.l1_categories || enrichedProfile.l1_categories.length === 0) {
-        // Try to find static data using Node ID or ODPT ID
-        const staticData = STATIC_L1_DATA[nodeId] || STATIC_L1_DATA[wisdomId];
-        enrichedProfile.l1_categories = staticData || [];
+    if (hubId) {
+        wisdomKeys.push(NODE_TO_ODPT[hubId] || hubId);
+        wisdomKeys.push(hubId);
+    }
+
+    let wisdom: any = null;
+    for (const key of wisdomKeys) {
+        const hit = (STATION_WISDOM as any)[key];
+        if (hit) {
+            wisdom = hit;
+            break;
+        }
+    }
+
+    if (!enrichedProfile.l1_dna) {
+        let staticData: any = null;
+        for (const key of wisdomKeys) {
+            const hit = (STATIC_L1_DATA as any)[key];
+            if (hit) {
+                staticData = hit;
+                break;
+            }
+        }
+        enrichedProfile.l1_dna = staticData || null;
     }
 
     // [New] L3 Data Strategy: DB (stations_static) > Wisdom File
     let dbL3Facilities: any[] | null = [];
-    const l3StationIds = buildStationIdSearchCandidates(nodeId);
+    const l3StationIds = Array.from(
+        new Set([
+            ...buildStationIdSearchCandidates(nodeId),
+            ...(hubId ? buildStationIdSearchCandidates(hubId) : [])
+        ])
+    );
 
     try {
-        for (const stationId of l3StationIds) {
-            const { data: staticDbData } = await supabase
-                .from('stations_static')
-                .select('l3_services')
-                .eq('station_id', stationId)
-                .maybeSingle();
+        const { data: staticDbData } = await supabase
+            .from('stations_static')
+            .select('l3_services')
+            .in('id', l3StationIds);
 
-            if (staticDbData && Array.isArray(staticDbData.l3_services) && staticDbData.l3_services.length > 0) {
-                if (!dbL3Facilities) dbL3Facilities = [];
-                dbL3Facilities = [...dbL3Facilities, ...staticDbData.l3_services];
-            }
+        if (staticDbData) {
+            staticDbData.forEach((row: any) => {
+                if (Array.isArray(row.l3_services) && row.l3_services.length > 0) {
+                    if (!dbL3Facilities) dbL3Facilities = [];
+                    dbL3Facilities = [...dbL3Facilities, ...row.l3_services];
+                }
+            });
         }
     } catch (err) {
-        console.warn(`[fetchNodeConfig] L3 DB fetch failed for ${nodeId}`);
+        console.warn(`[fetchNodeConfig] L3 DB fetch failed for ${nodeId}`, err);
     }
 
     // Fallback if aggregation turned up nothing (ensure null if truly empty so fallback logic works if applicable)
@@ -418,45 +545,53 @@ export async function fetchNodeConfig(nodeId: string) {
 
 
 
-    // 2. Resolve Wisdom Source (File)
-    // STATION_WISDOM uses internal Node IDs (e.g. 'odpt:Station:TokyoMetro.Ueno')
-    // But wisdomId might be mapped to ODPT ID (e.g. 'odpt.Station:TokyoMetro.Ginza.Ueno')
-    // We check both to be safe.
-    const wisdom = STATION_WISDOM[wisdomId] || STATION_WISDOM[nodeId];
-
     // 3. Determine Final L3 Data
     let finalL3 = dbL3Facilities || (wisdom ? wisdom.l3Facilities : []);
 
     if (finalL3 && finalL3.length > 0) {
-        // Map StationFacility to ServiceFacility format
+        // Map StationFacility to L3Facility format
         const wisdomFacilities = finalL3.map((f: any, idx: number) => {
             // [Localization] Handle both string (legacy) and object (multilingual) formats
             const rawLoc = f.location || {};
-            const locObj = (typeof rawLoc === 'string')
-                ? { 'zh-TW': rawLoc, 'en': rawLoc, 'ja': rawLoc, 'zh': rawLoc }
+            const locObj: LocaleString = (typeof rawLoc === 'string')
+                ? { zh: rawLoc, en: rawLoc, ja: rawLoc }
                 : {
-                    'zh-TW': rawLoc.zh || rawLoc['zh-TW'] || 'N/A',
-                    'en': rawLoc.en || 'N/A',
-                    'ja': rawLoc.ja || 'N/A',
-                    'zh': rawLoc.zh || rawLoc['zh-TW'] || 'N/A'
+                    zh: rawLoc.zh || rawLoc['zh-TW'] || 'N/A',
+                    en: rawLoc.en || 'N/A',
+                    ja: rawLoc.ja || 'N/A'
                 };
+            
+            // Name should ideally be distinct from location, but fallback to location if missing
+            const nameObj: LocaleString = f.name_i18n 
+                ? { 
+                    ja: f.name_i18n.ja || f.name_i18n.en, 
+                    en: f.name_i18n.en || f.name_i18n.ja, 
+                    zh: f.name_i18n.zh || f.name_i18n.ja 
+                  }
+                : locObj;
 
             return {
                 id: `${nodeId}-l3-${idx}`,
                 type: f.type, // Map to correct property for UI Icons
-                category: f.type, // Keep for legacy if needed
-                subCategory: 'standard',
-                location: f.location, // Keep raw for reference if needed, or rely on 'name' below which is used for display
-                // [UI Optimization] Split Name and Description to avoid duplication
-                name: locObj, // Use the localized object for the name/location display
-                direction: { 'zh-TW': `${f.operator || ''} ${f.floor || ''}`, 'en': `${f.operator || ''} ${f.floor || ''}`, 'ja': `${f.operator || ''} ${f.floor || ''}` },
+                name: nameObj, // Use the localized object for the name
+                location: locObj, // Use localized object for location
+                details: f.attributes ? Object.entries(f.attributes).map(([k, v]) => {
+                    return `${k}: ${v}`; // Simplify details to string[] or handle LocaleString[] later if needed
+                    // stationStandard says details?: LocaleString[]
+                    // So we should map to LocaleString objects
+                }).map(s => ({ ja: s, en: s, zh: s })) : [], 
                 attributes: {
                     ...f.attributes,
                     floor: f.floor,
                     operator: f.operator,
-                    source: f.source
+                    source: f.source,
+                    direction: { 
+                        zh: `${f.operator || ''} ${f.floor || ''}`, 
+                        en: `${f.operator || ''} ${f.floor || ''}`, 
+                        ja: `${f.operator || ''} ${f.floor || ''}` 
+                    }
                 }
-            };
+            } as L3Facility;
         });
 
         enrichedProfile.l3_facilities = wisdomFacilities;
@@ -464,16 +599,32 @@ export async function fetchNodeConfig(nodeId: string) {
 
     // [New] Inject External Links (e.g. Toilet Vacancy)
     if (wisdom && wisdom.links) {
-        enrichedProfile.external_links = wisdom.links;
+        enrichedProfile.external_links = wisdom.links.map((link: any, idx: number) => {
+            const title =
+                typeof link.title === 'string'
+                    ? { ja: link.title, en: link.title, zh: link.title }
+                    : link.title;
+
+            const trackingId =
+                typeof link.tracking_id === 'string' && link.tracking_id
+                    ? link.tracking_id
+                    : `ext_${nodeId}_${idx}`;
+
+            return {
+                ...link,
+                title,
+                tracking_id: trackingId
+            };
+        });
     }
 
-    // --- L4: BAMBI STRATEGY GENERATION (Real Data) ---
+    // --- L4: LUTAGU STRATEGY GENERATION (Real Data) ---
     const l4_cards: any[] = [];
 
     if (wisdom) {
         // 1. Map TRAPS to Primary Cards
         if (wisdom.traps) {
-            wisdom.traps.forEach((trap, idx) => {
+            wisdom.traps.forEach((trap: any, idx: number) => {
                 const cardId = `trap-${idx}`;
                 l4_cards.push({
                     id: cardId,
@@ -493,7 +644,7 @@ export async function fetchNodeConfig(nodeId: string) {
 
         // 2. Map HACKS to Secondary Cards
         if (wisdom.hacks) {
-            wisdom.hacks.forEach((hack, idx) => {
+            wisdom.hacks.forEach((hack: any, idx: number) => {
                 // Extract emoji if present
                 const emojiMatch = hack.match(/^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
                 const icon = emojiMatch ? emojiMatch[0] : 'lightbulb';
@@ -507,7 +658,7 @@ export async function fetchNodeConfig(nodeId: string) {
                     title: { ja: 'Tips', en: 'Tips', zh: '小撇步' },
                     description: { ja: hack, en: hack, zh: hack },
                     actionLabel: { ja: '詳細', en: 'More', zh: '查看' },
-                    actionUrl: null,
+                    actionUrl: undefined,
                     icon: 'star'
                 });
             });
@@ -530,7 +681,7 @@ export async function fetchNodeConfig(nodeId: string) {
                     zh: '此車站設有電梯。詳情請查看設施頁籤。'
                 },
                 actionLabel: { ja: '確認', en: 'Check', zh: '確認' },
-                actionUrl: null,
+                actionUrl: undefined,
                 icon: 'accessibility'
             });
         }
@@ -542,7 +693,7 @@ export async function fetchNodeConfig(nodeId: string) {
     // --- REAL-TIME STATUS INJECTION (Database First) ---
 
     // [Fix] Initialize with Default "Normal" Status first to strictly prevent empty UI
-    const servedLines = STATION_LINES[nodeId] || [
+    const servedLines = STATION_LINES[nodeId] || (hubId ? STATION_LINES[hubId] : null) || [
         { name: { ja: '交通', en: 'Transit', zh: '交通' }, operator: 'Private', color: '#9ca3af' }
     ];
 
@@ -564,36 +715,48 @@ export async function fetchNodeConfig(nodeId: string) {
         const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
         if (typeof window !== 'undefined') {
-            const l2Res = await fetch(`/api/l2/status?station_id=${nodeId}`);
-            if (l2Res.ok) {
+            const tryIds = Array.from(new Set([nodeId, hubId].filter(Boolean))) as string[];
+            for (const id of tryIds) {
+                const l2Res = await fetch(`/api/l2/status?station_id=${encodeURIComponent(id)}`);
+                if (!l2Res.ok) continue;
                 const l2Data = await l2Res.json();
                 if (l2Data) {
                     enrichedProfile.l2_status = l2Data;
-                    console.log(`[L2] Applied real-time data for ${nodeId}`, l2Data);
+                    console.log(`[L2] Applied real-time data for ${id}`, l2Data);
+                    break;
                 }
             }
         } else if (supabaseUrl && supabaseKey) {
             // Server-side fetch (Direct DB or internal call if needed, but for now we rely on client or pre-fetch)
-            const { data: l2Data } = await supabase
-                .from('transit_dynamic_snapshot')
-                .select('*')
-                .eq('station_id', nodeId) // Try Logical ID first
-                .maybeSingle();
+            const candidates = Array.from(
+                new Set([
+                    nodeId,
+                    NODE_TO_ODPT[nodeId] || null,
+                    hubId,
+                    hubId ? (NODE_TO_ODPT[hubId] || null) : null
+                ].filter(Boolean))
+            ) as string[];
 
-            if (l2Data) {
-                // Map status to ALL lines (MVP Assumption: Station delay = All lines delay unless specified)
-                // In a real system, we'd check per-line status if available.
+            for (const stationId of candidates) {
+                const { data: l2Data } = await supabase
+                    .from('transit_dynamic_snapshot')
+                    .select('*')
+                    .eq('station_id', stationId)
+                    .maybeSingle();
+
+                if (!l2Data) continue;
+
                 const isStationDelay = l2Data.status_code === 'DELAY';
 
                 enrichedProfile.l2_status = {
                     congestion: isStationDelay ? 4 : (l2Data.crowd_level || 2),
                     line_status: servedLines.map(line => ({
-                        line: line.name.en, // Legacy string ID
-                        name: line.name,    // Rich Object
+                        line: line.name.en,
+                        name: line.name,
                         operator: line.operator,
                         color: line.color,
                         status: isStationDelay ? 'delay' : 'normal',
-                        message: isStationDelay ? l2Data.reason_ja : undefined // Assuming reason_ja holds the delay msg
+                        message: isStationDelay ? l2Data.reason_ja : undefined
                     })),
                     weather: {
                         temp: l2Data.weather_info?.temp || 0,
@@ -601,35 +764,8 @@ export async function fetchNodeConfig(nodeId: string) {
                     },
                     updated_at: l2Data.updated_at
                 };
-            } else {
-                const odptId = NODE_TO_ODPT[nodeId];
-                if (odptId) {
-                // Try Physical ID if Logical failed
-                const { data: l2DataPhy } = await supabase
-                    .from('transit_dynamic_snapshot')
-                    .select('*')
-                    .eq('station_id', odptId)
-                    .maybeSingle();
 
-                if (l2DataPhy) {
-                    const isStationDelay = l2DataPhy.status_code === 'DELAY';
-                    enrichedProfile.l2_status = {
-                        congestion: isStationDelay ? 4 : (l2DataPhy.crowd_level || 2),
-                        line_status: servedLines.map(line => ({
-                            line: line.name.en,
-                            name: line.name,
-                            operator: line.operator,
-                            color: line.color,
-                            status: isStationDelay ? 'delay' : 'normal',
-                            message: isStationDelay ? l2DataPhy.reason_ja : undefined
-                        })),
-                        weather: {
-                            temp: l2DataPhy.weather_info?.temp || 0,
-                            condition: l2DataPhy.weather_info?.condition || 'Unknown'
-                        }
-                    };
-                }
-            }
+                break;
             }
         }
     } catch (e) {
@@ -642,7 +778,7 @@ export async function fetchNodeConfig(nodeId: string) {
     }
 
     return {
-        node: { ...finalNode, location: parseLocation(finalNode.location) },
+        node: { ...finalNode, location: parseLocation((finalNode as any).location ?? (finalNode as any).coordinates) },
         profile: enrichedProfile,
         error: null
     };
@@ -656,7 +792,7 @@ export async function fetchCityHubs(cityId: string) {
         .from('nodes')
         .select('*')
         .eq('city_id', cityId)
-        .eq('is_hub', true);
+        .is('parent_hub_id', null);
 
     if (error) {
         console.error('Error fetching city hubs:', error);
@@ -669,12 +805,23 @@ export async function fetchCityHubs(cityId: string) {
 export async function fetchAllNodes() {
     // 35.6895, 139.6917 is Tokyo Station
     // 50000 meters = 50km radius covers all of Tokyo + suburbs
-    const { data, error } = await supabase
-        .rpc('nearby_nodes', {
+    let data: any = null;
+    let error: any = null;
+    ({ data, error } = await supabase
+        .rpc('nearby_nodes_v2', {
             center_lat: 35.6895,
             center_lon: 139.6917,
-            radius_meters: 50000
-        });
+            radius_meters: 50000,
+            max_results: 8000
+        }));
+    if (error) {
+        ({ data, error } = await supabase
+            .rpc('nearby_nodes', {
+                center_lat: 35.6895,
+                center_lon: 139.6917,
+                radius_meters: 50000
+            }));
+    }
 
     if (error) {
         console.error('Error fetching nodes from RPC, using hardcoded fallback:', error);
@@ -770,7 +917,8 @@ export async function fetchAllNodes() {
         return {
             ...n,
             name: seed ? seed.name : n?.name,
-            location: parseLocation(n?.location),
+            type: String(n?.type ?? n?.node_type ?? 'station'),
+            location: parseLocation(n?.location ?? n?.coordinates),
             is_hub: !n.parent_hub_id, // Ensure is_hub is set (V3.0 Logic)
             tier,
             mapDesign,

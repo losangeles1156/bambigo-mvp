@@ -25,41 +25,48 @@ export async function GET(request: Request) {
                 content.match(/<summary>([\s\S]*?)<\/summary>/)?.[1] || '';
             const updated = content.match(/<updated>(.*?)<\/updated>/)?.[1] || '';
 
-            // [Phase 1] Pre-filter: Only alerts mentioning Tokyo Prefecture
-            if (!title.includes('東京') && !summary.includes('東京')) {
+            // [Phase 1] Pre-filter: Only alerts mentioning relevant Prefectures
+            const isTokyo = title.includes('東京') || summary.includes('東京');
+            const isKanagawa = title.includes('神奈川') || summary.includes('神奈川');
+            const isChiba = title.includes('千葉') || summary.includes('千葉');
+
+            if (!isTokyo && !isKanagawa && !isChiba) {
                 continue;
             }
 
             // [Phase 2] Strict Region Filter: 
-            // Exclude alerts where 伊豆諸島 or 小笠原諸島 are the PRIMARY affected areas
-            const text = title + summary;
+            const text = (title + summary).replace(/\s/g, '');
 
-            // Keywords indicating islands are the main subject
-            const isIslandAlert = text.includes('伊豆諸島') || text.includes('小笠原諸島');
-
-            // Keywords indicating core Tokyo metropolitan area
-            const isTokyoMetroAlert = text.includes('23区') ||
+            // 1. Exclude islands completely
+            const isIslandMentioned = text.includes('伊豆諸島') || text.includes('小笠原諸島');
+            
+            // 2. Core Target Regions (Must match at least one)
+            const isTargetRegion = 
+                text.includes('東京地方') || 
+                text.includes('23区') ||
                 text.includes('多摩') ||
-                (text.includes('東京地方') && !isIslandAlert);
+                text.includes('神奈川県東部') || 
+                text.includes('神奈川県西部') ||
+                text.includes('千葉県北西部') || 
+                text.includes('千葉県北東部') || 
+                text.includes('千葉県南部');
 
-            // If islands are mentioned but NOT 23区/多摩, this is likely an island-only alert
-            // Exception: If 東京地方 has its OWN separate warning (not just secondary mention)
-            if (isIslandAlert && !isTokyoMetroAlert) {
-                // Check if Tokyo mainland has a SEPARATE warning phrase
-                const tokyoHasOwnWarning = text.match(/東京地方[^、]*では[^。]*注意/);
-                const islandPrimaryWarning = text.match(/(伊豆諸島|小笠原諸島)[^、]*では[^。]*(警報|注意)/);
+            // Logic:
+            // - If it's an island-only alert, skip.
+            // - If it's not in our target regions, skip.
+            if (isIslandMentioned && !isTargetRegion) {
+                continue;
+            }
+            if (!isTargetRegion) {
+                continue;
+            }
 
-                // If island has primary warning and Tokyo only has minor mention (fog etc), skip
-                if (islandPrimaryWarning && !tokyoHasOwnWarning) {
-                    continue;
-                }
-
-                // If Tokyo's warning is just "濃霧" (fog) while islands have major warnings, skip
-                if (tokyoHasOwnWarning &&
-                    text.match(/東京地方[^、]*濃霧/) &&
-                    text.match(/(伊豆諸島|小笠原諸島)[^、]*(強風|高波|大雨|暴風)/)) {
-                    continue;
-                }
+            // Extra safety: even if islands are mentioned alongside target regions, 
+            // we should double check if the target region itself has a warning.
+            // (JMA sometimes lists all regions in one report)
+            const hasWarningInTarget = text.match(/(東京地方|23区|多摩|神奈川県|千葉県)[^、]*では[^。]*(警報|注意|特別警報)/);
+            if (!hasWarningInTarget && !title.includes('震度')) {
+                continue;
             }
 
             // [Phase 3] Special warnings always pass (earthquake, special警報)

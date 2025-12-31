@@ -10,10 +10,58 @@ import { fetchNearbyNodes, fetchNodeConfig, fetchNodesByViewport, NodeDatum } fr
 import { NodeMarker } from './NodeMarker';
 import { TrainLayer } from './TrainLayer';
 import { useLocale } from 'next-intl';
+import { groupNodesByProximity, GroupedNode } from '@/utils/nodeGroupUtils';
+import { getLocaleString } from '@/lib/utils/localeUtils';
+import { calculateDistance } from '@/lib/utils/distance';
 
 type ClusterItem =
-    | { kind: 'node'; node: NodeDatum }
+    | { kind: 'node'; node: GroupedNode }
     | { kind: 'cluster'; id: string; count: number; lat: number; lon: number };
+
+function distanceMeters(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
+    return calculateDistance(a.lat, a.lon, b.lat, b.lon) * 1000;
+}
+
+function mergeNearbyParents(groups: GroupedNode[], thresholdMeters: number) {
+    const sorted = [...groups].sort((a, b) => {
+        const aIsHub = a.is_hub ? 1 : 0;
+        const bIsHub = b.is_hub ? 1 : 0;
+        if (aIsHub !== bIsHub) return bIsHub - aIsHub;
+        const aChildren = Array.isArray(a.children) ? a.children.length : 0;
+        const bChildren = Array.isArray(b.children) ? b.children.length : 0;
+        return bChildren - aChildren;
+    });
+
+    const used = new Set<string>();
+    const out: GroupedNode[] = [];
+
+    for (const base of sorted) {
+        if (used.has(base.id)) continue;
+        used.add(base.id);
+
+        const baseChildren = Array.isArray(base.children) ? base.children : [];
+        const merged: GroupedNode = { ...base, children: [...baseChildren], isParent: true };
+        const basePos = { lat: base.location.coordinates[1], lon: base.location.coordinates[0] };
+
+        for (const candidate of sorted) {
+            if (used.has(candidate.id)) continue;
+            const cPos = { lat: candidate.location.coordinates[1], lon: candidate.location.coordinates[0] };
+            if (distanceMeters(basePos, cPos) >= thresholdMeters) continue;
+
+            used.add(candidate.id);
+
+            merged.children = merged.children || [];
+            merged.children.push({ ...candidate, children: undefined } as any);
+            if (Array.isArray(candidate.children) && candidate.children.length > 0) {
+                merged.children.push(...candidate.children);
+            }
+        }
+
+        out.push(merged);
+    }
+
+    return out;
+}
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(max, Math.max(min, value));
@@ -294,22 +342,30 @@ function ClusteredNodeLayer({ nodes, zone, locale }: { nodes: NodeDatum[]; zone:
 
     const items = useMemo<ClusterItem[]>(() => {
         if (!nodes || nodes.length === 0) return [];
-        
-        // At high zoom levels, show all individual nodes
-        if (clampedZoom >= 15) {
-            return nodes.map(n => ({ kind: 'node', node: n }));
+
+        // Apply Logical Parent-Child Grouping
+        const logicalGroups = groupNodesByProximity(nodes, 150); // 150m threshold for logical grouping
+
+        if (clampedZoom >= 17) {
+            return logicalGroups.map(n => ({ kind: 'node', node: n }));
+        }
+
+        if (clampedZoom >= 14) {
+            const mergedParents = mergeNearbyParents(logicalGroups, 180);
+            return mergedParents.map(n => ({ kind: 'node', node: n }));
         }
 
         // Adjust grid size based on zoom and device
         // Optimization: Increase grid size for mobile to reduce markers
         let gridPx = 70;
         if (clampedZoom < 11) gridPx = isMobile ? 120 : 90;
-        else if (clampedZoom < 13) gridPx = isMobile ? 100 : 75;
-        else if (clampedZoom < 15) gridPx = isMobile ? 80 : 60;
+        else if (clampedZoom < 13) gridPx = isMobile ? 100 : 80;
+        else if (clampedZoom < 15) gridPx = isMobile ? 90 : 70;
+        else gridPx = isMobile ? 80 : 60; // For zoom 15-16
 
-        const buckets = new Map<string, { count: number; sumLat: number; sumLon: number; nodes: NodeDatum[] }>();
+        const buckets = new Map<string, { count: number; sumLat: number; sumLon: number; nodes: GroupedNode[] }>();
 
-        nodes.forEach(n => {
+        logicalGroups.forEach(n => {
             const [lon, lat] = n.location.coordinates;
             if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
             const p = map.project([lat, lon], clampedZoom);
@@ -350,17 +406,18 @@ function ClusteredNodeLayer({ nodes, zone, locale }: { nodes: NodeDatum[]; zone:
         <>
             {items.map(item => {
                 if (item.kind === 'node') {
-                    return <NodeMarker key={item.node.id} node={item.node} zone={zone} locale={locale} />;
+                    return <NodeMarker key={item.node.id} node={item.node} zone={zone} locale={locale} zoom={clampedZoom} />;
                 }
 
-                const size = clamp(32 + Math.log2(item.count) * 8, 32, 64);
+                const size = clamp(36 + Math.log2(item.count) * 8, 40, 72);
                 const icon = L.divIcon({
                     className: 'node-cluster-icon',
                     html: `
                         <div class="relative flex items-center justify-center group" style="width:${size}px;height:${size}px;">
-                            <div class="absolute inset-0 bg-indigo-600/20 rounded-full animate-ping opacity-20 group-hover:hidden"></div>
-                            <div class="relative w-full h-full rounded-full bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-900 border-[3px] border-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-indigo-500/25">
-                                <span class="text-white font-black text-xs">${item.count}</span>
+                            <div class="absolute inset-0 bg-indigo-600/30 rounded-full animate-ping opacity-20 group-hover:hidden" style="animation-duration: 2s;"></div>
+                            <div class="relative w-full h-full rounded-full bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900 border-[3px] border-white shadow-[0_10px_25px_-5px_rgba(79,70,229,0.4)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-indigo-500/40">
+                                <div class="absolute inset-0 rounded-full bg-[url('/noise.png')] opacity-10"></div>
+                                <span class="text-white font-black text-sm drop-shadow-md z-10">${item.count}</span>
                             </div>
                         </div>
                     `,
@@ -434,6 +491,27 @@ function AppMap() {
     const [refreshKey, setRefreshKey] = useState(0);
     const [gpsAlert, setGpsAlert] = useState<{ show: boolean, type: 'far' | 'denied' }>({ show: false, type: 'far' });
     const locale = useLocale();
+    const [isParentListOpen, setIsParentListOpen] = useState(false);
+    const [parentListQuery, setParentListQuery] = useState('');
+
+    const setCurrentNode = useAppStore(s => s.setCurrentNode);
+    const setBottomSheetOpen = useAppStore(s => s.setBottomSheetOpen);
+
+    const groupedParents = useMemo(() => {
+        const groups = groupNodesByProximity(nodes, 150);
+        return groups
+            .filter(n => Array.isArray(n.children) && n.children.length > 0)
+            .sort((a, b) => (b.children?.length || 0) - (a.children?.length || 0));
+    }, [nodes]);
+
+    const filteredParents = useMemo(() => {
+        const q = parentListQuery.trim().toLowerCase();
+        if (!q) return groupedParents;
+        return groupedParents.filter(p => {
+            const name = getLocaleString((p as any).name, locale) || '';
+            return name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q);
+        });
+    }, [groupedParents, parentListQuery, locale]);
 
     // Default center is Ueno if user is far
     const defaultCenter: [number, number] = [centerFallback.lat, centerFallback.lon];
@@ -525,6 +603,83 @@ function AppMap() {
                             zone === 'buffer' ? '🟡 Buffer Zone' : '⚪ Outer Zone'}
                     </span>
                 </div>
+
+                <button
+                    type="button"
+                    onClick={() => setIsParentListOpen(v => !v)}
+                    className={`bg-white/90 backdrop-blur px-3 py-2 rounded-2xl shadow-lg text-[11px] font-black tracking-wide text-slate-900 hover:bg-white transition flex items-center gap-2 ${isParentListOpen ? 'ring-2 ring-indigo-400/40' : ''}`}
+                >
+                    <span className="w-5 h-5 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-[11px] font-black">G</span>
+                    <span className="whitespace-nowrap">父子群組</span>
+                    <span className="ml-auto text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">{groupedParents.length}</span>
+                </button>
+
+                {isParentListOpen && (
+                    <div className="bg-white/90 backdrop-blur rounded-[24px] shadow-lg border border-black/[0.04] overflow-hidden w-[320px] max-w-[calc(100vw-2rem)]">
+                        <div className="p-3 border-b border-black/[0.04]">
+                            <div className="flex items-center gap-2">
+                                <input
+                                    value={parentListQuery}
+                                    onChange={(e) => setParentListQuery(e.target.value)}
+                                    placeholder="搜尋父節點名稱或 ID"
+                                    className="flex-1 h-10 px-3 rounded-2xl bg-white/80 border border-black/[0.06] text-[12px] font-bold text-slate-900 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-indigo-400/40"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setParentListQuery('');
+                                        setIsParentListOpen(false);
+                                    }}
+                                    className="h-10 w-10 rounded-2xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors active:scale-[0.98]"
+                                    aria-label="關閉"
+                                >
+                                    ✕
+                                </button>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between">
+                                <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">按子節點數量排序</div>
+                                <div className="text-[10px] font-black text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">顯示 {Math.min(filteredParents.length, 30)} / {filteredParents.length}</div>
+                            </div>
+                        </div>
+
+                        <div className="max-h-64 overflow-auto">
+                            {filteredParents.slice(0, 30).map(p => {
+                                const name = getLocaleString((p as any).name, locale) || p.id;
+                                const count = p.children?.length || 0;
+                                return (
+                                    <button
+                                        key={p.id}
+                                        type="button"
+                                        onClick={() => {
+                                            setCurrentNode(p.id);
+                                            setBottomSheetOpen(true);
+                                            setIsParentListOpen(false);
+                                        }}
+                                        className="w-full px-3 py-2.5 border-b border-black/[0.04] text-left hover:bg-slate-50 active:bg-slate-100 transition-colors"
+                                    >
+                                        <div className="flex items-center justify-between gap-3">
+                                            <div className="min-w-0">
+                                                <div className="text-[12px] font-black text-slate-900 truncate">{name}</div>
+                                                <div className="text-[10px] font-bold text-slate-500 truncate">{p.id}</div>
+                                            </div>
+                                            <div className="shrink-0 h-7 px-2.5 rounded-full bg-slate-900 text-white text-[11px] font-black flex items-center justify-center shadow-sm">
+                                                +{count}
+                                            </div>
+                                        </div>
+                                    </button>
+                                );
+                            })}
+
+                            {filteredParents.length === 0 && (
+                                <div className="px-4 py-6 text-center">
+                                    <div className="text-[12px] font-black text-slate-900">找不到符合的父節點</div>
+                                    <div className="text-[11px] font-bold text-slate-500 mt-1">試試看輸入站名或節點 ID</div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+
                 {(loadingNodes || nodesError) && (
                     <button
                         type="button"
@@ -564,14 +719,26 @@ function AppMap() {
                                     // Find nearest node
                                     try {
                                         const res = await fetchNearbyNodes(latitude, longitude, 4000);
+                                        const getCoords = (n: any): [number, number] | null => {
+                                            if (Array.isArray(n?.location?.coordinates)) return n.location.coordinates;
+                                            if (Array.isArray(n?.coordinates?.coordinates)) return n.coordinates.coordinates;
+                                            if (Array.isArray(n?.coordinates)) return n.coordinates;
+                                            return null;
+                                        };
                                         const nearest = (res || []).reduce((best: any, n: any) => {
+                                            const c = getCoords(n);
+                                            if (!c) return best;
                                             if (!best) return n;
-                                            const d1 = (latitude - n.location.coordinates[1]) ** 2 + (longitude - n.location.coordinates[0]) ** 2;
-                                            const d2 = (latitude - best.location.coordinates[1]) ** 2 + (longitude - best.location.coordinates[0]) ** 2;
+                                            const b = getCoords(best);
+                                            if (!b) return n;
+                                            const d1 = (latitude - c[1]) ** 2 + (longitude - c[0]) ** 2;
+                                            const d2 = (latitude - b[1]) ** 2 + (longitude - b[0]) ** 2;
                                             return d1 < d2 ? n : best;
                                         }, null);
                                         if (nearest) {
-                                            const [lon, lat] = nearest.location.coordinates;
+                                            const coords = getCoords(nearest);
+                                            if (!coords) throw new Error('No coordinates in nearest node');
+                                            const [lon, lat] = coords;
                                             useAppStore.getState().setMapCenter({ lat, lon });
                                             useAppStore.getState().setCurrentNode(nearest.id);
                                         }

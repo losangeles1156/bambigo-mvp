@@ -4,8 +4,9 @@ import { Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { useAppStore } from '@/stores/appStore';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { MapPin, Cloud, Sun, Wind, Crown, TreeDeciduous, Landmark, Zap, Tent, Train } from 'lucide-react';
+import { Crown, MapPin, Train } from 'lucide-react';
 import { OPERATOR_COLORS, getPrimaryOperator } from '@/lib/constants/stationLines';
+import { getLocaleString } from '@/lib/utils/localeUtils';
 
 interface NodeMarkerProps {
     node: {
@@ -18,30 +19,15 @@ interface NodeMarkerProps {
         mapDesign?: { color?: string; icon?: string };
         vibe?: string | null;
         facility_profile?: any;
+        children?: any[];
+        isParent?: boolean;
     };
     zone: 'core' | 'buffer' | 'outer';
     locale?: string;
+    zoom?: number;
 }
 
-// Category to Icon mapping for dynamic styles (fallback)
-const CATEGORY_STYLE: Record<string, { icon: any; color: string; gradient: string }> = {
-    shopping: { icon: '🛍️', color: 'bg-pink-500', gradient: 'from-pink-500 to-rose-600' },
-    dining: { icon: '🍽️', color: 'bg-red-500', gradient: 'from-orange-500 to-red-600' },
-    medical: { icon: '🏥', color: 'bg-emerald-500', gradient: 'from-emerald-400 to-teal-600' },
-    transit: { icon: '🚉', color: 'bg-blue-600', gradient: 'from-blue-500 to-indigo-700' },
-    default: { icon: '📍', color: 'bg-slate-600', gradient: 'from-gray-500 to-gray-700' }
-};
-
-// Design Configuration Mapping (legacy, kept for compatibility)
-const DESIGN_CONFIG: Record<string, { icon: any; fallbackColor: string }> = {
-    park: { icon: TreeDeciduous, fallbackColor: '#F39700' },
-    red_brick: { icon: Landmark, fallbackColor: '#E25822' },
-    electric: { icon: Zap, fallbackColor: '#FFE600' },
-    lantern: { icon: Tent, fallbackColor: '#D32F2F' },
-};
-
-
-export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
+export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProps) {
     const { setCurrentNode, setBottomSheetOpen, currentNodeId } = useAppStore();
 
     // Coordinate Parsing
@@ -56,6 +42,8 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
 
     const isSelected = currentNodeId === node.id;
     const isMajor = node.tier === 'major' || node.is_hub;
+    const childCount = Array.isArray(node.children) ? node.children.length : 0;
+    const isGroup = childCount > 0;
 
     // [NEW] Operator-Based Color System
     const primaryOperator = getPrimaryOperator(node.id);
@@ -67,74 +55,85 @@ export function NodeMarker({ node, zone, locale = 'zh-TW' }: NodeMarkerProps) {
     // Final color is operator-based (overriding old mapDesign system)
     const finalColor = operatorColor;
 
+    const baseColor = isSelected ? '#111827' : finalColor;
+    const label = getLocaleString(node.name, locale) || node.id;
+    const ringRadiusClass = isGroup ? 'rounded-[22px]' : 'rounded-full';
+    const showLabel = isSelected || isGroup || (isMajor && zoom >= 17);
+
     const handleClick = () => {
         setCurrentNode(node.id);
         setBottomSheetOpen(true);
     };
 
     const iconMarkup = renderToStaticMarkup(
-        <div className={`relative flex items-center justify-center transition-all duration-500 group ${isSelected ? 'z-50 scale-125' : 'z-10 hover:scale-110 hover:z-40'}`}>
-
-            {/* 1. Pulse Layer */}
+        <div
+            title={label}
+            className={`relative flex items-center justify-center select-none transition-transform duration-300 group ${isSelected ? 'z-50 scale-110' : 'z-10 hover:scale-[1.04] hover:z-40'}`}
+        >
             {(isSelected || isMajor) && (
-                <div className={`absolute inset-0 rounded-full animate-ping opacity-20 bg-indigo-500`} style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-0 rounded-full animate-ping opacity-15 bg-indigo-600" style={{ animationDuration: '3s' }} />
             )}
 
-            {/* 2. Primary Marker Shape */}
-            <div className="relative drop-shadow-2xl filter group-active:scale-95 transition-transform">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center border-[3px] shadow-lg
-                    ${isSelected
-                        ? 'bg-gray-900 border-white text-white'
-                        : 'border-white text-white'
-                    }
-                `} style={{ backgroundColor: isSelected ? '#111827' : finalColor }}>
-                    <div className="filter drop-shadow-md transform transition-transform group-hover:scale-110">
-                        {/* Render Lucide Icon */}
-                        <DisplayIcon size={24} strokeWidth={2.5} />
+            {isGroup && (
+                <div className="absolute inset-0 rounded-[22px] bg-indigo-600/15 blur-md" />
+            )}
+
+            <div className="relative">
+                {isGroup && (
+                    <>
+                        <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] rounded-[18px] bg-slate-900/15" />
+                        <div className="absolute inset-0 translate-x-[3px] translate-y-[3px] rounded-[18px] bg-slate-900/10" />
+                    </>
+                )}
+
+                <div
+                    className={`relative flex items-center justify-center border-[3px] border-white text-white shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-transform group-active:scale-[0.98] ${isGroup ? 'rounded-[18px]' : 'rounded-full'}`}
+                    style={{ width: isMajor || isGroup ? 56 : 48, height: isMajor || isGroup ? 56 : 48, backgroundColor: baseColor }}
+                >
+                    <div className="drop-shadow-md">
+                        <DisplayIcon size={isMajor ? 24 : 22} strokeWidth={2.6} />
                     </div>
+
+                    {isSelected && (
+                        <div className={`absolute inset-[-6px] ${ringRadiusClass} ring-2 ring-indigo-400/80`} />
+                    )}
                 </div>
 
-                {/* Crown for Hubs */}
                 {isMajor && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-yellow-400 drop-shadow-md">
-                        <Crown size={16} fill="currentColor" />
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                        <Crown size={22} className="text-amber-400 fill-amber-400 drop-shadow-[0_3px_8px_rgba(0,0,0,0.30)]" />
                     </div>
                 )}
 
-                {/* Pointer */}
-                <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 border-r-[3px] border-b-[3px] border-white rounded-br-sm -z-10 -mt-2`}
-                    style={{ backgroundColor: finalColor }}>
-                </div>
-            </div>
-
-            {/* 3. Label (Name) */}
-            {
-                (isSelected || isMajor) && (
-                    <div className={`absolute -bottom-12 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-xl font-black whitespace-nowrap shadow-2xl border border-white/50 backdrop-blur-md transition-all duration-300
-                    ${isSelected
-                            ? 'bg-gray-900/90 text-white scale-105 opacity-100 translate-y-0'
-                            : 'bg-white/90 text-gray-900 scale-100 opacity-100 translate-y-0'
-                        }
-                    z-50
-                `}>
-                        <div className="flex flex-col items-center gap-0">
-                            <span className="text-xs tracking-tight">
-                                {typeof node.name === 'string'
-                                    ? node.name
-                                    : (node.name?.[locale] || node.name?.['zh-TW'] || node.name?.['en'] || 'Station')}
-                            </span>
+                {isGroup && (
+                    <div className="absolute -top-2.5 -right-2.5 z-30">
+                        <div className="h-6 min-w-6 px-2 rounded-full bg-slate-900/90 text-white text-[10px] font-black flex items-center justify-center shadow-lg border border-white/30">
+                            +{childCount}
                         </div>
                     </div>
-                )
-            }
+                )}
+
+                <div
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 border-r-[3px] border-b-[3px] border-white rounded-br-sm -z-10"
+                    style={{ backgroundColor: baseColor }}
+                />
+            </div>
+
+            {showLabel && (
+                <div
+                    className={`absolute -bottom-12 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-2xl whitespace-nowrap shadow-2xl border border-white/60 backdrop-blur-md transition-all duration-200 ${isSelected ? 'bg-slate-900/90 text-white scale-105' : 'bg-white/90 text-slate-900'}`}
+                >
+                    <span className="text-xs font-black tracking-tight">{label}</span>
+                </div>
+            )}
         </div>
     );
 
     const leafletIcon = L.divIcon({
         html: iconMarkup,
         className: 'custom-node-icon',
-        iconSize: [56, 56],
-        iconAnchor: [28, 56],
+        iconSize: [72, 72],
+        iconAnchor: [36, 72],
     });
 
     return (

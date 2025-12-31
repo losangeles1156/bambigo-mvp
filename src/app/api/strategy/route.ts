@@ -156,11 +156,11 @@ export async function POST(request: Request) {
                 cards.push({
                     id: 'speed-hack',
                     type: 'primary',
-                    title: { ja: '地元民の近道', en: 'Local Shortcut', zh: '在地人的捷徑' },
+                    title: { ja: hack.title, en: hack.title, zh: hack.title },
                     description: {
-                        ja: hack,
-                        en: hack,
-                        zh: hack
+                        ja: hack.content,
+                        en: hack.content,
+                        zh: hack.content
                     },
                     actionLabel: { ja: '確認', en: 'Check', zh: '確認' }
                 });
@@ -174,7 +174,11 @@ export async function POST(request: Request) {
                 id: `trap-${idx}`,
                 type: cards.length === 0 ? 'primary' : 'secondary',
                 title: { ja: trap.title, en: trap.title, zh: trap.title },
-                description: { ja: trap.content + '\n' + trap.advice, en: trap.content + '\n' + trap.advice, zh: trap.content + '\n' + trap.advice },
+                description: {
+                    ja: (trap.content || '') + '\n' + trap.advice,
+                    en: (trap.content || '') + '\n' + trap.advice,
+                    zh: (trap.content || '') + '\n' + trap.advice
+                },
                 actionLabel: { ja: '注意', en: 'Warning', zh: '注意' }
             });
         });
@@ -203,8 +207,12 @@ export async function POST(request: Request) {
                 cards.push({
                     id: 'secondary-hack',
                     type: 'secondary',
-                    title: { ja: '豆知識', en: 'Did you know?', zh: '你知道嗎？' },
-                    description: { ja: hack, en: hack, zh: hack },
+                    title: { ja: hack.title, en: hack.title, zh: hack.title },
+                    description: {
+                        ja: hack.content,
+                        en: hack.content,
+                        zh: hack.content
+                    },
                     actionLabel: { ja: '詳細', en: 'Detail', zh: '詳細' }
                 });
             }
@@ -216,3 +224,4 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: 'Failed to generate strategy' }, { status: 500 });
     }
 }
+

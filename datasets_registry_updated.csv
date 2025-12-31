@@ -70,7 +70,7 @@ ds_025,東京都：オープンデータカタログサイト,開放數據,東�
 ・工事内容は変更されることもあります。"
 ds_026,,,,static,nan,,,,,False,,PRIMARY,
 ds_027,,,,static,nan,,,,,False,,PRIMARY,
-ds_028,數據類別 (Category),數據名稱 (Name),來源機構 (Provider),static,獲取方式 (Method),,,,,False,,PRIMARY,用途 (BambiGO L3 Tag)
+ds_028,數據類別 (Category),數據名稱 (Name),來源機構 (Provider),static,獲取方式 (Method),,,,,False,,PRIMARY,用途 (LUTAGU L3 Tag)
 ds_029,微設施,公共廁所與無障礙設施,OpenStreetMap (OSM)、各車站バリアフリー地圖,static,API (Overpass API),,,,,False,,PRIMARY,"amenity=toilets
 
 diaper=yes (尿布台)

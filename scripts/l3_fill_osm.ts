@@ -47,7 +47,7 @@ async function fetchOverpass(query: string, retries = 0): Promise<any> {
         const response = await fetch('https://overpass-api.de/api/interpreter', {
             method: 'POST',
             body: query,
-            headers: { 'User-Agent': 'BambiGO-L3-Fill/1.0' }
+            headers: { 'User-Agent': 'LUTAGU-L3-Fill/1.0' }
         });
 
         if (response.status === 429 || response.status === 504) {

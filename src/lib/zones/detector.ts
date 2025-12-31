@@ -46,13 +46,26 @@ export class ZoneDetector {
 
             // Use the RPC 'nearby_nodes' or similar check. 
             // Optimized query: just check existence of ONE node within radius.
-            const { data, error } = await supabase
-                .rpc('nearby_nodes', {
+            let data: any = null;
+            let error: any = null;
+
+            ({ data, error } = await supabase
+                .rpc('nearby_nodes_v2', {
                     center_lat: lat,
                     center_lon: lon,
-                    radius_meters: radiusMeters
-                })
-                .limit(1);
+                    radius_meters: radiusMeters,
+                    max_results: 1
+                }));
+
+            if (error) {
+                ({ data, error } = await supabase
+                    .rpc('nearby_nodes', {
+                        center_lat: lat,
+                        center_lon: lon,
+                        radius_meters: radiusMeters
+                    })
+                    .limit(1));
+            }
 
             if (error) {
                 console.error('Buffer zone check failed:', error);

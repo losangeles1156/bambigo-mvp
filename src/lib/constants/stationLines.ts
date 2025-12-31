@@ -191,41 +191,61 @@ export const STATION_LINES: Record<string, StationLineDef[]> = {
 };
 
 export const HUB_STATION_MEMBERS: Record<string, string[]> = {
+    // Kanda (JR + Metro Ginza)
+    'odpt:Station:JR-East.Kanda': [
+        'odpt:Station:JR-East.Kanda',
+        'odpt:Station:TokyoMetro.Kanda',
+        'odpt.Station:TokyoMetro.Ginza.Kanda'
+    ],
+    'odpt:Station:TokyoMetro.Kanda': [
+        'odpt:Station:JR-East.Kanda',
+        'odpt:Station:TokyoMetro.Kanda',
+        'odpt.Station:TokyoMetro.Ginza.Kanda'
+    ],
+    'odpt.Station:TokyoMetro.Ginza.Kanda': [
+        'odpt:Station:JR-East.Kanda',
+        'odpt:Station:TokyoMetro.Kanda',
+        'odpt.Station:TokyoMetro.Ginza.Kanda'
+    ],
+
+    // Ueno (JR + Metro Ginza + Metro Hibiya)
     'odpt:Station:JR-East.Ueno': [
         'odpt:Station:JR-East.Ueno',
+        'odpt:Station:TokyoMetro.Ueno',
         'odpt.Station:TokyoMetro.Ginza.Ueno',
-        'odpt.Station:TokyoMetro.Hibiya.Ueno',
-        'odpt.Station:Keisei.KeiseiUeno'
+        'odpt.Station:TokyoMetro.Hibiya.Ueno'
     ],
     'odpt:Station:TokyoMetro.Ueno': [
         'odpt:Station:JR-East.Ueno',
+        'odpt:Station:TokyoMetro.Ueno',
         'odpt.Station:TokyoMetro.Ginza.Ueno',
-        'odpt.Station:TokyoMetro.Hibiya.Ueno',
-        'odpt.Station:Keisei.KeiseiUeno'
+        'odpt.Station:TokyoMetro.Hibiya.Ueno'
     ],
     'odpt.Station:TokyoMetro.Ginza.Ueno': [
         'odpt:Station:JR-East.Ueno',
+        'odpt:Station:TokyoMetro.Ueno',
         'odpt.Station:TokyoMetro.Ginza.Ueno',
-        'odpt.Station:TokyoMetro.Hibiya.Ueno',
-        'odpt.Station:Keisei.KeiseiUeno'
+        'odpt.Station:TokyoMetro.Hibiya.Ueno'
     ],
 
+    // Akihabara (JR + Metro Hibiya + Tsukuba Express)
     'odpt:Station:JR-East.Akihabara': [
         'odpt:Station:JR-East.Akihabara',
-        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
-        'odpt:Station:TsukubaExpress.Akihabara'
+        'odpt:Station:TsukubaExpress.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara'
     ],
     'odpt:Station:TsukubaExpress.Akihabara': [
         'odpt:Station:JR-East.Akihabara',
-        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
-        'odpt:Station:TsukubaExpress.Akihabara'
+        'odpt:Station:TsukubaExpress.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara'
     ],
     'odpt.Station:TokyoMetro.Hibiya.Akihabara': [
         'odpt:Station:JR-East.Akihabara',
-        'odpt.Station:TokyoMetro.Hibiya.Akihabara',
-        'odpt:Station:TsukubaExpress.Akihabara'
+        'odpt:Station:TsukubaExpress.Akihabara',
+        'odpt.Station:TokyoMetro.Hibiya.Akihabara'
     ],
 
+    // Tokyo (JR + Metro Marunouchi)
     'odpt:Station:JR-East.Tokyo': [
         'odpt:Station:JR-East.Tokyo',
         'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
@@ -235,15 +255,17 @@ export const HUB_STATION_MEMBERS: Record<string, string[]> = {
         'odpt.Station:TokyoMetro.Marunouchi.Tokyo'
     ],
 
-    // Shinjuku Group
+    // Shinjuku (JR + Metro Marunouchi + Toei Shinjuku + Toei Oedo)
     'odpt:Station:JR-East.Shinjuku': [
         'odpt:Station:JR-East.Shinjuku',
+        'odpt:Station:TokyoMetro.Shinjuku',
         'odpt.Station:TokyoMetro.Marunouchi.Shinjuku',
         'odpt.Station:Toei.Shinjuku.Shinjuku',
         'odpt.Station:Toei.Oedo.Shinjuku'
     ],
     'odpt:Station:TokyoMetro.Shinjuku': [
         'odpt:Station:JR-East.Shinjuku',
+        'odpt:Station:TokyoMetro.Shinjuku',
         'odpt.Station:TokyoMetro.Marunouchi.Shinjuku',
         'odpt.Station:Toei.Shinjuku.Shinjuku',
         'odpt.Station:Toei.Oedo.Shinjuku'
@@ -311,6 +333,53 @@ export const HUB_STATION_MEMBERS: Record<string, string[]> = {
         'odpt:Station:TokyoMonorail.Haneda.MonorailHamamatsucho',
         'odpt.Station:Toei.Asakusa.Daimon',
         'odpt.Station:Toei.Oedo.Daimon'
+    ],
+
+    // Nihombashi (Metro + Toei)
+    'odpt:Station:TokyoMetro.Nihombashi': [
+        'odpt:Station:TokyoMetro.Nihombashi',
+        'odpt:Station:Toei.Nihombashi',
+        'odpt.Station:TokyoMetro.Ginza.Nihombashi',
+        'odpt.Station:TokyoMetro.Tozai.Nihombashi',
+        'odpt.Station:Toei.Asakusa.Nihombashi'
+    ],
+    'odpt:Station:Toei.Nihombashi': [
+        'odpt:Station:TokyoMetro.Nihombashi',
+        'odpt:Station:Toei.Nihombashi',
+        'odpt.Station:TokyoMetro.Ginza.Nihombashi',
+        'odpt.Station:TokyoMetro.Tozai.Nihombashi',
+        'odpt.Station:Toei.Asakusa.Nihombashi'
+    ],
+
+    // Iidabashi (JR + Metro + Toei)
+    'odpt:Station:JR-East.Iidabashi': [
+        'odpt:Station:JR-East.Iidabashi',
+        'odpt:Station:TokyoMetro.Iidabashi',
+        'odpt:Station:Toei.Iidabashi',
+        'odpt.Station:TokyoMetro.Tozai.Iidabashi',
+        'odpt.Station:TokyoMetro.Yurakucho.Iidabashi',
+        'odpt.Station:TokyoMetro.Namboku.Iidabashi',
+        'odpt.Station:Toei.Oedo.Iidabashi'
+    ],
+    'odpt:Station:TokyoMetro.Iidabashi': [
+        'odpt:Station:JR-East.Iidabashi',
+        'odpt:Station:TokyoMetro.Iidabashi',
+        'odpt:Station:Toei.Iidabashi',
+        'odpt.Station:TokyoMetro.Tozai.Iidabashi',
+        'odpt.Station:TokyoMetro.Yurakucho.Iidabashi',
+        'odpt.Station:TokyoMetro.Namboku.Iidabashi',
+        'odpt.Station:Toei.Oedo.Iidabashi'
+    ],
+
+    // Otemachi (Metro + Toei)
+    'odpt:Station:TokyoMetro.Otemachi': [
+        'odpt:Station:TokyoMetro.Otemachi',
+        'odpt:Station:Toei.Otemachi',
+        'odpt.Station:TokyoMetro.Marunouchi.Otemachi',
+        'odpt.Station:TokyoMetro.Tozai.Otemachi',
+        'odpt.Station:TokyoMetro.Chiyoda.Otemachi',
+        'odpt.Station:TokyoMetro.Hanzomon.Otemachi',
+        'odpt.Station:Toei.Mita.Otemachi'
     ]
 };
 

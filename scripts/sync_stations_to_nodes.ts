@@ -9,6 +9,42 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+function normalizeLonLat(lonRaw: unknown, latRaw: unknown): [number, number] | null {
+    const lon = Number(lonRaw);
+    const lat = Number(latRaw);
+    if (!Number.isFinite(lon) || !Number.isFinite(lat)) return null;
+    if (lon === 0 && lat === 0) return null;
+
+    if (Math.abs(lon) <= 180 && Math.abs(lat) <= 90) return [lon, lat];
+    if (Math.abs(lat) <= 180 && Math.abs(lon) <= 90) return [lat, lon];
+    return null;
+}
+
+function extractLonLat(value: any): [number, number] | null {
+    if (!value) return null;
+
+    if (typeof value === 'string') {
+        const m = value.match(/POINT\s*\(\s*([-0-9\.]+)\s+([-0-9\.]+)\s*\)/i);
+        if (!m) return null;
+        return normalizeLonLat(m[1], m[2]);
+    }
+
+    if (Array.isArray(value) && value.length >= 2) {
+        return normalizeLonLat(value[0], value[1]);
+    }
+
+    const coords =
+        (Array.isArray(value?.coordinates?.coordinates) ? value.coordinates.coordinates : null) ??
+        (Array.isArray(value?.coordinates) ? value.coordinates : null) ??
+        (Array.isArray(value?.geometry?.coordinates) ? value.geometry.coordinates : null);
+
+    if (Array.isArray(coords) && coords.length >= 2) {
+        return normalizeLonLat(coords[0], coords[1]);
+    }
+
+    return null;
+}
+
 async function sync() {
     console.log('--- Syncing stations_static to nodes ---');
 
@@ -26,30 +62,23 @@ async function sync() {
 
     // 2. Map to nodes schema
     const nodesToUpsert = stations.map(s => {
-        // Extract lat/lon from location (can be WKT or GeoJSON)
-        let lat = 0, lon = 0;
-        if (typeof s.location === 'string') {
-            const m = s.location.match(/POINT\(([-0-9\.]+) ([-0-9\.]+)\)/);
-            if (m) { lon = parseFloat(m[1]); lat = parseFloat(m[2]); }
-        } else if (s.location?.coordinates) {
-            [lon, lat] = s.location.coordinates;
-        }
+        const id = String((s as any).id ?? (s as any).station_id ?? '');
+        const lonLat = extractLonLat((s as any).location);
 
         return {
-            id: s.id,
-            city_id: s.city_id || 'tokyo_core',
+            id,
+            city_id: (s as any).city_id || 'tokyo_core',
             name: s.name,
-            coordinates: `POINT(${lon} ${lat})`,
-            node_type: s.type || 'station',
+            coordinates: lonLat ? { type: 'Point', coordinates: lonLat } : null,
+            node_type: (s as any).type || (s as any).node_type || 'station',
             is_active: true,
             // zone: s.zone || 'core', // Temporarily disabled as column is missing in nodes table
             updated_at: new Date().toISOString()
         };
     }).filter(n => {
-        // Basic validation: must have coords
-        const hasCoords = n.coordinates !== 'POINT(0 0)';
-        if (!hasCoords) console.warn(`⚠️ Skipping ${n.id} due to missing coordinates.`);
-        return hasCoords;
+        const ok = Boolean(n.id) && Boolean(n.name) && Boolean(n.coordinates);
+        if (!ok) console.warn(`⚠️ Skipping ${n.id || '(missing id)'} due to invalid data.`);
+        return ok;
     });
 
     console.log(`Prepared ${nodesToUpsert.length} nodes for upsert.`);

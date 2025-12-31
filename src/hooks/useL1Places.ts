@@ -78,7 +78,24 @@ export function useL1Places() {
                     return;
                 }
 
-                const stationIds = buildStationIdSearchCandidates(nodeId);
+                let hubId: string | null = null;
+                try {
+                    const { data: nodeRow } = await supabase
+                        .from('nodes')
+                        .select('parent_hub_id')
+                        .eq('id', nodeId)
+                        .maybeSingle();
+                    hubId = nodeRow?.parent_hub_id ?? null;
+                } catch {
+                    hubId = null;
+                }
+
+                const stationIds = Array.from(
+                    new Set([
+                        ...buildStationIdSearchCandidates(nodeId),
+                        ...(hubId ? buildStationIdSearchCandidates(hubId) : [])
+                    ])
+                );
                 const { data, error } = await supabase
                     .from('l1_places')
                     .select('*')

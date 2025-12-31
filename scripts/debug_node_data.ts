@@ -2,6 +2,7 @@
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 import path from 'path';
+import { resolveNodeInheritance } from '../src/lib/nodes/inheritance';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
@@ -12,26 +13,17 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function debugNodeData() {
     console.log('--- Debugging Node Data ---');
 
-    // 1. Fetch Ueno (Hub -> parent_hub_id should be NULL)
-    const { data: ueno } = await supabase
-        .from('nodes')
-        .select('id, name, parent_hub_id, node_type')
-        .eq('id', 'odpt:Station:TokyoMetro.Ueno')
-        .single();
+    const uenoId = 'odpt:Station:TokyoMetro.Ueno';
+    const inarichoId = 'odpt:Station:TokyoMetro.Inaricho';
 
-    // 2. Fetch Inaricho (Spoke -> parent_hub_id should be SET)
-    const { data: inaricho } = await supabase
-        .from('nodes')
-        .select('id, name, parent_hub_id, node_type')
-        .eq('id', 'odpt:Station:TokyoMetro.Inaricho') // Assuming this ID exists from seed
-        .single();
+    const uenoResolved = await resolveNodeInheritance({ nodeId: uenoId, client: supabase });
+    console.log('\n--- Node (Ueno) ---');
+    console.log(JSON.stringify(uenoResolved, null, 2));
 
-    console.log('\n--- Working Node (Ueno) ---');
-    console.log(JSON.stringify(ueno, null, 2));
-
-    if (inaricho) {
-        console.log('\n--- Spoke Node (Inaricho) ---');
-        console.log(JSON.stringify(inaricho, null, 2));
+    const inarichoResolved = await resolveNodeInheritance({ nodeId: inarichoId, client: supabase });
+    if (inarichoResolved) {
+        console.log('\n--- Node (Inaricho) ---');
+        console.log(JSON.stringify(inarichoResolved, null, 2));
     } else {
         console.log('\n⚠️ Inaricho not found.');
     }

@@ -38,51 +38,87 @@ const CATEGORY_LABELS: Record<string, { ja: string; en: string; zh: string }> = 
     nature: { ja: '自然', en: 'Nature', zh: '自然' }
 };
 
-// Vibe Rules: Keyword matching
-const VIBE_RULES = [
+export const VIBE_RULES = [
     {
         id: 'ramen',
         keywords: ['ramen', 'noodle', 'soba', 'udon'],
         label: { ja: 'ラーメン激戦区', en: 'Ramen Battleground', zh: '拉麵激戰區' },
-        desc: { ja: '名店がひしめくエリア', en: 'High density of noods', zh: '名店雲集的麵食熱點' }
+        desc: { ja: '名店がひしめくエリア', en: 'High density of noods', zh: '名店雲集的麵食熱點' },
+        relatedCategories: ['dining']
     },
     {
         id: 'izakaya',
         keywords: ['izakaya', 'pub', 'bar', 'beer'],
         label: { ja: '居酒屋天国', en: 'Izakaya Heaven', zh: '居酒屋天堂' },
-        desc: { ja: '夜の街を楽しむならここ', en: 'Best for night out', zh: '享受微醺夜生活' }
+        desc: { ja: '夜の街を楽しむならここ', en: 'Best for night out', zh: '享受微醺夜生活' },
+        relatedCategories: ['dining']
     },
     {
         id: 'coffee',
         keywords: ['coffee', 'cafe', 'starbucks', 'roastery'],
         label: { ja: 'カフェ巡り', en: 'Cafe Culture', zh: '咖啡巡禮' },
-        desc: { ja: 'おしゃれなカフェが多い', en: 'Relaxing coffee spots', zh: '適合享受悠閒午後' }
+        desc: { ja: 'おしゃれなカフェが多い', en: 'Relaxing coffee spots', zh: '適合享受悠閒午後' },
+        relatedCategories: ['dining', 'leisure']
     },
     {
         id: 'market',
         keywords: ['market', 'ameyoko', 'street_vendor', 'marketplace'],
         label: { ja: '市場の活気', en: 'Market Vibes', zh: '熱鬧市場' },
-        desc: { ja: 'アメ横のような活氣', en: 'Bustling local markets', zh: '充滿活力的商店街' }
+        desc: { ja: 'アメ横のような活氣', en: 'Bustling local markets', zh: '充滿活力的商店街' },
+        relatedCategories: ['shopping']
     },
     {
         id: 'museum',
         keywords: ['museum', 'gallery', 'art'],
         label: { ja: '芸術と文化', en: 'Art & Culture', zh: '藝文特區' },
-        desc: { ja: '美術館やギャラリー', en: 'Museums & Galleries', zh: '美術館與藝廊' }
+        desc: { ja: '美術館やギャラリー', en: 'Museums & Galleries', zh: '美術館與藝廊' },
+        relatedCategories: ['culture']
     },
     {
         id: 'park',
         keywords: ['park', 'garden', 'nature'],
-        label: { ja: '都會の綠地', en: 'Urban Green', zh: '城市綠意' },
-        desc: { ja: '散策に最適な公園', en: 'Perfect for a walk', zh: '適合漫步的大型公園' }
+        label: { ja: '都会の緑地', en: 'Urban Green', zh: '城市綠意' },
+        desc: { ja: '散策に最適な公園', en: 'Perfect for a walk', zh: '適合漫步的大型公園' },
+        relatedCategories: ['nature', 'leisure']
     }
 ];
 
-export function useStationDNA() {
-    const { places, loading } = useL1Places();
+export function getMatchingVibes(place: L1Place): string[] {
+    const matchedVibes: string[] = [];
+    const text = (
+        (place.name || '') + ' ' +
+        (place.name_i18n?.en || '') + ' ' +
+        (place.name_i18n?.ja || '') + ' ' +
+        (place.name_i18n?.zh || '') + ' ' +
+        Object.keys(place.tags || {}).join(' ') + ' ' +
+        Object.values(place.tags || {}).join(' ')
+    ).toLowerCase();
+
+    VIBE_RULES.forEach(rule => {
+        if (rule.keywords.some(k => text.includes(k))) {
+            matchedVibes.push(rule.id);
+        }
+    });
+    return matchedVibes;
+}
+
+export function useStationDNA(initialData?: any) {
+    const { places, loading: placesLoading } = useL1Places();
 
     const dna = useMemo(() => {
-        if (loading || places.length === 0) return null;
+        // Priority 1: Use Initial Data (Backend)
+        if (initialData && initialData.vibe_tags && initialData.vibe_tags.length > 0) {
+            return {
+                loading: false,
+                title: { ja: '都市の拠点', en: 'Urban Hub', zh: '城市樞紐' }, // TODO: Store title/tagline in L1_DNA_Data
+                tagline: { ja: '多くの人々が行き交う場所', en: 'A bustling transit point', zh: '人來人往的熱鬧據點' },
+                categories: initialData.categories || {},
+                vibe_tags: initialData.vibe_tags,
+                signature_spots: [] // Can be filled if L1_DNA_Data stores spots
+            };
+        }
+
+        if (placesLoading || places.length === 0) return null;
 
         // 1. Group by Category
         const groups: Record<string, L1Place[]> = {};
@@ -160,13 +196,13 @@ export function useStationDNA() {
             vibe_tags,
             signature_spots: places.slice(0, 3)
         };
-    }, [places, loading]);
+    }, [places, placesLoading, initialData]);
 
     return dna || {
-        loading,
+        loading: placesLoading && !initialData,
         title: { ja: '', en: '', zh: '' },
         tagline: { ja: '', en: '', zh: '' },
-        categories: {},
+        categories: {} as Record<string, L1CategorySummary>,
         vibe_tags: [],
         signature_spots: []
     };

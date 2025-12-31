@@ -16,7 +16,7 @@
 - **設定**:
   ```
   Name: apiKey
-  Value: ntf1ryl3xiy9lgmf5qsyef04xa9pl8jfx01l669mjtoru6s3xi3zd6xt7kqn19iw
+  Value: <ODPT_API_KEY>
   ```
 
 #### ODPT Challenge API Credential
@@ -25,7 +25,7 @@
 - **設定**:
   ```
   Name: apiKey
-  Value: 8q0zbz99brwjt46mowbqs2e15ebiajv0d5f9qbjd4ndids493s1vta30bxmcjbgg
+  Value: <ODPT_CHALLENGE_API_KEY>
   ```
 
 #### Redis Credential
@@ -69,7 +69,7 @@ $$ LANGUAGE plpgsql;
 ## 📥 匯入 Workflow
 
 1. 在 n8n 中點擊 **Import from File**
-2. 選擇 `bambigo-l2-train-disruption-workflow.json`
+2. 選擇 `lutagu-l2-train-disruption-workflow.json`
 3. 匯入後，更新各節點的 Credentials 設定
 
 ## 🔗 節點說明
@@ -105,7 +105,7 @@ $$ LANGUAGE plpgsql;
 
 ### Redis Cache
 
-- Key 格式: `bambigo:l2:disruption:{node_id}`
+- Key 格式: `lutagu:l2:disruption:{node_id}`
 - TTL: 300 秒（5 分鐘）
 - 有異常和正常狀態都會快取
 
@@ -169,7 +169,7 @@ $$ LANGUAGE plpgsql;
 // API 端點範例
 app.get('/api/l2/disruption/:nodeId', async (req, res) => {
   const { nodeId } = req.params;
-  const data = await redis.get(`bambigo:l2:disruption:${nodeId}`);
+  const data = await redis.get(`lutagu:l2:disruption:${nodeId}`);
   
   if (!data) {
     return res.json({
