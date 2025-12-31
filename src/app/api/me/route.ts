@@ -3,7 +3,11 @@ import { requireUser } from '@/lib/security/supabaseAuth';
 
 function isSchemaCacheMissingColumnError(error: any) {
     const msg = (error as any)?.message || String(error);
-    return msg.includes('Could not find the') && msg.includes('column') && msg.includes('schema cache');
+    // Case 1: PostgREST "Could not find the '...' column of '...' in the schema cache"
+    if (msg.includes('Could not find the') && msg.includes('column') && msg.includes('schema cache')) return true;
+    // Case 2: Postgres "column ... does not exist"
+    if (msg.includes('column') && msg.includes('does not exist')) return true;
+    return false;
 }
 
 async function fetchMemberProfile(rls: any, userId: string) {
