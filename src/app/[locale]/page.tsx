@@ -5,7 +5,7 @@ import { useAppStore } from '@/stores/appStore';
 import { NodeTabs } from '@/components/node/NodeTabs';
 import { TripGuardStatus } from '@/components/guard/TripGuardStatus';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchNodeConfig, NodeProfile } from '@/lib/api/nodes';
 import { ChatOverlay } from '@/components/chat/ChatOverlay';
 import { Settings, X, MessageSquare, Compass, CalendarDays, User2, Star } from 'lucide-react';
@@ -70,7 +70,10 @@ export default function Home() {
     }, []);
     const [sessionEmail, setSessionEmail] = useState<string | null>(null);
     const [sessionToken, setSessionToken] = useState<string | null>(null);
+    const [sessionUserId, setSessionUserId] = useState<string | null>(null);
     const [favoriteNodeIds, setFavoriteNodeIds] = useState<Set<string>>(() => new Set());
+
+    const ensuredProfileUserIdRef = useRef<string | null>(null);
 
     const ONBOARDING_VERSION = 1;
     const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
@@ -118,12 +121,14 @@ export default function Home() {
             if (cancelled) return;
             setSessionEmail(data.session?.user?.email || null);
             setSessionToken(data.session?.access_token || null);
+            setSessionUserId(data.session?.user?.id || null);
         }
 
         void load();
         const { data } = client.auth.onAuthStateChange((_event, session) => {
             setSessionEmail(session?.user?.email || null);
             setSessionToken(session?.access_token || null);
+            setSessionUserId(session?.user?.id || null);
         });
 
         return () => {
@@ -133,6 +138,35 @@ export default function Home() {
             }
         };
     }, [supabase]);
+
+    useEffect(() => {
+        if (!sessionToken) return;
+        if (!sessionUserId) return;
+        if (ensuredProfileUserIdRef.current === sessionUserId) return;
+
+        ensuredProfileUserIdRef.current = sessionUserId;
+        let cancelled = false;
+
+        async function ensureProfile() {
+            try {
+                const res = await fetch('/api/me', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${sessionToken}`
+                    }
+                });
+                if (!res.ok) throw new Error('ensure_profile_failed');
+            } catch {
+                if (cancelled) return;
+                ensuredProfileUserIdRef.current = null;
+            }
+        }
+
+        void ensureProfile();
+        return () => {
+            cancelled = true;
+        };
+    }, [sessionToken, sessionUserId]);
 
     useEffect(() => {
         if (!sessionToken) {
