@@ -26,7 +26,8 @@ export async function GET(req: NextRequest) {
         .maybeSingle();
 
     if (error) {
-        return NextResponse.json({ error: 'Database Error' }, { status: 500 });
+        console.error('[api/me] member_profiles select error', error);
+        return NextResponse.json({ error: 'Database Error', details: error.message || String(error) }, { status: 500 });
     }
 
     const safeProfile = profile && !profile.deleted_at ? profile : null;

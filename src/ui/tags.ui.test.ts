@@ -111,14 +111,14 @@ async function clickNodeTabByIndex(page: any, index: number): Promise<void> {
     }, index);
 }
 
-async function waitForBadge(page: any, badge: 'L1' | 'L2' | 'L3'): Promise<void> {
-    await page.waitForFunction((b: string) => {
+async function waitForLevelLabel(page: any, label: 'Level 1' | 'Level 2' | 'Level 3'): Promise<void> {
+    await page.waitForFunction((expected: string) => {
         const spans = Array.from(document.querySelectorAll('span'));
-        return spans.some(s => (s.textContent || '').trim() === b);
-    }, { timeout: 60_000 }, badge);
+        return spans.some(s => (s.textContent || '').trim() === expected);
+    }, { timeout: 60_000 }, label);
 }
 
-test('UI renders L1/L2/L3 level badges in node tabs', { timeout: 180_000 }, async (t) => {
+test('UI renders level badges in node tabs', { timeout: 180_000 }, async (t) => {
     const port = pickAvailablePort();
     const server = await startNextDev(port);
     t.after(async () => {
@@ -139,13 +139,13 @@ test('UI renders L1/L2/L3 level badges in node tabs', { timeout: 180_000 }, asyn
     await clickOnboardingHubButton(page);
 
     await clickNodeTabByIndex(page, 0);
-    await waitForBadge(page, 'L1');
+    await waitForLevelLabel(page, 'Level 1');
 
     await clickNodeTabByIndex(page, 1);
-    await waitForBadge(page, 'L2');
+    await waitForLevelLabel(page, 'Level 2');
 
     await clickNodeTabByIndex(page, 2);
-    await waitForBadge(page, 'L3');
+    await waitForLevelLabel(page, 'Level 3');
 
     assert.ok(true);
 });

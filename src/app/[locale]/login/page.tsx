@@ -39,6 +39,8 @@ export default function LoginPage() {
     const [session, setSession] = useState<Session | null>(null);
     const [sentMagicLink, setSentMagicLink] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [profileSyncMessage, setProfileSyncMessage] = useState<string | null>(null);
+    const [readyToContinue, setReadyToContinue] = useState(false);
 
     const ensuredProfileUserIdRef = useRef<string | null>(null);
 
@@ -66,6 +68,13 @@ export default function LoginPage() {
     }, [supabase]);
 
     useEffect(() => {
+        if (session) return;
+        ensuredProfileUserIdRef.current = null;
+        setReadyToContinue(false);
+        setProfileSyncMessage(null);
+    }, [session]);
+
+    useEffect(() => {
         if (!session) return;
         if (!supabase) return;
         if (!session.access_token) return;
@@ -77,9 +86,11 @@ export default function LoginPage() {
         ensuredProfileUserIdRef.current = userId;
         let cancelled = false;
 
-        async function ensureProfileAndRedirect() {
+        async function ensureProfile() {
             setBusy(true);
             setError(null);
+            setProfileSyncMessage(null);
+            setReadyToContinue(false);
             try {
                 const res = await fetch('/api/me', {
                     method: 'POST',
@@ -99,7 +110,8 @@ export default function LoginPage() {
                 }
 
                 if (cancelled) return;
-                router.replace(nextPath);
+                setProfileSyncMessage('登入後初始化完成（已嘗試建立 / 讀取 member_profiles）');
+                setReadyToContinue(true);
             } catch (e: any) {
                 if (cancelled) return;
                 ensuredProfileUserIdRef.current = null;
@@ -110,7 +122,7 @@ export default function LoginPage() {
             }
         }
 
-        void ensureProfileAndRedirect();
+        void ensureProfile();
         return () => {
             cancelled = true;
         };
@@ -191,6 +203,37 @@ export default function LoginPage() {
         }
     }
 
+    async function syncProfileNow() {
+        setProfileSyncMessage(null);
+        const token = session?.access_token;
+        if (!token) {
+            setProfileSyncMessage('尚未取得登入憑證，請重新登入後再試一次');
+            return;
+        }
+
+        setBusy(true);
+        try {
+            const res = await fetch('/api/me', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            if (!res.ok) {
+                const text = await res.text().catch(() => '');
+                setProfileSyncMessage(`同步失敗（${res.status}）${text ? `：${text}` : ''}`);
+                return;
+            }
+
+            setProfileSyncMessage('同步成功：member_profiles 已嘗試建立/讀取');
+        } catch (e: any) {
+            setProfileSyncMessage(e?.message || '同步失敗');
+        } finally {
+            setBusy(false);
+        }
+    }
+
     return (
         <main className="min-h-screen bg-slate-50 relative">
             <div className="absolute top-4 right-4 z-10">
@@ -201,6 +244,34 @@ export default function LoginPage() {
                 <div className="mt-1 text-xs font-bold text-slate-500">
                     {session?.user?.email ? `目前登入：${session.user.email}` : '匿名使用中（可先試用地圖）'}
                 </div>
+
+                {session?.access_token && (
+                    <div className="mt-4 grid gap-2">
+                        <button
+                            type="button"
+                            onClick={syncProfileNow}
+                            disabled={busy}
+                            className="w-full py-3 rounded-2xl bg-white border border-slate-200 text-slate-700 font-black text-sm hover:bg-slate-50 disabled:opacity-60"
+                        >
+                            同步會員資料（建立 member_profiles）
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={() => router.replace(nextPath)}
+                            disabled={busy || !readyToContinue}
+                            className="w-full py-3 rounded-2xl bg-slate-900 text-white font-black text-sm hover:bg-slate-800 disabled:opacity-60"
+                        >
+                            繼續
+                        </button>
+
+                        {profileSyncMessage && (
+                            <div className="px-4 py-3 rounded-2xl bg-slate-50 border border-slate-100 text-[11px] font-bold text-slate-600 break-words">
+                                {profileSyncMessage}
+                            </div>
+                        )}
+                    </div>
+                )}
 
                 <div className="mt-6 bg-white rounded-[24px] border border-slate-100 shadow-sm p-6">
                     <div className="grid gap-3">

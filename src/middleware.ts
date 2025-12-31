@@ -30,9 +30,7 @@ function addAllowedOrigin(set: Set<string>, value: string | null | undefined) {
 
 function getAllowedOrigins(req: NextRequest) {
     const allowed = new Set<string>();
-    if (process.env.NODE_ENV !== 'production') {
-        addAllowedOrigin(allowed, req.nextUrl.origin);
-    }
+    addAllowedOrigin(allowed, req.nextUrl.origin);
     addAllowedOrigin(allowed, process.env.NEXT_PUBLIC_SITE_URL);
     addAllowedOrigin(allowed, process.env.SITE_URL);
     addAllowedOrigin(allowed, process.env.VERCEL_URL);
