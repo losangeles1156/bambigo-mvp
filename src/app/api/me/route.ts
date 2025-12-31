@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
     if (existingError) {
         console.error('[api/me] member_profiles select error', existingError);
-        return NextResponse.json({ error: 'Database Error' }, { status: 500 });
+        return NextResponse.json({ error: 'Database Error', details: existingError.message || String(existingError) }, { status: 500 });
     }
 
     if (!existing || existing.length === 0) {
@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
 
         if (lastError) {
             console.error('[api/me] member_profiles insert failed', { userId: auth.user.id, error: lastError });
-            return NextResponse.json({ error: 'Database Error' }, { status: 500 });
+            return NextResponse.json({ error: 'Database Error', details: lastError.message || String(lastError) }, { status: 500 });
         }
     }
 
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
         .maybeSingle();
 
     if (profileError) {
-        return NextResponse.json({ error: 'Database Error' }, { status: 500 });
+        return NextResponse.json({ error: 'Database Error', details: profileError.message || String(profileError) }, { status: 500 });
     }
 
     return NextResponse.json({
