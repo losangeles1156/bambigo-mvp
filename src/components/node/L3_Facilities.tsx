@@ -5,6 +5,39 @@ import { useTranslations, useLocale } from 'next-intl';
 import { StationUIProfile, L3Facility, FacilityType, LocaleString } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 import {
+    User, Briefcase, Zap, ArrowUpDown, CircleDollarSign, Baby, Bike, Wifi, Info,
+    Cigarette, Boxes, ShoppingBag, Utensils, Ticket, TrainFront, Landmark, Trees, Bed, Loader2, ExternalLink,
+    ChevronDown, ChevronRight, MapPin, Clock, Users
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Local Dictionary for Facility Keys
+const FACILITY_KEY_MAP: Record<string, LocaleString> = {
+    'Barrier_free_entrance': { en: 'Barrier-free Entrance', ja: 'バリアフリー出入口', zh: '無障礙出入口' },
+    'Ticket_gate': { en: 'Ticket Gate', ja: '改札口', zh: '剪票口' },
+    'Toilet': { en: 'Toilet', ja: 'トイレ', zh: '洗手間' },
+    'Elevator': { en: 'Elevator', ja: 'エレベーター', zh: '電梯' },
+    'Escalator': { en: 'Escalator', ja: 'エスカレーター', zh: '手扶梯' },
+    'Stairs': { en: 'Stairs', ja: '階段', zh: '樓梯' },
+    'Waiting_area': { en: 'Waiting Area', ja: '待合室', zh: '候車室' },
+    'Locker': { en: 'Coins Lockers', ja: 'コインロッカー', zh: '置物櫃' },
+    'ATM': { en: 'ATM', ja: 'ATM', zh: '提款機' },
+    'Shop': { en: 'Shop', ja: '売店', zh: '商店' },
+};
+
+// Icon Mapping
+const FACILITY_ICONS: Record<FacilityType | string, any> = {
+    toilet: User, locker: Briefcase, charging: Zap, elevator: ArrowUpDown,
+    atm: CircleDollarSign, nursery: Baby, bike: Bike, bikeshare: Bike, wifi: Wifi, info: Info,
+    smoking: Cigarette, shopping: ShoppingBag, dining: Utensils, leisure: Ticket,
+    transport: TrainFront, religion: Landmark, nature: Trees, accommodation: Bed,
+    'Barrier_free_entrance': Users,
+    'Ticket_gate': Ticket,
+};
+
+const FACILITY_COLORS: Record<FacilityType | string, string> = {
+    toilet: 'bg-emerald-100 text-emerald-600',
+    locker: 'bg-amber-100 text-amber-600',
     charging: 'bg-sky-100 text-sky-600',
     elevator: 'bg-blue-100 text-blue-600',
     atm: 'bg-indigo-100 text-indigo-600',
@@ -20,7 +53,8 @@ import {
     transport: 'bg-blue-100 text-blue-600',
     religion: 'bg-purple-100 text-purple-600',
     nature: 'bg-green-100 text-green-600',
-    accommodation: 'bg-rose-100 text-rose-600'
+    accommodation: 'bg-rose-100 text-rose-600',
+    'Barrier_free_entrance': 'bg-cyan-100 text-cyan-600',
 };
 
 import { FacilityDetailModal } from '@/components/ui/FacilityDetailModal';
