@@ -29,9 +29,15 @@ export class L4DecisionEngine {
                 // Calculate Relevance Score
                 let score = rule.priority;
 
-                // Boost score if the rule specifically matches a user state (High Relevance)
+                // [Boost 1] User Context Relevance (+20)
                 if (rule.trigger.user_states && rule.trigger.user_states.length > 0) {
                     score += 20;
+                }
+
+                // [Boost 2] Station Specificity (+50)
+                // Rules tied to a specific station are much more valuable than generic line rules
+                if (rule.trigger.station_ids && rule.trigger.station_ids.length > 0) {
+                    score += 50;
                 }
 
                 // Resolve Localization

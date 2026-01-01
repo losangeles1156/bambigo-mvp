@@ -5,23 +5,6 @@ import { useTranslations, useLocale } from 'next-intl';
 import { StationUIProfile, L3Facility, FacilityType, LocaleString } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 import {
-    User, Briefcase, Zap, ArrowUpDown, CircleDollarSign, Baby, Bike, Wifi, Info,
-    Cigarette, Boxes, ShoppingBag, Utensils, Ticket, TrainFront, Landmark, Trees, Bed, Loader2, ExternalLink,
-    ChevronDown, ChevronRight, MapPin, Clock
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-// Icon Mapping
-const FACILITY_ICONS: Record<FacilityType | string, any> = {
-    toilet: User, locker: Briefcase, charging: Zap, elevator: ArrowUpDown,
-    atm: CircleDollarSign, nursery: Baby, bike: Bike, bikeshare: Bike, wifi: Wifi, info: Info,
-    smoking: Cigarette, shopping: ShoppingBag, dining: Utensils, leisure: Ticket,
-    transport: TrainFront, religion: Landmark, nature: Trees, accommodation: Bed
-};
-
-const FACILITY_COLORS: Record<FacilityType | string, string> = {
-    toilet: 'bg-emerald-100 text-emerald-600',
-    locker: 'bg-amber-100 text-amber-600',
     charging: 'bg-sky-100 text-sky-600',
     elevator: 'bg-blue-100 text-blue-600',
     atm: 'bg-indigo-100 text-indigo-600',
@@ -123,12 +106,19 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                 if (isMounted && json.facilities) {
                     // Adapt Backend Data (StationFacility) to UI Data (L3Facility)
                     const adapted: L3Facility[] = json.facilities.map((f: any, idx: number) => {
-                        // Resolve Name/Location with priority: location object > name_i18n > raw location string
-                        let nameObj: LocaleString;
+                        // Resolve Name/Location with priority:
+                        // 1. Dictionary Lookup (Fix for raw keys)
+                        // 2. object `name_i18n`
+                        // 3. raw string `location` or `name`
+
                         const rawName = f.name_i18n || f.location || f.name || 'Unknown';
-                        
-                        if (typeof rawName === 'object' && rawName !== null) {
-                             nameObj = {
+
+                        // Check Dictionary first if rawName is a simple string key
+                        let nameObj: LocaleString;
+                        if (typeof rawName === 'string' && FACILITY_KEY_MAP[rawName]) {
+                            nameObj = FACILITY_KEY_MAP[rawName];
+                        } else if (typeof rawName === 'object' && rawName !== null) {
+                            nameObj = {
                                 ja: rawName.ja || rawName.en || rawName.zh,
                                 en: rawName.en || rawName.ja || rawName.zh,
                                 zh: rawName.zh || rawName['zh-TW'] || rawName.ja
@@ -136,11 +126,11 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                         } else {
                             nameObj = { ja: rawName, en: rawName, zh: rawName };
                         }
-                        
+
                         let locObj: LocaleString;
                         const rawLoc = f.location || nameObj;
-                         if (typeof rawLoc === 'object' && rawLoc !== null) {
-                             locObj = {
+                        if (typeof rawLoc === 'object' && rawLoc !== null) {
+                            locObj = {
                                 ja: rawLoc.ja || rawLoc.en || rawLoc.zh,
                                 en: rawLoc.en || rawLoc.ja || rawLoc.zh,
                                 zh: rawLoc.zh || rawLoc['zh-TW'] || rawLoc.ja
@@ -307,8 +297,8 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                                     >
                                         <div className="px-4 pb-4 space-y-3 border-t border-gray-50 bg-gray-50/30 pt-3">
                                             {items.map((fac) => (
-                                                <div 
-                                                    key={fac.id} 
+                                                <div
+                                                    key={fac.id}
                                                     className="bg-white p-3 rounded-xl border border-gray-100 flex items-start gap-3 cursor-pointer hover:border-indigo-200 hover:shadow-sm transition-all active:scale-[0.99]"
                                                     onClick={() => {
                                                         trackEvent({

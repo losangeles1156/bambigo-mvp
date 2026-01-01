@@ -112,69 +112,70 @@ export function L1_DNA({ data }: { data: StationUIProfile }) {
     return (
         <div className="flex flex-col gap-8 pb-10">
 
-            {/* 1. LUTAGU Insight Hero (Premium Glassmorphism) */}
+            {/* 1. LUTAGU Insight Hero (Redesigned: Compact & Data-Driven) */}
             <div className="group relative">
-                <div className="flex items-center gap-2 mb-4 px-1">
-                    <div className="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-200">
-                        <Star size={14} fill="currentColor" />
+                <div className="flex items-center gap-2 mb-3 px-1">
+                    <div className="w-5 h-5 bg-indigo-600 rounded-md flex items-center justify-center text-white shadow-md shadow-indigo-100">
+                        <Star size={12} fill="currentColor" />
                     </div>
-                    <h3 className="font-extrabold text-[11px] uppercase tracking-[0.2em] text-gray-400">{tL1('dnaTitle')}</h3>
+                    <h3 className="font-extrabold text-[10px] uppercase tracking-[0.2em] text-gray-400">{tL1('dnaTitle')}</h3>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-2xl transition-all hover:shadow-indigo-500/20 group-hover:scale-[1.01] duration-500">
-                    {/* Animated Gradient Background */}
-                    <div className="absolute inset-0 bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-indigo-900" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 opacity-60 mix-blend-overlay" />
-                    
-                    {/* Glass Overlay */}
+                <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 shadow-xl transition-all hover:shadow-indigo-500/10 group-hover:scale-[1.005] duration-500">
+                    {/* Compact Animated Background */}
+                    <div className="absolute inset-0 bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-indigo-950" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-50 mix-blend-overlay" />
                     <div className="absolute inset-0 backdrop-blur-[1px] bg-white/5" />
 
-                    {/* Decorative Elements */}
-                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-                    <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
-
-                    <div className="relative z-10 p-7 sm:p-8">
-                        <div className="flex flex-col gap-5">
-                            {/* DNA Header */}
+                    <div className="relative z-10 px-6 py-5 sm:px-8 sm:py-6">
+                        <div className="flex flex-col gap-3">
+                            {/* DNA Header - Compact */}
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-200 tracking-tight leading-tight mb-3 drop-shadow-sm">
+                                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-1 drop-shadow-sm flex items-center gap-2">
                                     {getLocaleString(title, locale)}
+                                    {/* Optional: Add a small badge if needed */}
                                 </h2>
-                                <p className="text-indigo-200/90 font-medium text-sm sm:text-base leading-relaxed max-w-[95%]">
-                                    {getLocaleString(tagline, locale)}
+
+                                {/* Dynamic Insight Tagline */}
+                                <p className="text-indigo-200 font-medium text-xs sm:text-sm leading-relaxed max-w-full">
+                                    {(() => {
+                                        // Prioritize top categories for tagline
+                                        const topCats = filteredCategoryList.slice(0, 2);
+                                        const totalSpots = filteredCategoryList.reduce((acc, c) => acc + c.count, 0);
+
+                                        if (topCats.length >= 2) {
+                                            if (locale === 'ja') return `ここは${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）や${getCategoryLabel(topCats[1].id)}が充実したエリアです。`;
+                                            if (locale === 'zh-TW') return `這裡是以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）與${getCategoryLabel(topCats[1].id)}聞名的區域。`;
+                                            return `Known for ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots) and ${getCategoryLabel(topCats[1].id)}.`;
+                                        }
+                                        if (topCats.length === 1) {
+                                            if (locale === 'ja') return `${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）が中心のエリアです。`;
+                                            if (locale === 'zh-TW') return `以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）為主的區域。`;
+                                            return `Mainly featured by ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots).`;
+                                        }
+                                        return getLocaleString(tagline, locale); // Fallback to DB tagline
+                                    })()}
                                 </p>
                             </div>
 
-                            {/* Vibe Tags - Interactive */}
+                            {/* Vibe Tags - Compact Scrollable Row */}
                             {displayVibeTags && displayVibeTags.length > 0 && (
-                                <div className="flex flex-wrap gap-2 mt-1">
+                                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none mask-linear-fade">
                                     {displayVibeTags.map((tag: any, idx: number) => {
-                                        const isPrimary = idx < 2; 
                                         const isActive = activeVibeFilter === tag.id;
                                         return (
-                                            <button 
+                                            <button
                                                 key={tag.id}
                                                 onClick={() => handleVibeClick(tag.id)}
                                                 className={`
-                                                    group/tag relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300
-                                                    ${isActive 
-                                                        ? 'bg-white text-indigo-900 border-white shadow-[0_0_15px_rgba(255,255,255,0.5)] scale-105 z-10' 
-                                                        : isPrimary 
-                                                            ? 'bg-white/10 border-white/30 text-white hover:bg-white/20' 
-                                                            : 'bg-white/5 border-white/10 text-indigo-200/80 hover:bg-white/10 hover:text-indigo-100'
+                                                    shrink-0 group/tag relative inline-flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all duration-300
+                                                    ${isActive
+                                                        ? 'bg-indigo-500 text-white border-indigo-400 shadow-lg shadow-indigo-500/30'
+                                                        : 'bg-white/10 border-white/10 text-indigo-100 hover:bg-white/20'
                                                     }
                                                 `}
                                             >
-                                                <span className={`text-[10px] uppercase tracking-wider ${isActive ? 'opacity-100 text-indigo-400' : 'opacity-60'}`}>#</span>
-                                                <span className="text-xs sm:text-sm font-bold">{getLocaleString(tag.label, locale)}</span>
-                                                {tag.count > 0 && (
-                                                    <span className={`
-                                                        ml-1 text-[9px] px-1.5 py-0.5 rounded-full min-w-[1.2rem] text-center font-black
-                                                        ${isActive ? 'bg-indigo-100 text-indigo-700' : 'bg-black/20 text-white/80'}
-                                                    `}>
-                                                        {tag.count}
-                                                    </span>
-                                                )}
+                                                <span className="text-[10px] font-bold">#{getLocaleString(tag.label, locale)}</span>
                                             </button>
                                         );
                                     })}

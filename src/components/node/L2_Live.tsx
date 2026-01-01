@@ -231,7 +231,13 @@ export function L2_Live({ data }: L2_LiveProps) {
                 <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">{tL2('weatherTitle')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {/* SmartWeatherCard handles weather + alert + AI advice */}
-                    <SmartWeatherCard />
+                    <div className="relative">
+                        {/* Scope Label - Explicitly stating this is TOKYO-wide */}
+                        <div className="absolute -top-2 left-2 z-20 px-1.5 py-0.5 bg-gray-900/90 text-white text-[8px] font-black uppercase tracking-widest rounded-full shadow-sm border border-white/10">
+                            TOKYO WIDE
+                        </div>
+                        <SmartWeatherCard />
+                    </div>
 
 
                     {/* User Crowd Report Section */}
