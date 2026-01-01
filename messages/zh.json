@@ -39,9 +39,10 @@
         "askTitle": "你可以直接問：",
         "askSubtitle": "一鍵送出，取得建議",
         "tips": {
-            "airport": "我現在在上野站，行李很多，要去機場怎麼走？",
-            "locker": "附近的置物櫃在哪？",
-            "crowd": "銀座線現在擠嗎？"
+            "accessibility": "在上野站，輪椅從哪裡進站最順？",
+            "reroute": "去新宿都廳，現在中央線有延誤嗎？",
+            "fallback": "淺草站置物櫃滿了怎麼辦？",
+            "strategy": "帶嬰兒車去成田機場，怎麼搭最輕鬆？"
         },
         "hubTitle": "或先選熱門樞紐開始探索：",
         "hubs": {
@@ -395,5 +396,30 @@
     },
     "ui": {
         "items": "項目"
+    },
+    "login": {
+        "title": "會員登入",
+        "currentUser": "目前登入：{email}",
+        "anonymous": "匿名使用中（可先試用地圖）",
+        "continue": "繼續",
+        "googleLogin": "使用 Google 登入 / 註冊",
+        "or": "或",
+        "emailLabel": "Email（Magic Link）",
+        "emailPlaceholder": "you@example.com",
+        "sendMagicLink": "寄送登入連結",
+        "magicLinkSent": "已寄出登入連結，請到信箱點擊完成登入。",
+        "supabaseNotConfigured": "Supabase 環境變數未設定",
+        "enterEmail": "請輸入 Email",
+        "initFailed": "登入後初始化失敗",
+        "initFailedWithCode": "登入後初始化失敗（{code}）",
+        "skipLogin": "先不登入",
+        "logout": "登出",
+        "tryAsking": "你可以試著問：",
+        "tips": {
+            "accessibility": "在上野站，輪椅從哪裡進站最順？",
+            "reroute": "去新宿都廳，現在中央線有延誤嗎？",
+            "fallback": "淺草站置物櫃滿了怎麼辦？",
+            "strategy": "帶嬰兒車去成田機場，怎麼搭最輕鬆？"
+        }
     }
 }

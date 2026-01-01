@@ -170,10 +170,15 @@ function CardItem({ card }: { card: ActionCard }) {
                         {card.description}
                     </p>
 
-                    {card.actionLabel && (
-                        <button className="mt-3 text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded hover:bg-blue-100 transition-colors">
+                    {card.actionLabel && card.actionUrl && (
+                        <a
+                            href={card.actionUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-3 text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded hover:bg-blue-100 transition-colors"
+                        >
                             {card.actionLabel} →
-                        </button>
+                        </a>
                     )}
                 </div>
             </div>

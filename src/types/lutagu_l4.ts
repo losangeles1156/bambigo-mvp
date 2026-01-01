@@ -93,9 +93,16 @@ export interface ExpertKnowledge {
     title: LocalizedText;
     content: LocalizedText;
 
+    // Action (Deep Link)
+    actionLabel?: LocalizedText;
+    actionUrl?: string;
+
     // Source/Maintenance info
     author?: string; // e.g. 'Human_Editor_01'
     verified_at?: string; // ISO Date
+
+    // Visibility Control
+    excludeFromCards?: boolean; // If true, only used for Chat context, not shown as Strategy Card
 }
 
 // ==========================================
@@ -126,6 +133,10 @@ export interface MatchedStrategyCard {
     icon: string;
     title: string;       // Localized title
     description: string; // Localized body
+
+    // Action (Deep Link)
+    actionLabel?: string;
+    actionUrl?: string;
 
     // Logic
     priority: number;    // Final sorting weight

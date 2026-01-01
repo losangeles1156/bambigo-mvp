@@ -334,109 +334,56 @@ function ClusteredNodeLayer({ nodes, zone, locale }: { nodes: NodeDatum[]; zone:
 
     const clampedZoom = clamp(zoom, 1, 22);
 
-    // Detect mobile for performance tuning
-    const isMobile = useMemo(() => {
-        if (typeof navigator === 'undefined') return false;
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }, []);
+    // Group nodes logically once per nodes-update
+    const groups = useMemo(() => {
+        if (!nodes || nodes.length === 0) return [];
+        return groupNodesByProximity(nodes, 100); // Tighter grouping (100m)
+    }, [nodes]);
 
     const items = useMemo<ClusterItem[]>(() => {
-        if (!nodes || nodes.length === 0) return [];
+        if (!groups || groups.length === 0) return [];
 
-        // Apply Logical Parent-Child Grouping
-        const logicalGroups = groupNodesByProximity(nodes, 150); // 150m threshold for logical grouping
-
-        if (clampedZoom >= 17) {
-            return logicalGroups.map(n => ({ kind: 'node', node: n }));
-        }
-
-        if (clampedZoom >= 14) {
-            const mergedParents = mergeNearbyParents(logicalGroups, 180);
-            return mergedParents.map(n => ({ kind: 'node', node: n }));
-        }
-
-        // Adjust grid size based on zoom and device
-        // Optimization: Increase grid size for mobile to reduce markers
-        let gridPx = 70;
-        if (clampedZoom < 11) gridPx = isMobile ? 120 : 90;
-        else if (clampedZoom < 13) gridPx = isMobile ? 100 : 80;
-        else if (clampedZoom < 15) gridPx = isMobile ? 90 : 70;
-        else gridPx = isMobile ? 80 : 60; // For zoom 15-16
-
-        const buckets = new Map<string, { count: number; sumLat: number; sumLon: number; nodes: GroupedNode[] }>();
-
-        logicalGroups.forEach(n => {
-            const [lon, lat] = n.location.coordinates;
-            if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
-            const p = map.project([lat, lon], clampedZoom);
-            const gx = Math.floor(p.x / gridPx);
-            const gy = Math.floor(p.y / gridPx);
-            const key = `${gx}:${gy}`;
-
-            const bucket = buckets.get(key) || { count: 0, sumLat: 0, sumLon: 0, nodes: [] };
-            bucket.count += 1;
-            bucket.sumLat += lat;
-            bucket.sumLon += lon;
-            bucket.nodes.push(n);
-            buckets.set(key, bucket);
-        });
-
-        const out: ClusterItem[] = [];
-        let idx = 0;
-        buckets.forEach(bucket => {
-            // Optimization: Increase threshold for mobile to cluster more aggressively
-            const threshold = clampedZoom < 12 ? 2 : (isMobile ? 5 : 3);
-            if (bucket.count <= threshold) {
-                bucket.nodes.forEach(n => out.push({ kind: 'node', node: n }));
-                return;
-            }
-            out.push({
-                kind: 'cluster',
-                id: `c-${clampedZoom}-${idx++}`,
-                count: bucket.count,
-                lat: bucket.sumLat / bucket.count,
-                lon: bucket.sumLon / bucket.count
+        // High Zoom (16+): Show everything individually (no clustering)
+        if (clampedZoom >= 16) {
+            const allItems: ClusterItem[] = [];
+            groups.forEach(group => {
+                // Add the parent (hub)
+                allItems.push({ kind: 'node', node: { ...group, children: [] } }); // Render parent as standalone
+                // Add all children
+                if (group.children) {
+                    group.children.forEach(child => {
+                        allItems.push({ kind: 'node', node: child as GroupedNode });
+                    });
+                }
             });
-        });
+            return allItems;
+        }
 
-        return out;
-    }, [nodes, clampedZoom, map, isMobile]);
+        // Mid/Low Zoom (< 16): Show only Leaders (Hubs) with badges
+        return groups.map(group => {
+            // The group itself is the leader node (determined by groupNodesByProximity)
+            const count = 1 + (group.children?.length || 0);
+
+            // If it's a single node, just show it
+            if (count === 1) {
+                return { kind: 'node', node: group };
+            }
+
+            // If it has children, render it as a "Node with Badge"
+            // We do this by passing the FULL group (with children) to NodeMarker.
+            // NodeMarker needs to handle the badge rendering.
+            return { kind: 'node', node: group };
+        });
+    }, [groups, clampedZoom]);
 
     return (
         <>
-            {items.map(item => {
+            {items.map((item, i) => {
                 if (item.kind === 'node') {
+                    // Ensure stable key using ID
                     return <NodeMarker key={item.node.id} node={item.node} zone={zone} locale={locale} zoom={clampedZoom} />;
                 }
-
-                const size = clamp(36 + Math.log2(item.count) * 8, 40, 72);
-                const icon = L.divIcon({
-                    className: 'node-cluster-icon',
-                    html: `
-                        <div class="relative flex items-center justify-center group" style="width:${size}px;height:${size}px;">
-                            <div class="absolute inset-0 bg-indigo-600/30 rounded-full animate-ping opacity-20 group-hover:hidden" style="animation-duration: 2s;"></div>
-                            <div class="relative w-full h-full rounded-full bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900 border-[3px] border-white shadow-[0_10px_25px_-5px_rgba(79,70,229,0.4)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-indigo-500/40">
-                                <div class="absolute inset-0 rounded-full bg-[url('/noise.png')] opacity-10"></div>
-                                <span class="text-white font-black text-sm drop-shadow-md z-10">${item.count}</span>
-                            </div>
-                        </div>
-                    `,
-                    iconSize: [size, size],
-                    iconAnchor: [size / 2, size / 2]
-                });
-
-                return (
-                    <Marker
-                        key={item.id}
-                        position={[item.lat, item.lon]}
-                        icon={icon}
-                        eventHandlers={{
-                            click: () => {
-                                map.flyTo([item.lat, item.lon], clamp(zoom + 2, 1, 18), { animate: true, duration: 0.6 });
-                            }
-                        }}
-                    />
-                );
+                return null;
             })}
         </>
     );
@@ -459,7 +406,7 @@ class MapErrorBoundary extends Component<{ children: ReactNode; onReset: () => v
             return (
                 <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 p-4 text-center">
                     <p className="text-gray-600 mb-4">地圖加載出錯</p>
-                    <button 
+                    <button
                         onClick={() => { this.setState({ hasError: false }); this.props.onReset(); }}
                         className="px-4 py-2 bg-blue-500 text-white rounded-lg"
                     >

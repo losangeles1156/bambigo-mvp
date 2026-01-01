@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireUser } from '@/lib/security/supabaseAuth';
+import { supabaseAdmin } from '@/lib/supabase';
 
 function isSchemaCacheMissingColumnError(error: any) {
     const msg = (error as any)?.message || String(error);
@@ -7,6 +8,60 @@ function isSchemaCacheMissingColumnError(error: any) {
     if (msg.includes('Could not find the') && msg.includes('column') && msg.includes('schema cache')) return true;
     // Case 2: Postgres "column ... does not exist"
     if (msg.includes('column') && msg.includes('does not exist')) return true;
+    return false;
+}
+
+function isMissingTableError(error: any) {
+    const msg = (error as any)?.message || String(error);
+    if (msg.includes('Could not find the') && msg.includes('table') && msg.includes('schema cache')) return true;
+    if (msg.includes('relation') && msg.includes('does not exist')) return true;
+    return false;
+}
+
+async function ensureLegacyUsersRow(user: { id: string; email: string | null; displayName: string | null }) {
+    const now = new Date().toISOString();
+    const attempts: Array<{ payload: Record<string, any>; onConflict: string }> = [
+        {
+            payload: { id: user.id, email: user.email, display_name: user.displayName, last_seen_at: now },
+            onConflict: 'id'
+        },
+        {
+            payload: { id: user.id, display_name: user.displayName, last_seen_at: now },
+            onConflict: 'id'
+        },
+        {
+            payload: { id: user.id, last_seen_at: now },
+            onConflict: 'id'
+        },
+        {
+            payload: { id: user.id },
+            onConflict: 'id'
+        },
+        {
+            payload: { user_id: user.id, email: user.email, display_name: user.displayName, last_seen_at: now },
+            onConflict: 'user_id'
+        },
+        {
+            payload: { user_id: user.id, display_name: user.displayName, last_seen_at: now },
+            onConflict: 'user_id'
+        },
+        {
+            payload: { user_id: user.id, last_seen_at: now },
+            onConflict: 'user_id'
+        },
+        {
+            payload: { user_id: user.id },
+            onConflict: 'user_id'
+        }
+    ];
+
+    for (const attempt of attempts) {
+        const res = await supabaseAdmin.from('users').upsert(attempt.payload, { onConflict: attempt.onConflict });
+        if (!res.error) return true;
+        if (isSchemaCacheMissingColumnError(res.error)) continue;
+        if (isMissingTableError(res.error)) return true;
+    }
+
     return false;
 }
 
@@ -82,13 +137,32 @@ export async function POST(req: NextRequest) {
 
     const displayName = pickDisplayName({ email: auth.user.email || null, userMetadata: auth.user.user_metadata });
 
+    await ensureLegacyUsersRow({ id: auth.user.id, email: auth.user.email || null, displayName });
+
     const { data: existingProfile, error: existingError } = await fetchMemberProfile(auth.rls, auth.user.id);
     if (existingError) {
         console.error('[api/me] member_profiles select error', existingError);
         return NextResponse.json({ error: 'Database Error', details: existingError.message || String(existingError) }, { status: 500 });
     }
 
-    if (!existingProfile) {
+    const existingDeletedAt = existingProfile && (existingProfile as any).deleted_at ? (existingProfile as any).deleted_at : null;
+    if (existingDeletedAt) {
+        const reviveAttempts: Array<{ key: 'user_id' | 'id'; payload: Record<string, any> }> = [
+            { key: 'user_id', payload: { deleted_at: null, display_name: displayName } },
+            { key: 'id', payload: { deleted_at: null, display_name: displayName } },
+            { key: 'user_id', payload: { deleted_at: null } },
+            { key: 'id', payload: { deleted_at: null } }
+        ];
+
+        for (const attempt of reviveAttempts) {
+            const res = await auth.rls.from('member_profiles').update(attempt.payload).eq(attempt.key, auth.user.id);
+            if (!res.error) break;
+            if (isSchemaCacheMissingColumnError(res.error)) continue;
+            break;
+        }
+    }
+
+    if (!existingProfile || existingDeletedAt) {
         const insertAttempts: Array<Record<string, any>> = [
             { user_id: auth.user.id },
             { id: auth.user.id },
@@ -112,7 +186,7 @@ export async function POST(req: NextRequest) {
             lastError = error;
         }
 
-        if (lastError) {
+        if (lastError && !existingProfile) {
             console.error('[api/me] member_profiles insert failed', { userId: auth.user.id, error: lastError });
             return NextResponse.json({ error: 'Database Error', details: lastError.message || String(lastError) }, { status: 500 });
         }

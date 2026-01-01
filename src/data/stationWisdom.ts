@@ -125,6 +125,83 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
             en: 'Kaminarimon gate is exit-only during New Year. Use Exit A4 to enter the station and avoid queues.',
         },
     },
+    // Scene 6: Deep Link - Lockers (Large Luggage)
+    {
+        id: 'service-locker-search',
+        trigger: {
+            user_states: ['luggage.large_luggage', 'luggage.multiple_bags']
+        },
+        type: 'tip',
+        priority: 80,
+        icon: '🧳',
+        title: {
+            'zh-TW': '大型置物櫃查詢',
+            ja: 'コインロッカー検索',
+            en: 'Locker Search'
+        },
+        content: {
+            'zh-TW': '檢測到您攜帶大件行李。可透過此連結查詢站內置物櫃即時空位（JR/Metro）。',
+            ja: '大きな荷物をお持ちのようです。駅構内ロッカーの空き状況はこちらから確認できます。',
+            en: 'For large luggage, check real-time locker availability here.'
+        },
+        actionLabel: {
+            'zh-TW': '查詢置物櫃',
+            ja: '空き状況を見る',
+            en: 'Check Availability'
+        },
+        actionUrl: 'https://metro.akilocker.biz/index.html?lgId=tokyometro' // Defaulting to Metro for MVP, ideally dynamic based on station
+    },
+
+    // Scene 7: Deep Link - Shared Cycle (LUUP Guide)
+    {
+        id: 'service-shared-cycle',
+        trigger: {
+            user_states: ['travel_style.rushing', 'travel_style.avoid_crowd']
+        },
+        type: 'tip',
+        priority: 75,
+        icon: '🚲',
+        title: {
+            'zh-TW': '共享單車 (LUUP) 使用教學',
+            ja: 'LUUP 利用ガイド',
+            en: 'LUUP Usage Guide'
+        },
+        content: {
+            'zh-TW': '【使用步驟】\n1. 下載 LUUP App 並綁定信用卡。\n2. 通過交通規則測驗（需滿16歲）。\n3. 掃描車身 QR Code 解鎖。\n4. 騎乘結束後，需停在指定 Port 並拍照還車。',
+            ja: '【使い方】\n1. アプリDL＆クレカ登録\n2. 交通ルールテスト合格（16歳以上）\n3. QRコードでロック解除\n4. 指定ポートに返却＆写真撮影',
+            en: '1. Download App & Register.\n2. Pass traffic test (16+).\n3. Scan QR to unlock.\n4. Park at designated Port & photo to end ride.'
+        },
+        actionLabel: {
+            'zh-TW': '打開 LUUP 地圖',
+            ja: 'LUUPマップを開く',
+            en: 'Open LUUP Map'
+        },
+        actionUrl: 'https://luup.sc/port-map/?lat=35.674441806118125&lng=139.7301796516703&zoom=14',
+        excludeFromCards: true // Chat only
+    },
+
+    // Scene 8: Taxonomy - Taxi Guide (Uber/GO)
+    {
+        id: 'service-taxi-guide',
+        trigger: {
+            user_states: ['travel_style.comfort', 'travel_style.rushing']
+        },
+        type: 'tip',
+        priority: 78,
+        icon: '🚕',
+        title: {
+            'zh-TW': '叫車 App (Uber/GO) 使用攻略',
+            ja: '配車アプリ(Uber/GO) 攻略',
+            en: 'Taxi App Guide (Uber/GO)'
+        },
+        content: {
+            'zh-TW': '【叫車技巧】\n1. 推薦使用 Uber 或 GO App。\n2. 上車點請避開店門口或狹窄巷弄，設定在「大馬路（如中央通）」側。\n3. 若無法配對，請直接前往北口實體招呼站。',
+            ja: '【コツ】\n1. UberかGOを利用。\n2. 迎車位置は「大通り（中央通り）」側に設定。\n3. 捕まらない場合は北口タクシー乗り場へ。',
+            en: '1. Use Uber or GO.\n2. Set pickup on main streets (e.g., Chuo-dori) to meet driver easily.\n3. If busy, go to North Exit Taxi Stand.'
+        },
+        // Link removed as per user request (Affiliate pending)
+        excludeFromCards: true // Chat only
+    },
     ...(GENERATED_KNOWLEDGE as any as ExpertKnowledge[])
 ];
 

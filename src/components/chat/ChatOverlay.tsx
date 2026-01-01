@@ -238,15 +238,20 @@ export function ChatOverlay() {
                                 {tOnboarding('askTitle')}
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 gap-4 w-full max-w-sm">
-                            {[tOnboarding('tips.airport'), tOnboarding('tips.locker'), tOnboarding('tips.crowd')].map((tip, i) => (
+                        <div className="grid grid-cols-1 gap-3 w-full max-w-sm">
+                            {[
+                                tOnboarding('tips.accessibility'),
+                                tOnboarding('tips.reroute'),
+                                tOnboarding('tips.fallback'),
+                                tOnboarding('tips.strategy')
+                            ].map((tip, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setInput(tip)}
-                                    className="px-6 py-4 bg-white/40 hover:bg-white border border-white/60 hover:border-indigo-100 rounded-3xl text-sm font-black text-gray-700 hover:text-indigo-600 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-left flex justify-between items-center group backdrop-blur-sm"
+                                    className="px-5 py-4 bg-white/40 hover:bg-white border border-white/60 hover:border-indigo-100 rounded-2xl text-sm font-black text-gray-700 hover:text-indigo-600 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all text-left flex justify-between items-center group backdrop-blur-sm"
                                 >
-                                    {tip}
-                                    <span className="opacity-0 group-hover:opacity-100 transition-all text-indigo-400 group-hover:translate-x-1 duration-500">→</span>
+                                    <span className="line-clamp-2">{tip}</span>
+                                    <span className="opacity-0 group-hover:opacity-100 transition-all text-indigo-400 group-hover:translate-x-1 duration-300 ml-2">→</span>
                                 </button>
                             ))}
                         </div>

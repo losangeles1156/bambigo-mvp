@@ -39,9 +39,10 @@
         "askTitle": "Try asking:",
         "askSubtitle": "Send instantly for suggestions",
         "tips": {
-            "airport": "I'm at Ueno Station with lots of luggage. How do I get to the airport?",
-            "locker": "Where are the nearby lockers?",
-            "crowd": "Is the Ginza Line crowded right now?"
+            "accessibility": "At Ueno St, where is the best wheelchair entrance?",
+            "reroute": "Going to Tocho, is Chuo Line delayed?",
+            "fallback": "Lockers at Asakusa are full. What now?",
+            "strategy": "Going to Narita with a stroller. Best option?"
         },
         "hubTitle": "Or start with a popular hub:",
         "hubs": {
@@ -393,5 +394,30 @@
     },
     "ui": {
         "items": "Items"
+    },
+    "login": {
+        "title": "Member Login",
+        "currentUser": "Logged in as: {email}",
+        "anonymous": "Guest mode (you can try the map first)",
+        "continue": "Continue",
+        "googleLogin": "Sign in / Register with Google",
+        "or": "or",
+        "emailLabel": "Email (Magic Link)",
+        "emailPlaceholder": "you@example.com",
+        "sendMagicLink": "Send Login Link",
+        "magicLinkSent": "Login link sent! Please check your inbox and click the link to sign in.",
+        "supabaseNotConfigured": "Supabase environment not configured",
+        "enterEmail": "Please enter your email",
+        "initFailed": "Post-login initialization failed",
+        "initFailedWithCode": "Post-login initialization failed ({code})",
+        "skipLogin": "Skip for now",
+        "logout": "Log out",
+        "tryAsking": "Try asking LUTAGU:",
+        "tips": {
+            "accessibility": "At Ueno St, where is the best wheelchair entrance?",
+            "reroute": "Going to Tocho, is Chuo Line delayed?",
+            "fallback": "Lockers at Asakusa are full. What now?",
+            "strategy": "Going to Narita with a stroller. Best option?"
+        }
     }
 }

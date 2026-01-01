@@ -58,7 +58,7 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
     const baseColor = isSelected ? '#111827' : finalColor;
     const label = getLocaleString(node.name, locale) || node.id;
     const ringRadiusClass = isGroup ? 'rounded-[22px]' : 'rounded-full';
-    const showLabel = isSelected || isGroup || (isMajor && zoom >= 17);
+    const showLabel = isSelected || isGroup || isMajor || (zoom >= 15);
 
     const handleClick = () => {
         setCurrentNode(node.id);

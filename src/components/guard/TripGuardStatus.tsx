@@ -8,11 +8,16 @@ import { useTranslations } from 'next-intl';
 
 export function TripGuardStatus() {
     const tTripGuard = useTranslations('tripGuard');
-    const { isTripGuardActive, isLineBound, setLineBound } = useAppStore();
+    const { isTripGuardActive, isLineBound, setLineBound, setSubscriptionModalOpen } = useAppStore();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showPreview, setShowPreview] = useState(false);
 
     const handleClick = () => {
+        if (!isTripGuardActive) {
+            setSubscriptionModalOpen(true);
+            return;
+        }
+
         if (!isLineBound) {
             setIsModalOpen(true);
         } else {

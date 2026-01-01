@@ -10,6 +10,8 @@ interface AppState {
     messages: Array<{ role: 'user' | 'assistant'; content: string; actions?: any[] }>;
     mapCenter: { lat: number; lon: number } | null;
     isTripGuardActive: boolean;
+    tripGuardSummary: string | null;
+    tripGuardSubscriptionId: string | null;
     isSubscriptionModalOpen: boolean;
     isLineBound: boolean;
 
@@ -28,6 +30,8 @@ interface AppState {
     addMessage: (message: { role: 'user' | 'assistant'; content: string; actions?: any[] }) => void;
     setMapCenter: (center: { lat: number; lon: number } | null) => void;
     setTripGuardActive: (isActive: boolean) => void;
+    setTripGuardSummary: (summary: string | null) => void;
+    setTripGuardSubscriptionId: (id: string | null) => void;
     setSubscriptionModalOpen: (isOpen: boolean) => void;
     setLineBound: (isBound: boolean) => void;
     setLocale: (locale: 'zh-TW' | 'ja' | 'en') => void;
@@ -50,6 +54,8 @@ export const useAppStore = create<AppState>()(
             messages: [],
             mapCenter: null,
             isTripGuardActive: false,
+            tripGuardSummary: null,
+            tripGuardSubscriptionId: null,
             isSubscriptionModalOpen: false,
             isLineBound: false,
             locale: 'zh-TW',
@@ -68,6 +74,8 @@ export const useAppStore = create<AppState>()(
             addMessage: (message) => set((state) => ({ messages: [...state.messages, message] })),
             setMapCenter: (center) => set({ mapCenter: center }),
             setTripGuardActive: (isActive) => set({ isTripGuardActive: isActive }),
+            setTripGuardSummary: (summary) => set({ tripGuardSummary: summary }),
+            setTripGuardSubscriptionId: (id) => set({ tripGuardSubscriptionId: id }),
             setSubscriptionModalOpen: (isOpen) => set({ isSubscriptionModalOpen: isOpen }),
             setLineBound: (isBound) => set({ isLineBound: isBound }),
             setLocale: (locale) => set({ locale }),

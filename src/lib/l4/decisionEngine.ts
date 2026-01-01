@@ -21,6 +21,9 @@ export class L4DecisionEngine {
         const activeUserStates = this.extractActiveUserStates(userPreferences);
 
         for (const rule of KNOWLEDGE_BASE) {
+            // Skip if rule is marked to be excluded from cards (Chat only)
+            if (rule.excludeFromCards) continue;
+
             if (this.checkTrigger(rule.trigger, stationId, lineIds, activeUserStates, currentDate)) {
 
                 // Calculate Relevance Score
@@ -34,6 +37,7 @@ export class L4DecisionEngine {
                 // Resolve Localization
                 const title = rule.title[locale] || rule.title['en'] || '';
                 const description = rule.content[locale] || rule.content['en'] || '';
+                const actionLabel = rule.actionLabel ? (rule.actionLabel[locale] || rule.actionLabel['en']) : undefined;
 
                 matches.push({
                     id: rule.id,
@@ -41,6 +45,8 @@ export class L4DecisionEngine {
                     icon: rule.icon,
                     title,
                     description,
+                    actionLabel,
+                    actionUrl: rule.actionUrl,
                     priority: score,
                     knowledgeId: rule.id,
                     _debug_reason: `Matched trigger: ${JSON.stringify(rule.trigger)}`

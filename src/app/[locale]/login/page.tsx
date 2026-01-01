@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { Session, SupabaseClient } from '@supabase/supabase-js';
 
@@ -21,6 +21,7 @@ function normalizeNextPath(nextPath: string | null, locale: string) {
 export default function LoginPage() {
     const locale = useLocale();
     const router = useRouter();
+    const t = useTranslations('login');
     const searchParams = useSearchParams();
 
     const nextPathRaw = searchParams.get('next');
@@ -103,7 +104,7 @@ export default function LoginPage() {
                     } catch {
                         details = '';
                     }
-                    throw new Error(`登入後初始化失敗（${res.status}）${details ? `：${details}` : ''}`);
+                    throw new Error(t('initFailedWithCode', { code: res.status + (details ? ` : ${details}` : '') }));
                 }
 
                 if (cancelled) return;
@@ -111,7 +112,7 @@ export default function LoginPage() {
             } catch (e: any) {
                 if (cancelled) return;
                 ensuredProfileUserIdRef.current = null;
-                setError(e?.message || '登入後初始化失敗');
+                setError(e?.message || t('initFailed'));
             } finally {
                 if (cancelled) return;
                 setBusy(false);
@@ -122,13 +123,13 @@ export default function LoginPage() {
         return () => {
             cancelled = true;
         };
-    }, [nextPath, router, session, supabase]);
+    }, [nextPath, router, session, supabase, t]);
 
     async function signInWithGoogle() {
         setError(null);
         setSentMagicLink(false);
         if (!supabase) {
-            setError('Supabase 環境變數未設定');
+            setError(t('supabaseNotConfigured'));
             return;
         }
 
@@ -154,11 +155,11 @@ export default function LoginPage() {
         setSentMagicLink(false);
 
         if (!supabase) {
-            setError('Supabase 環境變數未設定');
+            setError(t('supabaseNotConfigured'));
             return;
         }
         if (!email.trim()) {
-            setError('請輸入 Email');
+            setError(t('enterEmail'));
             return;
         }
 
@@ -183,7 +184,7 @@ export default function LoginPage() {
     async function signOut() {
         setError(null);
         if (!supabase) {
-            setError('Supabase 環境變數未設定');
+            setError(t('supabaseNotConfigured'));
             return;
         }
         setBusy(true);
@@ -207,9 +208,11 @@ export default function LoginPage() {
                 <LanguageSwitcher />
             </div>
             <div className="max-w-md mx-auto px-6 py-10">
-                <div className="text-xl font-black tracking-tight text-slate-900">會員登入</div>
+                <div className="text-xl font-black tracking-tight text-slate-900">{t('title')}</div>
                 <div className="mt-1 text-xs font-bold text-slate-500">
-                    {session?.user?.email ? `目前登入：${session.user.email}` : '匿名使用中（可先試用地圖）'}
+                    {session?.user?.email
+                        ? t('currentUser', { email: session.user.email })
+                        : t('anonymous')}
                 </div>
 
                 {session?.access_token && (
@@ -220,33 +223,54 @@ export default function LoginPage() {
                             disabled={busy || !readyToContinue}
                             className="w-full py-3 rounded-2xl bg-slate-900 text-white font-black text-sm hover:bg-slate-800 disabled:opacity-60"
                         >
-                            繼續
+                            {t('continue')}
                         </button>
                     </div>
                 )}
 
-                <div className="mt-6 bg-white rounded-[24px] border border-slate-100 shadow-sm p-6">
+                <div className="mt-6">
+                    <div className="px-2 mb-3">
+                        <div className="text-xs font-black uppercase tracking-wider text-slate-400">
+                            {t('tryAsking')}
+                        </div>
+                    </div>
+                    <div className="grid gap-2 opacity-75 hover:opacity-100 transition-opacity">
+                        {[
+                            'accessibility',
+                            'reroute',
+                            'fallback',
+                            'strategy'
+                        ].map((key) => (
+                            <div key={key} className="px-4 py-3 bg-white rounded-2xl border border-slate-100 shadow-sm text-xs font-bold text-slate-600 flex items-center gap-2">
+                                <span className="text-indigo-500">✨</span>
+                                {t(`tips.${key}`)}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="mt-8 bg-white rounded-[24px] border border-slate-100 shadow-sm p-6">
                     <div className="grid gap-3">
                         <button
                             onClick={signInWithGoogle}
                             disabled={busy}
                             className="w-full py-3 rounded-2xl bg-slate-900 text-white font-black text-sm hover:bg-slate-800 disabled:opacity-60"
                         >
-                            使用 Google 登入 / 註冊
+                            {t('googleLogin')}
                         </button>
 
                         <div className="pt-2">
-                            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">或</div>
+                            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">{t('or')}</div>
                         </div>
 
                         <label className="grid gap-2">
-                            <div className="text-xs font-black text-slate-700">Email（Magic Link）</div>
+                            <div className="text-xs font-black text-slate-700">{t('emailLabel')}</div>
                             <input
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 type="email"
                                 className="w-full px-4 py-3 rounded-2xl border border-slate-200 bg-white text-sm font-semibold outline-none focus:ring-2 focus:ring-indigo-200"
-                                placeholder="you@example.com"
+                                placeholder={t('emailPlaceholder')}
                                 autoComplete="email"
                             />
                         </label>
@@ -256,12 +280,12 @@ export default function LoginPage() {
                             disabled={busy}
                             className="w-full py-3 rounded-2xl bg-indigo-600 text-white font-black text-sm hover:bg-indigo-700 disabled:opacity-60"
                         >
-                            寄送登入連結
+                            {t('sendMagicLink')}
                         </button>
 
                         {sentMagicLink && (
                             <div className="px-4 py-3 rounded-2xl bg-emerald-50 text-emerald-800 text-sm font-bold border border-emerald-100">
-                                已寄出登入連結，請到信箱點擊完成登入。
+                                {t('magicLinkSent')}
                             </div>
                         )}
 
@@ -277,14 +301,14 @@ export default function LoginPage() {
                                 disabled={busy}
                                 className="flex-1 py-3 rounded-2xl bg-white border border-slate-200 text-slate-700 font-black text-sm hover:bg-slate-50 disabled:opacity-60"
                             >
-                                先不登入
+                                {t('skipLogin')}
                             </button>
                             <button
                                 onClick={signOut}
                                 disabled={busy || !session}
                                 className="flex-1 py-3 rounded-2xl bg-slate-100 text-slate-800 font-black text-sm hover:bg-slate-200 disabled:opacity-60"
                             >
-                                登出
+                                {t('logout')}
                             </button>
                         </div>
                     </div>

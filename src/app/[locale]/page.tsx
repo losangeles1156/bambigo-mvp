@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useAppStore } from '@/stores/appStore';
 import { NodeTabs } from '@/components/node/NodeTabs';
 import { TripGuardStatus } from '@/components/guard/TripGuardStatus';
+import { SubscriptionModal } from '@/components/guard/SubscriptionModal';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchNodeConfig, NodeProfile } from '@/lib/api/nodes';
@@ -52,8 +53,12 @@ export default function Home() {
         setChatOpen,
         setPendingChat,
         isTripGuardActive,
+        tripGuardSummary,
         isLineBound,
-        setTripGuardActive
+        setTripGuardActive,
+        setTripGuardSummary,
+        setTripGuardSubscriptionId,
+        setSubscriptionModalOpen
     } = useAppStore();
 
     console.log('[Home] State:', { activeTab, isBottomSheetOpen, currentNodeId });
@@ -168,6 +173,48 @@ export default function Home() {
         };
     }, [sessionToken, sessionUserId]);
 
+    useEffect(() => {
+        if (!sessionToken) {
+            setTripGuardSummary(null);
+            setTripGuardSubscriptionId(null);
+            setTripGuardActive(false);
+            return;
+        }
+
+        let cancelled = false;
+        async function loadTripGuard() {
+            try {
+                const res = await fetch(`/api/trip-guard/subscriptions?activeOnly=1&locale=${encodeURIComponent(locale)}`,
+                    {
+                        headers: { Authorization: `Bearer ${sessionToken}` },
+                        cache: 'no-store'
+                    }
+                );
+                if (!res.ok) return;
+                const data = await res.json().catch(() => null);
+                if (cancelled) return;
+
+                const active = data?.active || null;
+                if (active?.id) {
+                    setTripGuardActive(true);
+                    setTripGuardSubscriptionId(String(active.id));
+                    setTripGuardSummary(typeof active.summary === 'string' ? active.summary : null);
+                } else {
+                    setTripGuardActive(false);
+                    setTripGuardSubscriptionId(null);
+                    setTripGuardSummary(null);
+                }
+            } catch {
+                return;
+            }
+        }
+
+        void loadTripGuard();
+        return () => {
+            cancelled = true;
+        };
+    }, [locale, sessionToken, setTripGuardActive, setTripGuardSubscriptionId, setTripGuardSummary]);
+
 
 
     async function handleLogout() {
@@ -180,6 +227,10 @@ export default function Home() {
         setActiveTab('explore');
         ensuredProfileUserIdRef.current = null;
         setFavoriteNodeIds(new Set());
+        setTripGuardActive(false);
+        setTripGuardSummary(null);
+        setTripGuardSubscriptionId(null);
+        setSubscriptionModalOpen(false);
 
         if (!supabase) return;
         await supabase.auth.signOut();
@@ -340,17 +391,16 @@ export default function Home() {
                                                     </span>
                                                 </div>
                                                 <div className="text-[11px] font-medium text-slate-500">
-                                                    {tTripGuard('sampleSubscriptionWindow')}
+                                                    {tripGuardSummary || tTripGuard('sampleSubscriptionWindow')}
                                                 </div>
                                                 <button
                                                     type="button"
                                                     onClick={() => {
-                                                        setChatOpen(true);
-                                                        setPendingChat({ input: tViews('trips.seed'), autoSend: false });
+                                                        setSubscriptionModalOpen(true);
                                                     }}
                                                     className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-4 py-2 text-xs font-black tracking-wide text-white hover:bg-slate-800 active:scale-[0.99]"
                                                 >
-                                                    {tViews('trips.cta')}
+                                                    管理訂閱
                                                 </button>
                                             </div>
                                         ) : (
@@ -360,7 +410,7 @@ export default function Home() {
                                                 </div>
                                                 <button
                                                     type="button"
-                                                    onClick={() => setTripGuardActive(true)}
+                                                    onClick={() => setSubscriptionModalOpen(true)}
                                                     className="mt-2 inline-flex items-center justify-center rounded-2xl bg-indigo-600 px-4 py-2 text-xs font-black tracking-wide text-white hover:bg-indigo-700 active:scale-[0.99] sm:mt-0"
                                                 >
                                                     {tTripGuard('activate')}
@@ -530,9 +580,10 @@ export default function Home() {
                                 <div className="text-sm font-black text-gray-900">{tOnboarding('askTitle')}</div>
                                 <div className="grid grid-cols-1 gap-3">
                                     {[
-                                        { id: 'airport', text: tOnboarding('tips.airport') },
-                                        { id: 'locker', text: tOnboarding('tips.locker') },
-                                        { id: 'crowd', text: tOnboarding('tips.crowd') }
+                                        { id: 'accessibility', text: tOnboarding('tips.accessibility') },
+                                        { id: 'reroute', text: tOnboarding('tips.reroute') },
+                                        { id: 'fallback', text: tOnboarding('tips.fallback') },
+                                        { id: 'strategy', text: tOnboarding('tips.strategy') }
                                     ].map((tip) => (
                                         <button
                                             key={tip.id}
@@ -657,6 +708,8 @@ export default function Home() {
                     </div>
                 </div>
             )}
+
+            <SubscriptionModal />
         </main>
     );
 }

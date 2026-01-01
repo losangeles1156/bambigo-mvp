@@ -39,9 +39,10 @@
         "askTitle": "例えば：",
         "askSubtitle": "ワンタップで送信して提案を取得",
         "tips": {
-            "airport": "上野駅にいて荷物が多いです。空港までどう行けばいい？",
-            "locker": "近くのコインロッカーはどこ？",
-            "crowd": "銀座線はいま混んでる？"
+            "accessibility": "上野駅で、車椅子が一番入りやすい入口は？",
+            "reroute": "都庁へ行くのですが、中央線は遅れてますか？",
+            "fallback": "浅草駅のロッカーが満杯です。どうすれば？",
+            "strategy": "ベビーカーで成田へ行く一番楽な方法は？"
         },
         "hubTitle": "人気のハブから探索：",
         "hubs": {
@@ -394,5 +395,30 @@
     },
     "ui": {
         "items": "項目"
+    },
+    "login": {
+        "title": "会員ログイン",
+        "currentUser": "ログイン中：{email}",
+        "anonymous": "ゲストモード（地図を先にお試しください）",
+        "continue": "続ける",
+        "googleLogin": "Google でログイン / 登録",
+        "or": "または",
+        "emailLabel": "メール（マジックリンク）",
+        "emailPlaceholder": "you@example.com",
+        "sendMagicLink": "ログインリンクを送信",
+        "magicLinkSent": "ログインリンクを送信しました。メールをご確認ください。",
+        "supabaseNotConfigured": "Supabase 環境変数が設定されていません",
+        "enterEmail": "メールアドレスを入力してください",
+        "initFailed": "ログイン後の初期化に失敗しました",
+        "initFailedWithCode": "ログイン後の初期化に失敗しました（{code}）",
+        "skipLogin": "ログインしない",
+        "logout": "ログアウト",
+        "tryAsking": "LUTAGUに聞いてみよう：",
+        "tips": {
+            "accessibility": "上野駅で、車椅子が一番入りやすい入口は？",
+            "reroute": "都庁へ行くのですが、中央線は遅れてますか？",
+            "fallback": "浅草駅のロッカーが満杯です。どうすれば？",
+            "strategy": "ベビーカーで成田へ行く一番楽な方法は？"
+        }
     }
 }

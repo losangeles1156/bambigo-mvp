@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
-import { STATION_WISDOM } from '@/data/stationWisdom';
+import { STATION_WISDOM, KNOWLEDGE_BASE } from '@/data/stationWisdom';
 import { resolveNodeInheritance } from '@/lib/nodes/inheritance';
 
 type SupportedLocale = 'zh-TW' | 'en' | 'ja';
@@ -144,7 +144,7 @@ function buildOfflineAnswer(params: { locale: SupportedLocale; stationName: stri
         locale === 'en'
             ? `\n\nNext steps:\n1) Tell me your destination (place name).\n2) Tell me your constraints (luggage/stroller/accessibility/rush).\n3) If you can, share which exit/line you're near.`
             : locale === 'ja'
-                ? `\n\n次の情報を教えてください：\n1) 行き先（地名）\n2) 条件（大きい荷物／ベビーカー／バリアフリー／急ぎ）\n3) 今いる改札・出口や路線` 
+                ? `\n\n次の情報を教えてください：\n1) 行き先（地名）\n2) 条件（大きい荷物／ベビーカー／バリアフリー／急ぎ）\n3) 今いる改札・出口や路線`
                 : `\n\n下一步建議：\n1）告訴我目的地（地名）\n2）告訴我限制（大行李／推嬰兒車／行動不便／趕時間）\n3）你現在靠近的出口／改札／路線（若知道）`;
 
     const wisdom = String(wisdomSummary || '').trim();
@@ -198,8 +198,24 @@ export async function POST(req: NextRequest) {
                 if (criticalTrap) wisdomSummary += `[CRITICAL WARNING] ${criticalTrap.content} Advice: ${criticalTrap.advice}\n`;
                 if (highTrap) wisdomSummary += `[WARNING] ${highTrap.content}\n`;
                 if (hack) wisdomSummary += `[LOCAL TRICK] ${hack}\n`;
-                wisdomSummary = wisdomSummary.trim();
             }
+
+            // [UPDATED] Inject KNOWLEDGE_BASE (V3)
+            const relevantKnowledge = KNOWLEDGE_BASE.filter(rule => {
+                // Global rules (no station_ids) OR Specific station match
+                if (!rule.trigger.station_ids || rule.trigger.station_ids.length === 0) return true;
+                return rule.trigger.station_ids.includes(identityNode?.id || effectiveNode?.id || nodeId);
+            });
+
+            if (relevantKnowledge.length > 0) {
+                wisdomSummary += '\n[EXPERT KNOWLEDGE BASE]\n';
+                relevantKnowledge.forEach(k => {
+                    const title = pickLocaleText(k.title, locale);
+                    const content = pickLocaleText(k.content, locale);
+                    wisdomSummary += `- 【${title}】: ${content}\n`;
+                });
+            }
+            wisdomSummary = wisdomSummary.trim();
         }
 
         const stationName = pickLocaleText((identityNode?.name || effectiveNode?.name) as any, locale) || fallbackStationName;
