@@ -328,6 +328,24 @@
             "accessibility": "Access",
             "vibe": "Vibe"
         },
+        "preferences": {
+            "contextTitle": "Your Travel Context",
+            "large_luggage": "🧳 Large Luggage",
+            "multiple_bags": "🎒 Multiple Bags",
+            "stroller": "👶 Stroller",
+            "wheelchair": "🦽 Wheelchair",
+            "visual_impairment": "👁️ Visual Impairment",
+            "elderly": "👴 Elderly",
+            "rushing": "⏰ In a Rush",
+            "budget": "💰 Budget",
+            "comfort": "✨ Comfort",
+            "avoid_crowd": "🚶 Avoid Crowds",
+            "avoid_rain": "☔ Avoid Rain",
+            "with_children": "👨‍👩‍👧 With Kids",
+            "family_trip": "👨‍👩‍👧‍👦 Family Trip",
+            "noContext": "No special concerns. Enjoy your trip!",
+            "allGood": "All good! Enjoy your trip."
+        },
         "chips": {
             "synthesize": "SYNTHESIZE",
             "route": "Plan route",

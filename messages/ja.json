@@ -328,6 +328,24 @@
             "accessibility": "バリアフリー",
             "vibe": "雰囲気重視"
         },
+        "preferences": {
+            "contextTitle": "あなたの旅行状況",
+            "large_luggage": "🧳 大きい荷物",
+            "multiple_bags": "🎒 複数バッグ",
+            "stroller": "👶 ベビーカー",
+            "wheelchair": "🦽 車椅子",
+            "visual_impairment": "👁️ 視覚障害",
+            "elderly": "👴 高齢者",
+            "rushing": "⏰ 急ぎ",
+            "budget": "💰 節約",
+            "comfort": "✨ 快適",
+            "avoid_crowd": "🚶 混雑回避",
+            "avoid_rain": "☔ 雨避け",
+            "with_children": "👨‍👩‍👧 子供連れ",
+            "family_trip": "👨‍👩‍👧‍👦 家族旅行",
+            "noContext": "特に注意事項はありません。良い旅を！",
+            "allGood": "All good! Enjoy your trip."
+        },
         "chips": {
             "synthesize": "合成",
             "route": "ルート相談",

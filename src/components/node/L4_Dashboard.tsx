@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import { UserPreferences } from '@/types/lutagu_l4';
 import { Info, AlertTriangle, Lightbulb, MapPin, ChevronRight, HelpCircle } from 'lucide-react';
 import { useAppStore } from '@/stores/appStore';
+import { useTranslations } from 'next-intl';
 
 // Types for Card response (Mirroring API response)
 interface ActionCard {
@@ -26,6 +27,8 @@ interface L4DashboardProps {
 }
 
 export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4DashboardProps) {
+    const tL4 = useTranslations('l4');
+
     // 1. State Management
     const [preferences, setPreferences] = useState<UserPreferences>({
         accessibility: { wheelchair: false, stroller: false, visual_impairment: false, elderly: false },
@@ -86,16 +89,16 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                 <div className="flex items-center gap-2 mb-3">
                     <span className="w-1 h-4 bg-indigo-500 rounded-full" />
                     <h3 className="text-xs font-black text-gray-500 uppercase tracking-widest">
-                        {locale === 'zh-TW' ? '您的旅行情境' : 'Context'}
+                        {tL4('preferences.contextTitle')}
                     </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                     {/* Luggage Group */}
-                    <Chip label="🧳 大葉行李" active={preferences.luggage.large_luggage} onClick={() => togglePreference('luggage', 'large_luggage')} />
-                    <Chip label="👶 嬰兒車" active={preferences.accessibility.stroller} onClick={() => togglePreference('accessibility', 'stroller')} />
-                    <Chip label="🦽 輪椅" active={preferences.accessibility.wheelchair} onClick={() => togglePreference('accessibility', 'wheelchair')} />
-                    <Chip label="⏰ 趕時間" active={preferences.travel_style.rushing} onClick={() => togglePreference('travel_style', 'rushing')} />
-                    <Chip label="💰 省錢" active={preferences.travel_style.budget} onClick={() => togglePreference('travel_style', 'budget')} />
+                    <Chip label={tL4('preferences.large_luggage')} active={preferences.luggage.large_luggage} onClick={() => togglePreference('luggage', 'large_luggage')} />
+                    <Chip label={tL4('preferences.stroller')} active={preferences.accessibility.stroller} onClick={() => togglePreference('accessibility', 'stroller')} />
+                    <Chip label={tL4('preferences.wheelchair')} active={preferences.accessibility.wheelchair} onClick={() => togglePreference('accessibility', 'wheelchair')} />
+                    <Chip label={tL4('preferences.rushing')} active={preferences.travel_style.rushing} onClick={() => togglePreference('travel_style', 'rushing')} />
+                    <Chip label={tL4('preferences.budget')} active={preferences.travel_style.budget} onClick={() => togglePreference('travel_style', 'budget')} />
                 </div>
             </div>
 
@@ -112,7 +115,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                     ))
                 ) : (
                     <div className="text-center py-12 text-gray-400 text-sm">
-                        {locale === 'zh-TW' ? '無需特別注意的事項，祝旅途愉快！' : 'All good! Enjoy your trip.'}
+                        {tL4('preferences.noContext')}
                     </div>
                 )}
             </div>

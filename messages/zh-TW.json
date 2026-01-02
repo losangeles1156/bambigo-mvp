@@ -327,6 +327,24 @@
             "accessibility": "行動不便",
             "vibe": "探索體驗"
         },
+        "preferences": {
+            "contextTitle": "您的旅行情境",
+            "large_luggage": "🧳 大型行李",
+            "multiple_bags": "🎒 多個背包",
+            "stroller": "👶 嬰兒車",
+            "wheelchair": "🦽 輪椅",
+            "visual_impairment": "👁️ 視覺不便",
+            "elderly": "👴 年長者",
+            "rushing": "⏰ 趕時間",
+            "budget": "💰 省錢",
+            "comfort": "✨ 舒適",
+            "avoid_crowd": "🚶 避開人群",
+            "avoid_rain": "☔ 避雨",
+            "with_children": "👨‍👩‍👧 帶小孩",
+            "family_trip": "👨‍👩‍👧‍👦 家族旅行",
+            "noContext": "無需特別注意的事項，祝旅途愉快！",
+            "allGood": "All good! Enjoy your trip."
+        },
         "chips": {
             "synthesize": "合成策略",
             "route": "規劃路線",
