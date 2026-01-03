@@ -26,6 +26,7 @@ export function groupNodesByProximity(nodes: NodeDatum[], thresholdMeters: numbe
         }
     });
 
+    // Associate children with their explicit parent hubs (from database)
     nodes.forEach(node => {
         if (node.parent_hub_id && hubMap.has(node.parent_hub_id)) {
             hubMap.get(node.parent_hub_id)?.children?.push(node);
@@ -33,8 +34,21 @@ export function groupNodesByProximity(nodes: NodeDatum[], thresholdMeters: numbe
         }
     });
 
-    const remainingNodes = nodes.filter(n => !processed.has(n.id) && !hubMap.has(n.id));
-    
+    // CRITICAL FIX: If a node has parent_hub_id but that parent is NOT in the viewport,
+    // show it as a standalone node - do NOT group it by proximity to avoid wrong associations.
+    // This prevents nodes from being incorrectly shown as children of unrelated hubs.
+    nodes.forEach(node => {
+        if (node.parent_hub_id && !hubMap.has(node.parent_hub_id) && !processed.has(node.id) && !hubMap.has(node.id)) {
+            // Node has a parent but parent is outside viewport - show as standalone
+            const standaloneNode: GroupedNode = { ...node, children: [], isParent: false };
+            hubMap.set(node.id, standaloneNode);
+            processed.add(node.id);
+        }
+    });
+
+    // Only group remaining nodes (those WITHOUT explicit parent_hub_id) by proximity
+    const remainingNodes = nodes.filter(n => !processed.has(n.id) && !hubMap.has(n.id) && !n.parent_hub_id);
+
     remainingNodes.forEach(node => {
         if (processed.has(node.id)) return;
 
@@ -43,6 +57,9 @@ export function groupNodesByProximity(nodes: NodeDatum[], thresholdMeters: numbe
         let minDistance = thresholdMeters;
 
         for (const parent of hubMap.values()) {
+            // Only group under hubs that are actual parents (is_hub or no parent themselves)
+            if (!parent.is_hub && parent.parent_hub_id) continue;
+
             const [lon2, lat2] = parent.location.coordinates;
             const dist = calculateDistance(lat1, lon1, lat2, lon2);
             if (dist < minDistance) {
