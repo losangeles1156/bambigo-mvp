@@ -17,6 +17,7 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
         trigger: {
             station_ids: ['odpt:Station:JR-East.Tokyo'],
             line_ids: ['odpt:Railway:JR-East.Keiyo'],
+            keywords: ['transfer', 'keiyo', 'long_walk', 'walk']
         },
         type: 'warning',
         priority: 90,
@@ -42,6 +43,7 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
             // Let's assign it to 'Ueno' for demonstration, or leave station empty if it was a global rule (which this isn't).
             station_ids: ['odpt:Station:TokyoMetro.Ueno'],
             user_states: ['accessibility.wheelchair', 'accessibility.stroller'],
+            keywords: ['elevator', 'accessibility', 'barrier_free', 'wheelchair', 'stroller', 'exit']
         },
         type: 'warning',
         priority: 85,
@@ -202,7 +204,82 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
         // Link removed as per user request (Affiliate pending)
         excludeFromCards: true // Chat only
     },
-    ...(GENERATED_KNOWLEDGE as any as ExpertKnowledge[])
+
+    // Scene 9: Hatsumode (New Year Shrine Visit)
+    {
+        id: 'hatsumode-general-warning',
+        trigger: {
+            station_ids: [], // Global rule, or could be specific to Harajuku/Asakusa/Ochanomizu
+            time_patterns: ['01/01-01/03'],
+            keywords: ['hatsumode', 'shrine', 'temple', 'new_year', 'crowd']
+        },
+        type: 'seasonal',
+        priority: 100, // Top priority
+        icon: '⛩️',
+        title: {
+            'zh-TW': '初詣 (新年參拜) 人潮警示',
+            ja: '初詣の混雑警報',
+            en: 'Hatsumode Crowd Warning'
+        },
+        content: {
+            'zh-TW': '【初詣期間 1/1-1/3】\n主要神社 (明治神宮、淺草寺、神田明神) 周邊將實施大規模交通管制。參拜隊伍可能長達 2-4 小時。\n建議：避開中午時段，選擇清晨或傍晚前往。攜帶暖暖包與熱飲。',
+            ja: '【初詣 1/1-1/3】\n明治神宮、浅草寺などは大変混雑します。待ち時間は2〜4時間になることも。\n早朝か夕方を推奨します。防寒対策を万全に。',
+            en: '【Hatsumode 1/1-1/3】\nExpect massive crowds at major shrines (Meiji Jingu, Sensoji). Wait times can exceed 2-4 hours.\nAdvice: Go early morning or evening. Dress warmly.'
+        }
+    },
+
+    ...(GENERATED_KNOWLEDGE as any as ExpertKnowledge[]),
+    // Seasonal: Golden Week
+    {
+        id: 'seasonal-golden-week',
+        trigger: {
+            time_patterns: ['04/29-05/06'],
+            keywords: ['crowd', 'reservation', 'shinkansen', 'travel']
+        },
+        type: 'warning',
+        priority: 95,
+        icon: '🎏',
+        title: { 'zh-TW': '黃金週人潮警示', ja: 'GW混雑注意', en: 'Golden Week Alert' },
+        content: {
+            'zh-TW': '正值黃金週連假，各大車站與新幹線將極度擁擠。建議提前預訂指定席，或預留 1 小時以上排隊時間。',
+            ja: 'GW期間中は駅や新幹線が大変混雑します。指定席の事前予約か、待ち時間を1時間以上見込んでください。',
+            en: 'It\'s Golden Week. Stations and Shinkansen will be extremely crowded. Book reserved seats early or allow 1+ hour for queues.'
+        }
+    },
+    // Seasonal: Obon
+    {
+        id: 'seasonal-obon',
+        trigger: {
+            time_patterns: ['08/13-08/16'],
+            keywords: ['crowd', 'reservation', 'shinkansen', 'travel']
+        },
+        type: 'warning',
+        priority: 95,
+        icon: '🏮',
+        title: { 'zh-TW': '盂蘭盆節返鄉潮', ja: 'お盆の帰省ラッシュ', en: 'Obon Travel Rush' },
+        content: {
+            'zh-TW': '盂蘭盆節期間新幹線與特急列車一位難求。若持大型行李，務必預約「特大行李附帶席」。',
+            ja: 'お盆期間は新幹線や特急が満席になります。大きな荷物がある場合は「特大荷物スペースつき座席」を予約してください。',
+            en: 'During Obon, trains are fully booked. If you have large luggage, you MUST book seats with oversized baggage space.'
+        }
+    },
+    // Seasonal: Silver Week / September Holidays
+    {
+        id: 'seasonal-september-holidays',
+        trigger: {
+            time_patterns: ['09/19-09/23'],
+            keywords: ['crowd', 'travel']
+        },
+        type: 'warning',
+        priority: 90,
+        icon: '🍁',
+        title: { 'zh-TW': '秋季連假人潮', ja: 'シルバーウィーク混雑', en: 'Silver Week Crowds' },
+        content: {
+            'zh-TW': '秋季連假期間觀光景點周邊交通可能壅塞，建議搭乘電車並預留轉乘時間。',
+            ja: '秋の連休は観光地周辺の交通が混雑します。電車を利用し、乗り換え時間に余裕を持ってください。',
+            en: 'Traffic around tourist spots is heavy during Silver Week. Use trains and allow extra time for transfers.'
+        }
+    }
 ];
 
 // ==========================================
@@ -226,7 +303,21 @@ export const STATION_WISDOM: Record<string, StationWisdomData> = {
         traps: [
             { title: 'Legacy Trap', content: 'Deprecated', advice: 'Use KNOWLEDGE_BASE instead', severity: 'medium' }
         ],
-        hacks: [],
+        hacks: [
+            { title: 'Accessibility', content: '輪椅使用者請務必使用「公園口」或「不忍口」，中央口只有樓梯。', type: 'route' },
+            { title: 'Luggage', content: '新幹線轉乘口旁有大型Sagawa寄放中心，比置物櫃好用。', type: 'facility' },
+            { title: 'Park Exit', content: '上野公園口 (Park Exit) 是去動物園最近的出口，且全程有手扶梯。', type: 'route' }
+        ],
+        l3Facilities: [],
+        accessibilityRoutes: []
+    },
+    'odpt.Station:TokyoMetro.Ginza.Ueno': {
+        traps: [],
+        hacks: [
+            { title: 'Accessibility', content: '輪椅使用者請務必使用「公園口」或「不忍口」，中央口只有樓梯。', type: 'route' },
+            { title: 'Luggage', content: '新幹線轉乘口旁有大型Sagawa寄放中心，比置物櫃好用。', type: 'facility' },
+            { title: 'Park Exit', content: '上野公園口 (Park Exit) 是去動物園最近的出口，且全程有手扶梯。', type: 'route' }
+        ],
         l3Facilities: [],
         accessibilityRoutes: []
     }

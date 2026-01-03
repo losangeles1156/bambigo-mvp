@@ -15,7 +15,12 @@ export function getLocaleString(obj: LocaleString | string | undefined, locale: 
 
     if (lang === 'ja' && obj.ja) return obj.ja;
     if (lang === 'en' && obj.en) return obj.en;
-    if (lang === 'zh' && obj.zh) return obj.zh;
+    if (lang === 'zh') {
+        const zhVal = (obj as any)['zh-TW'] || (obj as any)['zh-Hant'] || obj.zh;
+        if (zhVal) return zhVal;
+        // Fallback for ZH: JA (Kanji) > EN
+        return obj.ja || obj.en || '';
+    }
 
     // Fallbacks
     return obj.en || obj.ja || obj.zh || '';

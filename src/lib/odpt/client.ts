@@ -4,11 +4,27 @@ const API_PUBLIC = 'https://api-public.odpt.org/api/v4';
 const API_DEV = 'https://api.odpt.org/api/v4';
 const API_CHALLENGE = 'https://api-challenge.odpt.org/api/v4';
 
-const TOKEN_DEV = process.env.ODPT_API_TOKEN;        // For Metro, MIR
-const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP; // For JR East
+const TOKEN_DEV = process.env.ODPT_API_TOKEN || process.env.ODPT_API_KEY;  // For Metro, MIR
+const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP;                  // For JR East
 
 async function fetchOdpt<T>(type: string, params: Record<string, string> = {}): Promise<T[]> {
-    const operator = params['odpt:operator'] || '';
+    let operator = params['odpt:operator'] || '';
+
+    // Infer operator from other params if missing
+    if (!operator) {
+        const potentialIds = [
+            params['odpt:station'],
+            params['odpt:fromStation'],
+            params['odpt:toStation'],
+            params['owl:sameAs']
+        ].filter(Boolean);
+
+        for (const id of potentialIds) {
+            if (id.includes('Toei')) { operator = 'Toei'; break; }
+            if (id.includes('JR-East')) { operator = 'JR-East'; break; }
+            if (id.includes('TokyoMetro')) { operator = 'TokyoMetro'; break; }
+        }
+    }
 
     // Strategy Selection
     let baseUrl = API_DEV;
@@ -88,11 +104,11 @@ export const odptClient = {
         return fetchOdpt<OdptTrainTimetable>('odpt:TrainTimetable', params);
     },
 
-    getFares: (fromStation: string, toStation: string, operator?: string) => {
+    getFares: (fromStation: string, toStation?: string, operator?: string) => {
         const params: Record<string, string> = {
-            'odpt:fromStation': fromStation,
-            'odpt:toStation': toStation
+            'odpt:fromStation': fromStation
         };
+        if (toStation) params['odpt:toStation'] = toStation;
         if (operator) params['odpt:operator'] = operator;
         return fetchOdpt<OdptRailwayFare>('odpt:RailwayFare', params);
     },

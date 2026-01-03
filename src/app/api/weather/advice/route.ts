@@ -5,18 +5,8 @@ import { supabase } from '@/lib/supabase';
 const mistral = new Mistral({ apiKey: process.env.MISTRAL_API_KEY });
 
 // Cache TTL in hours
-const NORMAL_TTL_HOURS = 4;
+const NORMAL_TTL_HOURS = 1; // Reduced from 4 to 1 for better temperature responsiveness
 const EMERGENCY_TTL_MINUTES = 30;
-
-// Calculate current 4-hour window (06, 10, 14, 18, 22)
-function getCurrentWindow(): Date {
-    const now = new Date();
-    const hour = now.getHours();
-    const windowHour = Math.floor(hour / 4) * 4;
-    const windowStart = new Date(now);
-    windowStart.setHours(windowHour < 6 ? 6 : windowHour, 0, 0, 0);
-    return windowStart;
-}
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
@@ -37,6 +27,7 @@ export async function GET(request: Request) {
     }
 
     const mode = isEmergency ? 'emergency' : 'normal';
+    const currentTemp = parseFloat(temp);
 
     // --- Check Cache ---
     try {
@@ -48,17 +39,25 @@ export async function GET(request: Request) {
             .eq('locale', locale)
             .gt('expires_at', now.toISOString())
             .order('created_at', { ascending: false })
-            .limit(1);
+            .limit(5); // Get more to find a temperature match
 
         if (cached && cached.length > 0) {
-            return NextResponse.json({
-                advice: cached[0].advice,
-                jma_link: cached[0].jma_link,
-                mode,
-                locale,
-                cached: true,
-                expires_at: cached[0].expires_at
+            // Find a cache entry with similar temperature (+/- 2 degrees)
+            const closeMatch = cached.find(c => {
+                const cachedTemp = c.weather_data?.temp;
+                return cachedTemp !== undefined && Math.abs(cachedTemp - currentTemp) <= 2;
             });
+
+            if (closeMatch) {
+                return NextResponse.json({
+                    advice: closeMatch.advice,
+                    jma_link: closeMatch.jma_link,
+                    mode,
+                    locale,
+                    cached: true,
+                    expires_at: closeMatch.expires_at
+                });
+            }
         }
     } catch (e) {
         console.warn('[Advice Cache] Read failed, proceeding without cache.');
@@ -88,8 +87,22 @@ ${jmaSummary}
 `;
     } else {
         prompt = `
-你是一位友善的東京旅遊助手。
+你是一位友善且專業的東京旅遊助手。
 根據以下天氣數據，給出一句 ${maxWords} 字內的穿衣或出行建議。
+
+穿衣指南規則（嚴格遵守）：
+- 5°C 以下：極寒，建議穿著厚羽絨衣、發熱衣，並配戴圍巾手套。
+- 5°C - 10°C：寒冷，建議穿著厚大衣或中等厚度羽絨衣。
+- 10°C - 15°C：冷，建議穿著大衣或厚夾克。
+- 15°C - 20°C：涼爽，建議穿著風衣或薄夾克。
+- 20°C - 25°C：舒適，長袖襯衫或薄長袖即可。
+- 25°C 以上：炎熱，短袖衣物。
+- 絕對不要使用 ** 符號來加粗文字。
+
+特別注意：
+- 若有雨/雪：提醒攜帶雨具，並注意地面濕滑。
+- 若風速大：提醒體感溫度會更低。
+
 語氣溫暖、實用。語言：${lang}。
 
 天氣：${condition}
@@ -99,9 +112,9 @@ ${jmaSummary}
 降雨機率：${precipProb || 'N/A'}%
 
 範例輸出：
-- (繁中) 「天氣涼爽，適合薄外套出門」
-- (日文) 「今日は暖かいので軽装でOK」
-- (英文) \"Perfect weather for a walk!\"
+- (5°C, 晴) 「氣溫寒冷僅 ${temp}°C，請務必穿著厚大衣保暖」
+- (18°C, 陰) 「天氣微涼，穿件薄夾克出門正合適」
+- (28°C, 雨) 「天氣炎熱且有雨，建議穿短袖並攜帶雨傘」
 
 輸出時只寫建議本身，不要引號或說明。
 `;

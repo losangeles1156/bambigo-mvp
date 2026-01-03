@@ -36,7 +36,7 @@ export function L1_DNA({ data }: { data: StationUIProfile }) {
     const { getCategoryLabel, getSubcategoryLabel } = useCategoryTranslation();
     const locale = useLocale();
 
-    const { title, tagline, categories, vibe_tags, loading } = useStationDNA(data.l1_dna);
+    const { title, tagline, categories, vibe_tags, loading } = useStationDNA(data.l1_dna, locale);
 
     const displayVibeTags = useMemo(() => {
         if (vibe_tags && vibe_tags.length > 0) {
@@ -136,26 +136,31 @@ export function L1_DNA({ data }: { data: StationUIProfile }) {
                                     {/* Optional: Add a small badge if needed */}
                                 </h2>
 
-                                {/* Dynamic Insight Tagline */}
-                                <p className="text-indigo-200 font-medium text-xs sm:text-sm leading-relaxed max-w-full">
-                                    {(() => {
-                                        // Prioritize top categories for tagline
-                                        const topCats = filteredCategoryList.slice(0, 2);
-                                        const totalSpots = filteredCategoryList.reduce((acc, c) => acc + c.count, 0);
+                                {/* Dynamic Insight Tagline - Render ONLY if data exists */}
+                                {(() => {
+                                    const topCats = filteredCategoryList.slice(0, 2);
+                                    let content = '';
 
-                                        if (topCats.length >= 2) {
-                                            if (locale === 'ja') return `ここは${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）や${getCategoryLabel(topCats[1].id)}が充実したエリアです。`;
-                                            if (locale === 'zh-TW') return `這裡是以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）與${getCategoryLabel(topCats[1].id)}聞名的區域。`;
-                                            return `Known for ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots) and ${getCategoryLabel(topCats[1].id)}.`;
-                                        }
-                                        if (topCats.length === 1) {
-                                            if (locale === 'ja') return `${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）が中心のエリアです。`;
-                                            if (locale === 'zh-TW') return `以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）為主的區域。`;
-                                            return `Mainly featured by ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots).`;
-                                        }
-                                        return getLocaleString(tagline, locale); // Fallback to DB tagline
-                                    })()}
-                                </p>
+                                    if (topCats.length >= 2) {
+                                        if (locale === 'ja') content = `ここは${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）や${getCategoryLabel(topCats[1].id)}が充実したエリアです。`;
+                                        else if (locale.startsWith('zh')) content = `這裡是以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）與${getCategoryLabel(topCats[1].id)}聞名的區域。`;
+                                        else content = `Known for ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots) and ${getCategoryLabel(topCats[1].id)}.`;
+                                    } else if (topCats.length === 1) {
+                                        if (locale === 'ja') content = `${getCategoryLabel(topCats[0].id)}（${topCats[0].count}ヶ所）が中心のエリアです。`;
+                                        else if (locale.startsWith('zh')) content = `以${getCategoryLabel(topCats[0].id)}（${topCats[0].count}處）為主的區域。`;
+                                        else content = `Mainly featured by ${getCategoryLabel(topCats[0].id)} (${topCats[0].count} spots).`;
+                                    } else {
+                                        content = getLocaleString(tagline, locale);
+                                    }
+
+                                    if (!content) return null;
+
+                                    return (
+                                        <p className="text-indigo-200 font-medium text-xs sm:text-sm leading-relaxed max-w-full">
+                                            {content}
+                                        </p>
+                                    );
+                                })()}
                             </div>
 
                             {/* Vibe Tags - Compact Scrollable Row */}

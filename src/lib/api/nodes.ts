@@ -458,7 +458,7 @@ export async function fetchNodeConfig(nodeId: string) {
             enrichedProfile.l3_facilities = facilities.map((f: any) => {
                 // Parse location if it's JSON, otherwise treat as string
                 const locVal = typeof f.name_i18n === 'object' ? f.name_i18n : (f.location || 'Station');
-                const locObj: LocaleString = (typeof locVal === 'string') 
+                const locObj: LocaleString = (typeof locVal === 'string')
                     ? { ja: locVal, en: locVal, zh: locVal }
                     : { ja: locVal.ja || locVal.en, en: locVal.en || locVal.ja, zh: locVal.zh || locVal.ja };
 
@@ -501,13 +501,23 @@ export async function fetchNodeConfig(nodeId: string) {
 
     if (!enrichedProfile.l1_dna) {
         let staticData: any = null;
-        for (const key of wisdomKeys) {
+        const l1Keys = new Set<string>();
+
+        const addL1Key = (id: string | null | undefined) => {
+            if (!id) return;
+            for (const v of buildStationIdSearchCandidates(id)) l1Keys.add(v);
+        };
+
+        wisdomKeys.forEach(addL1Key);
+
+        for (const key of l1Keys) {
             const hit = (STATIC_L1_DATA as any)[key];
             if (hit) {
                 staticData = hit;
                 break;
             }
         }
+
         enrichedProfile.l1_dna = staticData || null;
     }
 
@@ -560,14 +570,14 @@ export async function fetchNodeConfig(nodeId: string) {
                     en: rawLoc.en || 'N/A',
                     ja: rawLoc.ja || 'N/A'
                 };
-            
+
             // Name should ideally be distinct from location, but fallback to location if missing
-            const nameObj: LocaleString = f.name_i18n 
-                ? { 
-                    ja: f.name_i18n.ja || f.name_i18n.en, 
-                    en: f.name_i18n.en || f.name_i18n.ja, 
-                    zh: f.name_i18n.zh || f.name_i18n.ja 
-                  }
+            const nameObj: LocaleString = f.name_i18n
+                ? {
+                    ja: f.name_i18n.ja || f.name_i18n.en,
+                    en: f.name_i18n.en || f.name_i18n.ja,
+                    zh: f.name_i18n.zh || f.name_i18n.ja
+                }
                 : locObj;
 
             return {
@@ -579,16 +589,16 @@ export async function fetchNodeConfig(nodeId: string) {
                     return `${k}: ${v}`; // Simplify details to string[] or handle LocaleString[] later if needed
                     // stationStandard says details?: LocaleString[]
                     // So we should map to LocaleString objects
-                }).map(s => ({ ja: s, en: s, zh: s })) : [], 
+                }).map(s => ({ ja: s, en: s, zh: s })) : [],
                 attributes: {
                     ...f.attributes,
                     floor: f.floor,
                     operator: f.operator,
                     source: f.source,
-                    direction: { 
-                        zh: `${f.operator || ''} ${f.floor || ''}`, 
-                        en: `${f.operator || ''} ${f.floor || ''}`, 
-                        ja: `${f.operator || ''} ${f.floor || ''}` 
+                    direction: {
+                        zh: `${f.operator || ''} ${f.floor || ''}`,
+                        en: `${f.operator || ''} ${f.floor || ''}`,
+                        ja: `${f.operator || ''} ${f.floor || ''}`
                     }
                 }
             } as L3Facility;
@@ -618,74 +628,12 @@ export async function fetchNodeConfig(nodeId: string) {
         });
     }
 
-    // --- L4: LUTAGU STRATEGY GENERATION (Real Data) ---
+    // --- L4: LUTAGU STRATEGY CARDS (V5 PASSIVE) ---
+    // Cards are now PASSIVE – only shown after user query in L4_Bambi.
+    // Pre-population from wisdom.traps/hacks disabled.
     const l4_cards: any[] = [];
 
-    if (wisdom) {
-        // 1. Map TRAPS to Primary Cards
-        if (wisdom.traps) {
-            wisdom.traps.forEach((trap: any, idx: number) => {
-                const cardId = `trap-${idx}`;
-                l4_cards.push({
-                    id: cardId,
-                    type: 'primary',
-                    title: { ja: trap.title, en: trap.title, zh: trap.title }, // Fallback to same string
-                    description: {
-                        ja: `${trap.content}\n\n${trap.advice}`,
-                        en: `${trap.content}\n\n${trap.advice}`,
-                        zh: `${trap.content}\n\n${trap.advice}`
-                    },
-                    actionLabel: { ja: '確認', en: 'Got it', zh: '了解' },
-                    actionUrl: null,
-                    icon: 'alert-triangle'
-                });
-            });
-        }
-
-        // 2. Map HACKS to Secondary Cards
-        if (wisdom.hacks) {
-            wisdom.hacks.forEach((hack: any, idx: number) => {
-                // Extract emoji if present
-                const emojiMatch = hack.match(/^(\p{Emoji_Presentation}|\p{Extended_Pictographic})/u);
-                const icon = emojiMatch ? emojiMatch[0] : 'lightbulb';
-
-                // Clean content (remove bold markdown for plain text preview if needed, but UI might support md)
-                // For now keep as is.
-
-                l4_cards.push({
-                    id: `hack-${idx}`,
-                    type: 'secondary',
-                    title: { ja: 'Tips', en: 'Tips', zh: '小撇步' },
-                    description: { ja: hack, en: hack, zh: hack },
-                    actionLabel: { ja: '詳細', en: 'More', zh: '查看' },
-                    actionUrl: undefined,
-                    icon: 'star'
-                });
-            });
-        }
-    }
-
-    // 3. Fallback: Accessibility Card if no specific wisdom but facility exists
-    if (l4_cards.length === 0) {
-        // Check if we have elevator info in L3 (which we just populated or merged)
-        const hasElevator = enrichedProfile.l3_facilities?.some((f: any) => f.category === 'elevator' || f.category === 'accessibility');
-
-        if (hasElevator) {
-            l4_cards.push({
-                id: 'fallback-access',
-                type: 'secondary',
-                title: { ja: 'バリアフリー情報', en: 'Accessibility', zh: '無障礙情報' },
-                description: {
-                    ja: 'この駅はエレベーターが設置されています。詳細は施設タブを確認してください。',
-                    en: 'Elevator available. Check Facility tab for details.',
-                    zh: '此車站設有電梯。詳情請查看設施頁籤。'
-                },
-                actionLabel: { ja: '確認', en: 'Check', zh: '確認' },
-                actionUrl: undefined,
-                icon: 'accessibility'
-            });
-        }
-    }
+    // Fallback Accessibility Card disabled for passive KB.
 
     // Inject L4 Cards
     enrichedProfile.l4_cards = l4_cards;

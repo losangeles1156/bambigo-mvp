@@ -14,7 +14,7 @@ try {
     const workflow = JSON.parse(workflowContent);
 
     // Find the 'Transform to L4 Structure' node
-    const transformNode = workflow.nodes.find(n => n.name === 'Transform to L4 Structure');
+    const transformNode = workflow.nodes.find((n: { name: string; parameters: { jsCode: string } }) => n.name === 'Transform to L4 Structure');
 
     if (!transformNode) {
         throw new Error('Node "Transform to L4 Structure" not found in workflow');

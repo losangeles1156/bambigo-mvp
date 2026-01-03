@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useL1Places, L1Place } from './useL1Places';
+import { getLocaleString } from '@/lib/utils/localeUtils';
 
 export interface L1CategorySummary {
     id: string;
@@ -102,18 +103,80 @@ export function getMatchingVibes(place: L1Place): string[] {
     return matchedVibes;
 }
 
-export function useStationDNA(initialData?: any) {
+export function useStationDNA(initialData?: any, locale?: string) {
     const { places, loading: placesLoading } = useL1Places();
 
     const dna = useMemo(() => {
-        // Priority 1: Use Initial Data (Backend)
-        if (initialData && initialData.vibe_tags && initialData.vibe_tags.length > 0) {
+        const hasInitialCategories = !!initialData && typeof initialData === 'object' && initialData.categories && Object.keys(initialData.categories).length > 0;
+        const hasInitialVibes = !!initialData && typeof initialData === 'object' && Array.isArray(initialData.vibe_tags) && initialData.vibe_tags.length > 0;
+
+        if (hasInitialCategories || hasInitialVibes) {
+            const toL1Place = (spot: any, categoryId: string, index: number): L1Place => {
+                if (spot && typeof spot === 'object' && typeof spot.category === 'string' && typeof spot.name === 'string') {
+                    return spot as L1Place;
+                }
+
+                const osmIdRaw = spot?.osm_id;
+                const osmIdNum = typeof osmIdRaw === 'number'
+                    ? osmIdRaw
+                    : (typeof osmIdRaw === 'string' ? Number.parseInt(osmIdRaw, 10) : Number.NaN);
+
+                const fallbackOsmId = Number.isFinite(osmIdNum) ? osmIdNum : index + 1;
+                const nameI18n = (spot && typeof spot === 'object' && typeof spot.name === 'object')
+                    ? spot.name
+                    : { ja: String(spot?.name ?? ''), en: String(spot?.name ?? ''), zh: String(spot?.name ?? '') };
+
+                const name = getLocaleString(nameI18n, locale || 'en') || String(spot?.name ?? '');
+
+                return {
+                    id: `l1-${categoryId}-${fallbackOsmId}-${index}`,
+                    osm_id: fallbackOsmId,
+                    name,
+                    name_i18n: nameI18n,
+                    category: categoryId,
+                    subcategory: spot?.subcategory || '',
+                    distance_meters: spot?.distance_meters,
+                    navigation_url: spot?.navigation_url,
+                    location: { coordinates: [139.77, 35.71] },
+                    tags: spot?.tags || {}
+                } as L1Place;
+            };
+
+            const categories: Record<string, L1CategorySummary> = {};
+            if (hasInitialCategories) {
+                Object.entries(initialData.categories).forEach(([catId, cat]: any) => {
+                    const representative = Array.isArray(cat?.representative_spots)
+                        ? cat.representative_spots.map((s: any, idx: number) => toL1Place(s, catId, idx))
+                        : [];
+
+                    categories[catId] = {
+                        id: cat?.id || catId,
+                        label: cat?.label || CATEGORY_LABELS[catId] || { ja: catId, en: catId, zh: catId },
+                        count: typeof cat?.count === 'number' ? cat.count : representative.length,
+                        representative_spots: representative
+                    };
+                });
+            }
+
+            const vibe_tags: VibeTag[] = hasInitialVibes
+                ? initialData.vibe_tags.map((v: any, idx: number) => {
+                    const score = typeof v?.score === 'number' ? v.score : 1;
+                    return {
+                        id: v?.id || `vibe-${idx}`,
+                        label: v?.label || { ja: String(v?.id || ''), en: String(v?.id || ''), zh: String(v?.id || '') },
+                        count: score,
+                        description: v?.description || { ja: '', en: '', zh: '' },
+                        spots: []
+                    } as VibeTag;
+                })
+                : [];
+
             return {
                 loading: false,
                 title: { ja: '都市の拠点', en: 'Urban Hub', zh: '城市樞紐' }, // TODO: Store title/tagline in L1_DNA_Data
                 tagline: { ja: '多くの人々が行き交う場所', en: 'A bustling transit point', zh: '人來人往的熱鬧據點' },
-                categories: initialData.categories || {},
-                vibe_tags: initialData.vibe_tags,
+                categories,
+                vibe_tags,
                 signature_spots: [] // Can be filled if L1_DNA_Data stores spots
             };
         }
@@ -196,7 +259,7 @@ export function useStationDNA(initialData?: any) {
             vibe_tags,
             signature_spots: places.slice(0, 3)
         };
-    }, [places, placesLoading, initialData]);
+    }, [places, placesLoading, initialData, locale]);
 
     return dna || {
         loading: placesLoading && !initialData,

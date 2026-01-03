@@ -1,9 +1,24 @@
-import { getStationClusters } from './station_registry';
+import fs from 'fs';
+import path from 'path';
+
+const DEBUG_LOG_FILE = path.join(__dirname, 'debug_run.log');
+function logDebug(message: string) {
+    const timestamp = new Date().toISOString();
+    const msg = `[${timestamp}] ${message}\n`;
+    fs.appendFileSync(DEBUG_LOG_FILE, msg);
+    console.log(message);
+}
+
+logDebug('DEBUG: run.ts script started');
+
+import { getStationClusters, getStationClustersForWards, WARDS_15 } from './station_registry';
+logDebug('DEBUG: station_registry imported');
 import { analyzeWiki } from './wiki_analyzer';
 import { fetchOsmData, CategoryStat } from './osm_fetcher';
 import { getStationProfile } from './hub_profiles';
-import fs from 'fs';
-import path from 'path';
+import { STATIC_L1_DATA } from '../../src/data/staticL1Data';
+
+logDebug('DEBUG: imports completed');
 
 const OUTPUT_FILE = path.join(__dirname, 'output', 'l1_pipeline_result.json');
 const DELAY_MS = 2000; // Delay between stations to be nice to APIs
@@ -13,14 +28,29 @@ async function sleep(ms: number) {
 }
 
 async function main() {
+    logDebug('DEBUG: main function started');
     const args = process.argv.slice(2);
     const runAll = args.includes('--all');
+    const planOnly = args.includes('--plan');
+    const wards15 = args.includes('--wards15');
+    const wardsArg = args.find(a => a.startsWith('--wards='));
+
+    const wards = wards15
+        ? WARDS_15
+        : (wardsArg ? wardsArg.replace(/^--wards=/, '').split(',').map(s => s.trim()).filter(Boolean) : null);
+
+    const includeWardStations = runAll || wards15 || !!wards;
     
-    console.log(`🚀 Starting L1 Pipeline v3.1 (Hub Station Enhanced)${runAll ? ' - FULL MODE' : ''}...`);
+    const modeLabel = planOnly
+        ? ' - PLAN'
+        : (runAll ? ' - FULL MODE' : (wards ? ' - WARDS MODE' : ''));
+    logDebug(`🚀 Starting L1 Pipeline v3.1 (Hub Station Enhanced)${modeLabel}...`);
 
     // 1. Get Clusters
-    const clusters = getStationClusters(runAll);
-    console.log(`📦 Loaded ${clusters.length} station clusters.`);
+    logDebug('DEBUG: Calling getStationClusters...');
+    const clusters = wards ? getStationClustersForWards(wards, includeWardStations) : getStationClusters(includeWardStations);
+    logDebug(`DEBUG: getStationClusters returned ${clusters.length} clusters`);
+    logDebug(`📦 Loaded ${clusters.length} station clusters.`);
 
     let results: any[] = [];
     
@@ -35,10 +65,29 @@ async function main() {
     }
 
     const processedIds = new Set(results.map(r => r.clusterId));
+    const staticIds = new Set(Object.keys(STATIC_L1_DATA || {}));
+
+    if (planOnly) {
+        const pending = clusters.filter(c => !processedIds.has(c.primaryId) && !staticIds.has(c.primaryId));
+        const plan = pending.map(c => ({
+            id: c.primaryId,
+            ward: c.ward,
+            name: typeof c.stations?.[0]?.name === 'string' ? c.stations[0].name : c.stations?.[0]?.name?.ja
+        }));
+
+        console.log(JSON.stringify({
+            wards: wards || 'ALL',
+            totalClusters: clusters.length,
+            alreadyProcessed: clusters.length - pending.length,
+            pending: pending.length,
+            list: plan
+        }, null, 2));
+        return;
+    }
 
     // 2. Process each cluster
     for (const cluster of clusters) {
-        if (processedIds.has(cluster.primaryId)) {
+        if (processedIds.has(cluster.primaryId) || staticIds.has(cluster.primaryId)) {
             // console.log(`⏭️ Skipping ${cluster.primaryId} (Already processed)`);
             continue;
         }
@@ -73,35 +122,50 @@ async function main() {
         // C. OSM Fetching (with Profile overrides)
         const center = cluster.center;
         let categoryStats: CategoryStat[] = [];
-        try {
-            categoryStats = await fetchOsmData(center.lat, center.lng, wikiData.seasonalFlags, profile);
-        } catch (error) {
-            console.error(`   ❌ OSM Error: ${error}`);
-            // Continue with empty stats rather than crashing
+        
+        // Check for skipVibes (e.g. Airports)
+        const shouldSkipVibes = cluster.stations.some(s => s.skipVibes);
+        
+        if (shouldSkipVibes) {
+            console.log(`   ✈️ Skipping OSM Vibe Check (Airport/Terminal Node detected).`);
+            // Manually inject "Airport" stats to ensure it gets tagged correctly later if needed
+            // or just leave empty and rely on profile
+        } else {
+            try {
+                categoryStats = await fetchOsmData(center.lat, center.lng, wikiData.seasonalFlags, profile);
+            } catch (error) {
+                console.error(`   ❌ OSM Error: ${error}`);
+                // Continue with empty stats rather than crashing
+            }
         }
 
         // D. Vibe Tag Generation (Enhanced)
         const vibeTags = new Set<string>();
 
-        // 1. From Wiki/Profile (High Confidence)
-        wikiData.weightedKeywords.forEach(k => vibeTags.add(k.word));
-        
-        // 2. From OSM Density
-        const dining = categoryStats.find(c => c.categoryId === 'dining');
-        const shopping = categoryStats.find(c => c.categoryId === 'shopping');
-        const nature = categoryStats.find(c => c.categoryId === 'nature');
-        const culture = categoryStats.find(c => c.categoryId === 'culture');
-        const business = categoryStats.find(c => c.categoryId === 'business');
+        if (shouldSkipVibes) {
+            vibeTags.add('International Airport');
+            vibeTags.add('Transport Hub');
+        } else {
+            // 1. From Wiki/Profile (High Confidence)
+            wikiData.weightedKeywords.forEach(k => vibeTags.add(k.word));
+            
+            // 2. From OSM Density
+            const dining = categoryStats.find(c => c.categoryId === 'dining');
+            const shopping = categoryStats.find(c => c.categoryId === 'shopping');
+            const nature = categoryStats.find(c => c.categoryId === 'nature');
+            const culture = categoryStats.find(c => c.categoryId === 'culture');
+            const business = categoryStats.find(c => c.categoryId === 'business');
+    
+            if (dining && dining.totalCount >= 50) vibeTags.add('Gourmet Battleground (激戦区)');
+            if (shopping && shopping.totalCount >= 50) vibeTags.add('Shoppers Heaven');
+            if (business && business.totalCount >= 50) vibeTags.add('Business District');
+            if (culture && culture.totalCount >= 10) vibeTags.add('Cultural Hub');
 
-        if (dining && dining.totalCount >= 50) vibeTags.add('Gourmet Battleground (激戦区)');
-        if (shopping && shopping.totalCount >= 50) vibeTags.add('Shoppers Heaven');
-        if (business && business.totalCount >= 50) vibeTags.add('Business District');
-        if (culture && culture.totalCount >= 10) vibeTags.add('Cultural Hub');
-
-        // 3. Seasonal Logic
-        if (wikiData.seasonalFlags.includes('Sakura') && nature && nature.totalCount > 2) {
-             // Lower threshold if wiki confirms it
-            vibeTags.add('Sakura Spot 🌸');
+            // 3. Seasonal Logic
+            if (wikiData.seasonalFlags.includes('Sakura') && nature && nature.totalCount > 2) {
+                 // Lower threshold if wiki confirms it
+                vibeTags.add('Sakura Spot 🌸');
+            }
         }
 
         results.push({

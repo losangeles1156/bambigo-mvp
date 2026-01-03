@@ -50,15 +50,33 @@ async function fetchStationsForWard(ward: string) {
         const data: any = await response.json();
 
         if (data && data.elements) {
-            return data.elements.map((el: any) => ({
-                id: el.id,
-                lat: el.lat,
-                lon: el.lon,
-                name: el.tags['name'] || el.tags['name:en'] || 'Unknown',
-                name_en: el.tags['name:en'] || el.tags['name'] || 'Unknown',
-                ward: ward,
-                operator: el.tags['operator']
-            }));
+            return data.elements
+                .filter((el: any) => {
+                    const operator = el.tags['operator'] || '';
+                    const name = el.tags['name'] || el.tags['name:en'] || '';
+
+                    // 1. Allow Haneda/Narita Airports (Terminal Stations)
+                    if (/Haneda Airport|Narita Airport|羽田空港|成田空港/i.test(name)) {
+                        return true;
+                    }
+
+                    // 2. Allow JR and Subway
+                    if (/JR|East\s*Japan\s*Railway|Central\s*Japan\s*Railway|Tokyo\s*Metro|Toei\s*Subway|Tokyo\s*Metropolitan\s*Bureau\s*of\s*Transportation/i.test(operator)) {
+                        return true;
+                    }
+
+                    // 3. Exclude Private Railways
+                    return false;
+                })
+                .map((el: any) => ({
+                    id: el.id,
+                    lat: el.lat,
+                    lon: el.lon,
+                    name: el.tags['name'] || el.tags['name:en'] || 'Unknown',
+                    name_en: el.tags['name:en'] || el.tags['name'] || 'Unknown',
+                    ward: ward,
+                    operator: el.tags['operator']
+                }));
         }
         return [];
     } catch (error) {

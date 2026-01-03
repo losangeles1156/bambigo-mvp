@@ -36,13 +36,19 @@
     "onboarding": {
         "tagline": "移動の意思決定をもっと簡単に",
         "skip": "オンボーディングをスキップ",
-        "askTitle": "例えば：",
+        "askTitle": "デモシナリオ (L4自動デモ) - 直接質問できます：",
         "askSubtitle": "ワンタップで送信して提案を取得",
         "tips": {
-            "accessibility": "上野駅で、車椅子が一番入りやすい入口は？",
-            "reroute": "都庁へ行くのですが、中央線は遅れてますか？",
-            "fallback": "浅草駅のロッカーが満杯です。どうすれば？",
-            "strategy": "ベビーカーで成田へ行く一番楽な方法は？"
+            "overtourism": "浅草寺は混雑していて少し不快なのですが、近くに人が少なめで江戸の風情を感じられる場所はありますか？",
+            "disruption": "東京駅から東京都庁へ夜景を見に行きたいのですが、中央線が大幅に遅れていると聞きました。どうすればいいですか？",
+            "handsfree": "成田空港から浅草に着いたばかりですが、ホテルのチェックインは午後からです。浅草駅のロッカーは空いていますか？",
+            "accessibility": "ベビーカーで上野動物園に行きたいのですが、上野駅のどの出口が一番便利ですか？"
+        },
+        "issues": {
+            "overtourism": "オーバーツーリズム",
+            "disruption": "運行情報・振替",
+            "handsfree": "手ぶら観光",
+            "accessibility": "アクセシビリティ"
         },
         "hubTitle": "人気のハブから探索：",
         "hubs": {
@@ -93,17 +99,18 @@
         "locationDna": "ロケーションDNA",
         "vicinity": "周辺施設",
         "vibeTags": "雰囲気タグ",
-        "analyzingL1": "L1 DNAデータを分析中...",
-        "noL3Facilities": "このエリアにはL3施設がありません",
+        "analyzingL1": "周辺データを分析中...",
+        "noL3Facilities": "このエリアには施設情報がありません",
         "details": "詳細",
         "favorite": "お気に入りに追加",
         "unfavorite": "お気に入りを解除"
     },
     "tabs": {
-        "dna": "DNA (L1)",
-        "live": "LIVE (L2)",
-        "facility": "FACILITY (L3)",
-        "lutagu": "LUTAGU (L4)"
+        "dna": "周辺",
+        "live": "状況",
+        "facility": "設備",
+        "lutagu": "提案",
+        "transit": "時刻・運賃"
     },
     "tag": {
         "shopping": "買い物",
@@ -339,8 +346,8 @@
         "lutaguLabel": "ルタグ",
         "thinking": {
             "initializing": "認知エンジンを起動中...",
-            "l2": "L2の運行・天気を分析中...",
-            "l3": "L3施設とODPT時刻表を確認中...",
+            "l2": "運行・天気を分析中...",
+            "l3": "施設とODPT時刻表を確認中...",
             "kb": "知識ベース（Tips & Hacks）を参照中...",
             "synthesizing": "ニーズに合わせて最適戦略を合成中..."
         },
@@ -376,6 +383,7 @@
         "countSuffix": "件"
     },
     "common": {
+        "tabMenu": "機能メニュー",
         "viewAll": "すべて見る",
         "view": "見る",
         "openChat": "チャットを開く",
@@ -414,12 +422,18 @@
         "initFailedWithCode": "ログイン後の初期化に失敗しました（{code}）",
         "skipLogin": "ログインしない",
         "logout": "ログアウト",
-        "tryAsking": "LUTAGUに聞いてみよう：",
+        "tryAsking": "デモシナリオ (L4自動デモ) - 直接質問できます：",
+        "issues": {
+            "overtourism": "オーバーツーリズム",
+            "disruption": "運行情報・振替",
+            "handsfree": "手ぶら観光",
+            "accessibility": "アクセシビリティ"
+        },
         "tips": {
-            "accessibility": "上野駅で、車椅子が一番入りやすい入口は？",
-            "reroute": "都庁へ行くのですが、中央線は遅れてますか？",
-            "fallback": "浅草駅のロッカーが満杯です。どうすれば？",
-            "strategy": "ベビーカーで成田へ行く一番楽な方法は？"
+            "overtourism": "浅草寺は混雑していて少し不快なのですが、近くに人が少なめで江戸の風情を感じられる場所はありますか？",
+            "disruption": "東京駅から東京都庁へ夜景を見に行きたいのですが、中央線が大幅に遅れていると聞きました。どうすればいいですか？",
+            "handsfree": "成田空港から浅草に着いたばかりですが、ホテルのチェックインは午後からです。浅草駅のロッカーは空いていますか？",
+            "accessibility": "ベビーカーで上野動物園に行きたいのですが、上野駅のどの出口が一番便利ですか？"
         }
     }
 }

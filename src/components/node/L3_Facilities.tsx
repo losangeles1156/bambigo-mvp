@@ -2,40 +2,70 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { StationUIProfile, L3Facility, FacilityType, LocaleString } from '@/lib/types/stationStandard';
+import { StationUIProfile, L3Facility, LocaleString } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
+import { FacilityDetailModal } from '@/components/ui/FacilityDetailModal';
+import { GLOBAL_SERVICES, ServiceCategory } from '@/data/externalServices';
 import {
     User, Briefcase, Zap, ArrowUpDown, CircleDollarSign, Baby, Bike, Wifi, Info,
     Cigarette, Boxes, ShoppingBag, Utensils, Ticket, TrainFront, Landmark, Trees, Bed, Loader2, ExternalLink,
-    ChevronDown, ChevronRight, MapPin, Clock, Users
+    ChevronDown, MapPin, Users, Luggage, BatteryCharging, HandMetal, X, ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Local Dictionary for Facility Keys
+// Local Dictionary for Facility Keys (case-insensitive lookup)
 const FACILITY_KEY_MAP: Record<string, LocaleString> = {
+    'barrier_free_entrance': { en: 'Barrier-free Entrance', ja: 'バリアフリー出入口', zh: '無障礙出入口' },
     'Barrier_free_entrance': { en: 'Barrier-free Entrance', ja: 'バリアフリー出入口', zh: '無障礙出入口' },
+    'ticket_gate': { en: 'Ticket Gate', ja: '改札口', zh: '剪票口' },
     'Ticket_gate': { en: 'Ticket Gate', ja: '改札口', zh: '剪票口' },
+    'toilet': { en: 'Toilet', ja: 'トイレ', zh: '洗手間' },
     'Toilet': { en: 'Toilet', ja: 'トイレ', zh: '洗手間' },
+    'elevator': { en: 'Elevator', ja: 'エレベーター', zh: '電梯' },
     'Elevator': { en: 'Elevator', ja: 'エレベーター', zh: '電梯' },
+    'escalator': { en: 'Escalator', ja: 'エスカレーター', zh: '手扶梯' },
     'Escalator': { en: 'Escalator', ja: 'エスカレーター', zh: '手扶梯' },
+    'stairs': { en: 'Stairs', ja: '階段', zh: '樓梯' },
     'Stairs': { en: 'Stairs', ja: '階段', zh: '樓梯' },
-    'Waiting_area': { en: 'Waiting Area', ja: '待合室', zh: '候車室' },
-    'Locker': { en: 'Coins Lockers', ja: 'コインロッカー', zh: '置物櫃' },
+    'waiting_area': { en: 'Waiting Area', ja: '待合室', zh: '候車室' },
+    'waiting_room': { en: 'Waiting Room', ja: '待合室', zh: '候車室' },
+    'locker': { en: 'Coin Lockers', ja: 'コインロッカー', zh: '置物櫃' },
+    'coin_locker': { en: 'Coin Lockers', ja: 'コインロッカー', zh: '置物櫃' },
+    'atm': { en: 'ATM', ja: 'ATM', zh: '提款機' },
     'ATM': { en: 'ATM', ja: 'ATM', zh: '提款機' },
-    'Shop': { en: 'Shop', ja: '売店', zh: '商店' },
+    'wifi': { en: 'Wi-Fi', ja: 'Wi-Fi', zh: 'Wi-Fi' },
+    'smoking_area': { en: 'Smoking Area', ja: '喫煙所', zh: '吸煙區' },
+    'nursing_room': { en: 'Nursing Room', ja: '授乳室', zh: '哺乳室' },
+    'information': { en: 'Information', ja: '案内所', zh: '服務台' },
 };
 
-// Icon Mapping
-const FACILITY_ICONS: Record<FacilityType | string, any> = {
+// Attributes to hide from user display
+const HIDDEN_ATTRIBUTES = new Set([
+    '_source', 'source', 'source_url', '_source_url', 'osm_id',
+    'location_description', 'updated_at', 'created_at', 'id'
+]);
+
+// Icon Mapping (case-insensitive)
+const FACILITY_ICONS: Record<string, any> = {
     toilet: User, locker: Briefcase, charging: Zap, elevator: ArrowUpDown,
     atm: CircleDollarSign, nursery: Baby, bike: Bike, bikeshare: Bike, wifi: Wifi, info: Info,
     smoking: Cigarette, shopping: ShoppingBag, dining: Utensils, leisure: Ticket,
     transport: TrainFront, religion: Landmark, nature: Trees, accommodation: Bed,
+    // Additional mappings
+    barrier_free_entrance: Users,
     'Barrier_free_entrance': Users,
+    ticket_gate: Ticket,
     'Ticket_gate': Ticket,
+    escalator: ArrowUpDown,
+    stairs: ArrowUpDown,
+    coin_locker: Briefcase,
+    waiting_room: Info,
+    smoking_area: Cigarette,
+    nursing_room: Baby,
+    information: Info,
 };
 
-const FACILITY_COLORS: Record<FacilityType | string, string> = {
+const FACILITY_COLORS: Record<string, string> = {
     toilet: 'bg-emerald-100 text-emerald-600',
     locker: 'bg-amber-100 text-amber-600',
     charging: 'bg-sky-100 text-sky-600',
@@ -54,10 +84,18 @@ const FACILITY_COLORS: Record<FacilityType | string, string> = {
     religion: 'bg-purple-100 text-purple-600',
     nature: 'bg-green-100 text-green-600',
     accommodation: 'bg-rose-100 text-rose-600',
+    // Additional mappings
+    barrier_free_entrance: 'bg-cyan-100 text-cyan-600',
     'Barrier_free_entrance': 'bg-cyan-100 text-cyan-600',
+    ticket_gate: 'bg-indigo-100 text-indigo-600',
+    escalator: 'bg-blue-100 text-blue-600',
+    stairs: 'bg-gray-100 text-gray-600',
+    coin_locker: 'bg-amber-100 text-amber-600',
+    waiting_room: 'bg-gray-100 text-gray-600',
+    smoking_area: 'bg-slate-100 text-slate-600',
+    nursing_room: 'bg-pink-100 text-pink-600',
+    information: 'bg-gray-100 text-gray-600',
 };
-
-import { FacilityDetailModal } from '@/components/ui/FacilityDetailModal';
 
 interface L3_FacilitiesProps {
     data: StationUIProfile;
@@ -72,6 +110,7 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
     const [error, setError] = useState<string | null>(null);
     const [retryKey, setRetryKey] = useState(0);
     const [selectedFacility, setSelectedFacility] = useState<L3Facility | null>(null);
+    const [drawerCategory, setDrawerCategory] = useState<{ type: string; label: string; items: L3Facility[] } | null>(null);
 
     const trackEvent = (payload: {
         activityType: 'external_link_click' | 'facility_open';
@@ -178,10 +217,21 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                             type: f.type,
                             name: nameObj,
                             location: locObj,
-                            details: f.attributes ? Object.entries(f.attributes).map(([k, v]) => {
-                                const val = `${k}: ${v}`;
-                                return { ja: val, en: val, zh: val };
-                            }) : [],
+                            details: f.attributes ? Object.entries(f.attributes)
+                                .filter(([k]) => !HIDDEN_ATTRIBUTES.has(k) && !k.startsWith('_'))
+                                .filter(([, v]) => v !== null && v !== undefined && v !== '')
+                                .map(([k, v]) => {
+                                    // Localize attribute keys
+                                    const keyMap: Record<string, LocaleString> = {
+                                        'wheelchair': { ja: '車いす対応', en: 'Wheelchair', zh: '輪椅' },
+                                        'ostomate': { ja: 'オストメイト', en: 'Ostomate', zh: '造口護理' },
+                                        'floor': { ja: 'フロア', en: 'Floor', zh: '樓層' },
+                                        'operator': { ja: '運営', en: 'Operator', zh: '營運商' },
+                                    };
+                                    const localizedKey = keyMap[k] ? getLocaleString(keyMap[k], locale) : k;
+                                    const val = v === true ? '✓' : v === false ? '✗' : String(v);
+                                    return { ja: `${localizedKey}: ${val}`, en: `${localizedKey}: ${val}`, zh: `${localizedKey}: ${val}` };
+                                }) : [],
                             attributes: f.attributes
                         };
                     });
@@ -236,45 +286,18 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
         );
     }
 
-    const toggleCategory = (type: string) => {
-        setExpandedCategory(expandedCategory === type ? null : type);
+    const toggleCategory = (type: string, items: L3Facility[], label: string) => {
+        const isAccessible = type.toLowerCase().includes('barrier_free') || type.toLowerCase().includes('accessibility');
+        if (isAccessible) {
+            setDrawerCategory({ type, label, items });
+            setExpandedCategory(null);
+        } else {
+            setExpandedCategory(expandedCategory === type ? null : type);
+        }
     };
 
     return (
         <div className="space-y-6 animate-in fade-in slide-in-from-bottom duration-500 pb-20">
-
-            {/* Quick Links / Actions (e.g. Toilet Vacancy) */}
-            {data.external_links && data.external_links.length > 0 && (
-                <div className="space-y-2">
-                    <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">{tL3('quickLinks')}</h3>
-                    {data.external_links.map((link, idx) => (
-                        <a
-                            key={idx}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() =>
-                                trackEvent({
-                                    activityType: 'external_link_click',
-                                    nodeId: data.id,
-                                    trackingId: (link as any)?.tracking_id ?? null,
-                                    url: link.url,
-                                    title: getLocaleString(link.title, locale)
-                                })
-                            }
-                            className={`flex items-center justify-between p-4 rounded-2xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] ${link.bg || 'bg-blue-600'} text-white`}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-white/20 rounded-xl">
-                                    {link.icon === 'toilet' ? <User size={20} aria-hidden="true" /> : <ExternalLink size={20} aria-hidden="true" />}
-                                </div>
-                                <span className="font-bold text-sm">{getLocaleString(link.title, locale)}</span>
-                            </div>
-                            <ExternalLink size={16} className="opacity-80" aria-hidden="true" />
-                        </a>
-                    ))}
-                </div>
-            )}
 
             {/* Grouped Facilities List */}
             <div className="space-y-3">
@@ -290,16 +313,21 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
 
                 {Object.entries(groupedFacilities).map(([type, items]) => {
                     const isExpanded = expandedCategory === type;
-                    const Icon = FACILITY_ICONS[type] || Boxes;
-                    const colorClass = FACILITY_COLORS[type] || 'bg-gray-100 text-gray-600';
-                    const label = tL3(`categories.${type}`) !== `l3.categories.${type}` ? tL3(`categories.${type}`) : type;
+                    const typeLower = type.toLowerCase();
+                    const Icon = FACILITY_ICONS[type] || FACILITY_ICONS[typeLower] || Boxes;
+                    const colorClass = FACILITY_COLORS[type] || FACILITY_COLORS[typeLower] || 'bg-gray-100 text-gray-600';
+                    // Priority: FACILITY_KEY_MAP > i18n translation > raw type
+                    const keyMapEntry = FACILITY_KEY_MAP[type] || FACILITY_KEY_MAP[typeLower];
+                    const label = keyMapEntry
+                        ? getLocaleString(keyMapEntry, locale)
+                        : (tL3(`categories.${type}`) !== `l3.categories.${type}` ? tL3(`categories.${type}`) : type);
 
                     return (
                         <div key={type} className="bg-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 shadow-sm">
 
                             {/* Category Header */}
                             <button
-                                onClick={() => toggleCategory(type)}
+                                onClick={() => toggleCategory(type, items, label)}
                                 className="w-full flex items-center justify-between p-4 hover:bg-gray-50/80 transition-colors group"
                             >
                                 <div className="flex items-center gap-4">
@@ -372,6 +400,76 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                 })}
             </div>
 
+            {/* Quick Links / Actions (e.g. Toilet Vacancy) */}
+            {data.external_links && data.external_links.length > 0 && (
+                <div className="space-y-2">
+                    <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">{tL3('quickLinks')}</h3>
+                    {data.external_links.map((link, idx) => (
+                        <a
+                            key={idx}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() =>
+                                trackEvent({
+                                    activityType: 'external_link_click',
+                                    nodeId: data.id,
+                                    trackingId: (link as any)?.tracking_id ?? null,
+                                    url: link.url,
+                                    title: getLocaleString(link.title, locale)
+                                })
+                            }
+                            className={`flex items-center justify-between p-4 rounded-2xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] ${link.bg || 'bg-blue-600'} text-white`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="p-2 bg-white/20 rounded-xl">
+                                    {link.icon === 'toilet' ? <User size={20} aria-hidden="true" /> : <ExternalLink size={20} aria-hidden="true" />}
+                                </div>
+                                <span className="font-bold text-sm">{getLocaleString(link.title, locale)}</span>
+                            </div>
+                            <ExternalLink size={16} className="opacity-80" aria-hidden="true" />
+                        </a>
+                    ))}
+                </div>
+            )}
+
+            {/* Universal Service Links (Not station-specific) */}
+            <div className="space-y-2">
+                <h3 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">
+                    {locale === 'ja' ? '旅行サービス' : locale === 'en' ? 'Travel Services' : '旅遊服務'}
+                </h3>
+                <div className="grid grid-cols-1 gap-2">
+                    {(['shared_bike', 'charging', 'hands_free_tourism'] as ServiceCategory[]).map((cat) => {
+                        const service = GLOBAL_SERVICES[cat];
+                        if (!service) return null;
+                        const lang = locale.startsWith('ja') ? 'ja' : locale.startsWith('zh') ? 'zh' : 'en';
+                        const s = service[lang];
+                        const Icon = cat === 'shared_bike' ? Bike : cat === 'charging' ? BatteryCharging : Luggage;
+                        const bgColor = cat === 'shared_bike' ? 'bg-lime-600' : cat === 'charging' ? 'bg-sky-600' : 'bg-amber-600';
+                        return (
+                            <a
+                                key={cat}
+                                href={s.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`flex items-center justify-between p-4 rounded-2xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] ${bgColor} text-white`}
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 bg-white/20 rounded-xl">
+                                        <Icon size={20} aria-hidden="true" />
+                                    </div>
+                                    <div>
+                                        <span className="font-bold text-sm block">{s.name}</span>
+                                        <span className="text-xs opacity-80">{s.desc}</span>
+                                    </div>
+                                </div>
+                                <ExternalLink size={16} className="opacity-80" aria-hidden="true" />
+                            </a>
+                        );
+                    })}
+                </div>
+            </div>
+
             {/* Detail Modal */}
             {selectedFacility && (
                 <FacilityDetailModal
@@ -388,6 +486,102 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
                     onClose={() => setSelectedFacility(null)}
                 />
             )}
+
+            {/* Accessible Facilities List Drawer */}
+            <AnimatePresence>
+                {drawerCategory && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setDrawerCategory(null)}
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+                        />
+                        {/* Drawer Content */}
+                        <motion.div
+                            initial={{ y: '100%' }}
+                            animate={{ y: 0 }}
+                            exit={{ y: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed bottom-0 left-0 right-0 z-[70] bg-slate-50 rounded-t-[32px] shadow-2xl max-h-[85vh] flex flex-col overflow-hidden"
+                        >
+                            {/* Drawer Header */}
+                            <div className="p-6 pb-4 flex items-center justify-between sticky top-0 bg-slate-50/80 backdrop-blur-md z-10 border-b border-slate-200/50">
+                                <div className="flex items-center gap-4">
+                                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${FACILITY_COLORS[drawerCategory.type] || 'bg-cyan-100 text-cyan-600'}`}>
+                                        {(() => {
+                                            const Icon = FACILITY_ICONS[drawerCategory.type] || Users;
+                                            return <Icon size={24} strokeWidth={2.5} />;
+                                        })()}
+                                    </div>
+                                    <div>
+                                        <h3 className="font-black text-xl text-slate-900">{drawerCategory.label}</h3>
+                                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+                                            {drawerCategory.items.length} {tL3('items')}
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={() => setDrawerCategory(null)}
+                                    className="p-2 bg-slate-200/50 hover:bg-slate-200 text-slate-500 rounded-full transition-colors"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            {/* Drawer Body - Scrollable List */}
+                            <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-12">
+                                {drawerCategory.items.map((fac) => (
+                                    <button
+                                        key={fac.id}
+                                        onClick={() => {
+                                            trackEvent({
+                                                activityType: 'facility_open',
+                                                nodeId: data.id,
+                                                facilityType: fac.type,
+                                                facilityId: fac.id
+                                            });
+                                            setSelectedFacility(fac);
+                                            // Optional: Keep drawer open or close it?
+                                            // User usually wants to see the detail, so we keep it or close it?
+                                            // Let's close the drawer when a detail is selected to avoid stack.
+                                            setDrawerCategory(null);
+                                        }}
+                                        className="w-full text-left bg-white p-4 rounded-2xl border border-slate-200/60 shadow-sm hover:border-cyan-300 hover:shadow-md transition-all active:scale-[0.98] group"
+                                    >
+                                        <div className="flex items-start justify-between gap-4">
+                                            <div className="flex items-start gap-3">
+                                                <div className="mt-1 p-1.5 bg-slate-50 rounded-lg text-slate-400 group-hover:text-cyan-500 transition-colors">
+                                                    <MapPin size={16} />
+                                                </div>
+                                                <div>
+                                                    <p className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
+                                                        {getLocaleString(fac.name, locale)}
+                                                    </p>
+                                                    {fac.details && fac.details.length > 0 && (
+                                                        <div className="flex flex-wrap gap-1.5 mt-2">
+                                                            {fac.details.map((detail, idx) => (
+                                                                <span key={idx} className="text-[10px] px-2 py-0.5 bg-slate-100 text-slate-500 font-bold rounded-md border border-slate-200/30">
+                                                                    {getLocaleString(detail, locale)}
+                                                                </span>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="mt-1 text-slate-300 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all">
+                                                <ArrowRight size={18} />
+                                            </div>
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

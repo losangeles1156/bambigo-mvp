@@ -36,13 +36,19 @@
     "onboarding": {
         "tagline": "Make transit decisions easier",
         "skip": "Skip onboarding",
-        "askTitle": "Try asking:",
+        "askTitle": "Demo Scenarios (L4 Auto Demo) - Try asking:",
         "askSubtitle": "Send instantly for suggestions",
         "tips": {
-            "accessibility": "At Ueno St, where is the best wheelchair entrance?",
-            "reroute": "Going to Tocho, is Chuo Line delayed?",
-            "fallback": "Lockers at Asakusa are full. What now?",
-            "strategy": "Going to Narita with a stroller. Best option?"
+            "overtourism": "Senso-ji is so crowded it's uncomfortable. Are there any less crowded spots nearby that still have that Edo-period vibe?",
+            "disruption": "I'm going to the Tokyo Metropolitan Government Building for the night view, but I heard the Chuo Line is delayed. What should I do?",
+            "handsfree": "I just arrived at Asakusa from Narita Airport, but I can't check into my hotel until this afternoon. Are there any lockers available at Asakusa Station?",
+            "accessibility": "I'm going to Ueno Zoo with a stroller. Which exit at Ueno Station is the most convenient?"
+        },
+        "issues": {
+            "overtourism": "Overtourism",
+            "disruption": "Service Disruption",
+            "handsfree": "Hands-free Travel",
+            "accessibility": "Accessibility"
         },
         "hubTitle": "Or start with a popular hub:",
         "hubs": {
@@ -93,17 +99,18 @@
         "locationDna": "Location DNA",
         "vicinity": "Vicinity",
         "vibeTags": "Vibe Tags",
-        "analyzingL1": "Analyzing L1 DNA data...",
-        "noL3Facilities": "No L3 facilities available in this area",
+        "analyzingL1": "Analyzing nearby data...",
+        "noL3Facilities": "No facilities available in this area",
         "details": "Details",
         "favorite": "Add to favorites",
         "unfavorite": "Remove from favorites"
     },
     "tabs": {
-        "dna": "DNA (L1)",
-        "live": "LIVE (L2)",
-        "facility": "FACILITY (L3)",
-        "lutagu": "LUTAGU (L4)"
+        "dna": "Nearby",
+        "live": "Status",
+        "facility": "Facilities",
+        "lutagu": "Advice",
+        "transit": "Times & Fares"
     },
     "tag": {
         "shopping": "Shopping",
@@ -339,8 +346,8 @@
         "lutaguLabel": "LUTAGU",
         "thinking": {
             "initializing": "Starting cognitive engine...",
-            "l2": "Analyzing L2 live traffic & weather...",
-            "l3": "Checking L3 facilities & ODPT schedules...",
+            "l2": "Analyzing live traffic & weather...",
+            "l3": "Checking facilities & ODPT schedules...",
             "kb": "Reading expert knowledge base (Tips & Hacks)...",
             "synthesizing": "Synthesizing the best strategy for your needs..."
         },
@@ -376,6 +383,7 @@
         "countSuffix": " spots"
     },
     "common": {
+        "tabMenu": "Feature menu",
         "viewAll": "View All",
         "view": "View",
         "openChat": "Open chat",
@@ -414,12 +422,18 @@
         "initFailedWithCode": "Post-login initialization failed ({code})",
         "skipLogin": "Skip for now",
         "logout": "Log out",
-        "tryAsking": "Try asking LUTAGU:",
+        "tryAsking": "Demo Scenarios (L4 Auto Demo) - Try asking:",
+        "issues": {
+            "overtourism": "Overtourism",
+            "disruption": "Service Disruption",
+            "handsfree": "Hands-free Travel",
+            "accessibility": "Accessibility"
+        },
         "tips": {
-            "accessibility": "At Ueno St, where is the best wheelchair entrance?",
-            "reroute": "Going to Tocho, is Chuo Line delayed?",
-            "fallback": "Lockers at Asakusa are full. What now?",
-            "strategy": "Going to Narita with a stroller. Best option?"
+            "overtourism": "Senso-ji is so crowded it's uncomfortable. Are there any less crowded spots nearby that still have that Edo-period vibe?",
+            "disruption": "I'm going to the Tokyo Metropolitan Government Building for the night view, but I heard the Chuo Line is delayed. What should I do?",
+            "handsfree": "I just arrived at Asakusa from Narita Airport, but I can't check into my hotel until this afternoon. Are there any lockers available at Asakusa Station?",
+            "accessibility": "I'm going to Ueno Zoo with a stroller. Which exit at Ueno Station is the most convenient?"
         }
     }
 }

@@ -76,6 +76,8 @@ export interface KnowledgeTrigger {
     // Temporal Triggers
     time_patterns?: string[];  // ISO Date Range '2025-12-31/2026-01-01' OR Time '08:00-09:00'
 
+    keywords?: string[]; // New: Match against user query text
+
     // Logical Triggers (Advanced)
     transfer_complex?: boolean; // if route involves complex transfer at this station
 }

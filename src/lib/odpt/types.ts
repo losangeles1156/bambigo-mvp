@@ -64,6 +64,7 @@ export interface OdptRailwayFare {
     "odpt:toStation": string;
     "odpt:ticketFare": number;
     "odpt:icCardFare": number;
+    "odpt:trainType"?: string;
 }
 
 export interface OdptStationTimetable {

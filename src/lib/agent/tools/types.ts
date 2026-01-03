@@ -4,7 +4,10 @@ import { AgentLevel } from '../core/types';
 export interface IToolContext {
     userId?: string;
     nodeId: string;
-    level: AgentLevel;
+    level?: AgentLevel; // Made optional for flexibility
+    userProfile?: string;
+    locale?: string;
+    timestamp?: number;
 }
 
 export interface ITool {

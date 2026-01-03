@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Dna,
+    Compass,
     Activity,
-    Grid,
-    Sparkles,
+    Building2,
+    Lightbulb,
     TrainFront
 } from 'lucide-react';
 import { L1_DNA } from '@/components/node/L1_DNA';
@@ -22,16 +22,40 @@ import { guessOperator } from '@/hooks/useOdptData';
 import { StationUIProfile } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 
-// Tab Configuration
 const TABS = [
-    { id: 'dna', label: 'DNA', icon: Dna, color: 'bg-blue-500' },
-    { id: 'live', label: 'LIVE', icon: Activity, color: 'bg-green-500' },
-    { id: 'l3', label: 'FACILITY', icon: Grid, color: 'bg-orange-500' },
-    { id: 'l4', label: 'STRATEGY', icon: Sparkles, color: 'bg-purple-600' },
-];
+    { id: 'dna', icon: Compass, tone: 'sky', primary: false },
+    { id: 'live', icon: Activity, tone: 'emerald', primary: false },
+    { id: 'facility', icon: Building2, tone: 'amber', primary: false },
+    { id: 'lutagu', icon: Lightbulb, tone: 'violet', primary: true },
+] as const;
+
+type TabId = (typeof TABS)[number]['id'];
+
+const TAB_STYLES: Record<TabId, { active: string; inactive: string; dot: string }> = {
+    dna: {
+        active: 'bg-sky-600 text-white shadow-sm shadow-sky-200',
+        inactive: 'bg-white text-slate-500 border border-slate-200',
+        dot: 'bg-sky-600'
+    },
+    live: {
+        active: 'bg-emerald-600 text-white shadow-sm shadow-emerald-200',
+        inactive: 'bg-white text-slate-500 border border-slate-200',
+        dot: 'bg-emerald-600'
+    },
+    facility: {
+        active: 'bg-amber-600 text-white shadow-sm shadow-amber-200',
+        inactive: 'bg-white text-slate-500 border border-slate-200',
+        dot: 'bg-amber-600'
+    },
+    lutagu: {
+        active: 'bg-violet-600 text-white shadow-sm shadow-violet-200',
+        inactive: 'bg-violet-50 text-violet-700 border border-violet-200',
+        dot: 'bg-violet-600'
+    }
+};
 
 export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any }) {
-    const [activeTab, setActiveTab] = useState('l4'); // Default to L4 for LUTAGU strategy
+    const [activeTab, setActiveTab] = useState<TabId>('lutagu');
     const [seedQuestion, setSeedQuestion] = useState<string>('');
     const tTabs = useTranslations('tabs');
     const tCommon = useTranslations('common');
@@ -140,7 +164,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
     // but redirect to specific L4 actions if we can. 
     // For now, we just switch tab to L4.
     const handleFingerprintSelect = (category: string) => {
-        setActiveTab('l4');
+        setActiveTab('lutagu');
     };
 
     return (
@@ -148,32 +172,34 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
 
             {/* Tab Navigation (Sticky Header) */}
             <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
-                <div className="flex justify-around items-center p-2">
+                <div className="flex justify-between items-center px-3 py-2" role="tablist" aria-label={tCommon('tabMenu')}>
                     {TABS.map((tab) => {
                         const isActive = activeTab === tab.id;
                         const Icon = tab.icon;
+                        const iconClassName = isActive ? TAB_STYLES[tab.id].active : TAB_STYLES[tab.id].inactive;
 
                         return (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`relative flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 ${isActive ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'
-                                    }`}
+                                role="tab"
+                                aria-selected={isActive}
+                                aria-controls={`panel-${tab.id}`}
+                                id={`tab-${tab.id}`}
+                                className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] min-h-[56px] px-3 py-2 rounded-2xl transition-transform duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/15 focus-visible:ring-offset-2 ${isActive ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900'}`}
                             >
-                                <div className={`p-2 rounded-xl transition-all ${isActive ? `${tab.color} text-white shadow-md scale-110` : 'bg-transparent'
-                                    }`}>
-                                    <Icon size={20} className="transition-transform" aria-hidden="true" />
+                                <div className={`flex items-center justify-center w-10 h-10 rounded-2xl transition-colors ${iconClassName}`}>
+                                    <Icon size={20} strokeWidth={2} aria-hidden="true" />
                                 </div>
-                                <span className={`text-[9px] font-black uppercase tracking-widest ${isActive ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'
-                                    }`}>
-                                    {tTabs(tab.id === 'l3' ? 'facility' : tab.id === 'l4' ? 'lutagu' : tab.id)}
+                                <span className={`text-[10px] font-semibold leading-none ${isActive ? 'opacity-100' : 'opacity-75'}`}>
+                                    {tTabs(tab.id)}
                                 </span>
 
                                 {/* Active Indicator Dot */}
                                 {isActive && (
                                     <motion.div
                                         layoutId="activeTabDot"
-                                        className="absolute -bottom-2 w-1 h-1 rounded-full bg-gray-900"
+                                        className={`absolute -bottom-1.5 w-1.5 h-1.5 rounded-full ${TAB_STYLES[tab.id].dot}`}
                                     />
                                 )}
                             </button>
@@ -194,14 +220,16 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                     {activeTab === 'dna' && (
                         <motion.div
                             key="dna"
+                            id="panel-dna"
+                            role="tabpanel"
+                            aria-labelledby="tab-dna"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <div className="flex items-center gap-2 mb-4 px-1">
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 uppercase tracking-wider">Level 1</span>
-                                <span className="text-xs text-gray-500 font-medium">Location DNA</span>
+                            <div className="mb-4 px-1">
+                                <h2 className="text-sm font-semibold text-slate-900">{tTabs('dna')}</h2>
                             </div>
                             <ErrorBoundary>
                                 <L1_DNA data={standardData} />
@@ -212,14 +240,16 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                     {activeTab === 'live' && (
                         <motion.div
                             key="live"
+                            id="panel-live"
+                            role="tabpanel"
+                            aria-labelledby="tab-live"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <div className="flex items-center gap-2 mb-4 px-1">
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-wider">Level 2</span>
-                                <span className="text-xs text-gray-500 font-medium">Live Status</span>
+                            <div className="mb-4 px-1">
+                                <h2 className="text-sm font-semibold text-slate-900">{tTabs('live')}</h2>
                             </div>
                             <ErrorBoundary>
                                 <L2_Live data={standardData} />
@@ -227,17 +257,19 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                         </motion.div>
                     )}
 
-                    {activeTab === 'l3' && (
+                    {activeTab === 'facility' && (
                         <motion.div
-                            key="l3"
+                            key="facility"
+                            id="panel-facility"
+                            role="tabpanel"
+                            aria-labelledby="tab-facility"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <div className="flex items-center gap-2 mb-4 px-1">
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-orange-700 uppercase tracking-wider">Level 3</span>
-                                <span className="text-xs text-gray-500 font-medium">Station Facilities</span>
+                            <div className="mb-4 px-1">
+                                <h2 className="text-sm font-semibold text-slate-900">{tTabs('facility')}</h2>
                             </div>
                             <ErrorBoundary>
                                 <div className="space-y-6">
@@ -246,7 +278,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                                         <div className="pt-6 border-t border-gray-100 space-y-6">
                                             <div className="flex items-center gap-2 px-1">
                                                 <TrainFront size={16} className="text-orange-600" />
-                                                <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">Timetable & Fares</span>
+                                                <span className="text-xs font-semibold text-slate-700">{tTabs('transit')}</span>
                                             </div>
                                             <TimetableBoard stationId={standardData.id} operator={operator} />
                                             <FareTable stationId={standardData.id} operator={operator} />
@@ -257,18 +289,21 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                         </motion.div>
                     )}
 
-                    {activeTab === 'l4' && (
+                    {activeTab === 'lutagu' && (
                         <motion.div
-                            key="l4"
+                            key="lutagu"
+                            id="panel-lutagu"
+                            role="tabpanel"
+                            aria-labelledby="tab-lutagu"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.2 }}
                             className="h-full"
                         >
-                            <div className="flex items-center gap-2 mb-4 px-1">
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 uppercase tracking-wider">Level 4</span>
-                                <span className="text-xs text-gray-500 font-medium">{tL4('strategyTitle')}</span>
+                            <div className="mb-4 px-1">
+                                <h2 className="text-sm font-semibold text-slate-900">{tTabs('lutagu')}</h2>
+                                <p className="text-xs text-slate-500">{tL4('strategyTitle')}</p>
                             </div>
                             <ErrorBoundary>
                                 <L4_Dashboard

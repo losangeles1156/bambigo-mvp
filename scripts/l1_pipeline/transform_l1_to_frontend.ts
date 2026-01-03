@@ -87,6 +87,10 @@ function mapCategory(catId: string): LocaleString {
         case 'culture': return { ja: '文化・芸術', en: 'Culture', zh: '文化藝術' };
         case 'nature': return { ja: '自然・公園', en: 'Nature', zh: '自然公園' };
         case 'business': return { ja: 'ビジネス', en: 'Business', zh: '商務' };
+        case 'medical': return { ja: '医療', en: 'Medical', zh: '醫療' };
+        case 'leisure': return { ja: '休閒・娯楽', en: 'Leisure', zh: '休閒娛樂' };
+        case 'finance': return { ja: '金融', en: 'Finance', zh: '金融' };
+        case 'service': return { ja: '公共サービス', en: 'Public Service', zh: '公共服務' };
         default: return { ja: catId, en: catId, zh: catId };
     }
 }
@@ -107,6 +111,31 @@ function mapVibeTag(tagStr: string): L1_VibeTag {
     if (tagStr.includes('Sakura Spot')) {
         return { id: 'sakura', label: { en: 'Sakura Spot', ja: '桜の名所', zh: '賞櫻勝地' }, score: 5 };
     }
+
+    // New Tourism Dispersion Tags
+    if (tagStr === 'Hidden Gem') return { id: 'hidden_gem', label: { en: 'Hidden Gem', ja: '穴場スポット', zh: '私房景點' }, score: 4 };
+    if (tagStr === 'Retro') return { id: 'retro', label: { en: 'Retro Vibes', ja: 'レトロな雰囲気', zh: '復古氛圍' }, score: 4 };
+    if (tagStr === 'Shitamachi') return { id: 'shitamachi', label: { en: 'Old Tokyo Vibes', ja: '下町情緒', zh: '下町風情' }, score: 5 };
+    if (tagStr === 'Subculture') return { id: 'subculture', label: { en: 'Subculture', ja: 'サブカルチャー', zh: '亞文化' }, score: 4 };
+    if (tagStr === 'Gourmet') return { id: 'gourmet', label: { en: 'Local Gourmet', ja: 'ご当地グルメ', zh: '在地美食' }, score: 4 };
+    if (tagStr === 'Power Spot') return { id: 'power_spot', label: { en: 'Power Spot', ja: 'パワースポット', zh: '能量景點' }, score: 3 };
+    if (tagStr === 'Market') return { id: 'market', label: { en: 'Local Market', ja: '商店街・市場', zh: '市場商圈' }, score: 4 };
+    if (tagStr === 'Nature') return { id: 'nature', label: { en: 'Nature & Parks', ja: '自然・公園', zh: '自然公園' }, score: 3 };
+    if (tagStr === 'High-end') return { id: 'high_end', label: { en: 'High-end', ja: '高級・洗練', zh: '高級時尚' }, score: 4 };
+
+    // New Specific Tags
+    if (tagStr === 'Grandma Harajuku') return { id: 'grandma_harajuku', label: { en: "Grandma's Harajuku", ja: 'おばあちゃんの原宿', zh: '老奶奶的原宿' }, score: 5 };
+    if (tagStr === 'Wholesale') return { id: 'wholesale', label: { en: 'Wholesale District', ja: '問屋街', zh: '批發街' }, score: 4 };
+    if (tagStr === 'Family Friendly') return { id: 'family_friendly', label: { en: 'Family Friendly', ja: '家族向け', zh: '親子友善' }, score: 4 };
+
+    // Existing Tags Localization
+    if (tagStr === 'Student Area') return { id: 'student_area', label: { en: 'Student Area', ja: '学生街', zh: '學生區' }, score: 3 };
+    if (tagStr === 'Korea Town') return { id: 'korea_town', label: { en: 'Korea Town', ja: 'コリアンタウン', zh: '韓國城' }, score: 5 };
+    if (tagStr === 'Book Town') return { id: 'book_town', label: { en: 'Book Town', ja: '本の街', zh: '書街' }, score: 5 };
+    if (tagStr === 'Ramen') return { id: 'ramen', label: { en: 'Ramen Battleground', ja: 'ラーメン激戦区', zh: '拉麵激戰區' }, score: 4 };
+    if (tagStr === 'Izakaya') return { id: 'izakaya', label: { en: 'Izakaya Alleys', ja: '飲み屋街', zh: '居酒屋街' }, score: 4 };
+    if (tagStr === 'Electronics') return { id: 'electronics', label: { en: 'Electronics District', ja: '電気街', zh: '電器街' }, score: 5 };
+    if (tagStr === 'Otaku') return { id: 'otaku', label: { en: 'Otaku Culture', ja: 'オタク文化', zh: '御宅文化' }, score: 5 };
     
     // Fallback for generated tags or unknown ones
     // Expected format might be just a word or "En (Ja)"

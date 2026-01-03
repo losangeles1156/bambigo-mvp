@@ -36,13 +36,19 @@
     "onboarding": {
         "tagline": "讓交通決策變得更輕鬆",
         "skip": "略過新手引導",
-        "askTitle": "你可以直接問：",
+        "askTitle": "演示範本 (L4 自動演示) - 你可以直接問：",
         "askSubtitle": "一鍵送出，取得建議",
         "tips": {
-            "accessibility": "在上野站，輪椅從哪裡進站最順？",
-            "reroute": "去新宿都廳，現在中央線有延誤嗎？",
-            "fallback": "淺草站置物櫃滿了怎麼辦？",
-            "strategy": "帶嬰兒車去成田機場，怎麼搭最輕鬆？"
+            "overtourism": "淺草寺這裡人潮多到有點不舒服，附近有沒有人少一點，但也能感受江戶風情的地方？",
+            "disruption": "我要從東京車站去東京都廳看夜景，但聽說中央線現在大誤點，該怎麼辦？",
+            "handsfree": "我剛從成田機場到淺草，但飯店下午才能進房，淺草站的置物櫃還有位子嗎？",
+            "accessibility": "我推著嬰兒車要去上野動物園，請問搭到上野站要從哪個出口出來最方便？"
+        },
+        "issues": {
+            "overtourism": "過度觀光",
+            "disruption": "交通中斷",
+            "handsfree": "空手觀光",
+            "accessibility": "無障礙"
         },
         "hubTitle": "或先選熱門樞紐開始探索：",
         "hubs": {
@@ -100,11 +106,11 @@
         "unfavorite": "取消收藏"
     },
     "tabs": {
-        "dna": "生活機能",
-        "live": "即時動態",
-        "facility": "服務設施",
-        "lutagu": "LUTAGU 建議",
-        "transit": "交通時刻"
+        "dna": "附近",
+        "live": "狀態",
+        "facility": "設施",
+        "lutagu": "建議",
+        "transit": "時刻票價"
     },
     "tag": {
         "shopping": "購物",
@@ -339,11 +345,11 @@
         "userLabel": "使用者",
         "lutaguLabel": "LUTAGU",
         "thinking": {
-            "initializing": "正在啟動認知引擎...",
-            "l2": "分析 L2 即時路況與天氣...",
-            "l3": "查詢 L3 設施與 ODPT 時刻表...",
-            "kb": "讀取專家知識庫 (Tips & Hacks)...",
-            "synthesizing": "正在根據您的需求合成最佳策略..."
+            "initializing": "啟動認知引擎...",
+            "l2": "分析即時路況與天氣...",
+            "l3": "查詢設施與 ODPT 時刻表...",
+            "kb": "讀取專家知識庫（Tips & Hacks）...",
+            "synthesizing": "綜合需求，生成最佳策略..."
         },
         "card": {
             "title": "已合成最佳策略",
@@ -377,6 +383,7 @@
         "countSuffix": "處"
     },
     "common": {
+        "tabMenu": "功能選單",
         "viewAll": "查看全部",
         "view": "查看",
         "openChat": "開啟對話",
@@ -415,12 +422,18 @@
         "initFailedWithCode": "登入後初始化失敗（{code}）",
         "skipLogin": "先不登入",
         "logout": "登出",
-        "tryAsking": "你可以試著問：",
+        "tryAsking": "演示範本 (L4 自動演示) - 你可以直接問：",
+        "issues": {
+            "overtourism": "過度觀光",
+            "disruption": "交通中斷",
+            "handsfree": "空手觀光",
+            "accessibility": "無障礙"
+        },
         "tips": {
-            "accessibility": "在上野站，輪椅從哪裡進站最順？",
-            "reroute": "去新宿都廳，現在中央線有延誤嗎？",
-            "fallback": "淺草站置物櫃滿了怎麼辦？",
-            "strategy": "帶嬰兒車去成田機場，怎麼搭最輕鬆？"
+            "overtourism": "淺草寺這裡人潮多到有點不舒服，附近有沒有人少一點，但也能感受江戶風情的地方？",
+            "disruption": "我要從東京車站去東京都廳看夜景，但聽說中央線現在大誤點，該怎麼辦？",
+            "handsfree": "我剛從成田機場到淺草，但飯店下午才能進房，淺草站的置物櫃還有位子嗎？",
+            "accessibility": "我推著嬰兒車要去上野動物園，請問搭到上野站要從哪個出口出來最方便？"
         }
     }
 }

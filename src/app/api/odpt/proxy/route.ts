@@ -22,6 +22,12 @@ export async function GET(req: NextRequest) {
             case 'odpt:Station':
                 data = await odptClient.getStations(operator || undefined);
                 break;
+            case 'odpt:StationTimetable': {
+                const station = searchParams.get('odpt:station');
+                if (!station) return NextResponse.json({ error: 'Station required for StationTimetable' }, { status: 400 });
+                data = await odptClient.getStationTimetable(station, operator || undefined);
+                break;
+            }
             case 'odpt:TrainTimetable':
                 // For simplicity in proxy, we pass query params mostly as is or restricted
                 // We map query params for safety
@@ -33,8 +39,8 @@ export async function GET(req: NextRequest) {
             case 'odpt:RailwayFare':
                 const from = searchParams.get('odpt:fromStation');
                 const to = searchParams.get('odpt:toStation');
-                if (!from || !to) return NextResponse.json({ error: 'From/To stations required for Fare' }, { status: 400 });
-                data = await odptClient.getFares(from, to, operator || undefined);
+                if (!from) return NextResponse.json({ error: 'From station required for Fare' }, { status: 400 });
+                data = await odptClient.getFares(from, to || undefined, operator || undefined);
                 break;
             default:
                 // Fallback for generic fetch if needed, but keeping it restricted for now

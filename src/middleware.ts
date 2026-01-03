@@ -111,10 +111,7 @@ function ensureVisitorId(req: NextRequest, res: NextResponse) {
 }
 
 const intlMiddleware = createMiddleware({
-    // A list of all locales that are supported
-    locales: ['zh', 'en', 'ja'],
-
-    // Used when no locale matches
+    locales: ['zh', 'en', 'ja', 'zh-TW'],
     defaultLocale: 'zh',
     localePrefix: 'as-needed'
 });

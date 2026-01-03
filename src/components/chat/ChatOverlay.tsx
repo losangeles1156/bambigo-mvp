@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAppStore } from '@/stores/appStore';
 import { useZoneAwareness } from '@/hooks/useZoneAwareness';
 import { useLocale, useTranslations } from 'next-intl';
+import { findDemoScenario } from '@/lib/l4/assistantEngine';
+import { DEMO_SCENARIOS } from '@/lib/l4/demoScenarios';
 
 import { ActionCard, Action as ChatAction } from './ActionCard';
 import { ContextSelector } from './ContextSelector';
@@ -39,31 +41,154 @@ export function ChatOverlay() {
         const existingMessages = useAppStore.getState().messages;
         addMessage({ role: 'user', content: text });
 
+        // Check for Demo Scenario Bypass
+        let demoMatch = findDemoScenario(text);
+        let stepIndex = 0;
+
+        // If not a direct trigger, check if it's a follow-up step
+        if (!demoMatch) {
+            for (const d of DEMO_SCENARIOS) {
+                const foundIdx = d.steps.findIndex(s => s.user === text);
+                if (foundIdx !== -1) {
+                    demoMatch = d;
+                    stepIndex = foundIdx;
+                    break;
+                }
+            }
+        }
+
+        if (demoMatch) {
+            addMessage({ role: 'assistant', content: '', isLoading: true });
+            
+            // Simulate thinking time
+            await new Promise(resolve => setTimeout(resolve, 1200));
+            
+            const currentStep = demoMatch.steps[stepIndex];
+            let responseText = currentStep.agent;
+            
+            // Append tools if present
+            if (currentStep.tools && currentStep.tools.length > 0) {
+                responseText += `\n\n🛠️ ${tChat('activeBadge')}: ${currentStep.tools.join(', ')}`;
+            }
+
+            useAppStore.setState(state => {
+                const newMessages = [...state.messages];
+                const lastMsg = { ...newMessages[newMessages.length - 1] };
+                if (lastMsg.role === 'assistant') {
+                    lastMsg.content = responseText;
+                    lastMsg.isLoading = false;
+                    
+                    // Reset actions to avoid duplicates if state update runs twice
+                    lastMsg.actions = [];
+
+                    // Add actions from links
+                     if (currentStep.links && currentStep.links.length > 0) {
+                         lastMsg.actions = currentStep.links.map(l => ({
+                             type: 'discovery',
+                             label: l.label,
+                             target: l.url
+                         }));
+                     }
+
+                     // Add action for next demo step if available
+                     if (demoMatch && stepIndex < demoMatch.steps.length - 1) {
+                        const nextStep = demoMatch.steps[stepIndex + 1];
+                        lastMsg.actions.push({
+                            type: 'discovery',
+                            label: `✨ ${nextStep.user} (演示下一步)`,
+                            target: `demo_step_${stepIndex + 1}_${demoMatch.id}`
+                        });
+                     }
+                     
+                     newMessages[newMessages.length - 1] = lastMsg;
+                 }
+                return { messages: newMessages };
+            });
+            return;
+        }
+
+        // Create a placeholder for the assistant's response
+        addMessage({ role: 'assistant', content: '', isLoading: true });
+
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('/api/agent/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     messages: [...existingMessages, { role: 'user', content: text }],
-                    zone: zone || 'core',
-                    userLocation,
-                    locale
+                    nodeId: currentNodeId, // Pass current node if available
+                    inputs: {
+                        zone: zone || 'core',
+                        userLocation,
+                        locale,
+                        // Add context from L2 status if available
+                        l2_delay: l2Status?.delay || 0,
+                        l2_congestion: l2Status?.congestion || 0
+                    }
                 })
             });
 
             if (!response.ok) throw new Error('API Error');
+            if (!response.body) throw new Error('No response body');
 
-            const data = await response.json();
-            setIsOffline(data?.mode === 'offline');
-            addMessage({
-                role: 'assistant',
-                content: data.answer,
-                actions: data.actions
-            });
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let accumulatedAnswer = '';
+            let isFirstChunk = true;
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value);
+                const lines = chunk.split('\n');
+
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        try {
+                            const data = JSON.parse(line.slice(6));
+                            
+                            if (data.event === 'meta') {
+                                if (data.mode === 'offline') setIsOffline(true);
+                            } else if (data.event === 'message') {
+                                accumulatedAnswer += (data.answer || '');
+                                
+                                // Update the last message (assistant) with new content
+                                useAppStore.setState(state => {
+                                    const newMessages = [...state.messages];
+                                    const lastMsg = newMessages[newMessages.length - 1];
+                                    if (lastMsg.role === 'assistant') {
+                                        lastMsg.content = accumulatedAnswer;
+                                        lastMsg.isLoading = false;
+                                        // If this is the first chunk, ensure we clear any loading state
+                                        if (isFirstChunk) {
+                                            isFirstChunk = false;
+                                        }
+                                    }
+                                    return { messages: newMessages };
+                                });
+                            }
+                        } catch (e) {
+                            console.error('SSE Parse Error', e);
+                        }
+                    }
+                }
+            }
+
         } catch (error) {
-            addMessage({ role: 'assistant', content: `⚠️ ${tChat('connectionError')}` });
+            console.error('Chat Error', error);
+            // Update last message to show error
+             useAppStore.setState(state => {
+                const newMessages = [...state.messages];
+                const lastMsg = newMessages[newMessages.length - 1];
+                if (lastMsg.role === 'assistant') {
+                    lastMsg.content = `⚠️ ${tChat('connectionError')}`;
+                    lastMsg.isLoading = false;
+                }
+                return { messages: newMessages };
+            });
         }
-    }, [addMessage, locale, tChat, userLocation, zone]);
+    }, [addMessage, locale, tChat, userLocation, zone, currentNodeId, l2Status]);
 
     useEffect(() => {
         const fetchL2 = async () => {
@@ -137,9 +262,58 @@ export function ChatOverlay() {
         } else if (action.type === 'taxi') {
             window.open(`https://go.mo-t.com/`, '_blank');
         } else if (action.type === 'discovery') {
-            window.open(`https://luup.sc/`, '_blank');
+            if (action.target?.startsWith('demo_step_')) {
+                // Handle Demo Next Steps
+                const parts = action.target.split('_');
+                const stepIndex = parseInt(parts[2]);
+                const demoId = parts.slice(3).join('_');
+                
+                const demo = DEMO_SCENARIOS.find(s => s.id === demoId);
+                if (demo && demo.steps[stepIndex]) {
+                    sendMessage(demo.steps[stepIndex].user);
+                }
+            } else if (action.target?.startsWith('http')) {
+                window.open(action.target, '_blank');
+            } else {
+                window.open(`https://luup.sc/`, '_blank');
+            }
         } else if (action.type === 'transit') {
-            addMessage({ role: 'assistant', content: tChat('openingTimetable', { label: action.label }) });
+            if (action.target?.startsWith('http')) {
+                window.open(action.target, '_blank');
+            } else {
+                addMessage({ role: 'assistant', content: tChat('openingTimetable', { label: action.label }) });
+            }
+        }
+    };
+
+    const handleFeedback = async (index: number, score: number) => {
+        const msg = messages[index];
+        if (!msg || msg.role !== 'assistant') return;
+
+        // Optimistic update
+        useAppStore.setState(state => {
+            const newMessages = [...state.messages];
+            newMessages[index] = { ...msg, feedback: { score } };
+            return { messages: newMessages };
+        });
+
+        try {
+            await fetch('/api/agent/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    score,
+                    messageId: `msg-${Date.now()}-${index}`, // Simple client-side ID for now
+                    sessionId: 'current-session', // Ideally from a session store
+                    details: {
+                        content: msg.content,
+                        nodeId: currentNodeId
+                    }
+                })
+            });
+        } catch (e) {
+            console.error('Feedback Error', e);
+            // Revert if failed (optional, but good practice)
         }
     };
 
@@ -240,10 +414,10 @@ export function ChatOverlay() {
                         </div>
                         <div className="grid grid-cols-1 gap-3 w-full max-w-sm">
                             {[
-                                tOnboarding('tips.accessibility'),
-                                tOnboarding('tips.reroute'),
-                                tOnboarding('tips.fallback'),
-                                tOnboarding('tips.strategy')
+                                tOnboarding('tips.overtourism'),
+                                tOnboarding('tips.disruption'),
+                                tOnboarding('tips.handsfree'),
+                                tOnboarding('tips.accessibility')
                             ].map((tip, i) => (
                                 <button
                                     key={i}
@@ -258,15 +432,24 @@ export function ChatOverlay() {
                     </div>
                 )}
 
-                {messages.map((msg: { role: string, content: string, actions?: any[] }, idx: number) => (
+                {messages.map((msg: any, idx: number) => (
                     <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in slide-in-from-bottom-4 fade-in duration-700`}>
                         <div className={`max-w-[88%] p-5 rounded-[28px] shadow-sm ${msg.role === 'user'
                             ? 'bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-br-lg shadow-indigo-200'
                             : 'bg-white text-gray-800 rounded-bl-lg border border-black/[0.03] shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
                             }`}>
-                            <div className="whitespace-pre-wrap leading-relaxed tracking-wide text-sm font-bold opacity-90">
-                                {msg.content}
-                            </div>
+                            
+                            {msg.isLoading ? (
+                                <div className="flex space-x-2 items-center h-6 px-2">
+                                    <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                    <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                    <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                </div>
+                            ) : (
+                                <div className="whitespace-pre-wrap leading-relaxed tracking-wide text-sm font-bold opacity-90">
+                                    {msg.content}
+                                </div>
+                            )}
 
                             {/* Action Cards */}
                             {msg.actions && msg.actions.length > 0 && (
@@ -278,6 +461,36 @@ export function ChatOverlay() {
                                             onClick={handleAction}
                                         />
                                     ))}
+                                </div>
+                            )}
+
+                            {/* Feedback Buttons (Assistant only) */}
+                            {msg.role === 'assistant' && !msg.isLoading && msg.content && (
+                                <div className="mt-3 flex items-center gap-2 pt-3 border-t border-gray-100/80">
+                                    <button 
+                                        onClick={() => handleFeedback(idx, 1)}
+                                        disabled={!!msg.feedback}
+                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${
+                                            msg.feedback?.score === 1 
+                                                ? 'bg-emerald-100 text-emerald-600' 
+                                                : 'hover:bg-gray-100 text-gray-300 hover:text-emerald-500'
+                                        }`}
+                                        title={tChat('feedbackLike')}
+                                    >
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                                    </button>
+                                    <button 
+                                        onClick={() => handleFeedback(idx, -1)}
+                                        disabled={!!msg.feedback}
+                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${
+                                            msg.feedback?.score === -1 
+                                                ? 'bg-rose-100 text-rose-600' 
+                                                : 'hover:bg-gray-100 text-gray-300 hover:text-rose-500'
+                                        }`}
+                                        title={tChat('feedbackDislike')}
+                                    >
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg>
+                                    </button>
                                 </div>
                             )}
                         </div>

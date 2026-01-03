@@ -3,9 +3,11 @@
 import dynamic from 'next/dynamic';
 import { useAppStore } from '@/stores/appStore';
 import { NodeTabs } from '@/components/node/NodeTabs';
-import { TripGuardStatus } from '@/components/guard/TripGuardStatus';
+// import { TripGuardStatus } from '@/components/guard/TripGuardStatus';
 import { SubscriptionModal } from '@/components/guard/SubscriptionModal';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { JapanTimeClock } from '@/components/ui/JapanTimeClock';
+import { ProfileSwitcher } from '@/components/ui/ProfileSwitcher';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchNodeConfig, NodeProfile } from '@/lib/api/nodes';
 import { ChatOverlay } from '@/components/chat/ChatOverlay';
@@ -93,8 +95,15 @@ export default function Home() {
         const tab = searchParams.get('tab');
         const node = searchParams.get('node');
         const sheet = searchParams.get('sheet');
+        const q = searchParams.get('q');
 
         let changed = false;
+
+        if (q) {
+            setChatOpen(true);
+            setPendingChat({ input: q, autoSend: true });
+            changed = true;
+        }
 
         if (tab === 'explore' || tab === 'trips' || tab === 'me') {
             setActiveTab(tab);
@@ -490,14 +499,9 @@ export default function Home() {
             {/* 2. Top Bar (System UI) */}
             <div className="absolute top-0 left-0 right-0 z-10 p-6 pt-16 pointer-events-none">
                 <div className="flex justify-between items-start pointer-events-auto">
-                    <div className="flex gap-3 ml-auto">
-                        <TripGuardStatus />
-                        <button
-                            className="glass-effect rounded-2xl p-3.5 hover:bg-white transition-all text-gray-500"
-                            aria-label={tProfile('title')}
-                        >
-                            <Settings size={22} aria-hidden="true" />
-                        </button>
+                    <div className="flex gap-3 ml-auto items-start">
+                        <JapanTimeClock />
+                        <ProfileSwitcher />
                         <LanguageSwitcher />
                     </div>
                 </div>
@@ -550,66 +554,77 @@ export default function Home() {
             )}
 
             {isOnboardingOpen && (
-                <div className="absolute inset-0 z-[70] bg-black/30 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-in fade-in duration-300">
-                    <div className="w-full max-w-md bg-white rounded-[32px] shadow-2xl">
-                        <div className="p-6 border-b border-gray-100 flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <div className="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl font-black">🦌</div>
-                                <div className="min-w-0">
-                                    <div className="text-lg font-black text-gray-900 tracking-tight leading-none">LUTAGU</div>
-                                    <div className="text-[11px] font-bold text-gray-400 mt-1">{tOnboarding('tagline')}</div>
+                <div className="absolute inset-0 z-[70] bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300">
+                    <div className="w-full max-w-[480px] bg-white rounded-[48px] shadow-2xl shadow-indigo-100/50 overflow-hidden border border-slate-100 flex flex-col max-h-[90vh]">
+                        <div className="p-8 pb-4 border-b border-gray-50 flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                                    <span className="text-2xl text-white">🦌</span>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-black text-slate-900 tracking-tight leading-none">LUTAGU</div>
+                                    <div className="text-xs font-bold text-slate-400 mt-1">{tOnboarding('tagline')}</div>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
-                                <LanguageSwitcher className="w-10 h-10 rounded-2xl bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-all active:scale-95 shadow-none p-0 flex items-center justify-center border-none" />
+                                <LanguageSwitcher />
                                 <button
                                     onClick={() => {
                                         setOnboardingSeenVersion(ONBOARDING_VERSION);
                                         setIsOnboardingOpen(false);
                                     }}
-                                    className="w-10 h-10 rounded-2xl bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-all active:scale-95 flex items-center justify-center"
+                                    className="p-2 hover:bg-slate-50 rounded-full transition-colors text-slate-400"
                                     aria-label={tOnboarding('skip')}
                                 >
-                                    <X size={20} />
+                                    <X className="w-5 h-5" />
                                 </button>
                             </div>
                         </div>
 
-                        <div className="p-6 space-y-5">
-                            <div className="space-y-2">
-                                <div className="text-sm font-black text-gray-900">{tOnboarding('askTitle')}</div>
+                        <div className="flex-1 overflow-y-auto px-8 py-2 custom-scrollbar">
+                            <div className="space-y-3 mt-4">
+                                <div className="text-[11px] font-black text-indigo-600 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
+                                    {tOnboarding('askTitle')}
+                                </div>
                                 <div className="grid grid-cols-1 gap-3">
                                     {[
-                                        { id: 'accessibility', text: tOnboarding('tips.accessibility') },
-                                        { id: 'reroute', text: tOnboarding('tips.reroute') },
-                                        { id: 'fallback', text: tOnboarding('tips.fallback') },
-                                        { id: 'strategy', text: tOnboarding('tips.strategy') }
+                                        { id: 'overtourism', text: tOnboarding('tips.overtourism'), node: 'odpt.Station:TokyoMetro.Ginza.Asakusa' },
+                                        { id: 'disruption', text: tOnboarding('tips.disruption'), node: 'odpt.Station:TokyoMetro.Marunouchi.Tokyo' },
+                                        { id: 'handsfree', text: tOnboarding('tips.handsfree'), node: 'odpt.Station:TokyoMetro.Ginza.Asakusa' },
+                                        { id: 'accessibility', text: tOnboarding('tips.accessibility'), node: 'odpt.Station:JR-East.Yamanote.Ueno' }
                                     ].map((tip) => (
                                         <button
                                             key={tip.id}
                                             onClick={() => {
-                                                setChatOpen(true);
-                                                setPendingChat({ input: tip.text, autoSend: true });
+                                                router.push(`/${locale}/?node=${tip.node}&sheet=1&tab=lutagu&q=${encodeURIComponent(tip.text)}`);
                                                 setOnboardingSeenVersion(ONBOARDING_VERSION);
                                                 setIsOnboardingOpen(false);
                                             }}
-                                            className="w-full px-5 py-4 rounded-3xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-indigo-100 text-left transition-all shadow-sm hover:shadow-lg active:scale-[0.99]"
+                                            className="w-full text-left p-4 bg-slate-50 rounded-[24px] border border-transparent hover:border-indigo-100 hover:bg-white hover:shadow-lg hover:shadow-indigo-50 transition-all group active:scale-[0.98]"
                                         >
-                                            <div className="text-sm font-black text-gray-800 leading-snug">{tip.text}</div>
-                                            <div className="text-[11px] font-bold text-gray-400 mt-1">{tOnboarding('askSubtitle')}</div>
+                                            <div className="flex items-center gap-2 mb-1.5">
+                                                <span className="text-[9px] px-1.5 py-0.5 rounded-md bg-white border border-slate-100 text-indigo-500 font-black uppercase tracking-wider shadow-sm">
+                                                    {tOnboarding(`issues.${tip.id}`)}
+                                                </span>
+                                            </div>
+                                            <div className="text-xs font-bold text-slate-800 leading-snug group-hover:text-indigo-600 transition-colors">{tip.text}</div>
+                                            <div className="mt-1 text-[9px] font-black text-slate-400 uppercase tracking-widest">
+                                                {tOnboarding('askSubtitle')}
+                                            </div>
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="space-y-3">
-                                <div className="text-sm font-black text-gray-900">{tOnboarding('hubTitle')}</div>
-                                <div className="grid grid-cols-2 gap-3">
+                            <div className="mt-6 mb-8">
+                                <div className="text-[11px] font-black text-slate-400 mb-3 uppercase tracking-wider">{tOnboarding('hubTitle')}</div>
+                                <div className="grid grid-cols-4 gap-2">
                                     {[
-                                        { label: tOnboarding('hubs.ueno'), id: 'odpt:Station:TokyoMetro.Ueno', center: { lat: 35.7141, lon: 139.7774 } },
-                                        { label: tOnboarding('hubs.asakusa'), id: 'odpt:Station:TokyoMetro.Asakusa', center: { lat: 35.7119, lon: 139.7976 } },
-                                        { label: tOnboarding('hubs.akihabara'), id: 'odpt:Station:JR-East.Akihabara', center: { lat: 35.6984, lon: 139.7753 } },
-                                        { label: tOnboarding('hubs.tokyo'), id: 'odpt:Station:JR-East.Tokyo', center: { lat: 35.6812, lon: 139.7671 } }
+                                        { label: tOnboarding('hubs.ueno'), id: 'odpt.Station:TokyoMetro.Ginza.Ueno', center: { lat: 35.7141, lon: 139.7774 } },
+                                        { label: tOnboarding('hubs.asakusa'), id: 'odpt.Station:TokyoMetro.Ginza.Asakusa', center: { lat: 35.7119, lon: 139.7976 } },
+                                        { label: tOnboarding('hubs.akihabara'), id: 'odpt.Station:TokyoMetro.Hibiya.Akihabara', center: { lat: 35.6984, lon: 139.7753 } },
+                                        { label: tOnboarding('hubs.tokyo'), id: 'odpt.Station:TokyoMetro.Marunouchi.Tokyo', center: { lat: 35.6812, lon: 139.7671 } }
                                     ].map((hub) => (
                                         <button
                                             key={hub.id}
@@ -620,44 +635,44 @@ export default function Home() {
                                                 setOnboardingSeenVersion(ONBOARDING_VERSION);
                                                 setIsOnboardingOpen(false);
                                             }}
-                                            className="py-3.5 rounded-2xl bg-indigo-50/60 hover:bg-indigo-600 text-indigo-700 hover:text-white font-black text-sm transition-all shadow-sm hover:shadow-lg active:scale-95"
+                                            className="py-2.5 bg-slate-50 rounded-xl text-[11px] font-black text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-all border border-transparent hover:border-indigo-100"
                                         >
                                             {hub.label}
                                         </button>
                                     ))}
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="flex gap-3">
-                                <button
-                                    onClick={() => {
-                                        if (!navigator.geolocation) return;
-                                        navigator.geolocation.getCurrentPosition(
-                                            (pos) => {
-                                                setMapCenter({ lat: pos.coords.latitude, lon: pos.coords.longitude });
-                                                setOnboardingSeenVersion(ONBOARDING_VERSION);
-                                                setIsOnboardingOpen(false);
-                                            },
-                                            () => {
-                                                setOnboardingSeenVersion(ONBOARDING_VERSION);
-                                                setIsOnboardingOpen(false);
-                                            }
-                                        );
-                                    }}
-                                    className="flex-1 py-4 rounded-2xl bg-gray-900 text-white font-black text-sm tracking-wide hover:bg-gray-800 transition-colors active:scale-95"
-                                >
-                                    {tOnboarding('enableLocation')}
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        setOnboardingSeenVersion(ONBOARDING_VERSION);
-                                        setIsOnboardingOpen(false);
-                                    }}
-                                    className="flex-1 py-4 rounded-2xl bg-white border border-gray-200 text-gray-700 font-black text-sm hover:bg-gray-50 transition-colors active:scale-95"
-                                >
-                                    {tOnboarding('browseFirst')}
-                                </button>
-                            </div>
+                        <div className="p-8 pt-4 pb-6 grid grid-cols-2 gap-4 bg-white border-t border-slate-50">
+                            <button
+                                onClick={() => {
+                                    if (!navigator.geolocation) return;
+                                    navigator.geolocation.getCurrentPosition(
+                                        (pos) => {
+                                            setMapCenter({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+                                            setOnboardingSeenVersion(ONBOARDING_VERSION);
+                                            setIsOnboardingOpen(false);
+                                        },
+                                        () => {
+                                            setOnboardingSeenVersion(ONBOARDING_VERSION);
+                                            setIsOnboardingOpen(false);
+                                        }
+                                    );
+                                }}
+                                className="py-4 bg-slate-900 text-white rounded-2xl text-sm font-black hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-[0.98]"
+                            >
+                                {tOnboarding('enableLocation')}
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setOnboardingSeenVersion(ONBOARDING_VERSION);
+                                    setIsOnboardingOpen(false);
+                                }}
+                                className="py-4 bg-slate-50 text-slate-600 rounded-2xl text-sm font-black hover:bg-slate-100 transition-all active:scale-[0.98]"
+                            >
+                                {tOnboarding('browseFirst')}
+                            </button>
                         </div>
                     </div>
                 </div>

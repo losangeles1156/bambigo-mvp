@@ -1,7 +1,8 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from '@/navigation';
+import { useSearchParams } from 'next/navigation'; // Keep this for query params
 import { Globe } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
@@ -13,8 +14,8 @@ interface LanguageSwitcherProps {
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     const locale = useLocale();
     const tCommon = useTranslations('common');
-    const router = useRouter();
-    const pathname = usePathname();
+    const router = useRouter(); // Typed router from next-intl
+    const pathname = usePathname(); // Pathname WITHOUT locale
     const searchParams = useSearchParams();
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -36,35 +37,13 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             return;
         }
 
-        // 1. Construct the new path
-        const segments = pathname.split('/').filter(Boolean); // Remove empty strings
-        const firstSegment = segments[0];
-        
-        // Remove existing locale prefix if it matches supported locales
-        if (firstSegment && ['zh', 'en', 'ja'].includes(firstSegment)) {
-            segments.shift();
-        }
-        
-        const pathWithoutLocale = '/' + segments.join('/');
-        
-        let newPath = '';
-        
-        // Handle 'as-needed' strategy:
-        // - Default locale ('zh') should NOT have a prefix
-        // - Other locales ('en', 'ja') MUST have a prefix
-        if (newLocale === 'zh') {
-             newPath = pathWithoutLocale;
-        } else {
-             newPath = `/${newLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
-        }
+        // Construct query string
+        const queryString = searchParams.toString();
+        const url = queryString ? `${pathname}?${queryString}` : pathname;
 
-        // 2. Append existing search params (query string)
-        if (searchParams.toString()) {
-            newPath += `?${searchParams.toString()}`;
-        }
-
-        // Use scroll: false to preserve scroll position if possible
-        router.push(newPath, { scroll: false });
+        // "replace" to switch language in-place (no history push usually preferred for lang switch, or push is fine)
+        // router.replace takes the PATH (without locale) and adds the new locale prefix automatically
+        router.replace(url, { locale: newLocale as any });
         setIsOpen(false);
     };
 

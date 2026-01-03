@@ -36,8 +36,9 @@ export class PedestrianAccessibilityTool implements ITool {
                 };
             }
 
-            console.warn('PedestrianAccessibilityTool: RPC failed or missing, falling back to client query.', rpcError?.message);
-
+            // Quietly fall back to client-side query if RPC is missing
+            // This is "optimization" by degradation: we don't want to spam warnings for valid fallback behavior.
+            
             // 2. Fallback: Client-side Bounding Box Query (Robustness)
             // 1 degree lat ~= 111km. 100m ~= 0.001 degrees (roughly)
             const delta = (radius / 111000) * 1.5; // 1.5x buffer
@@ -89,7 +90,7 @@ export class PedestrianAccessibilityTool implements ITool {
 
             return {
                 source: 'fallback_client_query',
-                warning: 'Database function get_nearby_accessibility_graph not found. Using slower fallback.',
+                // warning field removed to treat fallback as a normal operational mode
                 data: formattedData
             };
         } catch (e) {

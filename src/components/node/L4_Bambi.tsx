@@ -47,13 +47,8 @@ export function L4_Bambi({ data, seedQuestion, seedUserProfile, onSeedConsumed }
     const [isOtherOpen, setIsOtherOpen] = useState(false);
 
     // Initialize greeting ONLY once when displayName becomes available
-    const [hasGreeted, setHasGreeted] = useState(false);
-    useEffect(() => {
-        if (displayName && !hasGreeted) {
-            setMessages([{ role: 'assistant', content: tL4('initialMessage', { station: displayName }) }]);
-            setHasGreeted(true);
-        }
-    }, [displayName, hasGreeted, tL4]);
+    // Greeting logic removed to prevent premature messages
+
 
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -169,14 +164,13 @@ export function L4_Bambi({ data, seedQuestion, seedUserProfile, onSeedConsumed }
     useEffect(() => {
         const text = String(seedQuestion || '').trim();
         if (!text) return;
-        if (!hasGreeted) return;
         if (isLoading) return;
         if (lastSeedQuestionRef.current === text) return;
 
         lastSeedQuestionRef.current = text;
         handleSend(text, seedUserProfile || 'general');
         onSeedConsumed?.();
-    }, [seedQuestion, seedUserProfile, hasGreeted, isLoading, handleSend, onSeedConsumed]);
+    }, [seedQuestion, seedUserProfile, isLoading, handleSend, onSeedConsumed]);
 
     const demands = [
         { id: 'speed', icon: Clock, label: tL4('demands.speed') },
@@ -211,7 +205,7 @@ export function L4_Bambi({ data, seedQuestion, seedUserProfile, onSeedConsumed }
 
             {/* Message Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
-                {bestCard && (
+                {messages.length > 0 && bestCard && (
                     <div className="rounded-[28px] p-5 text-white bg-gradient-to-br from-indigo-600 to-indigo-800 shadow-[0_18px_50px_rgba(79,70,229,0.28)] border border-white/15">
                         <div className="flex items-start justify-between gap-3">
                             <div className="min-w-0">
@@ -238,9 +232,9 @@ export function L4_Bambi({ data, seedQuestion, seedUserProfile, onSeedConsumed }
                                     if (otherCards.length > 0) setIsOtherOpen(true);
                                 }}
                                 className="flex-1 py-3 rounded-2xl bg-white text-indigo-700 font-black text-xs tracking-widest hover:bg-indigo-50 transition-colors active:scale-[0.99]"
-                                >
-                                    {getLocaleString(bestCard.actionLabel, locale) || tCommon('view')}
-                                </button>
+                            >
+                                {getLocaleString(bestCard.actionLabel, locale) || tCommon('view')}
+                            </button>
 
                             {otherCards.length > 0 && (
                                 <button

@@ -49,7 +49,7 @@ async function fetchPageContent(url: string): Promise<string> {
 
         return textContent;
     } catch (e) {
-        console.error(`Fetch error: ${e.message}`);
+        console.error(`Fetch error: ${e instanceof Error ? e.message : String(e)}`);
         return '';
     }
 }

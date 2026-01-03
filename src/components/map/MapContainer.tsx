@@ -1,67 +1,21 @@
 'use client';
 
 import { Component, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { MapContainer, Marker, TileLayer, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 import { useZoneAwareness } from '@/hooks/useZoneAwareness';
 import { useAppStore } from '@/stores/appStore';
 import { fetchNearbyNodes, fetchNodeConfig, fetchNodesByViewport, NodeDatum } from '@/lib/api/nodes';
 import { NodeMarker } from './NodeMarker';
 import { TrainLayer } from './TrainLayer';
+import { PedestrianLayer } from './PedestrianLayer';
 import { useLocale } from 'next-intl';
 import { groupNodesByProximity, GroupedNode } from '@/utils/nodeGroupUtils';
 import { getLocaleString } from '@/lib/utils/localeUtils';
-import { calculateDistance } from '@/lib/utils/distance';
 
 type ClusterItem =
     | { kind: 'node'; node: GroupedNode }
     | { kind: 'cluster'; id: string; count: number; lat: number; lon: number };
-
-function distanceMeters(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
-    return calculateDistance(a.lat, a.lon, b.lat, b.lon) * 1000;
-}
-
-function mergeNearbyParents(groups: GroupedNode[], thresholdMeters: number) {
-    const sorted = [...groups].sort((a, b) => {
-        const aIsHub = a.is_hub ? 1 : 0;
-        const bIsHub = b.is_hub ? 1 : 0;
-        if (aIsHub !== bIsHub) return bIsHub - aIsHub;
-        const aChildren = Array.isArray(a.children) ? a.children.length : 0;
-        const bChildren = Array.isArray(b.children) ? b.children.length : 0;
-        return bChildren - aChildren;
-    });
-
-    const used = new Set<string>();
-    const out: GroupedNode[] = [];
-
-    for (const base of sorted) {
-        if (used.has(base.id)) continue;
-        used.add(base.id);
-
-        const baseChildren = Array.isArray(base.children) ? base.children : [];
-        const merged: GroupedNode = { ...base, children: [...baseChildren], isParent: true };
-        const basePos = { lat: base.location.coordinates[1], lon: base.location.coordinates[0] };
-
-        for (const candidate of sorted) {
-            if (used.has(candidate.id)) continue;
-            const cPos = { lat: candidate.location.coordinates[1], lon: candidate.location.coordinates[0] };
-            if (distanceMeters(basePos, cPos) >= thresholdMeters) continue;
-
-            used.add(candidate.id);
-
-            merged.children = merged.children || [];
-            merged.children.push({ ...candidate, children: undefined } as any);
-            if (Array.isArray(candidate.children) && candidate.children.length > 0) {
-                merged.children.push(...candidate.children);
-            }
-        }
-
-        out.push(merged);
-    }
-
-    return out;
-}
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(max, Math.max(min, value));
@@ -127,7 +81,6 @@ function MapController({ center, isTooFar, fallback, nodes }: {
 }) {
     const map = useMap();
     const mapCenter = useAppStore(state => state.mapCenter);
-    const setMapCenter = useAppStore(state => state.setMapCenter);
     const lastTargetRef = useRef<{ lat: number, lon: number } | null>(null);
 
     const target = mapCenter || (isTooFar ? null : center);
@@ -378,7 +331,7 @@ function ClusteredNodeLayer({ nodes, zone, locale }: { nodes: NodeDatum[]; zone:
 
     return (
         <>
-            {items.map((item, i) => {
+            {items.map((item) => {
                 if (item.kind === 'node') {
                     // Ensure stable key using ID
                     return <NodeMarker key={item.node.id} node={item.node} zone={zone} locale={locale} zoom={clampedZoom} />;
@@ -420,7 +373,6 @@ class MapErrorBoundary extends Component<{ children: ReactNode; onReset: () => v
 }
 
 export default function AppMapWrapper() {
-    console.log('[MapContainer] Rendering');
     const [key, setKey] = useState(0);
     return (
         <MapErrorBoundary onReset={() => setKey(k => k + 1)}>
@@ -430,7 +382,6 @@ export default function AppMapWrapper() {
 }
 
 function AppMap() {
-    console.log('[MapContainerContent] Rendering');
     const { zone, userLocation, isTooFar, centerFallback } = useZoneAwareness();
     const [nodes, setNodes] = useState<NodeDatum[]>([]);
     const [loadingNodes, setLoadingNodes] = useState(false);
@@ -443,6 +394,7 @@ function AppMap() {
 
     const setCurrentNode = useAppStore(s => s.setCurrentNode);
     const setBottomSheetOpen = useAppStore(s => s.setBottomSheetOpen);
+    const { userProfile, setUserProfile } = useAppStore();
 
     const groupedParents = useMemo(() => {
         const groups = groupNodesByProximity(nodes, 150);
@@ -459,6 +411,48 @@ function AppMap() {
             return name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q);
         });
     }, [groupedParents, parentListQuery, locale]);
+
+    const parentGroupLabel = locale.startsWith('ja')
+        ? '親子グループ'
+        : locale.startsWith('en')
+            ? 'Parent Groups'
+            : '父子群組';
+
+    const parentSearchPlaceholder = locale.startsWith('ja')
+        ? '親ノード名 / ID を検索'
+        : locale.startsWith('en')
+            ? 'Search parent name or ID'
+            : '搜尋父節點名稱或 ID';
+
+    const parentCloseLabel = locale.startsWith('ja')
+        ? '閉じる'
+        : locale.startsWith('en')
+            ? 'Close'
+            : '關閉';
+
+    const parentSortHint = locale.startsWith('ja')
+        ? '子ノード数で並び替え'
+        : locale.startsWith('en')
+            ? 'Sorted by child count'
+            : '按子節點數量排序';
+
+    const parentShowingText = locale.startsWith('ja')
+        ? `表示 ${Math.min(filteredParents.length, 30)} / ${filteredParents.length}`
+        : locale.startsWith('en')
+            ? `Showing ${Math.min(filteredParents.length, 30)} / ${filteredParents.length}`
+            : `顯示 ${Math.min(filteredParents.length, 30)} / ${filteredParents.length}`;
+
+    const parentNoResultTitle = locale.startsWith('ja')
+        ? '一致する親ノードがありません'
+        : locale.startsWith('en')
+            ? 'No matching parent nodes'
+            : '找不到符合的父節點';
+
+    const parentNoResultHint = locale.startsWith('ja')
+        ? '駅名やノードIDで検索してみてください'
+        : locale.startsWith('en')
+            ? 'Try a station name or node ID'
+            : '試試看輸入站名或節點 ID';
 
     // Default center is Ueno if user is far
     const defaultCenter: [number, number] = [centerFallback.lat, centerFallback.lon];
@@ -515,6 +509,9 @@ function AppMap() {
 
                 {/* Real-time Train Layer */}
                 <TrainLayer />
+
+                {/* Pedestrian Graph Layer (Agent-driven) */}
+                <PedestrianLayer />
             </MapContainer>
 
             {loadingNodes && nodes.length === 0 && (
@@ -551,13 +548,32 @@ function AppMap() {
                     </span>
                 </div>
 
+                {/* Agent Profile Switcher */}
+                <div className="bg-white/90 backdrop-blur p-1 rounded-xl shadow-lg flex gap-1 pointer-events-auto">
+                    {(['general', 'wheelchair', 'stroller'] as const).map(p => (
+                        <button
+                            key={p}
+                            onClick={() => setUserProfile(p)}
+                            className={`px-2 py-1 rounded-lg text-xs font-bold transition-all ${
+                                userProfile === p 
+                                ? 'bg-indigo-600 text-white shadow-md' 
+                                : 'text-slate-600 hover:bg-slate-100'
+                            }`}
+                        >
+                            {p === 'general' ? (locale === 'ja' ? '一般' : locale === 'en' ? 'Gen' : '一般') : 
+                             p === 'wheelchair' ? (locale === 'ja' ? '車椅子' : locale === 'en' ? 'Wheel' : '輪椅') : 
+                             (locale === 'ja' ? 'ベビーカー' : locale === 'en' ? 'Stroll' : '嬰兒車')}
+                        </button>
+                    ))}
+                </div>
+
                 <button
                     type="button"
                     onClick={() => setIsParentListOpen(v => !v)}
                     className={`bg-white/90 backdrop-blur px-3 py-2 rounded-2xl shadow-lg text-[11px] font-black tracking-wide text-slate-900 hover:bg-white transition flex items-center gap-2 ${isParentListOpen ? 'ring-2 ring-indigo-400/40' : ''}`}
                 >
                     <span className="w-5 h-5 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-[11px] font-black">G</span>
-                    <span className="whitespace-nowrap">父子群組</span>
+                    <span className="whitespace-nowrap">{parentGroupLabel}</span>
                     <span className="ml-auto text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">{groupedParents.length}</span>
                 </button>
 
@@ -568,7 +584,7 @@ function AppMap() {
                                 <input
                                     value={parentListQuery}
                                     onChange={(e) => setParentListQuery(e.target.value)}
-                                    placeholder="搜尋父節點名稱或 ID"
+                                    placeholder={parentSearchPlaceholder}
                                     className="flex-1 h-10 px-3 rounded-2xl bg-white/80 border border-black/[0.06] text-[12px] font-bold text-slate-900 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-indigo-400/40"
                                 />
                                 <button
@@ -578,14 +594,14 @@ function AppMap() {
                                         setIsParentListOpen(false);
                                     }}
                                     className="h-10 w-10 rounded-2xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors active:scale-[0.98]"
-                                    aria-label="關閉"
+                                    aria-label={parentCloseLabel}
                                 >
                                     ✕
                                 </button>
                             </div>
                             <div className="mt-2 flex items-center justify-between">
-                                <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">按子節點數量排序</div>
-                                <div className="text-[10px] font-black text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">顯示 {Math.min(filteredParents.length, 30)} / {filteredParents.length}</div>
+                                <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">{parentSortHint}</div>
+                                <div className="text-[10px] font-black text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">{parentShowingText}</div>
                             </div>
                         </div>
 
@@ -619,8 +635,8 @@ function AppMap() {
 
                             {filteredParents.length === 0 && (
                                 <div className="px-4 py-6 text-center">
-                                    <div className="text-[12px] font-black text-slate-900">找不到符合的父節點</div>
-                                    <div className="text-[11px] font-bold text-slate-500 mt-1">試試看輸入站名或節點 ID</div>
+                                    <div className="text-[12px] font-black text-slate-900">{parentNoResultTitle}</div>
+                                    <div className="text-[11px] font-bold text-slate-500 mt-1">{parentNoResultHint}</div>
                                 </div>
                             )}
                         </div>

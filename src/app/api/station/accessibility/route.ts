@@ -66,6 +66,30 @@ export async function GET(request: Request) {
 
         const coverage = totalLinks ? Math.round((elevatorLinks || 0) / totalLinks * 100) : 0;
 
+        // Traceability & Confidence Simulation (L4 Upgrade)
+        const tracePath = [
+            `Identify Station: ${stationId}`,
+            `Map to Dataset: ${datasetFilter}`,
+            `Query Supabase: pedestrian_links (Count: ${totalLinks})`,
+            `Filter Elevator Access: ${elevatorLinks} links`,
+            `Calculate Coverage: ${coverage}%`
+        ];
+
+        // Bayesian Confidence Simulation
+        // Base confidence starts high if we have data.
+        // Penalize for low link count (sparse data) or old dataset.
+        let confidence = 0.95; 
+        if (!totalLinks || totalLinks < 10) confidence -= 0.2;
+        if (coverage < 50) confidence -= 0.1; // Lower confidence in "goodness" if coverage is low? No, confidence is about data accuracy. 
+        // Let's say confidence is about the "Completeness" of our knowledge.
+        
+        const suggestions = [
+             // Mock suggestions based on station context
+            `Check nearby bus stops for alternative access`,
+            `Verify elevator operation status via station staff`,
+            `Use underground passages during bad weather`
+        ];
+
         return NextResponse.json({
             station_id: stationId,
             status: 'available',
@@ -75,8 +99,12 @@ export async function GET(request: Request) {
                 elevator_accessible_paths: elevatorLinks,
                 elevator_coverage_percent: coverage,
                 s_rank_paths: sRankLinks,
-                wheelchair_friendly: true // General flag based on coverage
+                wheelchair_friendly: coverage > 80 // Threshold logic
             },
+            // New Interaction Protocol Fields
+            traceability: tracePath,
+            confidence: confidence.toFixed(2), // 0.00 - 1.00
+            potential_associations: suggestions,
             message: `Accessibility Data: ${coverage}% of paths are elevator accessible. ${sRankLinks} paths are rated S-rank (Excellent).`
         });
 

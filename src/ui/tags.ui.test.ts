@@ -111,11 +111,23 @@ async function clickNodeTabByIndex(page: any, index: number): Promise<void> {
     }, index);
 }
 
-async function waitForLevelLabel(page: any, label: 'Level 1' | 'Level 2' | 'Level 3'): Promise<void> {
+async function waitForTabHeading(page: any, label: string): Promise<void> {
     await page.waitForFunction((expected: string) => {
-        const spans = Array.from(document.querySelectorAll('span'));
-        return spans.some(s => (s.textContent || '').trim() === expected);
+        const headings = Array.from(document.querySelectorAll('h2'));
+        return headings.some(h => (h.textContent || '').trim() === expected);
     }, { timeout: 60_000 }, label);
+}
+
+async function waitForSpotsCountAtLeast(page: any, min: number): Promise<void> {
+    await page.waitForFunction((expectedMin: number) => {
+        const spans = Array.from(document.querySelectorAll('span')) as HTMLSpanElement[];
+        const spotSpan = spans.find(s => /\bSpots\b/.test((s.textContent || '').trim()));
+        if (!spotSpan) return false;
+        const m = (spotSpan.textContent || '').trim().match(/^(\d+)\s+Spots\b/);
+        if (!m) return false;
+        const n = Number(m[1]);
+        return Number.isFinite(n) && n >= expectedMin;
+    }, { timeout: 60_000 }, min);
 }
 
 test('UI renders level badges in node tabs', { timeout: 180_000 }, async (t) => {
@@ -139,13 +151,100 @@ test('UI renders level badges in node tabs', { timeout: 180_000 }, async (t) => 
     await clickOnboardingHubButton(page);
 
     await clickNodeTabByIndex(page, 0);
-    await waitForLevelLabel(page, 'Level 1');
+    await waitForTabHeading(page, 'Nearby');
+    await waitForSpotsCountAtLeast(page, 1);
 
     await clickNodeTabByIndex(page, 1);
-    await waitForLevelLabel(page, 'Level 2');
+    await waitForTabHeading(page, 'Status');
 
     await clickNodeTabByIndex(page, 2);
-    await waitForLevelLabel(page, 'Level 3');
+    await waitForTabHeading(page, 'Facilities');
+
+    assert.ok(true);
+});
+
+test('UI renders route result card after destination search', { timeout: 180_000 }, async (t) => {
+    const port = pickAvailablePort();
+    const server = await startNextDev(port);
+    t.after(async () => {
+        await server.close();
+    });
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    t.after(async () => {
+        await browser.close();
+    });
+
+    const page = await browser.newPage();
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+        const url = req.url();
+
+        if (url.includes('/api/stations/search')) {
+            const payload = {
+                stations: [
+                    {
+                        id: 'odpt.Station:TokyoMetro.Ginza.Ginza',
+                        name: { ja: '銀座', en: 'Ginza' },
+                        operator: 'TokyoMetro',
+                        railway: 'TokyoMetro.Ginza'
+                    }
+                ]
+            };
+            void req.respond({
+                status: 200,
+                contentType: 'application/json',
+                body: JSON.stringify(payload)
+            });
+            return;
+        }
+
+        if (url.includes('/api/odpt/route')) {
+            const payload = {
+                routes: [
+                    {
+                        label: 'Ueno → Ginza',
+                        steps: [
+                            '🏠 Ueno',
+                            '🚃 Take odpt.Railway:TokyoMetro.Ginza (Ginza Line)',
+                            '📍 Ginza'
+                        ],
+                        sources: [{ type: 'odpt:Railway', verified: true }],
+                        railways: ['odpt.Railway:TokyoMetro.Ginza'],
+                        fare: { ic: 180, ticket: 200 },
+                        duration: 18,
+                        transfers: 0,
+                        nextDeparture: '23:59'
+                    }
+                ]
+            };
+            void req.respond({
+                status: 200,
+                contentType: 'application/json',
+                body: JSON.stringify(payload)
+            });
+            return;
+        }
+
+        void req.continue();
+    });
+
+    await page.goto(`${server.url}/en`, { waitUntil: 'domcontentloaded' });
+    await clickOnboardingHubButton(page);
+
+    await clickNodeTabByIndex(page, 3);
+
+    await page.waitForSelector('input[placeholder="Destination..."]', { timeout: 60_000 });
+    await page.type('input[placeholder="Destination..."]', 'Ginza');
+    await page.keyboard.press('Enter');
+
+    await page.waitForFunction(() => {
+        const text = (document.body?.innerText || '').replace(/\s+/g, ' ');
+        return text.includes('Ueno → Ginza') && text.includes('Ticket ¥200') && text.includes('Next: 23:59');
+    }, { timeout: 60_000 });
 
     assert.ok(true);
 });

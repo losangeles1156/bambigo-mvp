@@ -7,7 +7,13 @@ interface AppState {
 
     isBottomSheetOpen: boolean;
     isChatOpen: boolean;
-    messages: Array<{ role: 'user' | 'assistant'; content: string; actions?: any[] }>;
+    messages: Array<{ 
+        role: 'user' | 'assistant'; 
+        content: string; 
+        actions?: any[];
+        isLoading?: boolean;
+        feedback?: { score: number; reason?: string };
+    }>;
     mapCenter: { lat: number; lon: number } | null;
     isTripGuardActive: boolean;
     tripGuardSummary: string | null;
@@ -17,6 +23,7 @@ interface AppState {
 
     locale: 'zh-TW' | 'ja' | 'en';
     accessibilityMode: boolean;
+    userProfile: 'general' | 'wheelchair' | 'stroller';
     activeTab: 'explore' | 'trips' | 'me';
 
     onboardingSeenVersion: number;
@@ -27,7 +34,12 @@ interface AppState {
     setZone: (zone: 'core' | 'buffer' | 'outer') => void;
     setBottomSheetOpen: (isOpen: boolean) => void;
     setChatOpen: (isOpen: boolean) => void;
-    addMessage: (message: { role: 'user' | 'assistant'; content: string; actions?: any[] }) => void;
+    addMessage: (message: { 
+        role: 'user' | 'assistant'; 
+        content: string; 
+        actions?: any[]; 
+        isLoading?: boolean;
+    }) => void;
     setMapCenter: (center: { lat: number; lon: number } | null) => void;
     setTripGuardActive: (isActive: boolean) => void;
     setTripGuardSummary: (summary: string | null) => void;
@@ -36,6 +48,7 @@ interface AppState {
     setLineBound: (isBound: boolean) => void;
     setLocale: (locale: 'zh-TW' | 'ja' | 'en') => void;
     toggleAccessibility: () => void;
+    setUserProfile: (profile: 'general' | 'wheelchair' | 'stroller') => void;
     setActiveTab: (tab: 'explore' | 'trips' | 'me') => void;
     userContext: string[];
     setUserContext: (context: string[]) => void;
@@ -60,6 +73,7 @@ export const useAppStore = create<AppState>()(
             isLineBound: false,
             locale: 'zh-TW',
             accessibilityMode: false,
+            userProfile: 'general',
             activeTab: 'explore',
             userContext: [],
 
@@ -80,6 +94,7 @@ export const useAppStore = create<AppState>()(
             setLineBound: (isBound) => set({ isLineBound: isBound }),
             setLocale: (locale) => set({ locale }),
             toggleAccessibility: () => set((state) => ({ accessibilityMode: !state.accessibilityMode })),
+            setUserProfile: (profile) => set({ userProfile: profile }),
             setActiveTab: (tab) => set({ activeTab: tab }),
             setUserContext: (context) => set({ userContext: context }),
 
