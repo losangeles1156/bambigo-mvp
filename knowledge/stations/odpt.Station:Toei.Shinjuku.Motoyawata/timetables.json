@@ -1,0 +1,3634 @@
+[
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031B3437",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Toei.Shinjuku.Motoyawata.Westbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Toei.Shinjuku",
+    "odpt:station": "odpt.Station:Toei.Shinjuku.Motoyawata",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Toei",
+    "odpt:railDirection": "odpt.RailDirection:Westbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.501T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "501T",
+        "odpt:departureTime": "05:00",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.503T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "503T",
+        "odpt:departureTime": "05:12",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.511T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "511T",
+        "odpt:departureTime": "05:24",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.513T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "513T",
+        "odpt:departureTime": "05:36",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.509T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "509T",
+        "odpt:departureTime": "05:48",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.615T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "615T",
+        "odpt:departureTime": "06:01",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.607T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "607T",
+        "odpt:departureTime": "06:13",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.661K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "661K",
+        "odpt:departureTime": "06:24",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.617T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "617T",
+        "odpt:departureTime": "06:34",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.605T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "605T",
+        "odpt:departureTime": "06:44",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.601T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "601T",
+        "odpt:departureTime": "06:54",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.787K",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "787K",
+        "odpt:departureTime": "07:00",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.703T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "703T",
+        "odpt:departureTime": "07:04",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.711T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "711T",
+        "odpt:departureTime": "07:13",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.719T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "719T",
+        "odpt:departureTime": "07:19",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Wakabadai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.713T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "713T",
+        "odpt:departureTime": "07:25",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.723T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "723T",
+        "odpt:departureTime": "07:30",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.725T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "725T",
+        "odpt:departureTime": "07:35",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.771K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "771K",
+        "odpt:departureTime": "07:40",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.709T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "709T",
+        "odpt:departureTime": "07:45",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.727T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "727T",
+        "odpt:departureTime": "07:50",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.729T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "729T",
+        "odpt:departureTime": "07:55",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.815T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "815T",
+        "odpt:departureTime": "08:00",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.875K",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "875K",
+        "odpt:departureTime": "08:06",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.831T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "831T",
+        "odpt:departureTime": "08:09",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.861K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "861K",
+        "odpt:departureTime": "08:15",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.817T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "817T",
+        "odpt:departureTime": "08:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.873K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "873K",
+        "odpt:departureTime": "08:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.805T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "805T",
+        "odpt:departureTime": "08:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.877K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "877K",
+        "odpt:departureTime": "08:38",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.821T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "821T",
+        "odpt:departureTime": "08:44",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.863K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "863K",
+        "odpt:departureTime": "08:50",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.803T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "803T",
+        "odpt:departureTime": "08:55",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.965K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "965K",
+        "odpt:departureTime": "09:00",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.911T",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "911T",
+        "odpt:departureTime": "09:06",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.991K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "991K",
+        "odpt:departureTime": "09:08",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.925T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "925T",
+        "odpt:departureTime": "09:16",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.913T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "913T",
+        "odpt:departureTime": "09:22",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.979K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "979K",
+        "odpt:departureTime": "09:27",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.993K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "993K",
+        "odpt:departureTime": "09:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.909T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "909T",
+        "odpt:departureTime": "09:39",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.987K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "987K",
+        "odpt:departureTime": "09:44",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.907T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "907T",
+        "odpt:departureTime": "09:50",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.967K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "967K",
+        "odpt:departureTime": "09:56",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1061K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1061K",
+        "odpt:departureTime": "10:01",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1097K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1097K",
+        "odpt:departureTime": "10:05",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1031T",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "1031T",
+        "odpt:departureTime": "10:11",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1069K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1069K",
+        "odpt:departureTime": "10:14",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1089K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1089K",
+        "odpt:departureTime": "10:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1001T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1001T",
+        "odpt:departureTime": "10:26",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1021T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1021T",
+        "odpt:departureTime": "10:32",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1077K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1077K",
+        "odpt:departureTime": "10:37",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1095K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1095K",
+        "odpt:departureTime": "10:43",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1083K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1083K",
+        "odpt:departureTime": "10:49",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1081K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1081K",
+        "odpt:departureTime": "10:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1165K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1165K",
+        "odpt:departureTime": "11:00",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1123T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1123T",
+        "odpt:departureTime": "11:05",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1171K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1171K",
+        "odpt:departureTime": "11:10",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1125T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1125T",
+        "odpt:departureTime": "11:15",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1175K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1175K",
+        "odpt:departureTime": "11:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1129T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1129T",
+        "odpt:departureTime": "11:26",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1185K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1185K",
+        "odpt:departureTime": "11:32",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1109T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1109T",
+        "odpt:departureTime": "11:37",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1115T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1115T",
+        "odpt:departureTime": "11:43",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1111T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1111T",
+        "odpt:departureTime": "11:49",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1117T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1117T",
+        "odpt:departureTime": "11:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1167K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1167K",
+        "odpt:departureTime": "11:59",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1273K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1273K",
+        "odpt:departureTime": "12:05",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1297K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1297K",
+        "odpt:departureTime": "12:10",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1263K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1263K",
+        "odpt:departureTime": "12:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1203T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1203T",
+        "odpt:departureTime": "12:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1221T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1221T",
+        "odpt:departureTime": "12:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1291K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1291K",
+        "odpt:departureTime": "12:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1283K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1283K",
+        "odpt:departureTime": "12:37",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1279K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1279K",
+        "odpt:departureTime": "12:43",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1265K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1265K",
+        "odpt:departureTime": "12:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1213T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1213T",
+        "odpt:departureTime": "12:54",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1231T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1231T",
+        "odpt:departureTime": "12:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1371K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1371K",
+        "odpt:departureTime": "13:05",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1375K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1375K",
+        "odpt:departureTime": "13:10",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1393K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1393K",
+        "odpt:departureTime": "13:15",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1361K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1361K",
+        "odpt:departureTime": "13:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1385K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1385K",
+        "odpt:departureTime": "13:26",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1307T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1307T",
+        "odpt:departureTime": "13:32",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1311T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1311T",
+        "odpt:departureTime": "13:37",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1301T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1301T",
+        "odpt:departureTime": "13:43",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1367K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1367K",
+        "odpt:departureTime": "13:49",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1369K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1369K",
+        "odpt:departureTime": "13:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1395K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1395K",
+        "odpt:departureTime": "13:59",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1497K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1497K",
+        "odpt:departureTime": "14:05",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1403T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1403T",
+        "odpt:departureTime": "14:10",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1477K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1477K",
+        "odpt:departureTime": "14:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1423T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1423T",
+        "odpt:departureTime": "14:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1491K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1491K",
+        "odpt:departureTime": "14:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1481K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1481K",
+        "odpt:departureTime": "14:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1465K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1465K",
+        "odpt:departureTime": "14:37",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1429T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1429T",
+        "odpt:departureTime": "14:43",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1431T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1431T",
+        "odpt:departureTime": "14:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1425T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1425T",
+        "odpt:departureTime": "14:54",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1415T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1415T",
+        "odpt:departureTime": "14:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1575K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1575K",
+        "odpt:departureTime": "15:05",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1561K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1561K",
+        "odpt:departureTime": "15:10",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1509T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1509T",
+        "odpt:departureTime": "15:15",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1573K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1573K",
+        "odpt:departureTime": "15:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1507T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1507T",
+        "odpt:departureTime": "15:26",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1517T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1517T",
+        "odpt:departureTime": "15:32",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1567K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1567K",
+        "odpt:departureTime": "15:37",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1521T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1521T",
+        "odpt:departureTime": "15:43",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1595K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1595K",
+        "odpt:departureTime": "15:48",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1563K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1563K",
+        "odpt:departureTime": "15:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1503T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1503T",
+        "odpt:departureTime": "15:59",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1679K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1679K",
+        "odpt:departureTime": "16:05",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1683K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1683K",
+        "odpt:departureTime": "16:10",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1681K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1681K",
+        "odpt:departureTime": "16:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1671K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1671K",
+        "odpt:departureTime": "16:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1691K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1691K",
+        "odpt:departureTime": "16:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1613T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1613T",
+        "odpt:departureTime": "16:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1631T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1631T",
+        "odpt:departureTime": "16:37",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1685K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1685K",
+        "odpt:departureTime": "16:42",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1693K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1693K",
+        "odpt:departureTime": "16:48",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1675K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1675K",
+        "odpt:departureTime": "16:53",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1605T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1605T",
+        "odpt:departureTime": "16:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1761K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1761K",
+        "odpt:departureTime": "17:04",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1701T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1701T",
+        "odpt:departureTime": "17:09",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1711T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1711T",
+        "odpt:departureTime": "17:14",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1797K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1797K",
+        "odpt:departureTime": "17:19",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1707T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1707T",
+        "odpt:departureTime": "17:25",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1721T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1721T",
+        "odpt:departureTime": "17:30",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1769K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1769K",
+        "odpt:departureTime": "17:35",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1723T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1723T",
+        "odpt:departureTime": "17:41",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1765K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1765K",
+        "odpt:departureTime": "17:46",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1795K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1795K",
+        "odpt:departureTime": "17:52",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1779K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1779K",
+        "odpt:departureTime": "17:57",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1877K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1877K",
+        "odpt:departureTime": "18:03",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1883K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1883K",
+        "odpt:departureTime": "18:09",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1887K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1887K",
+        "odpt:departureTime": "18:15",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1891K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1891K",
+        "odpt:departureTime": "18:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1829T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1829T",
+        "odpt:departureTime": "18:28",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1825T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1825T",
+        "odpt:departureTime": "18:34",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1815T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1815T",
+        "odpt:departureTime": "18:41",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1875K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1875K",
+        "odpt:departureTime": "18:47",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1809T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1809T",
+        "odpt:departureTime": "18:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1973K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1973K",
+        "odpt:departureTime": "19:00",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1901T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1901T",
+        "odpt:departureTime": "19:07",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1917T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1917T",
+        "odpt:departureTime": "19:14",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1967K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1967K",
+        "odpt:departureTime": "19:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1921T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1921T",
+        "odpt:departureTime": "19:28",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1963K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1963K",
+        "odpt:departureTime": "19:35",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1995K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1995K",
+        "odpt:departureTime": "19:41",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1903T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1903T",
+        "odpt:departureTime": "19:48",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1981K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1981K",
+        "odpt:departureTime": "19:55",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2071K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2071K",
+        "odpt:departureTime": "20:02",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2083K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2083K",
+        "odpt:departureTime": "20:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2031T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2031T",
+        "odpt:departureTime": "20:17",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2053T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2053T",
+        "odpt:departureTime": "20:24",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2029T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2029T",
+        "odpt:departureTime": "20:31",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2061K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2061K",
+        "odpt:departureTime": "20:40",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2075K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2075K",
+        "odpt:departureTime": "20:49",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2011T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2011T",
+        "odpt:departureTime": "20:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2169K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2169K",
+        "odpt:departureTime": "21:09",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2123T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2123T",
+        "odpt:departureTime": "21:18",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2121T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2121T",
+        "odpt:departureTime": "21:28",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2165K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2165K",
+        "odpt:departureTime": "21:38",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2191K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2191K",
+        "odpt:departureTime": "21:48",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Wakabadai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2187K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2187K",
+        "odpt:departureTime": "21:58",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2215T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2215T",
+        "odpt:departureTime": "22:08",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2225T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2225T",
+        "odpt:departureTime": "22:18",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2273K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2273K",
+        "odpt:departureTime": "22:30",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2209T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2209T",
+        "odpt:departureTime": "22:42",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2217T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2217T",
+        "odpt:departureTime": "22:55",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2323T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2323T",
+        "odpt:departureTime": "23:08",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2321T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2321T",
+        "odpt:departureTime": "23:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2365K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2365K",
+        "odpt:departureTime": "23:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Wakabadai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2327T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2327T",
+        "odpt:departureTime": "23:47",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2415T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2415T",
+        "odpt:departureTime": "00:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Ojima"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031B33BB",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-17",
+    "owl:sameAs": "odpt.StationTimetable:Toei.Shinjuku.Motoyawata.Westbound.Weekday",
+    "odpt:railway": "odpt.Railway:Toei.Shinjuku",
+    "odpt:station": "odpt.Station:Toei.Shinjuku.Motoyawata",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Toei",
+    "odpt:railDirection": "odpt.RailDirection:Westbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.501T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "501T",
+        "odpt:departureTime": "05:00",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.503T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "503T",
+        "odpt:departureTime": "05:12",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.511T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "511T",
+        "odpt:departureTime": "05:24",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.581K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "581K",
+        "odpt:departureTime": "05:36",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.509T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "509T",
+        "odpt:departureTime": "05:48",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.613T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "613T",
+        "odpt:departureTime": "06:00",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.607T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "607T",
+        "odpt:departureTime": "06:12",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.615T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "615T",
+        "odpt:departureTime": "06:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.661K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "661K",
+        "odpt:departureTime": "06:28",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.617T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "617T",
+        "odpt:departureTime": "06:35",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.605T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "605T",
+        "odpt:departureTime": "06:41",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.619T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "619T",
+        "odpt:departureTime": "06:47",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.601T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "601T",
+        "odpt:departureTime": "06:53",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.621T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "621T",
+        "odpt:departureTime": "06:59",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.703T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "703T",
+        "odpt:departureTime": "07:04",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.723T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "723T",
+        "odpt:departureTime": "07:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.711T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "711T",
+        "odpt:departureTime": "07:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.725T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "725T",
+        "odpt:departureTime": "07:19",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.781K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "781K",
+        "odpt:departureTime": "07:22",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.783K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "783K",
+        "odpt:departureTime": "07:26",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.727T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "727T",
+        "odpt:departureTime": "07:29",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.753T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "753T",
+        "odpt:departureTime": "07:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.729T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "729T",
+        "odpt:departureTime": "07:35",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.769K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "769K",
+        "odpt:departureTime": "07:38",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.733T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "733T",
+        "odpt:departureTime": "07:41",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.713T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "713T",
+        "odpt:departureTime": "07:45",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.737T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "737T",
+        "odpt:departureTime": "07:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.765K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "765K",
+        "odpt:departureTime": "07:52",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.739T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "739T",
+        "odpt:departureTime": "07:56",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.889K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "889K",
+        "odpt:departureTime": "08:00",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.873K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "873K",
+        "odpt:departureTime": "08:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.815T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "815T",
+        "odpt:departureTime": "08:07",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.875K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "875K",
+        "odpt:departureTime": "08:12",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.885K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "885K",
+        "odpt:departureTime": "08:16",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.841T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "841T",
+        "odpt:departureTime": "08:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.817T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "817T",
+        "odpt:departureTime": "08:25",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.877K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "877K",
+        "odpt:departureTime": "08:30",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.805T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "805T",
+        "odpt:departureTime": "08:35",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.819T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "819T",
+        "odpt:departureTime": "08:40",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.871K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "871K",
+        "odpt:departureTime": "08:44",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.831T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "831T",
+        "odpt:departureTime": "08:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.863K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "863K",
+        "odpt:departureTime": "08:54",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.921T",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "921T",
+        "odpt:departureTime": "09:00",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.923T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "923T",
+        "odpt:departureTime": "09:01",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.967K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "967K",
+        "odpt:departureTime": "09:06",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.911T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "911T",
+        "odpt:departureTime": "09:10",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.925T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "925T",
+        "odpt:departureTime": "09:14",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.979K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "979K",
+        "odpt:departureTime": "09:19",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.953T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "953T",
+        "odpt:departureTime": "09:25",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.951T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "951T",
+        "odpt:departureTime": "09:30",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.929T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "929T",
+        "odpt:departureTime": "09:35",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.969K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "969K",
+        "odpt:departureTime": "09:40",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.913T",
+        "odpt:trainType": "odpt.TrainType:Toei.Express",
+        "odpt:trainNumber": "913T",
+        "odpt:departureTime": "09:46",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.965K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "965K",
+        "odpt:departureTime": "09:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.989K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "989K",
+        "odpt:departureTime": "09:56",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1073K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1073K",
+        "odpt:departureTime": "10:01",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1091K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1091K",
+        "odpt:departureTime": "10:08",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1061K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1061K",
+        "odpt:departureTime": "10:14",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1075K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1075K",
+        "odpt:departureTime": "10:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1041T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1041T",
+        "odpt:departureTime": "10:27",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1005T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1005T",
+        "odpt:departureTime": "10:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1071K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1071K",
+        "odpt:departureTime": "10:39",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1031T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1031T",
+        "odpt:departureTime": "10:44",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1003T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1003T",
+        "odpt:departureTime": "10:51",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1023T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1023T",
+        "odpt:departureTime": "10:57",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1181K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1181K",
+        "odpt:departureTime": "11:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1187K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1187K",
+        "odpt:departureTime": "11:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1183K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1183K",
+        "odpt:departureTime": "11:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1139T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1139T",
+        "odpt:departureTime": "11:21",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1179K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1179K",
+        "odpt:departureTime": "11:27",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1137T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1137T",
+        "odpt:departureTime": "11:33",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1113T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1113T",
+        "odpt:departureTime": "11:39",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1185K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1185K",
+        "odpt:departureTime": "11:45",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1165K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1165K",
+        "odpt:departureTime": "11:51",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1115T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1115T",
+        "odpt:departureTime": "11:57",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1291K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1291K",
+        "odpt:departureTime": "12:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1217T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1217T",
+        "odpt:departureTime": "12:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1277K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1277K",
+        "odpt:departureTime": "12:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1275K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1275K",
+        "odpt:departureTime": "12:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1267K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1267K",
+        "odpt:departureTime": "12:27",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1263K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1263K",
+        "odpt:departureTime": "12:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1253T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1253T",
+        "odpt:departureTime": "12:39",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1271K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1271K",
+        "odpt:departureTime": "12:45",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1203T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1203T",
+        "odpt:departureTime": "12:51",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1225T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1225T",
+        "odpt:departureTime": "12:57",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1387K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1387K",
+        "odpt:departureTime": "13:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1369K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1369K",
+        "odpt:departureTime": "13:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1351T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1351T",
+        "odpt:departureTime": "13:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1339T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1339T",
+        "odpt:departureTime": "13:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1373K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1373K",
+        "odpt:departureTime": "13:27",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1313T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1313T",
+        "odpt:departureTime": "13:33",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1389K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1389K",
+        "odpt:departureTime": "13:39",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1341T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1341T",
+        "odpt:departureTime": "13:45",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1361K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1361K",
+        "odpt:departureTime": "13:51",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1365K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1365K",
+        "odpt:departureTime": "13:57",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1431T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1431T",
+        "odpt:departureTime": "14:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1417T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1417T",
+        "odpt:departureTime": "14:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1405T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1405T",
+        "odpt:departureTime": "14:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1475K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1475K",
+        "odpt:departureTime": "14:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1481K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1481K",
+        "odpt:departureTime": "14:27",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1423T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1423T",
+        "odpt:departureTime": "14:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1453T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1453T",
+        "odpt:departureTime": "14:39",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1479K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1479K",
+        "odpt:departureTime": "14:45",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1403T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1403T",
+        "odpt:departureTime": "14:51",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1483K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1483K",
+        "odpt:departureTime": "14:57",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Wakabadai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1585K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1585K",
+        "odpt:departureTime": "15:03",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1569K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1569K",
+        "odpt:departureTime": "15:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1537T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1537T",
+        "odpt:departureTime": "15:15",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1539T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1539T",
+        "odpt:departureTime": "15:20",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1591K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1591K",
+        "odpt:departureTime": "15:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1515T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1515T",
+        "odpt:departureTime": "15:32",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1589K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1589K",
+        "odpt:departureTime": "15:38",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1567K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1567K",
+        "odpt:departureTime": "15:43",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1561K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1561K",
+        "odpt:departureTime": "15:49",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1577K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1577K",
+        "odpt:departureTime": "15:53",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1517T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1517T",
+        "odpt:departureTime": "15:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1671K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1671K",
+        "odpt:departureTime": "16:04",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1675K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1675K",
+        "odpt:departureTime": "16:10",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1663K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1663K",
+        "odpt:departureTime": "16:17",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1611T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1611T",
+        "odpt:departureTime": "16:23",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1687K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1687K",
+        "odpt:departureTime": "16:29",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1625T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1625T",
+        "odpt:departureTime": "16:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1653T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1653T",
+        "odpt:departureTime": "16:38",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1673K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1673K",
+        "odpt:departureTime": "16:42",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1603T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1603T",
+        "odpt:departureTime": "16:47",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1651T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1651T",
+        "odpt:departureTime": "16:53",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1685K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1685K",
+        "odpt:departureTime": "16:59",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1741T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1741T",
+        "odpt:departureTime": "17:05",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1739T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1739T",
+        "odpt:departureTime": "17:11",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1713T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1713T",
+        "odpt:departureTime": "17:17",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1731T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1731T",
+        "odpt:departureTime": "17:23",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1765K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1765K",
+        "odpt:departureTime": "17:29",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1715T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1715T",
+        "odpt:departureTime": "17:33",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1767K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1767K",
+        "odpt:departureTime": "17:38",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1721T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1721T",
+        "odpt:departureTime": "17:43",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1771K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1771K",
+        "odpt:departureTime": "17:47",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1705T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1705T",
+        "odpt:departureTime": "17:51",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1717T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1717T",
+        "odpt:departureTime": "17:56",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1881K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1881K",
+        "odpt:departureTime": "18:01",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1875K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1875K",
+        "odpt:departureTime": "18:06",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1823T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1823T",
+        "odpt:departureTime": "18:11",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1825T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1825T",
+        "odpt:departureTime": "18:16",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1811T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1811T",
+        "odpt:departureTime": "18:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1879K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1879K",
+        "odpt:departureTime": "18:26",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1803T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1803T",
+        "odpt:departureTime": "18:31",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1869K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1869K",
+        "odpt:departureTime": "18:36",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1865T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1865T",
+        "odpt:departureTime": "18:42",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1851T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1851T",
+        "odpt:departureTime": "18:47",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1863T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1863T",
+        "odpt:departureTime": "18:52",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1867T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1867T",
+        "odpt:departureTime": "18:57",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1991K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1991K",
+        "odpt:departureTime": "19:02",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1939T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1939T",
+        "odpt:departureTime": "19:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1961K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1961K",
+        "odpt:departureTime": "19:14",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1957T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1957T",
+        "odpt:departureTime": "19:22",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1977K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1977K",
+        "odpt:departureTime": "19:28",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1915T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1915T",
+        "odpt:departureTime": "19:34",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1905T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1905T",
+        "odpt:departureTime": "19:42",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1963K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1963K",
+        "odpt:departureTime": "19:48",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.1981K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "1981K",
+        "odpt:departureTime": "19:55",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2023T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2023T",
+        "odpt:departureTime": "20:02",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2059T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2059T",
+        "odpt:departureTime": "20:09",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2061T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2061T",
+        "odpt:departureTime": "20:16",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2041T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2041T",
+        "odpt:departureTime": "20:23",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2013T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2013T",
+        "odpt:departureTime": "20:30",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2065T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2065T",
+        "odpt:departureTime": "20:37",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2063T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2063T",
+        "odpt:departureTime": "20:44",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2089K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2089K",
+        "odpt:departureTime": "20:51",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2067K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2067K",
+        "odpt:departureTime": "20:58",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2191K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2191K",
+        "odpt:departureTime": "21:05",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2133T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2133T",
+        "odpt:departureTime": "21:12",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2187K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2187K",
+        "odpt:departureTime": "21:19",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2157T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2157T",
+        "odpt:departureTime": "21:25",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2175K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2175K",
+        "odpt:departureTime": "21:36",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2105T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2105T",
+        "odpt:departureTime": "21:45",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2179K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2179K",
+        "odpt:departureTime": "21:57",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2267T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2267T",
+        "odpt:departureTime": "22:08",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2213T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2213T",
+        "odpt:departureTime": "22:20",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2261K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2261K",
+        "odpt:departureTime": "22:31",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Hashimoto"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2263T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2263T",
+        "odpt:departureTime": "22:42",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2267K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2267K",
+        "odpt:departureTime": "22:55",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2333T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2333T",
+        "odpt:departureTime": "23:08",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2357T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2357T",
+        "odpt:departureTime": "23:21",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.KeioNew.Sasazuka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2375K",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2375K",
+        "odpt:departureTime": "23:33",
+        "odpt:platformNumber": "1",
+        "odpt:destinationStation": [
+          "odpt.Station:Keio.Sagamihara.Wakabadai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2361T",
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2361T",
+        "odpt:departureTime": "23:47",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Shinjuku"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Toei.Shinjuku.2467T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Toei.Local",
+        "odpt:trainNumber": "2467T",
+        "odpt:departureTime": "00:09",
+        "odpt:platformNumber": "2",
+        "odpt:destinationStation": [
+          "odpt.Station:Toei.Shinjuku.Ojima"
+        ]
+      }
+    ]
+  }
+]

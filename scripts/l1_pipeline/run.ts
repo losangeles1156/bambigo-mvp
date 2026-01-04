@@ -40,7 +40,7 @@ async function main() {
         : (wardsArg ? wardsArg.replace(/^--wards=/, '').split(',').map(s => s.trim()).filter(Boolean) : null);
 
     const includeWardStations = runAll || wards15 || !!wards;
-    
+
     const modeLabel = planOnly
         ? ' - PLAN'
         : (runAll ? ' - FULL MODE' : (wards ? ' - WARDS MODE' : ''));
@@ -53,7 +53,7 @@ async function main() {
     logDebug(`📦 Loaded ${clusters.length} station clusters.`);
 
     let results: any[] = [];
-    
+
     // Load existing results to resume
     if (fs.existsSync(OUTPUT_FILE)) {
         try {
@@ -93,7 +93,7 @@ async function main() {
         }
 
         console.log(`\n📍 Processing Cluster: ${cluster.primaryId} (${cluster.ward})...`);
-        
+
         // A. Identify Profile
         const profile = getStationProfile(cluster.primaryId);
         if (profile) {
@@ -101,12 +101,12 @@ async function main() {
         }
 
         // B. Wiki Analysis (with Profile context)
-        const stationName = typeof cluster.stations[0].name === 'string' 
-            ? cluster.stations[0].name 
+        const stationName = typeof cluster.stations[0].name === 'string'
+            ? cluster.stations[0].name
             : cluster.stations[0].name.ja;
-            
+
         const wikiTitle = cluster.stations[0].wikiTitle || stationName.replace(/駅$/, '') + '駅';
-        
+
         let wikiData;
         try {
             wikiData = await analyzeWiki(wikiTitle, profile);
@@ -122,10 +122,10 @@ async function main() {
         // C. OSM Fetching (with Profile overrides)
         const center = cluster.center;
         let categoryStats: CategoryStat[] = [];
-        
+
         // Check for skipVibes (e.g. Airports)
         const shouldSkipVibes = cluster.stations.some(s => s.skipVibes);
-        
+
         if (shouldSkipVibes) {
             console.log(`   ✈️ Skipping OSM Vibe Check (Airport/Terminal Node detected).`);
             // Manually inject "Airport" stats to ensure it gets tagged correctly later if needed
@@ -148,14 +148,14 @@ async function main() {
         } else {
             // 1. From Wiki/Profile (High Confidence)
             wikiData.weightedKeywords.forEach(k => vibeTags.add(k.word));
-            
+
             // 2. From OSM Density
             const dining = categoryStats.find(c => c.categoryId === 'dining');
             const shopping = categoryStats.find(c => c.categoryId === 'shopping');
             const nature = categoryStats.find(c => c.categoryId === 'nature');
             const culture = categoryStats.find(c => c.categoryId === 'culture');
             const business = categoryStats.find(c => c.categoryId === 'business');
-    
+
             if (dining && dining.totalCount >= 50) vibeTags.add('Gourmet Battleground (激戦区)');
             if (shopping && shopping.totalCount >= 50) vibeTags.add('Shoppers Heaven');
             if (business && business.totalCount >= 50) vibeTags.add('Business District');
@@ -163,7 +163,7 @@ async function main() {
 
             // 3. Seasonal Logic
             if (wikiData.seasonalFlags.includes('Sakura') && nature && nature.totalCount > 2) {
-                 // Lower threshold if wiki confirms it
+                // Lower threshold if wiki confirms it
                 vibeTags.add('Sakura Spot 🌸');
             }
         }
@@ -182,12 +182,12 @@ async function main() {
                 total: s.totalCount,
                 saved: s.savedCount
             })),
-            poiSample: categoryStats.flatMap(s => s.places.slice(0, 3)) // Sample 3 per category
+            poiSample: categoryStats.flatMap(s => s.places.slice(0, 50)) // Keep up to 50 per category
         });
 
         // Save progress incrementally
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
-        
+
         // Sleep to respect rate limits
         await sleep(DELAY_MS);
     }

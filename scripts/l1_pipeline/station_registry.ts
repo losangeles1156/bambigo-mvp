@@ -2,6 +2,7 @@ import { CONFIG } from './config';
 import fs from 'fs';
 import path from 'path';
 import METRO_TOEI_PRIORITY_STATIONS from '../data/metro_toei_priority_stations';
+import AIRPORT_STATIONS from '../data/airport_stations';
 
 export interface TargetStation {
     id: string; // odpt:Station:Identify
@@ -227,6 +228,10 @@ function buildStationClusters(includeWardStations: boolean, wardsFilter: Set<str
         : [...METRO_TOEI_PRIORITY_STATIONS];
     console.log(`DEBUG: Adding ${metroToeiStations.length} Metro/Toei priority stations.`);
     allStations = [...allStations, ...metroToeiStations];
+
+    // Add Airport Stations (Phase 4) - Always include, no ward filter
+    console.log(`DEBUG: Adding ${AIRPORT_STATIONS.length} airport stations.`);
+    allStations = [...allStations, ...AIRPORT_STATIONS];
 
     if (includeWardStations) {
         console.log('DEBUG: Loading ward stations...');

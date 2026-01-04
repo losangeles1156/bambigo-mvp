@@ -2,13 +2,48 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { DecisionRecordRequest, DecisionRecordResponse } from '@/lib/types/userLearning';
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Supabase client - Use server-side environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY;
+
+// Get Supabase client instance
+const getSupabaseClient = () => {
+  if (!supabaseUrl || !supabaseKey) {
+    console.warn('[Decision Record API] Supabase credentials not configured');
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseKey);
+};
+
+import { getJSTTime } from '@/lib/utils/timeUtils';
+
+// Helper: Get time context based on current time (JST)
+function getTimeContext(): string {
+  const { hour } = getJSTTime();
+  if (hour >= 6 && hour < 12) return 'weekday-morning';
+  if (hour >= 12 && hour < 17) return 'weekday-afternoon';
+  if (hour >= 17 && hour < 21) return 'weekday-evening';
+  return 'night';
+}
+
+// Helper: Get day of week (JST)
+function getDayOfWeek(): string {
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  return days[getJSTTime().date.getDay()];
+}
+
+// Helper: Extract facility type from node ID
+function extractFacilityType(nodeId: string): string | null {
+  if (nodeId.includes('convenience')) return 'convenience';
+  if (nodeId.includes('cafe')) return 'cafe';
+  if (nodeId.includes('restaurant')) return 'restaurant';
+  if (nodeId.includes('station')) return 'station';
+  return 'general';
+}
 
 // POST /api/decision/record - Record a single decision
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
   try {
     const body: DecisionRecordRequest = await request.json();
     const {
@@ -28,7 +63,6 @@ export async function POST(request: NextRequest) {
       day_of_week
     } = body;
 
-    // Validate required fields
     if (!user_id) {
       return NextResponse.json({
         success: false,
@@ -43,12 +77,24 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-    const now = new Date().toISOString();
+    const supabase = getSupabaseClient();
 
-    // Determine time context
+    if (!supabase) {
+      const demoDecisionId = 'demo-decision-' + Date.now();
+      const duration = Date.now() - startTime;
+      console.log(`[Decision Record API] Demo: ${duration}ms - User ${user_id} decision ${demoDecisionId}`);
+
+      return NextResponse.json({
+        success: true,
+        decision_id: demoDecisionId,
+        mode: 'demo',
+        response_time_ms: duration
+      } as DecisionRecordResponse & { response_time_ms: number });
+    }
+
+    const now = new Date().toISOString();
     const timeContext = time_of_day || getTimeContext();
 
-    // Insert decision log
     const { data: decision, error } = await supabase
       .from('decision_logs')
       .insert({
@@ -82,31 +128,32 @@ export async function POST(request: NextRequest) {
       }, { status: 500 });
     }
 
-    // Update facility preference weights for selected nodes
     if (selected_node_ids && selected_node_ids.length > 0) {
-      await updatePreferenceWeights(user_id, selected_node_ids);
+      await updatePreferenceWeights(supabase, user_id, selected_node_ids);
     }
 
-    // Invalidate learning results cache
-    // await redis.del(`learning_results:${user_id}`);
-
-    console.log(`[Decision Record API] User ${user_id} recorded decision ${decision.id}`);
+    const duration = Date.now() - startTime;
+    console.log(`[Decision Record API] ${duration}ms - User ${user_id} decision ${decision.id}`);
 
     return NextResponse.json({
       success: true,
-      decision_id: decision.id
-    } as DecisionRecordResponse);
+      decision_id: decision.id,
+      response_time_ms: duration
+    } as DecisionRecordResponse & { response_time_ms: number });
   } catch (error) {
-    console.error('[Decision Record API] Error:', error);
+    const duration = Date.now() - startTime;
+    console.error(`[Decision Record API] Error (${duration}ms):`, error);
     return NextResponse.json({
       success: false,
-      error: 'Failed to record decision'
+      error: 'Failed to record decision',
+      response_time_ms: duration
     }, { status: 500 });
   }
 }
 
 // GET /api/decision/record - Get decision history
 export async function GET(request: NextRequest) {
+  const startTime = Date.now();
   try {
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get('user_id');
@@ -120,6 +167,21 @@ export async function GET(request: NextRequest) {
       }, { status: 400 });
     }
 
+    const supabase = getSupabaseClient();
+
+    if (!supabase) {
+      const duration = Date.now() - startTime;
+      return NextResponse.json({
+        success: true,
+        decisions: [],
+        total: 0,
+        limit,
+        offset,
+        mode: 'demo',
+        response_time_ms: duration
+      });
+    }
+
     const { data, error, count } = await supabase
       .from('decision_logs')
       .select('*', { count: 'exact' })
@@ -129,50 +191,31 @@ export async function GET(request: NextRequest) {
 
     if (error) throw error;
 
+    const duration = Date.now() - startTime;
     return NextResponse.json({
       success: true,
       decisions: data || [],
       total: count || 0,
       limit,
-      offset
+      offset,
+      response_time_ms: duration
     });
   } catch (error) {
-    console.error('[Decision Record API] Fetch error:', error);
+    const duration = Date.now() - startTime;
+    console.error(`[Decision Record API] Fetch error (${duration}ms):`, error);
     return NextResponse.json({
       success: false,
-      error: 'Failed to fetch decisions'
+      error: 'Failed to fetch decisions',
+      response_time_ms: duration
     }, { status: 500 });
   }
 }
 
-// Helper: Get time context based on current time
-function getTimeContext(): string {
-  const hour = new Date().getHours();
-  if (hour >= 6 && hour < 12) return 'weekday-morning';
-  if (hour >= 12 && hour < 17) return 'weekday-afternoon';
-  if (hour >= 17 && hour < 21) return 'weekday-evening';
-  return 'night';
-}
-
-// Helper: Get day of week
-function getDayOfWeek(): string {
-  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  return days[new Date().getDay()];
-}
-
-// Helper: Update facility preference weights
-async function updatePreferenceWeights(userId: string, selectedNodeIds: string[]) {
+async function updatePreferenceWeights(supabase: any, userId: string, selectedNodeIds: string[]) {
   try {
-    // For each selected node, update or create preference weight
-    // Note: In production, you would look up the facility types from the nodes table
-    // This is a simplified version
-    
     for (const nodeId of selectedNodeIds) {
-      // Extract facility type from node ID (simplified - would need proper lookup)
       const facilityType = extractFacilityType(nodeId);
-      
       if (facilityType) {
-        // Check if weight exists
         const { data: existing } = await supabase
           .from('facility_preference_weights')
           .select('*')
@@ -181,13 +224,12 @@ async function updatePreferenceWeights(userId: string, selectedNodeIds: string[]
           .single();
 
         if (existing) {
-          // Update existing weight
           const newFreqScore = Math.min((existing.selection_count + 1) / 100, 1.0);
           await supabase
             .from('facility_preference_weights')
             .update({
               frequency_score: newFreqScore,
-              recency_score: 1.0,  // Most recent
+              recency_score: 1.0,
               last_selected_at: new Date().toISOString(),
               selection_count: existing.selection_count + 1,
               combined_score: newFreqScore * 0.3 + 1.0 * 0.3 + existing.positive_feedback_score * 0.25 + (1 - existing.negative_feedback_score) * 0.15,
@@ -196,7 +238,6 @@ async function updatePreferenceWeights(userId: string, selectedNodeIds: string[]
             })
             .eq('id', existing.id);
         } else {
-          // Create new weight
           await supabase
             .from('facility_preference_weights')
             .insert({
@@ -206,7 +247,7 @@ async function updatePreferenceWeights(userId: string, selectedNodeIds: string[]
               recency_score: 1.0,
               positive_feedback_score: 0,
               negative_feedback_score: 0,
-              combined_score: 0.01 * 0.3 + 1.0 * 0.3,  // Initial score
+              combined_score: 0.01 * 0.3 + 1.0 * 0.3,
               selection_count: 1,
               last_selected_at: new Date().toISOString(),
               version: 1,
@@ -218,17 +259,4 @@ async function updatePreferenceWeights(userId: string, selectedNodeIds: string[]
   } catch (error) {
     console.error('[Decision Record API] Weight update error:', error);
   }
-}
-
-// Helper: Extract facility type from node ID
-function extractFacilityType(nodeId: string): string | null {
-  // Simplified - would need proper mapping from node ID to facility type
-  // This is just an example
-  if (nodeId.includes('convenience')) return 'convenience';
-  if (nodeId.includes('cafe')) return 'cafe';
-  if (nodeId.includes('restaurant')) return 'restaurant';
-  if (nodeId.includes('station')) return 'station';
-  
-  // Default fallback - would need to query nodes table for actual type
-  return 'general';
 }

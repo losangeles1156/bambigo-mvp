@@ -7,13 +7,13 @@ import fs from 'fs/promises';
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY! || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const ODPT_PROD = 'https://api.odpt.org/api/v4';
 const ODPT_PUB = 'https://api-public.odpt.org/api/v4';
 const ODPT_CHALLENGE = 'https://api-challenge.odpt.org/api/v4';
 
-const TOKEN_DEV = process.env.ODPT_API_TOKEN;
-const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP;
+const TOKEN_DEV = process.env.ODPT_API_TOKEN_STANDARD || process.env.ODPT_API_TOKEN;
+const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_CHALLENGE || process.env.ODPT_API_TOKEN_BACKUP;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -28,11 +28,11 @@ async function fetchOdpt(type: string, params: Record<string, string>) {
     if (operator.includes('Toei')) {
         baseUrl = ODPT_PUB;
         token = undefined;
-    } else if (operator.includes('JR-East')) {
+    } else if (operator.includes('JR-East') || operator.includes('Tobu') || operator.includes('Keikyu') || operator.includes('Tokyu')) {
         baseUrl = ODPT_CHALLENGE;
         token = TOKEN_CHALLENGE;
     } else {
-        // Metro, MIR, etc.
+        // Metro, MIR, TWR, etc.
         baseUrl = ODPT_PROD;
         token = TOKEN_DEV;
     }
@@ -61,6 +61,10 @@ function getOperatorFromId(stationId: string): string {
     if (stationId.includes('TokyoMetro')) return 'odpt.Operator:TokyoMetro';
     if (stationId.includes('JR-East')) return 'odpt.Operator:JR-East';
     if (stationId.includes('MIR')) return 'odpt.Operator:MIR';
+    if (stationId.includes('Tobu')) return 'odpt.Operator:Tobu';
+    if (stationId.includes('Keikyu')) return 'odpt.Operator:Keikyu';
+    if (stationId.includes('Tokyu')) return 'odpt.Operator:Tokyu';
+    if (stationId.includes('TWR')) return 'odpt.Operator:TWR';
     return ''; // Unknown
 }
 
@@ -86,6 +90,13 @@ async function runETL() {
     for (const node of nodes) {
         const stationId = node.id;
         const operator = getOperatorFromId(stationId);
+
+        // Filter: Only process new operators or specific targets
+        const newOperators = ['odpt.Operator:Tobu', 'odpt.Operator:Keikyu', 'odpt.Operator:Tokyu', 'odpt.Operator:TWR'];
+        if (!newOperators.includes(operator)) {
+            // console.log(`[Skip] Already processed or not target: ${stationId}`);
+            continue;
+        }
 
         if (!operator) {
             console.log(`[Skip] Unknown operator for ${stationId}`);

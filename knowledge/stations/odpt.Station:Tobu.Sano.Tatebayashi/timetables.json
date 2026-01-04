@@ -1,0 +1,652 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175E92",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Sano.Tatebayashi.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Sano",
+    "odpt:station": "odpt.Station:Tobu.Sano.Tatebayashi",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.601E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601E",
+        "odpt:departureTime": "05:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.603E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "603E",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.605E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "605E",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.607E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "607E",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.609E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "609E",
+        "odpt:departureTime": "07:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.611E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "611E",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.613E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "613E",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.615E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "615E",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.617E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "617E",
+        "odpt:departureTime": "10:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.619E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "619E",
+        "odpt:departureTime": "11:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.621E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "621E",
+        "odpt:departureTime": "12:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.623E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "623E",
+        "odpt:departureTime": "13:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.625E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "625E",
+        "odpt:departureTime": "14:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.627E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "627E",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.629E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "629E",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.631E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "631E",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.633E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "633E",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.635E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "635E",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.637E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "637E",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.639E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "639E",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.641E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "641E",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.643E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "643E",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.645E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "645E",
+        "odpt:departureTime": "19:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.647E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "647E",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.649E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "649E",
+        "odpt:departureTime": "20:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.651E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "651E",
+        "odpt:departureTime": "20:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.653E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "653E",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.1643",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1643",
+        "odpt:departureTime": "21:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.655E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "655E",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.657E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "657E",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.659E",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "659E",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175E94",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Sano.Tatebayashi.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Sano",
+    "odpt:station": "odpt.Station:Tobu.Sano.Tatebayashi",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.601E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601E",
+        "odpt:departureTime": "05:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.603E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "603E",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.605E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "605E",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.607E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "607E",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.609E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "609E",
+        "odpt:departureTime": "07:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.611E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "611E",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.613E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "613E",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.615E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "615E",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.617E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "617E",
+        "odpt:departureTime": "10:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.619E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "619E",
+        "odpt:departureTime": "11:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.621E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "621E",
+        "odpt:departureTime": "12:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.623E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "623E",
+        "odpt:departureTime": "13:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.625E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "625E",
+        "odpt:departureTime": "14:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.627E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "627E",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.629E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "629E",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.631E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "631E",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.633E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "633E",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.635E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "635E",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.637E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "637E",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.639E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "639E",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.641E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "641E",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.643E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "643E",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.645E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "645E",
+        "odpt:departureTime": "19:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.647E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "647E",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.649E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "649E",
+        "odpt:departureTime": "20:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.651E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "651E",
+        "odpt:departureTime": "20:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.653E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "653E",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.1643",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1643",
+        "odpt:departureTime": "21:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.655E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "655E",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.657E",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "657E",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Sano.659E",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "659E",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      }
+    ]
+  }
+]

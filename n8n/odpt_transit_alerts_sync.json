@@ -1,0 +1,199 @@
+{
+    "name": "ODPT Transit Alerts → Supabase Sync",
+    "nodes": [
+        {
+            "parameters": {
+                "rule": {
+                    "interval": [
+                        {
+                            "field": "minutes",
+                            "minutesInterval": 2
+                        }
+                    ]
+                }
+            },
+            "id": "cron-trigger",
+            "name": "Every 2 Minutes",
+            "type": "n8n-nodes-base.scheduleTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                240,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "GET",
+                "url": "https://api.odpt.org/api/v4/odpt:TrainInformation",
+                "authentication": "genericCredentialType",
+                "genericAuthType": "httpQueryAuth",
+                "sendQuery": true,
+                "queryParameters": {
+                    "parameters": []
+                },
+                "sendHeaders": false,
+                "options": {}
+            },
+            "id": "http-odpt-metro",
+            "name": "Fetch Metro Alerts",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                460,
+                200
+            ],
+            "credentials": {
+                "httpQueryAuth": {
+                    "id": "ODPT_STANDARD_TOKEN",
+                    "name": "ODPT Standard Token"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "method": "GET",
+                "url": "https://api-public.odpt.org/api/v4/odpt:TrainInformation?odpt:operator=odpt.Operator:Toei",
+                "options": {}
+            },
+            "id": "http-odpt-toei",
+            "name": "Fetch Toei Alerts",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 4.1,
+            "position": [
+                460,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "mode": "combine",
+                "mergeByFields": {
+                    "values": []
+                },
+                "combinationMode": "mergeByPosition",
+                "options": {}
+            },
+            "id": "merge-alerts",
+            "name": "Merge Alerts",
+            "type": "n8n-nodes-base.merge",
+            "typeVersion": 2.1,
+            "position": [
+                680,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "jsCode": "// Transform ODPT data to Supabase schema\nconst items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const data = item.json;\n  if (Array.isArray(data)) {\n    for (const alert of data) {\n      results.push({\n        json: {\n          id: alert['owl:sameAs'],\n          operator: alert['odpt:operator'],\n          railway: alert['odpt:railway'],\n          status: alert['odpt:trainInformationStatus']?.ja || 'Unknown',\n          text_ja: alert['odpt:trainInformationText']?.ja || '',\n          text_en: alert['odpt:trainInformationText']?.en || '',\n          occurred_at: alert['dc:date'],\n          updated_at: new Date().toISOString()\n        }\n      });\n    }\n  }\n}\n\nreturn results;"
+            },
+            "id": "transform-code",
+            "name": "Transform to DB Schema",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                900,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "operation": "upsert",
+                "tableId": "transit_alerts",
+                "conflictingFields": [
+                    "id"
+                ],
+                "dataMode": "autoMapInputData",
+                "options": {}
+            },
+            "id": "supabase-upsert",
+            "name": "Upsert to Supabase",
+            "type": "n8n-nodes-base.supabase",
+            "typeVersion": 1,
+            "position": [
+                1120,
+                300
+            ],
+            "credentials": {
+                "supabaseApi": {
+                    "id": "SUPABASE_CREDENTIALS",
+                    "name": "BambiGO Supabase"
+                }
+            }
+        }
+    ],
+    "connections": {
+        "Every 2 Minutes": {
+            "main": [
+                [
+                    {
+                        "node": "Fetch Metro Alerts",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Fetch Toei Alerts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Fetch Metro Alerts": {
+            "main": [
+                [
+                    {
+                        "node": "Merge Alerts",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Fetch Toei Alerts": {
+            "main": [
+                [
+                    {
+                        "node": "Merge Alerts",
+                        "type": "main",
+                        "index": 1
+                    }
+                ]
+            ]
+        },
+        "Merge Alerts": {
+            "main": [
+                [
+                    {
+                        "node": "Transform to DB Schema",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Transform to DB Schema": {
+            "main": [
+                [
+                    {
+                        "node": "Upsert to Supabase",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [
+        "ODPT",
+        "Transit",
+        "Supabase"
+    ],
+    "triggerCount": 0,
+    "meta": {
+        "instanceId": "bambigo-mvp"
+    }
+}

@@ -1,0 +1,1612 @@
+[
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D188",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Zushi.KanazawaHakkei.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Keikyu.Zushi",
+    "odpt:station": "odpt.Station:Keikyu.Zushi.KanazawaHakkei",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "22:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "00:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D18A",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Zushi.KanazawaHakkei.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Keikyu.Zushi",
+    "odpt:station": "odpt.Station:Keikyu.Zushi.KanazawaHakkei",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "00:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      }
+    ]
+  }
+]

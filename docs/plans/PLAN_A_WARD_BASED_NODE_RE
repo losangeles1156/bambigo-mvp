@@ -1,0 +1,183 @@
+# PLAN_A_WARD_BASED_NODE_REDESIGN.md
+
+## 概述 (Overview)
+
+本文檔描述 BambiGO MVP 前端節點的 ward-based 重建計劃，旨在解決以下問題：
+
+1. 公車站牌 (`bus_stop`) 與火車站混合顯示在地圖上
+2. 父子節點關係失效 - 父節點和子節點同時顯示
+3. viewport 驅動的數據加載顯示過多不相關的節點
+
+## 目標 (Goals)
+
+- 過濾掉非車站類型的節點（公車站牌、POI、設施等）
+- 只顯示 hub 節點（`is_hub=true`）
+- 為每個節點添加 `ward_id` 欄位，便於按行政區分組
+- 改善地圖顯示的整潔度和用戶體驗
+
+## 技術實現 (Implementation)
+
+### 1. API 層修改
+
+**檔案**: `src/app/api/nodes/viewport/route.ts`
+
+**變更**:
+- 添加節點類型過濾：只返回 `type = 'station'` 的節點
+- 在 `hubsOnly` 模式下，只返回 `is_hub = true` 的節點
+- 在響應中添加 `ward_id` 欄位
+
+```typescript
+// 過濾條件
+if (typeFilter === 'hubs') {
+  query = query.eq('is_hub', true);
+} else if (typeFilter === 'stations') {
+  query = query.eq('type', 'station');
+}
+
+// 只返回車站類型
+query = query.eq('type', 'station');
+```
+
+### 2. 前端緩存更新
+
+**檔案**: `src/components/map/MapContainer.tsx`
+
+**變更**:
+- 更新緩存版本從 `v2` 到 `v3`
+- 強制刷新客戶端緩存
+
+```typescript
+const CACHE_KEY = 'bambi_nodes_v3';
+```
+
+### 3. 數據庫遷移
+
+**檔案**:
+- `supabase/migrations/20260104070000_create_wards_simple.sql` - 創建 wards 表
+- `supabase/migrations/20260104080000_add_ward_boundaries.sql` - 添加 23 個行政區邊界
+- `supabase/migrations/20260104100000_simple_ward_assign.sql` - 為節點分配 ward_id
+
+## 數據結構 (Data Structure)
+
+### Wards 表結構
+
+| 欄位 | 類型 | 描述 |
+|------|------|------|
+| id | text | 行政區 ID (如 `ward:chuo`) |
+| name | text | 行政區名稱 |
+| name_en | text | 行政區英文名稱 |
+| geometry | geometry | 邊界多邊形 |
+| center_lat | float8 | 中心緯度 |
+| center_lng | float8 | 中心經度 |
+
+### 節點 ward_id 分配
+
+```sql
+-- 基於最近行政區中心點的簡單分配
+UPDATE nodes n
+SET ward_id = (
+  SELECT w.id
+  FROM wards w
+  ORDER BY (
+    ST_Distance(
+      ST_SetSRID(ST_Point(w.center_lng, w.center_lat), 4326),
+      ST_SetSRID(ST_Point(n.lng, n.lat), 4326)
+    )
+  )
+  LIMIT 1
+)
+WHERE n.type = 'station' AND n.ward_id IS NULL;
+```
+
+## API 響應格式 (API Response Format)
+
+```json
+{
+  "nodes": [
+    {
+      "id": "TokyoMetro.Tozai.Iidabashi",
+      "type": "station",
+      "is_hub": true,
+      "parent_hub_id": null,
+      "ward_id": "ward:chiyoda",
+      "lat": 35.7022,
+      "lng": 139.7556,
+      "name": "飯田橋",
+      "name_en": "Iidabashi"
+    }
+  ],
+  "meta": {
+    "total_nodes": 123,
+    "ward_coverage": 456
+  }
+}
+```
+
+## 使用說明 (Usage)
+
+### 獲取所有 Hub 節點
+
+```
+GET /api/nodes/viewport?hubsOnly=true
+```
+
+### 獲取特定行政區的節點
+
+```
+GET /api/nodes/viewport?ward=ward:shinjuku
+```
+
+### 獲取 viewport 內的車站節點
+
+```
+GET /api/nodes/viewport?bounds=35.65,139.7,35.75,139.8
+```
+
+## 已完成工作 (Completed Tasks)
+
+- [x] API 過濾公車站牌
+- [x] API 添加 ward_id 欄位
+- [x] 過濾邏輯：在 hubsOnly 模式下只返回 is_hub=true 的節點
+- [x] SQL 遷移執行
+- [x] 驗證 API 返回正確數據
+- [x] 重啟開發伺服器並刷新頁面
+
+## 待執行步驟 (Next Steps)
+
+1. 在 Supabase SQL Editor 中執行以下遷移：
+   - `supabase/migrations/20260104080000_add_ward_boundaries.sql`
+   - `supabase/migrations/20260104100000_simple_ward_assign.sql`
+
+2. 前端瀏覽器硬刷新 (Ctrl+Shift+R / Cmd+Shift+R)
+
+3. 驗證：
+   - 只顯示 hub 車站（無公車站牌）
+   - ward_id 正確顯示
+
+## 問題排查 (Troubleshooting)
+
+### Q: 仍然看到公車站牌
+A: 執行硬刷新 (Ctrl+Shift+R / Cmd+Shift+R) 清除瀏覽器緩存
+
+### Q: ward_id 為空
+A: 檢查 SQL 遷移是否在 Supabase 中執行
+
+### Q: GitHub 推送失敗
+A: 確認遠程倉庫 URL 正確，且有訪問權限
+
+## 相關檔案 (Related Files)
+
+- `src/app/api/nodes/viewport/route.ts` - Viewport API 端點
+- `src/components/map/MapContainer.tsx` - 地圖容器組件
+- `plans/tokyo_23_wards_execution_plan_v2.md` - 執行計劃 (舊版)
+- `plans/station-node-grouping-design.md` - 車站節點分組設計
+
+## 更新日誌 (Changelog)
+
+| 日期 | 版本 | 變更 |
+|------|------|------|
+| 2026-01-04 | 1.0 | 初始版本 |
+
+---
+
+**最後更新**: 2026-01-04

@@ -1,3 +1,4 @@
+import { getJSTTime } from '@/lib/utils/timeUtils';
 import {
     ExpertKnowledge,
     KnowledgeTrigger,
@@ -14,7 +15,7 @@ export class L4DecisionEngine {
      * Evaluates the Knowledge Base against the user's context to find relevant advice.
      */
     public evaluate(context: EvaluationContext): MatchedStrategyCard[] {
-        const { stationId, lineIds = [], userPreferences, currentDate = new Date(), locale } = context;
+        const { stationId, lineIds = [], userPreferences, currentDate = getJSTTime().date, locale } = context;
         const matches: MatchedStrategyCard[] = [];
 
         // Helper to get active user state keys
@@ -95,13 +96,12 @@ export class L4DecisionEngine {
             }
         }
 
-        // 3. User State Match (If defined, ALL listed states must be active)
-        // e.g. Rule requires [Wheelchair, HeavyLuggage] -> User must have both.
+        // 3. User State Match (If defined, AT LEAST ONE state must be active - OR Logic)
+        // e.g. Rule targets [Wheelchair, Stroller] -> User having either one matches.
         if (trigger.user_states && trigger.user_states.length > 0) {
-            for (const requiredState of trigger.user_states) {
-                if (!activeUserStates.has(requiredState)) {
-                    return false;
-                }
+            const hasMatchingState = trigger.user_states.some(state => activeUserStates.has(state));
+            if (!hasMatchingState) {
+                return false;
             }
         }
 
@@ -116,25 +116,55 @@ export class L4DecisionEngine {
         return true;
     }
 
-    /**
-     * Helper: Matches ISO Date Range (YYYY-MM-DD/YYYY-MM-DD) or Time Range (HH:mm-HH:mm)
-     */
+    // Helper to parser MM/DD and check range even across years
     private matchesTimePattern(pattern: string, date: Date): boolean {
-        // 1. Date Range: "2025-12-31/2026-01-01"
-        if (pattern.includes('/')) {
-            const [startStr, endStr] = pattern.split('/');
-            const start = new Date(startStr);
-            const end = new Date(endStr);
-            // Adjust end date to end of day if needed, simple comparison for now
-            end.setHours(23, 59, 59, 999);
+        // pattern example: "12/31-01/01"
+        if (pattern.includes('-')) {
+            const [startStr, endStr] = pattern.split('-');
+            // Helper specific for MM/DD format
+            const parseMMDD = (str: string, currentYear: number) => {
+                const [m, d] = str.split('/').map(Number);
+                // Date.UTC creates a UTC timestamp. Since our 'date' from getJSTTime() is technically a UTC-based representation of JST, this lines up.
+                return new Date(Date.UTC(currentYear, m - 1, d));
+            };
 
-            const check = date.getTime();
-            return check >= start.getTime() && check <= end.getTime();
+            const currentYear = date.getFullYear();
+            const start = parseMMDD(startStr, currentYear);
+            let end = parseMMDD(endStr, currentYear);
+
+            // Handle year crossing (e.g. 12/31 to 01/01)
+            // If end is before start, assume end is next year
+            if (end.getTime() < start.getTime()) {
+                end = parseMMDD(endStr, currentYear + 1);
+            }
+
+            // Set end to end of day
+            end.setUTCHours(23, 59, 59, 999);
+
+            // Check if 'date' is within range.
+            // We need to handle the case where 'date' might be Jan 1st, but 'start' is Dec 31st (previous year).
+            // If date is Jan 01, and range is 12/31-01/01.
+            // With above logic: Start=2026-12-31, End=2027-01-01.
+            // Date=2026-01-01. Check fails.
+            // We need to check "Current Year" version AND "Last Year" version if we are in Jan.
+            // OR simpler: check if date is in range (Start_Year_N, End_Year_N) OR (Start_Year_N-1, End_Year_N-1) if crossing.
+
+            const checkRange = (s: Date, e: Date) => {
+                return date.getTime() >= s.getTime() && date.getTime() <= e.getTime();
+            };
+
+            if (checkRange(start, end)) return true;
+
+            // Special handling for New Year crossing when current date is early in the year
+            if (endStr.startsWith('01/') && date.getMonth() === 0) {
+                const prevStart = parseMMDD(startStr, currentYear - 1);
+                const prevEnd = parseMMDD(endStr, currentYear);
+                prevEnd.setUTCHours(23, 59, 59, 999);
+                if (checkRange(prevStart, prevEnd)) return true;
+            }
+
+            return false;
         }
-
-        // 2. Time Range: "08:00-10:00" (TODO: Implement if needed for Rush Hour)
-        // For MVP seed data (New Year), Date Range is sufficient.
-
         return false;
     }
 

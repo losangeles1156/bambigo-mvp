@@ -5,14 +5,20 @@ import path from 'path';
 import fs from 'fs';
 
 // --- Configuration ---
+// Optimized with exponential backoff retry and reduced concurrency for stability
 const CONFIG = {
     // Hybrid Ranges
     RANGE_WIDE: 800,   // Culture, Leisure, Medical, Business, Nature, Service, Accommodation
     RANGE_CORE: 300,   // Dining, Shopping, Finance
 
-    CONCURRENCY: 4,
-    DELAY_MS: 3000,
-    MAX_RETRIES: 4,
+    // Retry Settings (optimized for Overpass API rate limits)
+    CONCURRENCY: 2,           // Reduced from 4 to avoid rate limiting
+    DELAY_MS: 10000,          // Increased from 3000ms for better stability
+    MAX_RETRIES: 6,           // Increased from 4 for better recovery
+    INITIAL_RETRY_DELAY: 5000, // Initial delay before first retry
+    BACKOFF_MULTIPLIER: 2.5,  // Exponential backoff multiplier
+    MAX_RETRY_DELAY: 120000,  // Max 2 minutes between retries
+    JITTER_RANGE: 0.3,        // Random jitter to desynchronize clients
 
     // Quotas
     QUOTAS: {
@@ -138,6 +144,16 @@ function classifyPOI(tags: any): { category: string, subcategory: string } | nul
 
 // --- Main Worker ---
 
+/**
+ * Calculate exponential backoff delay with jitter
+ */
+function calculateRetryDelay(retries: number): number {
+    const baseDelay = CONFIG.INITIAL_RETRY_DELAY * Math.pow(CONFIG.BACKOFF_MULTIPLIER, retries);
+    const cappedDelay = Math.min(baseDelay, CONFIG.MAX_RETRY_DELAY);
+    const jitterFactor = 1 + (Math.random() * 2 - 1) * CONFIG.JITTER_RANGE;
+    return Math.round(cappedDelay * jitterFactor);
+}
+
 async function fetchOverpass(query: string, retries = 0): Promise<any> {
     const url = 'https://overpass-api.de/api/interpreter';
     try {
@@ -153,8 +169,8 @@ async function fetchOverpass(query: string, retries = 0): Promise<any> {
         clearTimeout(timeout);
 
         if (response.status === 429 || response.status === 504) {
-            const wait = Math.pow(2, retries) * 5000 + (Math.random() * 2000);
-            console.log(`⚠️ HTTP ${response.status}, waiting ${Math.round(wait)}ms...`);
+            const wait = calculateRetryDelay(retries);
+            console.log(`⚠️ HTTP ${response.status}, waiting ${wait}ms...`);
             await new Promise(r => setTimeout(r, wait));
             if (retries >= CONFIG.MAX_RETRIES) throw new Error(`Max retries hit (${response.status})`);
             return fetchOverpass(query, retries + 1);
@@ -165,8 +181,9 @@ async function fetchOverpass(query: string, retries = 0): Promise<any> {
 
     } catch (e: any) {
         if (retries >= CONFIG.MAX_RETRIES) throw e;
-        console.log(`⚠️ Network Error: ${e.message}, retrying...`);
-        await new Promise(r => setTimeout(r, 5000));
+        const wait = calculateRetryDelay(retries);
+        console.log(`⚠️ Network Error: ${e.message}, waiting ${wait}ms...`);
+        await new Promise(r => setTimeout(r, wait));
         return fetchOverpass(query, retries + 1);
     }
 }

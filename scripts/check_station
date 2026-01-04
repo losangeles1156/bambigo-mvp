@@ -1,0 +1,80 @@
+/**
+ * Check if specific stations exist in the database
+ * Run: npx tsx scripts/check_station_exists.ts
+ */
+
+import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+async function checkStations() {
+    if (!supabaseUrl || !supabaseKey) {
+        console.log('❌ Missing Supabase credentials');
+        return;
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // List of stations to check
+    const stationsToCheck = [
+        'odpt.Station:JR-East.Shibuya',       // 渋谷
+        'odpt.Station:JR-East.Shinagawa',     // 品川
+        'odpt.Station:JR-East.Ebisu',         // 恵比寿
+        'odpt.Station:JR-East.Meguro',        // 目黒
+        'odpt.Station:JR-East.Osaki',         // 大崎
+        'odpt.Station:JR-East.Gotanda',       // 五反田
+        'odpt.Station:JR-East.Tamachi',       // 田町
+        'odpt.Station:JR-East.Hamamatsucho',  // 浜町
+        'odpt.Station:JR-East.Shinbashi',     // 新橋
+        'odpt.Station:TokyoMetro.Ginza',      // 銀座
+        'odpt.Station:TokyoMetro.Nihombashi', // 日本橋
+        'odpt.Station:TokyoMetro.Kayabacho',  // 茅場町
+        'odpt.Station:TokyoMetro.Hibiya',     // 日比谷
+        'odpt.Station:Toei.Mita.Shimbashi',   // 三田
+    ];
+
+    console.log('='.repeat(60));
+    console.log('Station Existence Check');
+    console.log('='.repeat(60));
+
+    for (const stationId of stationsToCheck) {
+        const { data, error } = await supabase
+            .from('nodes')
+            .select('id, name, is_hub, ward_id')
+            .eq('id', stationId)
+            .single();
+
+        if (data) {
+            const name = typeof data.name === 'object'
+                ? (data.name['zh-TW'] || data.name['ja'] || data.name['en'] || data.id)
+                : (data.name || data.id);
+            console.log(`✓ ${name}`);
+            console.log(`  ID: ${data.id}`);
+            console.log(`  is_hub: ${data.is_hub}`);
+            console.log(`  ward_id: ${data.ward_id || 'Not assigned'}`);
+            console.log('');
+        } else {
+            const stationName = stationId.split(':').pop();
+            console.log(`❌ ${stationName} - NOT FOUND in database`);
+            console.log(`   ID: ${stationId}`);
+            console.log('');
+        }
+    }
+
+    // Also check count of all is_hub=true
+    const { count } = await supabase
+        .from('nodes')
+        .select('*', { count: 'exact', head: true })
+        .eq('is_hub', true)
+        .eq('is_active', true);
+
+    console.log('='.repeat(60));
+    console.log(`Total nodes with is_hub=true: ${count}`);
+    console.log('='.repeat(60));
+}
+
+checkStations().catch(console.error);

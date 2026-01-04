@@ -144,19 +144,30 @@ export function L3_Facilities({ data }: L3_FacilitiesProps) {
     // Group facilities by type
     const groupedFacilities = useMemo(() => {
         const groups: Record<string, L3Facility[]> = {};
+
+        // Categories to hide for MVP due to data quality issues
+        const HIDDEN_CATEGORIES_MVP = new Set([
+            'barrier_free_entrance',
+            'Barrier_free_entrance'
+        ]);
+
+        // Max items per category for MVP (prevents overwhelming UI with bad data)
+        const MAX_ITEMS_PER_CATEGORY = 10;
+
         facilities.forEach(fac => {
+            // Skip hidden categories
+            if (HIDDEN_CATEGORIES_MVP.has(fac.type)) return;
+
             if (!groups[fac.type]) groups[fac.type] = [];
-            groups[fac.type].push(fac);
+            // Limit items per category
+            if (groups[fac.type].length < MAX_ITEMS_PER_CATEGORY) {
+                groups[fac.type].push(fac);
+            }
         });
         return groups;
     }, [facilities]);
 
-    // Set initial expanded category (first one)
-    useEffect(() => {
-        if (!expandedCategory && Object.keys(groupedFacilities).length > 0) {
-            setExpandedCategory(Object.keys(groupedFacilities)[0]);
-        }
-    }, [groupedFacilities, expandedCategory]);
+    // Categories now start collapsed (removed auto-expand logic for MVP)
 
     useEffect(() => {
         let isMounted = true;

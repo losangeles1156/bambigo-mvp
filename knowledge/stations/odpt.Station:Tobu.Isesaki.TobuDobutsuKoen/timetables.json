@@ -1,0 +1,1788 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175CD8",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Isesaki.TobuDobutsuKoen.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Isesaki",
+    "odpt:station": "odpt.Station:Tobu.Isesaki.TobuDobutsuKoen",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.501",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "501",
+        "odpt:departureTime": "05:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.503",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "503",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2501",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2501",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2503",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2503",
+        "odpt:departureTime": "06:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.505",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "505",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.507",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "507",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.509",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "509",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1801",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1801",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.511",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "511",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2505",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2505",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2507",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2507",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1803",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1803",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2509",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2509",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3501",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3501",
+        "odpt:departureTime": "08:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3503",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3503",
+        "odpt:departureTime": "08:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3505",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3505",
+        "odpt:departureTime": "09:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1805",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1805",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F755S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F755S",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3507",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3507",
+        "odpt:departureTime": "09:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F769S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F769S",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F877S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F877S",
+        "odpt:departureTime": "10:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2511",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2511",
+        "odpt:departureTime": "10:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1807",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1807",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F4756T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "F4756T",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F862T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F862T",
+        "odpt:departureTime": "10:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1409",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1409",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F864T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F864T",
+        "odpt:departureTime": "11:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1811",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1811",
+        "odpt:departureTime": "11:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F980T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F980T",
+        "odpt:departureTime": "11:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F968T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F968T",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F963S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F963S",
+        "odpt:departureTime": "12:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1813",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1813",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1004K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1004K",
+        "odpt:departureTime": "12:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1057S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1057S",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1001K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1001K",
+        "odpt:departureTime": "13:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1815",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1815",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1182T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1182T",
+        "odpt:departureTime": "13:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1154T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1154T",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1110K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1110K",
+        "odpt:departureTime": "14:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1817",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1817",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1221K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1221K",
+        "odpt:departureTime": "14:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1213K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1213K",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1211K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1211K",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1819",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1819",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1302K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1302K",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1350T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1350T",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1421",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1421",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1417K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1417K",
+        "odpt:departureTime": "16:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1418K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1418K",
+        "odpt:departureTime": "16:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1823",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1823",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1407K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1407K",
+        "odpt:departureTime": "16:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1425",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1425",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1565S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1565S",
+        "odpt:departureTime": "17:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4645T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4645T",
+        "odpt:departureTime": "17:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1512K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1512K",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1827",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1827",
+        "odpt:departureTime": "17:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1514K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1514K",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1429",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1429",
+        "odpt:departureTime": "17:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1676T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1676T",
+        "odpt:departureTime": "18:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4743T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4743T",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1831",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1831",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1608K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1608K",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3509",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3509",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1601K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1601K",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1433",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1433",
+        "odpt:departureTime": "18:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3511",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3511",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1751S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1751S",
+        "odpt:departureTime": "19:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4841T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4841T",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1835",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1835",
+        "odpt:departureTime": "19:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1654T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1654T",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3513",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3513",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1774T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1774T",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1837",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1837",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3515",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3515",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1870T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1870T",
+        "odpt:departureTime": "20:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4947T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4947T",
+        "odpt:departureTime": "20:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1339",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1339",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Isesaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1773S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1773S",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3517",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3517",
+        "odpt:departureTime": "20:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1841",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1841",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3519",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3519",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F4906K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "F4906K",
+        "odpt:departureTime": "21:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4045T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4045T",
+        "odpt:departureTime": "21:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1643",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1643",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3521",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3521",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1972T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1972T",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1845",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1845",
+        "odpt:departureTime": "21:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2513",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2513",
+        "odpt:departureTime": "22:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1447",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1447",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2515",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2515",
+        "odpt:departureTime": "22:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2517",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2517",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1549",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1549",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3523",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3523",
+        "odpt:departureTime": "23:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2519",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2519",
+        "odpt:departureTime": "23:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2521",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2521",
+        "odpt:departureTime": "23:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175CDB",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Isesaki.TobuDobutsuKoen.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Isesaki",
+    "odpt:station": "odpt.Station:Tobu.Isesaki.TobuDobutsuKoen",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.501",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "501",
+        "odpt:departureTime": "05:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.503",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "503",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2501",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2501",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2503",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2503",
+        "odpt:departureTime": "06:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F529K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F529K",
+        "odpt:departureTime": "06:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.505",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "505",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.507",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "507",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.509",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "509",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1801",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1801",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.511",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "511",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2505",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2505",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2507",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2507",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2509",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2509",
+        "odpt:departureTime": "08:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1803",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1803",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3501",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3501",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F680T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F680T",
+        "odpt:departureTime": "08:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3503",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3503",
+        "odpt:departureTime": "08:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3505",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3505",
+        "odpt:departureTime": "09:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1805",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1805",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F4741K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "F4741K",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F721K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F721K",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F4703K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "F4703K",
+        "odpt:departureTime": "10:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1807",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1807",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F855S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F855S",
+        "odpt:departureTime": "10:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F860T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F860T",
+        "odpt:departureTime": "10:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1409",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1409",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F815K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F815K",
+        "odpt:departureTime": "11:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1811",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1811",
+        "odpt:departureTime": "11:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F981S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F981S",
+        "odpt:departureTime": "11:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F968T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F968T",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F976T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F976T",
+        "odpt:departureTime": "12:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1813",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1813",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1020K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1020K",
+        "odpt:departureTime": "12:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1078T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1078T",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1058T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1058T",
+        "odpt:departureTime": "13:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1815",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1815",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1173S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1173S",
+        "odpt:departureTime": "13:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1154T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1154T",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1164T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1164T",
+        "odpt:departureTime": "14:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1817",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1817",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1289S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1289S",
+        "odpt:departureTime": "14:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1218K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1218K",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1274T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1274T",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1819",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1819",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1302K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1302K",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1350T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1350T",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1421",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1421",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1401K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1401K",
+        "odpt:departureTime": "16:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1480T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1480T",
+        "odpt:departureTime": "16:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1823",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1823",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1482T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1482T",
+        "odpt:departureTime": "16:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1425",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1425",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1512K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1512K",
+        "odpt:departureTime": "17:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1552T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1552T",
+        "odpt:departureTime": "17:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1827",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1827",
+        "odpt:departureTime": "17:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1565S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1565S",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1429",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1429",
+        "odpt:departureTime": "17:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1678T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1678T",
+        "odpt:departureTime": "18:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3507",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3507",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4743T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4743T",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1831",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1831",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1633K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1633K",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3509",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3509",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1635K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1635K",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1433",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1433",
+        "odpt:departureTime": "18:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2511",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2511",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1737K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1737K",
+        "odpt:departureTime": "19:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4847T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4847T",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1835",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1835",
+        "odpt:departureTime": "19:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1760T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1760T",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3511",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3511",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1756T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1756T",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1837",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1837",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2513",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2513",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1781S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1781S",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4945T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4945T",
+        "odpt:departureTime": "20:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1339",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1339",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Isesaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1802K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1802K",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3513",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3513",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1868T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1868T",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1841",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1841",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2515",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2515",
+        "odpt:departureTime": "20:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F4801K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "F4801K",
+        "odpt:departureTime": "21:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4041T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4041T",
+        "odpt:departureTime": "21:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1643",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1643",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Sano.Kuzu"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3515",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3515",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1921K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1921K",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1845",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1845",
+        "odpt:departureTime": "21:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3517",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3517",
+        "odpt:departureTime": "21:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F1982T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F1982T",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.B4143T",
+        "odpt:trainType": "odpt.TrainType:Tobu.TH-LINER",
+        "odpt:trainNumber": "B4143T",
+        "odpt:departureTime": "22:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1447",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1447",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3519",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3519",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2517",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2517",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.1549",
+        "odpt:trainType": "odpt.TrainType:Tobu.LimitedExpress",
+        "odpt:trainNumber": "1549",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.3521",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3521",
+        "odpt:departureTime": "23:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2519",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2519",
+        "odpt:departureTime": "23:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.2521",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2521",
+        "odpt:departureTime": "23:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Tatebayashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Isesaki.F2150T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "F2150T",
+        "odpt:departureTime": "00:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Isesaki.Kuki"
+        ]
+      }
+    ]
+  }
+]

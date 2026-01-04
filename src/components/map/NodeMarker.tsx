@@ -4,30 +4,47 @@ import { Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { useAppStore } from '@/stores/appStore';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Crown, MapPin, Train } from 'lucide-react';
+import { Crown, MapPin, Train, Link2 } from 'lucide-react';
 import { OPERATOR_COLORS, getPrimaryOperator } from '@/lib/constants/stationLines';
 import { getLocaleString } from '@/lib/utils/localeUtils';
+
+interface HubMemberInfo {
+    member_id: string;
+    member_name: any;
+    operator: string;
+    line_name: string | null;
+    transfer_type: string;
+    walking_seconds: number | null;
+    sort_order: number;
+}
 
 interface NodeMarkerProps {
     node: {
         id: string;
         name: any;
-        location: { coordinates: [number, number] }; // GeoJSON Point [lon, lat]
+        location: { coordinates: [number, number] };
         type: string;
         is_hub: boolean;
         tier?: 'major' | 'minor';
         mapDesign?: { color?: string; icon?: string };
         vibe?: string | null;
         facility_profile?: any;
-        children?: any[];
-        isParent?: boolean;
+        parent_hub_id?: string | null;
+    };
+    hubDetails?: {
+        member_count: number;
+        transfer_type: string;
+        transfer_complexity: string;
+        walking_distance_meters: number | null;
+        indoor_connection_notes: string | null;
+        members?: HubMemberInfo[];
     };
     zone: 'core' | 'buffer' | 'outer';
     locale?: string;
     zoom?: number;
 }
 
-export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProps) {
+export function NodeMarker({ node, hubDetails, locale = 'zh-TW', zoom = 22 }: NodeMarkerProps) {
     const { setCurrentNode, setBottomSheetOpen, currentNodeId } = useAppStore();
 
     // Coordinate Parsing
@@ -42,8 +59,8 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
 
     const isSelected = currentNodeId === node.id;
     const isMajor = node.tier === 'major' || node.is_hub;
-    const childCount = Array.isArray(node.children) ? node.children.length : 0;
-    const isGroup = childCount > 0;
+    const hasMembers = hubDetails && hubDetails.member_count > 0;
+    const memberCount = hubDetails?.member_count || 0;
 
     // [NEW] Operator-Based Color System
     const primaryOperator = getPrimaryOperator(node.id);
@@ -57,8 +74,17 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
 
     const baseColor = isSelected ? '#111827' : finalColor;
     const label = getLocaleString(node.name, locale) || node.id;
-    const ringRadiusClass = isGroup ? 'rounded-[22px]' : 'rounded-full';
-    const showLabel = isSelected || isGroup || isMajor || (zoom >= 15);
+    const ringRadiusClass = hasMembers ? 'rounded-[22px]' : 'rounded-full';
+    const showLabel = isSelected || hasMembers || isMajor || (zoom >= 15);
+
+    // Transfer type badge styling
+    const transferType = hubDetails?.transfer_type || 'indoor';
+    const transferLabels: Record<string, { label: string; bgColor: string }> = {
+        indoor: { label: '🔗', bgColor: '#10B981' },
+        outdoor: { label: '📍', bgColor: '#F59E0B' },
+        adjacent: { label: '🚶', bgColor: '#3B82F6' }
+    };
+    const transferBadge = transferLabels[transferType] || transferLabels.indoor;
 
     const handleClick = () => {
         setCurrentNode(node.id);
@@ -74,12 +100,12 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
                 <div className="absolute inset-0 rounded-full animate-ping opacity-15 bg-indigo-600" style={{ animationDuration: '3s' }} />
             )}
 
-            {isGroup && (
+            {hasMembers && (
                 <div className="absolute inset-0 rounded-[22px] bg-indigo-600/15 blur-md" />
             )}
 
             <div className="relative">
-                {isGroup && (
+                {hasMembers && (
                     <>
                         <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] rounded-[18px] bg-slate-900/15" />
                         <div className="absolute inset-0 translate-x-[3px] translate-y-[3px] rounded-[18px] bg-slate-900/10" />
@@ -87,8 +113,8 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
                 )}
 
                 <div
-                    className={`relative flex items-center justify-center border-[3px] border-white text-white shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-transform group-active:scale-[0.98] ${isGroup ? 'rounded-[18px]' : 'rounded-full'}`}
-                    style={{ width: isMajor || isGroup ? 56 : 48, height: isMajor || isGroup ? 56 : 48, backgroundColor: baseColor }}
+                    className={`relative flex items-center justify-center border-[3px] border-white text-white shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-transform group-active:scale-[0.98] ${hasMembers ? 'rounded-[18px]' : 'rounded-full'}`}
+                    style={{ width: isMajor || hasMembers ? 56 : 48, height: isMajor || hasMembers ? 56 : 48, backgroundColor: baseColor }}
                 >
                     <div className="drop-shadow-md">
                         <DisplayIcon size={isMajor ? 24 : 22} strokeWidth={2.6} />
@@ -105,12 +131,27 @@ export function NodeMarker({ node, locale = 'zh-TW', zoom = 22 }: NodeMarkerProp
                     </div>
                 )}
 
-                {isGroup && (
-                    <div className="absolute -top-2.5 -right-2.5 z-30">
-                        <div className="h-6 min-w-6 px-2 rounded-full bg-slate-900/90 text-white text-[10px] font-black flex items-center justify-center shadow-lg border border-white/30">
-                            +{childCount}
+                {hasMembers && (
+                    <>
+                        {/* Member count badge */}
+                        <div className="absolute -top-2.5 -right-2.5 z-30">
+                            <div 
+                                className="h-6 min-w-6 px-2 rounded-full text-white text-[10px] font-black flex items-center justify-center shadow-lg border border-white/30"
+                                style={{ backgroundColor: baseColor }}
+                            >
+                                +{memberCount}
+                            </div>
                         </div>
-                    </div>
+                        
+                        {/* Transfer type indicator */}
+                        <div 
+                            className="absolute -bottom-1.5 -left-1.5 z-30 w-5 h-5 rounded-full flex items-center justify-center shadow-md border border-white"
+                            style={{ backgroundColor: transferBadge.bgColor }}
+                            title={hubDetails?.indoor_connection_notes || transferType}
+                        >
+                            <Link2 size={10} className="text-white" />
+                        </div>
+                    </>
                 )}
 
                 <div

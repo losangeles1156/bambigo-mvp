@@ -1,0 +1,4962 @@
+[
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B96E",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.ShinagawaSeaside.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.ShinagawaSeaside",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.580T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "580T",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.682T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "682T",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.684T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "684T",
+        "odpt:departureTime": "06:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636K",
+        "odpt:departureTime": "06:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.680T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "680T",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636T",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.506F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "506F",
+        "odpt:departureTime": "07:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.610K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "610K",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.784T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "784T",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.650K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "650K",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.644F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "644F",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.600K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "600K",
+        "odpt:departureTime": "07:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.612F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "612F",
+        "odpt:departureTime": "07:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.752K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "752K",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.706K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "706K",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.642F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "642F",
+        "odpt:departureTime": "08:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.716K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "716K",
+        "odpt:departureTime": "08:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.844K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "844K",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.800K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "800K",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.718K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "718K",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.790F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "790F",
+        "odpt:departureTime": "08:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.852K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "852K",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.882K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "882K",
+        "odpt:departureTime": "08:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.704F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "704F",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.836K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "836K",
+        "odpt:departureTime": "09:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.840F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "840F",
+        "odpt:departureTime": "09:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.918K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "918K",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.888K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "888K",
+        "odpt:departureTime": "09:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.990T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "990T",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.848F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "848F",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.810K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "810K",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.880F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "880F",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.968K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "968K",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.986F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "986F",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1040K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1040K",
+        "odpt:departureTime": "10:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.950F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "950F",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1088T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1088T",
+        "odpt:departureTime": "10:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1048K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1048K",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.966F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "966F",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1110K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1110K",
+        "odpt:departureTime": "11:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1006F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1006F",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1140K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1140K",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1016F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1016F",
+        "odpt:departureTime": "11:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1150K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1150K",
+        "odpt:departureTime": "11:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1188T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1188T",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1000F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1000F",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1266K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1266K",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1182F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1182F",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1240K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1240K",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1136F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1136F",
+        "odpt:departureTime": "12:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1216K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1216K",
+        "odpt:departureTime": "12:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1250K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1250K",
+        "odpt:departureTime": "13:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1118F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1118F",
+        "odpt:departureTime": "13:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1388T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1388T",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1280F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1280F",
+        "odpt:departureTime": "13:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1366K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1366K",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1268F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1268F",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1336K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1336K",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1316K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1316K",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1286F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1286F",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1418K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1418K",
+        "odpt:departureTime": "14:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1348F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1348F",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1488T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1488T",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1306F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1306F",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1468K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1468K",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3418K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3418K",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1310F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1310F",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1536K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1536K",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1400F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1400F",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1588T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1588T",
+        "odpt:departureTime": "15:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1506K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1506K",
+        "odpt:departureTime": "15:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1482F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1482F",
+        "odpt:departureTime": "15:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1568K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1568K",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1440F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1440F",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1610K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1610K",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1600K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1600K",
+        "odpt:departureTime": "16:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1550F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1550F",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1688T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1688T",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1580F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1580F",
+        "odpt:departureTime": "16:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1606K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1606K",
+        "odpt:departureTime": "16:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1566F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1566F",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1656K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1656K",
+        "odpt:departureTime": "17:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1616F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1616F",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1740K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1740K",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1788T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1788T",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1638K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1638K",
+        "odpt:departureTime": "17:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1686F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1686F",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1754K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1754K",
+        "odpt:departureTime": "17:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1604K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1604K",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1648F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1648F",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1856K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1856K",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1718F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1718F",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1888T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1888T",
+        "odpt:departureTime": "18:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1762K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1762K",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1736F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1736F",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1854K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1854K",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1848K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1848K",
+        "odpt:departureTime": "18:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1782F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1782F",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1956K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1956K",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1868F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1868F",
+        "odpt:departureTime": "19:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1988T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1988T",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1810F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1810F",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1944K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1944K",
+        "odpt:departureTime": "19:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1954K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1954K",
+        "odpt:departureTime": "20:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1880F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1880F",
+        "odpt:departureTime": "20:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1940K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1940K",
+        "odpt:departureTime": "20:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2068K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2068K",
+        "odpt:departureTime": "20:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1906F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1906F",
+        "odpt:departureTime": "20:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2088T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2088T",
+        "odpt:departureTime": "20:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1916F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1916F",
+        "odpt:departureTime": "20:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2080T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2080T",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1938F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1938F",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2140K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2140K",
+        "odpt:departureTime": "21:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2004F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2004F",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2188T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2188T",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2180T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2180T",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2018F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2018F",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2138K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2138K",
+        "odpt:departureTime": "21:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2062F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2062F",
+        "odpt:departureTime": "22:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2288T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2288T",
+        "odpt:departureTime": "22:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2148F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2148F",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2204K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2204K",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2156F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2156F",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2280T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2280T",
+        "odpt:departureTime": "22:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2110F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2110F",
+        "odpt:departureTime": "23:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2282K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2282K",
+        "odpt:departureTime": "23:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2286K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2286K",
+        "odpt:departureTime": "23:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2310K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2310K",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2480T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2480T",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2486T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2486T",
+        "odpt:departureTime": "00:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B970",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.ShinagawaSeaside.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.ShinagawaSeaside",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.580T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "580T",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.682T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "682T",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.684T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "684T",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.680T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "680T",
+        "odpt:departureTime": "06:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636T",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.510S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "510S",
+        "odpt:departureTime": "07:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.788T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "788T",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.654K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "654K",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.784T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "784T",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.644K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "644K",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.738K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "738K",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.650K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "650K",
+        "odpt:departureTime": "07:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.780T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "780T",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.642S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "642S",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.738T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "738T",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.624S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "624S",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.790K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "790K",
+        "odpt:departureTime": "08:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.626K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "626K",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.700S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "700S",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.728K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "728K",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.752K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "752K",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.704S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "704S",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.730K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "730K",
+        "odpt:departureTime": "08:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.740K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "740K",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.706S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "706S",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.732K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "732K",
+        "odpt:departureTime": "08:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.854K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "854K",
+        "odpt:departureTime": "09:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.848K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "848K",
+        "odpt:departureTime": "09:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.990T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "990T",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.736S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "736S",
+        "odpt:departureTime": "09:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.882S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "882S",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.904K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "904K",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.820K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "820K",
+        "odpt:departureTime": "09:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.846S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "846S",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.838K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "838K",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.860S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "860S",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.954K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "954K",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.964K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "964K",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.988K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "988K",
+        "odpt:departureTime": "10:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.984S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "984S",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1038K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1038K",
+        "odpt:departureTime": "10:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1060K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1060K",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.944S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "944S",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1054K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1054K",
+        "odpt:departureTime": "10:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1088T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1088T",
+        "odpt:departureTime": "11:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.968F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "968F",
+        "odpt:departureTime": "11:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1138K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1138K",
+        "odpt:departureTime": "11:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1026F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1026F",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1160K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1160K",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1052F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1052F",
+        "odpt:departureTime": "11:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1154K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1154K",
+        "odpt:departureTime": "11:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1168K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1168K",
+        "odpt:departureTime": "11:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1030F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1030F",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3238K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3238K",
+        "odpt:departureTime": "12:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1148F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1148F",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1260K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1260K",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1182F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1182F",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1268K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1268K",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1238K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1238K",
+        "odpt:departureTime": "12:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1146F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1146F",
+        "odpt:departureTime": "13:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1330K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1330K",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1264F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1264F",
+        "odpt:departureTime": "13:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1360K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1360K",
+        "odpt:departureTime": "13:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1284F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1284F",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1338K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1338K",
+        "odpt:departureTime": "13:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1346K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1346K",
+        "odpt:departureTime": "13:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1244F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1244F",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1430K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1430K",
+        "odpt:departureTime": "14:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1388F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1388F",
+        "odpt:departureTime": "14:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1460K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1460K",
+        "odpt:departureTime": "14:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1326F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1326F",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1438K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1438K",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1444K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1444K",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1352F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1352F",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1588T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1588T",
+        "odpt:departureTime": "15:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1454F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1454F",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1560K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1560K",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1538K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1538K",
+        "odpt:departureTime": "15:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1448F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1448F",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1552K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1552K",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1482F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1482F",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1688T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1688T",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1568F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1568F",
+        "odpt:departureTime": "16:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1660K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1660K",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1648K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1648K",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1564F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1564F",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1640T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1640T",
+        "odpt:departureTime": "16:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1638T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1638T",
+        "odpt:departureTime": "17:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1584F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1584F",
+        "odpt:departureTime": "17:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1686K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1686K",
+        "odpt:departureTime": "17:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1768K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1768K",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1646F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1646F",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1640K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1640K",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1790T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1790T",
+        "odpt:departureTime": "17:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1630F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1630F",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1788T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1788T",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1626S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1626S",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1780K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1780K",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1846K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1846K",
+        "odpt:departureTime": "18:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1744S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1744S",
+        "odpt:departureTime": "18:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1890T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1890T",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1724K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1724K",
+        "odpt:departureTime": "18:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1754S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1754S",
+        "odpt:departureTime": "18:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1762K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1762K",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1880T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1880T",
+        "odpt:departureTime": "18:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1738S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1738S",
+        "odpt:departureTime": "19:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1944K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1944K",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1852K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1852K",
+        "odpt:departureTime": "19:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1882S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1882S",
+        "odpt:departureTime": "19:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1810K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1810K",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1954K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1954K",
+        "odpt:departureTime": "19:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1860S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1860S",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1980T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1980T",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1804K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1804K",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1864S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1864S",
+        "odpt:departureTime": "20:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1986K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1986K",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2082T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2082T",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1984S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1984S",
+        "odpt:departureTime": "20:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2060K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2060K",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1848K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1848K",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1968S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1968S",
+        "odpt:departureTime": "20:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1988K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1988K",
+        "odpt:departureTime": "20:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2064K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2064K",
+        "odpt:departureTime": "20:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1930S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1930S",
+        "odpt:departureTime": "21:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2052K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2052K",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2026S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2026S",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2148K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2148K",
+        "odpt:departureTime": "21:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2024K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2024K",
+        "odpt:departureTime": "21:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2090S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2090S",
+        "odpt:departureTime": "21:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2020K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2020K",
+        "odpt:departureTime": "21:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2062S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2062S",
+        "odpt:departureTime": "21:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2182K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2182K",
+        "odpt:departureTime": "22:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2144S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2144S",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2184K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2184K",
+        "odpt:departureTime": "22:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2110S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2110S",
+        "odpt:departureTime": "22:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2146K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2146K",
+        "odpt:departureTime": "22:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2200K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2200K",
+        "odpt:departureTime": "23:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2180K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2180K",
+        "odpt:departureTime": "23:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2286K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2286K",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2300K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2300K",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2480T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2480T",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2486T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2486T",
+        "odpt:departureTime": "00:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B96F",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.ShinagawaSeaside.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.ShinagawaSeaside",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.581T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "581T",
+        "odpt:departureTime": "05:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.583T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "583T",
+        "odpt:departureTime": "05:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.585T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "585T",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3637K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3637K",
+        "odpt:departureTime": "06:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.681T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "681T",
+        "odpt:departureTime": "06:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.687T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "687T",
+        "odpt:departureTime": "06:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.639K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "639K",
+        "odpt:departureTime": "06:46",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.685T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "685T",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.683K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "683K",
+        "odpt:departureTime": "06:59",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.637K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "637K",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.681F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "681F",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.789K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "789K",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.787F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "787F",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.707K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "707K",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.711K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "711K",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.751F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "751F",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.785K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "785K",
+        "odpt:departureTime": "07:59",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.745K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "745K",
+        "odpt:departureTime": "08:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.801K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "801K",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.813K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "813K",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.853K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "853K",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.807F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "807F",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.843K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "843K",
+        "odpt:departureTime": "08:41",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.817F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "817F",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.845K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "845K",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.819K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "819K",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.901F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "901F",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.953K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "953K",
+        "odpt:departureTime": "09:21",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.991T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "991T",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.983F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "983F",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.905K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "905K",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.937F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "937F",
+        "odpt:departureTime": "09:49",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.941K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "941K",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.919F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "919F",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1089T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1089T",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1049K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1049K",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1081F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1081F",
+        "odpt:departureTime": "10:35",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1011K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1011K",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1069F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1069F",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1041K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1041K",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1087F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1087F",
+        "odpt:departureTime": "11:10",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1151K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1151K",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1189T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1189T",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1149F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1149F",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1167K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1167K",
+        "odpt:departureTime": "11:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1107F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1107F",
+        "odpt:departureTime": "11:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1141K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1141K",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1211F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1211F",
+        "odpt:departureTime": "12:13",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1217K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1217K",
+        "odpt:departureTime": "12:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1251K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1251K",
+        "odpt:departureTime": "12:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1201F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1201F",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1289T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1289T",
+        "odpt:departureTime": "12:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1283F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1283F",
+        "odpt:departureTime": "12:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1267K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1267K",
+        "odpt:departureTime": "13:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1341F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1341F",
+        "odpt:departureTime": "13:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1337K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1337K",
+        "odpt:departureTime": "13:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1317K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1317K",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1351F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1351F",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1319K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1319K",
+        "odpt:departureTime": "13:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1381F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1381F",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1389T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1389T",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1467F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1467F",
+        "odpt:departureTime": "14:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1469K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1469K",
+        "odpt:departureTime": "14:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1437K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1437K",
+        "odpt:departureTime": "14:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1417F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1417F",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1419K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1419K",
+        "odpt:departureTime": "14:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1487F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1487F",
+        "odpt:departureTime": "14:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1489T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1489T",
+        "odpt:departureTime": "15:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1549F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1549F",
+        "odpt:departureTime": "15:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1507K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1507K",
+        "odpt:departureTime": "15:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1569K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1569K",
+        "odpt:departureTime": "15:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1519F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1519F",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1511K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1511K",
+        "odpt:departureTime": "15:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1537F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1537F",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1501K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1501K",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1589T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1589T",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1683F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1683F",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1607K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1607K",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1669F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1669F",
+        "odpt:departureTime": "16:33",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1641K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1641K",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1611F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1611F",
+        "odpt:departureTime": "16:52",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1601K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1601K",
+        "odpt:departureTime": "17:00",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1689T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1689T",
+        "odpt:departureTime": "17:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1781F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1781F",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1751K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1751K",
+        "odpt:departureTime": "17:20",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1707F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1707F",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1767K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1767K",
+        "odpt:departureTime": "17:39",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1757K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1757K",
+        "odpt:departureTime": "17:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1717F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1717F",
+        "odpt:departureTime": "17:55",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1741K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1741K",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1789T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1789T",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1739F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1739F",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1887K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1887K",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1855K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1855K",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1805F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1805F",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1849K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1849K",
+        "odpt:departureTime": "18:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1819F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1819F",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1857K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1857K",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1889T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1889T",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1863F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1863F",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1937K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1937K",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1955K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1955K",
+        "odpt:departureTime": "19:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1949F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1949F",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1983K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1983K",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1957F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1957F",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1969K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1969K",
+        "odpt:departureTime": "20:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1989T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1989T",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2011F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2011F",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2045K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2045K",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2055F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2055F",
+        "odpt:departureTime": "20:32",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2081T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2081T",
+        "odpt:departureTime": "20:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2041K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2041K",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2069F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2069F",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2089T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2089T",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2107F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2107F",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2181T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2181T",
+        "odpt:departureTime": "21:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2117F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2117F",
+        "odpt:departureTime": "21:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2139K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2139K",
+        "odpt:departureTime": "21:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2141F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "2141F",
+        "odpt:departureTime": "21:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2189T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2189T",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2105K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2105K",
+        "odpt:departureTime": "22:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2219K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2219K",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2281T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2281T",
+        "odpt:departureTime": "22:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2239K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2239K",
+        "odpt:departureTime": "22:35",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2263K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2263K",
+        "odpt:departureTime": "22:50",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2249K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2249K",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2357K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2357K",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2311K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2311K",
+        "odpt:departureTime": "23:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2381T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2381T",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2387T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2387T",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B971",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.ShinagawaSeaside.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.ShinagawaSeaside",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.581T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "581T",
+        "odpt:departureTime": "05:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.583T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "583T",
+        "odpt:departureTime": "05:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.585T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "585T",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.681T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "681T",
+        "odpt:departureTime": "06:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.637F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "637F",
+        "odpt:departureTime": "06:22",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.687T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "687T",
+        "odpt:departureTime": "06:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.683S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "683S",
+        "odpt:departureTime": "06:43",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.689T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "689T",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.685T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "685T",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.639K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "639K",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.781T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "781T",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.787F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "787F",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.711K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "711K",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.789T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "789T",
+        "odpt:departureTime": "07:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.755K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "755K",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.785S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "785S",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.745F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "745F",
+        "odpt:departureTime": "07:59",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.739K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "739K",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.751K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "751K",
+        "odpt:departureTime": "08:09",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.881K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "881K",
+        "odpt:departureTime": "08:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.843K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "843K",
+        "odpt:departureTime": "08:21",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.889K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "889K",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.825K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "825K",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.891T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "891T",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.827S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "827S",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.801K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "801K",
+        "odpt:departureTime": "08:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.829K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "829K",
+        "odpt:departureTime": "09:01",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.853S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "853S",
+        "odpt:departureTime": "09:05",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.805K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "805K",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.931F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "931F",
+        "odpt:departureTime": "09:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.941K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "941K",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.907K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "907K",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.933K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "933K",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.955K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "955K",
+        "odpt:departureTime": "09:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.949F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "949F",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.937K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "937K",
+        "odpt:departureTime": "09:47",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.983F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "983F",
+        "odpt:departureTime": "09:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.921K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "921K",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.947F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "947F",
+        "odpt:departureTime": "10:09",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3039K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3039K",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1061K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1061K",
+        "odpt:departureTime": "10:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1055K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1055K",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1065F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1065F",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1089T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1089T",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1085F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1085F",
+        "odpt:departureTime": "10:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1039K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1039K",
+        "odpt:departureTime": "11:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3061K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3061K",
+        "odpt:departureTime": "11:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1145F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1145F",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1155K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1155K",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1189F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1189F",
+        "odpt:departureTime": "11:33",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1169K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1169K",
+        "odpt:departureTime": "11:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1139K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1139K",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1127F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1127F",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1161K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1161K",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1253F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1253F",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1269K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1269K",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1255F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1255F",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1239K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1239K",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1249F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1249F",
+        "odpt:departureTime": "12:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1231K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1231K",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1261K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1261K",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1383F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1383F",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1339K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1339K",
+        "odpt:departureTime": "13:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1369F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1369F",
+        "odpt:departureTime": "13:33",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1347K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1347K",
+        "odpt:departureTime": "13:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1365F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1365F",
+        "odpt:departureTime": "13:53",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1331K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1331K",
+        "odpt:departureTime": "13:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1361K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1361K",
+        "odpt:departureTime": "14:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1485F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1485F",
+        "odpt:departureTime": "14:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1439K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1439K",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1447F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1447F",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1445K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1445K",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1489T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1489T",
+        "odpt:departureTime": "14:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1431F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1431F",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1461K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1461K",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1527F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1527F",
+        "odpt:departureTime": "15:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1539K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1539K",
+        "odpt:departureTime": "15:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1545F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1545F",
+        "odpt:departureTime": "15:33",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1553K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1553K",
+        "odpt:departureTime": "15:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1589T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1589T",
+        "odpt:departureTime": "15:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1555F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1555F",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1561K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1561K",
+        "odpt:departureTime": "16:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1639F",
+        "odpt:trainType": "odpt.TrainType:TWR.Rapid",
+        "odpt:trainNumber": "1639F",
+        "odpt:departureTime": "16:14",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3649K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3649K",
+        "odpt:departureTime": "16:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1691T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1691T",
+        "odpt:departureTime": "16:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1683S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1683S",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1653K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1653K",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1689T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1689T",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1669K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1669K",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1661S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1661S",
+        "odpt:departureTime": "17:01",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1649K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1649K",
+        "odpt:departureTime": "17:08",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1765S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1765S",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1791T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1791T",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1705K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1705K",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1789T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1789T",
+        "odpt:departureTime": "17:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1785S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1785S",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1787K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1787K",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1769S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1769S",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1747K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1747K",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1741K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1741K",
+        "odpt:departureTime": "18:09",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1891T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1891T",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1831S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1831S",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1889K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1889K",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1827S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1827S",
+        "odpt:departureTime": "18:32",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1881T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1881T",
+        "odpt:departureTime": "18:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1847K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1847K",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1845K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1845K",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1891S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1891S",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1825K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1825K",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1855K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1855K",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1963S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1963S",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1981T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1981T",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1939K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1939K",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1945S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1945S",
+        "odpt:departureTime": "19:38",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1953K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1953K",
+        "odpt:departureTime": "19:44",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1983T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1983T",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1911S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "1911S",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1955K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1955K",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1961K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1961K",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2081S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2081S",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2005K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2005K",
+        "odpt:departureTime": "20:25",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2065K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2065K",
+        "odpt:departureTime": "20:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2087S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2087S",
+        "odpt:departureTime": "20:39",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2083K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2083K",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2061S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2061S",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2049K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2049K",
+        "odpt:departureTime": "21:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2085K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2085K",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2169S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2169S",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2165K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2165K",
+        "odpt:departureTime": "21:29",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2131S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2131S",
+        "odpt:departureTime": "21:37",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2153K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2153K",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2127S",
+        "odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+        "odpt:trainNumber": "2127S",
+        "odpt:departureTime": "21:56",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2125K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2125K",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Akabane"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2249K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2249K",
+        "odpt:departureTime": "22:17",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2221K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2221K",
+        "odpt:departureTime": "22:29",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2263K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2263K",
+        "odpt:departureTime": "22:39",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2245K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2245K",
+        "odpt:departureTime": "22:54",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2285K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2285K",
+        "odpt:departureTime": "23:10",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2347K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2347K",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2301K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2301K",
+        "odpt:departureTime": "23:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2381T",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2381T",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2387T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2387T",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.Osaki"
+        ]
+      }
+    ]
+  }
+]

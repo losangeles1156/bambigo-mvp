@@ -38,8 +38,8 @@ FROM pedestrian_links l;
 -- Call this function via Supabase RPC: supabase.rpc('get_nearby_accessibility_graph', { lat, lon, radius_meters })
 -- It returns a structured list of nodes and links nearby, ready to be fed into an LLM context window.
 CREATE OR REPLACE FUNCTION get_nearby_accessibility_graph(
-    lat double precision,
-    lon double precision,
+    query_lat double precision,
+    query_lon double precision,
     radius_meters double precision DEFAULT 100
 )
 RETURNS TABLE (
@@ -64,10 +64,10 @@ BEGIN
             CASE WHEN n.is_indoor THEN 'Indoor. ' ELSE 'Outdoor. ' END,
             'Connected to station: ', COALESCE(n.station_id, 'None')
         ) as description,
-        ST_Distance(n.coordinates, ST_SetSRID(ST_MakePoint(lon, lat), 4326)::geography) as distance_from_query,
+        ST_Distance(n.coordinates, ST_SetSRID(ST_MakePoint(query_lon, query_lat), 4326)::geography) as distance_from_query,
         ST_AsGeoJSON(n.coordinates)::json as coordinates
     FROM pedestrian_nodes n
-    WHERE ST_DWithin(n.coordinates, ST_SetSRID(ST_MakePoint(lon, lat), 4326)::geography, radius_meters)
+    WHERE ST_DWithin(n.coordinates, ST_SetSRID(ST_MakePoint(query_lon, query_lat), 4326)::geography, radius_meters)
     ORDER BY distance_from_query ASC
     LIMIT 30;
 
@@ -77,11 +77,11 @@ BEGIN
         l.link_id as id,
         'link' as type,
         v.llm_description as description,
-        ST_Distance(l.geometry, ST_SetSRID(ST_MakePoint(lon, lat), 4326)::geography) as distance_from_query,
+        ST_Distance(l.geometry, ST_SetSRID(ST_MakePoint(query_lon, query_lat), 4326)::geography) as distance_from_query,
         ST_AsGeoJSON(l.geometry)::json as coordinates
     FROM pedestrian_links l
     JOIN ai_pedestrian_graph_view v ON l.link_id = v.link_id
-    WHERE ST_DWithin(l.geometry, ST_SetSRID(ST_MakePoint(lon, lat), 4326)::geography, radius_meters)
+    WHERE ST_DWithin(l.geometry, ST_SetSRID(ST_MakePoint(query_lon, query_lat), 4326)::geography, radius_meters)
     ORDER BY distance_from_query ASC
     LIMIT 30;
 END;

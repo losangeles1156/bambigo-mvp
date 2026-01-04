@@ -6,6 +6,27 @@ import { Zap, AlertTriangle, AlertOctagon, Cloud, Sun, Users, Wind } from 'lucid
 import { StationUIProfile } from '@/lib/types/stationStandard';
 import { getLocaleString } from '@/lib/utils/localeUtils';
 import { SmartWeatherCard } from '@/components/ui/SmartWeatherCard';
+import { HubInfoHeader, HubMembersList } from '@/components/map/HubMembersList';
+
+// Types for Hub information
+interface HubMemberInfo {
+    member_id: string;
+    member_name: any;
+    operator: string;
+    line_name: string | null;
+    transfer_type: string;
+    walking_seconds: number | null;
+    sort_order: number;
+}
+
+interface HubDetails {
+    member_count: number;
+    transfer_type: string;
+    transfer_complexity: string;
+    walking_distance_meters: number | null;
+    indoor_connection_notes: string | null;
+    members?: HubMemberInfo[];
+}
 
 // Memoized Train Line Item with Compact Mode support
 const TrainLineItem = memo(({ line, isDelay, tL2, locale, compact = false }: { line: any, isDelay: boolean, tL2: any, locale: string, compact?: boolean }) => {
@@ -66,7 +87,7 @@ const TrainLineItem = memo(({ line, isDelay, tL2, locale, compact = false }: { l
                             : (isDelay ? tL2('status.delay') : tL2('status.normal'))
                         }
                     </p>
-                    <span className="text-[10px] font-mono font-bold text-gray-400 shrink-0">Next: 3m</span>
+                    {/* <span className="text-[10px] font-mono font-bold text-gray-400 shrink-0">Next: 3m</span> */}
                 </div>
             </div>
         </div>
@@ -76,9 +97,10 @@ TrainLineItem.displayName = 'TrainLineItem';
 
 interface L2_LiveProps {
     data: StationUIProfile;
+    hubDetails?: HubDetails | null;
 }
 
-export function L2_Live({ data }: L2_LiveProps) {
+export function L2_Live({ data, hubDetails }: L2_LiveProps) {
     const tL2 = useTranslations('l2');
     const locale = useLocale();
     const { lines, weather: initialWeather, crowd, updatedAt } = (data.l2 || {
@@ -90,6 +112,24 @@ export function L2_Live({ data }: L2_LiveProps) {
     const [weather, setWeather] = useState(initialWeather);
     const [weatherAdvice, setWeatherAdvice] = useState<string | null>(null);
     const [clickedCrowd, setClickedCrowd] = useState<number | null>(null);
+
+    // [New] Handle Crowd Vote
+    const handleVote = async (idx: number) => {
+        setClickedCrowd(idx); // Optimistic UI update
+
+        try {
+            await fetch('/api/l2/feedback', {
+                method: 'POST',
+                body: JSON.stringify({
+                    stationId: data.id,
+                    crowdLevel: idx + 1 // 0-based index to 1-5 scale
+                })
+            });
+            // Note: Data won't refresh until standard revalidation, but UI reflects the click
+        } catch (e) {
+            console.error('Vote failed', e);
+        }
+    };
 
     // [New] Fetch Live Weather from Open Meteo
     useEffect(() => {
@@ -147,6 +187,31 @@ export function L2_Live({ data }: L2_LiveProps) {
     return (
 
         <div className="space-y-4 animate-in fade-in slide-in-from-bottom duration-500">
+            {/* 0. Hub Information Section - Only show if hubDetails is provided */}
+            {hubDetails && hubDetails.member_count > 0 && (
+                <div className="space-y-3">
+                    <HubInfoHeader
+                        hubName={getLocaleString(data.name, locale) || '車站'}
+                        hubId={data.id}
+                        memberCount={hubDetails.member_count}
+                        transferType={hubDetails.transfer_type}
+                        transferComplexity={hubDetails.transfer_complexity}
+                        indoorConnectionNotes={hubDetails.indoor_connection_notes}
+                        locale={locale}
+                    />
+
+                    <HubMembersList
+                        members={hubDetails.members || []}
+                        locale={locale}
+                        hubName={getLocaleString(data.name, locale)}
+                        onMemberClick={(memberId) => {
+                            // Handle member click - could navigate or show more info
+                            console.log('Member clicked:', memberId);
+                        }}
+                    />
+                </div>
+            )}
+
             {/* 1. Train Operation Status */}
             <div className="space-y-2">
                 <div className="flex items-center justify-between">
@@ -245,7 +310,14 @@ export function L2_Live({ data }: L2_LiveProps) {
                         <div className="flex items-center gap-2 mb-2">
                             <Users size={14} className="text-gray-400" />
                             <span className="text-[10px] font-black text-gray-400 uppercase">{tL2('crowdReport')}</span>
+                            <span className="text-[8px] text-indigo-400 bg-indigo-50 px-1 py-0.5 rounded ml-auto">
+                                LIVE CROWD
+                            </span>
                         </div>
+                        {/* Disclaimer */}
+                        <p className="text-[8px] text-gray-400 mb-2 leading-tight">
+                            {locale.startsWith('zh') ? '數據來源：運行狀況與用戶回報' : 'Source: Service Status & User Reports'}
+                        </p>
                         <div className="grid grid-cols-5 gap-1">
                             {[
                                 { emoji: '😴', label: tL2('crowd.empty') },
@@ -266,7 +338,7 @@ export function L2_Live({ data }: L2_LiveProps) {
                                                 ? 'bg-indigo-50 border-indigo-200 ring-2 ring-indigo-100'
                                                 : 'bg-white border-gray-100 hover:border-indigo-300 hover:bg-indigo-50'
                                             }`}
-                                        onClick={() => setClickedCrowd(idx)}
+                                        onClick={() => handleVote(idx)}
                                     >
                                         <span className="text-base">{opt.emoji}</span>
                                         {/* Show Count if clicked (Simulated logic) */}

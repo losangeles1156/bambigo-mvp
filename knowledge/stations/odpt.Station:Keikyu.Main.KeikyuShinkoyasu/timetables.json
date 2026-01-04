@@ -1,0 +1,3265 @@
+[
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D0DA",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Main.KeikyuShinkoyasu.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Keikyu.Main",
+    "odpt:station": "odpt.Station:Keikyu.Main.KeikyuShinkoyasu",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Kamiooka"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D0D7",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Main.KeikyuShinkoyasu.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Keikyu.Main",
+    "odpt:station": "odpt.Station:Keikyu.Main.KeikyuShinkoyasu",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "04:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D0D9",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Main.KeikyuShinkoyasu.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Keikyu.Main",
+    "odpt:station": "odpt.Station:Keikyu.Main.KeikyuShinkoyasu",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "04:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D0DC",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Main.KeikyuShinkoyasu.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Keikyu.Main",
+    "odpt:station": "odpt.Station:Keikyu.Main.KeikyuShinkoyasu",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Kurihama.KeikyuKurihama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Kurihama.KeikyuKurihama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Kurihama.KeikyuKurihama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Uraga"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.ZushiHayama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Kamiooka"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      }
+    ]
+  }
+]

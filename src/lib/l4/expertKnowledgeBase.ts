@@ -536,6 +536,13 @@ export const ACCESSIBILITY_GUIDE: Record<string, {
         vision: '💡 站內有完善的點字導覽與語音指引。',
         senior: '💡 建議使用 3 號出口，距離較短且有電梯。'
     },
+    'odpt:Station:JR-East.Yamanote.Ueno': {
+        wheelchair: '🛗 3 號出口大型電梯直達地面，JR 閘門內也設有電梯。',
+        stroller: '🛗 3 號出口電梯空間寬敞，推車進出方便。',
+        largeLuggage: '🛗 3 號出口電梯直達不忍口方向。',
+        vision: '💡 站內有完善的點字導覽與語音指引。',
+        senior: '💡 建議使用 3 號出口，距離較短且有電梯。'
+    },
     'odpt:Station:JR-East.Shinjuku': {
         wheelchair: '🛗 南口動線較新，電梯設施完善。',
         stroller: '🛗 避開地下街人潮，建議從路面層移動。',
@@ -543,7 +550,21 @@ export const ACCESSIBILITY_GUIDE: Record<string, {
         vision: '💡 主要出口有點字地圖。',
         senior: '💡 建議使用南口或西口，動線較簡單。'
     },
+    'odpt:Station:JR-East.Yamanote.Shinjuku': {
+        wheelchair: '🛗 南口動線較新，電梯設施完善。',
+        stroller: '🛗 避開地下街人潮，建議從路面層移動。',
+        largeLuggage: '🛗 JR 新宿站南口與新南口之間有完善的電梯系統。',
+        vision: '💡 主要出口有點字地圖。',
+        senior: '💡 建議使用南口或西口，動線較簡單。'
+    },
     'odpt:Station:JR-East.Shibuya': {
+        wheelchair: '🛗 建議使用「澀谷 Scramble Square」內的電梯連通地下與地上層。',
+        stroller: '🛗 動線複雜，電梯通常位於角落，請預留找路時間。',
+        largeLuggage: '🛗 建議利用「Shibuya Stream」出口方向的電梯，人潮較少。',
+        vision: '💡 站內正在更新無障礙設施中。',
+        senior: '⚠️ 動線複雜且施工中，建議預留充裕時間。'
+    },
+    'odpt:Station:JR-East.Yamanote.Shibuya': {
         wheelchair: '🛗 建議使用「澀谷 Scramble Square」內的電梯連通地下與地上層。',
         stroller: '🛗 動線複雜，電梯通常位於角落，請預留找路時間。',
         largeLuggage: '🛗 建議利用「Shibuya Stream」出口方向的電梯，人潮較少。',
@@ -744,67 +765,67 @@ export const PASS_RECOMMENDATIONS: Array<{
     icon: string;
     lastUpdated?: string;
 }> = [
-    {
-        id: 'tokyo-subway-ticket',
-        name: 'Tokyo Subway Ticket (24/48/72h)',
-        nameJa: '東京地下鉄道券',
-        price: '約 ¥800 / ¥1200 / ¥1500',
-        coverage: '無限搭乘全線東京地鐵 (Metro) 與都營地鐵',
-        whenToUse: '平均一天搭乘 3 次以上即划算，不含 JR 線路。適合以地鐵為主要交通工具的遊客。',
-        icon: '🚇',
-        lastUpdated: '2024-12'
-    },
-    {
-        id: 'tokunai-pass',
-        name: 'JR Tokunai Pass (1 Day)',
-        nameJa: 'JR 都区内一日券',
-        price: '約 ¥760',
-        coverage: '無限搭乘東京 23 區內的 JR 普通與快速列車',
-        whenToUse: '適合整天都在山手線、中央線或京濱東北線周邊活動的旅客。可搭配地鐵券使用。',
-        icon: '🚃',
-        lastUpdated: '2024-12'
-    },
-    {
-        id: 'pasmo-pass',
-        name: 'Pasmo/Suica IC Card',
-        nameJa: 'PASMO/Suica IC 卡',
-        price: '押金 ¥500 + 充值',
-        coverage: '可搭乘 JR、地鐵、私鐵、巴士等幾乎所有交通工具',
-        whenToUse: '最通用的選擇，適合所有類型的旅客。建議至少充值 ¥1,000。',
-        icon: '💳',
-        lastUpdated: '2024-12'
-    },
-    {
-        id: 'greater-tokyo-pass',
-        name: 'Greater Tokyo Pass (3 Days)',
-        nameJa: 'Greater Tokyo Pass',
-        price: '約 ¥7,200',
-        coverage: '涵蓋 13 家私鐵公司與都營巴士，但不含 JR',
-        whenToUse: '適合前往鎌倉、秩父、 川越等郊區且不搭乘 JR 的深度旅遊。',
-        icon: '🗾',
-        lastUpdated: '2024-12'
-    },
-    {
-        id: 'narita-express',
-        name: 'Narita Express (N\'EX)',
-        nameJa: '成田エクスプレス',
-        price: '約 ¥3,020（新宿/東京單程）',
-        coverage: '新宿～東京～成田機場 直達',
-        whenToUse: '攜帶大行李或想舒適直達機場的最佳選擇。全車對號座，行李空間大。',
-        icon: '🚄',
-        lastUpdated: '2024-12'
-    },
-    {
-        id: 'skyliner',
-        name: 'Skyliner',
-        nameJa: 'スカイライナー',
-        price: '約 ¥2,400（日暮里單程）',
-        coverage: '日暮里/上野～成田機場 直達',
-        whenToUse: '最快速的機場交通（36 分鐘），適合時間有限的旅客。',
-        icon: '🚀',
-        lastUpdated: '2024-12'
-    }
-];
+        {
+            id: 'tokyo-subway-ticket',
+            name: 'Tokyo Subway Ticket (24/48/72h)',
+            nameJa: '東京地下鉄道券',
+            price: '約 ¥800 / ¥1200 / ¥1500',
+            coverage: '無限搭乘全線東京地鐵 (Metro) 與都營地鐵',
+            whenToUse: '平均一天搭乘 3 次以上即划算，不含 JR 線路。適合以地鐵為主要交通工具的遊客。',
+            icon: '🚇',
+            lastUpdated: '2024-12'
+        },
+        {
+            id: 'tokunai-pass',
+            name: 'JR Tokunai Pass (1 Day)',
+            nameJa: 'JR 都区内一日券',
+            price: '約 ¥760',
+            coverage: '無限搭乘東京 23 區內的 JR 普通與快速列車',
+            whenToUse: '適合整天都在山手線、中央線或京濱東北線周邊活動的旅客。可搭配地鐵券使用。',
+            icon: '🚃',
+            lastUpdated: '2024-12'
+        },
+        {
+            id: 'pasmo-pass',
+            name: 'Pasmo/Suica IC Card',
+            nameJa: 'PASMO/Suica IC 卡',
+            price: '押金 ¥500 + 充值',
+            coverage: '可搭乘 JR、地鐵、私鐵、巴士等幾乎所有交通工具',
+            whenToUse: '最通用的選擇，適合所有類型的旅客。建議至少充值 ¥1,000。',
+            icon: '💳',
+            lastUpdated: '2024-12'
+        },
+        {
+            id: 'greater-tokyo-pass',
+            name: 'Greater Tokyo Pass (3 Days)',
+            nameJa: 'Greater Tokyo Pass',
+            price: '約 ¥7,200',
+            coverage: '涵蓋 13 家私鐵公司與都營巴士，但不含 JR',
+            whenToUse: '適合前往鎌倉、秩父、 川越等郊區且不搭乘 JR 的深度旅遊。',
+            icon: '🗾',
+            lastUpdated: '2024-12'
+        },
+        {
+            id: 'narita-express',
+            name: 'Narita Express (N\'EX)',
+            nameJa: '成田エクスプレス',
+            price: '約 ¥3,020（新宿/東京單程）',
+            coverage: '新宿～東京～成田機場 直達',
+            whenToUse: '攜帶大行李或想舒適直達機場的最佳選擇。全車對號座，行李空間大。',
+            icon: '🚄',
+            lastUpdated: '2024-12'
+        },
+        {
+            id: 'skyliner',
+            name: 'Skyliner',
+            nameJa: 'スカイライナー',
+            price: '約 ¥2,400（日暮里單程）',
+            coverage: '日暮里/上野～成田機場 直達',
+            whenToUse: '最快速的機場交通（36 分鐘），適合時間有限的旅客。',
+            icon: '🚀',
+            lastUpdated: '2024-12'
+        }
+    ];
 
 // ============================================================
 // CROWD AVOIDANCE TIPS
@@ -856,13 +877,13 @@ export function getHubStationTips(stationId: string): Array<{ icon: string; text
     if (HUB_STATION_TIPS[stationId]) {
         return HUB_STATION_TIPS[stationId];
     }
-    
+
     // Try normalized ID
     const normalizedId = stationId.replace(/^odpt\.Station:/, 'odpt:Station:');
     if (HUB_STATION_TIPS[normalizedId]) {
         return HUB_STATION_TIPS[normalizedId];
     }
-    
+
     // Try without line prefix (e.g., odpt:Station:JR-East.Shinjuku from odpt.Station:JR-East.Yamanote.Shinjuku)
     const match = stationId.match(/[.:](JR-East|Toei|TokyoMetro)[.:]([A-Za-z]+)[.:](.+)$/);
     if (match) {
@@ -876,7 +897,7 @@ export function getHubStationTips(stationId: string): Array<{ icon: string; text
             }
         }
     }
-    
+
     return [];
 }
 
@@ -894,13 +915,13 @@ export function getAccessibilityAdvice(stationId: string): {
     if (ACCESSIBILITY_GUIDE[stationId]) {
         return ACCESSIBILITY_GUIDE[stationId];
     }
-    
+
     // Try normalized ID
     const normalizedId = stationId.replace(/^odpt\.Station:/, 'odpt:Station:');
     if (ACCESSIBILITY_GUIDE[normalizedId]) {
         return ACCESSIBILITY_GUIDE[normalizedId];
     }
-    
+
     return undefined;
 }
 

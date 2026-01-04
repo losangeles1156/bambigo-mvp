@@ -116,7 +116,7 @@ export function SmartWeatherCard({ onAdviceUpdate }: SmartWeatherCardProps) {
                             <span className="text-2xl">{weather.emoji}</span>
                         )}
                         <span className="text-xs font-black uppercase tracking-widest opacity-80">
-                            {isEmergencyMode ? tL2('emergencyAlert') : 'TOKYO'}
+                            {isCritical ? tL2('criticalAlert') : isEmergencyMode ? tL2('warningAlert') : 'TOKYO'}
                         </span>
                     </div>
                     <span className="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full">

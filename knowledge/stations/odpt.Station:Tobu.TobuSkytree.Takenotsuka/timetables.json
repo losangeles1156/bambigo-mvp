@@ -1,0 +1,5369 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F2E",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytree.Takenotsuka.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytree",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytree.Takenotsuka",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A501T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A501T",
+        "odpt:departureTime": "05:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A503T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A503T",
+        "odpt:departureTime": "05:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A446S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A446S",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A505T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A505T",
+        "odpt:departureTime": "05:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A507T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A507T",
+        "odpt:departureTime": "05:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A509T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A509T",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A502S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A502S",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A511T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A511T",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A604S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A604S",
+        "odpt:departureTime": "06:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A541T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A541T",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A614S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A614S",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A543T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A543T",
+        "odpt:departureTime": "06:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A606S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A606S",
+        "odpt:departureTime": "06:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A613T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A613T",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A640S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A640S",
+        "odpt:departureTime": "06:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A715T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A715T",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A621T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A621T",
+        "odpt:departureTime": "07:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A648S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A648S",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A642S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A642S",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A730S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A730S",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A719T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A719T",
+        "odpt:departureTime": "07:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A734S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A734S",
+        "odpt:departureTime": "07:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A632S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A632S",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A617T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A617T",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A725T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A725T",
+        "odpt:departureTime": "07:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A736S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A736S",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A712S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A712S",
+        "odpt:departureTime": "08:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A803T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A803T",
+        "odpt:departureTime": "08:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A801T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A801T",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A826S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A826S",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A805T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A805T",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A744S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A744S",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A818S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A818S",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A807T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A807T",
+        "odpt:departureTime": "08:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A816S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A816S",
+        "odpt:departureTime": "09:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A824S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A824S",
+        "odpt:departureTime": "09:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A809T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A809T",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A904S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A904S",
+        "odpt:departureTime": "09:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A914S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A914S",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A941T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A941T",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A846S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A846S",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A913T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A913T",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A906S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A906S",
+        "odpt:departureTime": "10:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A948S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A948S",
+        "odpt:departureTime": "10:11",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A940S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A940S",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1042S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1042S",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1038S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1038S",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1034S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1034S",
+        "odpt:departureTime": "10:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1032S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1032S",
+        "odpt:departureTime": "10:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1002S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1002S",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1028S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1028S",
+        "odpt:departureTime": "11:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1127T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1127T",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1023T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1023T",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1025T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1025T",
+        "odpt:departureTime": "11:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1112S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1112S",
+        "odpt:departureTime": "11:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1136S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1136S",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1101T",
+        "odpt:departureTime": "12:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1105T",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1126S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1126S",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1115T",
+        "odpt:departureTime": "12:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1224S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1224S",
+        "odpt:departureTime": "12:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1216S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1216S",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1204S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1204S",
+        "odpt:departureTime": "13:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1217T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1217T",
+        "odpt:departureTime": "13:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1214S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1214S",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1213T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1213T",
+        "odpt:departureTime": "13:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1348S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1348S",
+        "odpt:departureTime": "13:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1347T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1347T",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1342S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1342S",
+        "odpt:departureTime": "14:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1334S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1334S",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1338S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1338S",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1332S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1332S",
+        "odpt:departureTime": "14:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1428S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1428S",
+        "odpt:departureTime": "14:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1402S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1402S",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1427T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1427T",
+        "odpt:departureTime": "15:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1425T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1425T",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1423T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1423T",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1412S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1412S",
+        "odpt:departureTime": "15:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1501T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1501T",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1510S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1510S",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1536S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1536S",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1505T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1505T",
+        "odpt:departureTime": "16:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1529T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1529T",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1526S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1526S",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1608S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1608S",
+        "odpt:departureTime": "16:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1524S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1524S",
+        "odpt:departureTime": "16:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1604S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1604S",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1616S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1616S",
+        "odpt:departureTime": "17:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1615T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1615T",
+        "odpt:departureTime": "17:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1613T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1613T",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1614S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1614S",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1747T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1747T",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1648S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1648S",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1617T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1617T",
+        "odpt:departureTime": "17:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1732S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1732S",
+        "odpt:departureTime": "17:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1742S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1742S",
+        "odpt:departureTime": "18:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1727T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1727T",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1734S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1734S",
+        "odpt:departureTime": "18:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1825T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1825T",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1803T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1803T",
+        "odpt:departureTime": "18:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1738S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1738S",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1845T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1845T",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1730S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1730S",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1828S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1828S",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1801T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1801T",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1836S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1836S",
+        "odpt:departureTime": "19:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1831T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1831T",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1820S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1820S",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1802S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1802S",
+        "odpt:departureTime": "19:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1929T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1929T",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1908S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1908S",
+        "odpt:departureTime": "19:40",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1923T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1923T",
+        "odpt:departureTime": "19:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1911T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1911T",
+        "odpt:departureTime": "19:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1912S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1912S",
+        "odpt:departureTime": "20:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1919T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1919T",
+        "odpt:departureTime": "20:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2006S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2006S",
+        "odpt:departureTime": "20:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1944S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1944S",
+        "odpt:departureTime": "20:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2014S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2014S",
+        "odpt:departureTime": "20:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1909T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1909T",
+        "odpt:departureTime": "20:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2017T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2017T",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2032S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2032S",
+        "odpt:departureTime": "20:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1907T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1907T",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2027T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2027T",
+        "odpt:departureTime": "21:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2130S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2130S",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2016S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2016S",
+        "odpt:departureTime": "21:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2047T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2047T",
+        "odpt:departureTime": "21:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2138S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2138S",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2128S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2128S",
+        "odpt:departureTime": "21:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2110S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2110S",
+        "odpt:departureTime": "22:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2103T",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2231T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2231T",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2236S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2236S",
+        "odpt:departureTime": "22:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2212S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2212S",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2318S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2318S",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.960",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "960",
+        "odpt:departureTime": "23:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2314S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2314S",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2204S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2204S",
+        "odpt:departureTime": "23:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2248S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2248S",
+        "odpt:departureTime": "23:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.MinamiSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2327T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2327T",
+        "odpt:departureTime": "00:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.MinamiSenju"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F30",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytree.Takenotsuka.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytree",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytree.Takenotsuka",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A501T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A501T",
+        "odpt:departureTime": "05:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A502S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A502S",
+        "odpt:departureTime": "05:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A503T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A503T",
+        "odpt:departureTime": "05:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A405T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A405T",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A572S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A572S",
+        "odpt:departureTime": "05:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A507T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A507T",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A541T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A541T",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A606S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A606S",
+        "odpt:departureTime": "06:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A509T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A509T",
+        "odpt:departureTime": "06:11",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A511T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A511T",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A608S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A608S",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A636S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A636S",
+        "odpt:departureTime": "06:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A610S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A610S",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A513T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A513T",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A612S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A612S",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A515T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A515T",
+        "odpt:departureTime": "06:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A616S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A616S",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A666S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A666S",
+        "odpt:departureTime": "06:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A620S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A620S",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A674S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A674S",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A604S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A604S",
+        "odpt:departureTime": "07:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A722S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A722S",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A668S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A668S",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A617T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A617T",
+        "odpt:departureTime": "07:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A724S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A724S",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A619T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A619T",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A721T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A721T",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A726S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A726S",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A756S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A756S",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A714S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A714S",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A746S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A746S",
+        "odpt:departureTime": "07:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A730S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A730S",
+        "odpt:departureTime": "07:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A718S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A718S",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A723T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A723T",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A762S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A762S",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A732S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A732S",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.Roppongi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A625T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A625T",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A748S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A748S",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A805T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A805T",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A734S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A734S",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A764S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A764S",
+        "odpt:departureTime": "08:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A702S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A702S",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.Roppongi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A728S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A728S",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A803T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A803T",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A758S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A758S",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A727T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A727T",
+        "odpt:departureTime": "08:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A806S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A806S",
+        "odpt:departureTime": "08:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A852S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A852S",
+        "odpt:departureTime": "08:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A838S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A838S",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A770S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A770S",
+        "odpt:departureTime": "08:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A840S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A840S",
+        "odpt:departureTime": "08:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A960S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A960S",
+        "odpt:departureTime": "09:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A811T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A811T",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A850S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A850S",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A936S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A936S",
+        "odpt:departureTime": "09:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A974S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A974S",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A933T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A933T",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A954S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A954S",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A901T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A901T",
+        "odpt:departureTime": "09:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A904S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A904S",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A917T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A917T",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1021T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1021T",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A929T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A929T",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1014S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1014S",
+        "odpt:departureTime": "10:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1018S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1018S",
+        "odpt:departureTime": "10:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1041T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1041T",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1009T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1009T",
+        "odpt:departureTime": "11:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1110S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1110S",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1026S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1026S",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1062S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1062S",
+        "odpt:departureTime": "11:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1164S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1164S",
+        "odpt:departureTime": "11:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1148S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1148S",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1103T",
+        "odpt:departureTime": "12:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1107T",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1127T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1127T",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1170S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1170S",
+        "odpt:departureTime": "12:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1219T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1219T",
+        "odpt:departureTime": "12:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1220S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1220S",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1236S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1236S",
+        "odpt:departureTime": "13:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1254S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1254S",
+        "odpt:departureTime": "13:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1233T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1233T",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1201T",
+        "odpt:departureTime": "13:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1345T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1345T",
+        "odpt:departureTime": "13:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1304S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1304S",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1321T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1321T",
+        "odpt:departureTime": "14:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1314S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1314S",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1329T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1329T",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1318S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1318S",
+        "odpt:departureTime": "14:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1409T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1409T",
+        "odpt:departureTime": "14:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1441T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1441T",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1410S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1410S",
+        "odpt:departureTime": "15:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1516S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1516S",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1462S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1462S",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1568S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1568S",
+        "odpt:departureTime": "15:30",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1426S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1426S",
+        "odpt:departureTime": "15:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1464S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1464S",
+        "odpt:departureTime": "15:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1503T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1503T",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1548S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1548S",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1624S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1624S",
+        "odpt:departureTime": "16:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1507T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1507T",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1646S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1646S",
+        "odpt:departureTime": "16:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1517T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1517T",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1527T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1527T",
+        "odpt:departureTime": "16:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1623T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1623T",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1519T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1519T",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1612S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1612S",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1636S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1636S",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1608S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1608S",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1620S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1620S",
+        "odpt:departureTime": "17:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1711T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1711T",
+        "odpt:departureTime": "17:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1670S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1670S",
+        "odpt:departureTime": "17:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1601T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1601T",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1774S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1774S",
+        "odpt:departureTime": "17:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1633T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1633T",
+        "odpt:departureTime": "17:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1742S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1742S",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1645T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1645T",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1704S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1704S",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1654S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1654S",
+        "odpt:departureTime": "17:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1726S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1726S",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1721T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1721T",
+        "odpt:departureTime": "18:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1714S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1714S",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1828S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1828S",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1816S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1816S",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1834S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1834S",
+        "odpt:departureTime": "18:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1805T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1805T",
+        "odpt:departureTime": "18:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1729T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1729T",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1864S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1864S",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1809T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1809T",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1852S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1852S",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1803T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1803T",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1806S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1806S",
+        "odpt:departureTime": "19:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1936S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1936S",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1818S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1818S",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1907T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1907T",
+        "odpt:departureTime": "19:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1972S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1972S",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1923T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1923T",
+        "odpt:departureTime": "19:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1943T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1943T",
+        "odpt:departureTime": "19:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1931T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1931T",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1956S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1956S",
+        "odpt:departureTime": "19:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1925T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1925T",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1908S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1908S",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2048S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2048S",
+        "odpt:departureTime": "20:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2010S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2010S",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2074S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2074S",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2042S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2042S",
+        "odpt:departureTime": "20:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2062S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2062S",
+        "odpt:departureTime": "20:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A1946S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1946S",
+        "odpt:departureTime": "20:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2030S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2030S",
+        "odpt:departureTime": "20:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2004S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2004S",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2134S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2134S",
+        "odpt:departureTime": "21:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2015T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2015T",
+        "odpt:departureTime": "21:08",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2020S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2020S",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2166S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2166S",
+        "odpt:departureTime": "21:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2045T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2045T",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2129T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2129T",
+        "odpt:departureTime": "21:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2113T",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2109T",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2111T",
+        "odpt:departureTime": "22:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2128S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2128S",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2272S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2272S",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2223T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2223T",
+        "odpt:departureTime": "22:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2254S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2254S",
+        "odpt:departureTime": "22:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2256S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2256S",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2210S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2210S",
+        "odpt:departureTime": "23:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2374S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2374S",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.956",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "956",
+        "odpt:departureTime": "23:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2268S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2268S",
+        "odpt:departureTime": "23:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.960",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "960",
+        "odpt:departureTime": "00:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.A2320S",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2320S",
+        "odpt:departureTime": "00:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.MinamiSenju"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F31",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytree.Takenotsuka.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytree",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytree.Takenotsuka",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.701",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "701",
+        "odpt:departureTime": "05:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B514S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B514S",
+        "odpt:departureTime": "05:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.601",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601",
+        "odpt:departureTime": "05:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B532S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B532S",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B540S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B540S",
+        "odpt:departureTime": "05:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B542S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B542S",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B544S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B544S",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B530S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B530S",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B534S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B534S",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B524S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B524S",
+        "odpt:departureTime": "06:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B636S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B636S",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B612S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B612S",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B601T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B601T",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B603T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B603T",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B646S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B646S",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B626S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B626S",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B605T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B605T",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B607T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B607T",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B716S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B716S",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B709T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B709T",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B704S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B704S",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B741T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B741T",
+        "odpt:departureTime": "08:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B728S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B728S",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B714S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B714S",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B706S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B706S",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B840S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B840S",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B815T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B815T",
+        "odpt:departureTime": "09:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B848S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B848S",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B842S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B842S",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B838S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B838S",
+        "odpt:departureTime": "09:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B834S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B834S",
+        "odpt:departureTime": "09:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B823T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B823T",
+        "odpt:departureTime": "09:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B832S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B832S",
+        "odpt:departureTime": "09:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B902S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B902S",
+        "odpt:departureTime": "10:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B925T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B925T",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B936S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B936S",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B912S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B912S",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B901T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B901T",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B926S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B926S",
+        "odpt:departureTime": "10:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B905T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B905T",
+        "odpt:departureTime": "10:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1045T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1045T",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1016S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1016S",
+        "odpt:departureTime": "11:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1024S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1024S",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1004S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1004S",
+        "odpt:departureTime": "11:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1014S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1014S",
+        "odpt:departureTime": "11:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1017T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1017T",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1113T",
+        "odpt:departureTime": "11:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1147T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1147T",
+        "odpt:departureTime": "12:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1148S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1148S",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1142S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1142S",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1138S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1138S",
+        "odpt:departureTime": "12:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1134S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1134S",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1232S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1232S",
+        "odpt:departureTime": "12:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1202S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1202S",
+        "odpt:departureTime": "13:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1228S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1228S",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1227T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1227T",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1223T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1223T",
+        "odpt:departureTime": "13:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1225T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1225T",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1312S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1312S",
+        "odpt:departureTime": "13:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1336S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1336S",
+        "odpt:departureTime": "14:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1301T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1301T",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1305T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1305T",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1326S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1326S",
+        "odpt:departureTime": "14:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1315T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1315T",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1424S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1424S",
+        "odpt:departureTime": "14:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1416S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1416S",
+        "odpt:departureTime": "15:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1404S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1404S",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1417T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1417T",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1414S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1414S",
+        "odpt:departureTime": "15:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1413T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1413T",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1548S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1548S",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1547T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1547T",
+        "odpt:departureTime": "16:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1542S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1542S",
+        "odpt:departureTime": "16:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1534S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1534S",
+        "odpt:departureTime": "16:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1538S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1538S",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1530S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1530S",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1532S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1532S",
+        "odpt:departureTime": "16:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1628S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1628S",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1602S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1602S",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1627T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1627T",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1625T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1625T",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1611T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1611T",
+        "odpt:departureTime": "17:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1603T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1603T",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1612S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1612S",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1601T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1601T",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1736S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1736S",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1744S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1744S",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1720S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1720S",
+        "odpt:departureTime": "18:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1729T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1729T",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1707T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1707T",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1726S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1726S",
+        "odpt:departureTime": "18:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1708S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1708S",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1709T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1709T",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1819T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1819T",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1816S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1816S",
+        "odpt:departureTime": "19:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1815T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1815T",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1823T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1823T",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1813T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1813T",
+        "odpt:departureTime": "19:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1814S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1814S",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1806S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1806S",
+        "odpt:departureTime": "19:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1840S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1840S",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1810S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1810S",
+        "odpt:departureTime": "19:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1817T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1817T",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1932S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1932S",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1905T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1905T",
+        "odpt:departureTime": "20:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1927T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1927T",
+        "odpt:departureTime": "20:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1934S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1934S",
+        "odpt:departureTime": "20:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1903T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1903T",
+        "odpt:departureTime": "20:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1938S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1938S",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1904S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1904S",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2028S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2028S",
+        "odpt:departureTime": "21:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2036S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2036S",
+        "odpt:departureTime": "21:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2031T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2031T",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2002S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2002S",
+        "odpt:departureTime": "21:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2048S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2048S",
+        "odpt:departureTime": "21:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2023T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2023T",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2112S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2112S",
+        "odpt:departureTime": "22:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2119T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2119T",
+        "odpt:departureTime": "22:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2125T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2125T",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2114S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2114S",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2117T",
+        "odpt:departureTime": "22:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2201T",
+        "odpt:departureTime": "23:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2207T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2207T",
+        "odpt:departureTime": "23:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2227T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2227T",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2229T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2229T",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2247T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2247T",
+        "odpt:departureTime": "23:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2238S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2238S",
+        "odpt:departureTime": "23:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2306S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2306S",
+        "odpt:departureTime": "00:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2303T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2303T",
+        "odpt:departureTime": "00:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2309T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2309T",
+        "odpt:departureTime": "00:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F33",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytree.Takenotsuka.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytree",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytree.Takenotsuka",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.701",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "701",
+        "odpt:departureTime": "05:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B536S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B536S",
+        "odpt:departureTime": "05:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.601",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601",
+        "odpt:departureTime": "05:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B558S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B558S",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B566S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B566S",
+        "odpt:departureTime": "05:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B604S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B604S",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B568S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B568S",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B570S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B570S",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B556S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B556S",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B614S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B614S",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B646S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B646S",
+        "odpt:departureTime": "06:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B618S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B618S",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B550S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B550S",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B662S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B662S",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B648S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B648S",
+        "odpt:departureTime": "07:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B634S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B634S",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B664S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B664S",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B602S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B602S",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B728S",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B728S",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B603T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B603T",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B605T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B605T",
+        "odpt:departureTime": "07:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B652S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B652S",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B638S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B638S",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B740S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B740S",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B706S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B706S",
+        "odpt:departureTime": "08:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B711T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B711T",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B736S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B736S",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B760S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B760S",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B733T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B733T",
+        "odpt:departureTime": "08:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B716S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B716S",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B754S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B754S",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B801T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B801T",
+        "odpt:departureTime": "09:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B804S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B804S",
+        "odpt:departureTime": "09:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B817T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B817T",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B821T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B821T",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B826S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B826S",
+        "odpt:departureTime": "09:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B814S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B814S",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B807T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B807T",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B818S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B818S",
+        "odpt:departureTime": "09:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B962S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B962S",
+        "odpt:departureTime": "10:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B941T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B941T",
+        "odpt:departureTime": "10:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B909T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B909T",
+        "odpt:departureTime": "10:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B948S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B948S",
+        "odpt:departureTime": "10:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B964S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B964S",
+        "odpt:departureTime": "10:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B910S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B910S",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B903T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B903T",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B927T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B927T",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B943T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B943T",
+        "odpt:departureTime": "10:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1070S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1070S",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1020S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1020S",
+        "odpt:departureTime": "11:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1019T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1019T",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1036S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1036S",
+        "odpt:departureTime": "11:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1033T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1033T",
+        "odpt:departureTime": "11:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1054S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1054S",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1101T",
+        "odpt:departureTime": "11:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1104S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1104S",
+        "odpt:departureTime": "12:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1117T",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1121T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1121T",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1129T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1129T",
+        "odpt:departureTime": "12:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1114S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1114S",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1218S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1218S",
+        "odpt:departureTime": "12:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1241T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1241T",
+        "odpt:departureTime": "13:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1209T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1209T",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1210S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1210S",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1226S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1226S",
+        "odpt:departureTime": "13:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1262S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1262S",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1364S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1364S",
+        "odpt:departureTime": "13:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1348S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1348S",
+        "odpt:departureTime": "14:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1303T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1303T",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1307T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1307T",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1327T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1327T",
+        "odpt:departureTime": "14:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1370S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1370S",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1419T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1419T",
+        "odpt:departureTime": "14:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1420S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1420S",
+        "odpt:departureTime": "15:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1436S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1436S",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1454S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1454S",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1433T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1433T",
+        "odpt:departureTime": "15:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1401T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1401T",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1545T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1545T",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1504S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1504S",
+        "odpt:departureTime": "16:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1521T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1521T",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1514S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1514S",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1529T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1529T",
+        "odpt:departureTime": "16:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1518S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1518S",
+        "odpt:departureTime": "16:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1609T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1609T",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1622S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1622S",
+        "odpt:departureTime": "17:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1642S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1642S",
+        "odpt:departureTime": "17:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1616S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1616S",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1625T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1625T",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1626S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1626S",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1605T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1605T",
+        "odpt:departureTime": "17:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1664S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1664S",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1628S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1628S",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1603T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1603T",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1734S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1734S",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1706S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1706S",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1715T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1715T",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1707T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1707T",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1772S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1772S",
+        "odpt:departureTime": "18:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1746S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1746S",
+        "odpt:departureTime": "18:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1717T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1717T",
+        "odpt:departureTime": "18:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1752S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1752S",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Soka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1731T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1731T",
+        "odpt:departureTime": "18:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1723T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1723T",
+        "odpt:departureTime": "18:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1719T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1719T",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1712S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1712S",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1856S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1856S",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1808S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1808S",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1820S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1820S",
+        "odpt:departureTime": "19:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1810S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1810S",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1870S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1870S",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1862S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1862S",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1801T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1801T",
+        "odpt:departureTime": "19:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1874S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1874S",
+        "odpt:departureTime": "19:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1842S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1842S",
+        "odpt:departureTime": "19:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1804S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1804S",
+        "odpt:departureTime": "19:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1813T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1813T",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1921T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1921T",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1966S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1966S",
+        "odpt:departureTime": "20:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1928S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1928S",
+        "odpt:departureTime": "20:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1916S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1916S",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1902S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1902S",
+        "odpt:departureTime": "20:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1929T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1929T",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B1909T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1909T",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2011T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2011T",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2006S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2006S",
+        "odpt:departureTime": "21:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2068S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2068S",
+        "odpt:departureTime": "21:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2033T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2033T",
+        "odpt:departureTime": "21:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2072S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2072S",
+        "odpt:departureTime": "21:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2023T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2023T",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2054S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2054S",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2156S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2156S",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2127T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2127T",
+        "odpt:departureTime": "22:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2110S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2110S",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2174S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2174S",
+        "odpt:departureTime": "22:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2146S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2146S",
+        "odpt:departureTime": "22:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2204S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2204S",
+        "odpt:departureTime": "23:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2215T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2215T",
+        "odpt:departureTime": "23:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2220S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2220S",
+        "odpt:departureTime": "23:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2245T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2245T",
+        "odpt:departureTime": "23:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.TobuDobutsuKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2229T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2229T",
+        "odpt:departureTime": "23:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2213T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2213T",
+        "odpt:departureTime": "23:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2309T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2309T",
+        "odpt:departureTime": "00:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2311T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2311T",
+        "odpt:departureTime": "00:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2305T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2305T",
+        "odpt:departureTime": "00:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytree.B2323T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2323T",
+        "odpt:departureTime": "00:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaKoshigaya"
+        ]
+      }
+    ]
+  }
+]

@@ -22,17 +22,28 @@ function pickLocaleText(input: any, locale: SupportedLocale) {
 }
 
 /**
- * SSE Fallback for errors
+ * SSE Fallback for errors and offline mode
  */
-function createErrorStream(message: string) {
+function createOfflineStream(message: string, mode: 'offline' | 'error' = 'error') {
     const encoder = new TextEncoder();
     return new ReadableStream<Uint8Array>({
         start(controller) {
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ event: 'meta', mode: 'error' })}\n\n`));
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ event: 'message', answer: `⚠️ ${message}` })}\n\n`));
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ event: 'meta', mode })}
+
+`));
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ event: 'message', answer: message })}
+
+`));
             controller.close();
         }
     });
+}
+
+/**
+ * Check if AI service is available
+ */
+function isAIServiceAvailable(): boolean {
+    return Boolean(process.env.MISTRAL_API_KEY);
 }
 
 export async function POST(req: NextRequest) {
@@ -45,6 +56,18 @@ export async function POST(req: NextRequest) {
         const locale = normalizeLocale(inputs?.locale);
         const userProfile = typeof inputs?.user_profile === 'string' ? inputs.user_profile : 'general';
         const timestamp = Date.now();
+
+        // Early check: If no AI service available, return offline mode immediately
+        if (!isAIServiceAvailable()) {
+            const offlineMessage = locale === 'zh-TW'
+                ? '🔌 目前為離線模式（AI 服務未連線）。我仍可以提供基礎站點資訊。'
+                : locale === 'ja'
+                    ? '🔌 現在オフラインモードです。基本的な駅情報はお手伝いできます。'
+                    : '🔌 Currently in offline mode (AI service unavailable). I can still provide basic station info.';
+            return new NextResponse(createOfflineStream(offlineMessage, 'offline'), {
+                headers: { 'Content-Type': 'text/event-stream' }
+            });
+        }
 
         // 1. Resolve Node Identity
         let nodeName = 'Tokyo Station'; // Default
@@ -72,7 +95,8 @@ GOALS:
 STRICT TOOL RULES:
 - "Wheelchair", "Elevator", "Baby Car" -> Call 'retrieve_station_knowledge' (query='accessibility') AND 'get_station_facilities' (category='elevator').
 - "Locker", "Luggage" -> Call 'get_station_facilities' (category='locker') AND 'retrieve_station_knowledge' (query='luggage').
-- "Crowded", "Status", "Delay" -> Call 'get_train_status'.
+- "Crowded", "Busy", "Rush Hour", "People" -> Call 'get_station_crowd_context'.
+- "Status", "Delay" -> Call 'get_train_status'.
 - "Weather", "Rain" -> Call 'get_weather'.
 
 CONSTRAINTS:
@@ -109,7 +133,7 @@ CONSTRAINTS:
 
     } catch (error: any) {
         console.error('[Chat API] Fatal Error:', error);
-        return new NextResponse(createErrorStream(error.message || 'Internal Server Error'), {
+        return new NextResponse(createOfflineStream(`⚠️ ${error.message || 'Internal Server Error'}`, 'error'), {
             headers: { 'Content-Type': 'text/event-stream' }
         });
     }

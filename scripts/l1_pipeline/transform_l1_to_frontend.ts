@@ -136,7 +136,7 @@ function mapVibeTag(tagStr: string): L1_VibeTag {
     if (tagStr === 'Izakaya') return { id: 'izakaya', label: { en: 'Izakaya Alleys', ja: '飲み屋街', zh: '居酒屋街' }, score: 4 };
     if (tagStr === 'Electronics') return { id: 'electronics', label: { en: 'Electronics District', ja: '電気街', zh: '電器街' }, score: 5 };
     if (tagStr === 'Otaku') return { id: 'otaku', label: { en: 'Otaku Culture', ja: 'オタク文化', zh: '御宅文化' }, score: 5 };
-    
+
     // Fallback for generated tags or unknown ones
     // Expected format might be just a word or "En (Ja)"
     // Let's try to parse "En (Ja)"
@@ -144,17 +144,17 @@ function mapVibeTag(tagStr: string): L1_VibeTag {
     if (match) {
         const en = match[1];
         const ja = match[2];
-        return { 
-            id: en.toLowerCase().replace(/\s+/g, '_'), 
+        return {
+            id: en.toLowerCase().replace(/\s+/g, '_'),
             label: { en, ja, zh: ja }, // Fallback zh to ja
-            score: 3 
+            score: 3
         };
     }
 
-    return { 
-        id: tagStr.toLowerCase().replace(/\s+/g, '_'), 
-        label: { en: tagStr, ja: tagStr, zh: tagStr }, 
-        score: 3 
+    return {
+        id: tagStr.toLowerCase().replace(/\s+/g, '_'),
+        label: { en: tagStr, ja: tagStr, zh: tagStr },
+        score: 3
     };
 }
 
@@ -173,16 +173,16 @@ async function main() {
     for (const station of rawData) {
         // Map Categories
         const categories: { [key: string]: L1_Category } = {};
-        
+
         for (const stat of station.osmStats) {
             if (stat.total === 0) continue;
 
             const label = mapCategory(stat.category);
-            
+
             // Find spots for this category
             const spots = station.poiSample
                 .filter(p => p.category === stat.category)
-                .slice(0, 5) // Limit to 5
+                .slice(0, 50) // Limit to 50
                 .map(p => ({
                     name: getLocaleString(p),
                     osm_id: String(p.osm_id)
@@ -208,15 +208,30 @@ async function main() {
         };
     }
 
+    // Generate Name Index (for name-based lookup fallback)
+    const nameIndex: Record<string, string> = {};
+    for (const station of rawData) {
+        const name = station.name;
+        if (typeof name === 'object' && name.ja) {
+            nameIndex[name.ja] = station.clusterId;
+        }
+        if (typeof name === 'object' && name.en && name.en !== name.ja) {
+            nameIndex[name.en] = station.clusterId;
+        }
+    }
+
     // Generate TypeScript File Content
     const fileContent = `
 import { L1_DNA_Data } from '@/lib/types/stationStandard';
 
 export const STATIC_L1_DATA: Record<string, L1_DNA_Data> = ${JSON.stringify(outputData, null, 4)};
+
+// Name-based lookup index (Station Name -> Cluster ID)
+export const L1_NAME_INDEX: Record<string, string> = ${JSON.stringify(nameIndex, null, 4)};
 `;
 
     fs.writeFileSync(OUTPUT_FILE, fileContent.trim());
-    console.log(`✅ Successfully generated ${OUTPUT_FILE} with ${Object.keys(outputData).length} stations.`);
+    console.log(`✅ Successfully generated ${OUTPUT_FILE} with ${Object.keys(outputData).length} stations and ${Object.keys(nameIndex).length} name mappings.`);
 }
 
 main().catch(console.error);

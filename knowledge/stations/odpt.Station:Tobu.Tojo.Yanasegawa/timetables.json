@@ -1,0 +1,5322 @@
+[
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031760FC",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Tojo.Yanasegawa.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Tojo",
+    "odpt:station": "odpt.Station:Tobu.Tojo.Yanasegawa",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3300",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3300",
+        "odpt:departureTime": "05:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.300",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "300",
+        "odpt:departureTime": "05:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.302",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "302",
+        "odpt:departureTime": "05:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3302",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3302",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2101T",
+        "odpt:departureTime": "05:48",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2103T",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3200",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3200",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3202",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3202",
+        "odpt:departureTime": "06:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.498",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "498",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.200",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "200",
+        "odpt:departureTime": "06:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3204",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3204",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3162K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3162K",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3304",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3304",
+        "odpt:departureTime": "06:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2105T",
+        "odpt:departureTime": "06:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3306",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3306",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2163S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2163S",
+        "odpt:departureTime": "06:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.202",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "202",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3308",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3308",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2107T",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3310",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3310",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2155S",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3187S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3187S",
+        "odpt:departureTime": "07:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3206",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3206",
+        "odpt:departureTime": "07:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3312",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3312",
+        "odpt:departureTime": "07:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3159K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3159K",
+        "odpt:departureTime": "07:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3208",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3208",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2109T",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2111T",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3210",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3210",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3155K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3155K",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2113T",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3212",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3212",
+        "odpt:departureTime": "08:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.304",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "304",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2115T",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3314",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3314",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2117T",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3316",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3316",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2149S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2149S",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3318",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3318",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.306",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "306",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2161S",
+        "odpt:departureTime": "09:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3320",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3320",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.308",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "308",
+        "odpt:departureTime": "09:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2167S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2167S",
+        "odpt:departureTime": "09:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3100",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3100",
+        "odpt:departureTime": "09:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.310",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "310",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2139S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2139S",
+        "odpt:departureTime": "09:55",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.312",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "312",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3214",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3214",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3322",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3322",
+        "odpt:departureTime": "10:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.314",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "314",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2263S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2263S",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3324",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3324",
+        "odpt:departureTime": "10:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3326",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3326",
+        "odpt:departureTime": "10:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.316",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "316",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2121T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2121T",
+        "odpt:departureTime": "11:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.318",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "318",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3328",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3328",
+        "odpt:departureTime": "11:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3157K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3157K",
+        "odpt:departureTime": "11:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2151S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2151S",
+        "odpt:departureTime": "11:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3330",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3330",
+        "odpt:departureTime": "11:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.320",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "320",
+        "odpt:departureTime": "11:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2117T",
+        "odpt:departureTime": "12:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3332",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3332",
+        "odpt:departureTime": "12:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3152K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3152K",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2105T",
+        "odpt:departureTime": "12:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3334",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3334",
+        "odpt:departureTime": "12:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.322",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "322",
+        "odpt:departureTime": "12:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2267S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2267S",
+        "odpt:departureTime": "13:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3336",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3336",
+        "odpt:departureTime": "13:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3153K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3153K",
+        "odpt:departureTime": "13:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2113T",
+        "odpt:departureTime": "13:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3338",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3338",
+        "odpt:departureTime": "13:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.324",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "324",
+        "odpt:departureTime": "13:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2157S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2157S",
+        "odpt:departureTime": "14:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3340",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3340",
+        "odpt:departureTime": "14:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3161K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3161K",
+        "odpt:departureTime": "14:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2261S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2261S",
+        "odpt:departureTime": "14:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3342",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3342",
+        "odpt:departureTime": "14:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.326",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "326",
+        "odpt:departureTime": "14:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2147S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2147S",
+        "odpt:departureTime": "15:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3344",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3344",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3154K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3154K",
+        "odpt:departureTime": "15:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2123T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2123T",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.328",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "328",
+        "odpt:departureTime": "15:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3346",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3346",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.330",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "330",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2115T",
+        "odpt:departureTime": "16:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3348",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3348",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3103T",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3350",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3350",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.332",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "332",
+        "odpt:departureTime": "16:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3352",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3352",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3189S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3189S",
+        "odpt:departureTime": "16:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3354",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3354",
+        "odpt:departureTime": "16:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.334",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "334",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3356",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3356",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.336",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "336",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3185S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3185S",
+        "odpt:departureTime": "17:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3358",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3358",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2133S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2133S",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3360",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3360",
+        "odpt:departureTime": "17:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.338",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "338",
+        "odpt:departureTime": "17:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3151K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3151K",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2205T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2205T",
+        "odpt:departureTime": "17:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3362",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3362",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3253K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3253K",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3216",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3216",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2119T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2119T",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.340",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "340",
+        "odpt:departureTime": "18:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3364",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3364",
+        "odpt:departureTime": "18:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2111T",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3218",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3218",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.204",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "204",
+        "odpt:departureTime": "18:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2135S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2135S",
+        "odpt:departureTime": "18:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3366",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3366",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3123S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3123S",
+        "odpt:departureTime": "19:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3220",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3220",
+        "odpt:departureTime": "19:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.206",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "206",
+        "odpt:departureTime": "19:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3368",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3368",
+        "odpt:departureTime": "19:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3191S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3191S",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3222",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3222",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.208",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "208",
+        "odpt:departureTime": "19:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3370",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3370",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2201T",
+        "odpt:departureTime": "20:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3372",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3372",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.342",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "342",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3224",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3224",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2141S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2141S",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3226",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3226",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3133S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3133S",
+        "odpt:departureTime": "20:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3228",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3228",
+        "odpt:departureTime": "20:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.344",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "344",
+        "odpt:departureTime": "21:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2107T",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.346",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "346",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3105T",
+        "odpt:departureTime": "21:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3230",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3230",
+        "odpt:departureTime": "21:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.210",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "210",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3374",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3374",
+        "odpt:departureTime": "21:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3163K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3163K",
+        "odpt:departureTime": "21:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2183S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2183S",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3376",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3376",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.348",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "348",
+        "odpt:departureTime": "22:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3262K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3262K",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3232",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3232",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2127S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2127S",
+        "odpt:departureTime": "22:35",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3378",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3378",
+        "odpt:departureTime": "22:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2121S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2121S",
+        "odpt:departureTime": "22:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3102",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3102",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.350",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "350",
+        "odpt:departureTime": "23:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.352",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "352",
+        "odpt:departureTime": "23:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2191S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2191S",
+        "odpt:departureTime": "23:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2255S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2255S",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3380",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3380",
+        "odpt:departureTime": "23:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3234",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3234",
+        "odpt:departureTime": "23:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.354",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "354",
+        "odpt:departureTime": "23:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3104",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3104",
+        "odpt:departureTime": "23:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031760FD",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Tojo.Yanasegawa.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Tojo",
+    "odpt:station": "odpt.Station:Tobu.Tojo.Yanasegawa",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.101",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "101",
+        "odpt:departureTime": "04:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.103",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "103",
+        "odpt:departureTime": "05:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.105",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "105",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.301",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "301",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3101",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3101",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3301",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3301",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.201",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "201",
+        "odpt:departureTime": "06:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2155S",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.303",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "303",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3201",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3201",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2121S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2121S",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3303",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3303",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2123S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2123S",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.305",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "305",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.307",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "307",
+        "odpt:departureTime": "07:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2153S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2153S",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3305",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3305",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.309",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "309",
+        "odpt:departureTime": "08:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2161S",
+        "odpt:departureTime": "08:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3307",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3307",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.311",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "311",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2163S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2163S",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.313",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "313",
+        "odpt:departureTime": "08:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.315",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "315",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3309",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3309",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2115T",
+        "odpt:departureTime": "09:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3311",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3311",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3159K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3159K",
+        "odpt:departureTime": "09:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3105T",
+        "odpt:departureTime": "09:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2165S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2165S",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3313",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3313",
+        "odpt:departureTime": "09:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3315",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3315",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2141S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2141S",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3203",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3203",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.317",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "317",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3143S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3143S",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3317",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3317",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3151K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3151K",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2101T",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.319",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "319",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3111T",
+        "odpt:departureTime": "10:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3319",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3319",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2109T",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.321",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "321",
+        "odpt:departureTime": "11:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3152K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3152K",
+        "odpt:departureTime": "11:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2113T",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3205",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3205",
+        "odpt:departureTime": "11:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2103T",
+        "odpt:departureTime": "11:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3321",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3321",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.323",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "323",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2149S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2149S",
+        "odpt:departureTime": "12:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3323",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3323",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3155K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3155K",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2221S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2221S",
+        "odpt:departureTime": "12:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3325",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3325",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.325",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "325",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2175S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2175S",
+        "odpt:departureTime": "13:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3327",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3327",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3157K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3157K",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2187S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2187S",
+        "odpt:departureTime": "13:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3329",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3329",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.327",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "327",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2107T",
+        "odpt:departureTime": "14:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3331",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3331",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3259K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3259K",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2215T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2215T",
+        "odpt:departureTime": "14:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3333",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3333",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.329",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "329",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2265S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2265S",
+        "odpt:departureTime": "15:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3335",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3335",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3251K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3251K",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2157S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2157S",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3337",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3337",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.331",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "331",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.333",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "333",
+        "odpt:departureTime": "16:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3339",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3339",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.335",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "335",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2209T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2209T",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3341",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3341",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.337",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "337",
+        "odpt:departureTime": "16:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2103T",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3343",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3343",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3133S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3133S",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3255K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3255K",
+        "odpt:departureTime": "17:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2171S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2171S",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3345",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3345",
+        "odpt:departureTime": "17:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2129S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2129S",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2115T",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3347",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3347",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3155S",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3349",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3349",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.339",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "339",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2101T",
+        "odpt:departureTime": "18:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3351",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3351",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2257S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2257S",
+        "odpt:departureTime": "18:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3353",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3353",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2159S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2159S",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3355",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3355",
+        "odpt:departureTime": "19:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2169S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2169S",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3351K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3351K",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3185S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3185S",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3357",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3357",
+        "odpt:departureTime": "19:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2177S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2177S",
+        "odpt:departureTime": "19:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3359",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3359",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2117T",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3361",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3361",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3167S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3167S",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.203",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "203",
+        "odpt:departureTime": "20:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3363",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3363",
+        "odpt:departureTime": "20:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2161S",
+        "odpt:departureTime": "20:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3365",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3365",
+        "odpt:departureTime": "20:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2141S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2141S",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3154K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3154K",
+        "odpt:departureTime": "21:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2105T",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.499",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "499",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.KamiFukuoka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2131S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2131S",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3367",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3367",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3159K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3159K",
+        "odpt:departureTime": "21:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3113T",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3207",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3207",
+        "odpt:departureTime": "22:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3153K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3153K",
+        "odpt:departureTime": "22:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3209",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3209",
+        "odpt:departureTime": "22:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2109T",
+        "odpt:departureTime": "22:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3369",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3369",
+        "odpt:departureTime": "22:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2201T",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3211",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3211",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3371",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3371",
+        "odpt:departureTime": "23:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2203T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2203T",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3213",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3213",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3119T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3119T",
+        "odpt:departureTime": "23:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3215",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3215",
+        "odpt:departureTime": "23:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3217",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3217",
+        "odpt:departureTime": "00:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3219",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3219",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3373",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3373",
+        "odpt:departureTime": "00:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3375",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3375",
+        "odpt:departureTime": "00:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031760FF",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Tojo.Yanasegawa.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Tojo",
+    "odpt:station": "odpt.Station:Tobu.Tojo.Yanasegawa",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.101",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "101",
+        "odpt:departureTime": "04:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.103",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "103",
+        "odpt:departureTime": "05:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.105",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "105",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.301",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "301",
+        "odpt:departureTime": "05:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.303",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "303",
+        "odpt:departureTime": "05:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.107",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "107",
+        "odpt:departureTime": "06:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3301",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3301",
+        "odpt:departureTime": "06:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2163S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2163S",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2155S",
+        "odpt:departureTime": "06:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.305",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "305",
+        "odpt:departureTime": "06:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3159K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3159K",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.109",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "109",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3155K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3155K",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3201",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3201",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.307",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "307",
+        "odpt:departureTime": "07:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3303",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3303",
+        "odpt:departureTime": "07:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.111",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "111",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ogawamachi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3305",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3305",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3203",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3203",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2149S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2149S",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3307",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3307",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2161S",
+        "odpt:departureTime": "08:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.309",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "309",
+        "odpt:departureTime": "08:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3309",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3309",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.201",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "201",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.311",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "311",
+        "odpt:departureTime": "08:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3311",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3311",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3119T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3119T",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2167S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2167S",
+        "odpt:departureTime": "08:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3205",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3205",
+        "odpt:departureTime": "08:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.313",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "313",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.203",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "203",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2139S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2139S",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3313",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3313",
+        "odpt:departureTime": "09:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3163K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3163K",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.315",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "315",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3315",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3315",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2263S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2263S",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3317",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3317",
+        "odpt:departureTime": "09:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2107T",
+        "odpt:departureTime": "09:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.317",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "317",
+        "odpt:departureTime": "09:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3207",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3207",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2121T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2121T",
+        "odpt:departureTime": "09:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.319",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "319",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3319",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3319",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2153S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2153S",
+        "odpt:departureTime": "10:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2109T",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3321",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3321",
+        "odpt:departureTime": "10:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3323",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3323",
+        "odpt:departureTime": "10:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3157K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3157K",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2103T",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2151S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2151S",
+        "odpt:departureTime": "10:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3325",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3325",
+        "odpt:departureTime": "10:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.321",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "321",
+        "odpt:departureTime": "10:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3327",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3327",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2117T",
+        "odpt:departureTime": "11:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3189S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3189S",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.323",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "323",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3209",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3209",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3152K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3152K",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2105T",
+        "odpt:departureTime": "11:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3329",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3329",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.325",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "325",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2267S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2267S",
+        "odpt:departureTime": "12:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3331",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3331",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3153K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3153K",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2113T",
+        "odpt:departureTime": "12:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3333",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3333",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.327",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "327",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2157S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2157S",
+        "odpt:departureTime": "13:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3335",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3335",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3161K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3161K",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2261S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2261S",
+        "odpt:departureTime": "13:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3337",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3337",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.329",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "329",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2147S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2147S",
+        "odpt:departureTime": "14:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3339",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3339",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3154K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3154K",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2123T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2123T",
+        "odpt:departureTime": "14:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3341",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3341",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.331",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "331",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2115T",
+        "odpt:departureTime": "15:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3343",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3343",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.333",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "333",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2175S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2175S",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3345",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3345",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.335",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "335",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2251S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2251S",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3347",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3347",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.337",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "337",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2133S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2133S",
+        "odpt:departureTime": "16:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3349",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3349",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.339",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "339",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2205T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2205T",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3351",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3351",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3253K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3253K",
+        "odpt:departureTime": "17:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.205",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "205",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.341",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "341",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3211",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3211",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2111T",
+        "odpt:departureTime": "17:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3213",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3213",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2135S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2135S",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3353",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3353",
+        "odpt:departureTime": "18:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2123S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2123S",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3355",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3355",
+        "odpt:departureTime": "18:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2101T",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3215",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3215",
+        "odpt:departureTime": "18:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2191S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2191S",
+        "odpt:departureTime": "18:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3217",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3217",
+        "odpt:departureTime": "18:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.343",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "343",
+        "odpt:departureTime": "18:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.207",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "207",
+        "odpt:departureTime": "18:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3357",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3357",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3103T",
+        "odpt:departureTime": "19:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3359",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3359",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2117T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2117T",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3219",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3219",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2141S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2141S",
+        "odpt:departureTime": "19:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3221",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3221",
+        "odpt:departureTime": "19:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2233S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2233S",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3361",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3361",
+        "odpt:departureTime": "20:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2107T",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2305T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2305T",
+        "odpt:departureTime": "20:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3363",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3363",
+        "odpt:departureTime": "20:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3162K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3162K",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3223",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3223",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2183S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2183S",
+        "odpt:departureTime": "20:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3365",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3365",
+        "odpt:departureTime": "20:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2123T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2123T",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3163K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3163K",
+        "odpt:departureTime": "21:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3367",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3367",
+        "odpt:departureTime": "21:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.345",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "345",
+        "odpt:departureTime": "21:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2127S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2127S",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2113T",
+        "odpt:departureTime": "21:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3225",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3225",
+        "odpt:departureTime": "21:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.347",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "347",
+        "odpt:departureTime": "21:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3369",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3369",
+        "odpt:departureTime": "21:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2121S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2121S",
+        "odpt:departureTime": "21:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3154K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3154K",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3371",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3371",
+        "odpt:departureTime": "22:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D3191S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D3191S",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2201T",
+        "odpt:departureTime": "22:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.499",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "499",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.KamiFukuoka"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3227",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3227",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.D2255S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "D2255S",
+        "odpt:departureTime": "22:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3373",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3373",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2119T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2119T",
+        "odpt:departureTime": "23:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3375",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3375",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3155K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3155K",
+        "odpt:departureTime": "23:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2207T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2207T",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3229",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3229",
+        "odpt:departureTime": "23:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.349",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "349",
+        "odpt:departureTime": "23:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2149S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2149S",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3231",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3231",
+        "odpt:departureTime": "23:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F3105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F3105T",
+        "odpt:departureTime": "00:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.F2111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "F2111T",
+        "odpt:departureTime": "00:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3233",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3233",
+        "odpt:departureTime": "00:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3235",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3235",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.ShinrinKoen"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3377",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3377",
+        "odpt:departureTime": "00:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3379",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3379",
+        "odpt:departureTime": "00:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Kawagoeshi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000031760FA",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Tojo.Yanasegawa.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Tojo",
+    "odpt:station": "odpt.Station:Tobu.Tojo.Yanasegawa",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3300",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3300",
+        "odpt:departureTime": "05:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.300",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "300",
+        "odpt:departureTime": "05:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.302",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "302",
+        "odpt:departureTime": "05:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3302",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3302",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.200",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "200",
+        "odpt:departureTime": "05:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2101T",
+        "odpt:departureTime": "06:07",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.498",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "498",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3103T",
+        "odpt:departureTime": "06:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3304",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3304",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.202",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "202",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2187S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2187S",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2107T",
+        "odpt:departureTime": "06:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3306",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3306",
+        "odpt:departureTime": "07:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3155S",
+        "odpt:departureTime": "07:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3152K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3152K",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3308",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3308",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3200",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3200",
+        "odpt:departureTime": "07:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3310",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3310",
+        "odpt:departureTime": "07:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2109T",
+        "odpt:departureTime": "07:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3202",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3202",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2121S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2121S",
+        "odpt:departureTime": "08:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3111T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3111T",
+        "odpt:departureTime": "08:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.304",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "304",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3312",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3312",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3153S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3153S",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3314",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3314",
+        "odpt:departureTime": "08:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2113T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2113T",
+        "odpt:departureTime": "08:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3316",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3316",
+        "odpt:departureTime": "08:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.306",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "306",
+        "odpt:departureTime": "09:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3318",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3318",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.204",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "204",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2163S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2163S",
+        "odpt:departureTime": "09:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.308",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "308",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3320",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3320",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.310",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "310",
+        "odpt:departureTime": "09:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2115T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2115T",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3322",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3322",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3161S",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2165S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2165S",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3159K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3159K",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3324",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3324",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3204",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3204",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.312",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "312",
+        "odpt:departureTime": "10:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2141S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2141S",
+        "odpt:departureTime": "11:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.314",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "314",
+        "odpt:departureTime": "11:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3326",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3326",
+        "odpt:departureTime": "11:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3206",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3206",
+        "odpt:departureTime": "11:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3151K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3151K",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2101T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2101T",
+        "odpt:departureTime": "11:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3328",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3328",
+        "odpt:departureTime": "11:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.206",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "206",
+        "odpt:departureTime": "11:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2109T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2109T",
+        "odpt:departureTime": "12:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3330",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3330",
+        "odpt:departureTime": "12:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3152K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3152K",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2103T",
+        "odpt:departureTime": "12:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3332",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3332",
+        "odpt:departureTime": "12:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.316",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "316",
+        "odpt:departureTime": "12:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2149S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2149S",
+        "odpt:departureTime": "13:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3334",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3334",
+        "odpt:departureTime": "13:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3155K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3155K",
+        "odpt:departureTime": "13:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2221S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2221S",
+        "odpt:departureTime": "13:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3336",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3336",
+        "odpt:departureTime": "13:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.318",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "318",
+        "odpt:departureTime": "13:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2175S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2175S",
+        "odpt:departureTime": "14:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3338",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3338",
+        "odpt:departureTime": "14:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3157K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3157K",
+        "odpt:departureTime": "14:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2187S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2187S",
+        "odpt:departureTime": "14:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3340",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3340",
+        "odpt:departureTime": "14:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.320",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "320",
+        "odpt:departureTime": "14:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2107T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2107T",
+        "odpt:departureTime": "15:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3342",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3342",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3259K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3259K",
+        "odpt:departureTime": "15:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Izumino.Shonandai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2215T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2215T",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3344",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3344",
+        "odpt:departureTime": "15:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.322",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "322",
+        "odpt:departureTime": "15:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2265S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2265S",
+        "odpt:departureTime": "16:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3346",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3346",
+        "odpt:departureTime": "16:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3251K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3251K",
+        "odpt:departureTime": "16:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2157S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2157S",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2105T",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3348",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3348",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.324",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "324",
+        "odpt:departureTime": "16:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.326",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "326",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.328",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "328",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3350",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3350",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.330",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "330",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3352",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3352",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3354",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3354",
+        "odpt:departureTime": "17:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2209T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2209T",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.332",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "332",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3133S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3133S",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3356",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3356",
+        "odpt:departureTime": "18:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2161S",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3255K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3255K",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Sotetsu.Main.Ebina"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3129S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3129S",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3358",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3358",
+        "odpt:departureTime": "18:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2103T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2103T",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.334",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "334",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3360",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3360",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3362",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3362",
+        "odpt:departureTime": "19:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2171S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2171S",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3157S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3157S",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3364",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3364",
+        "odpt:departureTime": "19:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2155S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2155S",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3366",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3366",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2169S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2169S",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3368",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3368",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2201T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2201T",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3351K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3351K",
+        "odpt:departureTime": "20:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2177S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2177S",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3370",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3370",
+        "odpt:departureTime": "20:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E2159S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E2159S",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.336",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "336",
+        "odpt:departureTime": "20:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3372",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3372",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2167S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2167S",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3374",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3374",
+        "odpt:departureTime": "21:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.E3185S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "E3185S",
+        "odpt:departureTime": "21:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3376",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3376",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3161S",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.338",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "338",
+        "odpt:departureTime": "21:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3208",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3208",
+        "odpt:departureTime": "21:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.208",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "208",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3105T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3105T",
+        "odpt:departureTime": "22:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C3154K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C3154K",
+        "odpt:departureTime": "22:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.C2131S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "C2131S",
+        "odpt:departureTime": "22:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3210",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3210",
+        "odpt:departureTime": "22:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3212",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3212",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3100",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3100",
+        "odpt:departureTime": "23:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3214",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3214",
+        "odpt:departureTime": "23:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.340",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "340",
+        "odpt:departureTime": "23:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3216",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3216",
+        "odpt:departureTime": "23:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.3102",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "3102",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Tojo.342",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "342",
+        "odpt:departureTime": "23:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Ikebukuro"
+        ]
+      }
+    ]
+  }
+]

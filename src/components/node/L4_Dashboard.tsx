@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Accessibility, AlertTriangle, BookOpen, Briefcase, ChevronDown, ChevronRight, Clock, HelpCircle, Loader2, Map, MapPin, Send, Settings, Sparkles, Ticket, X } from 'lucide-react';
+import { Accessibility, AlertTriangle, BookOpen, Briefcase, ChevronDown, ChevronRight, Clock, Loader2, Map, MapPin, Settings, Sparkles, Ticket, X } from 'lucide-react';
 import { StationAutocomplete, type Station } from '@/components/ui/StationAutocomplete';
 import type { OdptRailwayFare, OdptStationTimetable } from '@/lib/odpt/types';
 import {
@@ -40,6 +40,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
     const uiLocale = locale;
 
     const [isDemandOpen, setIsDemandOpen] = useState(false);
+    // Simplified 6-demand state (new design)
     const [demand, setDemand] = useState<L4DemandState>({
         wheelchair: false,
         stroller: false,
@@ -54,6 +55,10 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
         avoidRain: false,
     });
 
+    // New simplified demand types for the 6-chip design
+    type SimplifiedDemand = 'optimalRoute' | 'saveMoney' | 'accessibility' | 'expertTips' | 'avoidCrowds' | 'fastTrack';
+    const [selectedDemands, setSelectedDemands] = useState<SimplifiedDemand[]>([]);
+
     const [question, setQuestion] = useState('');
     const [activeKind, setActiveKind] = useState<L4IntentKind | null>(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -64,12 +69,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
     const [focusedKind, setFocusedKind] = useState<Exclude<L4IntentKind, 'unknown'> | 'all'>('all');
     const [templateCategory, setTemplateCategory] = useState<L4TemplateCategory>('basic');
     const [isTemplatesOpen, setIsTemplatesOpen] = useState(false);
-    const [overlay, setOverlay] = useState<'none' | 'quickstart' | 'faq'>('none');
     const [autoSendTemplate, setAutoSendTemplate] = useState(false);
-
-    const [guideSessionId, setGuideSessionId] = useState<string>('');
-    const [guideRated, setGuideRated] = useState(false);
-
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     const [fareData, setFareData] = useState<OdptRailwayFare[] | null>(null);
@@ -99,23 +99,10 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
         setQuestion('');
         setIsTemplatesOpen(false);
         setFocusedKind('all');
-        setTemplateCategory('basic');
-        setOverlay('none');
+
         setDestinationInput('');
         setSelectedDestination(null);
     }, [stationId]);
-
-    useEffect(() => {
-        try {
-            const existing = window.localStorage.getItem('l4_guide_session_id');
-            const sid = existing || `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-            if (!existing) window.localStorage.setItem('l4_guide_session_id', sid);
-            setGuideSessionId(sid);
-            setGuideRated(window.localStorage.getItem('l4_guide_rated') === '1');
-        } catch {
-            setGuideSessionId('');
-        }
-    }, []);
 
     const templates = useMemo(() => {
         return buildL4DefaultQuestionTemplates({ originStationId: stationId, locale: uiLocale });
@@ -141,35 +128,6 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
         }
     };
 
-    const postGuideFeedback = async (score: 1 | -1) => {
-        if (guideRated) return;
-        try {
-            await fetch('/api/agent/feedback', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    score,
-                    reason: 'l4_quickstart',
-                    details: {
-                        locale: uiLocale,
-                        stationId,
-                        focusedKind,
-                        templateCategory,
-                        autoSendTemplate
-                    },
-                    messageId: 'l4_quickstart_v1',
-                    sessionId: guideSessionId || null
-                })
-            });
-            try {
-                window.localStorage.setItem('l4_guide_rated', '1');
-            } catch {
-            }
-            setGuideRated(true);
-        } catch {
-        }
-    };
-
     // Quick route search using unified API when destination is selected via autocomplete
     const quickRouteSearch = async (destination: Station) => {
         if (!destination?.id || isLoading) return;
@@ -190,7 +148,17 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
             const data = await res.json();
 
             if (!res.ok || data.error) {
-                setError(data.error || 'Route search failed');
+                // Check for authentication errors
+                const errorDetail = data.error || 'Route search failed';
+                if (errorDetail.includes('403') || errorDetail.includes('Invalid acl:consumerKey')) {
+                    setError(uiLocale.startsWith('zh')
+                        ? '🔧 系統維護中：路線查詢服務暫時無法使用，請稍後再試。'
+                        : uiLocale === 'ja'
+                            ? '🔧 システムメンテナンス中：ルート検索サービスは一時的に利用できません。'
+                            : '🔧 Route search service temporarily unavailable.');
+                } else {
+                    setError(errorDetail);
+                }
                 setSuggestion(buildRouteSuggestion({
                     originStationId: currentOriginId,
                     destinationStationId: destination.id,
@@ -203,7 +171,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
 
             // Build suggestion from unified API response
             const apiRoutes = data.routes || [];
-            
+
             setSuggestion({
                 title: uiLocale.startsWith('zh')
                     ? '路線建議（含票價/時刻）'
@@ -223,7 +191,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
             });
 
             // Update question field for reference
-            setQuestion(uiLocale.startsWith('zh') 
+            setQuestion(uiLocale.startsWith('zh')
                 ? `怎麼去 ${destination.id} from: ${currentOriginId}`
                 : uiLocale === 'ja'
                     ? `${destination.id} まで行きたい from: ${currentOriginId}`
@@ -237,7 +205,14 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
 
     const toggleDemand = (key: keyof L4DemandState) => {
         setDemand(prev => ({ ...prev, [key]: !prev[key] }));
+    };
 
+    const toggleSimplifiedDemand = (key: SimplifiedDemand) => {
+        setSelectedDemands(prev =>
+            prev.includes(key)
+                ? prev.filter(k => k !== key)
+                : [...prev, key]
+        );
     };
 
     const askWithText = async (rawText: string) => {
@@ -319,13 +294,22 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                 const res = await fetch(url, { cache: 'no-store' });
                 if (!res.ok) {
                     const detail = await res.text().catch(() => '');
+                    // Check for authentication errors
+                    if (detail.includes('403') || detail.includes('Invalid acl:consumerKey')) {
+                        setError(uiLocale.startsWith('zh')
+                            ? '🔧 系統維護中：票價數據暫時無法使用，請稍後再試。'
+                            : uiLocale === 'ja'
+                                ? '🔧 システムメンテナンス中：運賃データは一時的に利用できません。'
+                                : '🔧 Fare data temporarily unavailable.');
+                    } else {
+                        setError(detail || 'Fare request failed.');
+                    }
                     setSuggestion(buildFareSuggestion({
                         originStationId: currentOriginId,
                         destinationStationId: toStationId,
                         demand,
                         verified: false,
                     }));
-                    setError(detail || 'Fare request failed.');
                     return;
                 }
                 const json = (await res.json()) as OdptRailwayFare[];
@@ -345,8 +329,17 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                 const res = await fetch(url, { cache: 'no-store' });
                 if (!res.ok) {
                     const detail = await res.text().catch(() => '');
+                    // Check for authentication errors
+                    if (detail.includes('403') || detail.includes('Invalid acl:consumerKey')) {
+                        setError(uiLocale.startsWith('zh')
+                            ? '🔧 系統維護中：時刻表數據暫時無法使用，請稍後再試。'
+                            : uiLocale === 'ja'
+                                ? '🔧 システムメンテナンス中：時刻表データは一時的に利用できません。'
+                                : '🔧 Timetable data temporarily unavailable.');
+                    } else {
+                        setError(detail || 'Timetable request failed.');
+                    }
                     setSuggestion(buildTimetableSuggestion({ stationId: currentOriginId, demand, verified: false }));
-                    setError(detail || 'Timetable request failed.');
                     return;
                 }
                 const json = (await res.json()) as OdptStationTimetable[];
@@ -379,6 +372,16 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                 const res = await fetch(url, { cache: 'no-store' });
                 if (!res.ok) {
                     const detail = await res.text().catch(() => '');
+                    // Check for authentication errors
+                    if (detail.includes('403') || detail.includes('Invalid acl:consumerKey')) {
+                        setError(uiLocale.startsWith('zh')
+                            ? '🔧 系統維護中：部分路線數據暫時無法使用（認證過期），請聯絡管理員更新 API 金鑰。'
+                            : uiLocale === 'ja'
+                                ? '🔧 システムメンテナンス中：一時的にルートデータを利用できません（認証エラー）。'
+                                : '🔧 System maintenance: Route data temporarily unavailable (API auth expired).');
+                    } else {
+                        setError(detail || 'Route planning request failed.');
+                    }
                     setSuggestion(buildRouteSuggestion({
                         originStationId: currentOriginId,
                         destinationStationId,
@@ -386,12 +389,28 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                         verified: false,
                         options: [],
                     }));
-                    setError(detail || 'Route planning request failed.');
                     return;
                 }
 
                 const json = await res.json();
                 const apiRoutes = json.routes || [];
+
+                // Check for API-level errors
+                if (json.error && (json.error.includes('403') || json.error.includes('Invalid'))) {
+                    setError(uiLocale.startsWith('zh')
+                        ? '🔧 系統維護中：路線查詢服務暫時不可用，請稍後再試。'
+                        : uiLocale === 'ja'
+                            ? '🔧 システムメンテナンス中：ルート検索サービスは一時的に利用できません。'
+                            : '🔧 Route search service temporarily unavailable.');
+                    setSuggestion(buildRouteSuggestion({
+                        originStationId: currentOriginId,
+                        destinationStationId,
+                        demand,
+                        verified: false,
+                        options: [],
+                    }));
+                    return;
+                }
 
                 setSuggestion({
                     title: uiLocale.startsWith('zh')
@@ -473,32 +492,6 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                             }}
                         />
                     </div>
-
-                    <div className="flex items-center gap-2">
-                        <button
-                            onClick={() => setOverlay('quickstart')}
-                            className="px-3 py-2 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-100 text-xs font-black flex items-center gap-2"
-                        >
-                            <BookOpen size={14} />
-                            {uiLocale.startsWith('zh') ? '快速入門' : uiLocale === 'ja' ? 'クイック' : 'Quick start'}
-                        </button>
-                        <button
-                            onClick={() => setOverlay('faq')}
-                            className="px-3 py-2 rounded-xl bg-slate-50 text-slate-700 border border-slate-100 text-xs font-black flex items-center gap-2"
-                        >
-                            <HelpCircle size={14} />
-                            {uiLocale.startsWith('zh') ? '常見問題' : uiLocale === 'ja' ? 'FAQ' : 'FAQ'}
-                        </button>
-                    </div>
-                </div>
-
-                <div className="rounded-2xl bg-slate-50 border border-slate-100 px-3 py-2 text-[11px] font-bold text-slate-500 flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="uppercase tracking-widest text-slate-400">
-                        {uiLocale.startsWith('zh') ? '操作流程' : uiLocale === 'ja' ? '手順' : 'Flow'}
-                    </span>
-                    <span className={`${focusedKind !== 'all' ? 'text-slate-800' : 'text-slate-500'}`}>1) {uiLocale.startsWith('zh') ? '選模組' : uiLocale === 'ja' ? '機能選択' : 'Pick module'}</span>
-                    <span className={`${isTemplatesOpen ? 'text-slate-800' : 'text-slate-500'}`}>2) {uiLocale.startsWith('zh') ? '選模板' : uiLocale === 'ja' ? 'テンプレ' : 'Template'}</span>
-                    <span className={`${String(question || '').trim() ? 'text-slate-800' : 'text-slate-500'}`}>3) {uiLocale.startsWith('zh') ? '送出查詢' : uiLocale === 'ja' ? '送信' : 'Send'}</span>
                 </div>
 
                 {/* Travel Planning Assistant: Origin & Destination */}
@@ -507,7 +500,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                         <MapPin size={12} className="inline mr-1" />
                         {uiLocale.startsWith('zh') ? '行程規劃助手' : uiLocale === 'ja' ? 'ルート案内' : 'Route Assistant'}
                     </div>
-                    
+
                     <div className="space-y-3">
                         <div className="relative">
                             <div className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-emerald-50 z-10" />
@@ -516,7 +509,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                                 onChange={setOriginInput}
                                 onSelect={(s) => {
                                     setSelectedOrigin(s);
-                                    setOriginInput(s.name.ja || s.name.en || '');
+                                    setOriginInput(s.name['zh-TW'] || s.name.ja || s.name.en || '');
                                 }}
                                 placeholder={uiLocale.startsWith('zh') ? '從哪裡出發？' : uiLocale === 'ja' ? 'どこから出発？' : 'Origin...'}
                                 className="pl-8 bg-slate-50/50 border-slate-100 focus:bg-white transition-all"
@@ -531,7 +524,7 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                                 onChange={setDestinationInput}
                                 onSelect={(s) => {
                                     setSelectedDestination(s);
-                                    setDestinationInput(s.name.ja || s.name.en || '');
+                                    setDestinationInput(s.name['zh-TW'] || s.name.ja || s.name.en || '');
                                     void quickRouteSearch(s);
                                 }}
                                 placeholder={uiLocale.startsWith('zh') ? '想去哪裡？' : uiLocale === 'ja' ? 'どこへ行く？' : 'Destination...'}
@@ -545,51 +538,64 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                     {selectedDestination && (
                         <div className="mt-2 text-[11px] font-bold text-indigo-700 flex items-center gap-1">
                             <div className="w-1 h-1 rounded-full bg-indigo-400" />
-                            {selectedDestination.name.ja || selectedDestination.name.en} ({selectedDestination.operator})
+                            {selectedDestination.name['zh-TW'] || selectedDestination.name.ja || selectedDestination.name.en} ({selectedDestination.operator})
                         </div>
                     )}
 
-                    {/* Demand State Toggles */}
+                    {/* NEW: Simplified 6-Demand Chips */}
                     <div className="mt-4 pt-3 border-t border-slate-100">
-                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center justify-between">
-                            <span>{uiLocale.startsWith('zh') ? '個人化需求' : uiLocale === 'ja' ? 'こだわり設定' : 'Personalization'}</span>
-                            <span className="text-slate-300">Beta</span>
+                        <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center justify-between">
+                            <span>{uiLocale.startsWith('zh') ? '我想...' : uiLocale === 'ja' ? 'わたしは...' : 'I want to...'}</span>
+                            <span className="text-indigo-400">✨</span>
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                            <DemandToggle 
-                                icon="🦽" 
-                                active={demand.wheelchair} 
-                                onClick={() => setDemand(d => ({ ...d, wheelchair: !d.wheelchair }))} 
-                                label={uiLocale.startsWith('zh') ? '輪椅' : uiLocale === 'ja' ? '車椅子' : 'Wheelchair'}
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <SimplifiedDemandChip
+                                icon="🛗"
+                                label={uiLocale.startsWith('zh') ? '優化路線' : uiLocale === 'ja' ? '最適ルート' : 'Optimal Route'}
+                                description={uiLocale.startsWith('zh') ? '少轉乘、有電梯' : uiLocale === 'ja' ? '乗り換えない、エレベーター' : 'Fewer transfers, elevator'}
+                                active={selectedDemands.includes('optimalRoute')}
+                                onClick={() => toggleSimplifiedDemand('optimalRoute')}
                             />
-                            <DemandToggle 
-                                icon="👶" 
-                                active={demand.stroller} 
-                                onClick={() => setDemand(d => ({ ...d, stroller: !d.stroller }))} 
-                                label={uiLocale.startsWith('zh') ? '推車' : uiLocale === 'ja' ? 'ベビーカー' : 'Stroller'}
+                            <SimplifiedDemandChip
+                                icon="💰"
+                                label={uiLocale.startsWith('zh') ? '省錢通行證' : uiLocale === 'ja' ? '賢く省钱' : 'Save Money'}
+                                description={uiLocale.startsWith('zh') ? '找優惠票券' : uiLocale === 'ja' ? '得な切符' : 'Find passes'}
+                                active={selectedDemands.includes('saveMoney')}
+                                onClick={() => toggleSimplifiedDemand('saveMoney')}
                             />
-                            <DemandToggle 
-                                icon="🧳" 
-                                active={demand.largeLuggage} 
-                                onClick={() => setDemand(d => ({ ...d, largeLuggage: !d.largeLuggage }))} 
-                                label={uiLocale.startsWith('zh') ? '特大行李' : uiLocale === 'ja' ? '大型荷物' : 'Large Luggage'}
+                            <SimplifiedDemandChip
+                                icon="🦽"
+                                label={uiLocale.startsWith('zh') ? '無障礙' : uiLocale === 'ja' ? 'バリアフリー' : 'Accessible'}
+                                description={uiLocale.startsWith('zh') ? '電梯/輪椅/推車' : uiLocale === 'ja' ? 'エレベーター/車椅子' : 'Elevator/wheelchair'}
+                                active={selectedDemands.includes('accessibility')}
+                                onClick={() => toggleSimplifiedDemand('accessibility')}
                             />
-                            <DemandToggle 
-                                icon="🏃" 
-                                active={demand.rushing} 
-                                onClick={() => setDemand(d => ({ ...d, rushing: !d.rushing }))} 
-                                label={uiLocale.startsWith('zh') ? '趕時間' : uiLocale === 'ja' ? '急いでいる' : 'Rushing'}
+                            <SimplifiedDemandChip
+                                icon="💡"
+                                label={uiLocale.startsWith('zh') ? '專家建議' : uiLocale === 'ja' ? 'プロの技' : 'Pro Tips'}
+                                description={uiLocale.startsWith('zh') ? '內行人才知道' : uiLocale === 'ja' ? '地元のコツ' : 'Local secrets'}
+                                active={selectedDemands.includes('expertTips')}
+                                onClick={() => toggleSimplifiedDemand('expertTips')}
                             />
-                            <DemandToggle 
-                                icon="💰" 
-                                active={demand.budget} 
-                                onClick={() => setDemand(d => ({ ...d, budget: !d.budget }))} 
-                                label={uiLocale.startsWith('zh') ? '省錢優先' : uiLocale === 'ja' ? '安さ優先' : 'Budget'}
+                            <SimplifiedDemandChip
+                                icon="🚶"
+                                label={uiLocale.startsWith('zh') ? '避開人潮' : uiLocale === 'ja' ? '空いている' : 'Avoid Crowds'}
+                                description={uiLocale.startsWith('zh') ? '避開尖峰時段' : uiLocale === 'ja' ? 'ラッシュ回避' : 'Skip rush hour'}
+                                active={selectedDemands.includes('avoidCrowds')}
+                                onClick={() => toggleSimplifiedDemand('avoidCrowds')}
+                            />
+                            <SimplifiedDemandChip
+                                icon="⚡"
+                                label={uiLocale.startsWith('zh') ? '快速通關' : uiLocale === 'ja' ? '最速' : 'Fast Track'}
+                                description={uiLocale.startsWith('zh') ? '趕時間選這個' : uiLocale === 'ja' ? '急いでいる' : 'In a hurry'}
+                                active={selectedDemands.includes('fastTrack')}
+                                onClick={() => toggleSimplifiedDemand('fastTrack')}
                             />
                         </div>
                     </div>
                 </div>
 
+                {/* NEW: Improved Search Input with Guided Placeholder */}
                 <div className="flex items-center gap-2 mt-3">
                     <div className="relative flex-1">
                         <input
@@ -603,8 +609,12 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                                     ask();
                                 }
                             }}
-                            placeholder={uiLocale.startsWith('zh') ? '輸入問題：票價／時刻表／怎麼去 odpt.Station:...' : uiLocale === 'ja' ? '質問：運賃／時刻表／odpt.Station:... まで' : 'Ask: fare / timetable / how to get to odpt.Station:...'}
-                            className="w-full px-4 py-3 pr-12 rounded-2xl bg-slate-50 text-sm font-bold text-slate-700 focus:ring-2 focus:ring-indigo-600 outline-none"
+                            placeholder={uiLocale.startsWith('zh')
+                                ? '例如：「我想從東京車站去淺草，偏好電車且攜帶大件行李」'
+                                : uiLocale === 'ja'
+                                    ? '例：「東京駅から浅草まで、電車が好きで大きな荷物を持っています」'
+                                    : 'e.g., "I want to go from Tokyo Station to Asakusa with large luggage"'}
+                            className="w-full px-4 py-3 pr-12 rounded-2xl bg-slate-50 text-sm font-bold text-slate-700 focus:ring-2 focus:ring-indigo-600 outline-none placeholder:text-slate-400"
                             disabled={isLoading}
                         />
                         <button
@@ -613,9 +623,25 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                             className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center disabled:opacity-50"
                             aria-label="send"
                         >
-                            {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+                            {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />}
                         </button>
                     </div>
+                </div>
+
+                {/* Quick suggestion chips */}
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                    <QuickSuggestionChip
+                        text={uiLocale.startsWith('zh') ? '怎麼去淺草' : uiLocale === 'ja' ? '浅草まで' : 'to Asakusa'}
+                        onClick={() => setQuestion(uiLocale.startsWith('zh') ? '怎麼去淺草' : uiLocale === 'ja' ? '浅草まで' : 'How to get to Asakusa')}
+                    />
+                    <QuickSuggestionChip
+                        text={uiLocale.startsWith('zh') ? '多少錢到新宿' : uiLocale === 'ja' ? '新宿まで多少钱' : 'fare to Shinjuku'}
+                        onClick={() => setQuestion(uiLocale.startsWith('zh') ? '多少錢到新宿' : uiLocale === 'ja' ? '新宿までの運賃' : 'How much to Shinjuku')}
+                    />
+                    <QuickSuggestionChip
+                        text={uiLocale.startsWith('zh') ? '下一班電車' : uiLocale === 'ja' ? '次の電車' : 'next train'}
+                        onClick={() => setQuestion(uiLocale.startsWith('zh') ? '下一班電車' : uiLocale === 'ja' ? '次の電車' : 'When is the next train')}
+                    />
                 </div>
 
                 <div className="mt-3 flex items-center justify-between gap-2">
@@ -875,42 +901,8 @@ export default function L4_Dashboard({ currentNodeId, locale = 'zh-TW' }: L4Dash
                     <SuggestionModule suggestion={suggestion} demand={demand} locale={uiLocale} />
                 ) : null}
 
-                {!activeKind && !isLoading && !error && (
-                    <EmptyState
-                        locale={uiLocale}
-                        stationId={stationId}
-                        onOpenTemplates={() => setIsTemplatesOpen(true)}
-                        onQuickStart={() => setOverlay('quickstart')}
-                    />
-                )}
+                {/* EmptyState removed - template button already exists above */}
             </div>
-
-            {overlay !== 'none' && (
-                <Overlay
-                    title={overlay === 'quickstart'
-                        ? (uiLocale.startsWith('zh') ? '快速入門' : uiLocale === 'ja' ? 'クイックスタート' : 'Quick start')
-                        : (uiLocale.startsWith('zh') ? '常見問題' : uiLocale === 'ja' ? 'FAQ' : 'FAQ')}
-                    onClose={() => setOverlay('none')}
-                >
-                    {overlay === 'quickstart' ? (
-                        <QuickStart
-                            locale={uiLocale}
-                            stationId={stationId}
-                            templates={templates}
-                            onApply={(tpl) => void applyTemplate(tpl, { send: true })}
-                            onFeedback={postGuideFeedback}
-                            feedbackLocked={guideRated}
-                        />
-                    ) : (
-                        <FaqPanel
-                            locale={uiLocale}
-                            stationId={stationId}
-                            templates={templates}
-                            onApply={(tpl) => void applyTemplate(tpl, { send: false })}
-                        />
-                    )}
-                </Overlay>
-            )}
         </div>
     );
 }
@@ -981,11 +973,10 @@ function DemandToggle({ icon, active, onClick, label }: { icon: string; active: 
         <button
             onClick={onClick}
             title={label}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border transition-all ${
-                active 
-                    ? 'bg-emerald-50 border-emerald-200 text-emerald-700' 
-                    : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200'
-            }`}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border transition-all ${active
+                ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
+                : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200'
+                }`}
         >
             <span className="text-sm">{icon}</span>
             <span className="text-[10px] font-black uppercase tracking-tighter">{label}</span>
@@ -993,296 +984,77 @@ function DemandToggle({ icon, active, onClick, label }: { icon: string; active: 
     );
 }
 
-function Overlay({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
+// NEW: Simplified 6-Demand Chip Component
+function SimplifiedDemandChip({ icon, label, description, active, onClick }: {
+    icon: string;
+    label: string;
+    description: string;
+    active: boolean;
+    onClick: () => void
+}) {
     return (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/30 p-3">
-            <div className="w-full sm:max-w-2xl bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
-                    <div className="text-sm font-black text-slate-900">{title}</div>
-                    <button
-                        onClick={onClose}
-                        className="w-9 h-9 rounded-2xl border border-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-50"
-                        aria-label="close"
-                    >
-                        <X size={16} />
-                    </button>
+        <button
+            onClick={onClick}
+            className={`relative p-3 rounded-xl border text-left transition-all duration-200 ${active
+                ? 'bg-gradient-to-br from-indigo-500 to-purple-600 border-indigo-600 text-white shadow-lg shadow-indigo-200 scale-[1.02]'
+                : 'bg-white border-slate-100 hover:border-indigo-200 hover:bg-slate-50'
+                }`}
+        >
+            <div className="flex items-start gap-2">
+                <span className="text-xl">{icon}</span>
+                <div className="flex-1 min-w-0">
+                    <div className={`text-xs font-black tracking-tight ${active ? 'text-white' : 'text-slate-800'
+                        }`}>
+                        {label}
+                    </div>
+                    <div className={`text-[10px] font-bold mt-0.5 ${active ? 'text-indigo-100' : 'text-slate-400'
+                        }`}>
+                        {description}
+                    </div>
                 </div>
-                <div className="max-h-[75vh] overflow-y-auto p-5">
-                    {children}
-                </div>
+                {active && (
+                    <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                    </div>
+                )}
             </div>
-        </div>
+        </button>
     );
 }
 
-function EmptyState(params: { locale: SupportedLocale; stationId: string; onOpenTemplates: () => void; onQuickStart: () => void }) {
-    const { locale, stationId, onOpenTemplates, onQuickStart } = params;
+// NEW: Quick Suggestion Chip Component
+function QuickSuggestionChip({ text, onClick }: { text: string; onClick: () => void }) {
+    return (
+        <button
+            onClick={onClick}
+            className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-indigo-50 text-[10px] font-bold text-slate-600 hover:text-indigo-600 transition-colors border border-slate-200 hover:border-indigo-200"
+        >
+            + {text}
+        </button>
+    );
+}
+
+function EmptyState(params: { locale: SupportedLocale; stationId: string; onOpenTemplates: () => void }) {
+    const { locale, onOpenTemplates } = params;
     return (
         <div className="rounded-3xl border border-slate-100 bg-white p-5">
-            <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                    <div className="text-sm font-black text-slate-900">
-                        {locale.startsWith('zh')
-                            ? '先選模板，再送出：新手 10 秒上手'
-                            : locale === 'ja'
-                                ? 'テンプレを選んで送信：10秒で使い始める'
-                                : 'Pick a template, then send: start in 10 seconds'}
-                    </div>
-                    <div className="mt-2 text-sm font-bold text-slate-600 leading-relaxed">
-                        {locale.startsWith('zh')
-                            ? 'L4 只在你提出明確問題後，才顯示與當前問題直接相關的票價／時刻表／路線，並標註資料來源與驗證狀態。'
-                            : locale === 'ja'
-                                ? 'L4 は質問したときだけ、運賃/時刻表/経路を表示し、データソースと検証状態を明示します。'
-                                : 'L4 shows fares/timetables/routes only after explicit questions, with sources and verification.'}
-                    </div>
-                </div>
-
-                <div className="shrink-0 hidden sm:block">
-                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white flex items-center justify-center">
-                        <BookOpen size={22} />
-                    </div>
-                </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <StepCard
-                    title={locale.startsWith('zh') ? '1) 選功能' : locale === 'ja' ? '1) 機能' : '1) Module'}
-                    body={locale.startsWith('zh') ? '票價 / 時刻表 / 路線' : locale === 'ja' ? '運賃 / 時刻表 / 経路' : 'Fare / Timetable / Route'}
-                />
-                <StepCard
-                    title={locale.startsWith('zh') ? '2) 選模板' : locale === 'ja' ? '2) テンプレ' : '2) Template'}
-                    body={locale.startsWith('zh') ? '基礎 / 進階 / 特色' : locale === 'ja' ? '基本 / 応用 / 特徴' : 'Basic / Advanced / Features'}
-                />
-                <StepCard
-                    title={locale.startsWith('zh') ? '3) 看結果' : locale === 'ja' ? '3) 結果' : '3) Output'}
-                    body={locale.startsWith('zh') ? '數據模塊 + 決策建議' : locale === 'ja' ? 'データ + 提案' : 'Data + Suggestions'}
-                />
+            <div className="text-sm font-bold text-slate-600 leading-relaxed">
+                {locale.startsWith('zh')
+                    ? '輸入問題或選擇模板來查詢票價、時刻表或路線規劃。'
+                    : locale === 'ja'
+                        ? 'を入力するか、テンプレートを選択してください。'
+                        : 'Enter a question or select a template to query fares, timetables, or routes.'}
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
                 <button
                     onClick={onOpenTemplates}
-                    className="px-4 py-3 rounded-2xl bg-slate-900 text-white text-sm font-black"
-                >
-                    {locale.startsWith('zh') ? '打開模板' : locale === 'ja' ? 'テンプレを開く' : 'Open templates'}
-                </button>
-                <button
-                    onClick={onQuickStart}
                     className="px-4 py-3 rounded-2xl bg-indigo-600 text-white text-sm font-black"
                 >
-                    {locale.startsWith('zh') ? '查看快速入門' : locale === 'ja' ? 'クイックを見る' : 'View quick start'}
+                    {locale.startsWith('zh') ? '開啟模板' : locale === 'ja' ? 'テンプレートを開く' : 'Open templates'}
                 </button>
-            </div>
-
-            <div className="mt-5 rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                <div className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                    {locale.startsWith('zh') ? '資料格式範例' : locale === 'ja' ? 'データ形式例' : 'Data format examples'}
-                </div>
-                <pre className="mt-2 text-[11px] font-bold text-slate-700 whitespace-pre-wrap break-words">
-                    {locale.startsWith('zh')
-                        ? `票價：{ fromStation, toStation, icCardFare, ticketFare }\n時刻表：{ station, calendar(平日/假日), railDirection, departures[] }\n路線：{ options: [{ label, steps[], sources[] }] }\n\nstation: ${stationId}`
-                        : locale === 'ja'
-                            ? `運賃：{ fromStation, toStation, icCardFare, ticketFare }\n時刻表：{ station, calendar(平日/休日), railDirection, departures[] }\n経路：{ options: [{ label, steps[], sources[] }] }\n\nstation: ${stationId}`
-                            : `Fares: { fromStation, toStation, icCardFare, ticketFare }\nTimetable: { station, calendar(weekday/holiday), railDirection, departures[] }\nRoute: { options: [{ label, steps[], sources[] }] }\n\nstation: ${stationId}`}
-                </pre>
-            </div>
-        </div>
-    );
-}
-
-function StepCard({ title, body }: { title: string; body: string }) {
-    return (
-        <div className="rounded-2xl border border-slate-100 bg-white p-4">
-            <div className="text-xs font-black text-slate-900">{title}</div>
-            <div className="mt-1 text-sm font-bold text-slate-600">{body}</div>
-        </div>
-    );
-}
-
-function QuickStart(params: {
-    locale: SupportedLocale;
-    stationId: string;
-    templates: L4QuestionTemplate[];
-    onApply: (tpl: L4QuestionTemplate) => void;
-    onFeedback: (score: 1 | -1) => void;
-    feedbackLocked: boolean;
-}) {
-    const { locale, stationId, templates, onApply, onFeedback, feedbackLocked } = params;
-    const basic = templates.filter(t => t.category === 'basic');
-    return (
-        <div className="space-y-5">
-            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
-                <div className="text-sm font-black text-slate-900">
-                    {locale.startsWith('zh') ? '3 步驟完成第一次查詢' : locale === 'ja' ? '3ステップで初回検索' : 'First query in 3 steps'}
-                </div>
-                <ol className="mt-3 space-y-2 text-sm font-bold text-slate-700 list-decimal list-inside">
-                    <li>{locale.startsWith('zh') ? '點上方「票價/時刻表/路線」任一圖示' : locale === 'ja' ? '上の「運賃/時刻表/経路」をタップ' : 'Tap one of Fare/Timetable/Route'}</li>
-                    <li>{locale.startsWith('zh') ? '選一個基礎模板（已帶入本站 stationId）' : locale === 'ja' ? '基本テンプレを選ぶ（駅ID入り）' : 'Pick a basic template (with stationId)'}</li>
-                    <li>{locale.startsWith('zh') ? '按送出，查看數據模塊與決策建議（含資料來源驗證）' : locale === 'ja' ? '送信して、データと提案（検証表示）を確認' : 'Send and review data + suggestions (with verification)'}</li>
-                </ol>
-            </div>
-
-            <div>
-                <div className="text-xs font-black uppercase tracking-widest text-slate-400">
-                    {locale.startsWith('zh') ? '一鍵示範（會直接送出）' : locale === 'ja' ? 'ワンタップ例（即送信）' : 'One-tap demo (auto-send)'}
-                </div>
-                <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    {basic.slice(0, 3).map(tpl => (
-                        <button
-                            key={tpl.id}
-                            onClick={() => onApply(tpl)}
-                            className="rounded-2xl bg-indigo-600 text-white p-4 text-left"
-                        >
-                            <div className="text-xs font-black">{tpl.title}</div>
-                            <div className="mt-1 text-[11px] font-bold text-white/85 break-words line-clamp-2">{tpl.text}</div>
-                        </button>
-                    ))}
-                </div>
-                <div className="mt-2 text-[11px] font-bold text-slate-500 break-words">
-                    {locale.startsWith('zh')
-                        ? `本站 station: ${stationId}`
-                        : locale === 'ja'
-                            ? `現在の station: ${stationId}`
-                            : `Current station: ${stationId}`}
-                </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-100 bg-white p-4">
-                <div className="text-sm font-black text-slate-900">
-                    {locale.startsWith('zh') ? '這個導引有幫助嗎？' : locale === 'ja' ? 'この案内は役に立ちましたか？' : 'Was this guide helpful?'}
-                </div>
-                <div className="mt-3 flex gap-2">
-                    <button
-                        disabled={feedbackLocked}
-                        onClick={() => onFeedback(1)}
-                        className={`flex-1 px-4 py-3 rounded-2xl text-sm font-black border ${feedbackLocked ? 'bg-slate-50 text-slate-300 border-slate-100' : 'bg-emerald-50 text-emerald-700 border-emerald-100'}`}
-                    >
-                        {locale.startsWith('zh') ? '有幫助' : locale === 'ja' ? 'はい' : 'Yes'}
-                    </button>
-                    <button
-                        disabled={feedbackLocked}
-                        onClick={() => onFeedback(-1)}
-                        className={`flex-1 px-4 py-3 rounded-2xl text-sm font-black border ${feedbackLocked ? 'bg-slate-50 text-slate-300 border-slate-100' : 'bg-rose-50 text-rose-700 border-rose-100'}`}
-                    >
-                        {locale.startsWith('zh') ? '不太有' : locale === 'ja' ? 'いいえ' : 'No'}
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function FaqPanel(params: {
-    locale: SupportedLocale;
-    stationId: string;
-    templates: L4QuestionTemplate[];
-    onApply: (tpl: L4QuestionTemplate) => void;
-}) {
-    const { locale, stationId, templates, onApply } = params;
-    const basic = templates.filter(t => t.category === 'basic');
-    const advanced = templates.filter(t => t.category === 'advanced');
-    const feature = templates.filter(t => t.category === 'feature');
-
-    return (
-        <div className="space-y-6">
-            <Section
-                title={locale.startsWith('zh') ? '各功能模組會產出什麼？' : locale === 'ja' ? '各モジュールの出力' : 'What each module outputs'}
-                items={[
-                    {
-                        q: locale.startsWith('zh') ? '票價（odpt:RailwayFare）' : locale === 'ja' ? '運賃（odpt:RailwayFare）' : 'Fares (odpt:RailwayFare)',
-                        a: locale.startsWith('zh')
-                            ? '顯示 IC/車票金額，來源標註 odpt:RailwayFare，並在可驗證時打 ✓。'
-                            : locale === 'ja'
-                                ? 'IC/切符の金額を表示し、ソース odpt:RailwayFare と検証 ✓ を表示します。'
-                                : 'Shows IC/ticket amounts with odpt:RailwayFare source and ✓ when verified.'
-                    },
-                    {
-                        q: locale.startsWith('zh') ? '時刻表（odpt:StationTimetable）' : locale === 'ja' ? '時刻表（odpt:StationTimetable）' : 'Timetable (odpt:StationTimetable)',
-                        a: locale.startsWith('zh')
-                            ? '顯示平日/假日兩套班次，並以「下一班」時間片段降低資訊負擔。'
-                            : locale === 'ja'
-                                ? '平日/休日の両方を表示し、「次の便」中心で見やすくします。'
-                                : 'Shows weekday/holiday sets and focuses on next departures.'
-                    },
-                    {
-                        q: locale.startsWith('zh') ? '路線拓撲（odpt:Railway）' : locale === 'ja' ? '路線トポロジー（odpt:Railway）' : 'Route topology (odpt:Railway)',
-                        a: locale.startsWith('zh')
-                            ? '以站點拓撲生成簡易路徑選項，輸出為結構化 steps + sources。'
-                            : locale === 'ja'
-                                ? '駅トポロジーから簡易経路を作り、steps + sources の構造化で出力します。'
-                                : 'Generates simple route options with structured steps + sources.'
-                    },
-                ]}
-            />
-
-            <div className="rounded-2xl border border-slate-100 bg-white p-4">
-                <div className="text-sm font-black text-slate-900">
-                    {locale.startsWith('zh') ? '典型使用情境案例' : locale === 'ja' ? 'よくある利用シーン' : 'Typical scenarios'}
-                </div>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {basic.slice(0, 2).map(tpl => (
-                        <button
-                            key={tpl.id}
-                            onClick={() => onApply(tpl)}
-                            className="rounded-2xl border border-slate-100 bg-slate-50 p-3 text-left"
-                        >
-                            <div className="text-xs font-black text-slate-900">{tpl.title}</div>
-                            <div className="mt-1 text-[11px] font-bold text-slate-600 break-words line-clamp-2">{tpl.text}</div>
-                        </button>
-                    ))}
-                    {advanced.slice(0, 2).map(tpl => (
-                        <button
-                            key={tpl.id}
-                            onClick={() => onApply(tpl)}
-                            className="rounded-2xl border border-slate-100 bg-white p-3 text-left"
-                        >
-                            <div className="text-xs font-black text-slate-900">{tpl.title}</div>
-                            <div className="mt-1 text-[11px] font-bold text-slate-600 break-words line-clamp-2">{tpl.text}</div>
-                        </button>
-                    ))}
-                </div>
-                <div className="mt-3 text-[11px] font-bold text-slate-500 break-words">
-                    {locale.startsWith('zh')
-                        ? `提示：把目的地替換成你要去的 ODPT 站點 ID。本站 station: ${stationId}`
-                        : locale === 'ja'
-                            ? `ヒント：目的地を ODPT 駅ID に置き換えてください。station: ${stationId}`
-                            : `Tip: Replace the destination with your ODPT station ID. station: ${stationId}`}
-                </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-100 bg-white p-4">
-                <div className="text-sm font-black text-slate-900">
-                    {locale.startsWith('zh') ? '系統特色（不干擾進階使用者）' : locale === 'ja' ? '特徴（上級者の邪魔をしない）' : 'Features (doesn\'t block power users)'}
-                </div>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    {feature.slice(0, 3).map(tpl => (
-                        <button
-                            key={tpl.id}
-                            onClick={() => onApply(tpl)}
-                            className="rounded-2xl border border-slate-100 bg-slate-50 p-3 text-left"
-                        >
-                            <div className="text-xs font-black text-slate-900">{tpl.title}</div>
-                            <div className="mt-1 text-[11px] font-bold text-slate-600 break-words line-clamp-2">{tpl.text}</div>
-                        </button>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function Section(params: { title: string; items: Array<{ q: string; a: string }> }) {
-    const { title, items } = params;
-    return (
-        <div className="rounded-2xl border border-slate-100 bg-white p-4">
-            <div className="text-sm font-black text-slate-900">{title}</div>
-            <div className="mt-3 space-y-3">
-                {items.map((it, idx) => (
-                    <div key={idx} className="rounded-2xl border border-slate-100 bg-slate-50 p-3">
-                        <div className="text-xs font-black text-slate-900">{it.q}</div>
-                        <div className="mt-1 text-sm font-bold text-slate-600 leading-relaxed">{it.a}</div>
-                    </div>
-                ))}
             </div>
         </div>
     );
@@ -1296,7 +1068,7 @@ function FareModule({ stationId, fares, destinationId }: { stationId: string; fa
 
     return (
         <div className="mt-3">
-            <div className="text-sm font-black text-slate-900">{`from: ${stationId}`}</div>
+            <div className="text-sm font-black text-slate-900">{`from: ${stationId.split('.').pop() || stationId}`}</div>
             <div className="mt-2 overflow-x-auto rounded-xl border border-slate-100">
                 <table className="min-w-[520px] w-full text-sm">
                     <thead className="bg-slate-50">
@@ -1327,8 +1099,10 @@ function FareModule({ stationId, fares, destinationId }: { stationId: string; fa
 }
 
 function TimetableModule({ stationId, timetables }: { stationId: string; timetables: OdptStationTimetable[] | null }) {
+    // FIX: Use JST (Tokyo Time) for current time comparison, not user's local browser time.
     const now = new Date();
-    const nowHHMM = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    const jstNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
+    const nowHHMM = `${String(jstNow.getHours()).padStart(2, '0')}:${String(jstNow.getMinutes()).padStart(2, '0')}`;
     const items = (timetables || []);
     const directions = Array.from(new Set(items.map(t => t['odpt:railDirection']).filter(Boolean)));
 
@@ -1341,7 +1115,7 @@ function TimetableModule({ stationId, timetables }: { stationId: string; timetab
 
     return (
         <div className="mt-3 space-y-4">
-            <div className="text-sm font-black text-slate-900">{`station: ${stationId}`}</div>
+            <div className="text-sm font-black text-slate-900">{`station: ${stationId.split('.').pop() || stationId}`}</div>
             {directions.length === 0 && (
                 <div className="text-slate-400 text-sm font-bold">No timetable data.</div>
             )}
@@ -1382,91 +1156,242 @@ function TimetableModule({ stationId, timetables }: { stationId: string; timetab
 function SuggestionModule({ suggestion, demand, locale }: { suggestion: L4Suggestion; demand: L4DemandState; locale: SupportedLocale }) {
     const hasDemand = Object.values(demand).some(v => v);
 
+    // Separate content into categories
+    const allSteps = suggestion.options.flatMap(opt => opt.steps);
+    const expertTips = allSteps.filter(s =>
+        s.includes('💡') || s.includes('⚠️') || s.includes('🎍') || s.includes('🛗')
+    );
+    const passKnowledge = allSteps.filter(s =>
+        s.includes('Tokyo Subway Ticket') || s.includes('JR 都區內') ||
+        s.includes('Greater Tokyo Pass') || s.includes('🎫')
+    );
+
+    // Get origin and destination from first option
+    const firstOption = suggestion.options[0];
+    const originStep = allSteps.find(s => s.includes('from:') || s.includes('出發') || s.includes('出発'));
+    const destStep = allSteps.find(s => s.includes('to:') || s.includes('終點') || s.includes('到着'));
+
     return (
-        <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
-            <div className="flex items-center justify-between mb-3">
-                <div className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                    Lutagu {locale.startsWith('zh') ? '建議方案' : locale === 'ja' ? '提案' : 'Suggestion'}
-                </div>
-                {hasDemand && (
-                    <div className="flex gap-1">
-                        {demand.wheelchair && <span title="Wheelchair">🦽</span>}
-                        {demand.stroller && <span title="Stroller">👶</span>}
-                        {demand.vision && <span title="Vision">🦯</span>}
-                        {demand.senior && <span title="Senior">👴</span>}
-                        {demand.largeLuggage && <span title="Large Luggage">🧳</span>}
-                    </div>
-                )}
-            </div>
-            
-            <div className="text-base font-black text-slate-900 break-words">{suggestion.title}</div>
-            
-            <div className="mt-4 space-y-4">
-                {suggestion.options.map((opt, idx) => (
-                    <div key={`${opt.label}-${idx}`} className="relative pl-4 border-l-2 border-indigo-100">
-                        <div className="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-indigo-500" />
-                        <div className="text-sm font-black text-slate-900 break-words mb-2 flex items-center gap-2">
-                            {opt.label}
-                            {idx === 0 && (
-                                <span className="px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600 text-[10px] font-black">
-                                    {locale.startsWith('zh') ? '推薦' : locale === 'ja' ? 'おすすめ' : 'Best'}
-                                </span>
-                            )}
+        <div className="space-y-4">
+            {/* Expert Tips Card - Amber */}
+            {expertTips.length > 0 && (
+                <div className="rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-200">
+                            <span className="text-xl">💡</span>
                         </div>
-                        <div className="space-y-2">
-                            {opt.steps.map((s, i) => {
-                                // Extract price, time or status for special styling
-                                const isPrice = s.includes('💰') || s.includes('¥');
-                                const isTime = s.includes('🚃') || s.includes('時刻') || s.includes('班') || s.includes('次發');
-                                const isStatus = s.includes('✅') || s.includes('⚠️') || s.includes('❌');
-                                
-                                return (
-                                    <div 
-                                        key={i} 
-                                        className={`text-sm font-bold break-words leading-relaxed ${
-                                            isPrice ? 'text-emerald-600' : 
-                                            isTime ? 'text-amber-600' : 
-                                            isStatus ? (s.includes('✅') ? 'text-emerald-500' : s.includes('⚠️') ? 'text-amber-500' : 'text-rose-500') :
-                                            'text-slate-700'
-                                        }`}
-                                    >
-                                        {s}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                            {opt.sources.map((src, i) => (
-                                <span
-                                    key={`${src.type}-${i}`}
-                                    className={`px-2 py-0.5 rounded-md text-[9px] font-black border flex items-center gap-1 ${
-                                        src.verified 
-                                            ? 'bg-emerald-50 text-emerald-700 border-emerald-100' 
-                                            : 'bg-amber-50 text-amber-700 border-amber-100'
-                                    }`}
-                                >
-                                    {src.verified ? '✓' : '!'} {src.type.split(':').pop()}
-                                </span>
-                            ))}
+                        <div>
+                            <div className="text-sm font-black text-amber-800">
+                                {locale.startsWith('zh') ? '專家建議' : locale === 'ja' ? 'プロのアドバイス' : 'Pro Tips'}
+                            </div>
+                            <div className="text-[11px] font-bold text-amber-600">
+                                {locale.startsWith('zh') ? '內行人才知道的重要資訊' : locale === 'ja' ? '地元民だけが知る重要情報' : 'Insider knowledge'}
+                            </div>
                         </div>
                     </div>
-                ))}
-            </div>
-            
-            {hasDemand && (
-                <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-100">
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
-                        {locale.startsWith('zh') ? '個人化調整說明' : locale === 'ja' ? 'パーソナライズ' : 'Personalization'}
-                    </div>
-                    <div className="text-[11px] font-bold text-slate-500 leading-normal">
-                        {locale.startsWith('zh') 
-                            ? '已根據您的狀態（無障礙/行李/偏好）優化建議方案，優先考慮電梯動線與少轉乘路徑。'
-                            : locale === 'ja'
-                                ? 'あなたの状態（バリアフリー/手荷物/こだわり）に合わせて、エレベーター優先や乗り換えの少ない経路を提案しています。'
-                                : 'Optimized based on your state (accessibility/luggage/prefs), prioritizing elevators and fewer transfers.'}
+                    <div className="space-y-2">
+                        {expertTips.map((tip, idx) => (
+                            <div key={idx} className="flex items-start gap-2 bg-white/60 rounded-xl p-3 hover:bg-white transition-colors">
+                                <span className="text-amber-500 mt-0.5">●</span>
+                                <span className="text-sm font-bold text-slate-700 leading-relaxed">{tip.replace(/^[\s\S]*?[：:]/, '')}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             )}
+
+            {/* Pass Knowledge Card - Emerald */}
+            {passKnowledge.length > 0 && (
+                <div className="rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-200">
+                            <span className="text-xl">🎫</span>
+                        </div>
+                        <div>
+                            <div className="text-sm font-black text-emerald-800">
+                                {locale.startsWith('zh') ? '省錢通行證' : locale === 'ja' ? 'お得な切符' : 'Save Money'}
+                            </div>
+                            <div className="text-[11px] font-bold text-emerald-600">
+                                {locale.startsWith('zh') ? '聰明搭車省更多' : locale === 'ja' ? '賢く利用して節約' : 'Smart savings'}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="space-y-2">
+                        {passKnowledge.map((pass, idx) => {
+                            const nameMatch = pass.match(/🎫\s*([^\(]+)/);
+                            const priceMatch = pass.match(/\((¥[\d,]+)/);
+                            const adviceMatch = pass.match(/-\s*(.+)/);
+
+                            return (
+                                <div key={idx} className="bg-white/80 rounded-xl p-3 border border-emerald-100 hover:border-emerald-300 transition-colors">
+                                    <div className="flex items-center justify-between gap-2">
+                                        <span className="text-sm font-black text-slate-800 flex items-center gap-2">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-xs">
+                                                {idx + 1}
+                                            </span>
+                                            {nameMatch ? nameMatch[1].trim() : pass}
+                                        </span>
+                                        {priceMatch && (
+                                            <span className="text-xs font-black text-emerald-600 bg-emerald-100 px-2 py-1 rounded-lg">
+                                                {priceMatch[1]}
+                                            </span>
+                                        )}
+                                    </div>
+                                    {adviceMatch && (
+                                        <div className="mt-1.5 ml-8 text-[10px] font-bold text-slate-500 flex items-center gap-1">
+                                            <span className="text-emerald-400">✓</span>
+                                            {adviceMatch[1].trim()}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
+
+            {/* Main Route Card */}
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                {/* Route Header */}
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-3">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                                <MapPin size={16} className="text-white" />
+                            </div>
+                            <span className="text-sm font-black text-white">
+                                {locale.startsWith('zh') ? '路線規劃' : locale === 'ja' ? 'ルート案内' : 'Route Plan'}
+                            </span>
+                        </div>
+                        {hasDemand && (
+                            <div className="flex gap-1">
+                                {demand.wheelchair && <span title="Wheelchair" className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">🦽</span>}
+                                {demand.stroller && <span title="Stroller" className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">👶</span>}
+                                {demand.vision && <span title="Vision" className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">🦯</span>}
+                                {demand.senior && <span title="Senior" className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">👴</span>}
+                                {demand.largeLuggage && <span title="Large Luggage" className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm">🧳</span>}
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Route Options */}
+                <div className="p-4 space-y-4">
+                    {suggestion.options.map((opt, idx) => (
+                        <div
+                            key={`${opt.label}-${idx}`}
+                            className={`rounded-xl border-2 transition-all duration-200 ${idx === 0
+                                ? 'border-indigo-200 bg-indigo-50/50'
+                                : 'border-slate-100 hover:border-indigo-100 hover:bg-slate-50'
+                                }`}
+                        >
+                            {/* Option Header */}
+                            <div className="flex items-center justify-between px-3 py-2 border-b border-slate-100 ${
+                                idx === 0 ? 'bg-indigo-100/50' : 'bg-slate-50'
+                            }">
+                                <div className="flex items-center gap-2">
+                                    {idx === 0 && (
+                                        <span className="px-2 py-0.5 rounded-full bg-indigo-500 text-white text-[10px] font-black">
+                                            {locale.startsWith('zh') ? '推薦' : locale === 'ja' ? 'おすすめ' : 'Best'}
+                                        </span>
+                                    )}
+                                    <span className="text-sm font-black text-slate-700">{opt.label}</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-xs font-bold text-slate-500">
+                                    {opt.duration && (
+                                        <span className="flex items-center gap-1">
+                                            <Clock size={12} />
+                                            {Math.floor(opt.duration / 60)}min
+                                        </span>
+                                    )}
+                                    {(opt.transfers ?? 0) > 0 && (
+                                        <span className="flex items-center gap-1">
+                                            <Map size={12} />
+                                            {opt.transfers} {locale.startsWith('zh') ? '次換乘' : locale === 'ja' ? '回乗り換え' : 'transfers'}
+                                        </span>
+                                    )}
+                                    {typeof opt.fare === 'number' && (
+                                        <span className="text-emerald-600">
+                                            ¥{opt.fare}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Route Steps */}
+                            <div className="p-3 space-y-2">
+                                {opt.steps.filter(s => !s.includes('💡') && !s.includes('🎫') && !s.includes('Tokyo Subway Ticket') && !s.includes('JR 都區內')).map((s, i) => {
+                                    const isOrigin = s.includes('🏠') || s.includes('出發') || s.includes('出発') || s.includes('from:');
+                                    const isDest = s.includes('終點') || s.includes('到着') || s.includes('to:');
+                                    const isTransfer = s.includes('換乘') || s.includes('乗り換え') || s.includes('→');
+                                    const isPrice = s.includes('💰') || s.includes('¥');
+                                    const isTime = s.includes('🚃') || s.includes('時刻') || s.includes('班');
+
+                                    let stepClass = "text-sm font-bold text-slate-700 leading-relaxed";
+                                    let icon = null;
+
+                                    if (isOrigin) {
+                                        stepClass = "text-sm font-black text-blue-600";
+                                        icon = <MapPin size={14} className="text-blue-500 shrink-0 mt-0.5" />;
+                                    } else if (isDest) {
+                                        stepClass = "text-sm font-black text-emerald-600";
+                                        icon = <MapPin size={14} className="text-emerald-500 shrink-0 mt-0.5" />;
+                                    } else if (isTransfer) {
+                                        stepClass = "text-sm font-bold text-amber-600";
+                                        icon = <Map size={14} className="text-amber-500 shrink-0 mt-0.5" />;
+                                    } else if (isPrice) {
+                                        stepClass = "text-sm font-bold text-emerald-600";
+                                    } else if (isTime) {
+                                        stepClass = "text-sm font-bold text-amber-600";
+                                    }
+
+                                    const stepText = s.replace(/^[\s\S]*?[：:]/, '').trim();
+
+                                    return (
+                                        <div key={i} className={`flex items-start gap-2 rounded-lg p-2 hover:bg-slate-100 transition-colors ${isOrigin ? 'bg-blue-50' : isDest ? 'bg-emerald-50' : isTransfer ? 'bg-amber-50' : ''
+                                            }`}>
+                                            {icon && <div className="shrink-0">{icon}</div>}
+                                            <span className={stepClass}>{stepText}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Sources */}
+                            <div className="px-3 pb-3 flex flex-wrap gap-1.5">
+                                {opt.sources.map((src, i) => (
+                                    <span
+                                        key={`${src.type}-${i}`}
+                                        className={`px-2 py-0.5 rounded-md text-[9px] font-black border flex items-center gap-1 ${src.verified
+                                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                            : 'bg-amber-50 text-amber-700 border-amber-200'
+                                            }`}
+                                    >
+                                        {src.verified ? '✓' : '!'} {src.type.split(':').pop()}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Personalization Note */}
+                {hasDemand && (
+                    <div className="px-4 py-3 bg-slate-50 border-t border-slate-100">
+                        <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-wider mb-1">
+                            <Sparkles size={12} />
+                            {locale.startsWith('zh') ? '個人化調整' : locale === 'ja' ? 'パーソナライズ' : 'Personalization'}
+                        </div>
+                        <div className="text-[11px] font-bold text-slate-500 leading-normal">
+                            {locale.startsWith('zh')
+                                ? '已根據您的無障礙需求、行李狀態和行程偏好，優化路線建議。'
+                                : locale === 'ja'
+                                    ? 'バリアフリー、手荷物、こだわり条件に基づいて経路を提案しています。'
+                                    : 'Route optimized based on your accessibility needs, luggage, and preferences.'}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

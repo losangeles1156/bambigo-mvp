@@ -142,7 +142,10 @@ export function useStationDNA(initialData?: any, locale?: string) {
                 } as L1Place;
             };
 
+            // Base structure from static data
             const categories: Record<string, L1CategorySummary> = {};
+
+            // 1. Populate from Static Data first
             if (hasInitialCategories) {
                 Object.entries(initialData.categories).forEach(([catId, cat]: any) => {
                     const representative = Array.isArray(cat?.representative_spots)
@@ -155,6 +158,39 @@ export function useStationDNA(initialData?: any, locale?: string) {
                         count: typeof cat?.count === 'number' ? cat.count : representative.length,
                         representative_spots: representative
                     };
+                });
+            }
+
+            // 2. Merge with Dynamic DB Data (if available)
+            if (places && places.length > 0) {
+                // Group dynamic places by category
+                const groups: Record<string, L1Place[]> = {};
+                places.forEach(p => {
+                    if (!groups[p.category]) groups[p.category] = [];
+                    groups[p.category].push(p);
+                });
+
+                // Update categories with dynamic data
+                Object.keys(groups).forEach(catId => {
+                    if (categories[catId]) {
+                        // If category exists, update spots and count (if dynamic has more or strictly use dynamic for spots)
+                        categories[catId].representative_spots = groups[catId];
+                        // Update count if dynamic count is greater (or just trust dynamic count if we want to be accurate to DB)
+                        // For MVP, likely keep the max to show "richness" but spots are limited by what we fetched.
+                        // Actually, static count might be the "total OSM count" which is high, while DB places are just "fetched sample".
+                        // So keep static count unless it's 0.
+                        if (categories[catId].count < groups[catId].length) {
+                            categories[catId].count = groups[catId].length;
+                        }
+                    } else {
+                        // If category was missing in static but found in DB, add it
+                        categories[catId] = {
+                            id: catId,
+                            label: CATEGORY_LABELS[catId] || { ja: catId, en: catId, zh: catId },
+                            count: groups[catId].length,
+                            representative_spots: groups[catId]
+                        };
+                    }
                 });
             }
 
@@ -173,11 +209,11 @@ export function useStationDNA(initialData?: any, locale?: string) {
 
             return {
                 loading: false,
-                title: { ja: '都市の拠点', en: 'Urban Hub', zh: '城市樞紐' }, // TODO: Store title/tagline in L1_DNA_Data
+                title: { ja: '都市の拠点', en: 'Urban Hub', zh: '城市樞紐' },
                 tagline: { ja: '多くの人々が行き交う場所', en: 'A bustling transit point', zh: '人來人往的熱鬧據點' },
                 categories,
                 vibe_tags,
-                signature_spots: [] // Can be filled if L1_DNA_Data stores spots
+                signature_spots: places.length > 0 ? places.slice(0, 3) : []
             };
         }
 

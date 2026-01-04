@@ -59,13 +59,13 @@ export function ChatOverlay() {
 
         if (demoMatch) {
             addMessage({ role: 'assistant', content: '', isLoading: true });
-            
+
             // Simulate thinking time
             await new Promise(resolve => setTimeout(resolve, 1200));
-            
+
             const currentStep = demoMatch.steps[stepIndex];
             let responseText = currentStep.agent;
-            
+
             // Append tools if present
             if (currentStep.tools && currentStep.tools.length > 0) {
                 responseText += `\n\n🛠️ ${tChat('activeBadge')}: ${currentStep.tools.join(', ')}`;
@@ -77,31 +77,31 @@ export function ChatOverlay() {
                 if (lastMsg.role === 'assistant') {
                     lastMsg.content = responseText;
                     lastMsg.isLoading = false;
-                    
+
                     // Reset actions to avoid duplicates if state update runs twice
                     lastMsg.actions = [];
 
                     // Add actions from links
-                     if (currentStep.links && currentStep.links.length > 0) {
-                         lastMsg.actions = currentStep.links.map(l => ({
-                             type: 'discovery',
-                             label: l.label,
-                             target: l.url
-                         }));
-                     }
+                    if (currentStep.links && currentStep.links.length > 0) {
+                        lastMsg.actions = currentStep.links.map(l => ({
+                            type: 'discovery',
+                            label: l.label,
+                            target: l.url
+                        }));
+                    }
 
-                     // Add action for next demo step if available
-                     if (demoMatch && stepIndex < demoMatch.steps.length - 1) {
+                    // Add action for next demo step if available
+                    if (demoMatch && stepIndex < demoMatch.steps.length - 1) {
                         const nextStep = demoMatch.steps[stepIndex + 1];
                         lastMsg.actions.push({
                             type: 'discovery',
                             label: `✨ ${nextStep.user} (演示下一步)`,
                             target: `demo_step_${stepIndex + 1}_${demoMatch.id}`
                         });
-                     }
-                     
-                     newMessages[newMessages.length - 1] = lastMsg;
-                 }
+                    }
+
+                    newMessages[newMessages.length - 1] = lastMsg;
+                }
                 return { messages: newMessages };
             });
             return;
@@ -147,12 +147,12 @@ export function ChatOverlay() {
                     if (line.startsWith('data: ')) {
                         try {
                             const data = JSON.parse(line.slice(6));
-                            
+
                             if (data.event === 'meta') {
                                 if (data.mode === 'offline') setIsOffline(true);
                             } else if (data.event === 'message') {
                                 accumulatedAnswer += (data.answer || '');
-                                
+
                                 // Update the last message (assistant) with new content
                                 useAppStore.setState(state => {
                                     const newMessages = [...state.messages];
@@ -178,7 +178,7 @@ export function ChatOverlay() {
         } catch (error) {
             console.error('Chat Error', error);
             // Update last message to show error
-             useAppStore.setState(state => {
+            useAppStore.setState(state => {
                 const newMessages = [...state.messages];
                 const lastMsg = newMessages[newMessages.length - 1];
                 if (lastMsg.role === 'assistant') {
@@ -267,7 +267,7 @@ export function ChatOverlay() {
                 const parts = action.target.split('_');
                 const stepIndex = parseInt(parts[2]);
                 const demoId = parts.slice(3).join('_');
-                
+
                 const demo = DEMO_SCENARIOS.find(s => s.id === demoId);
                 if (demo && demo.steps[stepIndex]) {
                     sendMessage(demo.steps[stepIndex].user);
@@ -353,8 +353,8 @@ export function ChatOverlay() {
                 </button>
             </div>
 
-            {/* Trip Guard Entry Point */}
-            <div className="mx-6 mt-4 p-4 bg-gradient-to-r from-indigo-600/90 to-indigo-800/90 rounded-2xl flex items-center justify-between shadow-lg shadow-indigo-100 border border-white/20 backdrop-blur-md">
+            {/* Trip Guard Entry Point - DISABLED FOR MVP */}
+            {/* <div className="mx-6 mt-4 p-4 bg-gradient-to-r from-indigo-600/90 to-indigo-800/90 rounded-2xl flex items-center justify-between shadow-lg shadow-indigo-100 border border-white/20 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                     <div className="p-2 bg-white/20 rounded-xl text-white">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -373,7 +373,7 @@ export function ChatOverlay() {
                 >
                     {tTripGuard('activate')}
                 </button>
-            </div>
+            </div> */}
 
             {/* L2 Live Status Alert */}
             {l2Status && (
@@ -438,7 +438,7 @@ export function ChatOverlay() {
                             ? 'bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-br-lg shadow-indigo-200'
                             : 'bg-white text-gray-800 rounded-bl-lg border border-black/[0.03] shadow-[0_4px_20px_rgba(0,0,0,0.03)]'
                             }`}>
-                            
+
                             {msg.isLoading ? (
                                 <div className="flex space-x-2 items-center h-6 px-2">
                                     <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -467,26 +467,24 @@ export function ChatOverlay() {
                             {/* Feedback Buttons (Assistant only) */}
                             {msg.role === 'assistant' && !msg.isLoading && msg.content && (
                                 <div className="mt-3 flex items-center gap-2 pt-3 border-t border-gray-100/80">
-                                    <button 
+                                    <button
                                         onClick={() => handleFeedback(idx, 1)}
                                         disabled={!!msg.feedback}
-                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${
-                                            msg.feedback?.score === 1 
-                                                ? 'bg-emerald-100 text-emerald-600' 
+                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${msg.feedback?.score === 1
+                                                ? 'bg-emerald-100 text-emerald-600'
                                                 : 'hover:bg-gray-100 text-gray-300 hover:text-emerald-500'
-                                        }`}
+                                            }`}
                                         title={tChat('feedbackLike')}
                                     >
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
                                     </button>
-                                    <button 
+                                    <button
                                         onClick={() => handleFeedback(idx, -1)}
                                         disabled={!!msg.feedback}
-                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${
-                                            msg.feedback?.score === -1 
-                                                ? 'bg-rose-100 text-rose-600' 
+                                        className={`p-1.5 rounded-full transition-all active:scale-90 ${msg.feedback?.score === -1
+                                                ? 'bg-rose-100 text-rose-600'
                                                 : 'hover:bg-gray-100 text-gray-300 hover:text-rose-500'
-                                        }`}
+                                            }`}
                                         title={tChat('feedbackDislike')}
                                     >
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path></svg>

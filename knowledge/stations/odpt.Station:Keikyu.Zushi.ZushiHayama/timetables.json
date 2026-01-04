@@ -1,0 +1,1595 @@
+[
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D190",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Zushi.ZushiHayama.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Keikyu.Zushi",
+    "odpt:station": "odpt.Station:Keikyu.Zushi.ZushiHayama",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "09:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "16:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "17:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "23:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316D192",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-12-15T14:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-12-13",
+    "owl:sameAs": "odpt.StationTimetable:Keikyu.Zushi.ZushiHayama.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Keikyu.Zushi",
+    "odpt:station": "odpt.Station:Keikyu.Zushi.ZushiHayama",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Keikyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "05:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Zushi.KanazawaHakkei"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KeikyuKawasaki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keisei.Oshiage.Aoto"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "07:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.LimitedExpress",
+        "odpt:departureTime": "08:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Keisei.Oshiage.Aoto"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "09:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "10:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "12:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "15:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "17:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "18:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "19:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.Shinagawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "19:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Express",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Airport.HanedaAirportTerminal1and2"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "20:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "21:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanagawaShimmachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Keikyu.Local",
+        "odpt:departureTime": "00:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Keikyu.Main.KanazawaBunko"
+        ]
+      }
+    ]
+  }
+]

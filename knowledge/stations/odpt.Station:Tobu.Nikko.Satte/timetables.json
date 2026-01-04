@@ -1,0 +1,2712 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175DE4",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Nikko.Satte.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Nikko",
+    "odpt:station": "odpt.Station:Tobu.Nikko.Satte",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4452T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4452T",
+        "odpt:departureTime": "05:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4554T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4554T",
+        "odpt:departureTime": "05:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4556T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4556T",
+        "odpt:departureTime": "05:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C558T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C558T",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C560T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C560T",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C662T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C662T",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4666T",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2602",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2602",
+        "odpt:departureTime": "06:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4668T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4668T",
+        "odpt:departureTime": "06:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A617T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A617T",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C667S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C667S",
+        "odpt:departureTime": "07:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C770T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C770T",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4772T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4772T",
+        "odpt:departureTime": "07:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C704K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C704K",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A744S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A744S",
+        "odpt:departureTime": "07:45",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2604",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2604",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A824S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A824S",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C874T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C874T",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2606",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2606",
+        "odpt:departureTime": "08:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A846S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A846S",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4965S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4965S",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4903K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4903K",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4912K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4912K",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4914K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4914K",
+        "odpt:departureTime": "09:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4076T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4076T",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1008K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1008K",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1023K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1023K",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1151S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1151S",
+        "odpt:departureTime": "11:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1178T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1178T",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1161S",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1275S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1275S",
+        "odpt:departureTime": "12:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1271S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1271S",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1253S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1253S",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1372T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1372T",
+        "odpt:departureTime": "13:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1352T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1352T",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1319K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1319K",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1420K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1420K",
+        "odpt:departureTime": "14:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1409K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1409K",
+        "odpt:departureTime": "14:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1474T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1474T",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1570T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1570T",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1573S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1573S",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1577S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1577S",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1615T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1615T",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1606K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1606K",
+        "odpt:departureTime": "16:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1622K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1622K",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1617T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1617T",
+        "odpt:departureTime": "16:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1759S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1759S",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1758T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1758T",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1703K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1703K",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1867S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1867S",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1866T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1866T",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1860T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1860T",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1969S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1969S",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1915K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1915K",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1919K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1919K",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1907T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1907T",
+        "odpt:departureTime": "20:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C2055S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2055S",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A2016S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2016S",
+        "odpt:departureTime": "20:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4061S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4061S",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C2153S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2153S",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A2110S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2110S",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4168T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4168T",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3602",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3602",
+        "odpt:departureTime": "21:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4124K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4124K",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4216K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4216K",
+        "odpt:departureTime": "22:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4205K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4205K",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A2204S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2204S",
+        "odpt:departureTime": "22:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A2248S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2248S",
+        "odpt:departureTime": "23:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.MinamiSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3604",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3604",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175DE6",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Nikko.Satte.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Nikko",
+    "odpt:station": "odpt.Station:Tobu.Nikko.Satte",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4452T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4452T",
+        "odpt:departureTime": "05:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4554T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4554T",
+        "odpt:departureTime": "05:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4556T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4556T",
+        "odpt:departureTime": "05:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C558T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C558T",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4560T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4560T",
+        "odpt:departureTime": "05:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4562T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4562T",
+        "odpt:departureTime": "06:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C564T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C564T",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4666T",
+        "odpt:departureTime": "06:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4626K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4626K",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4683S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4683S",
+        "odpt:departureTime": "06:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C668T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C668T",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A625T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A625T",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C672T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C672T",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C674T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C674T",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C776T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C776T",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C727K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C727K",
+        "odpt:departureTime": "07:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A758S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A758S",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C704K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C704K",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C778T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C778T",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A770S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A770S",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2602",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2602",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A850S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A850S",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4808K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4808K",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2604",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2604",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4861S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4861S",
+        "odpt:departureTime": "08:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4982T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4982T",
+        "odpt:departureTime": "09:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A929T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A929T",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4910K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4910K",
+        "odpt:departureTime": "09:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4091S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4091S",
+        "odpt:departureTime": "10:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1023K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1023K",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1063S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1063S",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1117K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1117K",
+        "odpt:departureTime": "11:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1109K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1109K",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1156T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1156T",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1252T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1252T",
+        "odpt:departureTime": "12:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1224K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1224K",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1213K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1213K",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1370T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1370T",
+        "odpt:departureTime": "13:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1325K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1325K",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1361S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1361S",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1462T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1462T",
+        "odpt:departureTime": "14:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1414K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1414K",
+        "odpt:departureTime": "14:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1410K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1410K",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1511K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1511K",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1504K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1504K",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1572T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1572T",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1670S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1670S",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1622K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1622K",
+        "odpt:departureTime": "16:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1666T",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1654S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1654S",
+        "odpt:departureTime": "16:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1716K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1716K",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3602",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3602",
+        "odpt:departureTime": "17:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.Asakusa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1759S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1759S",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1777S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1777S",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1819K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1819K",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1831K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1831K",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1858T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1858T",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1925T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1925T",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1970T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1970T",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1906K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1906K",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A1946S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1946S",
+        "odpt:departureTime": "19:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C1979S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1979S",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C2008K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2008K",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C2089S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2089S",
+        "odpt:departureTime": "20:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4061S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4061S",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4105K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4105K",
+        "odpt:departureTime": "21:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C2118K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2118K",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4176T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4176T",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4227K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4227K",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4236K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4236K",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.A2268S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2268S",
+        "odpt:departureTime": "22:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.C4271S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4271S",
+        "odpt:departureTime": "23:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytreeBranch.Oshiage"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3604",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3604",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytree.KitaSenju"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175DE7",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Nikko.Satte.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Nikko",
+    "odpt:station": "odpt.Station:Tobu.Nikko.Satte",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2601",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2601",
+        "odpt:departureTime": "05:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4567S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4567S",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.601",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D503K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D503K",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4504K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4504K",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B544S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B544S",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3601",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3601",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B524S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B524S",
+        "odpt:departureTime": "07:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4508K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4508K",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2603",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2603",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B646S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B646S",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D614K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D614K",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D665S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D665S",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D673S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D673S",
+        "odpt:departureTime": "09:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D612K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D612K",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3603",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3603",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3605",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3605",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3607",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3607",
+        "odpt:departureTime": "10:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3609",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3609",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D851S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D851S",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4871S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4871S",
+        "odpt:departureTime": "10:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D909K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D909K",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D861S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D861S",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D975S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D975S",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1053S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1053S",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1072T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1072T",
+        "odpt:departureTime": "12:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1052T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1052T",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1174T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1174T",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1119K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1119K",
+        "odpt:departureTime": "13:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1120K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1120K",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1259S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1259S",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1203K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1203K",
+        "odpt:departureTime": "14:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1270T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1270T",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1305K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1305K",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1377S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1377S",
+        "odpt:departureTime": "15:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1315T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1315T",
+        "odpt:departureTime": "15:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1306K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1306K",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1322K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1322K",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1417T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1417T",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1416K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1416K",
+        "odpt:departureTime": "16:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1458T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1458T",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1460T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1460T",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1567S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1567S",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1566T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1566T",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1602S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1602S",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1555S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1555S",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1611T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1611T",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1669S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1669S",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1615K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1615K",
+        "odpt:departureTime": "19:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1619K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1619K",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1707T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1707T",
+        "odpt:departureTime": "19:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1761S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1761S",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1709K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1709K",
+        "odpt:departureTime": "20:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1816S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1816S",
+        "odpt:departureTime": "20:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1711K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1711K",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1853S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1853S",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1810S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1810S",
+        "odpt:departureTime": "20:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1868T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1868T",
+        "odpt:departureTime": "21:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1850T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1850T",
+        "odpt:departureTime": "21:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1982T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1982T",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1904S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1904S",
+        "odpt:departureTime": "21:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4952T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4952T",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1956T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1956T",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B2048S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2048S",
+        "odpt:departureTime": "22:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4062T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4062T",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4064T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4064T",
+        "odpt:departureTime": "23:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4176T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4176T",
+        "odpt:departureTime": "23:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4066T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4066T",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4178T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4178T",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4160T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4160T",
+        "odpt:departureTime": "00:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4180T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4180T",
+        "odpt:departureTime": "00:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4274T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4274T",
+        "odpt:departureTime": "00:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D2254T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D2254T",
+        "odpt:departureTime": "00:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175DEA",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Nikko.Satte.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Nikko",
+    "odpt:station": "odpt.Station:Tobu.Nikko.Satte",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2601",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2601",
+        "odpt:departureTime": "05:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4583S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4583S",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.601",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601",
+        "odpt:departureTime": "06:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B558S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B558S",
+        "odpt:departureTime": "06:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4504K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4504K",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B570S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B570S",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3601",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3601",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B550S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B550S",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4508K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4508K",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D661S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D661S",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4510K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4510K",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D616K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D616K",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D682T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D682T",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D617K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D617K",
+        "odpt:departureTime": "09:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D663S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D663S",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.2603",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "2603",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4691S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4691S",
+        "odpt:departureTime": "09:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4752T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4752T",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D723K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D723K",
+        "odpt:departureTime": "10:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3603",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3603",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D724K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D724K",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D856T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D856T",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D809K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D809K",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D814K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D814K",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D970T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D970T",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1079S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1079S",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D913K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D913K",
+        "odpt:departureTime": "12:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1011K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1011K",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1125K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1125K",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1161S",
+        "odpt:departureTime": "13:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1162T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1162T",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1266T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1266T",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1210K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1210K",
+        "odpt:departureTime": "14:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1272T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1272T",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1304K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1304K",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1319K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1319K",
+        "odpt:departureTime": "15:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1370S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1370S",
+        "odpt:departureTime": "15:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1322K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1322K",
+        "odpt:departureTime": "15:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1306K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1306K",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1454S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1454S",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1408K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1408K",
+        "odpt:departureTime": "16:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1405K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1405K",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1459S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1459S",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1577S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1577S",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1518S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1518S",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1531K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1531K",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3605",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3605",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1658T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1658T",
+        "odpt:departureTime": "18:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1625T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1625T",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1670T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1670T",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3607",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3607",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1661S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1661S",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1715T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1715T",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1764T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1764T",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B1746S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B1746S",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1789S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1789S",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3609",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3609",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1718K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1718K",
+        "odpt:departureTime": "20:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3611",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3611",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1874T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1874T",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1871S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1871S",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3613",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3613",
+        "odpt:departureTime": "20:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1876T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1876T",
+        "odpt:departureTime": "21:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1927K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1927K",
+        "odpt:departureTime": "21:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1980T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1980T",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.3615",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionSemiExpress",
+        "odpt:trainNumber": "3615",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4936K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4936K",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.B2068S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "B2068S",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D1954T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D1954T",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4052T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4052T",
+        "odpt:departureTime": "22:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4062T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4062T",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4039K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4039K",
+        "odpt:departureTime": "23:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4078T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4078T",
+        "odpt:departureTime": "23:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4158T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4158T",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4170T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4170T",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4135K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4135K",
+        "odpt:departureTime": "00:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4172T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4172T",
+        "odpt:departureTime": "00:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D4260T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "D4260T",
+        "odpt:departureTime": "00:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Nikko.D2266T",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "D2266T",
+        "odpt:departureTime": "00:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      }
+    ]
+  }
+]

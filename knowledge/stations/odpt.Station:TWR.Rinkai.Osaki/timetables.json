@@ -1,0 +1,2874 @@
+[
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B96A",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.Osaki.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.Osaki",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.580T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "580T",
+        "odpt:departureTime": "05:39",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.682T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "682T",
+        "odpt:departureTime": "06:04",
+        "odpt:platformNumber": "8",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.684T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "684T",
+        "odpt:departureTime": "06:17",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636K",
+        "odpt:departureTime": "06:28",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.680T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "680T",
+        "odpt:departureTime": "06:36",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636T",
+        "odpt:departureTime": "06:48",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.506F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "506F",
+        "odpt:departureTime": "06:59",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.610K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "610K",
+        "odpt:departureTime": "07:06",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.784T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "784T",
+        "odpt:departureTime": "07:11",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.650K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "650K",
+        "odpt:departureTime": "07:17",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.644F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "644F",
+        "odpt:departureTime": "07:25",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.600K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "600K",
+        "odpt:departureTime": "07:34",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.612F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "612F",
+        "odpt:departureTime": "07:43",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.752K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "752K",
+        "odpt:departureTime": "07:48",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.706K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "706K",
+        "odpt:departureTime": "07:55",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.642F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "642F",
+        "odpt:departureTime": "08:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.716K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "716K",
+        "odpt:departureTime": "08:08",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.844K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "844K",
+        "odpt:departureTime": "08:16",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.800K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "800K",
+        "odpt:departureTime": "08:24",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.718K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "718K",
+        "odpt:departureTime": "08:30",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.790F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "790F",
+        "odpt:departureTime": "08:38",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.852K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "852K",
+        "odpt:departureTime": "08:44",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.882K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "882K",
+        "odpt:departureTime": "08:53",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.704F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "704F",
+        "odpt:departureTime": "09:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.836K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "836K",
+        "odpt:departureTime": "09:11",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.840F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "840F",
+        "odpt:departureTime": "09:19",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.918K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "918K",
+        "odpt:departureTime": "09:23",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.888K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "888K",
+        "odpt:departureTime": "09:29",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.990T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "990T",
+        "odpt:departureTime": "09:39",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.848F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "848F",
+        "odpt:departureTime": "09:45",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.810K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "810K",
+        "odpt:departureTime": "09:52",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.880F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "880F",
+        "odpt:departureTime": "10:00",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.968K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "968K",
+        "odpt:departureTime": "10:11",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.986F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "986F",
+        "odpt:departureTime": "10:23",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1040K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1040K",
+        "odpt:departureTime": "10:29",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.950F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "950F",
+        "odpt:departureTime": "10:37",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1088T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1088T",
+        "odpt:departureTime": "10:45",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1048K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1048K",
+        "odpt:departureTime": "10:53",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.966F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "966F",
+        "odpt:departureTime": "11:00",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1110K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1110K",
+        "odpt:departureTime": "11:11",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1006F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1006F",
+        "odpt:departureTime": "11:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1140K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1140K",
+        "odpt:departureTime": "11:29",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1016F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1016F",
+        "odpt:departureTime": "11:38",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1150K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1150K",
+        "odpt:departureTime": "11:42",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1188T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1188T",
+        "odpt:departureTime": "11:52",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1000F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1000F",
+        "odpt:departureTime": "11:59",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1266K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1266K",
+        "odpt:departureTime": "12:09",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1182F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1182F",
+        "odpt:departureTime": "12:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1240K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1240K",
+        "odpt:departureTime": "12:29",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1136F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1136F",
+        "odpt:departureTime": "12:40",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1216K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1216K",
+        "odpt:departureTime": "12:46",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1250K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1250K",
+        "odpt:departureTime": "12:56",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1118F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1118F",
+        "odpt:departureTime": "13:04",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1388T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1388T",
+        "odpt:departureTime": "13:11",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1280F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1280F",
+        "odpt:departureTime": "13:17",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1366K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1366K",
+        "odpt:departureTime": "13:28",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1268F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1268F",
+        "odpt:departureTime": "13:37",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1336K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1336K",
+        "odpt:departureTime": "13:45",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1316K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1316K",
+        "odpt:departureTime": "13:52",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1286F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1286F",
+        "odpt:departureTime": "14:00",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1418K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1418K",
+        "odpt:departureTime": "14:07",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1348F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1348F",
+        "odpt:departureTime": "14:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1488T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1488T",
+        "odpt:departureTime": "14:28",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1306F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1306F",
+        "odpt:departureTime": "14:39",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1468K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1468K",
+        "odpt:departureTime": "14:45",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3418K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3418K",
+        "odpt:departureTime": "14:52",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1310F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1310F",
+        "odpt:departureTime": "15:00",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1536K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1536K",
+        "odpt:departureTime": "15:10",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1400F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1400F",
+        "odpt:departureTime": "15:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1588T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1588T",
+        "odpt:departureTime": "15:27",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1506K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1506K",
+        "odpt:departureTime": "15:33",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1482F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1482F",
+        "odpt:departureTime": "15:39",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1568K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1568K",
+        "odpt:departureTime": "15:50",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1440F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1440F",
+        "odpt:departureTime": "16:00",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1610K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1610K",
+        "odpt:departureTime": "16:06",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1600K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1600K",
+        "odpt:departureTime": "16:15",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1550F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1550F",
+        "odpt:departureTime": "16:21",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1688T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1688T",
+        "odpt:departureTime": "16:30",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1580F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1580F",
+        "odpt:departureTime": "16:38",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1606K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1606K",
+        "odpt:departureTime": "16:49",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1566F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1566F",
+        "odpt:departureTime": "16:59",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1656K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1656K",
+        "odpt:departureTime": "17:08",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1616F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1616F",
+        "odpt:departureTime": "17:17",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1740K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1740K",
+        "odpt:departureTime": "17:22",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1788T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1788T",
+        "odpt:departureTime": "17:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1638K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1638K",
+        "odpt:departureTime": "17:33",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1686F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1686F",
+        "odpt:departureTime": "17:39",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1754K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1754K",
+        "odpt:departureTime": "17:47",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1604K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1604K",
+        "odpt:departureTime": "17:55",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1648F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1648F",
+        "odpt:departureTime": "18:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1856K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1856K",
+        "odpt:departureTime": "18:09",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1718F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1718F",
+        "odpt:departureTime": "18:18",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1888T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1888T",
+        "odpt:departureTime": "18:26",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1762K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1762K",
+        "odpt:departureTime": "18:33",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1736F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1736F",
+        "odpt:departureTime": "18:39",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1854K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1854K",
+        "odpt:departureTime": "18:47",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1848K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1848K",
+        "odpt:departureTime": "18:53",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1782F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1782F",
+        "odpt:departureTime": "18:59",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1956K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1956K",
+        "odpt:departureTime": "19:09",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1868F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1868F",
+        "odpt:departureTime": "19:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1988T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1988T",
+        "odpt:departureTime": "19:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1810F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1810F",
+        "odpt:departureTime": "19:37",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1944K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1944K",
+        "odpt:departureTime": "19:46",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1954K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1954K",
+        "odpt:departureTime": "19:54",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1880F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1880F",
+        "odpt:departureTime": "20:02",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1940K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1940K",
+        "odpt:departureTime": "20:12",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2068K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2068K",
+        "odpt:departureTime": "20:16",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1906F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1906F",
+        "odpt:departureTime": "20:23",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2088T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2088T",
+        "odpt:departureTime": "20:31",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1916F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1916F",
+        "odpt:departureTime": "20:38",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2080T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2080T",
+        "odpt:departureTime": "20:49",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1938F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1938F",
+        "odpt:departureTime": "20:59",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2140K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2140K",
+        "odpt:departureTime": "21:08",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2004F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2004F",
+        "odpt:departureTime": "21:20",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2188T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2188T",
+        "odpt:departureTime": "21:26",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2180T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2180T",
+        "odpt:departureTime": "21:33",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2018F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2018F",
+        "odpt:departureTime": "21:40",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2138K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2138K",
+        "odpt:departureTime": "21:53",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2062F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2062F",
+        "odpt:departureTime": "22:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2288T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2288T",
+        "odpt:departureTime": "22:12",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2148F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2148F",
+        "odpt:departureTime": "22:21",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2204K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2204K",
+        "odpt:departureTime": "22:31",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2156F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2156F",
+        "odpt:departureTime": "22:43",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2280T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2280T",
+        "odpt:departureTime": "22:52",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2110F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2110F",
+        "odpt:departureTime": "23:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2282K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2282K",
+        "odpt:departureTime": "23:13",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2286K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2286K",
+        "odpt:departureTime": "23:29",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2310K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2310K",
+        "odpt:departureTime": "23:47",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2480T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2480T",
+        "odpt:departureTime": "00:01",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2486T",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2486T",
+        "odpt:departureTime": "00:18",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C0000000000000100000316B96B",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-03-17T12:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:TWR.Rinkai.Osaki.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:TWR.Rinkai",
+    "odpt:station": "odpt.Station:TWR.Rinkai.Osaki",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:TWR",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.580T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "580T",
+        "odpt:departureTime": "05:39",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.682T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "682T",
+        "odpt:departureTime": "06:04",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.684T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "684T",
+        "odpt:departureTime": "06:18",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.680T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "680T",
+        "odpt:departureTime": "06:33",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.636T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "636T",
+        "odpt:departureTime": "06:46",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.510S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "510S",
+        "odpt:departureTime": "06:55",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.788T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "788T",
+        "odpt:departureTime": "07:01",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.654K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "654K",
+        "odpt:departureTime": "07:07",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.784T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "784T",
+        "odpt:departureTime": "07:16",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.644K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "644K",
+        "odpt:departureTime": "07:23",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.738K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "738K",
+        "odpt:departureTime": "07:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.650K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "650K",
+        "odpt:departureTime": "07:33",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.780T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "780T",
+        "odpt:departureTime": "07:39",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.642S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "642S",
+        "odpt:departureTime": "07:45",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.738T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "738T",
+        "odpt:departureTime": "07:52",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.624S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "624S",
+        "odpt:departureTime": "07:57",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.790K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "790K",
+        "odpt:departureTime": "08:03",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.626K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "626K",
+        "odpt:departureTime": "08:09",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.700S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "700S",
+        "odpt:departureTime": "08:16",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.728K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "728K",
+        "odpt:departureTime": "08:22",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.752K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "752K",
+        "odpt:departureTime": "08:27",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.704S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "704S",
+        "odpt:departureTime": "08:32",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.730K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "730K",
+        "odpt:departureTime": "08:36",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.740K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "740K",
+        "odpt:departureTime": "08:41",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.706S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "706S",
+        "odpt:departureTime": "08:45",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.732K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "732K",
+        "odpt:departureTime": "08:51",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.854K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "854K",
+        "odpt:departureTime": "08:55",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.848K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "848K",
+        "odpt:departureTime": "08:59",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.990T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "990T",
+        "odpt:departureTime": "09:03",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.736S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "736S",
+        "odpt:departureTime": "09:08",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.882S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "882S",
+        "odpt:departureTime": "09:13",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.904K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "904K",
+        "odpt:departureTime": "09:20",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.820K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "820K",
+        "odpt:departureTime": "09:24",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.846S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "846S",
+        "odpt:departureTime": "09:32",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.838K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "838K",
+        "odpt:departureTime": "09:39",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.860S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "860S",
+        "odpt:departureTime": "09:45",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.954K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "954K",
+        "odpt:departureTime": "09:53",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.964K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "964K",
+        "odpt:departureTime": "09:59",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.988K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "988K",
+        "odpt:departureTime": "10:07",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.984S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "984S",
+        "odpt:departureTime": "10:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1038K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1038K",
+        "odpt:departureTime": "10:25",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1060K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1060K",
+        "odpt:departureTime": "10:31",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.944S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "944S",
+        "odpt:departureTime": "10:37",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1054K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1054K",
+        "odpt:departureTime": "10:47",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1088T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1088T",
+        "odpt:departureTime": "10:56",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.968F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "968F",
+        "odpt:departureTime": "11:02",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1138K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1138K",
+        "odpt:departureTime": "11:12",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1026F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1026F",
+        "odpt:departureTime": "11:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1160K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1160K",
+        "odpt:departureTime": "11:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1052F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1052F",
+        "odpt:departureTime": "11:38",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1154K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1154K",
+        "odpt:departureTime": "11:44",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1168K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1168K",
+        "odpt:departureTime": "11:50",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1030F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1030F",
+        "odpt:departureTime": "12:00",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.3238K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "3238K",
+        "odpt:departureTime": "12:08",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1148F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1148F",
+        "odpt:departureTime": "12:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1260K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1260K",
+        "odpt:departureTime": "12:27",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1182F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1182F",
+        "odpt:departureTime": "12:37",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1268K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1268K",
+        "odpt:departureTime": "12:45",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1238K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1238K",
+        "odpt:departureTime": "12:51",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1146F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1146F",
+        "odpt:departureTime": "13:02",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1330K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1330K",
+        "odpt:departureTime": "13:09",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1264F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1264F",
+        "odpt:departureTime": "13:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1360K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1360K",
+        "odpt:departureTime": "13:29",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1284F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1284F",
+        "odpt:departureTime": "13:37",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1338K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1338K",
+        "odpt:departureTime": "13:47",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1346K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1346K",
+        "odpt:departureTime": "13:53",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1244F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1244F",
+        "odpt:departureTime": "14:00",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1430K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1430K",
+        "odpt:departureTime": "14:10",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1388F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1388F",
+        "odpt:departureTime": "14:17",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1460K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1460K",
+        "odpt:departureTime": "14:27",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1326F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1326F",
+        "odpt:departureTime": "14:37",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1438K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1438K",
+        "odpt:departureTime": "14:45",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1444K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1444K",
+        "odpt:departureTime": "14:54",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1352F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1352F",
+        "odpt:departureTime": "15:00",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1588T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1588T",
+        "odpt:departureTime": "15:09",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1454F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1454F",
+        "odpt:departureTime": "15:18",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1560K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1560K",
+        "odpt:departureTime": "15:25",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1538K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1538K",
+        "odpt:departureTime": "15:34",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1448F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1448F",
+        "odpt:departureTime": "15:42",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1552K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1552K",
+        "odpt:departureTime": "15:49",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1482F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1482F",
+        "odpt:departureTime": "16:01",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1688T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1688T",
+        "odpt:departureTime": "16:07",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1568F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1568F",
+        "odpt:departureTime": "16:17",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1660K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1660K",
+        "odpt:departureTime": "16:23",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1648K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1648K",
+        "odpt:departureTime": "16:31",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1564F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1564F",
+        "odpt:departureTime": "16:39",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1640T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1640T",
+        "odpt:departureTime": "16:45",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1638T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1638T",
+        "odpt:departureTime": "16:57",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1584F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1584F",
+        "odpt:departureTime": "17:03",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1686K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1686K",
+        "odpt:departureTime": "17:08",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1768K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1768K",
+        "odpt:departureTime": "17:13",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1646F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1646F",
+        "odpt:departureTime": "17:21",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1640K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1640K",
+        "odpt:departureTime": "17:28",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1790T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1790T",
+        "odpt:departureTime": "17:35",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1630F",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1630F",
+        "odpt:departureTime": "17:42",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1788T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1788T",
+        "odpt:departureTime": "17:48",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1626S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1626S",
+        "odpt:departureTime": "17:55",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1780K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1780K",
+        "odpt:departureTime": "18:02",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1846K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1846K",
+        "odpt:departureTime": "18:11",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1744S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1744S",
+        "odpt:departureTime": "18:15",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1890T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1890T",
+        "odpt:departureTime": "18:22",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1724K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1724K",
+        "odpt:departureTime": "18:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1754S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1754S",
+        "odpt:departureTime": "18:34",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1762K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1762K",
+        "odpt:departureTime": "18:41",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1880T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1880T",
+        "odpt:departureTime": "18:48",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1738S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1738S",
+        "odpt:departureTime": "18:55",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1944K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1944K",
+        "odpt:departureTime": "19:01",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1852K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1852K",
+        "odpt:departureTime": "19:08",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1882S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1882S",
+        "odpt:departureTime": "19:14",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1810K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1810K",
+        "odpt:departureTime": "19:23",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1954K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1954K",
+        "odpt:departureTime": "19:27",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1860S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1860S",
+        "odpt:departureTime": "19:33",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1980T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1980T",
+        "odpt:departureTime": "19:40",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1804K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1804K",
+        "odpt:departureTime": "19:47",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1864S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1864S",
+        "odpt:departureTime": "19:54",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1986K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1986K",
+        "odpt:departureTime": "20:03",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2082T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2082T",
+        "odpt:departureTime": "20:09",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1984S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1984S",
+        "odpt:departureTime": "20:15",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2060K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2060K",
+        "odpt:departureTime": "20:21",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1848K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1848K",
+        "odpt:departureTime": "20:28",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1968S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1968S",
+        "odpt:departureTime": "20:36",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1988K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1988K",
+        "odpt:departureTime": "20:42",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2064K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2064K",
+        "odpt:departureTime": "20:48",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.1930S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "1930S",
+        "odpt:departureTime": "20:56",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2052K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2052K",
+        "odpt:departureTime": "21:04",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2026S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2026S",
+        "odpt:departureTime": "21:14",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2148K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2148K",
+        "odpt:departureTime": "21:19",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2024K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2024K",
+        "odpt:departureTime": "21:27",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2090S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2090S",
+        "odpt:departureTime": "21:35",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2020K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2020K",
+        "odpt:departureTime": "21:43",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2062S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2062S",
+        "odpt:departureTime": "21:53",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2182K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2182K",
+        "odpt:departureTime": "22:04",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2144S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2144S",
+        "odpt:departureTime": "22:14",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2184K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2184K",
+        "odpt:departureTime": "22:24",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2110S",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2110S",
+        "odpt:departureTime": "22:34",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2146K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2146K",
+        "odpt:departureTime": "22:44",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2200K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2200K",
+        "odpt:departureTime": "22:58",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2180K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2180K",
+        "odpt:departureTime": "23:10",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2286K",
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2286K",
+        "odpt:departureTime": "23:25",
+        "odpt:platformNumber": "6",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2300K",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2300K",
+        "odpt:departureTime": "23:47",
+        "odpt:platformNumber": "5",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.ShinKiba"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2480T",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2480T",
+        "odpt:departureTime": "00:01",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:TWR.Rinkai.2486T",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:TWR.Local",
+        "odpt:trainNumber": "2486T",
+        "odpt:departureTime": "00:18",
+        "odpt:platformNumber": "7",
+        "odpt:destinationStation": [
+          "odpt.Station:TWR.Rinkai.TokyoTeleport"
+        ]
+      }
+    ]
+  }
+]

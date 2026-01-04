@@ -1,0 +1,768 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D23",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Kinugawa.Kosagoe.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Kinugawa",
+    "odpt:station": "odpt.Station:Tobu.Kinugawa.Kosagoe",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.301N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "301N",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.303N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "303N",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.101N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "101N",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.305N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "305N",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.307N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "307N",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.309N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "309N",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.311N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "311N",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.103N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "103N",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.313N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "313N",
+        "odpt:departureTime": "12:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.315N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "315N",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.317N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "317N",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.321N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "321N",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.323N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "323N",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.325N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "325N",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.327N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "327N",
+        "odpt:departureTime": "18:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.329N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "329N",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.331N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "331N",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.333N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "333N",
+        "odpt:departureTime": "21:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.335N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "335N",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.337N",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "337N",
+        "odpt:departureTime": "23:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.KinugawaOnsen"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D20",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Kinugawa.Kosagoe.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Kinugawa",
+    "odpt:station": "odpt.Station:Tobu.Kinugawa.Kosagoe",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.302N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "302N",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.102N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102N",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.304N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "304N",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.306N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "306N",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.308N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "308N",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.310N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "310N",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.312N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "312N",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.316N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "316N",
+        "odpt:departureTime": "10:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.318N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "318N",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.320N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "320N",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.322N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "322N",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.324N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "324N",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.326N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "326N",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.328N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "328N",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.330N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "330N",
+        "odpt:departureTime": "17:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.332N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "332N",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.334N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "334N",
+        "odpt:departureTime": "19:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.336N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "336N",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.338N",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "338N",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D22",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Kinugawa.Kosagoe.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Kinugawa",
+    "odpt:station": "odpt.Station:Tobu.Kinugawa.Kosagoe",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.302N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "302N",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.102N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102N",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Nikko.MinamiKurihashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.304N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "304N",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.306N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "306N",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.308N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "308N",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.310N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "310N",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.312N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "312N",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.316N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "316N",
+        "odpt:departureTime": "10:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.318N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "318N",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.320N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "320N",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.322N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "322N",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.324N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "324N",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.326N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "326N",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.328N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "328N",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.330N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "330N",
+        "odpt:departureTime": "17:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.332N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "332N",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.334N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "334N",
+        "odpt:departureTime": "19:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.336N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "336N",
+        "odpt:departureTime": "20:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.338N",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "338N",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShimoImaichi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D25",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Kinugawa.Kosagoe.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Kinugawa",
+    "odpt:station": "odpt.Station:Tobu.Kinugawa.Kosagoe",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.301N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "301N",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.303N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "303N",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.101N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "101N",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.305N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "305N",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.307N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "307N",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.309N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "309N",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.311N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "311N",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.103N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "103N",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.313N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "313N",
+        "odpt:departureTime": "12:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.315N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "315N",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.317N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "317N",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.321N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "321N",
+        "odpt:departureTime": "15:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.323N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "323N",
+        "odpt:departureTime": "16:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.325N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "325N",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.327N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "327N",
+        "odpt:departureTime": "18:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.329N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "329N",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.331N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "331N",
+        "odpt:departureTime": "20:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.333N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "333N",
+        "odpt:departureTime": "21:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.335N",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "335N",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.ShinFujiwara"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Kinugawa.337N",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "337N",
+        "odpt:departureTime": "23:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kinugawa.KinugawaOnsen"
+        ]
+      }
+    ]
+  }
+]

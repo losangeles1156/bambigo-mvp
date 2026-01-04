@@ -1,6 +1,12 @@
+
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { STATION_LINES } from '@/lib/constants/stationLines';
+
+// API Keys
+const API_KEY_STANDARD = process.env.ODPT_API_KEY || process.env.ODPT_API_TOKEN; // Permanent (Metro/Toei)
+const API_KEY_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP; // Temporary (JR East)
+const ODPT_BASE_URL = 'https://api.odpt.org/api/v4';
 
 function normalizeLineToken(input: string) {
     return input
@@ -27,6 +33,18 @@ function pickWorstSeverity(disruptions: any[]) {
 }
 
 function matchDisruptionToLine(lineDef: any, disruption: any) {
+    // 1. Check ID/Railway Match (New)
+    if (disruption.railway_id) {
+        // Construct approximate ODPT ID from lineDef (e.g. "Ginza" + "Metro" -> "TokyoMetro.Ginza")
+        // This is fuzzy but robust enough for the major lines
+        const lineSlug = lineDef.name.en.replace(' Line', '').replace('-', '');
+        const opPrefix = lineDef.operator === 'Metro' ? 'TokyoMetro' : lineDef.operator === 'Toei' ? 'Toei' : 'JR-East';
+        // Check if disruption.railway_id contains these tokens
+        if (disruption.railway_id.includes(opPrefix) && disruption.railway_id.includes(lineSlug)) {
+            return true;
+        }
+    }
+
     const lineColor = String(lineDef?.color || '').toLowerCase();
     const dColor = String(disruption?.line_color || '').toLowerCase();
     if (lineColor && dColor && lineColor === dColor) return true;
@@ -47,6 +65,84 @@ function matchDisruptionToLine(lineDef: any, disruption: any) {
     return false;
 }
 
+// Fetch helper
+async function fetchFromKey(key: string | undefined, label: string) {
+    if (!key) return [];
+    try {
+        const url = `${ODPT_BASE_URL}/odpt:TrainInformation?acl:consumerKey=${key}`;
+        const res = await fetch(url, { next: { revalidate: 30 } }); // 30s cache
+        if (!res.ok) {
+            console.warn(`[L2 API] ${label} Key fetch failed: ${res.status}`);
+            return [];
+        }
+        return await res.json();
+    } catch (e) {
+        console.error(`[L2 API] ${label} Key exception`, e);
+        return [];
+    }
+}
+
+// Fetch Live Train Information from BOTH keys
+async function fetchLiveTrainInfo() {
+    // Parallel fetch from Standard and Challenge keys
+    const [standardData, challengeData] = await Promise.all([
+        fetchFromKey(API_KEY_STANDARD, 'Standard'),
+        fetchFromKey(API_KEY_CHALLENGE, 'Challenge')
+    ]);
+
+    // Merge and Deduplicate by 'owl:sameAs' or 'odpt:railway'
+    const allData = [...standardData, ...challengeData];
+    const uniqueMap = new Map();
+
+    // Prefer Challenge data if present? Or just keep first? usually same data.
+    // We iterate entire combined list and key by railway ID
+    allData.forEach((item: any) => {
+        const id = item['owl:sameAs'] || item['odpt:railway'];
+        if (id && !uniqueMap.has(id)) {
+            uniqueMap.set(id, item);
+        }
+    });
+
+    const validItems = Array.from(uniqueMap.values());
+
+    return validItems.filter((item: any) => {
+        const statusObj = item['odpt:trainInformationStatus'];
+        const statusText = (typeof statusObj === 'object' && statusObj) ? (statusObj.ja || statusObj.en) : statusObj;
+
+        if (statusText) {
+            return statusText !== '平常運転' && !statusText.includes('平常通り');
+        }
+        if (item['odpt:trainInformationText']) return true;
+        return false;
+    }).map((item: any) => {
+        const statusObj = item['odpt:trainInformationStatus'];
+        const statusText = (typeof statusObj === 'object' && statusObj) ? (statusObj.ja || statusObj.en) : statusObj;
+
+        const textObj = item['odpt:trainInformationText'];
+        const textJa = (typeof textObj === 'object' && textObj) ? textObj.ja : textObj;
+        const textEn = (typeof textObj === 'object' && textObj) ? textObj.en : '';
+
+        return {
+            severity: 'minor',
+            railway_id: item['odpt:railway'],
+            line_name: {
+                en: (item['odpt:railway'] || '').split('.').pop(),
+                ja: ''
+            },
+            status_label: {
+                ja: statusText || '運行情報',
+                en: 'Service Update',
+                zh: '營運調整'
+            },
+            message: {
+                ja: textJa || '',
+                en: textEn || '',
+                zh: textJa || ''
+            }
+        };
+    });
+}
+
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const stationId = searchParams.get('station_id') || searchParams.get('stationId');
@@ -56,7 +152,7 @@ export async function GET(request: Request) {
     }
 
     try {
-        const [snapshotRes, historyRes] = await Promise.all([
+        const [snapshotRes, historyRes, liveTrainInfo, crowdReportsRes] = await Promise.all([
             supabaseAdmin
                 .from('transit_dynamic_snapshot')
                 .select(`
@@ -76,62 +172,108 @@ export async function GET(request: Request) {
                 .eq('station_id', stationId)
                 .gt('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString())
                 .order('created_at', { ascending: false })
-                .limit(20)
+                .limit(20),
+            fetchLiveTrainInfo(),
+            supabaseAdmin
+                .from('transit_crowd_reports')
+                .select('crowd_level')
+                .eq('station_id', stationId)
+                .gt('created_at', new Date(Date.now() - 30 * 60 * 1000).toISOString()) // Last 30 mins
         ]);
 
         const { data, error } = snapshotRes;
         const { data: historyRows, error: historyError } = historyRes;
+        const crowdReports = crowdReportsRes.data || [];
 
         if (error) {
             console.error('Error fetching L2 status:', error);
-            return NextResponse.json({ error: 'Database Error' }, { status: 500 });
+            // Don't fail completely, try to serve live info if DB fails
         }
 
-        if (historyError) {
-            // Ignore missing table error (PGRST205) as history is optional
-            if (historyError.code !== 'PGRST205') {
-                console.error('Error fetching disruption history:', historyError);
+        // Base Data from DB or default
+        const baseData = data || {
+            status_code: 'NORMAL',
+            updated_at: new Date().toISOString(),
+            disruption_data: { disruptions: [] }
+        };
+
+        // Transform Flat DB columns to Frontend Interface
+        // Normalize stationId to find matching STATION_LINES entry
+        // Handle various ID formats: odpt:Station:Operator.Line.Station, odpt.Station:Operator.Line.Station, etc.
+
+        // Step 1: Try direct match
+        let lines = STATION_LINES[stationId] || [];
+
+        // Step 2: Try with prefix swap (odpt.Station: <-> odpt:Station:)
+        if (lines.length === 0) {
+            const swappedId = stationId.startsWith('odpt.Station:')
+                ? stationId.replace(/^odpt\.Station:/, 'odpt:Station:')
+                : stationId.replace(/^odpt:Station:/, 'odpt.Station:');
+            lines = STATION_LINES[swappedId] || [];
+        }
+
+        // Step 3: Try extracting station slug and matching (for Operator.Line.Station format)
+        if (lines.length === 0) {
+            const match = stationId.match(/[.:](TokyoMetro|Toei|JR-East)[.:]([A-Za-z]+)[.:](.+)$/);
+            if (match) {
+                const operator = match[1];
+                const line = match[2];
+                const station = match[3];
+                // Try various combinations
+                const candidates = [
+                    `odpt:Station:${operator}.${station}`,
+                    `odpt.Station:${operator}.${station}`,
+                    `odpt:Station:${operator}.${line === 'Oedo' ? 'Shinjuku' : station}`, // Special case for Oedo Shinjuku
+                ];
+                for (const candidate of candidates) {
+                    lines = STATION_LINES[candidate] || [];
+                    if (lines.length > 0) break;
+                }
             }
         }
 
-        if (!data) {
-            console.log('[L2 API] No data found in DB for station:', stationId);
-            return NextResponse.json(null);
+        // Step 4: For specific known patterns, hard-code the mapping
+        if (lines.length === 0) {
+            const lowerId = stationId.toLowerCase();
+            if (lowerId.includes('oedo.shinjuku')) {
+                lines = STATION_LINES['odpt:Station:Toei.Shinjuku'] || [];
+            } else if (lowerId.includes('hibiya.akihabara')) {
+                lines = STATION_LINES['odpt:Station:JR-East.Akihabara'] ||
+                    STATION_LINES['odpt.Station:TokyoMetro.Hibiya.Akihabara'] || [];
+            }
         }
 
-        console.log('[L2 API] Raw DB Data:', data);
+        // Mix DB disruptions with Live API disruptions
+        // CRITICAL FIX: Filter out DB disruptions that mention "Normal" or "平常"
+        const filteredDbDisruptions = (baseData as any).disruption_data?.disruptions?.filter((d: any) => {
+            const msg = d.message?.ja || d.status_label?.ja || '';
+            return !msg.includes('平常') && !msg.includes('通常') && !msg.includes('ダイヤ乱れは解消');
+        }) || [];
 
-
-        // Transform Flat DB columns (from n8n) to Frontend Interface
-
-        // 1. Get lines for this station (Now returns Rich Objects from upgraded stationLines.ts)
-        const lines = STATION_LINES[stationId] || [];
-
-        const disruptionData = (data as any).disruption_data;
-        const disruptions = Array.isArray(disruptionData?.disruptions) ? disruptionData.disruptions : [];
-        const l4Hint = disruptionData?.l4_hint;
+        const combinedDisruptions = [...filteredDbDisruptions, ...liveTrainInfo];
 
         const lineStatusArray = lines.map(lineDef => {
-            const matching = disruptions.filter((d: any) => matchDisruptionToLine(lineDef, d));
+            const matching = combinedDisruptions.filter((d: any) => matchDisruptionToLine(lineDef, d));
+
             if (matching.length > 0) {
+                // Determine valid issue from matches
                 const worst = pickWorstSeverity(matching);
                 const primary = matching.find((d: any) => String(d?.severity) === worst) || matching[0];
-                const status = severityToLineStatus(worst);
-                const msgJa = primary?.message?.ja || primary?.status_label?.ja || l4Hint?.message?.ja;
-                const msgEn = primary?.message?.en || primary?.status_label?.en || l4Hint?.message?.en;
-                const msgZh =
-                    primary?.message?.['zh-TW'] ||
-                    primary?.message?.zh ||
-                    primary?.status_label?.['zh-TW'] ||
-                    primary?.status_label?.zh ||
-                    l4Hint?.message?.['zh-TW'] ||
-                    l4Hint?.message?.zh;
 
-                const message = (msgJa || msgEn || msgZh)
+                // Text Resolution
+                const msgJa = primary?.message?.ja || primary?.status_label?.ja || '';
+                const msgEn = primary?.message?.en || primary?.status_label?.en || '';
+                const msgZh = primary?.message?.['zh-TW'] || primary?.message?.zh || primary?.status_label?.['zh-TW'] || primary?.status_label?.zh || '';
+
+                // DANGER FIX: If the message explicitly says 'Operating Normally' (平常/通常), override status to normal
+                const isActuallyNormal = msgJa.includes('平常') || msgJa.includes('通常') || msgJa.includes('ダイヤ乱れは解消');
+                const status = isActuallyNormal ? 'normal' : severityToLineStatus(worst);
+
+                const message = (msgJa || msgEn || msgZh) && !isActuallyNormal
                     ? {
-                        ja: msgJa || (data.reason_ja || ''),
+                        ja: msgJa || '',
                         en: msgEn || 'Service update',
-                        zh: msgZh || (data.reason_zh_tw || '')
+                        zh: msgZh || ''
                     }
                     : undefined;
 
@@ -145,37 +287,29 @@ export async function GET(request: Request) {
                 };
             }
 
-            const fallbackStatus = data.status_code?.toLowerCase() || 'normal';
-            const fallbackMessage = (data.status_code === 'DELAY' || data.status_code === 'SUSPENDED')
-                ? {
-                    ja: data.reason_ja || data.message || 'Delay',
-                    en: data.message || 'Delay',
-                    zh: data.reason_zh_tw || data.reason_ja || '延誤'
-                }
-                : undefined;
-
+            // Fallback (if no specific disruption matched)
             return {
                 line: lineDef.name.en,
                 name: lineDef.name,
                 operator: lineDef.operator,
                 color: lineDef.color,
-                status: fallbackStatus,
-                message: fallbackMessage
+                status: 'normal',
+                message: undefined
             };
         });
 
-        const severity = String(disruptionData?.overall_severity || 'none');
-        const severityScore = ({ none: 0, minor: 1, major: 2, critical: 3 } as any)[severity] ?? 0;
-        const congestionFromSeverity = severityScore >= 3 ? 5 : severityScore >= 2 ? 4 : severityScore >= 1 ? 3 : 2;
+        // Overall Station Severity
+        const stationHasDelay = lineStatusArray.some(l => l.status !== 'normal');
 
         const weatherInfo = (() => {
-            const w: any = data.weather_info;
+            const w: any = baseData.weather_info;
             const t = w?.update_time ? Date.parse(String(w.update_time)) : NaN;
             const stale = Number.isFinite(t) ? (Date.now() - t > 12 * 60 * 60 * 1000) : true;
             if (!w || stale) return null;
             return w;
         })();
 
+        // Fallback Weather from older records if current is missing/stale
         const fallbackWeatherInfo = weatherInfo
             ? null
             : (await supabaseAdmin
@@ -186,15 +320,54 @@ export async function GET(request: Request) {
                 .limit(1)
                 .maybeSingle()).data?.weather_info;
 
+        // Calculate Crowd Level from Reports
+        // Distribution: [Level 1, Level 2, Level 3, Level 4, Level 5]
+        const voteDistribution = [0, 0, 0, 0, 0];
+        let voteSum = 0;
+        let voteCount = 0;
+
+        crowdReports.forEach((r: any) => {
+            const level = r.crowd_level;
+            if (level >= 1 && level <= 5) {
+                voteDistribution[level - 1]++;
+                voteSum += level;
+                voteCount++;
+            }
+        });
+
+        // Determine Final Crowd Level
+        // Priority:
+        // 1. Station Delay -> Level 4 (Crowded)
+        // 2. User Votes (if > 3 votes) -> Average or Mode
+        // 3. Static/History -> Level 2 (Normal)
+
+        let finalCrowdLevel = baseData.crowd_level || 2;
+
+        if (stationHasDelay) {
+            finalCrowdLevel = 4;
+        } else if (voteCount >= 3) {
+            // Use average for smoother transition, rounded
+            finalCrowdLevel = Math.round(voteSum / voteCount);
+        }
+
         const l2Status = {
-            congestion: disruptionData ? congestionFromSeverity : (data.status_code === 'DELAY' ? 4 : (data.status_code === 'SUSPENDED' ? 5 : 2)),
+            congestion: finalCrowdLevel,
+            crowd: {
+                level: finalCrowdLevel,
+                trend: 'stable', // could compare with older data if available
+                userVotes: {
+                    total: voteCount,
+                    distribution: voteDistribution
+                }
+            },
             line_status: lineStatusArray,
             weather: {
                 temp: (weatherInfo || fallbackWeatherInfo)?.temp || 0,
                 condition: (weatherInfo || fallbackWeatherInfo)?.condition || 'Unknown',
                 wind: (weatherInfo || fallbackWeatherInfo)?.wind || 0
             },
-            updated_at: data.updated_at,
+            updated_at: baseData.updated_at,
+            is_stale: (Date.now() - new Date(baseData.updated_at).getTime()) > 30 * 60 * 1000,
             disruption_history: Array.isArray(historyRows) ? historyRows : []
         };
 
@@ -204,6 +377,7 @@ export async function GET(request: Request) {
             }
         });
     } catch (e) {
+        console.error('L2 API Fatal Error:', e);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }

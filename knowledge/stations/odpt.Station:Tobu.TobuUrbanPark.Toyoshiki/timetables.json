@@ -1,0 +1,4467 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003176013",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuUrbanPark.Toyoshiki.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuUrbanPark",
+    "odpt:station": "odpt.Station:Tobu.TobuUrbanPark.Toyoshiki",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.404A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "404A",
+        "odpt:departureTime": "05:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.102A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102A",
+        "odpt:departureTime": "05:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.104A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "104A",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.106A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "106A",
+        "odpt:departureTime": "06:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.110A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "110A",
+        "odpt:departureTime": "06:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.406A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "406A",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.408A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "408A",
+        "odpt:departureTime": "06:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.410A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "410A",
+        "odpt:departureTime": "06:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3402A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3402A",
+        "odpt:departureTime": "06:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.412A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "412A",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.414A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "414A",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.416A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "416A",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.418A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "418A",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.420A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "420A",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.422A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "422A",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.424A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "424A",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3404A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3404A",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.426A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "426A",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.428A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "428A",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.430A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "430A",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3406A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3406A",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.432A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "432A",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.434A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "434A",
+        "odpt:departureTime": "08:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.436A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "436A",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3408A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3408A",
+        "odpt:departureTime": "09:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.438A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "438A",
+        "odpt:departureTime": "09:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.440A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "440A",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.442A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "442A",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.444A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "444A",
+        "odpt:departureTime": "09:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.446A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "446A",
+        "odpt:departureTime": "09:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.448A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "448A",
+        "odpt:departureTime": "10:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.450A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "450A",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.452A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "452A",
+        "odpt:departureTime": "10:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.454A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "454A",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.456A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "456A",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.458A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "458A",
+        "odpt:departureTime": "10:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.460A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "460A",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.462A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "462A",
+        "odpt:departureTime": "11:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.464A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "464A",
+        "odpt:departureTime": "11:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.466A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "466A",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.468A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "468A",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.470A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "470A",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.472A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "472A",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.474A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "474A",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.476A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "476A",
+        "odpt:departureTime": "12:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.478A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "478A",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.480A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "480A",
+        "odpt:departureTime": "12:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.482A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "482A",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.484A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "484A",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.486A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "486A",
+        "odpt:departureTime": "13:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.488A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "488A",
+        "odpt:departureTime": "13:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.490A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "490A",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.492A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "492A",
+        "odpt:departureTime": "13:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.494A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "494A",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.496A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "496A",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.498A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "498A",
+        "odpt:departureTime": "14:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.500A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "500A",
+        "odpt:departureTime": "14:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.502A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "502A",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.504A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "504A",
+        "odpt:departureTime": "14:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.506A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "506A",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.508A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "508A",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.510A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "510A",
+        "odpt:departureTime": "15:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.512A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "512A",
+        "odpt:departureTime": "15:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.514A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "514A",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.516A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "516A",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.518A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "518A",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.520A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "520A",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.522A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "522A",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.524A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "524A",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.526A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "526A",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.528A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "528A",
+        "odpt:departureTime": "16:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.530A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "530A",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3410A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3410A",
+        "odpt:departureTime": "17:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.532A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "532A",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.534A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "534A",
+        "odpt:departureTime": "17:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.536A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "536A",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3412A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3412A",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.538A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "538A",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.540A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "540A",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3414A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3414A",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.542A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "542A",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.544A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "544A",
+        "odpt:departureTime": "18:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3416A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3416A",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.546A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "546A",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.548A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "548A",
+        "odpt:departureTime": "18:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3418A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3418A",
+        "odpt:departureTime": "19:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.550A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "550A",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.552A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "552A",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3420A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3420A",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.554A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "554A",
+        "odpt:departureTime": "19:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.556A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "556A",
+        "odpt:departureTime": "19:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3422A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3422A",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.558A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "558A",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.560A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "560A",
+        "odpt:departureTime": "20:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.562A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "562A",
+        "odpt:departureTime": "20:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.564A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "564A",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.566A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "566A",
+        "odpt:departureTime": "20:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.568A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "568A",
+        "odpt:departureTime": "21:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.570A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "570A",
+        "odpt:departureTime": "21:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.572A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "572A",
+        "odpt:departureTime": "21:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.574A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "574A",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.576A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "576A",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.578A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "578A",
+        "odpt:departureTime": "22:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.580A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "580A",
+        "odpt:departureTime": "22:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.582A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "582A",
+        "odpt:departureTime": "22:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.584A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "584A",
+        "odpt:departureTime": "22:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.586A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "586A",
+        "odpt:departureTime": "23:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.588A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "588A",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Iwatsuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.590A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "590A",
+        "odpt:departureTime": "23:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.330A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "330A",
+        "odpt:departureTime": "23:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.334A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "334A",
+        "odpt:departureTime": "00:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.592A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "592A",
+        "odpt:departureTime": "00:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.336A",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "336A",
+        "odpt:departureTime": "00:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003176016",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuUrbanPark.Toyoshiki.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuUrbanPark",
+    "odpt:station": "odpt.Station:Tobu.TobuUrbanPark.Toyoshiki",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.404A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "404A",
+        "odpt:departureTime": "05:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.102A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102A",
+        "odpt:departureTime": "05:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.104A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "104A",
+        "odpt:departureTime": "05:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.406A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "406A",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.408A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "408A",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.110A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "110A",
+        "odpt:departureTime": "06:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.410A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "410A",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.114A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "114A",
+        "odpt:departureTime": "06:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.412A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "412A",
+        "odpt:departureTime": "06:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.414A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "414A",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.416A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "416A",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.418A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "418A",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.420A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "420A",
+        "odpt:departureTime": "07:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.422A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "422A",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.424A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "424A",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.426A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "426A",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.428A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "428A",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.430A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "430A",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.432A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "432A",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.434A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "434A",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.436A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "436A",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.438A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "438A",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.440A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "440A",
+        "odpt:departureTime": "08:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3402A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3402A",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.442A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "442A",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.444A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "444A",
+        "odpt:departureTime": "08:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.446A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "446A",
+        "odpt:departureTime": "08:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.448A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "448A",
+        "odpt:departureTime": "08:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3404A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3404A",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.158A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "158A",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.450A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "450A",
+        "odpt:departureTime": "09:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.452A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "452A",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.454A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "454A",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.456A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "456A",
+        "odpt:departureTime": "09:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.172A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "172A",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.458A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "458A",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.176A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "176A",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.460A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "460A",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.462A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "462A",
+        "odpt:departureTime": "10:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.464A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "464A",
+        "odpt:departureTime": "10:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.466A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "466A",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.468A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "468A",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.470A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "470A",
+        "odpt:departureTime": "10:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.472A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "472A",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.474A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "474A",
+        "odpt:departureTime": "11:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.476A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "476A",
+        "odpt:departureTime": "11:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.478A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "478A",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.480A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "480A",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.202A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "202A",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.482A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "482A",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.484A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "484A",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.486A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "486A",
+        "odpt:departureTime": "12:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.488A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "488A",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.490A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "490A",
+        "odpt:departureTime": "12:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.492A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "492A",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.494A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "494A",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.496A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "496A",
+        "odpt:departureTime": "13:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.498A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "498A",
+        "odpt:departureTime": "13:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.500A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "500A",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.502A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "502A",
+        "odpt:departureTime": "13:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.504A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "504A",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.506A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "506A",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.508A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "508A",
+        "odpt:departureTime": "14:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.510A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "510A",
+        "odpt:departureTime": "14:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.512A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "512A",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.514A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "514A",
+        "odpt:departureTime": "14:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.516A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "516A",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.518A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "518A",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.520A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "520A",
+        "odpt:departureTime": "15:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.522A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "522A",
+        "odpt:departureTime": "15:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.524A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "524A",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.526A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "526A",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.528A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "528A",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.530A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "530A",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.532A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "532A",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.534A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "534A",
+        "odpt:departureTime": "16:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.536A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "536A",
+        "odpt:departureTime": "16:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.538A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "538A",
+        "odpt:departureTime": "16:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.540A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "540A",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.542A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "542A",
+        "odpt:departureTime": "17:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.544A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "544A",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.546A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "546A",
+        "odpt:departureTime": "17:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.548A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "548A",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.550A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "550A",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.552A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "552A",
+        "odpt:departureTime": "17:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.554A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "554A",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Unga"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.556A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "556A",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.558A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "558A",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.560A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "560A",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.562A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "562A",
+        "odpt:departureTime": "18:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.564A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "564A",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.566A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "566A",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.568A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "568A",
+        "odpt:departureTime": "18:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.570A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "570A",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.572A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "572A",
+        "odpt:departureTime": "18:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.574A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "574A",
+        "odpt:departureTime": "19:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.576A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "576A",
+        "odpt:departureTime": "19:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.578A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "578A",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.580A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "580A",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.582A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "582A",
+        "odpt:departureTime": "19:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.584A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "584A",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.586A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "586A",
+        "odpt:departureTime": "19:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.588A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "588A",
+        "odpt:departureTime": "19:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.590A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "590A",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.592A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "592A",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.594A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "594A",
+        "odpt:departureTime": "20:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.596A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "596A",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.598A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "598A",
+        "odpt:departureTime": "20:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.600A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "600A",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.602A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "602A",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.604A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "604A",
+        "odpt:departureTime": "21:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.606A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "606A",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.608A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "608A",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.610A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "610A",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.612A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "612A",
+        "odpt:departureTime": "21:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.614A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "614A",
+        "odpt:departureTime": "22:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.616A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "616A",
+        "odpt:departureTime": "22:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.618A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "618A",
+        "odpt:departureTime": "22:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.620A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "620A",
+        "odpt:departureTime": "22:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.622A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "622A",
+        "odpt:departureTime": "22:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.624A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "624A",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.626A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "626A",
+        "odpt:departureTime": "23:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.628A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "628A",
+        "odpt:departureTime": "23:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.630A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "630A",
+        "odpt:departureTime": "23:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Omiya"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.632A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "632A",
+        "odpt:departureTime": "23:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.346A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "346A",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Iwatsuki"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.634A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "634A",
+        "odpt:departureTime": "00:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kasukabe"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.636A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "636A",
+        "odpt:departureTime": "00:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.638A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "638A",
+        "odpt:departureTime": "00:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.640A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "640A",
+        "odpt:departureTime": "00:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.356A",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "356A",
+        "odpt:departureTime": "00:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Nanakodai"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003176017",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuUrbanPark.Toyoshiki.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuUrbanPark",
+    "odpt:station": "odpt.Station:Tobu.TobuUrbanPark.Toyoshiki",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.109A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "109A",
+        "odpt:departureTime": "05:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.111A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "111A",
+        "odpt:departureTime": "05:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.113A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "113A",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.117A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "117A",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.121A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "121A",
+        "odpt:departureTime": "06:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.401A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "401A",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.403A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "403A",
+        "odpt:departureTime": "06:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.405A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "405A",
+        "odpt:departureTime": "06:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.407A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "407A",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.409A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "409A",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.411A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "411A",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.413A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "413A",
+        "odpt:departureTime": "07:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.415A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "415A",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.417A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "417A",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.419A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "419A",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.421A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "421A",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.423A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "423A",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.425A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "425A",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.427A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "427A",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.429A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "429A",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.431A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "431A",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.433A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "433A",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.435A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "435A",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.437A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "437A",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.439A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "439A",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.441A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "441A",
+        "odpt:departureTime": "08:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.443A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "443A",
+        "odpt:departureTime": "09:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.445A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "445A",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.447A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "447A",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.449A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "449A",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.451A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "451A",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.453A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "453A",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.455A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "455A",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.457A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "457A",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.459A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "459A",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.461A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "461A",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.463A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "463A",
+        "odpt:departureTime": "10:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.465A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "465A",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.467A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "467A",
+        "odpt:departureTime": "11:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.469A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "469A",
+        "odpt:departureTime": "11:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.471A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "471A",
+        "odpt:departureTime": "11:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.473A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "473A",
+        "odpt:departureTime": "11:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.475A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "475A",
+        "odpt:departureTime": "11:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.477A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "477A",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.479A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "479A",
+        "odpt:departureTime": "12:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.481A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "481A",
+        "odpt:departureTime": "12:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.483A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "483A",
+        "odpt:departureTime": "12:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.485A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "485A",
+        "odpt:departureTime": "12:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.487A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "487A",
+        "odpt:departureTime": "12:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.489A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "489A",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.491A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "491A",
+        "odpt:departureTime": "13:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.493A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "493A",
+        "odpt:departureTime": "13:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.495A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "495A",
+        "odpt:departureTime": "13:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.497A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "497A",
+        "odpt:departureTime": "13:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.499A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "499A",
+        "odpt:departureTime": "13:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.501A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "501A",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.503A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "503A",
+        "odpt:departureTime": "14:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.505A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "505A",
+        "odpt:departureTime": "14:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.507A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "507A",
+        "odpt:departureTime": "14:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.509A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "509A",
+        "odpt:departureTime": "14:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.511A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "511A",
+        "odpt:departureTime": "14:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.513A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "513A",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.515A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "515A",
+        "odpt:departureTime": "15:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.517A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "517A",
+        "odpt:departureTime": "15:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.519A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "519A",
+        "odpt:departureTime": "15:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.521A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "521A",
+        "odpt:departureTime": "15:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.523A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "523A",
+        "odpt:departureTime": "15:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.525A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "525A",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.527A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "527A",
+        "odpt:departureTime": "16:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.529A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "529A",
+        "odpt:departureTime": "16:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.531A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "531A",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.533A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "533A",
+        "odpt:departureTime": "16:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.535A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "535A",
+        "odpt:departureTime": "16:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.537A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "537A",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.539A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "539A",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.541A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "541A",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.543A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "543A",
+        "odpt:departureTime": "17:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3401A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3401A",
+        "odpt:departureTime": "17:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.545A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "545A",
+        "odpt:departureTime": "17:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.547A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "547A",
+        "odpt:departureTime": "18:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3403A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3403A",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.549A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "549A",
+        "odpt:departureTime": "18:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.551A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "551A",
+        "odpt:departureTime": "18:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3405A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3405A",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.553A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "553A",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.555A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "555A",
+        "odpt:departureTime": "18:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3407A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3407A",
+        "odpt:departureTime": "19:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.557A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "557A",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.559A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "559A",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3409A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3409A",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.561A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "561A",
+        "odpt:departureTime": "19:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.563A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "563A",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3411A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3411A",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.565A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "565A",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.567A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "567A",
+        "odpt:departureTime": "20:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3413A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3413A",
+        "odpt:departureTime": "20:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.569A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "569A",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.571A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "571A",
+        "odpt:departureTime": "20:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3415A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3415A",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.573A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "573A",
+        "odpt:departureTime": "21:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3417A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3417A",
+        "odpt:departureTime": "21:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.577A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "577A",
+        "odpt:departureTime": "21:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.579A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "579A",
+        "odpt:departureTime": "22:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.581A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "581A",
+        "odpt:departureTime": "22:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.583A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "583A",
+        "odpt:departureTime": "22:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.585A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "585A",
+        "odpt:departureTime": "22:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.587A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "587A",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.589A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "589A",
+        "odpt:departureTime": "23:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.335A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "335A",
+        "odpt:departureTime": "23:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.591A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "591A",
+        "odpt:departureTime": "23:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.339A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "339A",
+        "odpt:departureTime": "23:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.341A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "341A",
+        "odpt:departureTime": "00:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.593A",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "593A",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003176019",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuUrbanPark.Toyoshiki.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuUrbanPark",
+    "odpt:station": "odpt.Station:Tobu.TobuUrbanPark.Toyoshiki",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.109A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "109A",
+        "odpt:departureTime": "05:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.111A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "111A",
+        "odpt:departureTime": "05:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.113A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "113A",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.115A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "115A",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.401A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "401A",
+        "odpt:departureTime": "05:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.403A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "403A",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.121A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "121A",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.127A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "127A",
+        "odpt:departureTime": "06:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.405A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "405A",
+        "odpt:departureTime": "06:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.129A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "129A",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.407A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "407A",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.409A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "409A",
+        "odpt:departureTime": "06:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.411A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "411A",
+        "odpt:departureTime": "06:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.139A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "139A",
+        "odpt:departureTime": "06:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.413A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "413A",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.415A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "415A",
+        "odpt:departureTime": "07:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.417A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "417A",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.419A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "419A",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.421A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "421A",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.423A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "423A",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.425A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "425A",
+        "odpt:departureTime": "07:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.427A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "427A",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.429A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "429A",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.431A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "431A",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.433A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "433A",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.435A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "435A",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.437A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "437A",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.439A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "439A",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.441A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "441A",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.443A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "443A",
+        "odpt:departureTime": "08:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.445A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "445A",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.447A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "447A",
+        "odpt:departureTime": "08:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.449A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "449A",
+        "odpt:departureTime": "08:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.451A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "451A",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.453A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "453A",
+        "odpt:departureTime": "09:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.455A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "455A",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.457A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "457A",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.459A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "459A",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.461A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "461A",
+        "odpt:departureTime": "09:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.463A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "463A",
+        "odpt:departureTime": "09:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.465A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "465A",
+        "odpt:departureTime": "09:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.467A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "467A",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.469A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "469A",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.471A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "471A",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.473A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "473A",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.475A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "475A",
+        "odpt:departureTime": "10:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.477A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "477A",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.479A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "479A",
+        "odpt:departureTime": "11:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.481A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "481A",
+        "odpt:departureTime": "11:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.483A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "483A",
+        "odpt:departureTime": "11:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.211A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "211A",
+        "odpt:departureTime": "11:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Funabashi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.485A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "485A",
+        "odpt:departureTime": "11:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.487A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "487A",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.489A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "489A",
+        "odpt:departureTime": "12:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.491A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "491A",
+        "odpt:departureTime": "12:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.493A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "493A",
+        "odpt:departureTime": "12:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.495A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "495A",
+        "odpt:departureTime": "12:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.497A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "497A",
+        "odpt:departureTime": "12:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.499A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "499A",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.501A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "501A",
+        "odpt:departureTime": "13:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.503A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "503A",
+        "odpt:departureTime": "13:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.505A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "505A",
+        "odpt:departureTime": "13:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.507A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "507A",
+        "odpt:departureTime": "13:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.509A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "509A",
+        "odpt:departureTime": "13:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.511A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "511A",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.513A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "513A",
+        "odpt:departureTime": "14:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.515A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "515A",
+        "odpt:departureTime": "14:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.517A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "517A",
+        "odpt:departureTime": "14:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.519A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "519A",
+        "odpt:departureTime": "14:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.521A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "521A",
+        "odpt:departureTime": "14:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.523A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "523A",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.525A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "525A",
+        "odpt:departureTime": "15:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.527A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "527A",
+        "odpt:departureTime": "15:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.529A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "529A",
+        "odpt:departureTime": "15:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.531A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "531A",
+        "odpt:departureTime": "15:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.533A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "533A",
+        "odpt:departureTime": "15:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.535A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "535A",
+        "odpt:departureTime": "15:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.537A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "537A",
+        "odpt:departureTime": "16:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.539A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "539A",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.541A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "541A",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.543A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "543A",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.545A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "545A",
+        "odpt:departureTime": "16:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.547A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "547A",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3401A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3401A",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.549A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "549A",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.551A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "551A",
+        "odpt:departureTime": "17:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.553A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "553A",
+        "odpt:departureTime": "17:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.3403A",
+        "odpt:trainType": "odpt.TrainType:Tobu.SectionExpress",
+        "odpt:trainNumber": "3403A",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.555A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "555A",
+        "odpt:departureTime": "17:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.557A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "557A",
+        "odpt:departureTime": "17:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.559A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "559A",
+        "odpt:departureTime": "18:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.561A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "561A",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.563A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "563A",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.565A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "565A",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.567A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "567A",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.569A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "569A",
+        "odpt:departureTime": "18:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.571A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "571A",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.573A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "573A",
+        "odpt:departureTime": "18:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.575A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "575A",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.577A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "577A",
+        "odpt:departureTime": "19:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.579A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "579A",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.581A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "581A",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.583A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "583A",
+        "odpt:departureTime": "19:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.585A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "585A",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.587A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "587A",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.589A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "589A",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.593A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "593A",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.595A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "595A",
+        "odpt:departureTime": "20:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.597A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "597A",
+        "odpt:departureTime": "20:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.599A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "599A",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.601A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "601A",
+        "odpt:departureTime": "20:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.603A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "603A",
+        "odpt:departureTime": "21:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.605A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "605A",
+        "odpt:departureTime": "21:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.607A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "607A",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.609A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "609A",
+        "odpt:departureTime": "21:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.611A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "611A",
+        "odpt:departureTime": "21:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.615A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "615A",
+        "odpt:departureTime": "21:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.617A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "617A",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.619A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "619A",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.621A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "621A",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.623A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "623A",
+        "odpt:departureTime": "22:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.625A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "625A",
+        "odpt:departureTime": "22:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.627A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "627A",
+        "odpt:departureTime": "22:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.629A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "629A",
+        "odpt:departureTime": "23:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.631A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "631A",
+        "odpt:departureTime": "23:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.633A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "633A",
+        "odpt:departureTime": "23:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.635A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "635A",
+        "odpt:departureTime": "23:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.637A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "637A",
+        "odpt:departureTime": "00:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.639A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "639A",
+        "odpt:departureTime": "00:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.641A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "641A",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.361A",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "361A",
+        "odpt:departureTime": "00:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Takayanagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuUrbanPark.643A",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "643A",
+        "odpt:departureTime": "01:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuUrbanPark.Kashiwa"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,4595 @@
+[
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F26A5",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Toyoko.DaikanYama.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tokyu.Toyoko",
+    "odpt:station": "odpt.Station:Tokyu.Toyoko.DaikanYama",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Tokorozawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:05",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:39",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hanno"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hanno"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:22",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:59",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:28",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:44",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F26A6",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Toyoko.DaikanYama.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tokyu.Toyoko",
+    "odpt:station": "odpt.Station:Tokyu.Toyoko.DaikanYama",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:04",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:49",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Tokorozawa"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:41",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:11",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:51",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:10",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:42",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:13",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:12",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kiyose"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:32",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Hoya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:33",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:53",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:31",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.Kotesashi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Tojo.Shiki"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:56",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:38",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:54",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:14",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Seibu.Ikebukuro.ShakujiiKoen"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:50",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:01",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:17",
+        "odpt:destinationStation": [
+          "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Shibuya"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F26A7",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Toyoko.DaikanYama.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tokyu.Toyoko",
+    "odpt:station": "odpt.Station:Tokyu.Toyoko.DaikanYama",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Jiyugaoka"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Yokohama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Motosumiyoshi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F26A8",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Toyoko.DaikanYama.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tokyu.Toyoko",
+    "odpt:station": "odpt.Station:Tokyu.Toyoko.DaikanYama",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.MusashiKosugi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Yokohama"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Kikuna"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Toyoko.Motosumiyoshi"
+        ]
+      }
+    ]
+  }
+]

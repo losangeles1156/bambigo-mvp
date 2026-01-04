@@ -1,4 +1,5 @@
 import { OdptRailway, OdptStation, OdptTrainTimetable, OdptRailwayFare } from './types';
+import { fetchWithRetry, RetryConfig } from '@/lib/utils/retry';
 
 const API_PUBLIC = 'https://api-public.odpt.org/api/v4';
 const API_DEV = 'https://api.odpt.org/api/v4';
@@ -6,6 +7,18 @@ const API_CHALLENGE = 'https://api-challenge.odpt.org/api/v4';
 
 const TOKEN_DEV = process.env.ODPT_API_TOKEN || process.env.ODPT_API_KEY;  // For Metro, MIR
 const TOKEN_CHALLENGE = process.env.ODPT_API_TOKEN_BACKUP;                  // For JR East
+
+/**
+ * ODPT API retry configuration
+ * Moderate settings with exponential backoff for reliability
+ */
+const ODPT_RETRY_CONFIG: Partial<RetryConfig> = {
+    maxRetries: 3,
+    initialDelayMs: 2000,
+    maxDelayMs: 60000,
+    backoffMultiplier: 2,
+    jitterRange: 0.2
+};
 
 async function fetchOdpt<T>(type: string, params: Record<string, string> = {}): Promise<T[]> {
     let operator = params['odpt:operator'] || '';
@@ -60,16 +73,18 @@ async function fetchOdpt<T>(type: string, params: Record<string, string> = {}): 
     const strategyName = operator.includes('Toei') ? 'Public' : (operator.includes('JR') ? 'Challenge' : 'Dev');
     console.log(`[ODPT Client] Fetching (${strategyName}): ${type} for ${operator || 'Unknown'}`);
 
-    const res = await fetch(url, {
-        next: { revalidate: 3600 }
-    } as any);
-
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`ODPT API Error (${res.status}): ${text}`);
+    // Use retry-enabled fetch with caching via Next.js fetch
+    try {
+        const res = await fetchWithRetry<any>(url, {
+            next: { revalidate: 3600 }
+        }, ODPT_RETRY_CONFIG);
+        return res;
+    } catch (error) {
+        // Log and re-throw with context
+        const err = error instanceof Error ? error : new Error(String(error));
+        console.error(`[ODPT Client] Failed after retries: ${err.message}`);
+        throw new Error(`ODPT API Error: ${err.message}`);
     }
-
-    return res.json();
 }
 
 export const odptClient = {

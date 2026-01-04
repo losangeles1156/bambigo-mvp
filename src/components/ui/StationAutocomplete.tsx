@@ -5,7 +5,7 @@ import { Search, Loader2, MapPin } from 'lucide-react';
 
 export interface Station {
     id: string;
-    name: { ja?: string; en?: string };
+    name: { ja?: string; en?: string; 'zh-TW'?: string };
     operator: string;
     railway?: string;
 }
@@ -154,8 +154,9 @@ export function StationAutocomplete({
 
     // Get display name based on locale
     const getDisplayName = (station: Station) => {
-        if (locale === 'ja') return station.name.ja || station.name.en || station.id;
-        if (locale === 'en') return station.name.en || station.name.ja || station.id;
+        if (locale === 'zh-TW') return station.name['zh-TW'] || station.name.ja || station.name.en || station.id;
+        if (locale === 'ja') return station.name.ja || station.name['zh-TW'] || station.name.en || station.id;
+        if (locale === 'en') return station.name.en || station.name.ja || station.name['zh-TW'] || station.id;
         return station.name.ja || station.name.en || station.id;
     };
 

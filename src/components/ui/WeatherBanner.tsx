@@ -2,18 +2,23 @@
 
 import { useState, useEffect } from 'react';
 import { AlertTriangle, Info, X, ShieldAlert } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface WeatherAlert {
     title: string;
-    summary: string;
+    summary: {
+        ja: string;
+        en: string;
+        zh: string;
+    };
+    original_summary: string;
     updated: string;
     severity: 'info' | 'warning' | 'critical';
 }
 
-import { useTranslations } from 'next-intl';
-
 export function WeatherBanner() {
     const tWeather = useTranslations('weather');
+    const locale = useLocale();
     const [alerts, setAlerts] = useState<WeatherAlert[]>([]);
     const [isVisible, setIsVisible] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -25,8 +30,6 @@ export function WeatherBanner() {
                 if (res.ok) {
                     const data = await res.json();
                     if (data.alerts && data.alerts.length > 0) {
-                        // The backend already performs strict filtering for Tokyo, Kanagawa, and Chiba.
-                        // We trust the backend data and display it directly.
                         setAlerts(data.alerts);
                         setIsVisible(true);
                     }
@@ -56,6 +59,11 @@ export function WeatherBanner() {
         warning: <AlertTriangle size={16} />,
         critical: <ShieldAlert size={16} className="animate-pulse" />
     };
+
+    // Determine Language Key
+    // Backend returns keys: ja, en, zh
+    const langKey = locale.startsWith('zh') ? 'zh' : locale.startsWith('en') ? 'en' : 'ja';
+    const displaySummary = mainAlert.summary?.[langKey] || mainAlert.summary?.ja || mainAlert.original_summary;
 
     return (
         <div className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 shadow-xl overflow-hidden backdrop-blur-xl border-b border-white/20
@@ -95,10 +103,13 @@ export function WeatherBanner() {
                 <div className="max-w-md mx-auto px-4 pb-4 animate-in fade-in slide-in-from-top-2 duration-300">
                     <div className="h-px bg-white/20 mb-3" />
                     <p className="text-[11px] leading-relaxed font-medium whitespace-pre-wrap">
-                        {mainAlert.summary}
+                        {displaySummary}
                     </p>
                     <div className="mt-2 flex justify-between items-center text-[8px] font-bold opacity-60 uppercase">
-                        <span>Source: Japan Meteorological Agency (JMA)</span>
+                        <span className="flex items-center gap-1">
+                            Source: Japan Meteorological Agency (JMA)
+                            <span className="px-1 py-0.5 bg-white/20 rounded text-[6px]">AI Translated</span>
+                        </span>
                         <span>Updated: {new Date(mainAlert.updated).toLocaleTimeString()}</span>
                     </div>
                 </div>

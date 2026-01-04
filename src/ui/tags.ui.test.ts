@@ -14,10 +14,13 @@ function pickAvailablePort(): number {
 }
 
 async function startNextDev(port: number): Promise<StartedServer> {
-    const nextBin = path.join(process.cwd(), 'node_modules', '.bin', 'next');
-    const proc = spawn(nextBin, ['dev', '-p', String(port)], {
+    // Use npx for cross-platform compatibility (Windows/macOS/Linux)
+    const isWindows = process.platform === 'win32';
+    const command = isWindows ? 'npx.cmd' : 'npx';
+    const proc = spawn(command, ['next', 'dev', '-p', String(port)], {
         env: { ...process.env, PORT: String(port) },
-        stdio: ['ignore', 'pipe', 'pipe']
+        stdio: ['ignore', 'pipe', 'pipe'],
+        shell: isWindows // Use shell on Windows for proper PATH resolution
     });
 
     const url = `http://localhost:${port}`;

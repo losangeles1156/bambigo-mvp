@@ -3,11 +3,12 @@
         "title": "LUTAGU",
         "currentLocation": "現在地",
         "askLutagu": "ルタグに聞く...",
-        "aiPlaceholder": "ルタグに聞く..."
+        "aiPlaceholder": "ルタグに聞く...",
+        "brandStory": "LU は鹿、LU は路。鹿の斑点のように、すべての駅、すべての路線に、私たちはタグをつけました。ルタグ —— AIも人も読める、やさしい道しるべ。"
     },
     "status": {
         "crowded": "混雑",
-        "normal": "順暢",
+        "normal": "平常通り",
         "delayed": "{minutes}分遅延",
         "ready": "スタンバイ",
         "ginzaDelay": "銀座線遅延"
@@ -227,6 +228,8 @@
         "delay": "遅延",
         "normalOperation": "平常運転",
         "delayOccurred": "遅延発生",
+        "criticalAlert": "緊急特別警報",
+        "warningAlert": "気象警報",
         "weatherAlert": "気象警報",
         "status": {
             "normal": "平常運転",

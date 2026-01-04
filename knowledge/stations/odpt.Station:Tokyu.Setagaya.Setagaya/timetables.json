@@ -1,0 +1,4784 @@
+[
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F267B",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Setagaya.Setagaya.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tokyu.Setagaya",
+    "odpt:station": "odpt.Station:Tokyu.Setagaya.Setagaya",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "04:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F267C",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Setagaya.Setagaya.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tokyu.Setagaya",
+    "odpt:station": "odpt.Station:Tokyu.Setagaya.Setagaya",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "04:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.SangenJaya"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F267D",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Setagaya.Setagaya.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tokyu.Setagaya",
+    "odpt:station": "odpt.Station:Tokyu.Setagaya.Setagaya",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C000000000000010000032F267E",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-01T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tokyu.Setagaya.Setagaya.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tokyu.Setagaya",
+    "odpt:station": "odpt.Station:Tokyu.Setagaya.Setagaya",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tokyu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "05:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "06:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "09:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "10:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "11:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "12:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "13:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "14:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "16:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:51",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:38",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "21:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "22:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "23:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.ShimoTakaido"
+        ]
+      },
+      {
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      },
+      {
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tokyu.Local",
+        "odpt:departureTime": "00:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.Setagaya.Kamimachi"
+        ]
+      }
+    ]
+  }
+]

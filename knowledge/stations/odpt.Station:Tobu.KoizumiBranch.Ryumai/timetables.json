@@ -1,0 +1,930 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D96",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.KoizumiBranch.Ryumai.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.KoizumiBranch",
+    "odpt:station": "odpt.Station:Tobu.KoizumiBranch.Ryumai",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.802E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "802E",
+        "odpt:departureTime": "05:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.804E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "804E",
+        "odpt:departureTime": "06:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.806E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "806E",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.808E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "808E",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.810E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "810E",
+        "odpt:departureTime": "07:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.812E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "812E",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.901E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "901E",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.816E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "816E",
+        "odpt:departureTime": "10:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.818E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "818E",
+        "odpt:departureTime": "11:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.820E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "820E",
+        "odpt:departureTime": "12:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.822E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "822E",
+        "odpt:departureTime": "13:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.824E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "824E",
+        "odpt:departureTime": "14:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.826E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "826E",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.828E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "828E",
+        "odpt:departureTime": "16:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.830E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "830E",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.832E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "832E",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.834E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "834E",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.836E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "836E",
+        "odpt:departureTime": "18:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.838E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "838E",
+        "odpt:departureTime": "19:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.840E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "840E",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.842E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "842E",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.844E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "844E",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.903E",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "903E",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D98",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.KoizumiBranch.Ryumai.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.KoizumiBranch",
+    "odpt:station": "odpt.Station:Tobu.KoizumiBranch.Ryumai",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.802E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "802E",
+        "odpt:departureTime": "05:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.804E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "804E",
+        "odpt:departureTime": "06:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.806E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "806E",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.808E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "808E",
+        "odpt:departureTime": "07:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.810E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "810E",
+        "odpt:departureTime": "07:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.812E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "812E",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.901E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "901E",
+        "odpt:departureTime": "09:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.816E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "816E",
+        "odpt:departureTime": "10:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.818E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "818E",
+        "odpt:departureTime": "11:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.820E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "820E",
+        "odpt:departureTime": "12:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.822E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "822E",
+        "odpt:departureTime": "13:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.824E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "824E",
+        "odpt:departureTime": "14:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.826E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "826E",
+        "odpt:departureTime": "15:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.828E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "828E",
+        "odpt:departureTime": "16:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.830E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "830E",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.832E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "832E",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.834E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "834E",
+        "odpt:departureTime": "18:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.836E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "836E",
+        "odpt:departureTime": "18:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.838E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "838E",
+        "odpt:departureTime": "19:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.840E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "840E",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.842E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "842E",
+        "odpt:departureTime": "20:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.844E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "844E",
+        "odpt:departureTime": "21:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.903E",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "903E",
+        "odpt:departureTime": "22:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.HigashiKoizumi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D99",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.KoizumiBranch.Ryumai.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.KoizumiBranch",
+    "odpt:station": "odpt.Station:Tobu.KoizumiBranch.Ryumai",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.803E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "803E",
+        "odpt:departureTime": "05:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.805E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "805E",
+        "odpt:departureTime": "06:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.807E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "807E",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.809E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "809E",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.811E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "811E",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.902E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "902E",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.813E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "813E",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.815E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "815E",
+        "odpt:departureTime": "10:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.817E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "817E",
+        "odpt:departureTime": "11:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.819E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "819E",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.821E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "821E",
+        "odpt:departureTime": "13:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.823E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "823E",
+        "odpt:departureTime": "14:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.825E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "825E",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.827E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "827E",
+        "odpt:departureTime": "15:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.829E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "829E",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.831E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "831E",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.833E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "833E",
+        "odpt:departureTime": "17:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.835E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "835E",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.837E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "837E",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.839E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "839E",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.841E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "841E",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.843E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "843E",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.904E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "904E",
+        "odpt:departureTime": "21:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.906E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "906E",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.849E",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "849E",
+        "odpt:departureTime": "23:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175D9B",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.KoizumiBranch.Ryumai.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.KoizumiBranch",
+    "odpt:station": "odpt.Station:Tobu.KoizumiBranch.Ryumai",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.803E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "803E",
+        "odpt:departureTime": "05:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.805E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "805E",
+        "odpt:departureTime": "06:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.807E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "807E",
+        "odpt:departureTime": "06:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.809E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "809E",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.811E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "811E",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.902E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "902E",
+        "odpt:departureTime": "08:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.813E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "813E",
+        "odpt:departureTime": "09:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.815E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "815E",
+        "odpt:departureTime": "10:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.817E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "817E",
+        "odpt:departureTime": "11:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.819E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "819E",
+        "odpt:departureTime": "12:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.821E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "821E",
+        "odpt:departureTime": "13:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.823E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "823E",
+        "odpt:departureTime": "14:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.825E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "825E",
+        "odpt:departureTime": "15:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.827E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "827E",
+        "odpt:departureTime": "15:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.829E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "829E",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.831E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "831E",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.833E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "833E",
+        "odpt:departureTime": "17:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.835E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "835E",
+        "odpt:departureTime": "18:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.837E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "837E",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.839E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "839E",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.841E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "841E",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.843E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "843E",
+        "odpt:departureTime": "21:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.904E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "904E",
+        "odpt:departureTime": "21:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.906E",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "906E",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.KoizumiBranch.Ota"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.KoizumiBranch.849E",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "849E",
+        "odpt:departureTime": "23:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Kiryu.Akagi"
+        ]
+      }
+    ]
+  }
+]

@@ -33,6 +33,7 @@ export class AgentOrchestrator {
 
         let currentIteration = 0;
         let chatHistory = [...messages];
+        const toolsCalled: string[] = []; // Track all tools called during this session
 
         return new ReadableStream({
             async start(controller) {
@@ -75,6 +76,18 @@ export class AgentOrchestrator {
                                 const args = JSON.parse(toolCall.function.arguments);
                                 const handler = (TOOL_HANDLERS as any)[name];
 
+                                // Track tool usage
+                                if (!toolsCalled.includes(name)) {
+                                    toolsCalled.push(name);
+                                }
+
+                                // Send tool call event for debugging
+                                controller.enqueue(encoder.encode(`data: ${JSON.stringify({
+                                    event: 'tool_call',
+                                    name,
+                                    args: Object.keys(args)
+                                })}\n\n`));
+
                                 if (handler) {
                                     try {
                                         const result = await handler(args, context);
@@ -106,7 +119,14 @@ export class AgentOrchestrator {
                             chatHistory.push(...toolResults);
                             // Continue loop to give results back to LLM
                         } else {
-                            // Final Answer
+                            // Final Answer - send tools_called summary if any tools were used
+                            if (toolsCalled.length > 0) {
+                                controller.enqueue(encoder.encode(`data: ${JSON.stringify({
+                                    event: 'tools_summary',
+                                    tools_called: toolsCalled
+                                })}\n\n`));
+                            }
+
                             const content = message.content || '';
                             // Stream the final answer in chunks for UX
                             const chunkSize = 80;

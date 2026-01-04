@@ -3,10 +3,18 @@ import { createClient } from '@supabase/supabase-js';
 import { UserPreferences, PreferencesUpdateRequest, PreferencesResponse } from '@/lib/types/userLearning';
 import { calculateWeightedScore, generateDataHash } from '@/lib/types/userLearning';
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Supabase client - Use server-side environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY;
+
+// Get Supabase client instance
+const getSupabaseClient = () => {
+  if (!supabaseUrl || !supabaseKey) {
+    console.warn('[Preferences API] Supabase credentials not configured');
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseKey);
+};
 
 // GET /api/user/preferences - Get user preferences
 export async function GET(request: NextRequest) {
@@ -21,9 +29,43 @@ export async function GET(request: NextRequest) {
       }, { status: 400 });
     }
 
-    // Check for cached preferences in Redis (if available)
-    // const cached = await redis.get(`user_prefs:${userId}`);
-    // if (cached) return NextResponse.json(JSON.parse(cached));
+    const supabase = getSupabaseClient();
+    
+    // If Supabase is not configured, return default preferences
+    if (!supabase) {
+      const defaultPrefs: UserPreferences = {
+        id: '',
+        user_id: userId,
+        default_lat: 35.7138,
+        default_lon: 139.7773,
+        default_zoom: 15,
+        map_style: 'light',
+        show_hubs_only: false,
+        show_labels: true,
+        label_language: 'zh-TW',
+        dark_mode: false,
+        preferred_facility_types: [],
+        excluded_facility_types: [],
+        max_walking_distance: 500,
+        sort_by: 'distance',
+        sort_order: 'asc',
+        user_profile: 'general',
+        version: 1,
+        updated_at: Date.now(),
+        data_hash: '',
+        last_synced_at: null,
+        device_id: '',
+        source: 'web',
+        created_at: Date.now()
+      };
+      
+      return NextResponse.json({
+        success: true,
+        preferences: defaultPrefs,
+        version: 1,
+        mode: 'demo'
+      });
+    }
 
     // Fetch from database
     const { data, error } = await supabase
@@ -75,9 +117,6 @@ export async function GET(request: NextRequest) {
       created_at: new Date(data.created_at).getTime()
     };
 
-    // Cache preferences (if Redis available)
-    // await redis.set(`user_prefs:${userId}`, JSON.stringify(preferences), 'EX', 3600);
-
     const response = NextResponse.json({
       success: true,
       preferences,
@@ -112,6 +151,43 @@ export async function POST(request: NextRequest) {
     }
 
     const userId = updates.user_id;
+    const supabase = getSupabaseClient();
+    
+    // If Supabase is not configured, return demo response
+    if (!supabase) {
+      const demoPrefs: UserPreferences = {
+        id: 'demo-' + userId,
+        user_id: userId,
+        default_lat: updates.default_lat ?? 35.7138,
+        default_lon: updates.default_lon ?? 139.7773,
+        default_zoom: updates.default_zoom ?? 15,
+        map_style: updates.map_style ?? 'light',
+        show_hubs_only: updates.show_hubs_only ?? false,
+        show_labels: updates.show_labels ?? true,
+        label_language: updates.label_language ?? 'zh-TW',
+        dark_mode: updates.dark_mode ?? false,
+        preferred_facility_types: updates.preferred_facility_types ?? [],
+        excluded_facility_types: updates.excluded_facility_types ?? [],
+        max_walking_distance: updates.max_walking_distance ?? 500,
+        sort_by: updates.sort_by ?? 'distance',
+        sort_order: updates.sort_order ?? 'asc',
+        user_profile: updates.user_profile ?? 'general',
+        version: 1,
+        updated_at: Date.now(),
+        data_hash: generateDataHash(updates),
+        last_synced_at: Date.now(),
+        device_id: device_id || '',
+        source: source,
+        created_at: Date.now()
+      };
+      
+      return NextResponse.json({
+        success: true,
+        preferences: demoPrefs,
+        version: 1,
+        mode: 'demo'
+      });
+    }
 
     // Check if preferences exist
     const { data: existing, error: fetchError } = await supabase
@@ -175,9 +251,6 @@ export async function POST(request: NextRequest) {
       }, { status: 500 });
     }
 
-    // Invalidate cache
-    // await redis.del(`user_prefs:${userId}`);
-
     // Create snapshot for version history
     if (existing) {
       await supabase.from('user_preference_snapshots').insert({
@@ -225,6 +298,17 @@ export async function DELETE(request: NextRequest) {
       }, { status: 400 });
     }
 
+    const supabase = getSupabaseClient();
+    
+    // If Supabase is not configured, return demo response
+    if (!supabase) {
+      return NextResponse.json({
+        success: true,
+        message: 'Preferences reset successfully (demo mode)',
+        mode: 'demo'
+      });
+    }
+
     // Delete preferences
     const { error } = await supabase
       .from('user_preferences')
@@ -234,9 +318,6 @@ export async function DELETE(request: NextRequest) {
     if (error) {
       throw error;
     }
-
-    // Invalidate cache
-    // await redis.del(`user_prefs:${userId}`);
 
     return NextResponse.json({
       success: true,

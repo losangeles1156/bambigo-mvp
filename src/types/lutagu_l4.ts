@@ -62,7 +62,8 @@ export type KnowledgeType =
     | 'tip'            // 💡 Comfort / Convenience
     | 'ticket_advice'  // 🎫 Cost Saving
     | 'timing'         // ⏰ Reality Check (Walking time)
-    | 'seasonal';      // 🌸❄️ Event / Weather specific
+    | 'seasonal'       // 🌸❄️ Event / Weather specific
+    | 'info';          // ℹ️ General Information
 
 export interface KnowledgeTrigger {
     // Spatial Triggers

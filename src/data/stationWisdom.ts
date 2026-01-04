@@ -15,8 +15,8 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
     {
         id: 'tokyo-keiyo-transfer',
         trigger: {
-            station_ids: ['odpt:Station:JR-East.Tokyo'],
-            line_ids: ['odpt:Railway:JR-East.Keiyo'],
+            station_ids: ['odpt.Station:JR-East.Tokyo'],
+            line_ids: ['odpt.Railway:JR-East.Keiyo'],
             keywords: ['transfer', 'keiyo', 'long_walk', 'walk']
         },
         type: 'warning',
@@ -41,7 +41,7 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
             // In a real DB, we might tag specific Station+Exit. 
             // For this example, let's assume it targets a specific station where A1 is bad.
             // Let's assign it to 'Ueno' for demonstration, or leave station empty if it was a global rule (which this isn't).
-            station_ids: ['odpt:Station:TokyoMetro.Ueno'],
+            station_ids: ['odpt.Station:TokyoMetro.Ginza.Ueno', 'odpt.Station:TokyoMetro.Hibiya.Ueno', 'odpt.Station:JR-East.Ueno'],
             user_states: ['accessibility.wheelchair', 'accessibility.stroller'],
             keywords: ['elevator', 'accessibility', 'barrier_free', 'wheelchair', 'stroller', 'exit']
         },
@@ -88,8 +88,8 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
     {
         id: 'ueno-shinkansen-timing',
         trigger: {
-            station_ids: ['odpt:Station:JR-East.Ueno'],
-            line_ids: ['odpt:Railway:JR-East.Shinkansen'], // Generic for Shinkansen lines
+            station_ids: ['odpt.Station:JR-East.Ueno'],
+            line_ids: ['odpt.Railway:JR-East.Shinkansen'], // Generic for Shinkansen lines
         },
         type: 'timing',
         priority: 70,
@@ -110,7 +110,7 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
     {
         id: 'asakusa-new-year-control',
         trigger: {
-            station_ids: ['odpt:Station:TokyoMetro.Asakusa', 'odpt:Station:Toei.Asakusa'],
+            station_ids: ['odpt.Station:TokyoMetro.Ginza.Asakusa', 'odpt.Station:Toei.Asakusa'],
             time_patterns: ['12/31-01/01'], // Simple date matching
         },
         type: 'seasonal',
@@ -278,6 +278,82 @@ export const KNOWLEDGE_BASE: ExpertKnowledge[] = [
             'zh-TW': '秋季連假期間觀光景點周邊交通可能壅塞，建議搭乘電車並預留轉乘時間。',
             ja: '秋の連休は観光地周辺の交通が混雑します。電車を利用し、乗り換え時間に余裕を持ってください。',
             en: 'Traffic around tourist spots is heavy during Silver Week. Use trains and allow extra time for transfers.'
+        }
+    },
+    // Payment: Universal Touch Payment (Tokyu/Keio/Toei/Keikyu)
+    {
+        id: 'payment-cc-touch-supported',
+        trigger: {
+            // Targeting key stations on these lines, or general keywords
+            // Since we can't list every station, we rely on keywords + line context if available
+            // or just generic payment keywords.
+            keywords: ['ticket', 'payment', 'credit_card', 'card', 'ic_card', 'touch_payment', 'purchase'],
+            // Approximate major lines for context if engine supports partial match, otherwise rely on keywords
+            line_ids: [
+                'odpt:Railway:Tokyu.Toyoko', 'odpt:Railway:Tokyu.DenEnToshi',
+                'odpt:Railway:Toei.Asakusa', 'odpt:Railway:Toei.Oedo', 'odpt:Railway:Toei.Mita', 'odpt:Railway:Toei.Shinjuku',
+                'odpt:Railway:Keikyu.Main', 'odpt:Railway:Keikyu.Airport',
+                'odpt:Railway:Keio.Keio', 'odpt:Railway:Keio.Inokashira'
+            ]
+        },
+        type: 'tip',
+        priority: 85,
+        icon: '💳',
+        title: { 'zh-TW': '支援信用卡感應進站', ja: 'クレカ等のタッチ決済対応', en: 'Contactless Payment Available' },
+        content: {
+            'zh-TW': '本路線支援信用卡感應支付 (Touch Payment)。無需購票，直接持 Visa/Mastercard 感應專用閘門即可進出。',
+            ja: 'この路線はタッチ決済に対応しています。券売機に並ばず、お手持ちのクレジットカードで改札を通過できます。',
+            en: 'This line supports Contactless Payment. Skip the ticket machine and tap your credit card (Visa/Master etc.) at the gate.'
+        }
+    },
+    // Payment: JR East Trap
+    {
+        id: 'payment-cc-jr-trap',
+        trigger: {
+            keywords: ['ticket', 'payment', 'credit_card', 'card', 'touch_payment'],
+            line_ids: ['odpt:Railway:JR-East.Yamanote', 'odpt:Railway:JR-East.Chuo', 'odpt:Railway:JR-East.Sobu', 'odpt:Railway:JR-East.KeihinTohoku']
+        },
+        type: 'warning',
+        priority: 88,
+        icon: '⚠️',
+        title: { 'zh-TW': 'JR 線不支援信用卡感應', ja: 'JRはタッチ決済非対応', en: 'JR: No Credit Card Tap' },
+        content: {
+            'zh-TW': 'JR 線改札口「不支援」信用卡直接感應。請使用 Suica、Mobile Suica 或購買實體車票。',
+            ja: 'JR線の改札はクレジットカードのタッチ決済に対応していません。Suicaまたは切符をご利用ください。',
+            en: 'JR gates DO NOT accept credit card tap. You MUST use a Suica card, Mobile Suica, or buy a paper ticket.'
+        }
+    },
+    // Payment: Haneda Access Tip (Keikyu)
+    {
+        id: 'payment-haneda-keikyu',
+        trigger: {
+            station_ids: ['odpt.Station:Keikyu.Main.HanedaAirportTerminal1_2', 'odpt.Station:Keikyu.Main.HanedaAirportTerminal3'],
+            keywords: ['ticket', 'airport', 'haneda']
+        },
+        type: 'tip',
+        priority: 90,
+        icon: '✈️',
+        title: { 'zh-TW': '機場快線感應支付', ja: '空港線はタッチ決済OK', en: 'Airport Line Contactless' },
+        content: {
+            'zh-TW': '京急線往市區可直接使用信用卡感應進站，無需排隊買票或儲值 IC 卡。',
+            ja: '京急線はクレジットカードのタッチ決済で乗車できます。券売機に並ぶ必要はありません。',
+            en: 'Keikyu Line to the city accepts credit card touch payment. No need to buy a ticket or charge an IC card.'
+        }
+    },
+    // Payment: General Guide
+    {
+        id: 'payment-cc-general-guide',
+        trigger: {
+            keywords: ['credit_card', 'visa', 'mastercard', 'touch_payment']
+        },
+        type: 'info',
+        priority: 70,
+        icon: 'ℹ️',
+        title: { 'zh-TW': '關於信用卡感應乘車', ja: 'タッチ決済について', en: 'About Touch Payment' },
+        content: {
+            'zh-TW': '東京私鐵 (東急/京王/京急) 與都營地鐵已開放感應支付。JR 線目前仍需使用 Suica 或實體票。東京 Metro 預計 2026 春季全面開放。',
+            ja: '東急・京王・京急・都営地下鉄はタッチ決済が可能です。JRは非対応です。東京メトロは2026年春に全駅対応予定です。',
+            en: 'Private lines (Tokyu/Keio/Keikyu) & Toei Subway accept touch payment. JR does NOT. Tokyo Metro follows in Spring 2026.'
         }
     }
 ];

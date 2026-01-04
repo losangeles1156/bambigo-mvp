@@ -3,16 +3,16 @@ import { NextRequest, NextResponse } from 'next/server';
 const ODPT_API_KEY = process.env.ODPT_API_KEY || process.env.ODPT_API_TOKEN || process.env.ODPT_API_TOKEN_BACKUP;
 const BASE_URL = 'https://api.odpt.org/api/v4/odpt:StationTimetable';
 
-// Helper to get JST Time and Day
-function getJSTContext() {
-    const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
-    const day = now.getDay(); // 0 = Sun
-    const isWeekend = day === 0 || day === 6;
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+import { getJSTTime } from '@/lib/utils/timeUtils';
 
-    // ODPT Calendar mapping logic (Simplified)
-    // In reality, should check for holidays. For MVP:
-    const calendarSelector = isWeekend ? ['SaturdayHoliday', 'Holiday', 'Saturday'] : ['Weekday'];
+// Helper: Get JST Time and Day
+function getJSTContext() {
+    const { hour, minute, isHoliday } = getJSTTime();
+    const currentMinutes = hour * 60 + minute;
+
+    // ODPT Calendar mapping logic
+    // 'isHoliday' from getJSTTime covers both Weekends (Sat/Sun) and Public Holidays.
+    const calendarSelector = isHoliday ? ['SaturdayHoliday', 'Holiday', 'Saturday'] : ['Weekday'];
 
     return { currentMinutes, calendarSelector };
 }

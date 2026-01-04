@@ -1,0 +1,1484 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175E67",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Ogose.Sakado.Outbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Ogose",
+    "odpt:station": "odpt.Station:Tobu.Ogose.Sakado",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A589",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A589",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A581",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A581",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A687",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A687",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A689",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A689",
+        "odpt:departureTime": "06:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A681",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A681",
+        "odpt:departureTime": "06:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A3687",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A3687",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A785",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A785",
+        "odpt:departureTime": "07:09",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A789",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A789",
+        "odpt:departureTime": "07:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A781",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A781",
+        "odpt:departureTime": "07:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A787",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A787",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A885",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A885",
+        "odpt:departureTime": "08:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A883",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A883",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A889",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A889",
+        "odpt:departureTime": "08:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A881",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A881",
+        "odpt:departureTime": "08:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A887",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A887",
+        "odpt:departureTime": "08:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A985",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A985",
+        "odpt:departureTime": "09:12",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A983",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A983",
+        "odpt:departureTime": "09:24",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A981",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A981",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A987",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A987",
+        "odpt:departureTime": "09:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1085",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1085",
+        "odpt:departureTime": "10:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1083",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1083",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1081",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1081",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1087",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1087",
+        "odpt:departureTime": "10:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1185",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1185",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1183",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1183",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1181",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1181",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1187",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1187",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1285",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1285",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1283",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1283",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1281",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1281",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1287",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1287",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1385",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1385",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1383",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1383",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1381",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1381",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1387",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1387",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1485",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1485",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1483",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1483",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1481",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1481",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1487",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1487",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1585",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1585",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1583",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1583",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1581",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1581",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1587",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1587",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1685",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1685",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1683",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1683",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1681",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1681",
+        "odpt:departureTime": "16:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1687",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1687",
+        "odpt:departureTime": "16:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1785",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1785",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1783",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1783",
+        "odpt:departureTime": "17:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1781",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1781",
+        "odpt:departureTime": "17:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1787",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1787",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1885",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1885",
+        "odpt:departureTime": "18:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1883",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1883",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1881",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1881",
+        "odpt:departureTime": "18:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1887",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1887",
+        "odpt:departureTime": "18:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1985",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1985",
+        "odpt:departureTime": "19:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1983",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1983",
+        "odpt:departureTime": "19:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1981",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1981",
+        "odpt:departureTime": "19:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1987",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1987",
+        "odpt:departureTime": "19:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2085",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2085",
+        "odpt:departureTime": "20:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2083",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2083",
+        "odpt:departureTime": "20:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2081",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2081",
+        "odpt:departureTime": "20:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2087",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2087",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2185",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2185",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2181",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2181",
+        "odpt:departureTime": "21:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2187",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2187",
+        "odpt:departureTime": "21:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2285",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2285",
+        "odpt:departureTime": "22:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2281",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2281",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2287",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2287",
+        "odpt:departureTime": "22:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2385",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2385",
+        "odpt:departureTime": "23:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2381",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2381",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A5385",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A5385",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175E6A",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Ogose.Sakado.Outbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Ogose",
+    "odpt:station": "odpt.Station:Tobu.Ogose.Sakado",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Outbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A589",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A589",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A581",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A581",
+        "odpt:departureTime": "05:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A687",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A687",
+        "odpt:departureTime": "06:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A689",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A689",
+        "odpt:departureTime": "06:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A681",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A681",
+        "odpt:departureTime": "06:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A685",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A685",
+        "odpt:departureTime": "06:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A787",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A787",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A789",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A789",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A781",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A781",
+        "odpt:departureTime": "07:28",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A783",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A783",
+        "odpt:departureTime": "07:41",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A785",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A785",
+        "odpt:departureTime": "07:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A887",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A887",
+        "odpt:departureTime": "08:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A889",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A889",
+        "odpt:departureTime": "08:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A881",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A881",
+        "odpt:departureTime": "08:33",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A883",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A883",
+        "odpt:departureTime": "08:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A885",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A885",
+        "odpt:departureTime": "08:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A987",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A987",
+        "odpt:departureTime": "09:10",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A981",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A981",
+        "odpt:departureTime": "09:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A983",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A983",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A985",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A985",
+        "odpt:departureTime": "09:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1087",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1087",
+        "odpt:departureTime": "10:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1081",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1081",
+        "odpt:departureTime": "10:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1083",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1083",
+        "odpt:departureTime": "10:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1085",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1085",
+        "odpt:departureTime": "10:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1187",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1187",
+        "odpt:departureTime": "11:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1181",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1181",
+        "odpt:departureTime": "11:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1183",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1183",
+        "odpt:departureTime": "11:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1185",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1185",
+        "odpt:departureTime": "11:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1287",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1287",
+        "odpt:departureTime": "12:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1281",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1281",
+        "odpt:departureTime": "12:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1283",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1283",
+        "odpt:departureTime": "12:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1285",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1285",
+        "odpt:departureTime": "12:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1387",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1387",
+        "odpt:departureTime": "13:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1381",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1381",
+        "odpt:departureTime": "13:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1383",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1383",
+        "odpt:departureTime": "13:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1385",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1385",
+        "odpt:departureTime": "13:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1487",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1487",
+        "odpt:departureTime": "14:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1481",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1481",
+        "odpt:departureTime": "14:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1483",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1483",
+        "odpt:departureTime": "14:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1485",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1485",
+        "odpt:departureTime": "14:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1587",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1587",
+        "odpt:departureTime": "15:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1581",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1581",
+        "odpt:departureTime": "15:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1583",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1583",
+        "odpt:departureTime": "15:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1585",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1585",
+        "odpt:departureTime": "15:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1687",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1687",
+        "odpt:departureTime": "16:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1681",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1681",
+        "odpt:departureTime": "16:19",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1683",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1683",
+        "odpt:departureTime": "16:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1685",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1685",
+        "odpt:departureTime": "16:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1787",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1787",
+        "odpt:departureTime": "17:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1781",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1781",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1783",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1783",
+        "odpt:departureTime": "17:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1785",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1785",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1887",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1887",
+        "odpt:departureTime": "18:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1881",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1881",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1883",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1883",
+        "odpt:departureTime": "18:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1885",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1885",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1987",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1987",
+        "odpt:departureTime": "19:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1981",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1981",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1983",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1983",
+        "odpt:departureTime": "19:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A1985",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A1985",
+        "odpt:departureTime": "19:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2087",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2087",
+        "odpt:departureTime": "20:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2081",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2081",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2083",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2083",
+        "odpt:departureTime": "20:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2085",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2085",
+        "odpt:departureTime": "20:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2187",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2187",
+        "odpt:departureTime": "21:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2181",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2181",
+        "odpt:departureTime": "21:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2185",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2185",
+        "odpt:departureTime": "21:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2287",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2287",
+        "odpt:departureTime": "22:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2281",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2281",
+        "odpt:departureTime": "22:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2285",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2285",
+        "odpt:departureTime": "22:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2387",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2387",
+        "odpt:departureTime": "23:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2381",
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2381",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Ogose.A2385",
+        "odpt:isLast": true,
+        "odpt:isOrigin": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "A2385",
+        "odpt:departureTime": "23:53",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Ogose.Ogose"
+        ]
+      }
+    ]
+  }
+]

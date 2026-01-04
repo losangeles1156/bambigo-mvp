@@ -272,19 +272,7 @@ export function NodeTabs({ nodeData, profile }: { nodeData?: any, profile?: any 
                                 <h2 className="text-sm font-semibold text-slate-900">{tTabs('facility')}</h2>
                             </div>
                             <ErrorBoundary>
-                                <div className="space-y-6">
-                                    <L3_Facilities data={standardData} />
-                                    {standardData.id && (
-                                        <div className="pt-6 border-t border-gray-100 space-y-6">
-                                            <div className="flex items-center gap-2 px-1">
-                                                <TrainFront size={16} className="text-orange-600" />
-                                                <span className="text-xs font-semibold text-slate-700">{tTabs('transit')}</span>
-                                            </div>
-                                            <TimetableBoard stationId={standardData.id} operator={operator} />
-                                            <FareTable stationId={standardData.id} operator={operator} />
-                                        </div>
-                                    )}
-                                </div>
+                                <L3_Facilities data={standardData} />
                             </ErrorBoundary>
                         </motion.div>
                     )}

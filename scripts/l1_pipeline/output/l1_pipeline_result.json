@@ -84487,5 +84487,657 @@
         "is_seasonal": false
       }
     ]
+  },
+  {
+    "clusterId": "odpt.Station:Keisei.Main.NaritaAirportTerminal1",
+    "name": {
+      "ja": "成田空港",
+      "en": "Narita Airport Terminal 1"
+    },
+    "ward": "Narita",
+    "isHub": false,
+    "location": {
+      "lat": 35.7647,
+      "lng": 140.3864
+    },
+    "wikiAnalysis": {
+      "summary": "成田空港駅（なりたくうこうえき）は、千葉県成田市三里塚御料牧場にある、東日本旅客鉄道（JR東日本）と京成電鉄の駅である。成田国際空港第1ターミナル内に位置し、両社とも「成田第1ターミナル」の副名称を付与している。 関東の駅百選に選定されている。   == 概要 == 成田国際空港（成田空港）へのアク...",
+      "seasonalFlags": [],
+      "keywords": [],
+      "weightedKeywords": []
+    },
+    "vibeTags": [],
+    "osmStats": [
+      {
+        "category": "dining",
+        "total": 12,
+        "saved": 12
+      },
+      {
+        "category": "shopping",
+        "total": 6,
+        "saved": 6
+      },
+      {
+        "category": "accommodation",
+        "total": 1,
+        "saved": 1
+      },
+      {
+        "category": "culture",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "nature",
+        "total": 2,
+        "saved": 2
+      },
+      {
+        "category": "business",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "medical",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "leisure",
+        "total": 1,
+        "saved": 1
+      },
+      {
+        "category": "finance",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "service",
+        "total": 3,
+        "saved": 3
+      }
+    ],
+    "poiSample": [
+      {
+        "osm_id": 2134168028,
+        "name": "タリーズコーヒー",
+        "category": "dining",
+        "location": {
+          "lat": 35.765652,
+          "lng": 140.385147
+        },
+        "tags": {
+          "amenity": "cafe",
+          "brand": "タリーズコーヒー",
+          "brand:en": "Tully's Coffee",
+          "brand:ja": "タリーズコーヒー",
+          "brand:wikidata": "Q3541983",
+          "brand:wikipedia": "en:Tully's Coffee",
+          "cuisine": "coffee_shop",
+          "name": "タリーズコーヒー",
+          "name:en": "Tully's Coffee",
+          "name:ja": "タリーズコーヒー",
+          "takeaway": "yes"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 2134169439,
+        "name": "銀座LION",
+        "category": "dining",
+        "location": {
+          "lat": 35.765944,
+          "lng": 140.38485
+        },
+        "tags": {
+          "amenity": "pub",
+          "cuisine": "international",
+          "food": "yes",
+          "name": "銀座LION",
+          "name:en": "GINZA LION",
+          "outdoor_seating": "no",
+          "wheelchair": "yes"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 2134191405,
+        "name": "IASSラウンジ",
+        "category": "dining",
+        "location": {
+          "lat": 35.763715,
+          "lng": 140.384729
+        },
+        "tags": {
+          "amenity": "cafe",
+          "name": "IASSラウンジ",
+          "name:en": "IASS Lounge",
+          "wheelchair": "yes"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 2134169076,
+        "name": "海外おみやげ予約受付",
+        "category": "shopping",
+        "location": {
+          "lat": 35.765981,
+          "lng": 140.384696
+        },
+        "tags": {
+          "name": "海外おみやげ予約受付",
+          "name:en": "Overseas Souvenir Reservation Counter",
+          "shop": "gift",
+          "wheelchair": "yes"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 5750572022,
+        "name": "Sky Shop",
+        "category": "shopping",
+        "location": {
+          "lat": 35.7639351,
+          "lng": 140.3851306
+        },
+        "tags": {
+          "name:en": "Sky Shop",
+          "shop": "convenience"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 5750572023,
+        "name": "Bus Ticket",
+        "category": "shopping",
+        "location": {
+          "lat": 35.7639138,
+          "lng": 140.3857426
+        },
+        "tags": {
+          "name:en": "Bus Ticket",
+          "shop": "ticket",
+          "vending": "public_transport_tickets"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1760540522,
+        "name": "成田エアポートレストハウス",
+        "category": "accommodation",
+        "location": {
+          "lat": 35.7679756,
+          "lng": 140.3860438
+        },
+        "tags": {
+          "name": "成田エアポートレストハウス",
+          "name:en": "Narita Airport Resthouse",
+          "source": "Bing",
+          "tourism": "hotel",
+          "wikidata": "Q11495602",
+          "wikipedia": "ja:成田エアポートレストハウス"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 788948938,
+        "name": "姉妹空港記念公園",
+        "category": "nature",
+        "location": {
+          "lat": 35.7669258,
+          "lng": 140.3872012
+        },
+        "tags": {
+          "leisure": "park",
+          "name": "姉妹空港記念公園"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 788948939,
+        "name": "Ｂ滑走路二千メートル化記念公園",
+        "category": "nature",
+        "location": {
+          "lat": 35.7671097,
+          "lng": 140.3868726
+        },
+        "tags": {
+          "leisure": "park",
+          "name": "Ｂ滑走路二千メートル化記念公園"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 5603040062,
+        "name": "28F",
+        "category": "leisure",
+        "location": {
+          "lat": 35.7625976,
+          "lng": 140.3839255
+        },
+        "tags": {
+          "name": "28F",
+          "tourism": "attraction"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1420739433,
+        "name": "警察署",
+        "category": "service",
+        "location": {
+          "lat": 35.768713,
+          "lng": 140.386788
+        },
+        "tags": {
+          "amenity": "police",
+          "name": "成田国際空港警察署",
+          "name:en": "Narita International Airport Police Station",
+          "name:it": "Stazione di Polizia",
+          "name:ja": "警察署",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+          "wikidata": "Q11495635",
+          "wikipedia": "ja:成田国際空港警察署"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1420739435,
+        "name": "成田国際空港郵便局第１旅客ビル内分室",
+        "category": "service",
+        "location": {
+          "lat": 35.764352,
+          "lng": 140.38461
+        },
+        "tags": {
+          "amenity": "post_office",
+          "name": "成田国際空港郵便局第１旅客ビル内分室",
+          "name:en": "Narita Airport Terminal 1 Post Office",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "opening_hours": "Mo-Su 08:30-20:00",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+          "wheelchair": "yes"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 9155358708,
+        "name": "成田国際空港警察署　警察官詰所",
+        "category": "service",
+        "location": {
+          "lat": 35.7646526,
+          "lng": 140.3849225
+        },
+        "tags": {
+          "amenity": "police",
+          "level": "0",
+          "name": "成田国際空港警察署　警察官詰所"
+        },
+        "is_seasonal": false
+      }
+    ]
+  },
+  {
+    "clusterId": "odpt.Station:Keisei.Main.Airport-Daini-Building",
+    "name": {
+      "ja": "空港第2ビル",
+      "en": "Narita Airport Terminal 2・3"
+    },
+    "ward": "Narita",
+    "isHub": false,
+    "location": {
+      "lat": 35.772,
+      "lng": 140.3926
+    },
+    "wikiAnalysis": {
+      "summary": "空港第2ビル駅（くうこうだいにビルえき）は、千葉県成田市古込にある、東日本旅客鉄道（JR東日本）・京成電鉄の駅である。成田国際空港第2ターミナル内に位置し、両社とも「成田第2・第3ターミナル」の副名称を付与している。   == 概要 == 成田国際空港（成田空港）へのアクセス駅の一つで、成田空港第2...",
+      "seasonalFlags": [],
+      "keywords": [
+        "Korea Town"
+      ],
+      "weightedKeywords": [
+        {
+          "word": "Korea Town",
+          "weight": 2
+        }
+      ]
+    },
+    "vibeTags": [
+      "Korea Town"
+    ],
+    "osmStats": [
+      {
+        "category": "dining",
+        "total": 15,
+        "saved": 15
+      },
+      {
+        "category": "shopping",
+        "total": 5,
+        "saved": 5
+      },
+      {
+        "category": "accommodation",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "culture",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "nature",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "business",
+        "total": 4,
+        "saved": 4
+      },
+      {
+        "category": "medical",
+        "total": 2,
+        "saved": 2
+      },
+      {
+        "category": "leisure",
+        "total": 0,
+        "saved": 0
+      },
+      {
+        "category": "finance",
+        "total": 1,
+        "saved": 1
+      },
+      {
+        "category": "service",
+        "total": 2,
+        "saved": 2
+      }
+    ],
+    "poiSample": [
+      {
+        "osm_id": 5603039999,
+        "name": "RB",
+        "category": "dining",
+        "location": {
+          "lat": 35.772922,
+          "lng": 140.389206
+        },
+        "tags": {
+          "amenity": "restaurant",
+          "name": "RB"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 5775900853,
+        "name": "成田国際空港 サクララウンジ（国内線）",
+        "category": "dining",
+        "location": {
+          "lat": 35.7733985,
+          "lng": 140.3894658
+        },
+        "tags": {
+          "amenity": "bar",
+          "min_age": "0",
+          "name": "成田国際空港 サクララウンジ（国内線）",
+          "name:en": "Sakura Lounge",
+          "website": "https://www.jal.co.jp/jp/ja/dom/service/lounge/nrt/"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 5839157385,
+        "name": "FaSoLa Cafe - coffee & beer",
+        "category": "dining",
+        "location": {
+          "lat": 35.7747923,
+          "lng": 140.390866
+        },
+        "tags": {
+          "amenity": "cafe",
+          "name:en": "FaSoLa Cafe - coffee & beer"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 8688168306,
+        "name": "マツモトキヨシ",
+        "category": "shopping",
+        "location": {
+          "lat": 35.7728585,
+          "lng": 140.3873955
+        },
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "マツモトキヨシ",
+          "brand:en": "Matsumoto Kiyoshi",
+          "brand:ja": "マツモトキヨシ",
+          "brand:wikidata": "Q8014776",
+          "healthcare": "pharmacy",
+          "level": "-1",
+          "name": "マツモトキヨシ",
+          "name:en": "Matsumoto Kiyoshi",
+          "name:ja": "マツモトキヨシ",
+          "name:ja-Hira": "まつもときよし",
+          "name:ja-Latn": "MatsumotoKiyoshi",
+          "name:ja_rm": "MatsumotoKiyoshi",
+          "shop": "chemist",
+          "short_name": "マツキヨ",
+          "short_name:en": "Matsukiyo",
+          "short_name:ja": "マツキヨ",
+          "website": "https://www.matsukiyo.co.jp/"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 10586569372,
+        "name": "ホットハート",
+        "category": "shopping",
+        "location": {
+          "lat": 35.7731401,
+          "lng": 140.3879872
+        },
+        "tags": {
+          "level": "2",
+          "name": "ホットハート",
+          "name:en": "Hot Heart",
+          "name:ja": "ホットハート",
+          "opening_hours": "Mo-Fr 06:00-19:00;Sa-Su 06:00-18:00",
+          "phone": "0476-34-6331",
+          "shop": "variety_store"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 11169153898,
+        "name": "JAPANESE CAPSULE TOY GACHA",
+        "category": "shopping",
+        "location": {
+          "lat": 35.7733728,
+          "lng": 140.3875036
+        },
+        "tags": {
+          "level": "-1",
+          "name": "JAPANESE CAPSULE TOY GACHA",
+          "opening_hours": "24/7",
+          "shop": "toys",
+          "website": "https://www.takaratomy-arts.co.jp/campaign/o/14/"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1420740341,
+        "name": "東京入国管理局成田空港支局",
+        "category": "business",
+        "location": {
+          "lat": 35.7731477,
+          "lng": 140.3888597
+        },
+        "tags": {
+          "level": "2;3",
+          "name": "東京入国管理局成田空港支局",
+          "name:en": "Tokyo Immigration Bureau",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "office": "government",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1420740995,
+        "name": "横浜植物動物防疫所成田支所",
+        "category": "business",
+        "location": {
+          "lat": 35.7733523,
+          "lng": 140.3879652
+        },
+        "tags": {
+          "level": "1",
+          "name": "横浜植物動物防疫所成田支所",
+          "name:en": "Plant and Animal Quarantine",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "office": "government",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 8688187768,
+        "name": "東京入国管理局成田空港支局",
+        "category": "business",
+        "location": {
+          "lat": 35.7740878,
+          "lng": 140.3881837
+        },
+        "tags": {
+          "level": "2;3",
+          "name": "東京入国管理局成田空港支局",
+          "name:en": "Tokyo Immigration Bureau",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "office": "government",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 8688168306,
+        "name": "マツモトキヨシ",
+        "category": "medical",
+        "location": {
+          "lat": 35.7728585,
+          "lng": 140.3873955
+        },
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "マツモトキヨシ",
+          "brand:en": "Matsumoto Kiyoshi",
+          "brand:ja": "マツモトキヨシ",
+          "brand:wikidata": "Q8014776",
+          "healthcare": "pharmacy",
+          "level": "-1",
+          "name": "マツモトキヨシ",
+          "name:en": "Matsumoto Kiyoshi",
+          "name:ja": "マツモトキヨシ",
+          "name:ja-Hira": "まつもときよし",
+          "name:ja-Latn": "MatsumotoKiyoshi",
+          "name:ja_rm": "MatsumotoKiyoshi",
+          "shop": "chemist",
+          "short_name": "マツキヨ",
+          "short_name:en": "Matsukiyo",
+          "short_name:ja": "マツキヨ",
+          "website": "https://www.matsukiyo.co.jp/"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 10586569373,
+        "name": "Drug Box",
+        "category": "medical",
+        "location": {
+          "lat": 35.7734606,
+          "lng": 140.387738
+        },
+        "tags": {
+          "amenity": "pharmacy",
+          "level": "2",
+          "name": "Drug Box",
+          "opening_hours": "08:45-17:45",
+          "phone": "0476-34-6777"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 10586569371,
+        "name": "千葉銀行",
+        "category": "finance",
+        "location": {
+          "lat": 35.7727415,
+          "lng": 140.3881024
+        },
+        "tags": {
+          "amenity": "bank",
+          "brand": "千葉銀行",
+          "brand:en": "The Chiba Bank",
+          "brand:ja": "千葉銀行",
+          "brand:wikidata": "Q1071712",
+          "level": "2",
+          "name": "千葉銀行",
+          "name:en": "Chiba Bank",
+          "name:ja": "千葉銀行"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 1420739436,
+        "name": "第２旅客ビル内分室",
+        "category": "service",
+        "location": {
+          "lat": 35.772587,
+          "lng": 140.389487
+        },
+        "tags": {
+          "amenity": "post_office",
+          "name": "成田国際空港郵便局第２旅客ビル内分室",
+          "name:en": "Narita Airport Terminal 2 Post Office",
+          "name:ja": "第２旅客ビル内分室",
+          "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+          "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+          "source": "KSJ2",
+          "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html"
+        },
+        "is_seasonal": false
+      },
+      {
+        "osm_id": 11449155755,
+        "name": "JAL ABC",
+        "category": "service",
+        "location": {
+          "lat": 35.7724485,
+          "lng": 140.3883277
+        },
+        "tags": {
+          "amenity": "post_office",
+          "name": "JAL ABC"
+        },
+        "is_seasonal": false
+      }
+    ]
   }
 ]

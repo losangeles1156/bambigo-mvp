@@ -1041,7 +1041,10 @@ export async function seedNodes() {
             node_type: rawNode.type,
             coordinates: rawNode.location,
             is_active: true,
-            parent_hub_id: null, // Hub/Spoke logic can be added here if needed
+            // IMPORTANT: Preserve is_hub and parent_hub_id from rawNode definition
+            // If not defined in rawNode, default to standalone station (is_hub = false, parent_hub_id = null)
+            is_hub: rawNode.is_hub === true,
+            parent_hub_id: rawNode.parent_hub_id || null,
             transit_lines: (rawNode as any).lines || [],
             updated_at: new Date().toISOString()
         };
@@ -1077,7 +1080,7 @@ export async function seedNodes() {
         if (error) {
             console.error(`Error seeding node ${node.id}:`, error);
         } else {
-            console.log(`Seeded node ${node.id} (${node.node_type})`);
+            console.log(`Seeded node ${node.id} (is_hub=${node.is_hub}, parent=${node.parent_hub_id})`);
         }
     }
 }

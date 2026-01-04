@@ -1,0 +1,2005 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175C4C",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Daishi.Daishimae.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.Daishi",
+    "odpt:station": "odpt.Station:Tobu.Daishi.Daishimae",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.2D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "2D",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.4D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "4D",
+        "odpt:departureTime": "05:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.6D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "6D",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.8D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "8D",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.10D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "10D",
+        "odpt:departureTime": "06:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.12D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "12D",
+        "odpt:departureTime": "06:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.14D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "14D",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.16D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "16D",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.18D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "18D",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.20D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "20D",
+        "odpt:departureTime": "07:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.22D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "22D",
+        "odpt:departureTime": "07:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.24D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "24D",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.26D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "26D",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.28D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "28D",
+        "odpt:departureTime": "08:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.30D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "30D",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.32D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "32D",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.34D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "34D",
+        "odpt:departureTime": "08:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.36D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "36D",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.38D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "38D",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.40D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "40D",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.42D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "42D",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.44D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "44D",
+        "odpt:departureTime": "09:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.46D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "46D",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.48D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "48D",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.50D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "50D",
+        "odpt:departureTime": "09:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.52D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "52D",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.54D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "54D",
+        "odpt:departureTime": "10:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.56D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "56D",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.58D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "58D",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.60D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "60D",
+        "odpt:departureTime": "10:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.62D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "62D",
+        "odpt:departureTime": "10:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.64D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "64D",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.66D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "66D",
+        "odpt:departureTime": "11:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.68D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "68D",
+        "odpt:departureTime": "11:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.70D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "70D",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.72D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "72D",
+        "odpt:departureTime": "11:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.74D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "74D",
+        "odpt:departureTime": "11:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.76D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "76D",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.78D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "78D",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.80D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "80D",
+        "odpt:departureTime": "12:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.82D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "82D",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.84D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "84D",
+        "odpt:departureTime": "12:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.86D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "86D",
+        "odpt:departureTime": "12:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.88D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "88D",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.90D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "90D",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.92D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "92D",
+        "odpt:departureTime": "13:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.94D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "94D",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.96D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "96D",
+        "odpt:departureTime": "13:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.98D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "98D",
+        "odpt:departureTime": "13:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.100D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "100D",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.102D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102D",
+        "odpt:departureTime": "14:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.104D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "104D",
+        "odpt:departureTime": "14:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.106D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "106D",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.108D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "108D",
+        "odpt:departureTime": "14:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.110D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "110D",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.112D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "112D",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.114D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "114D",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.116D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "116D",
+        "odpt:departureTime": "15:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.118D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "118D",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.120D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "120D",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.122D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "122D",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.124D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "124D",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.126D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "126D",
+        "odpt:departureTime": "16:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.128D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "128D",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.130D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "130D",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.132D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "132D",
+        "odpt:departureTime": "16:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.134D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "134D",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.136D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "136D",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.138D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "138D",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.140D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "140D",
+        "odpt:departureTime": "17:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.142D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "142D",
+        "odpt:departureTime": "17:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.144D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "144D",
+        "odpt:departureTime": "17:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.146D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "146D",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.148D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "148D",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.150D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "150D",
+        "odpt:departureTime": "18:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.152D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "152D",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.154D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "154D",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.156D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "156D",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.158D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "158D",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.160D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "160D",
+        "odpt:departureTime": "19:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.162D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "162D",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.164D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "164D",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.166D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "166D",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.168D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "168D",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.170D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "170D",
+        "odpt:departureTime": "19:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.172D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "172D",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.174D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "174D",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.176D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "176D",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.178D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "178D",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.180D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "180D",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.182D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "182D",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.184D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "184D",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.186D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "186D",
+        "odpt:departureTime": "21:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.188D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "188D",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.190D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "190D",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.192D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "192D",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.194D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "194D",
+        "odpt:departureTime": "21:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.196D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "196D",
+        "odpt:departureTime": "22:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.198D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "198D",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.200D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "200D",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.202D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "202D",
+        "odpt:departureTime": "22:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.204D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "204D",
+        "odpt:departureTime": "22:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.206D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "206D",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.208D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "208D",
+        "odpt:departureTime": "23:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.210D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "210D",
+        "odpt:departureTime": "23:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.212D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "212D",
+        "odpt:departureTime": "23:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.214D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "214D",
+        "odpt:departureTime": "23:54",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.216D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "216D",
+        "odpt:departureTime": "00:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.218D",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "218D",
+        "odpt:departureTime": "00:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175C53",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.Daishi.Daishimae.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.Daishi",
+    "odpt:station": "odpt.Station:Tobu.Daishi.Daishimae",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.2D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "2D",
+        "odpt:departureTime": "05:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.4D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "4D",
+        "odpt:departureTime": "05:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.6D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "6D",
+        "odpt:departureTime": "06:01",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.8D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "8D",
+        "odpt:departureTime": "06:14",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.10D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "10D",
+        "odpt:departureTime": "06:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.12D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "12D",
+        "odpt:departureTime": "06:44",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.14D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "14D",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.16D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "16D",
+        "odpt:departureTime": "07:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.18D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "18D",
+        "odpt:departureTime": "07:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.20D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "20D",
+        "odpt:departureTime": "07:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.22D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "22D",
+        "odpt:departureTime": "07:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.24D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "24D",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.26D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "26D",
+        "odpt:departureTime": "07:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.28D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "28D",
+        "odpt:departureTime": "08:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.30D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "30D",
+        "odpt:departureTime": "08:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.32D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "32D",
+        "odpt:departureTime": "08:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.34D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "34D",
+        "odpt:departureTime": "08:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.36D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "36D",
+        "odpt:departureTime": "08:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.38D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "38D",
+        "odpt:departureTime": "08:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.40D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "40D",
+        "odpt:departureTime": "09:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.42D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "42D",
+        "odpt:departureTime": "09:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.44D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "44D",
+        "odpt:departureTime": "09:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.46D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "46D",
+        "odpt:departureTime": "09:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.48D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "48D",
+        "odpt:departureTime": "09:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.50D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "50D",
+        "odpt:departureTime": "09:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.52D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "52D",
+        "odpt:departureTime": "10:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.54D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "54D",
+        "odpt:departureTime": "10:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.56D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "56D",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.58D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "58D",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.60D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "60D",
+        "odpt:departureTime": "10:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.62D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "62D",
+        "odpt:departureTime": "10:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.64D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "64D",
+        "odpt:departureTime": "11:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.66D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "66D",
+        "odpt:departureTime": "11:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.68D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "68D",
+        "odpt:departureTime": "11:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.70D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "70D",
+        "odpt:departureTime": "11:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.72D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "72D",
+        "odpt:departureTime": "11:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.74D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "74D",
+        "odpt:departureTime": "11:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.76D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "76D",
+        "odpt:departureTime": "12:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.78D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "78D",
+        "odpt:departureTime": "12:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.80D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "80D",
+        "odpt:departureTime": "12:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.82D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "82D",
+        "odpt:departureTime": "12:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.84D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "84D",
+        "odpt:departureTime": "12:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.86D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "86D",
+        "odpt:departureTime": "12:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.88D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "88D",
+        "odpt:departureTime": "13:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.90D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "90D",
+        "odpt:departureTime": "13:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.92D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "92D",
+        "odpt:departureTime": "13:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.94D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "94D",
+        "odpt:departureTime": "13:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.96D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "96D",
+        "odpt:departureTime": "13:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.98D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "98D",
+        "odpt:departureTime": "13:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.100D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "100D",
+        "odpt:departureTime": "14:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.102D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "102D",
+        "odpt:departureTime": "14:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.104D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "104D",
+        "odpt:departureTime": "14:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.106D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "106D",
+        "odpt:departureTime": "14:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.108D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "108D",
+        "odpt:departureTime": "14:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.110D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "110D",
+        "odpt:departureTime": "14:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.112D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "112D",
+        "odpt:departureTime": "15:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.114D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "114D",
+        "odpt:departureTime": "15:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.116D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "116D",
+        "odpt:departureTime": "15:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.118D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "118D",
+        "odpt:departureTime": "15:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.120D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "120D",
+        "odpt:departureTime": "15:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.122D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "122D",
+        "odpt:departureTime": "15:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.124D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "124D",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.126D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "126D",
+        "odpt:departureTime": "16:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.128D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "128D",
+        "odpt:departureTime": "16:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.130D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "130D",
+        "odpt:departureTime": "16:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.132D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "132D",
+        "odpt:departureTime": "16:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.134D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "134D",
+        "odpt:departureTime": "16:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.136D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "136D",
+        "odpt:departureTime": "17:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.138D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "138D",
+        "odpt:departureTime": "17:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.140D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "140D",
+        "odpt:departureTime": "17:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.142D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "142D",
+        "odpt:departureTime": "17:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.144D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "144D",
+        "odpt:departureTime": "17:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.146D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "146D",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.148D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "148D",
+        "odpt:departureTime": "18:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.150D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "150D",
+        "odpt:departureTime": "18:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.152D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "152D",
+        "odpt:departureTime": "18:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.154D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "154D",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.156D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "156D",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.158D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "158D",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.160D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "160D",
+        "odpt:departureTime": "19:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.162D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "162D",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.164D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "164D",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.166D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "166D",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.168D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "168D",
+        "odpt:departureTime": "19:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.170D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "170D",
+        "odpt:departureTime": "19:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.172D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "172D",
+        "odpt:departureTime": "20:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.174D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "174D",
+        "odpt:departureTime": "20:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.176D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "176D",
+        "odpt:departureTime": "20:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.178D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "178D",
+        "odpt:departureTime": "20:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.180D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "180D",
+        "odpt:departureTime": "20:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.182D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "182D",
+        "odpt:departureTime": "20:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.184D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "184D",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.186D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "186D",
+        "odpt:departureTime": "21:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.188D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "188D",
+        "odpt:departureTime": "21:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.190D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "190D",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.192D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "192D",
+        "odpt:departureTime": "21:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.194D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "194D",
+        "odpt:departureTime": "21:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.196D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "196D",
+        "odpt:departureTime": "22:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.198D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "198D",
+        "odpt:departureTime": "22:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.200D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "200D",
+        "odpt:departureTime": "22:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.202D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "202D",
+        "odpt:departureTime": "22:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.204D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "204D",
+        "odpt:departureTime": "22:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.206D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "206D",
+        "odpt:departureTime": "22:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.208D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "208D",
+        "odpt:departureTime": "23:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.210D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "210D",
+        "odpt:departureTime": "23:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.212D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "212D",
+        "odpt:departureTime": "23:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.214D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "214D",
+        "odpt:departureTime": "23:43",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.216D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "216D",
+        "odpt:departureTime": "23:59",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.218D",
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "218D",
+        "odpt:departureTime": "00:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.Daishi.220D",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.Local",
+        "odpt:trainNumber": "220D",
+        "odpt:departureTime": "00:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.Daishi.Nishiarai"
+        ]
+      }
+    ]
+  }
+]

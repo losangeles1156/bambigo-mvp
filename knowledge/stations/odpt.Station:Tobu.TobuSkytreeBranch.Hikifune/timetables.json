@@ -1,0 +1,1951 @@
+[
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F58",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytreeBranch.Hikifune.Inbound.SaturdayHoliday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytreeBranch",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytreeBranch.Hikifune",
+    "odpt:calendar": "odpt.Calendar:SaturdayHoliday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4550T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4550T",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4452T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4452T",
+        "odpt:departureTime": "05:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4554T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4554T",
+        "odpt:departureTime": "06:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4556T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4556T",
+        "odpt:departureTime": "06:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C558T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C558T",
+        "odpt:departureTime": "06:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C560T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C560T",
+        "odpt:departureTime": "06:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C662T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C662T",
+        "odpt:departureTime": "07:04",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4664T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4664T",
+        "odpt:departureTime": "07:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4666T",
+        "odpt:departureTime": "07:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4668T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4668T",
+        "odpt:departureTime": "07:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C667S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C667S",
+        "odpt:departureTime": "07:58",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C770T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C770T",
+        "odpt:departureTime": "08:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4702K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4702K",
+        "odpt:departureTime": "08:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C704K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C704K",
+        "odpt:departureTime": "08:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4772T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4772T",
+        "odpt:departureTime": "08:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4706K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4706K",
+        "odpt:departureTime": "08:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4825K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4825K",
+        "odpt:departureTime": "09:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C874T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C874T",
+        "odpt:departureTime": "09:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4826K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4826K",
+        "odpt:departureTime": "09:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4882T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4882T",
+        "odpt:departureTime": "09:47",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4954T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4954T",
+        "odpt:departureTime": "10:03",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4965S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4965S",
+        "odpt:departureTime": "10:17",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4903K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4903K",
+        "odpt:departureTime": "10:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4912K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4912K",
+        "odpt:departureTime": "10:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4955S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4955S",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4914K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4914K",
+        "odpt:departureTime": "10:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4069S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4069S",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4076T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4076T",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4077S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4077S",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1008K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1008K",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1056T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1056T",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1023K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1023K",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1162T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1162T",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1151S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1151S",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1164T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1164T",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1178T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1178T",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1180T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1180T",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1161S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1161S",
+        "odpt:departureTime": "12:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1268T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1268T",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1275S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1275S",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1263S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1263S",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1271S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1271S",
+        "odpt:departureTime": "13:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1204K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1204K",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1253S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1253S",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1357S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1357S",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1372T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1372T",
+        "odpt:departureTime": "14:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1301K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1301K",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1352T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1352T",
+        "odpt:departureTime": "14:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1382T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1382T",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1319K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1319K",
+        "odpt:departureTime": "14:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1454T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1454T",
+        "odpt:departureTime": "15:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1420K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1420K",
+        "odpt:departureTime": "15:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1410K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1410K",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1409K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1409K",
+        "odpt:departureTime": "15:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1421K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1421K",
+        "odpt:departureTime": "15:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1474T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1474T",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1513K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1513K",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1570T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1570T",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1511K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1511K",
+        "odpt:departureTime": "16:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1573S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1573S",
+        "odpt:departureTime": "16:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1502K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1502K",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1577S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1577S",
+        "odpt:departureTime": "16:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1650T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1650T",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1606K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1606K",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1617K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1617K",
+        "odpt:departureTime": "17:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1622K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1622K",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1618K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1618K",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1707K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1707K",
+        "odpt:departureTime": "17:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1759S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1759S",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1765S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1765S",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1758T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1758T",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1712K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1712K",
+        "odpt:departureTime": "18:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1703K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1703K",
+        "odpt:departureTime": "18:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1814K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1814K",
+        "odpt:departureTime": "18:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1867S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1867S",
+        "odpt:departureTime": "19:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1876T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1876T",
+        "odpt:departureTime": "19:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1866T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1866T",
+        "odpt:departureTime": "19:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1808K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1808K",
+        "odpt:departureTime": "19:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1860T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1860T",
+        "odpt:departureTime": "19:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1901K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1901K",
+        "odpt:departureTime": "19:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1969S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1969S",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1951S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1951S",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1915K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1915K",
+        "odpt:departureTime": "20:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1954T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1954T",
+        "odpt:departureTime": "20:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1919K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1919K",
+        "odpt:departureTime": "20:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2074T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2074T",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C2055S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2055S",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2070T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2070T",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4075S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4075S",
+        "odpt:departureTime": "21:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2073S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2073S",
+        "odpt:departureTime": "21:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4061S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4061S",
+        "odpt:departureTime": "21:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C2153S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2153S",
+        "odpt:departureTime": "21:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4122K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4122K",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4168T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4168T",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4118K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4118K",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2106K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2106K",
+        "odpt:departureTime": "22:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4124K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4124K",
+        "odpt:departureTime": "22:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4212K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4212K",
+        "odpt:departureTime": "22:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4216K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4216K",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4205K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4205K",
+        "odpt:departureTime": "23:20",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4321K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4321K",
+        "odpt:departureTime": "23:32",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4308K",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4308K",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Saginuma"
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "urn:ucode:_00001C00000000000001000003175F5A",
+    "@type": "odpt:StationTimetable",
+    "dc:date": "2025-07-04T15:00:00+09:00",
+    "@context": "http://vocab.odpt.org/context_odpt_StationTimetable.jsonld",
+    "dct:issued": "2025-03-15",
+    "owl:sameAs": "odpt.StationTimetable:Tobu.TobuSkytreeBranch.Hikifune.Inbound.Weekday",
+    "odpt:railway": "odpt.Railway:Tobu.TobuSkytreeBranch",
+    "odpt:station": "odpt.Station:Tobu.TobuSkytreeBranch.Hikifune",
+    "odpt:calendar": "odpt.Calendar:Weekday",
+    "odpt:operator": "odpt.Operator:Tobu",
+    "odpt:railDirection": "odpt.RailDirection:Inbound",
+    "odpt:stationTimetableObject": [
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4550T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4550T",
+        "odpt:departureTime": "05:42",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4452T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4452T",
+        "odpt:departureTime": "05:57",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4554T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4554T",
+        "odpt:departureTime": "06:11",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4556T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4556T",
+        "odpt:departureTime": "06:31",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C558T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C558T",
+        "odpt:departureTime": "06:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4560T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4560T",
+        "odpt:departureTime": "06:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C564T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C564T",
+        "odpt:departureTime": "07:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4562T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4562T",
+        "odpt:departureTime": "07:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4666T",
+        "odpt:departureTime": "07:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4626K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4626K",
+        "odpt:departureTime": "07:30",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4683S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4683S",
+        "odpt:departureTime": "07:40",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C668T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C668T",
+        "odpt:departureTime": "07:48",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E670T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E670T",
+        "odpt:departureTime": "07:52",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C672T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C672T",
+        "odpt:departureTime": "07:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C674T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C674T",
+        "odpt:departureTime": "08:02",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C776T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C776T",
+        "odpt:departureTime": "08:07",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4729K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4729K",
+        "odpt:departureTime": "08:13",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C727K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C727K",
+        "odpt:departureTime": "08:18",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4702K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4702K",
+        "odpt:departureTime": "08:23",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C704K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C704K",
+        "odpt:departureTime": "08:29",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C778T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C778T",
+        "odpt:departureTime": "08:39",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4706K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4706K",
+        "odpt:departureTime": "08:50",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4811K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4811K",
+        "odpt:departureTime": "09:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4851S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4851S",
+        "odpt:departureTime": "09:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4836K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4836K",
+        "odpt:departureTime": "09:21",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4808K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4808K",
+        "odpt:departureTime": "09:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4834K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4834K",
+        "odpt:departureTime": "09:49",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4861S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4861S",
+        "odpt:departureTime": "09:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4980T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4980T",
+        "odpt:departureTime": "10:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4982T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4982T",
+        "odpt:departureTime": "10:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4989S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4989S",
+        "odpt:departureTime": "10:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E941K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E941K",
+        "odpt:departureTime": "10:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4069S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4069S",
+        "odpt:departureTime": "10:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4910K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4910K",
+        "odpt:departureTime": "10:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4021K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4021K",
+        "odpt:departureTime": "11:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4091S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4091S",
+        "odpt:departureTime": "11:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4003K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4003K",
+        "odpt:departureTime": "11:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1023K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1023K",
+        "odpt:departureTime": "11:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1055S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1055S",
+        "odpt:departureTime": "11:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1063S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1063S",
+        "odpt:departureTime": "11:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1160T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1160T",
+        "odpt:departureTime": "12:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1117K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1117K",
+        "odpt:departureTime": "12:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1115K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1115K",
+        "odpt:departureTime": "12:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1109K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1109K",
+        "odpt:departureTime": "12:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1181S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1181S",
+        "odpt:departureTime": "12:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1156T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1156T",
+        "odpt:departureTime": "12:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1268T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1268T",
+        "odpt:departureTime": "13:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1252T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1252T",
+        "odpt:departureTime": "13:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1276T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1276T",
+        "odpt:departureTime": "13:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1224K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1224K",
+        "odpt:departureTime": "13:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1220K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1220K",
+        "odpt:departureTime": "13:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1213K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1213K",
+        "odpt:departureTime": "13:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1378T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1378T",
+        "odpt:departureTime": "14:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1370T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1370T",
+        "odpt:departureTime": "14:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1358T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1358T",
+        "odpt:departureTime": "14:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1325K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1325K",
+        "odpt:departureTime": "14:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1373S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1373S",
+        "odpt:departureTime": "14:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1361S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1361S",
+        "odpt:departureTime": "14:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1454T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1454T",
+        "odpt:departureTime": "15:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1462T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1462T",
+        "odpt:departureTime": "15:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1464T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1464T",
+        "odpt:departureTime": "15:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1414K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1414K",
+        "odpt:departureTime": "15:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1489S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1489S",
+        "odpt:departureTime": "15:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1410K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1410K",
+        "odpt:departureTime": "15:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1518K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1518K",
+        "odpt:departureTime": "16:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1511K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1511K",
+        "odpt:departureTime": "16:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1574T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1574T",
+        "odpt:departureTime": "16:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1504K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1504K",
+        "odpt:departureTime": "16:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1502K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1502K",
+        "odpt:departureTime": "16:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1572T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1572T",
+        "odpt:departureTime": "16:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1650T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1650T",
+        "odpt:departureTime": "17:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1622K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1622K",
+        "odpt:departureTime": "17:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1601K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1601K",
+        "odpt:departureTime": "17:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1666T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1666T",
+        "odpt:departureTime": "17:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1680T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1680T",
+        "odpt:departureTime": "17:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1782T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1782T",
+        "odpt:departureTime": "17:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1716K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1716K",
+        "odpt:departureTime": "18:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1712K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1712K",
+        "odpt:departureTime": "18:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1759S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1759S",
+        "odpt:departureTime": "18:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1752T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1752T",
+        "odpt:departureTime": "18:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1777S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1777S",
+        "odpt:departureTime": "18:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1865S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1865S",
+        "odpt:departureTime": "18:56",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1819K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1819K",
+        "odpt:departureTime": "19:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1878T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1878T",
+        "odpt:departureTime": "19:16",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1831K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1831K",
+        "odpt:departureTime": "19:26",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1833K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1833K",
+        "odpt:departureTime": "19:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1858T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1858T",
+        "odpt:departureTime": "19:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1935K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1935K",
+        "odpt:departureTime": "19:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1970T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1970T",
+        "odpt:departureTime": "20:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1937K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1937K",
+        "odpt:departureTime": "20:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1906K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1906K",
+        "odpt:departureTime": "20:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E1960T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E1960T",
+        "odpt:departureTime": "20:37",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C1979S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C1979S",
+        "odpt:departureTime": "20:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2056T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2056T",
+        "odpt:departureTime": "20:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C2008K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2008K",
+        "odpt:departureTime": "21:06",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C2089S",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2089S",
+        "odpt:departureTime": "21:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4081S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4081S",
+        "odpt:departureTime": "21:27",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2002K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2002K",
+        "odpt:departureTime": "21:35",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4061S",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4061S",
+        "odpt:departureTime": "21:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2168T",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2168T",
+        "odpt:departureTime": "21:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4105K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4105K",
+        "odpt:departureTime": "22:05",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4107K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4107K",
+        "odpt:departureTime": "22:15",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C2118K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "C2118K",
+        "odpt:departureTime": "22:25",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.ChuoRinkan"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E2101K",
+        "odpt:trainType": "odpt.TrainType:Tobu.Express",
+        "odpt:trainNumber": "E2101K",
+        "odpt:departureTime": "22:36",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4176T",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4176T",
+        "odpt:departureTime": "22:45",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.E4221K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "E4221K",
+        "odpt:departureTime": "22:55",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4227K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4227K",
+        "odpt:departureTime": "23:08",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4236K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4236K",
+        "odpt:departureTime": "23:22",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4319K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4319K",
+        "odpt:departureTime": "23:34",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Nagatsuta"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4333K",
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4333K",
+        "odpt:departureTime": "23:46",
+        "odpt:destinationStation": [
+          "odpt.Station:Tokyu.DenEnToshi.Saginuma"
+        ]
+      },
+      {
+        "odpt:train": "odpt.Train:Tobu.TobuSkytreeBranch.C4271S",
+        "odpt:isLast": true,
+        "odpt:trainType": "odpt.TrainType:Tobu.SemiExpress",
+        "odpt:trainNumber": "C4271S",
+        "odpt:departureTime": "00:00",
+        "odpt:destinationStation": [
+          "odpt.Station:Tobu.TobuSkytreeBranch.Oshiage"
+        ]
+      }
+    ]
+  }
+]

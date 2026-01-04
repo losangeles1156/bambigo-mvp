@@ -1,10 +1,13 @@
 import { supabase } from '../supabase';
 import { STATION_WISDOM } from '../../data/stationWisdom';
-import { STATIC_L1_DATA } from '../../data/staticL1Data';
+import { STATIC_L1_DATA, L1_NAME_INDEX } from '../../data/staticL1Data';
 import { STATION_LINES, getStationIdVariants, guessPhysicalOdptStationIds, resolveHubStationMembers } from '@/lib/constants/stationLines';
 import { L1_DNA_Data, L3Facility, StationUIProfile, LocaleString, ActionCard } from '@/lib/types/stationStandard';
 
 // Types aligning with DB schema
+// Version 2.0: Added version control for cache invalidation
+// Version 3.0: Added data_hash for change detection
+
 export interface NodeDatum {
     id: string;
     city_id: string;
@@ -16,6 +19,11 @@ export interface NodeDatum {
     is_hub: boolean;
     parent_hub_id: string | null;
     zone: string;
+    // Version control fields
+    updated_at?: number;  // Unix timestamp (milliseconds) for version control
+    version?: number;     // Incremental version number
+    data_hash?: string;   // SHA-256 hash of node data for change detection
+    ward_id?: string;     // Ward/行政區 ID for ward-based node grouping
 }
 
 /**
@@ -59,6 +67,19 @@ function normalizeNodeRow(n: any) {
     const type = String(n?.type ?? n?.node_type ?? 'station');
     const location = parseLocation(n?.location ?? n?.coordinates);
     const isHub = typeof n?.is_hub === 'boolean' ? n.is_hub : !n?.parent_hub_id;
+
+    // Parse version control fields
+    // updated_at: Unix timestamp (milliseconds) from DB or ISO string
+    let updatedAt: number | undefined;
+    if (n?.updated_at) {
+        if (typeof n.updated_at === 'number') {
+            updatedAt = n.updated_at;
+        } else if (typeof n.updated_at === 'string') {
+            // Convert ISO string to Unix timestamp
+            updatedAt = new Date(n.updated_at).getTime();
+        }
+    }
+
     return {
         ...n,
         type,
@@ -66,7 +87,13 @@ function normalizeNodeRow(n: any) {
         is_hub: isHub,
         geohash: typeof n?.geohash === 'string' ? n.geohash : String(n?.geohash ?? ''),
         city_id: typeof n?.city_id === 'string' ? n.city_id : String(n?.city_id ?? ''),
-        zone: typeof n?.zone === 'string' ? n.zone : String(n?.zone ?? 'core')
+        zone: typeof n?.zone === 'string' ? n.zone : String(n?.zone ?? 'core'),
+        // Version control fields
+        version: typeof n?.version === 'number' ? n.version : (n?.version ?? undefined),
+        updated_at: updatedAt,
+        data_hash: typeof n?.data_hash === 'string' ? n.data_hash : (n?.data_hash ?? undefined),
+        // Ward ID for ward-based node grouping
+        ward_id: typeof n?.ward_id === 'string' ? n.ward_id : (n?.ward_id ?? undefined)
     };
 }
 
@@ -510,11 +537,35 @@ export async function fetchNodeConfig(nodeId: string) {
 
         wisdomKeys.forEach(addL1Key);
 
+        // Method 1: ID-based lookup
         for (const key of l1Keys) {
             const hit = (STATIC_L1_DATA as any)[key];
             if (hit) {
                 staticData = hit;
                 break;
+            }
+        }
+
+        // Method 2: Name-based lookup fallback (for OSM-based stations)
+        if (!staticData && finalNode?.name) {
+            const nameVariants: string[] = [];
+            if (typeof finalNode.name === 'string') {
+                nameVariants.push(finalNode.name);
+            } else if (typeof finalNode.name === 'object') {
+                if (finalNode.name.ja) nameVariants.push(finalNode.name.ja);
+                if (finalNode.name.en) nameVariants.push(finalNode.name.en);
+            }
+
+            for (const name of nameVariants) {
+                // Try direct name lookup
+                const clusterId = L1_NAME_INDEX[name];
+                if (clusterId) {
+                    const hit = (STATIC_L1_DATA as any)[clusterId];
+                    if (hit) {
+                        staticData = hit;
+                        break;
+                    }
+                }
             }
         }
 
@@ -694,18 +745,30 @@ export async function fetchNodeConfig(nodeId: string) {
 
                 if (!l2Data) continue;
 
-                const isStationDelay = l2Data.status_code === 'DELAY';
+                const reasonJa = l2Data.reason_ja || '';
+                const isStationDelay = l2Data.status_code === 'DELAY' &&
+                    !reasonJa.includes('平常') &&
+                    !reasonJa.includes('通常');
 
                 enrichedProfile.l2_status = {
                     congestion: isStationDelay ? 4 : (l2Data.crowd_level || 2),
-                    line_status: servedLines.map(line => ({
-                        line: line.name.en,
-                        name: line.name,
-                        operator: line.operator,
-                        color: line.color,
-                        status: isStationDelay ? 'delay' : 'normal',
-                        message: isStationDelay ? l2Data.reason_ja : undefined
-                    })),
+                    line_status: servedLines.map(line => {
+                        // More granular check: only mark as delay if it's a station-wide delay 
+                        // or if the line name (English or Japanese) is mentioned in the reason.
+                        const lineMatchesReason = reasonJa.includes(line.name.ja) ||
+                            (line.name.en && reasonJa.includes(line.name.en));
+
+                        const shouldShowDelay = isStationDelay && (reasonJa.length < 5 || lineMatchesReason);
+
+                        return {
+                            line: line.name.en,
+                            name: line.name,
+                            operator: line.operator,
+                            color: line.color,
+                            status: shouldShowDelay ? 'delay' : 'normal',
+                            message: shouldShowDelay ? l2Data.reason_ja : undefined
+                        };
+                    }),
                     weather: {
                         temp: l2Data.weather_info?.temp || 0,
                         condition: l2Data.weather_info?.condition || 'Unknown'
