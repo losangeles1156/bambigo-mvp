@@ -64,9 +64,18 @@ export function parseLocation(loc: any): { coordinates: [number, number] } {
 }
 
 function normalizeNodeRow(n: any) {
-    const type = String(n?.type ?? n?.node_type ?? 'station');
+    // [FIX] Normalize type - prefer node_type from DB, fallback to type
+    const rawType = n?.node_type ?? n?.type ?? 'station';
+    const type = String(rawType).toLowerCase();
     const location = parseLocation(n?.location ?? n?.coordinates);
-    const isHub = typeof n?.is_hub === 'boolean' ? n.is_hub : !n?.parent_hub_id;
+
+    // [FIX] Unified is_hub logic:
+    // 1. Check explicit is_hub field if exists (from DB or seed data)
+    // 2. Otherwise: parent_hub_id = null/undefined means it's a hub
+    const explicitIsHub = n?.is_hub;
+    const isHub = typeof explicitIsHub === 'boolean'
+        ? explicitIsHub
+        : (n?.parent_hub_id === null || n?.parent_hub_id === undefined);
 
     // Parse version control fields
     // updated_at: Unix timestamp (milliseconds) from DB or ISO string
@@ -211,8 +220,11 @@ function enrichNodeData(n: any) {
     const seed = SEED_NODES.find(s => s.id === n.id);
     const name = n.name || (seed ? seed.name : 'Station');
 
-    // V3.0 Logic: ID parent_hub_id is null, it is a Hub.
-    const isHub = !n.parent_hub_id;
+    // [FIX] Unified is_hub logic - respect explicit value, fallback to parent_hub_id check
+    const explicitIsHub = n?.is_hub;
+    const isHub = typeof explicitIsHub === 'boolean'
+        ? explicitIsHub
+        : (n?.parent_hub_id === null || n?.parent_hub_id === undefined);
 
     // Custom Map Design Overrides
     let mapDesign = undefined;
@@ -925,12 +937,21 @@ export async function fetchAllNodes() {
             mapDesign = { icon: 'lantern', color: '#D32F2F' }; // Lantern Red
         }
 
+        // [FIX] Unified is_hub logic
+        const explicitIsHub = n?.is_hub;
+        const isHub = typeof explicitIsHub === 'boolean'
+            ? explicitIsHub
+            : (n?.parent_hub_id === null || n?.parent_hub_id === undefined);
+
+        // [FIX] Normalize type
+        const nodeType = String(n?.node_type ?? n?.type ?? 'station').toLowerCase();
+
         return {
             ...n,
             name: seed ? seed.name : n?.name,
-            type: String(n?.type ?? n?.node_type ?? 'station'),
+            type: nodeType,
             location: parseLocation(n?.location ?? n?.coordinates),
-            is_hub: !n.parent_hub_id, // Ensure is_hub is set (V3.0 Logic)
+            is_hub: isHub,
             tier,
             mapDesign,
             // Inject L2 Status into the node object (or facility_profile)

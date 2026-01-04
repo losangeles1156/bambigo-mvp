@@ -264,14 +264,24 @@ export async function GET(req: Request) {
         .map(n => {
             const location = parseLocation((n as any).location ?? (n as any).coordinates);
             const parentHubId = (n as any).parent_hub_id;
-            const hasParentHub = parentHubId !== null && parentHubId !== undefined;
-            const isHub = !hasParentHub;
+
+            // [FIX] Unified is_hub logic:
+            // 1. Check explicit is_hub field if exists
+            // 2. Otherwise: parent_hub_id = null means it's a hub
+            const explicitIsHub = (n as any).is_hub;
+            const isHub = typeof explicitIsHub === 'boolean'
+                ? explicitIsHub
+                : (parentHubId === null || parentHubId === undefined);
+
+            // [FIX] Normalize node type - use node_type from DB, fallback to type
+            const rawType = (n as any).node_type ?? (n as any).type ?? 'station';
+            const nodeType = String(rawType).toLowerCase();
 
             return {
                 id: String((n as any).id ?? ''),
                 city_id: String((n as any).city_id ?? ''),
                 name: (n as any).name ?? { 'zh-TW': '車站', ja: '駅', en: 'Station' },
-                type: String((n as any).type ?? (n as any).node_type ?? 'station'),
+                type: nodeType,
                 location,
                 geohash: String((n as any).geohash ?? ''),
                 vibe: (n as any).vibe ?? null,
@@ -286,18 +296,18 @@ export async function GET(req: Request) {
             if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
             if (lat === 0 && lon === 0) return false;
             if (lat < minLat || lat > maxLat || lon < minLon || lon > maxLon) return false;
-            
-            // [NEW] Filter out non-station nodes (bus stops, POIs, etc.)
-            const nodeType = n.type?.toLowerCase() || '';
+
+            // [FIX] Filter out non-station nodes (bus stops, POIs, etc.)
+            // Use already normalized lowercase type
             const excludedTypes = ['bus_stop', 'poi', 'place', 'facility', 'entrance', 'exit', 'shopping', 'restaurant'];
-            if (excludedTypes.includes(nodeType)) {
+            if (excludedTypes.includes(n.type)) {
                 return false;
             }
-            
-            // [FIX] When hubsOnly is true, only show actual station hubs (not standalone non-hubs)
-            // Bus stops have is_hub=true but are not stations - already filtered above
+
+            // [FIX] When hubsOnly is true, only show hub nodes (parent_hub_id = null)
+            // This hides "spoke" stations that belong to a hub
             if (hubsOnly && !n.is_hub) return false;
-            
+
             return true;
         })
         .sort((a, b) => {
